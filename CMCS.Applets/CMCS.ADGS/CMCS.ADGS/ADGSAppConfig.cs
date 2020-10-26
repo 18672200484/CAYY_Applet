@@ -26,7 +26,7 @@ namespace CMCS.ADGS
             return instance;
         }
 
-        private ADGSAppConfig()
+        private ADGSAppConfig() 
         {
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(ConfigXmlPath);
@@ -49,7 +49,7 @@ namespace CMCS.ADGS
                     }
 
                     this.AssayGrabers.Add(byoGraber);
-                }
+                } 
                 else if (xNode.Name == "CustomGraber")
                 {
                     // 提取类

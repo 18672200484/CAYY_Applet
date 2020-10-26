@@ -96,7 +96,7 @@ namespace CMCS.ADGS.Core
                             continue;
                         }
 
-                        DataTable dtlAssay = assayGraber.ExecuteGrab();
+                         DataTable dtlAssay = assayGraber.ExecuteGrab();
 
                         // 在数据中创建表
                         if (connection.ExecuteScalar<int>(OracleSqlBuilder.BuildHasTableSQL(assayGraber.TableName)) == 0)

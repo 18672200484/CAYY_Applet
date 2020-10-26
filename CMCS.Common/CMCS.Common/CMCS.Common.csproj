@@ -81,6 +81,7 @@
     <Compile Include="Dbers.cs" />
     <Compile Include="Entities\AssayDevices\CmcsAshFusionAssay.cs" />
     <Compile Include="Entities\AssayDevices\CmcsElementAssay.cs" />
+    <Compile Include="Entities\AssayDevices\CmcsHydrocarbonAssay.cs" />
     <Compile Include="Entities\BaseInfo\CmcsCamare.cs" />
     <Compile Include="Entities\iEAA\CmcsUser.cs" />
     <Compile Include="Entities\Inf\InfBeltSamplerUnloadResult.cs" />

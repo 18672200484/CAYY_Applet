@@ -10,7 +10,7 @@ namespace CMCS.Common.Entities.AssayDevices
     /// 化验数据-测硫仪
     /// </summary>
     [CMCS.DapperDber.Attrs.DapperBind("CMCSTBSULFURASSAY")]
-    public class CmcsSulfurAssay : EntityBase1
+    public class CmcsSulfurAssay : EntityBase
     {
         /// <summary>
         /// 化验编码
@@ -60,7 +60,7 @@ namespace CMCS.Common.Entities.AssayDevices
         /// <summary>
         /// 是否有效
         /// </summary>
-        public int IsEffective { get; set; }
+        public int ISEFFECTIVE { get; set; }
 
         /// <summary>
         /// 第三方主键ID
