@@ -7,75 +7,350 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using CMCS.Common;
+using CMCS.Common.DAO;
 using CMCS.Common.Entities;
+using CMCS.Common.Entities.Fuel;
 using CMCS.Common.Entities.TrainInFactory;
+using CMCS.Common.Enums;
 using CMCS.DumblyConcealer.Enums;
+using CMCS.DumblyConcealer.WeightBridger.Entities;
 
 namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 {
-    /// <summary>
-    /// 火车车号识别业务
-    /// </summary>
-    public class TrainDiscriminatorDAO
-    {
-        private static TrainDiscriminatorDAO instance;
+	/// <summary>
+	/// 火车车号识别业务
+	/// </summary>
+	public class TrainDiscriminatorDAO
+	{
+		private static object LockObject = new object();
 
-        private static String MachineCode_CHSB = GlobalVars.MachineCode_HCRCCHSB;
+		private static TrainDiscriminatorDAO instance;
 
-        public static TrainDiscriminatorDAO GetInstance()
-        {
-            if (instance == null)
-            {
+		private static String MachineCode_CHSB = GlobalVars.MachineCode_HCRCCHSB;
 
-                instance = new TrainDiscriminatorDAO();
-            }
-            return instance;
-        }
+		public static TrainDiscriminatorDAO GetInstance()
+		{
+			if (instance == null)
+			{
 
-        private TrainDiscriminatorDAO()
-        {
+				instance = new TrainDiscriminatorDAO();
+			}
+			return instance;
+		}
 
-        }
+		private TrainDiscriminatorDAO()
+		{
 
-        /// <summary>
-        /// 同步报文
-        /// </summary>
-        /// <param name="output"></param>
-        /// <returns></returns>
-        public int Save(List<CmcsTrainCarriagePass> cmcstbtrainrecognition, Action<string, eOutputType> output)
-        {
-            int res = 0;
-            try
-            {
-                foreach (var item in cmcstbtrainrecognition)
-                {
-                    CmcsTrainCarriagePass item1 = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and PassTime=:PassTime", new { TrainNumber = item.TrainNumber, PassTime = item.PassTime });
-                    if (item1 == null)
-                    {
-                        res += Dbers.GetInstance().SelfDber.Insert(item);
-                    }
-                    else
-                    {
-                        item1.OrderNum = item.OrderNum;
-                        item1.CarModel = item.CarModel;
-                        item1.TrainNumber = item.TrainNumber;
-                        item1.PassTime = item.PassTime;
-                        item1.Speed = item.Speed;
-                        item1.MachineCode = item.MachineCode;
-                        res += Dbers.GetInstance().SelfDber.Update<CmcsTrainCarriagePass>(item1);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                output(string.Format("保存数据失败,原因:{0}", ex.Message), eOutputType.Error);
-            }
-            output(string.Format("同步车号识别数据 {0} 条（集中管控 ）", res), eOutputType.Normal);
-            return res;
-        }
+		}
+
+		#region 车号识别数据处理
+
+		/// <summary>
+		/// 车辆数据处理
+		/// </summary>
+		/// <param name="carSpotsNum">车辆识别器编号</param>
+		/// <returns></returns>
+		public int CarSpotsHandle(Action<string, eOutputType> output, int carSpotsNum)
+		{
+			lock (LockObject)
+			{
+				int res = 0;
+				IList<CmcsTrainCarriagePass> cardata = Dbers.GetInstance().SelfDber.Entities<CmcsTrainCarriagePass>(" where MachineCode='" + carSpotsNum + "' and DataFlag=0 and PassTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by PassTime asc,OrderNum asc");
+				bool flag = false;
+				foreach (var item in cardata)
+				{
+					switch (carSpotsNum)
+					{
+						case 1:
+							flag = CarSpot1Data(output, item);
+							break;
+						case 2:
+							flag = CarSpot2Data(item.TrainNumber, item.PassTime, item.Direction, item.OrderNum, item.CarModel);
+							break;
+						case 3:
+							flag = CarSpot3Data(item.TrainNumber, item.PassTime, item.Direction, item.OrderNum, item.CarModel);
+							break;
+						case 4:
+							flag = CarSpot4Data(output, item.TrainNumber, item.PassTime, item.Direction, item.CarModel);
+							break;
+						case 5:
+							flag = CarSpot5Data(output, item.TrainNumber, item.PassTime, item.Direction, item.CarModel);
+							break;
+					}
+
+					if (flag)
+					{
+						item.DataFlag = 1;
+						Dbers.GetInstance().SelfDber.Update(item);
+						res++;
+					}
+				}
+				return res;
+			}
+		}
+
+		/// <summary>
+		/// 1号车号识别
+		/// </summary>
+		/// <param name="carNumber">车号</param>
+		/// <param name="carDate">时间</param>
+		/// <param name="direction">方向</param>
+		/// <param name="infactoryordernumber">顺序号</param>
+		/// <param name="carmodel">车型</param>
+		/// <returns></returns>
+		public static bool CarSpot1Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
+		{
+			int res = 0;
+			if (trainPass.Direction == "进厂")
+			{
+				CmcsTrainWeightRecord transportOver = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>(" where TrainNumber='" + trainPass.TrainNumber + "' and IsTurnover='已翻' and ArriveTime>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
+				CmcsTrainWeightRecord transport = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>(" where TrainNumber='" + trainPass.TrainNumber + "' and IsTurnover='未翻' and ArriveTime>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
+				if (transport == null)
+				{
+					// 此判断是过滤车辆出厂后立马进厂合并不同轨道车辆的情况，时间相差几分钟
+					if (transportOver != null)
+						return true;
+
+					res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainWeightRecord()
+					{
+						PKID = trainPass.PKID,
+						TrainNumber = trainPass.TrainNumber,
+						ArriveTime = trainPass.PassTime,
+						TrainType = trainPass.CarModel,
+						IsTurnover = "未翻",
+						MachineCode = trainPass.MachineCode,
+						DataFlag = 0,
+						TicketWeight = (decimal)CommonDAO.GetInstance().GetTrainRateLoadByTrainType(trainPass.CarModel),
+						OrderNumber = trainPass.OrderNum,
+						GrossTime = trainPass.PassTime,
+						SkinTime = trainPass.PassTime,
+						LeaveTime = trainPass.PassTime,
+						UnloadTime = trainPass.PassTime,
+					});
+					return true;
+				}
+			}
+			else if (trainPass.Direction == "出厂")
+			{
+				CmcsTrainWeightRecord trainRecord = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>("where TrainNumber=:TrainNumber order by ArriveTime desc", new { TrainNumber = trainPass.TrainNumber });
+				if (trainRecord != null)
+				{
+					trainRecord.LeaveTime = trainPass.PassTime;
+					Dbers.GetInstance().SelfDber.Update(trainRecord);
+
+					CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where PKID=:PKID order by InfactoryTime desc", new { PKID = trainRecord.PKID });
+					if (transport != null)
+					{
+						transport.OutfactoryTime = trainPass.PassTime;
+						Dbers.GetInstance().SelfDber.Update(transport);
+					}
+				}
+				return true;
+			}
+			output(string.Format("向{0}翻车衡发送数据{1}条", trainPass.MachineCode, res), eOutputType.Normal);
+			return false;
+		}
+
+		/// <summary>
+		/// 2号车号识别
+		/// </summary>
+		/// <param name="carNumber">车号</param>
+		/// <param name="carDate">时间</param>
+		/// <param name="direction">方向</param>
+		/// <param name="infactoryordernumber">顺序号</param>
+		/// <param name="carmodel">车型</param>
+		/// <returns></returns>
+		public static bool CarSpot2Data(string carNumber, DateTime carDate, string direction, int ordernumber = 0, string carmodel = "")
+		{
+			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + carNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+			if (transport == null) return false;
+
+			if (direction == "进厂")
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_1, eSignalDataName.当前车号.ToString(), carNumber);
+
+				//// 插入定位信息
+				//SelfDAL.InsertTransportPosition("#2", transport.Id);
+
+				//if (transport.DispatchTime1.Year < 2000)
+				//{
+				//	transport.DispatchTime1 = carDate;
+				//	transport.TrackNumber = "#2";
+				//	transport.CarModel = carmodel;
+				//	transport.OrderNumber = ordernumber;
+				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//}
+				//else if (transport.DispatchTime2.Year < 2000)
+				//{
+				//	transport.DispatchTime2 = carDate;
+				//	transport.TrackNumber = "#2";
+				//	transport.OrderNumber = ordernumber;
+				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//}
+				//else
+				//{
+				//	transport.DispatchTime2 = carDate;
+				//	transport.TrackNumber = "#2";
+				//	transport.OrderNumber = ordernumber;
+				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//}
+			}
+			else if (direction == "出厂")
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), string.Empty);
+
+				return true;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		/// 3号车号识别
+		/// </summary>
+		/// <param name="carNumber">车号</param>
+		/// <param name="carDate">时间</param>
+		/// <param name="direction">方向</param>
+		/// <param name="infactoryordernumber">顺序号</param>
+		/// <param name="carmodel">车型</param>
+		/// <returns></returns>
+		public static bool CarSpot3Data(string carNumber, DateTime carDate, string direction, int ordernumber = 0, string carmodel = "")
+		{
+			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + carNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+			if (transport == null) return false;
+
+			if (direction == "进厂")
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), carNumber);
+
+				//if (transport.DispatchTime1.Year < 2000)
+				//{
+				//	transport.DispatchTime1 = carDate;
+				//	transport.TrackNumber = "#4";
+				//	transport.CarModel = carmodel;
+				//	transport.OrderNumber = ordernumber;
+				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//}
+				//else if (transport.DispatchTime2.Year < 2000)
+				//{
+				//	transport.DispatchTime2 = carDate;
+				//	transport.TrackNumber = "#4";
+				//	transport.OrderNumber = ordernumber;
+				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//}
+				//else
+				//{
+				//	transport.DispatchTime2 = carDate;
+				//	transport.TrackNumber = "#4";
+				//	transport.OrderNumber = ordernumber;
+				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//}
+			}
+			else if (direction == "出厂")
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), string.Empty);
+
+				return true;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		/// 4号车号识别
+		/// </summary>
+		/// <param name="carNumber">车号</param>
+		/// <param name="carDate">时间</param>
+		/// <param name="direction">方向</param>
+		/// <param name="carmodel">车型</param>
+		/// <returns></returns>
+		public static bool CarSpot4Data(Action<string, eOutputType> output, string carNumber, DateTime carDate, string direction, string carmodel = "")
+		{
+			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + carNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+			if (transport == null) return false;
+
+			if (direction == "进厂" && transport.InfactoryTime > DateTime.MinValue)
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), carNumber);
+
+				//插入车辆信息至翻车衡交互数据库
+				InsertCarToTurnCarWeighter("#1", transport);
+				output(string.Format("向{0}插入一条数据", GlobalVars.MachineCode_TrunOver_1), eOutputType.Normal);
+				return true;
+			}
+			else if (direction == "出厂")
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), string.Empty);
+
+				return true;
+			}
+			return false;
+		}
+
+		/// <summary>
+		/// 5号车号识别
+		/// </summary>
+		/// <param name="carNumber">车号</param>
+		/// <param name="carDate">时间</param>
+		/// <param name="direction">方向</param>
+		/// <param name="carmodel">车型</param>
+		/// <returns></returns>
+		public static bool CarSpot5Data(Action<string, eOutputType> output, string carNumber, DateTime carDate, string direction, string carmodel = "")
+		{
+			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + carNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+			if (transport == null) return false;
+
+			if (direction == "进厂" && transport.InfactoryTime > DateTime.MinValue)
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), carNumber);
+
+				//插入车辆信息至翻车衡交互数据库
+				InsertCarToTurnCarWeighter("#2", transport);
+				output(string.Format("向{0}插入一条数据", GlobalVars.MachineCode_TrunOver_2), eOutputType.Normal);
+				return true;
+			}
+			else if (direction == "出厂")
+			{
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), string.Empty);
+
+				return true;
+			}
+			return false;
+		}
+		#endregion
 
 
+		/// <summary>
+		/// 插入车辆信息至翻车衡交互数据库
+		/// </summary>
+		/// <param name="trunNumber"></param>
+		/// <param name="transport"></param>
+		public static void InsertCarToTurnCarWeighter(string trunNumber, CmcsTransport transport)
+		{
+			if (transport != null && !string.IsNullOrEmpty(transport.InFactoryBatchId))
+			{
+				CmcsRCSampling sampling = Dbers.GetInstance().SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId order by SamplingDate desc", new { InFactoryBatchId = transport.InFactoryBatchId });
+				if (sampling != null)
+				{
+					if (DcDbers.GetInstance().TurnCarWeighterMutualDber.Entity<CarInfoMutual>(" where  TurnCarNumber='" + trunNumber + "' and  CarNumber='" + transport.TransportNo + "' and DataFlag=0 ") == null)
+					{
+						DcDbers.GetInstance().TurnCarWeighterMutualDber.Execute(" update CarInfoMutual set DataFlag=1 where TurnCarNumber='" + trunNumber + "'");
 
-
-    }
+						DcDbers.GetInstance().TurnCarWeighterMutualDber.Insert(new CarInfoMutual()
+						{
+							TurnCarNumber = trunNumber,
+							CarNumber = transport.TransportNo,
+							SampleBillNumber = sampling.SampleCode,
+							InFactoryDate = transport.InfactoryTime,
+							TicketWeight = (double)transport.TicketQty,
+							CreateDate = System.DateTime.Now,
+							WeightDate = DateTime.Now,
+							DataFlag = 0,
+							CancelSign = 0
+						});
+					}
+				}
+			}
+		}
+	}
 }

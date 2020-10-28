@@ -46,6 +46,11 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
             if(!String.IsNullOrWhiteSpace(strDays))
                 Int32.TryParse(strDays, out days);
 
+            taskSimpleScheduler.StartNewTask("生成标准工分仪数据", () =>
+            {
+                assayDeviceDAO.SaveTOProximateAssay(this.rTxtOutputer.Output, days);
+            }, 30000, OutputError);
+
             taskSimpleScheduler.StartNewTask("生成标准测硫仪数据", () =>
             {
                 assayDeviceDAO.SaveToSulfurAssay(this.rTxtOutputer.Output,days);
@@ -57,12 +62,19 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
                 assayDeviceDAO.SaveToHeatAssay(this.rTxtOutputer.Output, days);
 
             }, 30000, OutputError);
-
-            taskSimpleScheduler.StartNewTask("生成标准水分仪数据", () =>
+           
+            taskSimpleScheduler.StartNewTask("生成标准碳氢仪数据", () =>
             {
-                assayDeviceDAO.SaveToMoistureAssay(this.rTxtOutputer.Output, days);
+                assayDeviceDAO.SaveTOHydrocarbonAssay(this.rTxtOutputer.Output, days);
 
             }, 30000, OutputError);
+
+            //taskSimpleScheduler.StartNewTask("生成标准水分仪数据", () =>
+            //{
+            //    assayDeviceDAO.SaveToMoistureAssay(this.rTxtOutputer.Output, days);
+
+            //}, 30000, OutputError);
+
 
         }
 

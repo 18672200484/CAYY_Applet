@@ -7,173 +7,127 @@ using CMCS.Common;
 using CMCS.Common.DAO;
 using CMCS.Common.Entities;
 using CMCS.Common.Entities.TrainInFactory;
+using CMCS.Common.Utilities;
 using CMCS.DumblyConcealer.Enums;
 
 namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 {
-    /// <summary>
-    /// 火车车号识别-D报文
-    /// </summary>
-    public class TrainDiscriminatorDBW
-    {
-        private static TrainDiscriminatorDBW instance;
+	/// <summary>
+	/// 火车车号识别-D报文
+	/// </summary>
+	public class TrainDiscriminatorDBW
+	{
+		private static TrainDiscriminatorDBW instance;
 
-        private static String MachineCode_CHSB = GlobalVars.MachineCode_HCRCCHSB;
+		private static String MachineCode_CHSB = GlobalVars.MachineCode_HCRCCHSB;
 
-        public static TrainDiscriminatorDBW GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new TrainDiscriminatorDBW();
-            }
-            return instance;
-        }
+		public static TrainDiscriminatorDBW GetInstance()
+		{
+			if (instance == null)
+			{
+				instance = new TrainDiscriminatorDBW();
+			}
+			return instance;
+		}
 
-        private TrainDiscriminatorDBW()
-        {
-        }
+		private TrainDiscriminatorDBW()
+		{
+		}
 
-        /// <summary>
-        /// 同步报文
-        /// </summary>
-        /// <param name="output"></param>
-        /// <returns></returns>
-        public List<CmcsTrainCarriagePass> GetDBWInfo(Action<string, eOutputType> output)
-        {
-            List<CmcsTrainCarriagePass> cmcstbtrainrecognition = new List<CmcsTrainCarriagePass>();
-            String interface_dbwdest = CommonDAO.GetInstance().GetAppletConfigString("车号识别文件储存位置");
-            int interface_dbwtime = CommonDAO.GetInstance().GetAppletConfigInt32("车号识别文件读取天数");
-            int res = 0;
-            if (Directory.Exists(interface_dbwdest))
-            {
-                String[] dir = Directory.GetFiles(interface_dbwdest);
-                foreach (var diritem in dir)
-                {
-                    ///解析数据
-                    if (File.Exists(diritem) && CheckUseFull(diritem).AddDays(interface_dbwtime) >= DateTime.Now.Date)
-                    {
-                        String Info = File.ReadAllText(diritem);
-                        if (Info.StartsWith("D"))
-                        {
-                            try
-                            {
-                                //火车方向
-                                String fx = Info.Substring(18, 1) == "0" ? "入厂" : "出厂";
-                                //到达时间
+		/// <summary>
+		/// 同步报文
+		/// </summary>
+		/// <param name="output"></param>
+		/// <param name="path">文件路径</param>
+		/// <param name="flag">设备标识</param>
+		/// <returns></returns>
+		public int SyncDBWInfo(Action<string, eOutputType> output, string path, string flag)
+		{
+			int interface_dbwtime = CommonDAO.GetInstance().GetAppletConfigInt32("车号识别文件读取天数");
+			int res = 0;
 
-                                DateTime ddsj = new DateTime(Convert.ToInt32(Info.Substring(34, 4)), Convert.ToInt32(Info.Substring(38, 2)), Convert.ToInt32(Info.Substring(40, 2)), Convert.ToInt32(Info.Substring(42, 2)), Convert.ToInt32(Info.Substring(44, 2)), Convert.ToInt32(Info.Substring(46, 2)));
+			// 数据最后有效时间
+			DateTime lastEffectiveTime = DateTime.Now.AddDays(-interface_dbwtime);
 
-                                //通过时间
-                                DateTime tgsj = new DateTime(Convert.ToInt32(Info.Substring(50, 4)), Convert.ToInt32(Info.Substring(54, 2)), Convert.ToInt32(Info.Substring(56, 2)), Convert.ToInt32(Info.Substring(58, 2)), Convert.ToInt32(Info.Substring(60, 2)), Convert.ToInt32(Info.Substring(62, 2)));
+			string carnumber = string.Empty;
+			string carmodel = string.Empty;
+			string date = string.Empty;
+			string time = string.Empty;
 
-                                //报告时间
-                                DateTime bgsj = new DateTime(Convert.ToInt32(Info.Substring(66, 4)), Convert.ToInt32(Info.Substring(70, 2)), Convert.ToInt32(Info.Substring(72, 2)), Convert.ToInt32(Info.Substring(74, 2)), Convert.ToInt32(Info.Substring(76, 2)), Convert.ToInt32(Info.Substring(78, 2)));
+			foreach (var item in Directory.GetFiles(path).Where(a => new FileInfo(a).LastWriteTime > lastEffectiveTime))
+			{
+				string s = File.ReadAllText(item);//读取文件数据
 
-                                //车数
-                                int countnum = Convert.ToInt32(Info.Substring(82, 3));
-                                //车头
-                                int ctnum = Convert.ToInt32(Info.Substring(85, 1));
-                                //车中
-                                int cznum = Convert.ToInt32(Info.Substring(86, 1));
-                                //车尾
-                                int cwnum = Convert.ToInt32(Info.Substring(87, 1));
-                                if ((int)Info.Substring(88 + 24 * countnum, 1).ToCharArray()[0] == 0x04)
-                                {
-                                    for (int i = 0; i < countnum; i++)
-                                    {
-                                        String trainnum = Info.Substring(88 + 24 * i, 24);
-                                        //车型
-                                        String cx = "";
-                                        //车号
-                                        String ch = "";
-                                        //车类型
-                                        String clx = "";
-                                        if (trainnum.StartsWith("T"))
-                                        {
-                                            //车型
-                                            cx = trainnum.Substring(1, 6).Trim();
-                                            //车号
-                                            ch = trainnum.Substring(7, 7);
-                                            clx = "车厢";
-                                        }
-                                        else if (trainnum.StartsWith("J"))
-                                        {
-                                            //车型
-                                            cx = trainnum.Substring(1, 3);
-                                            //车号
-                                            ch = trainnum.Substring(4, 4);
-                                            clx = "车头";
-                                        }
-                                        string pkid = ch + "-" + tgsj.ToString("yyyyMMddHHmmss");
-                                        if (clx == "车厢")
-                                        {
-                                            CmcsTrainCarriagePass item = new CmcsTrainCarriagePass
-                                                    {
-                                                        OrderNum = 0,
-                                                        CarModel=cx,
-                                                        TrainNumber=ch,
-                                                        PassTime=tgsj,
-                                                        Speed=0,
-                                                        MachineCode=MachineCode_CHSB
-                                                    };
-                                            cmcstbtrainrecognition.Add(item);
-                                        }
-                                    }
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                output(string.Format("解析 {0} 报文失败,原因:{1}", diritem, ex.Message), eOutputType.Error);
-                            }
-                        }
-                    }
-                }
-            }
-            return cmcstbtrainrecognition;
-        }
+				string direction = Convert.ToInt32(s.Substring(18, 1)) == 1 ? "出厂" : "进厂";
+				int carcount = Convert.ToInt32(s.Substring(82, 3));//车数 
+				if (carcount == 0) continue;
 
-        /// <summary>
-        /// 解析报文名字是否有效
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        private DateTime CheckUseFull(String path)
-        {
-            try
-            {
-                String Name = Path.GetFileName(path);
-                if (Name.Length == 12 && Name.StartsWith("D") && Name.IndexOf('.') == 8)
-                {
-                    int month = 0;
-                    String monthString = Name.Substring(9, 1);
-                    if (!int.TryParse(monthString, out month))
-                    {
-                        switch (monthString)
-                        {
-                            case "A":
-                                month = 10;
-                                break;
-                            case "B":
-                                month = 11;
-                                break;
-                            case "C":
-                                month = 12;
-                                break;
-                        }
-                    }
-                    DateTime dt = new DateTime(DateTime.Now.Year, month, Convert.ToInt32(Name.Substring(10, 2)));
-                    if (dt > DateTime.Now.Date)
-                    {
-                        dt = dt.AddYears(-1);
-                    }
-                    return dt;
-                }
-            }
-            catch (Exception)
-            {
-            }
+				date = s.Substring(34, 8);  //日期
+				time = s.Substring(42, 6);  //时间 
 
-            return DateTime.MinValue;
-        }
-    }
+				//车辆时间
+				DateTime carDate = Convert.ToDateTime(date.Insert(4, "-").Insert(7, "-") + " " + time.Insert(2, ":").Insert(5, ":"));
+
+				if (carDate < lastEffectiveTime) continue;
+
+				bool hasJCar = false;
+				for (int i = 0; i < carcount; i++)
+				{
+
+					int startIndex = 88 + (i * 24);
+
+					if (s.Length < startIndex + 24)
+					{
+						// LogerUtil.Error("车号识别器报文异常，文件名：" + item, new Exception("车辆信息长度不足" + (startIndex + 24)));
+						break;
+					}
+
+					string car = s.Substring(startIndex, 24);
+					if (car.StartsWith("J"))
+					{
+						hasJCar = true;
+						continue;
+					}
+
+					carmodel = car.Substring(1, 6).Trim();//车型
+					carnumber = car.Substring(7, 7).Trim();//车号
+					if (string.IsNullOrEmpty(carnumber.Trim())) continue;
+
+					string uniqKey = date + time + "_" + carnumber;
+					//同步到车号识别表
+					if (Dbers.GetInstance().SelfDber.Count<CmcsTrainCarriagePass>(" where TrainNumber='" + carnumber + "'  and  PKID='" + uniqKey + "'") == 0)
+					{
+						res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainCarriagePass()
+						{
+							PKID = uniqKey,
+							TrainNumber = carnumber,
+							PassTime = carDate,
+							CarModel = carmodel,
+							Direction = direction,
+							MachineCode = flag,
+							DataFlag = 0,
+							OrderNum = hasJCar ? i : i + 1
+						});
+					}
+
+					////同步到轨道衡表
+					//if (Dbers.GetInstance().SelfDber.Count<CmcsTrainWeightRecord>(" where TrainNumber='" + carnumber + "'  and  PKID='" + uniqKey + "'") == 0)
+					//{
+					//	res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainWeightRecord()
+					//	{
+					//		PKID = uniqKey,
+					//		TrainNumber = carnumber,
+					//		ArriveTime = carDate,
+					//		TrainType = carmodel,
+					//		IsTurnover = "未翻",
+					//		MachineCode = flag,
+					//		DataFlag = 0,
+					//		OrderNumber = hasJCar ? i : i + 1
+					//	});
+				}
+			}
+			output(string.Format("{0}车号识别同步车号识别数据{1}条", flag, res), eOutputType.Normal);
+			return res;
+		}
+	}
 }

@@ -95,6 +95,12 @@
     <Compile Include="DumblyTasks\FrmBeltBalancer.Designer.cs">
       <DependentUpon>FrmBeltBalancer.cs</DependentUpon>
     </Compile>
+    <Compile Include="DumblyTasks\FrmTrainSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmTrainSampler.designer.cs">
+      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
+    </Compile>
     <Compile Include="DumblyTasks\FrmCarSampler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmBeltBalancer.resx">
       <DependentUpon>FrmBeltBalancer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmTrainSampler.resx">
+      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmCarSampler.resx">
       <DependentUpon>FrmCarSampler.cs</DependentUpon>

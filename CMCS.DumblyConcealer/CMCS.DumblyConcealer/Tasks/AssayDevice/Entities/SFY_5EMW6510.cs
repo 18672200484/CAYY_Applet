@@ -15,10 +15,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice.Entities
     {
         [DapperPrimaryKey]
         public string PKID { get; set; }
-        /// <summary>
-        /// 自动编号
-        /// </summary>
-        public string AutoNo { get; set; }
+
+		public string MachineCode { get; set; }
+		/// <summary>
+		/// 自动编号
+		/// </summary>
+		public string AutoNo { get; set; }
         /// <summary>
         /// 手动编号
         /// </summary>
