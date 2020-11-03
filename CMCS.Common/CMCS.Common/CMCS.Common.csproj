@@ -84,6 +84,7 @@
     <Compile Include="Entities\AssayDevices\CmcsHydrocarbonAssay.cs" />
     <Compile Include="Entities\BaseInfo\CmcsCamare.cs" />
     <Compile Include="Entities\CarTransport\CmcsAutoTruck.cs" />
+    <Compile Include="Entities\CarTransport\CmcsTransportPosition.cs" />
     <Compile Include="Entities\iEAA\CmcsUser.cs" />
     <Compile Include="Entities\Inf\InfBeltSamplePlanDetail.cs" />
     <Compile Include="Entities\Inf\InfBeltSamplerUnloadResult.cs" />

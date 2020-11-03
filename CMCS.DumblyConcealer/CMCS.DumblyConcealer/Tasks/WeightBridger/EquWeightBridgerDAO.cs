@@ -49,13 +49,13 @@ namespace CMCS.DumblyConcealer.Tasks.WeightBridger
 				CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>(" where TransportNo=:TransportNo and InfactoryTime>=:InfactoryTime ", new { TransportNo = item.CarNumber, InfactoryTime = DateTime.Now.Date.AddDays(-2) });
 				if (transport != null && !string.IsNullOrEmpty(transport.InFactoryBatchId))
 				{
-					if (item.GrossWeight != 0 && transport.GrossQty != 0)
+					if (item.GrossWeight != 0 && transport.GrossQty == 0)
 						transport.GrossQty = (decimal)item.GrossWeight;
 
-					if (item.TareWeight != 0 && transport.SkinQty != 0)
+					if (item.TareWeight != 0 && transport.SkinQty == 0)
 						transport.SkinQty = (decimal)item.TareWeight;
 
-					if (item.SuttleWeight != 0 && transport.SuttleQty != 0)
+					if (item.SuttleWeight != 0 && transport.SuttleQty == 0)
 					{
 						transport.SuttleQty = (decimal)item.SuttleWeight;
 						transport.MarginQty = (decimal)(item.SuttleWeight - item.TicketWeight);
