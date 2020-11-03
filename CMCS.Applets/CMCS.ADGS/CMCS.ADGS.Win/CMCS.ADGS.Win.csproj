@@ -109,6 +109,10 @@
       <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
       <Name>CMCS.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.CommonADGS\CMCS.CommonADGS.Win\CMCS.CommonADGS.Win.csproj">
+      <Project>{2a194ee7-8b0e-4136-b436-e0a12800fa2c}</Project>
+      <Name>CMCS.CommonADGS.Win</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CMCS.ADGS\CMCS.ADGS.csproj">
       <Project>{C56E2092-4B56-4366-9F41-1F949A9F619B}</Project>
       <Name>CMCS.ADGS</Name>
@@ -122,7 +126,12 @@
     <Content Include="bin\BasisPlatform.Forms.dll" />
     <Content Include="bin\BasisPlatform.XML" />
     <Content Include="bin\log4net.dll" />
+    <Content Include="bin\SQLite.Interop.dll" />
     <Content Include="icon.ico" />
+    <Content Include="SQLite.Interop.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

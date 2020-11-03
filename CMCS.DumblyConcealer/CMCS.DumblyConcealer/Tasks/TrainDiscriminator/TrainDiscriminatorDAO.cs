@@ -293,6 +293,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 
 				//插入车辆信息至翻车衡交互数据库
 				InsertCarToTurnCarWeighter("#1", transport);
+				TurnTransportPosition(carNumber, transport.Id);
 				output(string.Format("向{0}插入一条数据", GlobalVars.MachineCode_TrunOver_1), eOutputType.Normal);
 				return true;
 			}
@@ -324,6 +325,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 
 				//插入车辆信息至翻车衡交互数据库
 				InsertCarToTurnCarWeighter("#2", transport);
+				TurnTransportPosition(carNumber, transport.Id);
 				output(string.Format("向{0}插入一条数据", GlobalVars.MachineCode_TrunOver_2), eOutputType.Normal);
 				return true;
 			}
@@ -403,6 +405,20 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 			return Dbers.GetInstance().SelfDber.Delete<CmcsTransportPosition>(entity.Id) > 0;
 		}
 
+		/// <summary>
+		/// 修改轨道车辆定位信息，设定为已翻车
+		/// </summary>
+		/// <param name="trackNumber"></param>
+		/// <param name="transportId"></param>
+		public static void TurnTransportPosition(string trackNumber, string transportId)
+		{
+			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TrackNumber='" + trackNumber + "' and TransportId='" + transportId + "'");
+			if (entity == null) return;
+
+			entity.IsDeleted = 1;
+			entity.TurnCarDate = DateTime.Now;
+			Dbers.GetInstance().SelfDber.Update(entity);
+		}
 
 		/// <summary>
 		/// 获取定位最大排序号
