@@ -41,7 +41,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice.Entities
 			}
 		}
 
-		public string MachineCode { get; set; }
+		public string MACHINECODE { get; set; }
 
 		/// <summary>
 		/// 

@@ -60,7 +60,7 @@ namespace CMCS.Common.Entities.AssayDevices
 		/// <summary>
 		/// 是否有效
 		/// </summary>
-		public int IsEffective { get; set; }
+		public int ISEFFECTIVE { get; set; }
 
 		/// <summary>
 		/// 第三方主键ID
