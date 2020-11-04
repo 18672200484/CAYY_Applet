@@ -854,7 +854,7 @@ namespace CMCS.CarTransport.Weighter.Frms
             try
             {
                 bool success = false;
-
+                 
                 this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
                 this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
                 this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");

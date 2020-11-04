@@ -172,6 +172,25 @@
       <Param Key="Enabled" Value="true" />
     </ByoGraber>
 
+    <!--[内置抓取] 长沙开元.#4工分仪 型号：5E-MAG6700Ⅰ-->
+    <ByoGraber>
+      <!--设备编号-->
+      <Param Key="MachineCode" Value="#4工分仪" />
+      <!--存储表名-->
+      <Param Key="TableName" Value="HYTBGFY" />
+      <!--主键名,多个使用“|”分割-->
+      <Param Key="PrimaryKeys" Value="SerialNumber" />
+      <!--数据库连接字符串-->
+      <Param Key="ConnStr" Value="Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info =true;Data Source=D:\博晟办公项目\长安益阳电厂项目\长安益阳电厂项目数据库\化验设备数据\#4工分仪\AutoMac.Mdb;jet oledb:Database Password=CSKY"/>
+      <!--数据库类型：Access、SqlServer、SQLite-->
+      <Param Key="DbType" Value="Access" />
+      <!--数据查询语句-->
+      <Param Key="SQL" Value="select * from testresult where date > Date()-1000 order by date asc" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="true" />
+    </ByoGraber>
+    
+
     <!--[内置抓取] 长沙开元.#3工分仪 型号：WS__G800-->
     <ByoGraber>
       <!--设备编号-->

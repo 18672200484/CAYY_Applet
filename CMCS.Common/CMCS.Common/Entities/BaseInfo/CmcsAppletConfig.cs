@@ -10,7 +10,7 @@ namespace CMCS.Common.Entities.BaseInfo
     /// 程序配置类
     /// </summary>
     [CMCS.DapperDber.Attrs.DapperBind("cmcstbappletconfig")]
-    public class CmcsAppletConfig : EntityBase1
+    public class CmcsAppletConfig :EntityBase1
     {
         private string appIdentifier;
         /// <summary>
