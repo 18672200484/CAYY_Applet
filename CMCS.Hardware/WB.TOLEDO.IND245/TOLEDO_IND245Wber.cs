@@ -181,6 +181,7 @@ namespace WB.TOLEDO.IND245
         /// <summary>
         /// 串口接收数据
         /// 数据示例：02 31 30 20 20 20 20 32 30 30 20 20 20 20 30 30 0D 1E 
+        ///                  02 2B 30 30 30 30 32 30 30 31 39 03 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

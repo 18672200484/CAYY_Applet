@@ -69,13 +69,12 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 
             }, 30000, OutputError);
 
-            //taskSimpleScheduler.StartNewTask("生成标准水分仪数据", () =>
-            //{
-            //    assayDeviceDAO.SaveToMoistureAssay(this.rTxtOutputer.Output, days);
+            taskSimpleScheduler.StartNewTask("生成标准水分仪数据", () =>
+            {
+                assayDeviceDAO.SaveToMoistureAssay(this.rTxtOutputer.Output, days);
 
-            //}, 30000, OutputError);
-
-
+            }, 30000, OutputError);
+            
         }
 
         /// <summary>

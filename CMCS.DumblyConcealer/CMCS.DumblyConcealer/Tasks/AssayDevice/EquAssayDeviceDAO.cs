@@ -284,36 +284,35 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
             int res = 0;
 
             // .水分仪 型号：5E-MW6510
-            foreach (SFY_5EMW6510 entity in Dbers.GetInstance().SelfDber.Entities<SFY_5EMW6510>("where TestDate>= :TestTime and SampleNo is not null", new { TestTime = DateTime.Now.AddDays(-days).Date }))
+            foreach (SFY_WS_M700 entity in Dbers.GetInstance().SelfDber.Entities<SFY_WS_M700>())
             {
                 string pkid = entity.PKID;
 
                 CmcsMoistureAssay item = Dbers.GetInstance().SelfDber.Entity<CmcsMoistureAssay>("where PKID=:PKID", new { PKID = pkid });
+
                 if (item == null)
                 {
                     item = new CmcsMoistureAssay();
-                    item.SampleNumber = entity.SampleNo;
-                    item.FacilityNumber = entity.DeviceNo;
+                    item.SampleNumber = entity.SYMC;
+                    item.FacilityNumber = entity.MachineCode;
+                    item.ContainerNumber = entity.SYBH==null?"":entity.SYBH;
                     item.ContainerWeight = 0;
-                    item.SampleWeight = entity.MtMass;
-                    item.Mar = entity.Mt;
-                    item.AssayUser = entity.TestMan;
+                    item.SampleWeight = entity.SYZL;
+                    item.Mar = entity.SF;
                     item.IsEffective = 0;
                     item.PKID = pkid;
-                    item.AssayTime = entity.TestDate;
-                    item.WaterType = entity.MType.Contains("全水") ? "全水分" : "分析水";
                     res += Dbers.GetInstance().SelfDber.Insert<CmcsMoistureAssay>(item);
                 }
                 else
                 {
-                    item.SampleNumber = entity.SampleNo;
-                    item.FacilityNumber = entity.DeviceNo;
+                    item.SampleNumber = entity.SYMC;
+                    item.FacilityNumber = entity.MachineCode;
+                    item.ContainerNumber = entity.SYBH == null ? "" : entity.SYBH;
                     item.ContainerWeight = 0;
-                    item.SampleWeight = entity.MtMass;
-                    item.Mar = entity.Mt;
-                    item.AssayUser = entity.TestMan;
-                    item.AssayTime = entity.TestDate;
-                    item.WaterType = entity.MType.Contains("全水") ? "全水分" : "分析水";
+                    item.SampleWeight = entity.SYZL;
+                    item.Mar = entity.SF;
+                    item.IsEffective = 0;
+                    item.PKID = pkid;
                     res += Dbers.GetInstance().SelfDber.Update<CmcsMoistureAssay>(item);
                 }
             }
