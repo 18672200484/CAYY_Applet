@@ -104,6 +104,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 							PassTime = carDate,
 							CarModel = carmodel,
 							Direction = direction,
+							TrainMachineCode = flag,
 							MachineCode = flag,
 							DataFlag = 0,
 							OrderNum = hasJCar ? i : i + 1

@@ -108,6 +108,12 @@
     <Compile Include="Frms\FrmHomePage.Designer.cs">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmTrainSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmTrainSampler.Designer.cs">
+      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\FrmTruckWeighter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     <Compile Include="Utilities\WarningBoxUtil.cs" />
     <EmbeddedResource Include="Frms\FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmTrainSampler.resx">
+      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTruckWeighter.resx">
       <DependentUpon>FrmTruckWeighter.cs</DependentUpon>
@@ -246,6 +255,9 @@
     <Content Include="bin\Web\Resources\plugins\layer\skin\layer.ext.css" />
     <Content Include="bin\Web\Resources\plugins\svg\svg.js" />
     <Content Include="bin\Web\Resources\js\svgHelper.js" />
+    <Content Include="bin\Web\TrainSampler\index.htm" />
+    <Content Include="bin\Web\TrainSampler\Resources\js\register.js" />
+    <Content Include="bin\Web\TrainSampler\Resources\TrainSampler.svg" />
     <Content Include="bin\Web\TruckWeighter\index.htm" />
     <Content Include="bin\Web\TruckWeighter\Resources\js\register.js" />
     <Content Include="bin\Web\TruckWeighter\Resources\TruckWeighter.svg" />
@@ -256,6 +268,7 @@
   <ItemGroup>
     <Folder Include="bin\Web\HomePage\Resources\images\" />
     <Folder Include="bin\Web\Resources\images\" />
+    <Folder Include="bin\Web\TrainSampler\Resources\images\" />
     <Folder Include="bin\Web\TruckWeighter\Resources\images\" />
     <Folder Include="Views\" />
   </ItemGroup>

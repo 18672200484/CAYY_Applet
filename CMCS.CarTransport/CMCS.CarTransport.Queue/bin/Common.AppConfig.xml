@@ -4,6 +4,6 @@
   <AppIdentifier>汽车智能化-入厂端</AppIdentifier>
   <!--集中管控Oracle数据库连接字符串-->
   <!--<SelfConnStr>Data Source=server37;User ID=bieos_gdtql;Password=1234;Persist Security Info=False;</SelfConnStr>-->
-  <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.36.0.37)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=cmcs_base_7;Password=1234;</SelfConnStr>
+  <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.70.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_cayy_eq;Password=Bossien1234;</SelfConnStr>
 </CommonAppConfig>
 

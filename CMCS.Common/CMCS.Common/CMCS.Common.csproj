@@ -189,6 +189,7 @@
     <Compile Include="EquipmentStatusColors.cs" />
     <Compile Include="GlobalVars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\AssayCalcUtil.cs" />
     <Compile Include="Utilities\ChsSpeller.cs" />
     <Compile Include="Utilities\CommonUtil.cs" />
     <Compile Include="Utilities\ConvertHelper.cs" />

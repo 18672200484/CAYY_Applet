@@ -65,6 +65,10 @@ namespace CMCS.DumblyConcealer.Tasks.WeightBridger
 					transport.ArriveDate = item.WeightDate;
 					transport.TareDate = item.WeightDate.AddMinutes(3).AddSeconds(1.2);
 					transport.TrackCode = item.TurnCarNumber == "#1" ? "#4" : "#2";
+					if (item.TurnCarNumber == "#1")
+						CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), string.Empty);
+					else
+						CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), string.Empty);
 
 					res += Dbers.GetInstance().SelfDber.Update(transport);
 

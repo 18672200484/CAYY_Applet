@@ -32,11 +32,11 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
             this.rtxtOutput = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.btnSubmit = new DevComponents.DotNetBar.ButtonX();
-            this.cmbPassWay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtVoucher = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cmbPassWay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btnSubmit = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,47 +90,21 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
             this.panel1.Size = new System.Drawing.Size(619, 44);
             this.panel1.TabIndex = 1;
             // 
-            // labelX18
+            // txtVoucher
             // 
-            this.labelX18.AutoSize = true;
-            this.labelX18.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX18.Location = new System.Drawing.Point(9, 10);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(39, 24);
-            this.labelX18.TabIndex = 215;
-            this.labelX18.Text = "道路";
-            // 
-            // labelX1
-            // 
-            this.labelX1.AutoSize = true;
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.txtVoucher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(172, 10);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(107, 24);
-            this.labelX1.TabIndex = 217;
-            this.labelX1.Text = "车牌号\\标签号";
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnSubmit.Location = new System.Drawing.Point(476, 11);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSubmit.TabIndex = 219;
-            this.btnSubmit.Text = "模拟刷卡";
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.txtVoucher.Border.Class = "TextBoxBorder";
+            this.txtVoucher.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtVoucher.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoucher.ForeColor = System.Drawing.Color.White;
+            this.txtVoucher.Location = new System.Drawing.Point(285, 9);
+            this.txtVoucher.Name = "txtVoucher";
+            this.txtVoucher.Size = new System.Drawing.Size(180, 32);
+            this.txtVoucher.TabIndex = 226;
+            this.txtVoucher.Text = "宁E76565";
             // 
             // cmbPassWay
             // 
@@ -147,30 +121,56 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
             this.cmbPassWay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbPassWay.TabIndex = 225;
             // 
-            // txtVoucher
+            // btnSubmit
             // 
-            this.txtVoucher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnSubmit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnSubmit.Location = new System.Drawing.Point(476, 11);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSubmit.TabIndex = 219;
+            this.btnSubmit.Text = "模拟刷卡";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // labelX1
+            // 
+            this.labelX1.AutoSize = true;
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.txtVoucher.Border.Class = "TextBoxBorder";
-            this.txtVoucher.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtVoucher.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVoucher.ForeColor = System.Drawing.Color.White;
-            this.txtVoucher.Location = new System.Drawing.Point(285, 9);
-            this.txtVoucher.Name = "txtVoucher";
-            this.txtVoucher.Size = new System.Drawing.Size(180, 27);
-            this.txtVoucher.TabIndex = 226;
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(172, 10);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(137, 30);
+            this.labelX1.TabIndex = 217;
+            this.labelX1.Text = "车牌号\\标签号";
+            // 
+            // labelX18
+            // 
+            this.labelX18.AutoSize = true;
+            this.labelX18.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX18.Location = new System.Drawing.Point(9, 10);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(49, 30);
+            this.labelX18.TabIndex = 215;
+            this.labelX18.Text = "道路";
             // 
             // FrmDebugConsole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 396);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmDebugConsole";

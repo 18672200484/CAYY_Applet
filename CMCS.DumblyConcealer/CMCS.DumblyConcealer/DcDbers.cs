@@ -38,8 +38,7 @@ namespace CMCS.DumblyConcealer
 			AutoCupboard_Dber = new SqlServerDapperDber(commonDAO.GetCommonAppletConfigString("智能存样柜接口连接字符串"));
 			PneumaticTransfer_Dber = new SqlServerDapperDber(commonDAO.GetCommonAppletConfigString("气动传输接口连接字符串"));
 
-			CarJXSampler_Dber1 = new SqlServerDapperDber(commonDAO.GetCommonAppletConfigString("#1汽车机械采样机接口连接字符串"));
-			CarJXSampler_Dber2 = new SqlServerDapperDber(commonDAO.GetCommonAppletConfigString("#2汽车机械采样机接口连接字符串"));
+			CarJXSampler_Dber = new OracleDapperDber(commonDAO.GetCommonAppletConfigString("汽车机械采样机接口连接字符串"));
 
 			TurnCarWeighterMutualDber = new OracleDapperDber(string.Format(commonDAO.GetCommonAppletConfigString("翻车衡数据库连接字符串"), DateTime.Now.Year));
 		}
@@ -63,17 +62,9 @@ namespace CMCS.DumblyConcealer
 		public SqlServerDapperDber PneumaticTransfer_Dber;
 
 		/// <summary>
-		/// #1汽车机械采样机接口
+		/// 汽车机械采样机接口
 		/// </summary>
-		public SqlServerDapperDber CarJXSampler_Dber1;
-		/// <summary>
-		/// #2汽车机械采样机接口
-		/// </summary>
-		public SqlServerDapperDber CarJXSampler_Dber2;
-		/// <summary>
-		/// #3汽车机械采样机接口
-		/// </summary>
-		public SqlServerDapperDber CarJXSampler_Dber3;
+		public OracleDapperDber CarJXSampler_Dber;
 
 		/// <summary>
 		/// 翻车衡数据库链接

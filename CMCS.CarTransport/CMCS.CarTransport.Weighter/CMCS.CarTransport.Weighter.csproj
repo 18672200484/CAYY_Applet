@@ -182,9 +182,9 @@
       <Project>{A41DA131-E0C5-46DF-B550-1A5A36C51B64}</Project>
       <Name>IOC.JMDM20DIOV2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CMCS.Hardware\LED.YB14\LED.YB14.csproj">
-      <Project>{85632121-2FB7-46EF-8F72-150DCC71E472}</Project>
-      <Name>LED.YB14</Name>
+    <ProjectReference Include="..\..\CMCS.Hardware\LED.EQ2013\LED.EQ2013.csproj">
+      <Project>{3A5D5238-333C-49EB-BB77-5FDF7DC822E6}</Project>
+      <Name>LED.EQ2013</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Hardware\RW.LZR12\RW.LZR12.csproj">
       <Project>{8396AA11-76D7-423F-86F7-556ACCC767DE}</Project>

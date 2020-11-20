@@ -154,6 +154,11 @@ namespace CMCS.Common.Entities.Fuel
 		public virtual string ParentRemoveBatchId { get; set; }
 
 		/// <summary>
+		/// 类型
+		/// </summary>
+		public virtual string FuelType { get; set; }
+
+		/// <summary>
 		/// 批次创建类型 0 手动录入 1 智能化自动创建
 		/// </summary>
 		public virtual Int32 BatchCreateType { get; set; }

@@ -19,7 +19,7 @@
    viewBox="0 0 1910 920"
    enable-background="new 0 0 1600 725"
    xml:space="preserve"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="TruckWeighter.svg"><metadata
    id="metadata244"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -166,15 +166,6 @@
    y2="560.43457"
    gradientTransform="matrix(1.3749748,0,0,1.3749748,101.42374,-16.794053)" /><linearGradient
    inkscape:collect="always"
-   xlink:href="#SVGID_2_"
-   id="linearGradient3419"
-   gradientUnits="userSpaceOnUse"
-   x1="613.65527"
-   y1="558.18848"
-   x2="623.76422"
-   y2="558.18848"
-   gradientTransform="matrix(1.3749748,0,0,1.3749748,101.42374,-16.794053)" /><linearGradient
-   inkscape:collect="always"
    xlink:href="#SVGID_1_"
    id="linearGradient3423"
    gradientUnits="userSpaceOnUse"
@@ -192,12 +183,12 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1920"
-   inkscape:window-height="1018"
+   inkscape:window-height="1017"
    id="namedview240"
    showgrid="false"
    inkscape:zoom="0.79902041"
-   inkscape:cx="818.62157"
-   inkscape:cy="498.46358"
+   inkscape:cx="932.16479"
+   inkscape:cy="462.65485"
    inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
@@ -425,17 +416,6 @@
    id="circle104"
    inkscape:label="汽车衡_对射1"
    inkscape:connector-curvature="0" /><rect
-   x="945.18396"
-   y="708.6178"
-   width="13.89962"
-   height="84.166328"
-   id="rect111"
-   style="fill:url(#linearGradient3419)" /><path
-   style="fill:#c0c0c0;fill-opacity:1"
-   d="m 964.10354,698.96416 c 0,6.61038 -5.3587,11.96916 -11.9691,11.96916 -6.61041,0 -11.96919,-5.35878 -11.96919,-11.96916 0,-6.61037 5.35878,-11.96915 11.96919,-11.96915 6.6104,0 11.9691,5.35878 11.9691,11.96915 z"
-   id="circle113"
-   inkscape:label="汽车衡_对射2"
-   inkscape:connector-curvature="0" /><rect
    x="1397.6825"
    y="711.70605"
    width="13.898245"
@@ -446,36 +426,7 @@
    d="m 1416.6008,702.05517 c 0,6.61039 -5.3587,11.96916 -11.9692,11.96916 -6.6103,0 -11.9691,-5.35877 -11.9691,-11.96916 0,-6.61038 5.3588,-11.96915 11.9691,-11.96915 6.6105,0 11.9692,5.35877 11.9692,11.96915 z"
    id="circle122"
    inkscape:label="汽车衡_对射3"
-   inkscape:connector-curvature="0" /><g
-   id="g128"
-   transform="matrix(1.3749748,0,0,1.3749748,101.42374,-16.794053)">
-			<path
-   d="m 139.494,334.795 c 0.126,-0.182 0.243,-0.335 0.354,-0.483 1.665,-1.979 4.596,-2.423 6.818,-0.951 2.204,1.477 2.899,4.34 1.715,6.664 -0.093,0.166 -0.204,0.338 -0.305,0.495 -1.478,2.216 -4.39,2.912 -6.702,1.671 l -11.124,5.818 -1.564,-2.967 10.337,-5.399 c -0.628,-1.563 -0.53,-3.373 0.471,-4.848 z"
-   id="path130"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-			<path
-   d="m 139.426,322.39 c 0.807,0.167 1.354,0.985 1.176,1.816 -0.151,0.834 -0.988,1.376 -1.804,1.201 -0.853,-0.163 -1.373,-0.979 -1.204,-1.819 0.169,-0.816 0.969,-1.37 1.832,-1.198 z"
-   id="path132"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-			<path
-   d="m 135.784,316.335 -5.947,8.828 1.69,1.148 -0.847,1.259 8.52,5.701 c 2.103,-2.527 5.854,-3.084 8.662,-1.213 2.801,1.877 3.694,5.541 2.164,8.468 l 10.943,7.323 7.298,-10.899 -30.289,-20.292 -0.533,0.797 -1.661,-1.12 z m 0.049,6.92 c 0.378,-1.812 2.127,-2.97 3.943,-2.607 1.788,0.36 2.952,2.114 2.585,3.928 -0.375,1.779 -2.14,2.946 -3.925,2.576 -1.793,-0.354 -2.957,-2.109 -2.603,-3.897 z"
-   id="path134"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-			<path
-   d="m 170.214,338.182 -1.219,1.785 5.242,3.715 c -2.111,-0.511 -5.451,1.591 -7.99,5.159 -0.006,0.019 -0.031,0.043 -0.05,0.074 l -2.222,-1.583 -1.148,1.685 -0.983,-0.675 7.391,-10.819 0.979,0.659 z"
-   id="path136"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-		</g><text
-   font-size="15.7247"
-   id="text138"
-   style="font-size:21.99959564px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#d0d2d3;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="266.4368"
-   y="401.21371"
-   sodipodi:linespacing="125%">摄像机一</text>
+   inkscape:connector-curvature="0" />
 
 
 
@@ -489,36 +440,9 @@
 
 
 
-<g
-   id="g142"
-   transform="matrix(1.3749748,0,0,1.3749748,101.42374,-16.794053)">
-			<path
-   d="m 1101.771,334.795 c -0.127,-0.182 -0.244,-0.335 -0.354,-0.483 -1.666,-1.98 -4.596,-2.423 -6.818,-0.951 -2.205,1.477 -2.9,4.34 -1.715,6.664 0.092,0.166 0.203,0.338 0.305,0.495 1.479,2.216 4.389,2.912 6.701,1.672 l 11.125,5.818 1.564,-2.967 -10.338,-5.399 c 0.63,-1.564 0.53,-3.375 -0.47,-4.849 z"
-   id="path144"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-			<path
-   d="m 1101.84,322.39 c -0.809,0.166 -1.355,0.985 -1.176,1.816 0.15,0.834 0.988,1.376 1.803,1.2 0.854,-0.163 1.373,-0.978 1.203,-1.819 -0.168,-0.815 -0.969,-1.369 -1.83,-1.197 z"
-   id="path146"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-			<path
-   d="m 1103.818,317.456 -0.533,-0.797 -30.289,20.292 7.299,10.9 10.943,-7.323 c -1.531,-2.928 -0.639,-6.591 2.164,-8.468 2.807,-1.872 6.559,-1.314 8.662,1.212 l 8.52,-5.7 -0.846,-1.259 1.689,-1.148 -5.947,-8.828 -1.662,1.119 z m -0.99,9.695 c -1.785,0.37 -3.551,-0.797 -3.926,-2.576 -0.365,-1.814 0.797,-3.568 2.586,-3.928 1.816,-0.363 3.564,0.795 3.943,2.607 0.354,1.789 -0.81,3.544 -2.603,3.897 z"
-   id="path148"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-			<path
-   d="m 1071.051,338.181 1.219,1.785 -5.24,3.716 c 2.109,-0.511 5.449,1.591 7.988,5.158 0.01,0.019 0.031,0.043 0.051,0.074 l 2.223,-1.582 1.148,1.684 0.982,-0.675 -7.391,-10.819 -0.98,0.659 z"
-   id="path150"
-   inkscape:connector-curvature="0"
-   style="fill:#d0d2d3" />
-		</g><text
-   font-size="15.7247"
-   id="text152"
-   style="font-size:21.99959564px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#d0d2d3;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="1556.636"
-   y="401.21371"
-   sodipodi:linespacing="125%">摄像机二</text>
+
+
+
 
 
 
@@ -598,10 +522,11 @@
    style="fill:#000000;fill-opacity:1;stroke:#404041;stroke-width:1.37497485" /><text
    font-size="26.9566"
    id="text186"
-   style="font-size:33.77004623px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.77004623px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1"
    x="1268.0997"
-   y="182.83253"
-   sodipodi:linespacing="125%">车号</text>
+   y="182.83253">车号</text>
+
+
 
 
 
@@ -618,10 +543,11 @@
 <text
    font-size="26.9566"
    id="text188"
-   style="font-size:33.77004623px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.77004623px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1"
    x="1268.0997"
-   y="243.0629"
-   sodipodi:linespacing="125%">毛重</text>
+   y="243.0629">毛重</text>
+
+
 
 
 
@@ -638,10 +564,11 @@
 <text
    font-size="26.9566"
    id="text190"
-   style="font-size:33.77004623px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.77004623px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1"
    x="1268.0997"
-   y="308.44009"
-   sodipodi:linespacing="125%">皮重</text>
+   y="308.44009">皮重</text>
+
+
 
 
 
@@ -658,15 +585,17 @@
 <text
    font-size="26.9566"
    id="text192"
-   style="font-size:33.77004623px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#cdfc0f;fill-opacity:1;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.95660019px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#cdfc0f;fill-opacity:1"
    x="1481.2979"
    y="184.07527"
-   inkscape:label="汽车衡_当前车号"
-   sodipodi:linespacing="125%"><tspan
+   inkscape:label="汽车衡_当前车号"><tspan
      sodipodi:role="line"
      id="tspan3872"
      x="1481.2979"
-     y="184.07527">暂无</tspan></text>
+     y="184.07527"
+     style="font-size:33.77004623px;line-height:1.25">暂无</tspan></text>
+
+
 
 
 
@@ -683,15 +612,17 @@
 <text
    font-size="26.9566"
    id="text194"
-   style="font-size:33.77004623px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#cdfc0f;fill-opacity:1;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.95660019px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#cdfc0f;fill-opacity:1"
    x="1483.1776"
    y="247.04886"
-   inkscape:label="汽车衡_毛重"
-   sodipodi:linespacing="125%"><tspan
+   inkscape:label="汽车衡_毛重"><tspan
      sodipodi:role="line"
      id="tspan3868"
      x="1483.1776"
-     y="247.04886">0 吨</tspan></text>
+     y="247.04886"
+     style="font-size:33.77004623px;line-height:1.25">0 吨</tspan></text>
+
+
 
 
 
@@ -708,15 +639,17 @@
 <text
    font-size="26.9566"
    id="text196"
-   style="font-size:33.77004623px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#cdfc0f;fill-opacity:1;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.95660019px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#cdfc0f;fill-opacity:1"
    x="1483.1776"
    y="306.76495"
-   inkscape:label="汽车衡_皮重"
-   sodipodi:linespacing="125%"><tspan
+   inkscape:label="汽车衡_皮重"><tspan
      sodipodi:role="line"
      id="tspan3870"
      x="1483.1776"
-     y="306.76495">0 吨</tspan></text>
+     y="306.76495"
+     style="font-size:33.77004623px;line-height:1.25">0 吨</tspan></text>
+
+
 
 
 
@@ -765,10 +698,11 @@
    inkscape:label="汽车衡_LED屏" /><text
    font-size="20.2175"
    id="text218"
-   style="font-size:21.99959755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.99959755px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="275.30344"
-   y="181.91547"
-   sodipodi:linespacing="125%">程序状态</text>
+   y="181.91547">程序状态</text>
+
+
 
 
 
@@ -785,10 +719,11 @@
 <text
    font-size="20.2175"
    id="text220"
-   style="font-size:21.99959755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.99959755px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="275.02621"
-   y="243.16908"
-   sodipodi:linespacing="125%">IO控制器</text>
+   y="243.16908">IO控制器</text>
+
+
 
 
 
@@ -805,14 +740,16 @@
 <text
    font-size="20.2175"
    id="text222"
-   style="font-size:21.99959755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.21750069px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="272.94962"
-   y="301.4537"
-   sodipodi:linespacing="125%"><tspan
+   y="301.4537"><tspan
      sodipodi:role="line"
      id="tspan3146"
      x="272.94962"
-     y="301.4537">抓拍相机</tspan></text>
+     y="301.4537"
+     style="font-size:21.99959755px;line-height:1.25">抓拍相机</tspan></text>
+
+
 
 
 
@@ -829,10 +766,11 @@
 <text
    font-size="20.2175"
    id="text224"
-   style="font-size:21.99959755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.99959755px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="502.50058"
-   y="181.91682"
-   sodipodi:linespacing="125%">地磅仪表</text>
+   y="181.91682">地磅仪表</text>
+
+
 
 
 
@@ -849,10 +787,11 @@
 <text
    font-size="20.2175"
    id="text226"
-   style="font-size:21.99959755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.99959755px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="504.92288"
-   y="243.16908"
-   sodipodi:linespacing="125%">LED屏</text>
+   y="243.16908">LED屏</text>
+
+
 
 
 
@@ -968,103 +907,76 @@
    height="12.095654"
    id="rect230-2"
    style="fill:#f6921e" /><path
-   clip-rule="evenodd"
-   d="m 118.36732,877.26313 c 0,-8.26296 -6.73703,-15.00124 -14.99751,-15.00124 -8.262962,0 -15.002492,6.73828 -15.002492,15.00124 0,8.26296 6.73828,14.99875 15.002492,14.99875 8.26048,0 14.99751,-6.73579 14.99751,-14.99875 z"
+   d="m 680.30541,862.24474 c 0,-8.26296 -6.73703,-15.00124 -14.99751,-15.00124 -8.26297,0 -15.0025,6.73828 -15.0025,15.00124 0,8.26296 6.73828,14.99875 15.0025,14.99875 8.26048,0 14.99751,-6.73579 14.99751,-14.99875 z"
    id="path208-1"
    inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
+   style="clip-rule:evenodd;fill:#00a551;fill-opacity:1;fill-rule:evenodd"
    inkscape:label="汽车衡_1号衡系统" />
 
 
 
 <path
-   clip-rule="evenodd"
-   d="m 336.58314,877.26313 c 0,-8.26296 -6.73703,-15.00124 -14.99751,-15.00124 -8.26296,0 -15.00249,6.73828 -15.00249,15.00124 0,8.26296 6.73828,14.99875 15.00249,14.99875 8.26048,0 14.99751,-6.73579 14.99751,-14.99875 z"
+   d="m 898.52123,862.24474 c 0,-8.26296 -6.73703,-15.00124 -14.99751,-15.00124 -8.26296,0 -15.00249,6.73828 -15.00249,15.00124 0,8.26296 6.73828,14.99875 15.00249,14.99875 8.26048,0 14.99751,-6.73579 14.99751,-14.99875 z"
    id="path208-1-1"
    inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
+   style="clip-rule:evenodd;fill:#00a551;fill-opacity:1;fill-rule:evenodd"
    inkscape:label="汽车衡_2号衡系统" />
 
 
 <path
-   clip-rule="evenodd"
-   d="m 554.79898,877.26313 c 0,-8.26296 -6.73703,-15.00124 -14.99751,-15.00124 -8.26296,0 -15.00249,6.73828 -15.00249,15.00124 0,8.26296 6.73828,14.99875 15.00249,14.99875 8.26048,0 14.99751,-6.73579 14.99751,-14.99875 z"
+   d="m 1116.7371,862.24474 c 0,-8.26296 -6.7371,-15.00124 -14.9975,-15.00124 -8.263,0 -15.0025,6.73828 -15.0025,15.00124 0,8.26296 6.7382,14.99875 15.0025,14.99875 8.2604,0 14.9975,-6.73579 14.9975,-14.99875 z"
    id="path208-1-9"
    inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
+   style="clip-rule:evenodd;fill:#00a551;fill-opacity:1;fill-rule:evenodd"
    inkscape:label="汽车衡_3号衡系统" />
 
 
-<path
-   clip-rule="evenodd"
-   d="m 773.01477,877.26313 c 0,-8.26296 -6.737,-15.00124 -14.9975,-15.00124 -8.263,0 -15.0025,6.73828 -15.0025,15.00124 0,8.26296 6.7383,14.99875 15.0025,14.99875 8.2605,0 14.9975,-6.73579 14.9975,-14.99875 z"
-   id="path208-1-1-2"
-   inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
-   inkscape:label="汽车衡_4号衡系统" />
 
 
-<path
-   clip-rule="evenodd"
-   d="m 991.23069,877.26313 c 0,-8.26296 -6.737,-15.00124 -14.99751,-15.00124 -8.263,0 -15.00257,6.73828 -15.00257,15.00124 0,8.26296 6.73837,14.99875 15.00257,14.99875 8.26051,0 14.99751,-6.73579 14.99751,-14.99875 z"
-   id="path208-1-17"
-   inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
-   inkscape:label="汽车衡_5号衡系统" />
 
 
-<path
-   clip-rule="evenodd"
-   d="m 1209.4465,877.26313 c 0,-8.26296 -6.737,-15.00124 -14.9975,-15.00124 -8.2629,0 -15.0025,6.73828 -15.0025,15.00124 0,8.26296 6.7383,14.99875 15.0025,14.99875 8.2605,0 14.9975,-6.73579 14.9975,-14.99875 z"
-   id="path208-1-1-27"
-   inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
-   inkscape:label="汽车衡_6号衡系统" />
 
 
-<path
-   clip-rule="evenodd"
-   d="m 1427.6622,877.26313 c 0,-8.26296 -6.7371,-15.00124 -14.9976,-15.00124 -8.2629,0 -15.0024,6.73828 -15.0024,15.00124 0,8.26296 6.7382,14.99875 15.0024,14.99875 8.2605,0 14.9976,-6.73579 14.9976,-14.99875 z"
-   id="path208-1-2"
-   inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
-   inkscape:label="汽车衡_7号衡系统" />
 
 
-<path
-   clip-rule="evenodd"
-   d="m 1645.8782,877.26313 c 0,-8.26296 -6.737,-15.00124 -14.9975,-15.00124 -8.263,0 -15.0025,6.73828 -15.0025,15.00124 0,8.26296 6.7383,14.99875 15.0025,14.99875 8.2605,0 14.9975,-6.73579 14.9975,-14.99875 z"
-   id="path208-1-1-1"
-   inkscape:connector-curvature="0"
-   style="fill:#00a551;fill-opacity:1;fill-rule:evenodd"
-   inkscape:label="汽车衡_8号衡系统" />
+
+
+
+
+
 
 
 <text
    xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="129.34784"
-   y="888.13214"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none"
+   x="691.28595"
+   y="873.11377"
    id="text4026"
-   sodipodi:linespacing="125%"
    inkscape:label="汽车衡_1号衡选中"><tspan
      sodipodi:role="line"
      id="tspan4028"
-     x="129.34784"
-     y="888.13214">#1汽车衡</tspan></text>
+     x="691.28595"
+     y="873.11377"
+     style="font-size:30px;line-height:1.25">#1汽车衡</tspan></text>
+
+
 
 
 
 <text
    xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="351.91647"
-   y="888.13214"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none"
+   x="913.85455"
+   y="873.11377"
    id="text4026-5"
-   sodipodi:linespacing="125%"
    inkscape:label="汽车衡_2号衡选中"><tspan
      sodipodi:role="line"
-     id="tspan4135">#2汽车衡</tspan></text>
+     id="tspan4135"
+     x="913.85455"
+     y="873.11377"
+     style="font-size:30px;line-height:1.25">#2汽车衡</tspan></text>
+
+
 
 
 
@@ -1073,83 +985,42 @@
    id="rect3148-1-7"
    width="183.97527"
    height="51.312832"
-   x="76.998146"
-   y="851.42267"
+   x="638.93622"
+   y="836.4043"
    inkscape:label="汽车衡_1号衡点击域" /><text
    xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="568.255"
-   y="888.13214"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none"
+   x="1130.1931"
+   y="873.11377"
    id="text4026-5-1"
-   sodipodi:linespacing="125%"
    inkscape:label="汽车衡_3号衡选中"><tspan
      sodipodi:role="line"
-     id="tspan4137">#3汽车衡</tspan></text>
+     id="tspan4137"
+     x="1130.1931"
+     y="873.11377"
+     style="font-size:30px;line-height:1.25">#3汽车衡</tspan></text>
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="786.47083"
-   y="888.13214"
-   id="text4026-5-5"
-   sodipodi:linespacing="125%"
-   inkscape:label="汽车衡_4号衡选中"><tspan
-     sodipodi:role="line"
-     id="tspan4139">#4汽车衡</tspan></text>
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="1004.6866"
-   y="888.13214"
-   id="text4026-5-7"
-   sodipodi:linespacing="125%"
-   inkscape:label="汽车衡_5号衡选中"><tspan
-     sodipodi:role="line"
-     id="tspan4141">#5汽车衡</tspan></text>
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="1222.9025"
-   y="888.13214"
-   id="text4026-5-14"
-   sodipodi:linespacing="125%"
-   inkscape:label="汽车衡_6号衡选中"><tspan
-     sodipodi:role="line"
-     id="tspan4143">#6汽车衡</tspan></text>
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="1441.1183"
-   y="888.13214"
-   id="text4026-5-2"
-   sodipodi:linespacing="125%"
-   inkscape:label="汽车衡_7号衡选中"><tspan
-     sodipodi:role="line"
-     id="tspan4145">#7汽车衡</tspan></text>
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
-   x="1659.3341"
-   y="888.13214"
-   id="text4026-5-6"
-   sodipodi:linespacing="125%"
-   inkscape:label="汽车衡_8号衡选中"><tspan
-     sodipodi:role="line"
-     id="tspan4147">#8汽车衡</tspan></text>
+
+
+
+
+
+
+
 
 
 
@@ -1158,77 +1029,46 @@
    id="rect3148-1-7-5"
    width="183.97527"
    height="51.312832"
-   x="295.62799"
-   y="851.42267"
+   x="857.5661"
+   y="836.4043"
    inkscape:label="汽车衡_2号衡点击域" /><rect
    style="opacity:0.01000001;fill:#5affff;fill-opacity:1"
    id="rect3148-1-7-7"
    width="183.97527"
    height="51.312832"
-   x="520.44128"
-   y="851.42267"
-   inkscape:label="汽车衡_3号衡点击域" /><rect
-   style="opacity:0.01000001;fill:#5affff;fill-opacity:1"
-   id="rect3148-1-7-6"
-   width="183.97527"
-   height="51.312832"
-   x="736.79681"
-   y="851.42267"
-   inkscape:label="汽车衡_4号衡点击域" /><rect
-   style="opacity:0.01000001;fill:#5affff;fill-opacity:1"
-   id="rect3148-1-7-1"
-   width="183.97527"
-   height="51.312832"
-   x="951.80273"
-   y="851.42267"
-   inkscape:label="汽车衡_5号衡点击域" /><rect
-   style="opacity:0.01000001;fill:#5affff;fill-opacity:1"
-   id="rect3148-1-7-8"
-   width="183.97527"
-   height="51.312832"
-   x="1168.3179"
-   y="851.42267"
-   inkscape:label="汽车衡_6号衡点击域" /><rect
-   style="opacity:0.01000001;fill:#5affff;fill-opacity:1"
-   id="rect3148-1-7-9"
-   width="183.97527"
-   height="51.312832"
-   x="1387.8268"
-   y="851.42267"
-   inkscape:label="汽车衡_7号衡点击域" /><rect
-   style="opacity:0.01000001;fill:#5affff;fill-opacity:1"
-   id="rect3148-1-7-2"
-   width="183.97527"
-   height="51.312832"
-   x="1611.115"
-   y="851.42267"
-   inkscape:label="汽车衡_8号衡点击域" /><text
+   x="1082.3794"
+   y="836.4043"
+   inkscape:label="汽车衡_3号衡点击域" /><text
    xml:space="preserve"
-   style="font-size:62.99999992px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#fbfbff;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#fbfbff;fill-opacity:1;stroke:none"
    x="1011.0472"
    y="86.954109"
    id="text4026-7"
-   sodipodi:linespacing="125%"
    inkscape:label="汽车衡_当前衡器"
    transform="scale(0.94449853,1.0587629)"><tspan
      sodipodi:role="line"
      id="tspan4028-9"
      x="1011.0472"
-     y="86.954109">#1汽车衡</tspan></text>
+     y="86.954109"
+     style="font-size:63px;line-height:1.25">#1汽车衡</tspan></text>
+
+
 
 
 
 <text
    xml:space="preserve"
-   style="font-size:87.9980011px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ec1c24;fill-opacity:1;stroke:none;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ec1c24;fill-opacity:1;stroke:none"
    x="941.07513"
    y="261.79321"
    id="text3145"
-   sodipodi:linespacing="125%"
    inkscape:label="汽车衡_仪表重量"><tspan
      sodipodi:role="line"
      id="tspan3917"
      x="941.07513"
-     y="261.79321">0 吨</tspan></text>
+     y="261.79321"
+     style="font-size:87.9980011px;line-height:1.25">0 吨</tspan></text>
+
+
 
 </svg>

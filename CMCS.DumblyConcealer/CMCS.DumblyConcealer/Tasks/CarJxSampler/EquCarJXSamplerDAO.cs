@@ -6,6 +6,7 @@ using CMCS.Common.Entities.CarTransport;
 using CMCS.Common.Entities.Fuel;
 using CMCS.Common.Entities.Inf;
 using CMCS.Common.Enums;
+using CMCS.DapperDber.Dbs.OracleDb;
 using CMCS.DapperDber.Dbs.SqlServerDb;
 using CMCS.DumblyConcealer.Enums;
 using CMCS.DumblyConcealer.Tasks.CarJXSampler.Entities;
@@ -21,19 +22,13 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		/// EquCarJXSamplerDAO
 		/// </summary>
 		/// <param name="machineCode">设备编码</param>
-		/// <param name="equDber">第三方数据库访问对象</param>
-		public EquCarJXSamplerDAO(string machineCode, SqlServerDapperDber equDber)
+		public EquCarJXSamplerDAO(string machineCode)
 		{
 			this.MachineCode = machineCode;
-			this.EquDber = equDber;
 		}
 
 		CommonDAO commonDAO = CommonDAO.GetInstance();
 
-		/// <summary>
-		/// 第三方数据库访问对象
-		/// </summary>
-		SqlServerDapperDber EquDber;
 		/// <summary>
 		/// 设备编码
 		/// </summary>
@@ -61,7 +56,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		{
 			int res = 0;
 
-			foreach (EquQCJXCYJSignal entity in this.EquDber.Entities<EquQCJXCYJSignal>())
+			foreach (EquQCJXCYJSignal entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<EquQCJXCYJSignal>())
 			{
 				if (entity.TagName == GlobalVars.EquHeartbeatName) continue;
 
@@ -82,7 +77,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		/// <param name="MachineCode">设备编码</param>
 		public void SyncHeartbeatSignal()
 		{
-			EquQCJXCYJSignal pDCYSignal = this.EquDber.Entity<EquQCJXCYJSignal>("where TagName=@TagName", new { TagName = GlobalVars.EquHeartbeatName });
+			EquQCJXCYJSignal pDCYSignal = DcDbers.GetInstance().CarJXSampler_Dber.Entity<EquQCJXCYJSignal>("where TagName=:TagName", new { TagName = GlobalVars.EquHeartbeatName });
 			ChangeSystemHitchStatus((pDCYSignal != null && pDCYSignal.TagValue == this.PrevHeartbeat));
 
 			this.PrevHeartbeat = pDCYSignal != null ? pDCYSignal.TagValue : string.Empty;
@@ -108,7 +103,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		{
 			int res = 0;
 
-			List<EquQCJXCYJBarrel> infpdcybarrels = this.EquDber.Entities<EquQCJXCYJBarrel>();
+			List<EquQCJXCYJBarrel> infpdcybarrels = DcDbers.GetInstance().CarJXSampler_Dber.Entities<EquQCJXCYJBarrel>();
 			foreach (EquQCJXCYJBarrel entity in infpdcybarrels)
 			{
 				if (commonDAO.SaveEquInfSampleBarrel(new InfEquInfSampleBarrel
@@ -127,7 +122,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 				{
 
 					entity.DataFlag = 1;
-					this.EquDber.Update(entity);
+					DcDbers.GetInstance().CarJXSampler_Dber.Update(entity);
 
 					res++;
 				}
@@ -145,12 +140,12 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		{
 			int res = 0;
 
-			foreach (EquQCJXCYJError entity in this.EquDber.Entities<EquQCJXCYJError>("where DataFlag=0"))
+			foreach (EquQCJXCYJError entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<EquQCJXCYJError>("where DataFlag=0"))
 			{
 				if (commonDAO.SaveEquInfHitch(this.MachineCode, entity.ErrorTime, "故障代码 " + entity.ErrorCode + "，" + entity.ErrorDescribe))
 				{
 					entity.DataFlag = 1;
-					this.EquDber.Update(entity);
+					DcDbers.GetInstance().CarJXSampler_Dber.Update(entity);
 
 					res++;
 				}
@@ -172,73 +167,50 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 			foreach (InfQCJXCYSampleCMD entity in CarSamplerDAO.GetInstance().GetWaitForSyncSampleCMD(this.MachineCode))
 			{
 				bool isSuccess = false;
-				// 需调整：命令中的水分等信息视接口而定
-				EquQCJXCYJSampleCmd samplecmdEqu = this.EquDber.Get<EquQCJXCYJSampleCmd>(entity.Id);
+
+				Interface_Data samplecmdEqu = DcDbers.GetInstance().CarJXSampler_Dber.Get<Interface_Data>(entity.Id);
 				if (samplecmdEqu == null)
 				{
-					isSuccess = this.EquDber.Insert(new EquQCJXCYJSampleCmd
+					isSuccess = DcDbers.GetInstance().CarJXSampler_Dber.Insert(new Interface_Data
 					{
 						// 保持相同的Id
-						Id = entity.Id,
-						CarNumber = entity.CarNumber,
-						InFactoryBatchId = entity.InFactoryBatchId,
-						SampleCode = entity.SampleCode,
-						//Mt = 0,
-						TicketWeight = entity.TicketWeight,
-						CarCount = entity.CarCount,
-						PointCount = entity.PointCount,
-						Point1 = entity.Point1,
-						Point2 = entity.Point2,
-						Point3 = entity.Point3,
-						Point4 = entity.Point4,
-						Point5 = entity.Point5,
-						Point6 = entity.Point6,
-						CarriageLength = entity.CarriageLength,
-						CarriageWidth = entity.CarriageWidth,
-						CarriageBottomToFloor = entity.CarriageBottomToFloor,
-						Obstacle1 = entity.Obstacle1,
-						Obstacle2 = entity.Obstacle2,
-						Obstacle3 = entity.Obstacle3,
-						Obstacle4 = entity.Obstacle4,
-						Obstacle5 = entity.Obstacle5,
-						Obstacle6 = entity.Obstacle6,
-						StartTime = entity.StartTime,
-						EndTime = entity.EndTime,
-						SampleUser = entity.SampleUser,
-						ResultCode = entity.ResultCode,
-						DataFlag = 0
+						Interface_Id = entity.Id,
+						Sampler_No = this.MachineCode == GlobalVars.MachineCode_QCJXCYJ_1 ? "CY01" : "CY02",
+						Weighing_Id = entity.SerialNumber,
+						Car_Mark = entity.CarNumber,
+						Mine_Name = entity.SampleCode,
+						Point_Count = entity.PointCount,
+						Car_Length = entity.CarriageLength,
+						Car_Width = entity.CarriageWidth,
+						Car_Height = entity.CarriageHeight,
+						Chassis_Height = entity.CarriageBottomToFloor,
+						Tie_Rod_Place1 = entity.Obstacle1,
+						Tie_Rod_Place2 = entity.Obstacle2,
+						Tie_Rod_Place3 = entity.Obstacle3,
+						Tie_Rod_Place4 = entity.Obstacle4,
+						Tie_Rod_Place5 = entity.Obstacle5,
+						Tie_Rod_Place6 = entity.Obstacle6,
+						Data_Status = 1
 					}) > 0;
 				}
 				else
 				{
-					samplecmdEqu.CarNumber = entity.CarNumber;
-					samplecmdEqu.InFactoryBatchId = entity.InFactoryBatchId;
-					samplecmdEqu.SampleCode = entity.SampleCode;
-					//samplecmdEqu.Mt = 0;
-					samplecmdEqu.TicketWeight = entity.TicketWeight;
-					samplecmdEqu.CarCount = entity.CarCount;
-					samplecmdEqu.PointCount = entity.PointCount;
-					samplecmdEqu.Point1 = entity.Point1;
-					samplecmdEqu.Point2 = entity.Point2;
-					samplecmdEqu.Point3 = entity.Point3;
-					samplecmdEqu.Point4 = entity.Point4;
-					samplecmdEqu.Point5 = entity.Point5;
-					samplecmdEqu.Point6 = entity.Point6;
-					samplecmdEqu.CarriageLength = entity.CarriageLength;
-					samplecmdEqu.CarriageWidth = entity.CarriageWidth;
-					samplecmdEqu.CarriageBottomToFloor = entity.CarriageBottomToFloor;
-					samplecmdEqu.Obstacle1 = entity.Obstacle1;
-					samplecmdEqu.Obstacle2 = entity.Obstacle2;
-					samplecmdEqu.Obstacle3 = entity.Obstacle3;
-					samplecmdEqu.Obstacle4 = entity.Obstacle4;
-					samplecmdEqu.Obstacle5 = entity.Obstacle5;
-					samplecmdEqu.Obstacle6 = entity.Obstacle6;
-					samplecmdEqu.StartTime = entity.StartTime;
-					samplecmdEqu.EndTime = entity.EndTime;
-					samplecmdEqu.SampleUser = entity.SampleUser;
-					samplecmdEqu.ResultCode = entity.ResultCode;
-					samplecmdEqu.DataFlag = 0;
-					isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
+					samplecmdEqu.Car_Mark = entity.CarNumber;
+					samplecmdEqu.Weighing_Id = entity.SerialNumber;
+					samplecmdEqu.Mine_Name = entity.SampleCode;
+					samplecmdEqu.Point_Count = entity.PointCount;
+					samplecmdEqu.Car_Length = entity.CarriageLength;
+					samplecmdEqu.Car_Width = entity.CarriageWidth;
+					samplecmdEqu.Car_Height = entity.CarriageHeight;
+					samplecmdEqu.Chassis_Height = entity.CarriageBottomToFloor;
+					samplecmdEqu.Tie_Rod_Place1 = entity.Obstacle1;
+					samplecmdEqu.Tie_Rod_Place2 = entity.Obstacle2;
+					samplecmdEqu.Tie_Rod_Place3 = entity.Obstacle3;
+					samplecmdEqu.Tie_Rod_Place4 = entity.Obstacle4;
+					samplecmdEqu.Tie_Rod_Place5 = entity.Obstacle5;
+					samplecmdEqu.Tie_Rod_Place6 = entity.Obstacle6;
+					samplecmdEqu.Data_Status = 1;
+					isSuccess = DcDbers.GetInstance().CarJXSampler_Dber.Update(samplecmdEqu) > 0;
 				}
 
 				if (isSuccess)
@@ -254,95 +226,31 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 
 			res = 0;
 			// 第三方 > 集中管控
-			foreach (EquQCJXCYJSampleCmd entity in this.EquDber.Entities<EquQCJXCYJSampleCmd>("where DataFlag=2 and datediff(dd,CreationTime,getdate())=0"))
+			foreach (Interface_Data entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<Interface_Data>("where Data_Status=2 and datediff(dd,CreationTime,getdate())=0"))
 			{
-				InfQCJXCYSampleCMD samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfQCJXCYSampleCMD>(entity.Id);
+				InfQCJXCYSampleCMD samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfQCJXCYSampleCMD>(entity.Interface_Id);
 				if (samplecmdInf == null) continue;
 
-				samplecmdInf.Point1 = entity.Point1;
-				samplecmdInf.Point2 = entity.Point2;
-				samplecmdInf.Point3 = entity.Point3;
-				samplecmdInf.Point4 = entity.Point4;
-				samplecmdInf.Point5 = entity.Point5;
-				samplecmdInf.Point6 = entity.Point6;
-				samplecmdInf.StartTime = entity.StartTime;
-				samplecmdInf.EndTime = entity.EndTime;
-				samplecmdInf.SampleUser = entity.SampleUser;
-				samplecmdInf.ResultCode = entity.ResultCode;
+				//samplecmdInf.Point1 = entity.Point1;
+				//samplecmdInf.Point2 = entity.Point2;
+				//samplecmdInf.Point3 = entity.Point3;
+				//samplecmdInf.Point4 = entity.Point4;
+				//samplecmdInf.Point5 = entity.Point5;
+				//samplecmdInf.Point6 = entity.Point6;
+				samplecmdInf.StartTime = entity.Sample_Time;
+				//samplecmdInf.EndTime = entity.EndTime;
+				//samplecmdInf.SampleUser = entity.SampleUser;
+				samplecmdInf.ResultCode = eEquInfCmdResultCode.成功.ToString();
 
-				if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
-				{
-					// 我方已读
-					entity.DataFlag = 3;
-					this.EquDber.Update(entity);
-
-					res++;
-				}
+				//if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
+				//{
+				//	// 我方已读
+				//	entity.DataFlag = 3;
+				//	this.EquDber.Update(entity);
+				res++;
+				//}
 			}
 			output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
-		}
-
-		/// <summary>
-		/// 同步卸样命令
-		/// </summary>
-		/// <param name="output"></param>
-		/// <returns></returns>
-		public void SyncJXCYControlUnloadCMD(Action<string, eOutputType> output)
-		{
-			int res = 0;
-
-			// 集中管控 > 第三方
-			foreach (InfQCJXCYUnLoadCMD entity in CarSamplerDAO.GetInstance().GetWaitForSyncJXCYSampleUnloadCmd(MachineCode))
-			{
-				bool isSuccess = false;
-
-				EquQCJXCYJUnloadCmd pJXCYCMD = this.EquDber.Get<EquQCJXCYJUnloadCmd>(entity.Id);
-				if (pJXCYCMD == null)
-				{
-					isSuccess = this.EquDber.Insert(new EquQCJXCYJUnloadCmd
-					{
-						// 保持相同的Id
-						Id = entity.Id,
-						DataFlag = 0,
-						CreateDate = entity.CreationTime,
-						SampleCode = entity.SampleCode,
-						ResultCode = eEquInfCmdResultCode.默认.ToString(),
-						UnLoadType = entity.UnLoadType.ToString(),
-						SamplingId = entity.SamplingId
-					}) > 0;
-				}
-				else isSuccess = true;
-
-				if (isSuccess)
-				{
-					entity.SyncFlag = 1;
-					Dbers.GetInstance().SelfDber.Update(entity);
-
-					res++;
-				}
-			}
-			output(string.Format("同步卸样命令 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
-
-			res = 0;
-			// 第三方 > 集中管控
-			foreach (EquQCJXCYJUnloadCmd entity in this.EquDber.Entities<EquQCJXCYJUnloadCmd>("where DataFlag=2 and datediff(dd,CreationTime,getdate())=0"))
-			{
-				InfQCJXCYUnLoadCMD JXCYCmd = Dbers.GetInstance().SelfDber.Get<InfQCJXCYUnLoadCMD>(entity.Id);
-				if (JXCYCmd == null) continue;
-
-				// 更新执行结果等
-				JXCYCmd.ResultCode = entity.ResultCode;
-
-				if (Dbers.GetInstance().SelfDber.Update(JXCYCmd) > 0)
-				{
-					// 我方已读
-					entity.DataFlag = 3;
-					this.EquDber.Update(entity);
-
-					res++;
-				}
-			}
-			output(string.Format("同步卸样命令 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
 		}
 
 		/// <summary>
@@ -356,13 +264,13 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 
 			res = 0;
 			// 第三方 > 集中管控
-			foreach (EquQCJXCYJUnloadResult entity in this.EquDber.Entities<EquQCJXCYJUnloadResult>("where DataFlag=0"))
+			foreach (EquQCJXCYJUnloadResult entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<EquQCJXCYJUnloadResult>("where DataFlag=0"))
 			{
 				InfQCJXCYJUnloadResult oldUnloadResult = commonDAO.SelfDber.Get<InfQCJXCYJUnloadResult>(entity.Id);
 				if (oldUnloadResult == null)
 				{
 					// 查找采样命令
-					EquQCJXCYJSampleCmd qCJXCYJSampleCmd = this.EquDber.Entity<EquQCJXCYJSampleCmd>("where SampleCode=@SampleCode", new { SampleCode = entity.SampleCode });
+					EquQCJXCYJSampleCmd qCJXCYJSampleCmd = DcDbers.GetInstance().CarJXSampler_Dber.Entity<EquQCJXCYJSampleCmd>("where SampleCode=:SampleCode", new { SampleCode = entity.SampleCode });
 					if (qCJXCYJSampleCmd != null)
 					{
 						// 生成采样桶记录
@@ -388,7 +296,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 							}) > 0)
 							{
 								entity.DataFlag = 1;
-								this.EquDber.Update(entity);
+								DcDbers.GetInstance().CarJXSampler_Dber.Update(entity);
 
 								res++;
 							}

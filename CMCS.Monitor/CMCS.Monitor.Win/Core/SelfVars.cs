@@ -29,10 +29,15 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public static FrmTruckWeighter TruckWeighterForm;
 
-        /// <summary>
-        /// 网页地址 - CefTester
-        /// </summary>
-        public static string Url_CefTester = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/CefTester/index.htm");
+		/// <summary>
+		/// 火车采样窗体引用
+		/// </summary>
+		public static FrmTrainSampler TrainSamplerForm;
+
+		/// <summary>
+		/// 网页地址 - CefTester
+		/// </summary>
+		public static string Url_CefTester = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/CefTester/index.htm");
 
         /// <summary>
         /// 网页地址 - 集中管控首页
@@ -54,14 +59,22 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public static string Url_CarSampler = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/CarSampler/index.htm");
 
-        #endregion
+		#endregion
 
-        #region 全自动制样机
+		#region 火车采样机
+		/// <summary>
+		/// 网页地址 - 火车采样机
+		/// </summary>
+		public static string Url_TrainSampler = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/TrainSampler/index.htm");
 
-        /// <summary>
-        /// 网页地址 - 火车全自动制样机 #1
-        /// </summary>
-        public static string Url_AutoMaker = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/AutoMaker/index.htm");
+		#endregion
+
+		#region 全自动制样机
+
+		/// <summary>
+		/// 网页地址 - 火车全自动制样机 #1
+		/// </summary>
+		public static string Url_AutoMaker = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/AutoMaker/index.htm");
 
         #endregion
 

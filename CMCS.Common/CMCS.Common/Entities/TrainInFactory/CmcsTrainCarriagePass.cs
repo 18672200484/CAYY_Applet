@@ -18,9 +18,14 @@ namespace CMCS.Common.Entities.TrainInFactory
 		public string PKID { get; set; }
 
 		/// <summary>
-		/// 设备编号
+		/// 轨道编号
 		/// </summary>
 		public string MachineCode { get; set; }
+
+		/// <summary>
+		/// 车号识别编号
+		/// </summary>
+		public string TrainMachineCode { get; set; }
 
 		/// <summary>
 		/// 车号

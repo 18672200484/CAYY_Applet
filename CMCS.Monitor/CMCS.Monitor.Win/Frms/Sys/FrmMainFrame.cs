@@ -136,6 +136,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			});
 		}
 
+		/// <summary>
+		/// 打开火车采样机
+		/// </summary>
+		public void OpenTrainSampler()
+		{
+			this.InvokeEx(() =>
+			{
+				string uniqueKey = FrmTrainSampler.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					SelfVars.TrainSamplerForm = new FrmTrainSampler();
+					FrmMainFrame.superTabControlManager.CreateTab(SelfVars.TrainSamplerForm.Text, uniqueKey, SelfVars.TrainSamplerForm, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
+		}
+
 		#endregion
 
 		/// <summary>
@@ -200,6 +219,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			OpenTruckWeighter();
 		}
 
+		/// <summary>
+		/// 打开火车采样机
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenTrainSampler_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainSampler();
+		}
 		#endregion
 
 		#region 设备状态监控
