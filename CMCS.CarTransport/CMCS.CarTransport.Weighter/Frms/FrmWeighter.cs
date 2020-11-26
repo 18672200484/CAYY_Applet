@@ -858,19 +858,19 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 		#region 设备初始化与卸载
 
-		/// <summary>
-		/// 初始化外接设备
-		/// </summary>
-		private void InitHardware()
-		{
-			try
-			{
-				bool success = false;
+        /// <summary>
+        /// 初始化外接设备
+        /// </summary>
+        private void InitHardware()
+        {
+            try
+            {
+                bool success = false;
 
-				this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
-				this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
-				this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");
-				this.InfraredSensor2Port = commonDAO.GetAppletConfigInt32("IO控制器_对射2端口");
+                this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
+                this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
+                this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");
+                this.InfraredSensor2Port = commonDAO.GetAppletConfigInt32("IO控制器_对射2端口");
 
 				this.WbMinWeight = commonDAO.GetAppletConfigDouble("地磅仪表_最小称重");
 

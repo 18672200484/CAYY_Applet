@@ -121,7 +121,7 @@ namespace WB.TOLEDO.IND245
                     this.Closing = false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 this.status = false;
                 if (this.OnStatusChange != null) this.OnStatusChange(status);
@@ -179,8 +179,9 @@ namespace WB.TOLEDO.IND245
         }
 
         /// <summary>
-        /// 串口接收数据       
-        /// 数据示例：02 2B 30 30 30 30 32 30 30 31 39 03 
+        /// 串口接收数据
+        /// 数据示例：02 31 30 20 20 20 20 32 30 30 20 20 20 20 30 30 0D 1E 
+        ///                  02 2B 30 30 30 30 32 30 30 31 39 03 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -196,23 +197,25 @@ namespace WB.TOLEDO.IND245
                 byte[] buffer = new byte[bytesToRead];
                 serialPort.Read(buffer, 0, bytesToRead);
 
-
-                #region #3重车衡
                 for (int i = 0; i < bytesToRead; i++)
                 {
-                    if (buffer[i] == 0x3D) ReceiveList.Clear();
+                    if (buffer[i] == 0x02) ReceiveList.Clear();
 
                     ReceiveList.Add(buffer[i]);
+
                     try
                     {
-                        if (ReceiveList[0] == 0x3D && ReceiveList.Count == 9)
+                        if (buffer[i] == 0x0D && ReceiveList.Count == 17)
                         {
                             string temp = string.Empty;
-                            for (int j = 8; j > 0; j--)
+                            for (int j = 3; j < 14; j++)
                             {
                                 temp += Convert.ToChar(ReceiveList[j]);
                             }
 
+                            //if (ReceiveList[1] == 0x39)
+                            //    this.weight = Convert.ToDouble(temp) / -1000d;
+                            //else
                             this.weight = Convert.ToDouble(temp) / 1000d;
 
                             if (OnWeightChange != null) OnWeightChange(this.weight);
@@ -220,13 +223,8 @@ namespace WB.TOLEDO.IND245
                             ReceiveList.Clear();
                         }
                     }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
+                    catch { }
                 }
-                #endregion
             }
         }
 
