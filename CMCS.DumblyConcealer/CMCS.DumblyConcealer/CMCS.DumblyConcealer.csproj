@@ -75,6 +75,7 @@
     <Compile Include="Tasks\BeltBalancer\Entities\CmcsBeltBalancerHistoryValue.cs" />
     <Compile Include="Tasks\BeltBalancer\Entities\CmcsBeltBalancerValue.cs" />
     <Compile Include="Tasks\BeltBalancer\EquBeltBalancerDAO.cs" />
+    <Compile Include="Tasks\CarJxSampler\Entities\Interface_Data.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJBarrel.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJError.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJPlanDetail.cs" />

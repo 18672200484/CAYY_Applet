@@ -127,5 +127,9 @@ namespace CMCS.Common.Entities.Fuel
 		/// </summary>
 		public String DataFrom { get; set; }
 
+		/// <summary>
+		/// 车型
+		/// </summary>
+		public string TrainType { get; set; }
 	}
 }

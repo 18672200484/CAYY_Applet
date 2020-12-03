@@ -16,111 +16,82 @@ using CMCS.Common.Utilities;
 
 namespace CMCS.CarTransport.BeltSampler.Frms
 {
-    public partial class FrmSetting : DevComponents.DotNetBar.Metro.MetroForm
-    {
-        CommonDAO commonDAO = CommonDAO.GetInstance();
+	public partial class FrmSetting : DevComponents.DotNetBar.Metro.MetroForm
+	{
+		CommonDAO commonDAO = CommonDAO.GetInstance();
 
-        CommonAppConfig commonAppConfig = CommonAppConfig.GetInstance();
+		CommonAppConfig commonAppConfig = CommonAppConfig.GetInstance();
 
-        public FrmSetting()
-        {
-            InitializeComponent();
-        }
+		public FrmSetting()
+		{
+			InitializeComponent();
+		}
 
-        void InitForm()
-        {
-            InitComPortComboBoxs(cmbIocerCom, cmbRwer1Com);
-            InitBandrateComboBoxs(cmbIocerBandrate);
-            InitNumberAscComboBoxs(5, 8, cmbIocerDataBits);
-            InitNumberAscComboBoxs(1, 15, cmbInductorCoil1Port, cmbInductorCoil2Port, cmbInductorCoil3Port, cmbInductorCoil4Port, cmbGate1UpPort, cmbGate1DownPort, cmbGate2UpPort, cmbGate2DownPort, cmbSignalLight1Port);
-            InitStopBitsComboBoxs(cmbIocerStopBits);
-            InitParityComboBoxs(cmbIocerParity);
-        }
+		void InitForm()
+		{
+		}
 
-        private void FrmSetting_Load(object sender, EventArgs e)
-        {
-            InitForm();
+		private void FrmSetting_Load(object sender, EventArgs e)
+		{
+			InitForm();
 
-            LoadAppConfig();
-        }
+			LoadAppConfig();
+		}
 
-        /// <summary>
-        /// 测试数据库连接
-        /// </summary>
-        /// <returns></returns>
-        private bool TestDBConnect()
-        {
-            if (string.IsNullOrEmpty(txtSelfConnStr.Text.Trim()))
-            {
-                MessageBoxEx.Show("请先输入数据库连接字符串", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            try
-            {
-                OracleDapperDber dber = new OracleDapperDber(txtSelfConnStr.Text.Trim());
-                //dber.Connection.Open();
-                //dber.Connection.Close();
-                
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBoxEx.Show("数据库连接失败，" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-        }
+		/// <summary>
+		/// 测试数据库连接
+		/// </summary>
+		/// <returns></returns>
+		private bool TestDBConnect()
+		{
+			if (string.IsNullOrEmpty(txtSelfConnStr.Text.Trim()))
+			{
+				MessageBoxEx.Show("请先输入数据库连接字符串", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
+			try
+			{
+				OracleDapperDber dber = new OracleDapperDber(txtSelfConnStr.Text.Trim());
+				//dber.Connection.Open();
+				//dber.Connection.Close();
 
-        /// <summary>
-        /// 加载配置
-        /// </summary>
-        void LoadAppConfig()
-        {
-            txtAppIdentifier.Text = commonAppConfig.AppIdentifier;
-            txtSelfConnStr.Text = commonAppConfig.SelfConnStr;
-            chbStartup.Checked = (commonDAO.GetAppletConfigString("开机启动") == "1");
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBoxEx.Show("数据库连接失败，" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
+		}
 
-            txtJxSamplerMachineCode.Text = commonDAO.GetAppletConfigString("采样机设备编码");
+		/// <summary>
+		/// 加载配置
+		/// </summary>
+		void LoadAppConfig()
+		{
+			txtAppIdentifier.Text = commonAppConfig.AppIdentifier;
+			txtSelfConnStr.Text = commonAppConfig.SelfConnStr;
+			chbStartup.Checked = (commonDAO.GetAppletConfigString("开机启动") == "1");
 
-            // IO控制器
-            SelectedComboBoxItem(cmbIocerCom, commonDAO.GetAppletConfigInt32("IO控制器_串口").ToString());
-            SelectedComboBoxItem(cmbIocerBandrate, commonDAO.GetAppletConfigInt32("IO控制器_波特率").ToString());
-            SelectedComboBoxItem(cmbIocerDataBits, commonDAO.GetAppletConfigInt32("IO控制器_数据位").ToString());
-            SelectedComboBoxItem(cmbIocerStopBits, commonDAO.GetAppletConfigInt32("IO控制器_停止位").ToString());
-            SelectedComboBoxItem(cmbIocerParity, commonDAO.GetAppletConfigInt32("IO控制器_校验位").ToString());
-            SelectedComboBoxItem(cmbInductorCoil1Port, commonDAO.GetAppletConfigInt32("IO控制器_地感1端口").ToString());
-            SelectedComboBoxItem(cmbInductorCoil2Port, commonDAO.GetAppletConfigInt32("IO控制器_地感2端口").ToString());
-            SelectedComboBoxItem(cmbInductorCoil3Port, commonDAO.GetAppletConfigInt32("IO控制器_地感3端口").ToString());
-            SelectedComboBoxItem(cmbInductorCoil4Port, commonDAO.GetAppletConfigInt32("IO控制器_地感4端口").ToString());
-            SelectedComboBoxItem(cmbGate1UpPort, commonDAO.GetAppletConfigInt32("IO控制器_道闸1升杆端口").ToString());
-            SelectedComboBoxItem(cmbGate1DownPort, commonDAO.GetAppletConfigInt32("IO控制器_道闸1降杆端口").ToString());
-            SelectedComboBoxItem(cmbGate2UpPort, commonDAO.GetAppletConfigInt32("IO控制器_道闸2升杆端口").ToString());
-            SelectedComboBoxItem(cmbGate2DownPort, commonDAO.GetAppletConfigInt32("IO控制器_道闸2降杆端口").ToString());
-            SelectedComboBoxItem(cmbSignalLight1Port, commonDAO.GetAppletConfigInt32("IO控制器_信号灯1端口").ToString());
+			txtJxSamplerMachineCode.Text = commonDAO.GetCommonAppletConfigString("火车采样机设备编码");
+		}
 
-            // 读卡器
-            SelectedComboBoxItem(cmbRwer1Com, commonDAO.GetAppletConfigInt32("读卡器1_串口").ToString());
-            txtRwerTagStartWith.Text = commonDAO.GetAppletConfigString("读卡器_标签过滤");
+		/// <summary>
+		/// 保存配置
+		/// </summary>
+		bool SaveAppConfig()
+		{
+			if (!TestDBConnect()) return false;
 
-            // LED显示屏
-            iptxtLED1IP.Value = commonDAO.GetAppletConfigString("LED显示屏1_IP地址");
-        }
+			commonAppConfig.AppIdentifier = txtAppIdentifier.Text.Trim();
+			commonAppConfig.SelfConnStr = txtSelfConnStr.Text;
+			commonAppConfig.Save();
+			commonDAO.SetAppletConfig("开机启动", Convert.ToInt16(chbStartup.Checked).ToString());
 
-        /// <summary>
-        /// 保存配置
-        /// </summary>
-        bool SaveAppConfig()
-        {
-            if (!TestDBConnect()) return false;
+			commonDAO.SetCommonAppletConfig("火车采样机设备编码", txtJxSamplerMachineCode.Text.Trim());
 
-            commonAppConfig.AppIdentifier = txtAppIdentifier.Text.Trim();
-            commonAppConfig.SelfConnStr = txtSelfConnStr.Text;
-            commonAppConfig.Save();
-            commonDAO.SetAppletConfig("开机启动", Convert.ToInt16(chbStartup.Checked).ToString());
-
-            commonDAO.SetAppletConfig("采样机设备编码", txtJxSamplerMachineCode.Text.Trim());
-
-            try
-            {
+			try
+			{
 #if DEBUG
 
 #else
@@ -130,256 +101,233 @@ namespace CMCS.CarTransport.BeltSampler.Frms
                 else
                     StartUpUtil.DeleteStartUp(Application.ProductName);
 #endif
-            }
-            catch { }
+			}
+			catch { }
 
-            // IO控制器
-            commonDAO.SetAppletConfig("IO控制器_串口", (cmbIocerCom.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_波特率", (cmbIocerBandrate.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_数据位", (cmbIocerDataBits.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_停止位", (cmbIocerStopBits.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_校验位", (cmbIocerParity.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_地感1端口", (cmbInductorCoil1Port.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_地感2端口", (cmbInductorCoil2Port.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_地感3端口", (cmbInductorCoil3Port.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_地感4端口", (cmbInductorCoil4Port.SelectedItem as DataItem).Value); 
-            commonDAO.SetAppletConfig("IO控制器_道闸1升杆端口", (cmbGate1UpPort.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_道闸1降杆端口", (cmbGate1DownPort.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_道闸2升杆端口", (cmbGate2UpPort.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_道闸2降杆端口", (cmbGate2DownPort.SelectedItem as DataItem).Value);
-            commonDAO.SetAppletConfig("IO控制器_信号灯1端口", (cmbSignalLight1Port.SelectedItem as DataItem).Value);  
+			return true;
+		}
 
-            // 读卡器
-            commonDAO.SetAppletConfig("读卡器1_串口", (cmbRwer1Com.SelectedItem as DataItem).Value); 
-            commonDAO.SetAppletConfig("读卡器_标签过滤", txtRwerTagStartWith.Text);
+		private void btnSubmit_Click(object sender, EventArgs e)
+		{
+			if (!ValidateInputEmpty(new List<string> { "程序唯一标识符", "数据库连接字符串" }, new List<Control> { txtAppIdentifier, txtSelfConnStr })) return;
 
-            // LED显示屏
-            commonDAO.SetAppletConfig("LED显示屏1_IP地址", iptxtLED1IP.Value); 
+			if (!SaveAppConfig()) return;
 
-            return true;
-        }
+			if (MessageBoxEx.Show("更改的配置需要重启程序才能生效，是否立刻重启？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				Application.Restart();
+			else
+				this.Close();
+		}
 
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            if (!ValidateInputEmpty(new List<string> { "程序唯一标识符", "数据库连接字符串" }, new List<Control> { txtAppIdentifier, txtSelfConnStr })) return;
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 
-            if (!SaveAppConfig()) return;
+		#region 其他函数
 
-            if (MessageBoxEx.Show("更改的配置需要重启程序才能生效，是否立刻重启？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                Application.Restart();
-            else
-                this.Close();
-        }
+		/// <summary>
+		/// 验证批量控件为空，并提示
+		/// </summary>
+		/// <param name="tipsNames"></param>
+		/// <param name="controls"></param>
+		/// <returns></returns>
+		public static bool ValidateInputEmpty(List<string> tipsNames, List<Control> controls)
+		{
+			for (int i = 0; i < controls.Count; i++)
+			{
+				Control control = controls[i];
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+				if (control is TextBoxX && string.IsNullOrEmpty(((TextBoxX)control).Text))
+				{
+					control.Focus();
+					MessageBoxEx.Show("请输入" + tipsNames[i] + "！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-        #region 其他函数
+					return false;
+				}
+			}
 
-        /// <summary>
-        /// 验证批量控件为空，并提示
-        /// </summary>
-        /// <param name="tipsNames"></param>
-        /// <param name="controls"></param>
-        /// <returns></returns>
-        public static bool ValidateInputEmpty(List<string> tipsNames, List<Control> controls)
-        {
-            for (int i = 0; i < controls.Count; i++)
-            {
-                Control control = controls[i];
+			return true;
+		}
 
-                if (control is TextBoxX && string.IsNullOrEmpty(((TextBoxX)control).Text))
-                {
-                    control.Focus();
-                    MessageBoxEx.Show("请输入" + tipsNames[i] + "！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		/// <summary>
+		/// 选中下拉框选项
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="text"></param>
+		private void SelectedComboBoxItem(ComboBoxEx cmb, string value)
+		{
+			foreach (DataItem dataItem in cmb.Items)
+			{
+				if (dataItem.Value == value) cmb.SelectedItem = dataItem;
+			}
+		}
 
-                    return false;
-                }
-            }
+		/// <summary>
+		/// 初始化串口下拉框
+		/// </summary>
+		/// <param name="cmb"></param>
+		void InitComPortComboBox(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
 
-            return true;
-        }
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
 
-        /// <summary>
-        /// 选中下拉框选项
-        /// </summary>
-        /// <param name="cmb"></param>
-        /// <param name="text"></param>
-        private void SelectedComboBoxItem(ComboBoxEx cmb, string value)
-        {
-            foreach (DataItem dataItem in cmb.Items)
-            {
-                if (dataItem.Value == value) cmb.SelectedItem = dataItem;
-            }
-        }
+			for (int i = 1; i < 20; i++)
+			{
+				cmb.Items.Add(new DataItem("COM" + i.ToString(), i.ToString()));
+			}
 
-        /// <summary>
-        /// 初始化串口下拉框
-        /// </summary>
-        /// <param name="cmb"></param>
-        void InitComPortComboBox(ComboBoxEx cmb)
-        {
-            cmb.Items.Clear();
+			cmb.SelectedIndex = 0;
+		}
 
-            cmb.DisplayMember = "Text";
-            cmb.ValueMember = "Value";
+		/// <summary>
+		/// 初始化串口下拉框
+		/// </summary>
+		/// <param name="cmbs"></param>
+		void InitComPortComboBoxs(params ComboBoxEx[] cmbs)
+		{
+			foreach (ComboBoxEx cmb in cmbs)
+			{
+				InitComPortComboBox(cmb);
+			}
+		}
 
-            for (int i = 1; i < 20; i++)
-            {
-                cmb.Items.Add(new DataItem("COM" + i.ToString(), i.ToString()));
-            }
+		/// <summary>
+		/// 初始化波特率下拉框
+		/// </summary>
+		/// <param name="cmb"></param>
+		private void InitBandrateComboBox(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
 
-            cmb.SelectedIndex = 0;
-        }
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
 
-        /// <summary>
-        /// 初始化串口下拉框
-        /// </summary>
-        /// <param name="cmbs"></param>
-        void InitComPortComboBoxs(params ComboBoxEx[] cmbs)
-        {
-            foreach (ComboBoxEx cmb in cmbs)
-            {
-                InitComPortComboBox(cmb);
-            }
-        }
+			cmb.Items.Add(new DataItem("1200"));
+			cmb.Items.Add(new DataItem("4800"));
+			cmb.Items.Add(new DataItem("9600"));
+			cmb.Items.Add(new DataItem("14400"));
+			cmb.Items.Add(new DataItem("19200"));
+			cmb.Items.Add(new DataItem("38400"));
+			cmb.Items.Add(new DataItem("56000"));
+			cmb.Items.Add(new DataItem("57600"));
+			cmb.Items.Add(new DataItem("115200"));
 
-        /// <summary>
-        /// 初始化波特率下拉框
-        /// </summary>
-        /// <param name="cmb"></param>
-        private void InitBandrateComboBox(ComboBoxEx cmb)
-        {
-            cmb.Items.Clear();
+			cmb.SelectedIndex = 0;
+		}
 
-            cmb.DisplayMember = "Text";
-            cmb.ValueMember = "Value";
+		/// <summary>
+		/// 初始化波特率下拉框
+		/// </summary>
+		/// <param name="cmbs"></param>
+		void InitBandrateComboBoxs(params ComboBoxEx[] cmbs)
+		{
+			foreach (ComboBoxEx cmb in cmbs)
+			{
+				InitBandrateComboBox(cmb);
+			}
+		}
 
-            cmb.Items.Add(new DataItem("1200"));
-            cmb.Items.Add(new DataItem("4800"));
-            cmb.Items.Add(new DataItem("9600"));
-            cmb.Items.Add(new DataItem("14400"));
-            cmb.Items.Add(new DataItem("19200"));
-            cmb.Items.Add(new DataItem("38400"));
-            cmb.Items.Add(new DataItem("56000"));
-            cmb.Items.Add(new DataItem("57600"));
-            cmb.Items.Add(new DataItem("115200"));
+		/// <summary>
+		/// 初始化数字下拉框
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="start"></param>
+		/// <param name="end"></param>
+		void InitNumberAscComboBox(int start, int end, ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
 
-            cmb.SelectedIndex = 0;
-        }
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
 
-        /// <summary>
-        /// 初始化波特率下拉框
-        /// </summary>
-        /// <param name="cmbs"></param>
-        void InitBandrateComboBoxs(params ComboBoxEx[] cmbs)
-        {
-            foreach (ComboBoxEx cmb in cmbs)
-            {
-                InitBandrateComboBox(cmb);
-            }
-        }
+			for (int i = start; i <= end; i++)
+			{
+				cmb.Items.Add(new DataItem(i.ToString()));
+			}
 
-        /// <summary>
-        /// 初始化数字下拉框
-        /// </summary>
-        /// <param name="cmb"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        void InitNumberAscComboBox(int start, int end, ComboBoxEx cmb)
-        {
-            cmb.Items.Clear();
+			if (cmb.Items.Count > 0) cmb.SelectedIndex = 0;
+		}
 
-            cmb.DisplayMember = "Text";
-            cmb.ValueMember = "Value";
+		/// <summary>
+		/// 初始化数字下拉框
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="start"></param>
+		/// <param name="end"></param>
+		void InitNumberAscComboBoxs(int start, int end, params ComboBoxEx[] cmbs)
+		{
+			foreach (ComboBoxEx cmb in cmbs)
+			{
+				InitNumberAscComboBox(start, end, cmb);
+			}
+		}
 
-            for (int i = start; i <= end; i++)
-            {
-                cmb.Items.Add(new DataItem(i.ToString()));
-            }
+		/// <summary>
+		/// 初始化停止位下拉框
+		/// </summary>
+		/// <param name="cmb"></param>
+		void InitStopBitsComboBox(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
 
-            if (cmb.Items.Count > 0) cmb.SelectedIndex = 0;
-        }
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
 
-        /// <summary>
-        /// 初始化数字下拉框
-        /// </summary>
-        /// <param name="cmb"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        void InitNumberAscComboBoxs(int start, int end, params ComboBoxEx[] cmbs)
-        {
-            foreach (ComboBoxEx cmb in cmbs)
-            {
-                InitNumberAscComboBox(start, end, cmb);
-            }
-        }
+			cmb.Items.Add(new DataItem(StopBits.None.ToString(), ((int)StopBits.None).ToString()));
+			cmb.Items.Add(new DataItem(StopBits.One.ToString(), ((int)StopBits.One).ToString()));
+			cmb.Items.Add(new DataItem(StopBits.OnePointFive.ToString(), ((int)StopBits.OnePointFive).ToString()));
+			cmb.Items.Add(new DataItem(StopBits.Two.ToString(), ((int)StopBits.Two).ToString()));
 
-        /// <summary>
-        /// 初始化停止位下拉框
-        /// </summary>
-        /// <param name="cmb"></param>
-        void InitStopBitsComboBox(ComboBoxEx cmb)
-        {
-            cmb.Items.Clear();
+			cmb.SelectedIndex = 0;
+		}
 
-            cmb.DisplayMember = "Text";
-            cmb.ValueMember = "Value";
+		/// <summary>
+		/// 初始化停止位下拉框
+		/// </summary>
+		/// <param name="cmbs"></param>
+		void InitStopBitsComboBoxs(params ComboBoxEx[] cmbs)
+		{
+			foreach (ComboBoxEx cmb in cmbs)
+			{
+				InitStopBitsComboBox(cmb);
+			}
+		}
 
-            cmb.Items.Add(new DataItem(StopBits.None.ToString(), ((int)StopBits.None).ToString()));
-            cmb.Items.Add(new DataItem(StopBits.One.ToString(), ((int)StopBits.One).ToString()));
-            cmb.Items.Add(new DataItem(StopBits.OnePointFive.ToString(), ((int)StopBits.OnePointFive).ToString()));
-            cmb.Items.Add(new DataItem(StopBits.Two.ToString(), ((int)StopBits.Two).ToString()));
+		/// <summary>
+		/// 初始化校验位下拉框
+		/// </summary>
+		/// <param name="cmb"></param>
+		void InitParityComboBox(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
 
-            cmb.SelectedIndex = 0;
-        }
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
 
-        /// <summary>
-        /// 初始化停止位下拉框
-        /// </summary>
-        /// <param name="cmbs"></param>
-        void InitStopBitsComboBoxs(params ComboBoxEx[] cmbs)
-        {
-            foreach (ComboBoxEx cmb in cmbs)
-            {
-                InitStopBitsComboBox(cmb);
-            }
-        }
+			cmb.Items.Add(new DataItem(Parity.None.ToString(), ((int)Parity.None).ToString()));
+			cmb.Items.Add(new DataItem(Parity.Odd.ToString(), ((int)Parity.Odd).ToString()));
+			cmb.Items.Add(new DataItem(Parity.Even.ToString(), ((int)Parity.Even).ToString()));
+			cmb.Items.Add(new DataItem(Parity.Mark.ToString(), ((int)Parity.Mark).ToString()));
+			cmb.Items.Add(new DataItem(Parity.Space.ToString(), ((int)Parity.Space).ToString()));
 
-        /// <summary>
-        /// 初始化校验位下拉框
-        /// </summary>
-        /// <param name="cmb"></param>
-        void InitParityComboBox(ComboBoxEx cmb)
-        {
-            cmb.Items.Clear();
+			cmb.SelectedIndex = 0;
+		}
 
-            cmb.DisplayMember = "Text";
-            cmb.ValueMember = "Value";
+		/// <summary>
+		/// 初始化校验位下拉框
+		/// </summary>
+		/// <param name="cmbs"></param>
+		void InitParityComboBoxs(params ComboBoxEx[] cmbs)
+		{
+			foreach (ComboBoxEx cmb in cmbs)
+			{
+				InitParityComboBox(cmb);
+			}
+		}
 
-            cmb.Items.Add(new DataItem(Parity.None.ToString(), ((int)Parity.None).ToString()));
-            cmb.Items.Add(new DataItem(Parity.Odd.ToString(), ((int)Parity.Odd).ToString()));
-            cmb.Items.Add(new DataItem(Parity.Even.ToString(), ((int)Parity.Even).ToString()));
-            cmb.Items.Add(new DataItem(Parity.Mark.ToString(), ((int)Parity.Mark).ToString()));
-            cmb.Items.Add(new DataItem(Parity.Space.ToString(), ((int)Parity.Space).ToString()));
-
-            cmb.SelectedIndex = 0;
-        }
-
-        /// <summary>
-        /// 初始化校验位下拉框
-        /// </summary>
-        /// <param name="cmbs"></param>
-        void InitParityComboBoxs(params ComboBoxEx[] cmbs)
-        {
-            foreach (ComboBoxEx cmb in cmbs)
-            {
-                InitParityComboBox(cmb);
-            }
-        }
-
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -1,25 +1,33 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
-//
 using CMCS.CarTransport.DAO;
 using CMCS.CarTransport.Weighter.Core;
 using CMCS.CarTransport.Weighter.Enums;
 using CMCS.CarTransport.Weighter.Frms.Sys;
 using CMCS.Common;
 using CMCS.Common.DAO;
+using CMCS.Common.Entities;
 using CMCS.Common.Entities.BaseInfo;
 using CMCS.Common.Entities.CarTransport;
+using CMCS.Common.Entities.Fuel;
+using CMCS.Common.Entities.Inf;
 using CMCS.Common.Entities.Sys;
 using CMCS.Common.Enums;
 using CMCS.Common.Utilities;
+using CMCS.Common.Views;
 using DevComponents.DotNetBar;
+using DevComponents.DotNetBar.Controls;
+using DevComponents.DotNetBar.SuperGrid;
 using EQ2008_DataStruct;
 using HikVisionSDK.Core;
 using LED.EQ2013;
@@ -222,15 +230,12 @@ namespace CMCS.CarTransport.Weighter.Frms
 				autoHandMode = value;
 
 				btnSelectAutotruck_BuyFuel.Visible = !value;
-				btnSelectAutotruck_SaleFuel.Visible = !value;
 				btnSelectAutotruck_Goods.Visible = !value;
 
 				btnSaveTransport_BuyFuel.Visible = !value;
-				btnSaveTransport_SaleFuel.Visible = !value;
 				btnSaveTransport_Goods.Visible = !value;
 
 				btnReset_BuyFuel.Visible = !value;
-				btnReset_SaleFuel.Visible = !value;
 				btnReset_Goods.Visible = !value;
 			}
 		}
@@ -263,6 +268,29 @@ namespace CMCS.CarTransport.Weighter.Frms
 		{
 			get { return currentDirection; }
 			set { currentDirection = value; }
+		}
+
+		string direction;
+		/// <summary>
+		/// 固定上磅方向
+		/// </summary>
+		public string Direction
+		{
+			get { return direction; }
+			set
+			{
+				direction = value;
+				if (value == "双向磅")
+				{
+					slightRwer2.Visible = true;
+					label_Rwer2.Visible = true;
+				}
+				else if (value == "单向磅")
+				{
+					slightRwer2.Visible = false;
+					label_Rwer2.Visible = false;
+				}
+			}
 		}
 
 		eFlowFlag currentFlowFlag = eFlowFlag.等待车辆;
@@ -304,13 +332,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 						txtCarNumber_BuyFuel.Text = value.CarNumber;
 						superTabControl2.SelectedTab = superTabItem_BuyFuel;
 					}
-					else if (value.CarType == eCarType.销售煤.ToString())
-					{
-						if (ePCCard != null) txtTagId_SaleFuel.Text = ePCCard.TagId;
-
-						txtCarNumber_SaleFuel.Text = value.CarNumber;
-						superTabControl2.SelectedTab = superTabItem_SaleFuel;
-					}
 					else if (value.CarType == eCarType.其他物资.ToString())
 					{
 						if (ePCCard != null) txtTagId_Goods.Text = ePCCard.TagId;
@@ -338,6 +359,22 @@ namespace CMCS.CarTransport.Weighter.Frms
 				}
 			}
 		}
+		private string samplerMachineCode;
+		public string SamplerMachineCode
+		{
+			get { return samplerMachineCode; }
+			set { samplerMachineCode = value; }
+		}
+
+		private InfQCJXCYSampleCMD currentSampleCMD;
+		/// <summary>
+		/// 当前采样命令
+		/// </summary>
+		public InfQCJXCYSampleCMD CurrentSampleCMD
+		{
+			get { return currentSampleCMD; }
+			set { currentSampleCMD = value; }
+		}
 
 		#endregion
 
@@ -347,7 +384,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 		private void InitForm()
 		{
 			FrmDebugConsole.GetInstance();
-
+			SamplerMachineCode = commonDAO.GetAppletConfigString("采样机编码");
 			// 默认自动
 			sbtnChangeAutoHandMode.Value = true;
 
@@ -364,6 +401,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 		private void FrmWeighter_Shown(object sender, EventArgs e)
 		{
+			Direction = commonDAO.GetAppletConfigString("上磅方向");
 			InitHardware();
 
 			InitForm();
@@ -523,19 +561,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 		#region LED显示屏
 
 		/// <summary>
-		/// 生成12字节的文本内容
-		/// </summary>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		private string GenerateFillLedContent12(string value)
-		{
-			int length = Encoding.Default.GetByteCount(value);
-			if (length < 12) return value + "".PadRight(12 - length, ' ');
-
-			return value;
-		}
-
-		/// <summary>
 		/// 更新LED动态区域
 		/// </summary>
 		/// <param name="value1">第一行内容</param>
@@ -546,11 +571,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 		}
 
 		#region LED1控制卡
-
-		/// <summary>
-		/// LED1控制卡屏号
-		/// </summary>
-		int LED1nScreenNo = 1;
 
 		private bool _LED1ConnectStatus;
 		/// <summary>
@@ -635,83 +655,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 		#endregion
 
-		#region LED2控制卡
-
-		/// <summary>
-		/// LED2控制卡屏号
-		/// </summary>
-		int LED2nScreenNo = 1;
-		/// <summary>
-		/// LED2动态区域号
-		/// </summary>
-		int LED2DYArea_ID = 1;
-		/// <summary>
-		/// LED2更新标识
-		/// </summary>
-		bool LED2m_bSendBusy = false;
-
-		private bool _LED2ConnectStatus;
-		/// <summary>
-		/// LED2连接状态
-		/// </summary>
-		public bool LED2ConnectStatus
-		{
-			get
-			{
-				return _LED2ConnectStatus;
-			}
-
-			set
-			{
-				_LED2ConnectStatus = value;
-
-				slightLED2.LightColor = (value ? Color.Green : Color.Red);
-
-				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.LED屏2_连接状态.ToString(), value ? "1" : "0");
-			}
-		}
-
-		/// <summary>
-		/// LED2显示内容文本
-		/// </summary>
-		string LED2TempFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Led2TempFile.txt");
-
-		/// <summary>
-		/// LED2上一次显示内容
-		/// </summary>
-		string LED2PrevLedFileContent = string.Empty;
-
-		/// <summary>
-		/// 更新LED2动态区域
-		/// </summary>
-		/// <param name="value1">第一行内容</param>
-		/// <param name="value2">第二行内容</param>
-		private void UpdateLed2Show(string value1 = "", string value2 = "")
-		{
-			FrmDebugConsole.GetInstance().Output("更新LED2:|" + value1 + "|" + value2 + "|");
-
-			if (!this.LED1ConnectStatus) return;
-			if (this.LED2PrevLedFileContent == value1 + value2) return;
-
-			string ledContent = GenerateFillLedContent12(value1) + GenerateFillLedContent12(value2);
-
-			File.WriteAllText(this.LED1TempFile, ledContent, Encoding.UTF8);
-
-			if (LED2m_bSendBusy == false)
-			{
-				LED2m_bSendBusy = true;
-
-				//int nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED2nScreenNo, this.LED2DYArea_ID);
-				//if (nResult != YB14DynamicAreaLeder.RETURN_NOERROR) Log4Neter.Error("更新LED动态区域", new Exception(YB14DynamicAreaLeder.GetErrorMessage("SendDynamicAreaInfoCommand", nResult)));
-
-				LED2m_bSendBusy = false;
-			}
-
-			this.LED2PrevLedFileContent = value1 + value2;
-		}
-
-		#endregion
-
 		#endregion
 
 		#region 地磅仪表
@@ -723,9 +666,9 @@ namespace CMCS.CarTransport.Weighter.Frms
 		void Wber_OnSteadyChange(bool steady)
 		{
 			InvokeEx(() =>
-			  {
-				  this.WbSteady = steady;
-			  });
+			{
+				this.WbSteady = steady;
+			});
 		}
 
 		/// <summary>
@@ -858,19 +801,19 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 		#region 设备初始化与卸载
 
-        /// <summary>
-        /// 初始化外接设备
-        /// </summary>
-        private void InitHardware()
-        {
-            try
-            {
-                bool success = false;
+		/// <summary>
+		/// 初始化外接设备
+		/// </summary>
+		private void InitHardware()
+		{
+			try
+			{
+				bool success = false;
 
-                this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
-                this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
-                this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");
-                this.InfraredSensor2Port = commonDAO.GetAppletConfigInt32("IO控制器_对射2端口");
+				this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
+				this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
+				this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");
+				this.InfraredSensor2Port = commonDAO.GetAppletConfigInt32("IO控制器_对射2端口");
 
 				this.WbMinWeight = commonDAO.GetAppletConfigDouble("地磅仪表_最小称重");
 
@@ -885,48 +828,50 @@ namespace CMCS.CarTransport.Weighter.Frms
 				Hardwarer.Wber.OnStatusChange += new WB.TOLEDO.IND245.TOLEDO_IND245Wber.StatusChangeHandler(Wber_OnStatusChange);
 				Hardwarer.Wber.OnSteadyChange += new WB.TOLEDO.IND245.TOLEDO_IND245Wber.SteadyChangeEventHandler(Wber_OnSteadyChange);
 				Hardwarer.Wber.OnWeightChange += new WB.TOLEDO.IND245.TOLEDO_IND245Wber.WeightChangeEventHandler(Wber_OnWeightChange);
-				success = Hardwarer.Wber.OpenCom(commonDAO.GetAppletConfigInt32("地磅仪表_串口"), commonDAO.GetAppletConfigInt32("地磅仪表_波特率"), commonDAO.GetAppletConfigInt32("地磅仪表_数据位"), (StopBits)commonDAO.GetAppletConfigInt32("地磅仪表_停止位"), (Parity)commonDAO.GetAppletConfigInt32("地磅仪表_校验位"));
+				success = Hardwarer.Wber.OpenCom(commonDAO.GetAppletConfigInt32("地磅仪表_串口"), commonDAO.GetAppletConfigInt32("地磅仪表_波特率"), commonDAO.GetAppletConfigInt32("地磅仪表_数据位"), (StopBits)commonDAO.GetAppletConfigInt32("地磅仪表_停止位"), (Parity)commonDAO.GetAppletConfigInt32("地磅仪表_校验位"), commonDAO.GetAppletConfigString("地磅仪表_类型"));
 
 				// 读卡器1
-
 				Hardwarer.Rwer1.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
 				Hardwarer.Rwer1.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer1_OnStatusChange);
 				Hardwarer.Rwer1.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer1_OnScanError);
 				success = Hardwarer.Rwer1.OpenCom(commonDAO.GetAppletConfigInt32("读卡器1_串口"));
 				if (!success) MessageBoxEx.Show("读卡器1连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-				// 读卡器2
-				Hardwarer.Rwer2.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
-				Hardwarer.Rwer2.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer2_OnStatusChange);
-				Hardwarer.Rwer2.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer2_OnScanError);
-				success = Hardwarer.Rwer2.OpenCom(commonDAO.GetAppletConfigInt32("读卡器2_串口"));
-				if (!success) MessageBoxEx.Show("读卡器2连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				if (this.Direction == "双向磅")
+				{
+					// 读卡器2
+					Hardwarer.Rwer2.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
+					Hardwarer.Rwer2.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer2_OnStatusChange);
+					Hardwarer.Rwer2.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer2_OnScanError);
+					success = Hardwarer.Rwer2.OpenCom(commonDAO.GetAppletConfigInt32("读卡器2_串口"));
+					if (!success) MessageBoxEx.Show("读卡器2连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
 
 				#region 海康视频
 
-				IPCer.InitSDK();
+				//IPCer.InitSDK();
 
-				CmcsCamare video1 = commonDAO.SelfDber.Entity<CmcsCamare>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = "重车衡摄像头1" });
-				if (video1 != null)
-				{
-					if (CommonUtil.PingReplyTest(video1.Ip))
-					{
-						if (iPCer1.Login(video1.Ip, video1.Port, video1.UserName, video1.Password))
-						{
-							bool res = iPCer1.StartPreview(panVideo1.Handle, video1.Channel);
-						}
-					}
-				}
+				//CmcsCamare video1 = commonDAO.SelfDber.Entity<CmcsCamare>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = "重车衡摄像头1" });
+				//if (video1 != null)
+				//{
+				//	if (CommonUtil.PingReplyTest(video1.Ip))
+				//	{
+				//		if (iPCer1.Login(video1.Ip, video1.Port, video1.UserName, video1.Password))
+				//		{
+				//			bool res = iPCer1.StartPreview(panVideo1.Handle, video1.Channel);
+				//		}
+				//	}
+				//}
 
-				CmcsCamare video2 = commonDAO.SelfDber.Entity<CmcsCamare>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = "摄像机2" });
-				if (video2 != null)
-				{
-					if (CommonUtil.PingReplyTest(video2.Ip))
-					{
-						if (iPCer2.Login(video2.Ip, video2.Port, video2.UserName, video2.Password))
-							iPCer2.StartPreview(panVideo2.Handle, video2.Channel);
-					}
-				}
+				//CmcsCamare video2 = commonDAO.SelfDber.Entity<CmcsCamare>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = "摄像机2" });
+				//if (video2 != null)
+				//{
+				//	if (CommonUtil.PingReplyTest(video2.Ip))
+				//	{
+				//		if (iPCer2.Login(video2.Ip, video2.Port, video2.UserName, video2.Password))
+				//			iPCer2.StartPreview(panVideo2.Handle, video2.Channel);
+				//	}
+				//}
 
 				#endregion
 
@@ -948,9 +893,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 
 				#endregion
-
-				//语音设置
-				//voiceSpeaker.SetVoice(commonDAO.GetAppletConfigInt32("语速"), commonDAO.GetAppletConfigInt32("音量"), commonDAO.GetAppletConfigString("语音包"));
 
 				timer1.Enabled = true;
 			}
@@ -989,30 +931,21 @@ namespace CMCS.CarTransport.Weighter.Frms
 			catch { }
 			try
 			{
-				Hardwarer.Rwer2.CloseCom();
+				if (this.Direction == "双向磅")
+					Hardwarer.Rwer2.CloseCom();
 			}
 			catch { }
 			try
 			{
 				if (this.LED1ConnectStatus)
 				{
-					YB14DynamicAreaLeder.SendDeleteDynamicAreasCommand(this.LED1nScreenNo, 1, "");
-					YB14DynamicAreaLeder.DeleteScreen(this.LED1nScreenNo);
+					EQ2013.User_CloseScreen(g_iCardNum);
 				}
 			}
 			catch { }
 			try
 			{
-				if (this.LED2ConnectStatus)
-				{
-					YB14DynamicAreaLeder.SendDeleteDynamicAreasCommand(this.LED2nScreenNo, 1, "");
-					YB14DynamicAreaLeder.DeleteScreen(this.LED2nScreenNo);
-				}
-			}
-			catch { }
-			try
-			{
-				IPCer.CleanupSDK();
+				//IPCer.CleanupSDK();
 			}
 			catch { }
 		}
@@ -1095,8 +1028,10 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 					case eFlowFlag.开始读卡:
 						#region
-						List<string> tags1 = Hardwarer.Rwer1.ScanTags();
-						List<string> tags2 = Hardwarer.Rwer2.ScanTags();
+						List<string> tags1 = new List<string>();
+						List<string> tags2 = new List<string>();
+						tags1 = Hardwarer.Rwer1.ScanTags();
+						tags2 = Hardwarer.Rwer2.ScanTags();
 
 						if (tags1.Count > 0)
 						{
@@ -1156,11 +1091,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 								{
 									this.timer_BuyFuel_Cancel = false;
 									this.CurrentFlowFlag = eFlowFlag.验证信息;
-								}
-								else if (this.CurrentAutotruck.CarType == eCarType.销售煤.ToString())
-								{
-									this.timer_SaleFuel_Cancel = false;
-									this.CurrentFlowFlag = eFlowFlag.验证信息;
+									timer_BuyFuel_Tick(null, null);
 								}
 								else if (this.CurrentAutotruck.CarType == eCarType.其他物资.ToString())
 								{
@@ -1281,11 +1212,11 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 					if (appRemoteControlCmd.Param.Equals("Gate1Up", StringComparison.CurrentCultureIgnoreCase))
 						this.iocControler.Gate1Up();
-					else if (appRemoteControlCmd.Param.Equals("Gate1Down", StringComparison.CurrentCultureIgnoreCase))
+					else if (appRemoteControlCmd.Param.Equals("Gate1Down", StringComparison.CurrentCultureIgnoreCase) && !this.InductorCoil1)
 						this.iocControler.Gate1Down();
 					else if (appRemoteControlCmd.Param.Equals("Gate2Up", StringComparison.CurrentCultureIgnoreCase))
 						this.iocControler.Gate2Up();
-					else if (appRemoteControlCmd.Param.Equals("Gate2Down", StringComparison.CurrentCultureIgnoreCase))
+					else if (appRemoteControlCmd.Param.Equals("Gate2Down", StringComparison.CurrentCultureIgnoreCase) && !this.InductorCoil2)
 						this.iocControler.Gate2Down();
 
 					// 更新执行结果
@@ -1315,10 +1246,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 入厂煤
 			LoadTodayUnFinishBuyFuelTransport();
 			LoadTodayFinishBuyFuelTransport();
-
-			// 销售煤 
-			LoadTodayUnFinishSaleFuelTransport();
-			LoadTodayFinishSaleFuelTransport();
 
 			// 其他物资
 			LoadTodayUnFinishGoodsTransport();
@@ -1424,11 +1351,18 @@ namespace CMCS.CarTransport.Weighter.Frms
 					FrontGateUp();
 
 					btnSaveTransport_BuyFuel.Enabled = false;
-					this.CurrentFlowFlag = eFlowFlag.等待离开;
-
-					UpdateLedShow("称重完毕", "请下磅");
-					this.voiceSpeaker.Speak("称重完毕请下磅", 1, false);
-
+					if (this.Direction == "双向磅")
+					{
+						this.CurrentFlowFlag = eFlowFlag.准备采样;
+						UpdateLedShow("称重完毕", "开始采样");
+						this.voiceSpeaker.Speak("称重完毕 开始采样", 1, false);
+					}
+					else if (this.Direction == "单向磅")
+					{
+						this.CurrentFlowFlag = eFlowFlag.等待离开;
+						UpdateLedShow("称重完毕", "请下磅");
+						this.voiceSpeaker.Speak("称重完毕 请下磅", 1, false);
+					}
 					LoadTodayUnFinishBuyFuelTransport();
 					LoadTodayFinishBuyFuelTransport();
 
@@ -1509,30 +1443,18 @@ namespace CMCS.CarTransport.Weighter.Frms
 							this.CurrentBuyFuelTransport = commonDAO.SelfDber.Get<CmcsBuyFuelTransport>(unFinishTransport.TransportId);
 							if (this.CurrentBuyFuelTransport != null)
 							{
-								// 判断路线设置
-								string nextPlace;
-								if (carTransportDAO.CheckNextTruckInFactoryWay(this.CurrentAutotruck.CarType, this.CurrentBuyFuelTransport.StepName, "重车|轻车", CommonAppConfig.GetInstance().AppIdentifier, out nextPlace))
+								if (this.CurrentBuyFuelTransport.SuttleWeight == 0)
 								{
-									if (this.CurrentBuyFuelTransport.SuttleWeight == 0)
-									{
-										BackGateUp();
-										this.CurrentFlowFlag = eFlowFlag.等待上磅;
+									BackGateUp();
+									this.CurrentFlowFlag = eFlowFlag.等待上磅;
 
-										UpdateLedShow(this.CurrentAutotruck.CarNumber, "请上磅");
-										this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 请上磅", 1, false);
-									}
-									else
-									{
-										UpdateLedShow(this.CurrentAutotruck.CarNumber, "已称重");
-										this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 已称重", 1, false);
-
-										timer_BuyFuel.Interval = 20000;
-									}
+									UpdateLedShow(this.CurrentAutotruck.CarNumber, "请上磅");
+									this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 请上磅", 1, false);
 								}
 								else
 								{
-									UpdateLedShow("路线错误", "禁止通过");
-									this.voiceSpeaker.Speak("路线错误 禁止通过 " + (!string.IsNullOrEmpty(nextPlace) ? "请前往" + nextPlace : ""), 1, false);
+									UpdateLedShow(this.CurrentAutotruck.CarNumber, "已称重");
+									this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 已称重", 1, false);
 
 									timer_BuyFuel.Interval = 20000;
 								}
@@ -1599,7 +1521,74 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 						#endregion
 						break;
+					case eFlowFlag.准备采样:
+						#region
+						CmcsRCSampling sampling = carTransportDAO.GetRCSamplingById(this.CurrentBuyFuelTransport.SamplingId);
+						if (sampling != null)
+						{
+							this.CurrentSampleCMD = new InfQCJXCYSampleCMD()
+							{
+								MachineCode = this.SamplerMachineCode,
+								CarNumber = this.CurrentBuyFuelTransport.CarNumber,
+								InFactoryBatchId = this.CurrentBuyFuelTransport.InFactoryBatchId,
+								SampleCode = sampling.SampleCode,
+								Mt = 0,
+								// 根据预报
+								TicketWeight = 0,
+								// 根据预报
+								CarCount = 0,
+								// 采样点数根据相关逻辑计算
+								PointCount = 3,
+								CarriageLength = this.CurrentAutotruck.CarriageLength,
+								CarriageWidth = this.CurrentAutotruck.CarriageWidth,
+								CarriageHeight = this.CurrentAutotruck.CarriageHeight,
+								CarriageBottomToFloor = this.CurrentAutotruck.CarriageBottomToFloor,
+								Obstacle1 = this.CurrentAutotruck.LeftObstacle1,
+								Obstacle2 = this.CurrentAutotruck.LeftObstacle2,
+								Obstacle3 = this.CurrentAutotruck.LeftObstacle3,
+								Obstacle4 = this.CurrentAutotruck.LeftObstacle4,
+								Obstacle5 = this.CurrentAutotruck.LeftObstacle5,
+								Obstacle6 = this.CurrentAutotruck.LeftObstacle6,
+								ResultCode = eEquInfCmdResultCode.默认.ToString(),
+								DataFlag = 0
+							};
 
+							// 发送采样计划
+							if (commonDAO.SelfDber.Insert<InfQCJXCYSampleCMD>(CurrentSampleCMD) > 0)
+								this.CurrentFlowFlag = eFlowFlag.等待采样;
+						}
+						else
+						{
+							this.UpdateLedShow("未找到采样单信息");
+							this.voiceSpeaker.Speak("未找到采样单信息，请联系管理员", 1, false);
+
+							timer1.Interval = 5000;
+						}
+						#endregion
+						break;
+					case eFlowFlag.等待采样:
+						#region
+
+						// 判断采样是否完成
+						InfQCJXCYSampleCMD qCJXCYSampleCMD = commonDAO.SelfDber.Get<InfQCJXCYSampleCMD>(this.CurrentSampleCMD.Id);
+						if (qCJXCYSampleCMD.ResultCode == eEquInfCmdResultCode.成功.ToString())
+						{
+							if (JxSamplerDAO.GetInstance().SaveBuyFuelTransport(this.CurrentBuyFuelTransport.Id, DateTime.Now, this.SamplerMachineCode))
+							{
+								FrontGateUp();
+
+								this.UpdateLedShow("采样完毕", " 请离开");
+								this.voiceSpeaker.Speak("采样完毕，请离开", 1, false);
+
+								this.CurrentFlowFlag = eFlowFlag.等待离开;
+							}
+						}
+
+						// 降低灵敏度
+						timer_BuyFuel.Interval = 4000;
+
+						#endregion
+						break;
 					case eFlowFlag.等待离开:
 						#region
 
@@ -1614,8 +1603,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 				}
 
 				// 当前地磅重量小于最小称重且所有地感、对射无信号时重置
-				if (Hardwarer.Wber.Weight < this.WbMinWeight && !HasCarOnEnterWay() && !HasCarOnLeaveWay() && this.CurrentFlowFlag != eFlowFlag.等待车辆
-					&& this.CurrentImperfectCar != null) ResetBuyFuel();
+				//if (Hardwarer.Wber.Weight < this.WbMinWeight && !HasCarOnEnterWay() && !HasCarOnLeaveWay() && this.CurrentFlowFlag != eFlowFlag.等待车辆
+				//    && this.CurrentImperfectCar != null) ResetBuyFuel();
 			}
 			catch (Exception ex)
 			{
@@ -1643,320 +1632,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 			superGridControl2_BuyFuel.PrimaryGrid.DataSource = weighterDAO.GetFinishedBuyFuelTransport(DateTime.Now.Date, DateTime.Now.Date.AddDays(1));
 		}
 
-		#endregion
-
-		#region 销售煤业务
-
-		bool timer_SaleFuel_Cancel = true;
-		CmcsSaleFuelTransport currentSaleFuelTransport;
-		/// <summary>
-		/// 当前运输记录
-		/// </summary>
-		public CmcsSaleFuelTransport CurrentSaleFuelTransport
-		{
-			get { return currentSaleFuelTransport; }
-			set
-			{
-				currentSaleFuelTransport = value;
-
-				if (value != null)
-				{
-					commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.当前运输记录Id.ToString(), value.Id);
-					txtCarNumber_SaleFuel.Text = value.CarNumber;
-					txt_YBNumber1.Text = value.TransportSalesNum;
-					txt_TransportNo1.Text = value.TransportNo;
-					txt_Consignee1.Text = value.SupplierName;
-					txt_TransportCompayName1.Text = value.TransportCompanyName;
-
-					txtGrossWeight_SaleFuel.Text = value.GrossWeight.ToString("F2");
-					txtTareWeight_SaleFuel.Text = value.TareWeight.ToString("F2");
-					txtSuttleWeight_SaleFuel.Text = value.SuttleWeight.ToString("F2");
-				}
-				else
-				{
-					commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.当前运输记录Id.ToString(), string.Empty);
-					txtCarNumber_SaleFuel.ResetText();
-					txt_YBNumber1.ResetText();
-					txt_TransportNo1.ResetText();
-					txt_Consignee1.ResetText();
-					txt_TransportCompayName1.ResetText();
-
-					txtGrossWeight_SaleFuel.ResetText();
-					txtTareWeight_SaleFuel.ResetText();
-					txtSuttleWeight_SaleFuel.ResetText();
-				}
-			}
-		}
-
-		/// <summary>
-		/// 选择车辆
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void btnSelectAutotruck_SaleFuel_Click(object sender, EventArgs e)
-		{
-			FrmUnFinishTransport_Select frm = new FrmUnFinishTransport_Select("where CarType='" + eCarType.销售煤.ToString() + "' order by CreationTime desc");
-			if (frm.ShowDialog() == DialogResult.OK)
-			{
-				if (this.InductorCoil1)
-					passCarQueuer.Enqueue(eDirection.Way1, frm.Output.CarNumber);
-				else if (this.InductorCoil2)
-					passCarQueuer.Enqueue(eDirection.Way2, frm.Output.CarNumber);
-				else
-					passCarQueuer.Enqueue(eDirection.UnKnow, frm.Output.CarNumber);
-
-				this.CurrentFlowFlag = eFlowFlag.识别车辆;
-				txtCarNumber_SaleFuel.Text = frm.Output.CarNumber;
-				txtTagId_SaleFuel.Text = frm.Output.CarNumber;
-			}
-		}
-
-		/// <summary>
-		/// 保存排队记录
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void btnSaveTransport_SaleFuel_Click(object sender, EventArgs e)
-		{
-			if (!SaveSaleFuelTransport()) MessageBoxEx.Show("保存失败", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-		}
-
-		/// <summary>
-		/// 保存运输记录
-		/// </summary>
-		/// <returns></returns>
-		bool SaveSaleFuelTransport()
-		{
-			if (this.CurrentSaleFuelTransport == null) return false;
-
-			try
-			{
-				if (weighterDAO.SaveSaleFuelTransport(this.CurrentSaleFuelTransport.Id, (decimal)Hardwarer.Wber.Weight, DateTime.Now, CommonAppConfig.GetInstance().AppIdentifier))
-				{
-					this.CurrentSaleFuelTransport = commonDAO.SelfDber.Get<CmcsSaleFuelTransport>(this.CurrentSaleFuelTransport.Id);
-
-					FrontGateUp();
-
-					btnSaveTransport_SaleFuel.Enabled = false;
-					this.CurrentFlowFlag = eFlowFlag.等待离开;
-
-					UpdateLedShow("称重完毕", "请前往" + this.CurrentSaleFuelTransport.LoadArea);
-					this.voiceSpeaker.Speak("称重完毕请下磅，请前往" + this.CurrentSaleFuelTransport.LoadArea, 1, false);
-
-					LoadTodayUnFinishSaleFuelTransport();
-					LoadTodayFinishSaleFuelTransport();
-
-					CamareCapturePicture(this.CurrentSaleFuelTransport.Id);
-
-					return true;
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBoxEx.Show("保存失败\r\n" + ex.Message, "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-				Log4Neter.Error("保存运输记录", ex);
-			}
-
-			return false;
-		}
-
-		/// <summary>
-		/// 重置信息
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void btnReset_SaleFuel_Click(object sender, EventArgs e)
-		{
-			ResetSaleFuel();
-		}
-
-		/// <summary>
-		/// 重置信息
-		/// </summary>
-		void ResetSaleFuel()
-		{
-			this.timer_SaleFuel_Cancel = true;
-
-			this.CurrentFlowFlag = eFlowFlag.等待车辆;
-
-			this.CurrentAutotruck = null;
-			this.CurrentSaleFuelTransport = null;
-			this.CurrentDirection = eDirection.UnKnow;
-
-			txtTagId_SaleFuel.ResetText();
-
-			btnSaveTransport_SaleFuel.Enabled = false;
-
-			FrontGateDown();
-			BackGateDown();
-
-			UpdateLedShow("  等待车辆");
-
-			// 最后重置
-			this.CurrentImperfectCar = null;
-		}
-
-		/// <summary>
-		/// 其他物资运输记录业务定时器
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void timer_SaleFuel_Tick(object sender, EventArgs e)
-		{
-			if (this.timer_SaleFuel_Cancel) return;
-
-			timer_SaleFuel.Stop();
-			timer_SaleFuel.Interval = 2000;
-
-			try
-			{
-				switch (this.CurrentFlowFlag)
-				{
-					case eFlowFlag.验证信息:
-						#region
-
-						// 查找该车未完成的运输记录
-						CmcsUnFinishTransport unFinishTransport = carTransportDAO.GetUnFinishTransportByAutotruckId(this.CurrentAutotruck.Id, eCarType.销售煤.ToString());
-						if (unFinishTransport != null)
-						{
-							this.CurrentSaleFuelTransport = commonDAO.SelfDber.Get<CmcsSaleFuelTransport>(unFinishTransport.TransportId);
-							if (this.CurrentSaleFuelTransport != null)
-							{
-								// 判断路线设置
-								string nextPlace;
-								if (carTransportDAO.CheckNextTruckInFactoryWay(this.CurrentAutotruck.CarType, this.CurrentSaleFuelTransport.StepName, "重车|轻车", CommonAppConfig.GetInstance().AppIdentifier, out nextPlace))
-								{
-									if (this.CurrentSaleFuelTransport.SuttleWeight == 0)
-									{
-										BackGateUp();
-
-										this.CurrentFlowFlag = eFlowFlag.等待上磅;
-
-										UpdateLedShow(this.CurrentAutotruck.CarNumber, "请上磅");
-										this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 请上磅", 1, false);
-									}
-									else
-									{
-										UpdateLedShow(this.CurrentAutotruck.CarNumber, "已称重");
-										this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 已称重", 1, false);
-
-										timer_SaleFuel.Interval = 20000;
-									}
-								}
-								else
-								{
-									UpdateLedShow("路线错误", "禁止通过");
-									this.voiceSpeaker.Speak("路线错误 禁止通过 " + (!string.IsNullOrEmpty(nextPlace) ? "请前往" + nextPlace : ""), 1, false);
-
-									timer_SaleFuel.Interval = 20000;
-								}
-							}
-							else
-							{
-								commonDAO.SelfDber.Delete<CmcsUnFinishTransport>(unFinishTransport.Id);
-							}
-						}
-						else
-						{
-							UpdateLedShow(this.CurrentAutotruck.CarNumber, "未排队");
-							this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 未找到排队记录", 1, false);
-
-							timer_SaleFuel.Interval = 20000;
-						}
-
-						#endregion
-						break;
-
-					case eFlowFlag.等待上磅:
-						#region
-
-						// 当地磅仪表重量大于最小称重且来车方向的地感与对射均无信号，则判定车已经完全上磅
-						if (Hardwarer.Wber.Weight >= this.WbMinWeight && !HasCarOnEnterWay())
-						{
-							BackGateDown();
-
-							this.CurrentFlowFlag = eFlowFlag.等待稳定;
-						}
-
-						// 降低灵敏度
-						timer_SaleFuel.Interval = 4000;
-
-						#endregion
-						break;
-
-					case eFlowFlag.等待稳定:
-						#region
-
-						// 提高灵敏度
-						timer_SaleFuel.Interval = 1000;
-
-						btnSaveTransport_SaleFuel.Enabled = this.WbSteady;
-
-						UpdateLedShow(this.CurrentAutotruck.CarNumber, Hardwarer.Wber.Weight.ToString("#0.######"));
-
-						if (this.WbSteady)
-						{
-							if (this.AutoHandMode)
-							{
-								// 自动模式
-								if (!SaveSaleFuelTransport())
-								{
-									UpdateLedShow(this.CurrentAutotruck.CarNumber, "称重失败");
-									this.voiceSpeaker.Speak("车牌号 " + this.CurrentAutotruck.CarNumber + " 称重失败，请联系管理员", 1, false);
-								}
-							}
-							else
-							{
-								// 手动模式 
-							}
-						}
-
-						#endregion
-						break;
-
-					case eFlowFlag.等待离开:
-						#region
-
-						// 当前地磅重量小于最小称重且所有地感、对射无信号时重置
-						if (Hardwarer.Wber.Weight < this.WbMinWeight && !HasCarOnLeaveWay()) ResetSaleFuel();
-
-						// 降低灵敏度
-						timer_SaleFuel.Interval = 4000;
-
-						#endregion
-						break;
-				}
-
-				// 当前地磅重量小于最小称重且所有地感、对射无信号时重置
-				if (Hardwarer.Wber.Weight < this.WbMinWeight && !HasCarOnEnterWay() && !HasCarOnLeaveWay() && this.CurrentFlowFlag != eFlowFlag.等待车辆
-					&& this.CurrentImperfectCar != null) ResetSaleFuel();
-			}
-			catch (Exception ex)
-			{
-				Log4Neter.Error("timer_SaleFuel_Tick", ex);
-			}
-			finally
-			{
-				timer_SaleFuel.Start();
-			}
-		}
-
-		/// <summary>
-		/// 获取未完成的销售记录
-		/// </summary>
-		void LoadTodayUnFinishSaleFuelTransport()
-		{
-			superGridControl1_SaleFuel.PrimaryGrid.DataSource = weighterDAO.GetUnFinishSaleFuelTransport();
-		}
-
-		/// <summary>
-		/// 获取指定日期已完成的销售记录
-		/// </summary>
-		void LoadTodayFinishSaleFuelTransport()
-		{
-			superGridControl2_SaleFuel.PrimaryGrid.DataSource = weighterDAO.GetFinishedSaleFuelTransport(DateTime.Now.Date, DateTime.Now.Date.AddDays(1));
-		}
 		#endregion
 
 		#region 其他物资业务

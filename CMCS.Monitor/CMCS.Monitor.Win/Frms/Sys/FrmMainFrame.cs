@@ -1,4 +1,5 @@
-﻿using CMCS.Common;
+﻿using CMCS.CarTransport.BeltSampler.Frms;
+using CMCS.Common;
 using CMCS.Common.DAO;
 using CMCS.Common.Entities.BaseInfo;
 using CMCS.Common.Entities.Inf;
@@ -155,6 +156,41 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			});
 		}
 
+		/// <summary>
+		/// 打开门禁管理
+		/// </summary>
+		public void OpenDoor()
+		{
+			this.InvokeEx(() =>
+			{
+				string uniqueKey = FrmDoor.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmDoor frm = new FrmDoor();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
+		}
+
+		/// <summary>
+		/// 打开入厂采样界面
+		/// </summary>
+		public void OpenCarSampler()
+		{
+			string uniqueKey = FrmBeltSampler.UniqueKey;
+
+			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			{
+				FrmBeltSampler frm = new FrmBeltSampler();
+				FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+			}
+			else
+				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+		}
+
 		#endregion
 
 		/// <summary>
@@ -226,11 +262,37 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		/// <param name="e"></param>
 		private void btnOpenTrainSampler_Click(object sender, EventArgs e)
 		{
-			ButtonX button = (ButtonX)sender;
+			ButtonItem button = (ButtonItem)sender;
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenTrainSampler();
 		}
+
+		/// <summary>
+		/// 打开火车采样机控制程序
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenBeltSampler_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenCarSampler();
+		}
+		/// <summary>
+		/// 打开门禁管理
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenDoor_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenDoor();
+		}
+
 		#endregion
 
 		#region 设备状态监控

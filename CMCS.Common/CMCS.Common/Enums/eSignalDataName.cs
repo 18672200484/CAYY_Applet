@@ -11,7 +11,7 @@ namespace CMCS.Common.Enums
 	public enum eSignalDataName
 	{
 		#region 综合
-
+		设备状态,
 		系统,
 		当前车号,
 		当前车Id,

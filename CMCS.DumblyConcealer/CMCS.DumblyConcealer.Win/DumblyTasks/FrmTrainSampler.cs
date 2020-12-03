@@ -67,7 +67,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 
 			#region #2火车机械采样机
 
-			EquTrainJXSamplerDAO carJXSamplerDAO2 = new EquTrainJXSamplerDAO(GlobalVars.MachineCode_HCJXCYJ_2, new DapperDber.Dbs.SqlServerDb.SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#3火车机械采样机接口连接字符串")));
+			EquTrainJXSamplerDAO carJXSamplerDAO2 = new EquTrainJXSamplerDAO(GlobalVars.MachineCode_HCJXCYJ_2, new DapperDber.Dbs.SqlServerDb.SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#2火车机械采样机接口连接字符串")));
 
 			taskSimpleScheduler.StartNewTask("#2火车机械采样机-快速同步", () =>
 			{

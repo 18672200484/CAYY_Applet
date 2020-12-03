@@ -59,6 +59,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 
 			foreach (EquHCQSCYJSignal entity in this.EquDber.Entities<EquHCQSCYJSignal>())
 			{
+				entity.TagName = entity.TagName.Replace("系统", "设备状态");
 				if (entity.TagName == GlobalVars.EquHeartbeatName) continue;
 
 				// 当心跳检测为故障时，则不更新系统状态，保持 eSampleSystemStatus.发生故障
@@ -118,7 +119,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 					SampleCode = entity.SampleCode,
 					SampleCount = entity.SampleCount,
 					UpdateTime = entity.UpdateTime,
-					BarrelType = entity.BarrelType,
+					BarrelType = "塑料桶",
 				}))
 				{
 					entity.DataFlag = 1;
@@ -261,7 +262,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 						PlanId = entity.PlanId,
 						MachineCode = this.MachineCode,
 						CarNumber = entity.CarNumber,
-						CarModel = entity.CarModel,
+						CarModel = entity.CarModel.Substring(0, 3),
 						CyCount = entity.CyCount,
 						OrderNumber = entity.OrderNumber,
 						DataFlag = 0
@@ -272,7 +273,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 					samplecmdEqu.PlanId = entity.PlanId;
 					samplecmdEqu.MachineCode = this.MachineCode;
 					samplecmdEqu.CarNumber = entity.CarNumber;
-					samplecmdEqu.CarModel = entity.CarModel;
+					samplecmdEqu.CarModel = entity.CarModel.Substring(0, 3);
 					samplecmdEqu.CyCount = entity.CyCount;
 					samplecmdEqu.OrderNumber = entity.OrderNumber;
 					samplecmdEqu.DataFlag = 0;
@@ -343,6 +344,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 						SampleCode = entity.SampleCode,
 						CmdCode = entity.CmdCode,
 						ResultCode = entity.ResultCode,
+						MachineCode = this.MachineCode,
 						DataFlag = 0
 					}) > 0;
 				}

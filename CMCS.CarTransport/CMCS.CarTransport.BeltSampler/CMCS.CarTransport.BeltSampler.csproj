@@ -97,9 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\DataItem.cs" />
-    <Compile Include="Core\Hardwarer.cs" />
     <Compile Include="Core\ImperfectCar.cs" />
-    <Compile Include="Core\IocControler.cs" />
     <Compile Include="Core\PassCarQueuer.cs" />
     <Compile Include="Core\PreviewCarBmp.cs" />
     <Compile Include="Core\RTxtOutputer.cs" />
@@ -211,18 +209,6 @@
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Forms.UserControls\CMCS.Forms.UserControls.csproj">
       <Project>{543ED9EB-DADE-4694-BA6C-7ECEAA5D135C}</Project>
       <Name>CMCS.Forms.UserControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CMCS.Hardware\IOC.JMDM20DIOV2\IOC.JMDM20DIOV2.csproj">
-      <Project>{A41DA131-E0C5-46DF-B550-1A5A36C51B64}</Project>
-      <Name>IOC.JMDM20DIOV2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CMCS.Hardware\LED.YB14\LED.YB14.csproj">
-      <Project>{85632121-2FB7-46EF-8F72-150DCC71E472}</Project>
-      <Name>LED.YB14</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CMCS.Hardware\RW.LZR12\RW.LZR12.csproj">
-      <Project>{1040B767-CB77-4DC9-A467-C0219E573DB6}</Project>
-      <Name>RW.LZR12</Name>
     </ProjectReference>
     <ProjectReference Include="..\CMCS.CarTransport\CMCS.CarTransport.csproj">
       <Project>{5ED15A98-0895-48D3-851C-088A217D41E7}</Project>

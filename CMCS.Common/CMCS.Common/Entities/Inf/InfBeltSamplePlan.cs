@@ -12,6 +12,11 @@ namespace CMCS.Common.Entities.Inf
 	[CMCS.DapperDber.Attrs.DapperBind("inftbbeltsampleplan")]
 	public class InfBeltSamplePlan : EntityBase
 	{
+		/// <summary>
+		/// 设备编号
+		/// </summary>
+		public string MachineCode { get; set; }
+
 		private string interfaceType;
 		/// <summary>
 		/// 接口类型

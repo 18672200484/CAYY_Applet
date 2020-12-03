@@ -226,7 +226,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 
 			res = 0;
 			// 第三方 > 集中管控
-			foreach (Interface_Data entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<Interface_Data>("where Data_Status=2 and datediff(dd,CreationTime,getdate())=0"))
+			foreach (Interface_Data entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<Interface_Data>("where Data_Status=2 order by Sample_Time desc"))
 			{
 				InfQCJXCYSampleCMD samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfQCJXCYSampleCMD>(entity.Interface_Id);
 				if (samplecmdInf == null) continue;

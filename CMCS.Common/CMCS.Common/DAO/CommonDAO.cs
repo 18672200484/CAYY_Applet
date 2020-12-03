@@ -133,7 +133,7 @@ namespace CMCS.Common.DAO
 		/// <returns></returns>
 		public CmcsUser GetAdminUser_Cmcs()
 		{
-			return SelfDber.Entity<CmcsUser>("where UserName=:UserName", new { UserAccount = GlobalVars.AdminAccount });
+			return SelfDber.Entity<CmcsUser>("where UserName=:UserName", new { UserName = GlobalVars.AdminAccount });
 		}
 
 		/// <summary>
@@ -532,6 +532,19 @@ namespace CMCS.Common.DAO
 		}
 
 		/// <summary>
+		/// 根据时间段获取故障信息
+		/// </summary>
+		/// <param name="startTime"></param>
+		/// <param name="endTime"></param>
+		/// <param name="machineCode"></param>
+		/// <returns></returns>
+		public List<InfEquInfHitch> GetEquInfHitch(DateTime startTime, DateTime endTime, string machineCode)
+		{
+			List<InfEquInfHitch> res = SelfDber.Entities<InfEquInfHitch>("where MachineCode=:machineCode and HitchTime>=:StartTime and HitchTime <=:EndTime order by HitchTime desc", new { StartTime = startTime, EndTime = endTime, MachineCode = machineCode });
+			return res;
+		}
+
+		/// <summary>
 		/// 保存第三方设备接口 - 实时集样罐表
 		/// </summary>
 		/// <param name="equInfSampleBarrel"></param>
@@ -558,6 +571,15 @@ namespace CMCS.Common.DAO
 			}
 		}
 
+		/// <summary>
+		/// 根据设备编码获取集样罐信息
+		/// </summary>
+		/// <param name="machineCode"></param>
+		/// <returns></returns>
+		public IList<InfEquInfSampleBarrel> GetEquInfSampleBarrels(string machineCode)
+		{
+			return SelfDber.Entities<InfEquInfSampleBarrel>("where MachineCode=:MachineCode order by CreationTime desc", new { MachineCode = machineCode });
+		}
 		/// <summary>
 		/// 保持第三方设备接口 - 故障信息表
 		/// </summary> 

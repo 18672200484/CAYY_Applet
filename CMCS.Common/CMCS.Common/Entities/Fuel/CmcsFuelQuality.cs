@@ -163,6 +163,10 @@ namespace CMCS.Common.Entities.Fuel
 		/// </summary>
 		public Decimal Hd { get { return _Hd; } set { _Hd = value; } }
 
+		public decimal Qj { get; set; }
+
+		public decimal Qcal { get; set; }
+
 		public decimal Hdaf { get; set; }
 
 		public decimal FCd { get; set; }

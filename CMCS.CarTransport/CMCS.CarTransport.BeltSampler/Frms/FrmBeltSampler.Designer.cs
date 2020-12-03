@@ -29,20 +29,20 @@ namespace CMCS.CarTransport.BeltSampler.Frms
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.Style.Background background1 = new DevComponents.DotNetBar.SuperGrid.Style.Background();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.Style.Background background2 = new DevComponents.DotNetBar.SuperGrid.Style.Background();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,9 +60,10 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
 			this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
 			this.panelEx6 = new DevComponents.DotNetBar.PanelEx();
+			this.btnSystemReset = new DevComponents.DotNetBar.ButtonX();
+			this.btnEndSampler = new DevComponents.DotNetBar.ButtonX();
+			this.btnSendSamplePlan = new DevComponents.DotNetBar.ButtonX();
 			this.btnStartSampler = new DevComponents.DotNetBar.ButtonX();
-			this.lblGatherType = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
 			this.lblSampleState = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.lblCurrSamplerName = new System.Windows.Forms.Label();
@@ -70,9 +71,9 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.label14 = new System.Windows.Forms.Label();
 			this.panelEx5 = new DevComponents.DotNetBar.PanelEx();
 			this.label8 = new System.Windows.Forms.Label();
-			this.lblResultJYG = new System.Windows.Forms.Label();
+			this.lblResult = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.lblMineName = new System.Windows.Forms.Label();
+			this.lblFuelKindName = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.lblSupplierName = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -355,47 +356,48 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.superGridControl2.Location = new System.Drawing.Point(0, 0);
 			this.superGridControl2.Name = "superGridControl2";
 			this.superGridControl2.PrimaryGrid.AutoGenerateColumns = false;
-			gridColumn1.DataPropertyName = "Batch";
-			gridColumn1.HeaderText = "入厂批次号";
-			gridColumn1.Name = "";
-			gridColumn1.Width = 120;
-			gridColumn2.DataPropertyName = "StationName";
-			gridColumn2.HeaderText = "发站";
-			gridColumn2.Name = "";
-			gridColumn2.Width = 150;
-			gridColumn3.DataPropertyName = "FuelKindName";
-			gridColumn3.HeaderText = "煤种";
-			gridColumn3.Name = "";
-			gridColumn4.DataPropertyName = "FuelName";
-			gridColumn4.HeaderText = "煤种名称";
-			gridColumn4.Name = "";
-			gridColumn5.DataPropertyName = "SamplingDate";
-			gridColumn5.HeaderText = "采样日期";
-			gridColumn5.Name = "";
-			gridColumn5.Width = 140;
-			gridColumn6.DataPropertyName = "SampleCode";
-			gridColumn6.HeaderText = "采样码";
-			gridColumn6.Name = "";
-			gridColumn7.DataPropertyName = "SamplingWay";
-			gridColumn7.HeaderText = "采样方式";
-			gridColumn7.Name = "";
-			gridColumn7.Width = 80;
-			background1.Color1 = System.Drawing.Color.DarkTurquoise;
-			gridColumn8.CellStyles.Default.Background = background1;
-			gridColumn8.CellStyles.Default.TextColor = System.Drawing.Color.DarkTurquoise;
-			gridColumn8.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
-			gridColumn8.HeaderText = "";
-			gridColumn8.Name = "gclmSetSampler";
-			gridColumn8.NullString = "设置为当前采样单";
-			gridColumn8.Width = 150;
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn1);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn2);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn3);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn4);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn5);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn6);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn7);
-			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn8);
+			gridColumn14.DataPropertyName = "Batch";
+			gridColumn14.HeaderText = "入厂批次号";
+			gridColumn14.Name = "";
+			gridColumn14.Width = 120;
+			gridColumn15.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn15.DataPropertyName = "SupplierName";
+			gridColumn15.HeaderText = "托运人";
+			gridColumn15.Name = "";
+			gridColumn16.DataPropertyName = "FuelKindName";
+			gridColumn16.HeaderText = "煤种";
+			gridColumn16.Name = "";
+			gridColumn17.DataPropertyName = "SamplingDate";
+			gridColumn17.HeaderText = "采样日期";
+			gridColumn17.Name = "";
+			gridColumn17.Width = 140;
+			gridColumn18.DataPropertyName = "TransportNumber";
+			gridColumn18.HeaderText = "车节数";
+			gridColumn18.Name = "";
+			gridColumn18.Width = 80;
+			gridColumn19.DataPropertyName = "SampleCode";
+			gridColumn19.HeaderText = "采样码";
+			gridColumn19.Name = "";
+			gridColumn20.DataPropertyName = "SamplingType";
+			gridColumn20.HeaderText = "采样方式";
+			gridColumn20.Name = "";
+			gridColumn20.Width = 80;
+			background2.Color1 = System.Drawing.Color.DarkTurquoise;
+			gridColumn21.CellStyles.Default.Background = background2;
+			gridColumn21.CellStyles.Default.TextColor = System.Drawing.Color.DarkTurquoise;
+			gridColumn21.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
+			gridColumn21.HeaderText = "";
+			gridColumn21.Name = "gclmSetSampler";
+			gridColumn21.NullString = "设置为当前采样单";
+			gridColumn21.Width = 200;
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn14);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn15);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn16);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn17);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn18);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn19);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn20);
+			this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn21);
 			this.superGridControl2.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
 			this.superGridControl2.PrimaryGrid.MultiSelect = false;
 			this.superGridControl2.PrimaryGrid.ShowRowGridIndex = true;
@@ -443,9 +445,10 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			// 
 			this.panelEx6.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panelEx6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelEx6.Controls.Add(this.btnSystemReset);
+			this.panelEx6.Controls.Add(this.btnEndSampler);
+			this.panelEx6.Controls.Add(this.btnSendSamplePlan);
 			this.panelEx6.Controls.Add(this.btnStartSampler);
-			this.panelEx6.Controls.Add(this.lblGatherType);
-			this.panelEx6.Controls.Add(this.label5);
 			this.panelEx6.Controls.Add(this.lblSampleState);
 			this.panelEx6.Controls.Add(this.label9);
 			this.panelEx6.Controls.Add(this.lblCurrSamplerName);
@@ -453,7 +456,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.panelEx6.Controls.Add(this.label14);
 			this.panelEx6.Location = new System.Drawing.Point(780, 48);
 			this.panelEx6.Name = "panelEx6";
-			this.panelEx6.Size = new System.Drawing.Size(269, 257);
+			this.panelEx6.Size = new System.Drawing.Size(305, 257);
 			this.panelEx6.Style.Alignment = System.Drawing.StringAlignment.Center;
 			this.panelEx6.Style.BackColor1.Color = System.Drawing.Color.Transparent;
 			this.panelEx6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -462,46 +465,60 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.panelEx6.Style.GradientAngle = 90;
 			this.panelEx6.TabIndex = 38;
 			// 
+			// btnSystemReset
+			// 
+			this.btnSystemReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSystemReset.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnSystemReset.Location = new System.Drawing.Point(201, 175);
+			this.btnSystemReset.Name = "btnSystemReset";
+			this.btnSystemReset.Size = new System.Drawing.Size(94, 38);
+			this.btnSystemReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSystemReset.TabIndex = 43;
+			this.btnSystemReset.Text = "系统复位";
+			this.btnSystemReset.Click += new System.EventHandler(this.btnSystemReset_Click);
+			// 
+			// btnEndSampler
+			// 
+			this.btnEndSampler.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnEndSampler.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnEndSampler.Location = new System.Drawing.Point(101, 175);
+			this.btnEndSampler.Name = "btnEndSampler";
+			this.btnEndSampler.Size = new System.Drawing.Size(94, 38);
+			this.btnEndSampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnEndSampler.TabIndex = 42;
+			this.btnEndSampler.Text = "停止采样";
+			this.btnEndSampler.Click += new System.EventHandler(this.btnEndSampler_Click);
+			// 
+			// btnSendSamplePlan
+			// 
+			this.btnSendSamplePlan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSendSamplePlan.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnSendSamplePlan.Location = new System.Drawing.Point(5, 107);
+			this.btnSendSamplePlan.Name = "btnSendSamplePlan";
+			this.btnSendSamplePlan.Size = new System.Drawing.Size(137, 48);
+			this.btnSendSamplePlan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSendSamplePlan.TabIndex = 41;
+			this.btnSendSamplePlan.Text = "发送采样计划";
+			this.btnSendSamplePlan.Click += new System.EventHandler(this.btnSendSamplePlan_Click);
+			// 
 			// btnStartSampler
 			// 
 			this.btnStartSampler.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.btnStartSampler.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnStartSampler.Location = new System.Drawing.Point(16, 150);
+			this.btnStartSampler.Location = new System.Drawing.Point(5, 175);
 			this.btnStartSampler.Name = "btnStartSampler";
-			this.btnStartSampler.Size = new System.Drawing.Size(137, 48);
+			this.btnStartSampler.Size = new System.Drawing.Size(90, 38);
 			this.btnStartSampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
 			this.btnStartSampler.TabIndex = 40;
-			this.btnStartSampler.Text = "发送集样指令";
+			this.btnStartSampler.Text = "开始采样";
 			this.btnStartSampler.Click += new System.EventHandler(this.btnStartSampler_Click);
-			// 
-			// lblGatherType
-			// 
-			this.lblGatherType.AutoSize = true;
-			this.lblGatherType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblGatherType.ForeColor = System.Drawing.Color.White;
-			this.lblGatherType.Location = new System.Drawing.Point(91, 77);
-			this.lblGatherType.Name = "lblGatherType";
-			this.lblGatherType.Size = new System.Drawing.Size(41, 19);
-			this.lblGatherType.TabIndex = 39;
-			this.lblGatherType.Text = "####";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-			this.label5.ForeColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(12, 77);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(79, 19);
-			this.label5.TabIndex = 38;
-			this.label5.Text = "集样方式：";
 			// 
 			// lblSampleState
 			// 
 			this.lblSampleState.AutoSize = true;
 			this.lblSampleState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblSampleState.ForeColor = System.Drawing.Color.White;
-			this.lblSampleState.Location = new System.Drawing.Point(91, 107);
+			this.lblSampleState.Location = new System.Drawing.Point(91, 77);
 			this.lblSampleState.Name = "lblSampleState";
 			this.lblSampleState.Size = new System.Drawing.Size(41, 19);
 			this.lblSampleState.TabIndex = 37;
@@ -512,7 +529,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Segoe UI", 10F);
 			this.label9.ForeColor = System.Drawing.Color.White;
-			this.label9.Location = new System.Drawing.Point(12, 107);
+			this.label9.Location = new System.Drawing.Point(12, 77);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(79, 19);
 			this.label9.TabIndex = 36;
@@ -556,9 +573,9 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.panelEx5.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panelEx5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
 			this.panelEx5.Controls.Add(this.label8);
-			this.panelEx5.Controls.Add(this.lblResultJYG);
+			this.panelEx5.Controls.Add(this.lblResult);
 			this.panelEx5.Controls.Add(this.label1);
-			this.panelEx5.Controls.Add(this.lblMineName);
+			this.panelEx5.Controls.Add(this.lblFuelKindName);
 			this.panelEx5.Controls.Add(this.label6);
 			this.panelEx5.Controls.Add(this.lblSupplierName);
 			this.panelEx5.Controls.Add(this.label4);
@@ -584,20 +601,20 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.label8.ForeColor = System.Drawing.Color.White;
 			this.label8.Location = new System.Drawing.Point(17, 168);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(107, 19);
+			this.label8.Size = new System.Drawing.Size(93, 19);
 			this.label8.TabIndex = 29;
-			this.label8.Text = "集样执行结果：";
+			this.label8.Text = "样执行结果：";
 			// 
-			// lblResultJYG
+			// lblResult
 			// 
-			this.lblResultJYG.AutoSize = true;
-			this.lblResultJYG.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblResultJYG.ForeColor = System.Drawing.Color.White;
-			this.lblResultJYG.Location = new System.Drawing.Point(130, 168);
-			this.lblResultJYG.Name = "lblResultJYG";
-			this.lblResultJYG.Size = new System.Drawing.Size(41, 19);
-			this.lblResultJYG.TabIndex = 30;
-			this.lblResultJYG.Text = "####";
+			this.lblResult.AutoSize = true;
+			this.lblResult.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblResult.ForeColor = System.Drawing.Color.White;
+			this.lblResult.Location = new System.Drawing.Point(130, 168);
+			this.lblResult.Name = "lblResult";
+			this.lblResult.Size = new System.Drawing.Size(41, 19);
+			this.lblResult.TabIndex = 30;
+			this.lblResult.Text = "####";
 			// 
 			// label1
 			// 
@@ -608,18 +625,18 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(107, 19);
 			this.label1.TabIndex = 25;
-			this.label1.Text = "矿              点：";
+			this.label1.Text = "煤              种：";
 			// 
-			// lblMineName
+			// lblFuelKindName
 			// 
-			this.lblMineName.AutoSize = true;
-			this.lblMineName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMineName.ForeColor = System.Drawing.Color.White;
-			this.lblMineName.Location = new System.Drawing.Point(130, 139);
-			this.lblMineName.Name = "lblMineName";
-			this.lblMineName.Size = new System.Drawing.Size(41, 19);
-			this.lblMineName.TabIndex = 26;
-			this.lblMineName.Text = "####";
+			this.lblFuelKindName.AutoSize = true;
+			this.lblFuelKindName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFuelKindName.ForeColor = System.Drawing.Color.White;
+			this.lblFuelKindName.Location = new System.Drawing.Point(130, 139);
+			this.lblFuelKindName.Name = "lblFuelKindName";
+			this.lblFuelKindName.Size = new System.Drawing.Size(41, 19);
+			this.lblFuelKindName.TabIndex = 26;
+			this.lblFuelKindName.Text = "####";
 			// 
 			// label6
 			// 
@@ -711,38 +728,38 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.superGridControl1.Location = new System.Drawing.Point(3, 48);
 			this.superGridControl1.Name = "superGridControl1";
 			this.superGridControl1.PrimaryGrid.Caption.Text = "集 样 罐 信 息";
-			gridColumn9.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-			gridColumn9.DataPropertyName = "BarrelNumber";
-			gridColumn9.HeaderText = "罐号";
-			gridColumn9.MinimumWidth = 50;
-			gridColumn9.Name = "";
-			gridColumn9.Width = 60;
-			gridColumn10.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-			gridColumn10.DataPropertyName = "SampleCode";
-			gridColumn10.HeaderText = "采样码";
-			gridColumn10.MinimumWidth = 100;
-			gridColumn10.Name = "";
-			gridColumn10.Width = 120;
-			gridColumn11.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-			gridColumn11.DataPropertyName = "SampleCount";
-			gridColumn11.HeaderText = "子样数";
-			gridColumn11.MinimumWidth = 80;
-			gridColumn11.Name = "";
-			gridColumn12.DataPropertyName = "SampleWeight";
-			gridColumn12.HeaderText = "样重(KG)";
-			gridColumn12.Name = "";
-			gridColumn12.Width = 80;
-			gridColumn13.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-			gridColumn13.DataPropertyName = "BarrelStatus";
-			gridColumn13.HeaderText = "桶满";
-			gridColumn13.MinimumWidth = 60;
-			gridColumn13.Name = "";
-			gridColumn13.Width = 80;
-			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn9);
-			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn10);
-			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn11);
-			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn12);
-			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn13);
+			gridColumn22.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+			gridColumn22.DataPropertyName = "BarrelNumber";
+			gridColumn22.HeaderText = "罐号";
+			gridColumn22.MinimumWidth = 50;
+			gridColumn22.Name = "";
+			gridColumn22.Width = 60;
+			gridColumn23.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+			gridColumn23.DataPropertyName = "SampleCode";
+			gridColumn23.HeaderText = "采样码";
+			gridColumn23.MinimumWidth = 100;
+			gridColumn23.Name = "";
+			gridColumn23.Width = 120;
+			gridColumn24.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+			gridColumn24.DataPropertyName = "SampleCount";
+			gridColumn24.HeaderText = "子样数";
+			gridColumn24.MinimumWidth = 80;
+			gridColumn24.Name = "";
+			gridColumn25.DataPropertyName = "SampleWeight";
+			gridColumn25.HeaderText = "样重(KG)";
+			gridColumn25.Name = "";
+			gridColumn25.Width = 80;
+			gridColumn26.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+			gridColumn26.DataPropertyName = "BarrelStatus";
+			gridColumn26.HeaderText = "桶满";
+			gridColumn26.MinimumWidth = 60;
+			gridColumn26.Name = "";
+			gridColumn26.Width = 80;
+			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn22);
+			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn23);
+			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn24);
+			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn25);
+			this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn26);
 			this.superGridControl1.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
 			this.superGridControl1.PrimaryGrid.ShowRowGridIndex = true;
 			this.superGridControl1.Size = new System.Drawing.Size(484, 257);
@@ -825,7 +842,6 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.Controls.Add(this.buttonX2);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FrmBeltSampler";
 			this.Text = " 入 厂 煤 采 样 ";
@@ -883,7 +899,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
         private DevComponents.DotNetBar.PanelEx panelEx5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblMineName;
+        private System.Windows.Forms.Label lblFuelKindName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Label label4;
@@ -898,11 +914,12 @@ namespace CMCS.CarTransport.BeltSampler.Frms
         private System.Windows.Forms.Label lblSampleState;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label lblGatherType;
-        private System.Windows.Forms.Label label5;
         private DevComponents.DotNetBar.ButtonX btnStartSampler;
 		private System.Windows.Forms.RichTextBox rtxtOutput;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label lblResultJYG;
+		private System.Windows.Forms.Label lblResult;
+		private DevComponents.DotNetBar.ButtonX btnSendSamplePlan;
+		private DevComponents.DotNetBar.ButtonX btnEndSampler;
+		private DevComponents.DotNetBar.ButtonX btnSystemReset;
 	}
 }

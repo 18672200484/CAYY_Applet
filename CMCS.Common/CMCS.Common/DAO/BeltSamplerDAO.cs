@@ -206,9 +206,9 @@ namespace CMCS.Common.DAO
 		/// </summary>
 		/// <param name="interfaceType">接口类型</param>
 		/// <returns></returns>
-		public List<InfBeltSamplePlan> GetWaitForSyncBeltSamplePlan(string interfaceType)
+		public List<InfBeltSamplePlan> GetWaitForSyncBeltSamplePlan(string machineCode)
 		{
-			return Dbers.GetInstance().SelfDber.Entities<InfBeltSamplePlan>("where InterfaceType=:InterfaceType and SyncFlag=0", new { InterfaceType = interfaceType });
+			return Dbers.GetInstance().SelfDber.Entities<InfBeltSamplePlan>("where MachineCode=:MachineCode and SyncFlag=0", new { MachineCode = machineCode });
 		}
 
 		/// <summary>
@@ -226,9 +226,9 @@ namespace CMCS.Common.DAO
 		/// </summary>
 		/// <param name="interfaceType">接口类型</param>
 		/// <returns></returns>
-		public List<InfBeltSampleCmd> GetWaitForSyncBeltSampleCmd(string interfaceType)
+		public List<InfBeltSampleCmd> GetWaitForSyncBeltSampleCmd(string mchineCode)
 		{
-			return Dbers.GetInstance().SelfDber.Entities<InfBeltSampleCmd>("where InterfaceType=:InterfaceType and SyncFlag=0", new { InterfaceType = interfaceType });
+			return Dbers.GetInstance().SelfDber.Entities<InfBeltSampleCmd>("where MachineCode=:MachineCode and SyncFlag=0", new { MachineCode = mchineCode });
 		}
 
 		/// <summary>

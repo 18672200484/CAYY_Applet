@@ -102,6 +102,18 @@
     <Compile Include="CefGlue\CefV8Handlers\CefTesterCefV8Handler.cs" />
     <Compile Include="Core\PreviewCarBmp.cs" />
     <Compile Include="Core\SelfVars.cs" />
+    <Compile Include="Frms\FrmTrainBeltSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmTrainBeltSampler.Designer.cs">
+      <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmDoor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmDoor.Designer.cs">
+      <DependentUpon>FrmDoor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\FrmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,12 @@
     <Compile Include="Utilities\MonitorCommon.cs" />
     <Compile Include="Utilities\SuperTabControlManager.cs" />
     <Compile Include="Utilities\WarningBoxUtil.cs" />
+    <EmbeddedResource Include="Frms\FrmTrainBeltSampler.resx">
+      <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmDoor.resx">
+      <DependentUpon>FrmDoor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +233,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CMCS.CarTransport\CMCS.CarTransport.BeltSampler\CMCS.CarTransport.BeltSampler.csproj">
+      <Project>{5dc42914-a421-4fa5-bd5a-234f2abae139}</Project>
+      <Name>CMCS.CarTransport.BeltSampler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
       <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
       <Name>CMCS.Common</Name>
@@ -226,6 +248,10 @@
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Forms.UserControls\CMCS.Forms.UserControls.csproj">
       <Project>{543ED9EB-DADE-4694-BA6C-7ECEAA5D135C}</Project>
       <Name>CMCS.Forms.UserControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Hardware\SmileWei.EmbeddedApp\SmileWei.EmbeddedApp.csproj">
+      <Project>{90b74adf-891a-47e2-922c-450be2271164}</Project>
+      <Name>SmileWei.EmbeddedApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\CMCS.Monitor\CMCS.Monitor.csproj">
       <Project>{AB7E847F-7643-4983-8728-BDF27D0BF122}</Project>
