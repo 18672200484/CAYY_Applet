@@ -1,13 +1,14 @@
-﻿using CMCS.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+//
+using CMCS.Common;
 using CMCS.Common.DAO;
 using CMCS.Common.Entities.AssayDevices;
 using CMCS.Common.Entities.Fuel;
 using CMCS.Common.Utilities;
 using CMCS.DumblyConcealer.Enums;
 using CMCS.DumblyConcealer.Tasks.AssayDevice.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 {
@@ -486,7 +487,8 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		{
 			SumQbad(entity.AssayCode);
 			SumStad(entity.AssayCode);
-			SumMt(entity.AssayCode);
+			//SumMt(entity.AssayCode);
+			SumMt_New(entity.AssayCode);
 			SumMad(entity.AssayCode);
 			//SumAad(entity.AssayCode);
 			//SumVad(entity.AssayCode);
@@ -631,9 +633,14 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 
 		void SumMt(string assayBillnumber)
 		{
-			if (commonDAO.SelfDber.Count<CmcsMoistureAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = assayBillnumber }) > 0)
+			CmcsRCAssay assay = commonDAO.SelfDber.Entity<CmcsRCAssay>("where AssayCode=:AssayCode order by CreationTime desc", new { AssayCode = assayBillnumber });
+			if (assay == null) return;
+			CmcsRCMake make = commonDAO.SelfDber.Get<CmcsRCMake>(assay.MakeId);
+			if (make == null) return;
+
+			if (commonDAO.SelfDber.Count<CmcsMoistureAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = make.MakeCode }) > 0)
 				return;
-			IList<CmcsMoistureAssay> mtAssay = Dbers.GetInstance().SelfDber.TopEntities<CmcsMoistureAssay>(4, "where SAMPLENUMBER=:assayBillnumber and IsEffective=0 order by AssayTime", new { assayBillnumber = assayBillnumber }).ToList();
+			IList<CmcsMoistureAssay> mtAssay = Dbers.GetInstance().SelfDber.TopEntities<CmcsMoistureAssay>(4, "where SAMPLENUMBER=:assayBillnumber and IsEffective=0 order by AssayTime", new { assayBillnumber = make.MakeCode }).ToList();
 			if (mtAssay == null || mtAssay.Count < 2 || mtAssay.Count > 4) return;
 
 			bool isvalid = false;
@@ -668,10 +675,65 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					originaldata_rc.Add(new OriginalData()
 					{
 						AssayNum = assayBillnumber,
-						AssayTarget = "Mar",
+						AssayTarget = "Mt",
 						AssayFromDevice = item.FacilityNumber,
 						OMt = item.Mar,
 						OAssayCalValue = AssayCalcUtil.CalcAvgValue(mtAssay.Select(a => a.Mar).ToList(), 1),
+						OAssayUser = item.AssayUser,
+						OAssayTime = item.AssayTime,
+						Isvalid = isvalid
+					});
+					item.IsEffective = 1;
+				}
+				else if (mtAssay.Count == 4)
+					item.IsEffective = 2;
+				Dbers.GetInstance().SelfDber.Update(item);
+			}
+		}
+
+		void SumMt_New(string assayBillnumber)
+		{
+			CmcsRCAssay assay = commonDAO.SelfDber.Entity<CmcsRCAssay>("where AssayCode=:AssayCode order by CreationTime desc", new { AssayCode = assayBillnumber });
+			if (assay == null) return;
+			CmcsRCMake make = commonDAO.SelfDber.Get<CmcsRCMake>(assay.MakeId);
+			if (make == null) return;
+			if (commonDAO.SelfDber.Count<CmcsMoistureAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = make.MakeCode }) > 0)
+				return;
+			IList<CmcsMoistureAssay> mtAssay = Dbers.GetInstance().SelfDber.TopEntities<CmcsMoistureAssay>(4, "where SAMPLENUMBER=:assayBillnumber and IsEffective=0 order by AssayTime", new { assayBillnumber = make.MakeCode }).ToList();
+			if (mtAssay == null || mtAssay.Count != 2) return;
+
+			bool isvalid = false;
+			decimal mt = 0m;
+			if (mtAssay.Count == 2 && !isvalid)
+			{
+				decimal t = 120m;
+				decimal minVal = mtAssay.Min(a => a.Mar);
+				decimal maxVal = mtAssay.Max(a => a.Mar);
+				if (minVal <= 10m)
+					t = 0.4m;
+				else
+					t = 0.5m;
+				IList<Decimal> temp1 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[1].Mar };
+				IList<Decimal> temp2 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[1].Mar };
+
+				if (Math.Abs(temp1.Max() - temp1.Min()) <= t)
+				{
+					isvalid = true;
+					mt = temp1.Max();
+				}
+			}
+
+			foreach (CmcsMoistureAssay item in mtAssay)
+			{
+				if (isvalid)
+				{
+					originaldata_rc.Add(new OriginalData()
+					{
+						AssayNum = assayBillnumber,
+						AssayTarget = "Mt",
+						AssayFromDevice = item.FacilityNumber,
+						OMt = item.Mar,
+						OAssayCalValue = AssayCalcUtil.CalcAvgValue(mt, 1),
 						OAssayUser = item.AssayUser,
 						OAssayTime = item.AssayTime,
 						Isvalid = isvalid

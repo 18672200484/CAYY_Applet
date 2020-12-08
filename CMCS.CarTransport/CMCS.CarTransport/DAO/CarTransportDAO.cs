@@ -155,14 +155,14 @@ namespace CMCS.CarTransport.DAO
 				isSuccess = SelfDber.Insert(entity) > 0;
 			}
 
-			//if (isSuccess)
-			//{
-			//    // 生成采制化数据记录
-			//    CmcsRCSampling rCSampling = commonDAO.GCSamplingMakeAssay(entity, buyFuelTransport.SamplingType, "由汽车煤智能化自动创建");
+			if (isSuccess)
+			{
+				// 生成采制化数据记录
+				CmcsRCSampling rCSampling = commonDAO.GCSamplingMakeAssay(entity, buyFuelTransport.SamplingType, "由汽车煤智能化自动创建");
 
-			//    buyFuelTransport.SamplingId = rCSampling.Id;
-			//    buyFuelTransport.InFactoryBatchId = entity.Id;
-			//}
+				buyFuelTransport.SamplingId = rCSampling.Id;
+				buyFuelTransport.InFactoryBatchId = entity.Id;
+			}
 
 			return entity;
 		}

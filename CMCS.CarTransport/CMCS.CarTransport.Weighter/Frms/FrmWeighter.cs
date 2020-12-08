@@ -1,33 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
+//
 using CMCS.CarTransport.DAO;
 using CMCS.CarTransport.Weighter.Core;
 using CMCS.CarTransport.Weighter.Enums;
 using CMCS.CarTransport.Weighter.Frms.Sys;
 using CMCS.Common;
 using CMCS.Common.DAO;
-using CMCS.Common.Entities;
-using CMCS.Common.Entities.BaseInfo;
 using CMCS.Common.Entities.CarTransport;
 using CMCS.Common.Entities.Fuel;
 using CMCS.Common.Entities.Inf;
 using CMCS.Common.Entities.Sys;
 using CMCS.Common.Enums;
 using CMCS.Common.Utilities;
-using CMCS.Common.Views;
 using DevComponents.DotNetBar;
-using DevComponents.DotNetBar.Controls;
-using DevComponents.DotNetBar.SuperGrid;
 using EQ2008_DataStruct;
 using HikVisionSDK.Core;
 using LED.EQ2013;
@@ -622,7 +614,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			User_Text Text = new User_Text();
 
 			Text.BkColor = 0;
-			Text.chContent = value1 + value2;
+			Text.chContent = value1 + "\n" + value2;
 
 			Text.PartInfo.FrameColor = 0;
 			Text.PartInfo.iFrameMode = 0;
@@ -1031,7 +1023,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 						List<string> tags1 = new List<string>();
 						List<string> tags2 = new List<string>();
 						tags1 = Hardwarer.Rwer1.ScanTags();
-						tags2 = Hardwarer.Rwer2.ScanTags();
+						if (this.Direction == "双向磅")
+							tags2 = Hardwarer.Rwer2.ScanTags();
 
 						if (tags1.Count > 0)
 						{
@@ -1053,7 +1046,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 						{
 							this.CurrentFlowFlag = eFlowFlag.识别车辆;
 							UpdateLedShow("  正在读卡");
-
 						}
 
 						#endregion
@@ -1114,13 +1106,11 @@ namespace CMCS.CarTransport.Weighter.Frms
 							this.voiceSpeaker.Speak("车牌号 " + this.CurrentImperfectCar.Voucher + " 未登记，禁止通过", 1, false);
 							//// 方式二：刷卡方式
 							//this.voiceSpeaker.Speak("卡号未登记，禁止通过", 2, false);
-
 						}
 
 						#endregion
 						break;
 				}
-
 				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.地磅仪表_实时重量.ToString(), Hardwarer.Wber.Weight.ToString());
 			}
 			catch (Exception ex)
@@ -1348,17 +1338,18 @@ namespace CMCS.CarTransport.Weighter.Frms
 				{
 					this.CurrentBuyFuelTransport = commonDAO.SelfDber.Get<CmcsBuyFuelTransport>(this.CurrentBuyFuelTransport.Id);
 
-					FrontGateUp();
-
 					btnSaveTransport_BuyFuel.Enabled = false;
 					if (this.Direction == "双向磅")
+					//if (this.CurrentBuyFuelTransport.StepName == eTruckInFactoryStep.重车.ToString())
 					{
 						this.CurrentFlowFlag = eFlowFlag.准备采样;
 						UpdateLedShow("称重完毕", "开始采样");
 						this.voiceSpeaker.Speak("称重完毕 开始采样", 1, false);
 					}
 					else if (this.Direction == "单向磅")
+					//if (this.CurrentBuyFuelTransport.StepName == eTruckInFactoryStep.轻车.ToString())
 					{
+						FrontGateUp();
 						this.CurrentFlowFlag = eFlowFlag.等待离开;
 						UpdateLedShow("称重完毕", "请下磅");
 						this.voiceSpeaker.Speak("称重完毕 请下磅", 1, false);
@@ -1532,13 +1523,14 @@ namespace CMCS.CarTransport.Weighter.Frms
 								CarNumber = this.CurrentBuyFuelTransport.CarNumber,
 								InFactoryBatchId = this.CurrentBuyFuelTransport.InFactoryBatchId,
 								SampleCode = sampling.SampleCode,
+								SerialNumber = CurrentBuyFuelTransport.SerialNumber,
 								Mt = 0,
 								// 根据预报
 								TicketWeight = 0,
 								// 根据预报
 								CarCount = 0,
 								// 采样点数根据相关逻辑计算
-								PointCount = 3,
+								PointCount = 1,
 								CarriageLength = this.CurrentAutotruck.CarriageLength,
 								CarriageWidth = this.CurrentAutotruck.CarriageWidth,
 								CarriageHeight = this.CurrentAutotruck.CarriageHeight,

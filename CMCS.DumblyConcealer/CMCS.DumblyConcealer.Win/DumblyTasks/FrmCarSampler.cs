@@ -63,6 +63,26 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 
 			#endregion
 
+			#region #2汽车机械采样机
+
+			EquCarJXSamplerDAO carJXSamplerDAO2 = new EquCarJXSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_2);
+
+			taskSimpleScheduler.StartNewTask("#2汽车机械采样机-快速同步", () =>
+			{
+				carJXSamplerDAO2.SyncSampleCmd(this.rTxtOutputer.Output);
+			}, 2000, OutputError);
+
+			#endregion
+
+			#region OPC
+
+			taskSimpleScheduler.StartNewTask("同步汽车机械采样机OPC", () =>
+			{
+				EquCarJXSamplerOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
+			}, 0, OutputError);
+
+			#endregion
+
 		}
 
 		/// <summary>

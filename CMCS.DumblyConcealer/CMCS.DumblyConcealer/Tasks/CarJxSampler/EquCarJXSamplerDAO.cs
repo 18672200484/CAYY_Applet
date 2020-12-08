@@ -220,37 +220,53 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 
 					res++;
 				}
+				output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
 			}
-			output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
 
 
 			res = 0;
 			// 第三方 > 集中管控
-			foreach (Interface_Data entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<Interface_Data>("where Data_Status=2 order by Sample_Time desc"))
+			foreach (InfQCJXCYSampleCMD item in commonDAO.SelfDber.Entities<InfQCJXCYSampleCMD>("where ResultCode='默认' and MachineCode=:MachineCode order by CreationTime ", new { MachineCode = this.MachineCode }))
 			{
-				InfQCJXCYSampleCMD samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfQCJXCYSampleCMD>(entity.Interface_Id);
-				if (samplecmdInf == null) continue;
+				Interface_Data entity = DcDbers.GetInstance().CarJXSampler_Dber.Entity<Interface_Data>("where Interface_Id=:Interface_Id and Data_Status=2", new { Interface_Id = item.Id });
+				if (entity != null)
+				{
+					item.StartTime = entity.Sample_Time;
+					item.ResultCode = eEquInfCmdResultCode.成功.ToString();
 
-				//samplecmdInf.Point1 = entity.Point1;
-				//samplecmdInf.Point2 = entity.Point2;
-				//samplecmdInf.Point3 = entity.Point3;
-				//samplecmdInf.Point4 = entity.Point4;
-				//samplecmdInf.Point5 = entity.Point5;
-				//samplecmdInf.Point6 = entity.Point6;
-				samplecmdInf.StartTime = entity.Sample_Time;
-				//samplecmdInf.EndTime = entity.EndTime;
-				//samplecmdInf.SampleUser = entity.SampleUser;
-				samplecmdInf.ResultCode = eEquInfCmdResultCode.成功.ToString();
-
-				//if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
-				//{
-				//	// 我方已读
-				//	entity.DataFlag = 3;
-				//	this.EquDber.Update(entity);
-				res++;
-				//}
+					if (Dbers.GetInstance().SelfDber.Update(item) > 0)
+					{
+						res++;
+					}
+					output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+				}
 			}
-			output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+
+			//foreach (Interface_Data entity in DcDbers.GetInstance().CarJXSampler_Dber.Entities<Interface_Data>("where Data_Status=2 order by Sample_Time desc"))
+			//{
+			//	InfQCJXCYSampleCMD samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfQCJXCYSampleCMD>(entity.Interface_Id);
+			//	if (samplecmdInf == null) continue;
+
+			//	//samplecmdInf.Point1 = entity.Point1;
+			//	//samplecmdInf.Point2 = entity.Point2;
+			//	//samplecmdInf.Point3 = entity.Point3;
+			//	//samplecmdInf.Point4 = entity.Point4;
+			//	//samplecmdInf.Point5 = entity.Point5;
+			//	//samplecmdInf.Point6 = entity.Point6;
+			//	samplecmdInf.StartTime = entity.Sample_Time;
+			//	//samplecmdInf.EndTime = entity.EndTime;
+			//	//samplecmdInf.SampleUser = entity.SampleUser;
+			//	samplecmdInf.ResultCode = eEquInfCmdResultCode.成功.ToString();
+
+			//	if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
+			//	{
+			//		// 我方已读
+			//		//entity.DataFlag = 3;
+			//		//this.EquDber.Update(entity);
+			//		res++;
+			//	}
+			//}
+			//output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
 		}
 
 		/// <summary>
@@ -308,3 +324,5 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		}
 	}
 }
+
+

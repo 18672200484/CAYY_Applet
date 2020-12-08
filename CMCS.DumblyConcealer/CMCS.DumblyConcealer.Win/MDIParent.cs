@@ -118,7 +118,7 @@ namespace CMCS.DumblyConcealer.Win
 			{
 				case 0:
 					//综合事件处理程序
-					tsmiOpenFrmDataHandler_Click(null, null);
+					//tsmiOpenFrmDataHandler_Click(null, null);
 					break;
 				case 1:
 					//同步轨道衡数据接口
@@ -126,7 +126,7 @@ namespace CMCS.DumblyConcealer.Win
 					break;
 				case 2:
 					//皮带秤称重数据同步程序
-					tsmiOpenFrmBeltBalancer_Click(null, null);
+					//tsmiOpenFrmBeltBalancer_Click(null, null);
 					break;
 				case 3:
 					//车号识别报文TCP/IP同步业务
@@ -138,14 +138,14 @@ namespace CMCS.DumblyConcealer.Win
 					break;
 				case 5:
 					//06.汽车机械采样机接口
-					tsmiOpenFrmCarSampler_Click(null, null);
+					//tsmiOpenFrmCarSampler_Click(null, null);
 					break;
 				case 6:
 					//07.全自动制样机接口
-					tsmiOpenFrmAutoMaker_Click(null, null);
+					//tsmiOpenFrmAutoMaker_Click(null, null);
 					break;
 				case 7:
-					tsmiOpenTrainSampler_Click(null, null);
+					//tsmiOpenTrainSampler_Click(null, null);
 					break;
 
 			}

@@ -40,6 +40,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="Interop.OPCAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Interop.OPCAutomation.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess">
       <HintPath>..\..\CMCS.Resources\Oracle.ManagedDataAccess\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -76,6 +81,7 @@
     <Compile Include="Tasks\BeltBalancer\Entities\CmcsBeltBalancerValue.cs" />
     <Compile Include="Tasks\BeltBalancer\EquBeltBalancerDAO.cs" />
     <Compile Include="Tasks\CarJxSampler\Entities\Interface_Data.cs" />
+    <Compile Include="Tasks\CarJxSampler\EquCarJXSamplerOPC.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJBarrel.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJError.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJPlanDetail.cs" />

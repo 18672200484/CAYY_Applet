@@ -41,6 +41,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			InitNumberAscComboBoxs(1, 15, cmbInductorCoil1Port, cmbInductorCoil2Port, cmbInductorCoil3Port, cmbInductorCoil4Port, cmbInfraredSensor1Port, cmbInfraredSensor2Port, cmbGate1UpPort, cmbGate1DownPort, cmbGate2UpPort, cmbGate2DownPort, cmbSignalLight1Port, cmbSignalLight2Port);
 			InitStopBitsComboBoxs(cmbIocerStopBits, cmbWberStopBits);
 			InitParityComboBoxs(cmbIocerParity, cmbWberParity);
+			InitWeberType(cmbWeberType);
+			InitDirection(cmbDecrtion);
 		}
 
 		private void FrmSetting_Load(object sender, EventArgs e)
@@ -104,7 +106,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			txtSelfConnStr.Text = commonAppConfig.SelfConnStr;
 			chbStartup.Checked = (commonDAO.GetAppletConfigString("开机启动") == "1");
 			txtSampleMahineCode.Text = commonDAO.GetAppletConfigString("采样机编码");
-			cmbDecrtion.Text = commonDAO.GetAppletConfigString("上磅方向");
+			SelectedComboBoxItem(cmbIocerCom, commonDAO.GetAppletConfigString("上磅方向"));
 			// IO控制器
 			SelectedComboBoxItem(cmbIocerCom, commonDAO.GetAppletConfigInt32("IO控制器_串口").ToString());
 			SelectedComboBoxItem(cmbIocerBandrate, commonDAO.GetAppletConfigInt32("IO控制器_波特率").ToString());
@@ -125,24 +127,25 @@ namespace CMCS.CarTransport.Weighter.Frms
 			SelectedComboBoxItem(cmbSignalLight2Port, commonDAO.GetAppletConfigInt32("IO控制器_信号灯2端口").ToString());
 
 			// 地磅仪表
-			cmbWeberType.Text = commonDAO.GetAppletConfigString("地磅仪表_类型");
-			SelectedComboBoxItem(cmbWberCom, commonDAO.GetAppletConfigInt32("地磅仪表_串口").ToString());
-			SelectedComboBoxItem(cmbWberBandrate, commonDAO.GetAppletConfigInt32("地磅仪表_波特率").ToString());
-			SelectedComboBoxItem(cmbWberDataBits, commonDAO.GetAppletConfigInt32("地磅仪表_数据位").ToString());
-			SelectedComboBoxItem(cmbWberStopBits, commonDAO.GetAppletConfigInt32("地磅仪表_停止位").ToString());
-			SelectedComboBoxItem(cmbWberParity, commonDAO.GetAppletConfigInt32("地磅仪表_校验位").ToString());
+			SelectedComboBoxItem(cmbWeberType, commonDAO.GetAppletConfigString("地磅仪表_类型"));
+
+			SelectedComboBoxItem(cmbWberCom, commonDAO.GetAppletConfigString("地磅仪表_串口"));
+			SelectedComboBoxItem(cmbWberBandrate, commonDAO.GetAppletConfigString("地磅仪表_波特率"));
+			SelectedComboBoxItem(cmbWberDataBits, commonDAO.GetAppletConfigString("地磅仪表_数据位"));
+			SelectedComboBoxItem(cmbWberStopBits, commonDAO.GetAppletConfigString("地磅仪表_停止位"));
+			SelectedComboBoxItem(cmbWberParity, commonDAO.GetAppletConfigString("地磅仪表_校验位"));
 			dbtxtMinWeight.Value = commonDAO.GetAppletConfigDouble("地磅仪表_最小称重");
 
 			// 读卡器
-			SelectedComboBoxItem(cmbRwer1Com, commonDAO.GetAppletConfigInt32("读卡器1_串口").ToString());
-			SelectedComboBoxItem(cmbRwer2Com, commonDAO.GetAppletConfigInt32("读卡器2_串口").ToString());
+			SelectedComboBoxItem(cmbRwer1Com, commonDAO.GetAppletConfigString("读卡器1_串口"));
+			SelectedComboBoxItem(cmbRwer2Com, commonDAO.GetAppletConfigString("读卡器2_串口"));
 			txtRwerTagStartWith.Text = commonDAO.GetAppletConfigString("读卡器_标签过滤");
 
 			// LED显示屏
 			iptxtLED1IP.Value = commonDAO.GetAppletConfigString("LED显示屏1_IP地址");
 
 			// 语音
-			SelectedComboBoxItem(cmbVoiceName, commonDAO.GetAppletConfigString("语音包").ToString());
+			SelectedComboBoxItem(cmbVoiceName, commonDAO.GetAppletConfigString("语音包"));
 			sldVoiceRate.Value = commonDAO.GetAppletConfigInt32("语速");
 			sldVoiceVolume.Value = commonDAO.GetAppletConfigInt32("音量");
 			lblVoiceRate.Text = sldVoiceRate.Value.ToString();
@@ -161,7 +164,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			commonAppConfig.Save();
 			commonDAO.SetAppletConfig("开机启动", Convert.ToInt16(chbStartup.Checked).ToString());
 			commonDAO.SetAppletConfig("采样机编码", txtSampleMahineCode.Text);
-			commonDAO.SetAppletConfig("上磅方向", cmbDecrtion.Text);
+			commonDAO.SetAppletConfig("上磅方向", (cmbDecrtion.SelectedItem as DataItem).Value);
 			try
 			{
 #if DEBUG
@@ -196,7 +199,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			commonDAO.SetAppletConfig("IO控制器_信号灯2端口", (cmbSignalLight2Port.SelectedItem as DataItem).Value);
 
 			// 地磅仪表
-			commonDAO.SetAppletConfig("地磅仪表_类型", cmbWeberType.Text);
+			commonDAO.SetAppletConfig("地磅仪表_类型", (cmbWeberType.SelectedItem as DataItem).Value);
 			commonDAO.SetAppletConfig("地磅仪表_串口", (cmbWberCom.SelectedItem as DataItem).Value);
 			commonDAO.SetAppletConfig("地磅仪表_波特率", (cmbWberBandrate.SelectedItem as DataItem).Value);
 			commonDAO.SetAppletConfig("地磅仪表_数据位", (cmbWberDataBits.SelectedItem as DataItem).Value);
@@ -434,6 +437,40 @@ namespace CMCS.CarTransport.Weighter.Frms
 			cmb.Items.Add(new DataItem(Parity.Even.ToString(), ((int)Parity.Even).ToString()));
 			cmb.Items.Add(new DataItem(Parity.Mark.ToString(), ((int)Parity.Mark).ToString()));
 			cmb.Items.Add(new DataItem(Parity.Space.ToString(), ((int)Parity.Space).ToString()));
+
+			cmb.SelectedIndex = 0;
+		}
+
+		/// <summary>
+		/// 加载地磅类型
+		/// </summary>
+		/// <param name="cmb"></param>
+		void InitWeberType(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
+
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
+
+			cmb.Items.Add(new DataItem("#1重车衡", "#1重车衡"));
+			cmb.Items.Add(new DataItem("#3重车衡", "#3重车衡"));
+
+			cmb.SelectedIndex = 0;
+		}
+
+		/// <summary>
+		/// 加载上磅方向
+		/// </summary>
+		/// <param name="cmb"></param>
+		void InitDirection(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
+
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
+
+			cmb.Items.Add(new DataItem("双向磅", "双向磅"));
+			cmb.Items.Add(new DataItem("单向磅", "单向磅"));
 
 			cmb.SelectedIndex = 0;
 		}

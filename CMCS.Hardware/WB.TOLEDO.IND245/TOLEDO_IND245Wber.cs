@@ -237,15 +237,15 @@ namespace WB.TOLEDO.IND245
 						ReceiveList.Add(buffer[i]);
 						try
 						{
-							if (buffer[0] == 0x3D && ReceiveList.Count == 11)
+							if (buffer[0] == 0x3D && ReceiveList.Count == 8)
 							{
 								string temp = string.Empty;
-								for (int j = 8; j > 0; j--)
+								for (int j = 7; j > 0; j--)
 								{
 									temp += Convert.ToChar(ReceiveList[j]);
 								}
 
-								this.weight = Convert.ToDouble(temp) / 10000d;
+								this.weight = Convert.ToDouble(temp) / 1000d;
 
 								if (OnWeightChange != null) OnWeightChange(this.weight);
 
