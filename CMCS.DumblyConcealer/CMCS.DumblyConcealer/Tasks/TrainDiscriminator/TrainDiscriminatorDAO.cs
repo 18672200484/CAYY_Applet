@@ -427,9 +427,11 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		{
 			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and (TrainMachineCode='2' or TrainMachineCode='3') and Direction='进厂' order by PassTime desc", new { TrainNumber = trainNumber });
 			if (oldtrain == null) return false;
+			//oldtrain.MachineCode = oldtrain.TrainMachineCode == "2" ? "1" : "3";
+			//Dbers.GetInstance().SelfDber.Update(oldtrain);
 			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + oldtrain.Id + "' and IsDisCharged=0 order by CreationTime desc");
 			if (entity == null) return false;
-
+			entity.TrackNumber = entity.TrackNumber == "#4" ? "#5" : "#1";
 			entity.IsDisCharged = 1;
 			entity.TurnCarDate = DateTime.Now;
 			return Dbers.GetInstance().SelfDber.Update(entity) > 0;

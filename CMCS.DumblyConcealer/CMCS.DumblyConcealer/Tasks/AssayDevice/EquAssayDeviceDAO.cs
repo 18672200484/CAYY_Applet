@@ -34,6 +34,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		CommonDAO commonDAO = CommonDAO.GetInstance();
 
 		#region 生成标准测硫仪数据
+		private int SulfurCount = 0;
 		/// <summary>
 		/// 生成标准测硫仪数据
 		/// </summary>
@@ -49,12 +50,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsSulfurAssay();
-					item.SampleNumber = entity.NAME;
+					item.SampleNumber = entity.NAME.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
 					item.ContainerNumber = entity.ID;
 					item.ContainerWeight = 0;
 					item.SampleWeight = entity.WEIGHT;
-					item.Stad = entity.STAD;
+					item.Stad = Math.Round(entity.STAD, 2, MidpointRounding.AwayFromZero);
 					item.AssayUser = entity.ASSAYER;
 					item.AssayTime = entity.DATE1;
 					item.OrderNumber = 0;
@@ -62,20 +63,27 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.PKID = entity.PKID;
 
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsSulfurAssay>(item);
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "1");
 				}
 				else
 				{
-					item.SampleNumber = entity.NAME;
+					item.SampleNumber = entity.NAME.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
 					item.ContainerNumber = entity.ID;
 					item.ContainerWeight = 0;
 					item.SampleWeight = entity.WEIGHT;
-					item.Stad = entity.STAD;
+					item.Stad = Math.Round(entity.STAD, 2, MidpointRounding.AwayFromZero); ;
 					item.AssayUser = entity.ASSAYER;
 					item.AssayTime = entity.DATE1;
 					item.OrderNumber = 0;
 
 					res += Dbers.GetInstance().SelfDber.Update<CmcsSulfurAssay>(item);
+					if (SulfurCount > 1000)
+					{
+						SulfurCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "0");
+					}
+					SulfurCount++;
 				}
 			}
 
@@ -86,6 +94,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		#endregion
 
 		#region 生成标准量热仪数据
+		private int HeatCount = 0;
 		/// <summary>
 		/// 生成标准量热仪数据
 		/// </summary>
@@ -102,8 +111,8 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsHeatAssay();
-					item.SampleNumber = entity.MINGCHEN;
-					item.FacilityNumber = entity.MANCODING;
+					item.SampleNumber = entity.MINGCHEN.ToUpper();
+					item.FacilityNumber = entity.MACHINECODE;
 					item.ContainerNumber = entity.NUMBER_EX;
 					item.ContainerWeight = 0;
 					item.SampleWeight = Convert.ToDecimal(entity.WEIGHT);
@@ -114,11 +123,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.PKID = entity.PKID;
 
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsHeatAssay>(item);
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "1");
 				}
 				else
 				{
-					item.SampleNumber = entity.MINGCHEN;
-					item.FacilityNumber = entity.MANCODING;
+					item.SampleNumber = entity.MINGCHEN.ToUpper();
+					item.FacilityNumber = entity.MACHINECODE;
 					item.ContainerNumber = entity.NUMBER_EX;
 					item.ContainerWeight = 0;
 					item.SampleWeight = Convert.ToDecimal(entity.WEIGHT);
@@ -127,6 +137,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.AssayTime = entity.TESTTIME;
 
 					res += Dbers.GetInstance().SelfDber.Update<CmcsHeatAssay>(item);
+					if (HeatCount > 1000)
+					{
+						HeatCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "0");
+					}
+					HeatCount++;
 				}
 
 			}
@@ -138,9 +154,9 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsHeatAssay();
-					item.SampleNumber = entity.SYMC;
+					item.SampleNumber = entity.SYMC.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
-					item.ContainerNumber = entity.ZDBH;
+					item.ContainerNumber = entity.YQBH;
 					item.ContainerWeight = 0;
 					item.SampleWeight = Convert.ToDecimal(entity.SSZL);
 					item.Qbad = Convert.ToDecimal(entity.DTFRL);
@@ -150,12 +166,13 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.PKID = entity.PKID;
 
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsHeatAssay>(item);
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "1");
 				}
 				else
 				{
-					item.SampleNumber = entity.SYMC;
+					item.SampleNumber = entity.SYMC.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
-					item.ContainerNumber = entity.ZDBH;
+					item.ContainerNumber = entity.YQBH;
 					item.ContainerWeight = 0;
 					item.SampleWeight = Convert.ToDecimal(entity.SSZL);
 					item.Qbad = Convert.ToDecimal(entity.DTFRL);
@@ -163,8 +180,13 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.AssayTime = entity.CSRQ;
 
 					res += Dbers.GetInstance().SelfDber.Update<CmcsHeatAssay>(item);
+					if (HeatCount > 1000)
+					{
+						HeatCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "0");
+					}
+					HeatCount++;
 				}
-
 			}
 
 			output(string.Format("生成标准量热仪数据 {0} 条", res), eOutputType.Normal);
@@ -174,6 +196,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		#endregion
 
 		#region 生成标准工分仪数据
+		private int ProximateCount = 0;
 		public int SaveTOProximateAssay(Action<string, eOutputType> output, Int32 days)
 		{
 			int res = 0;
@@ -184,7 +207,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsProximateAssay();
-					item.SampleNumber = entity.SAMPLENAME;
+					item.SampleNumber = entity.SAMPLENAME.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
 					item.MadContainerNumber = entity.OBJCODE.ToString();
 					item.MadContainerWeight = entity.EMPTYGGWEIGHT;
@@ -202,10 +225,11 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.IsEffective = 0;
 					item.PKID = entity.PKID;
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsProximateAssay>(item);
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "1");
 				}
 				else
 				{
-					item.SampleNumber = entity.SAMPLENAME;
+					item.SampleNumber = entity.SAMPLENAME.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
 					item.MadContainerNumber = entity.OBJCODE.ToString();
 					item.MadContainerWeight = entity.EMPTYGGWEIGHT;
@@ -222,7 +246,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.Aad = entity.AAD;
 
 					res += Dbers.GetInstance().SelfDber.Update<CmcsProximateAssay>(item);
-
+					if (ProximateCount > 1000)
+					{
+						ProximateCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "0");
+					}
+					ProximateCount++;
 				}
 
 			}
@@ -234,7 +263,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsProximateAssay();
-					item.SampleNumber = entity.SYMC;
+					item.SampleNumber = entity.SYMC.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
 					item.MadContainerNumber = "0";
 					item.MadContainerWeight = entity.SFKGGZ;
@@ -251,10 +280,11 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.IsEffective = 0;
 					item.PKID = entity.PKID;
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsProximateAssay>(item);
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "1");
 				}
 				else
 				{
-					item.SampleNumber = entity.SYMC;
+					item.SampleNumber = entity.SYMC.ToUpper();
 					item.FacilityNumber = entity.MACHINECODE;
 					item.MadContainerNumber = "0";
 					item.MadContainerWeight = entity.SFKGGZ;
@@ -269,6 +299,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.AssayUser = entity.HYY;
 					item.AssayTime = entity.CSRQ;
 					res += Dbers.GetInstance().SelfDber.Update<CmcsProximateAssay>(item);
+					if (ProximateCount > 1000)
+					{
+						ProximateCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "0");
+					}
+					ProximateCount++;
 				}
 			}
 
@@ -279,6 +315,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		#endregion
 
 		#region 保存标准水分仪数据
+		private int MoistureCount = 0;
 		/// <summary>
 		/// 保存标准水分仪数据
 		/// </summary>
@@ -298,7 +335,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsMoistureAssay();
-					item.SampleNumber = entity.SYMC;
+					item.SampleNumber = entity.SYMC.ToUpper();
 					item.FacilityNumber = entity.MachineCode;
 					item.ContainerNumber = entity.CZPWZ;
 					item.ContainerWeight = entity.CZPCZ;
@@ -307,22 +344,29 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.IsEffective = 0;
 					item.PKID = pkid;
 					item.WaterType = entity.CSLB;
-					item.AssayTime = entity.KSSJ;
+					item.AssayTime = entity.JSSJ;
 					item.AssayUser = entity.HYY;
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsMoistureAssay>(item);
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MachineCode + "_运行状态", "1");
 				}
 				else
 				{
-					item.SampleNumber = entity.SYMC;
+					item.SampleNumber = entity.SYMC.ToUpper();
 					item.FacilityNumber = entity.MachineCode;
 					item.ContainerNumber = entity.CZPWZ;
 					item.ContainerWeight = entity.CZPCZ;
 					item.SampleWeight = entity.SYZL;
 					item.Mar = entity.SF;
 					item.WaterType = entity.CSLB;
-					item.AssayTime = entity.KSSJ;
+					item.AssayTime = entity.JSSJ;
 					item.AssayUser = entity.HYY;
 					res += Dbers.GetInstance().SelfDber.Update<CmcsMoistureAssay>(item);
+					if (MoistureCount > 1000)
+					{
+						MoistureCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MachineCode + "_运行状态", "0");
+					}
+					MoistureCount++;
 				}
 			}
 			output(string.Format("生成标准水分仪数据 {0} 条", res), eOutputType.Normal);
@@ -331,6 +375,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		#endregion
 
 		#region 生成标准碳氢仪数据
+		private int HadCount = 0;
 		public int SaveTOHydrocarbonAssay(Action<string, eOutputType> output, Int32 days)
 		{
 			int res = 0;
@@ -340,7 +385,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				if (item == null)
 				{
 					item = new CmcsHydrocarbonAssay();
-					item.SAMPLENUMBER = entity.SYBH;
+					item.SAMPLENUMBER = entity.SYBH.ToUpper();
 					item.INDICATED = entity.YZ;
 					item.MAD = entity.MAD;
 					item.CAD = entity.CAD;
@@ -391,11 +436,11 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.ISEFFECTIVE = 0;
 					item.PKID = entity.PKID;
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsHydrocarbonAssay>(item);
-
+					commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "1");
 				}
 				else
 				{
-					item.SAMPLENUMBER = entity.SYBH;
+					item.SAMPLENUMBER = entity.SYBH.ToUpper();
 					item.INDICATED = entity.YZ;
 					item.MAD = entity.MAD;
 					item.CAD = entity.CAD;
@@ -444,6 +489,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.HT_AD = entity.HT_AD;
 					item.AUTODIRF_H = entity.AUTODIRF_H;
 					res += Dbers.GetInstance().SelfDber.Update<CmcsHydrocarbonAssay>(item);
+					if (HadCount > 1000)
+					{
+						HadCount = 0;
+						commonDAO.SetSignalDataValue("化验室网络管理", entity.MACHINECODE + "_运行状态", "0");
+					}
+					HadCount++;
 				}
 			}
 
@@ -461,7 +512,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		/// <returns></returns>
 		public int AutoRCAssay(Action<string, eOutputType> output)
 		{
-			List<CmcsRCAssay> Assaylist = Dbers.GetInstance().SelfDber.Entities<CmcsRCAssay>("where CreationTime>:assayDate and WfName is null order by CreationTime asc", new { assayDate = DateTime.Now.AddDays(-3).Date });
+			List<CmcsRCAssay> Assaylist = Dbers.GetInstance().SelfDber.Entities<CmcsRCAssay>("where CreationTime>:assayDate and WfName is null order by CreationTime asc", new { assayDate = DateTime.Now.AddDays(-2).Date });
 			int res = 0;
 			foreach (var item in Assaylist)
 			{
@@ -503,16 +554,16 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				Quality.Mt = originaldata_rc.Where(a => a.AssayTarget == "Mt").FirstOrDefault().OAssayCalValue;
 
 			if (originaldata_rc.Where(a => a.AssayTarget == "Mad").ToList().Count != 0)
-				Quality.Mad = AssayCalcUtil.GetTrunValue(originaldata_rc.Where(a => a.AssayTarget == "Mad").FirstOrDefault().OAssayCalValue, 2);
+				Quality.Mad = originaldata_rc.Where(a => a.AssayTarget == "Mad").FirstOrDefault().OAssayCalValue;
 
 			if (originaldata_rc.Where(a => a.AssayTarget == "Vad").ToList().Count != 0)
-				Quality.Vad = AssayCalcUtil.GetTrunValue(originaldata_rc.Where(a => a.AssayTarget == "Vad").FirstOrDefault().OAssayCalValue, 2);
+				Quality.Vad = originaldata_rc.Where(a => a.AssayTarget == "Vad").FirstOrDefault().OAssayCalValue;
 
 			if (originaldata_rc.Where(a => a.AssayTarget == "Aad").ToList().Count != 0)
-				Quality.Aad = AssayCalcUtil.GetTrunValue(originaldata_rc.Where(a => a.AssayTarget == "Aad").FirstOrDefault().OAssayCalValue, 2);
+				Quality.Aad = originaldata_rc.Where(a => a.AssayTarget == "Aad").FirstOrDefault().OAssayCalValue;
 
 			if (originaldata_rc.Where(a => a.AssayTarget == "Had").ToList().Count != 0)
-				Quality.Had = AssayCalcUtil.GetTrunValue(originaldata_rc.Where(a => a.AssayTarget == "Had").FirstOrDefault().OAssayCalValue, 2);
+				Quality.Had = originaldata_rc.Where(a => a.AssayTarget == "Had").FirstOrDefault().OAssayCalValue;
 
 			Quality = getQuality(Quality);
 
@@ -527,28 +578,32 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			if (commonDAO.SelfDber.Count<CmcsHeatAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = assayBillnumber }) > 0)
 				return;
 			IList<CmcsHeatAssay> heatAssay = Dbers.GetInstance().SelfDber.TopEntities<CmcsHeatAssay>(4, "where SampleNumber=:assayBillnumber and IsEffective=0 order by AssayTime", new { assayBillnumber = assayBillnumber }).ToList();
-			if (heatAssay == null || heatAssay.Count < 2 || heatAssay.Count > 4) return;
 
+			if (heatAssay == null || heatAssay.Count > 4) return;
 			bool isvalid = false;
-
-			if (AssayCalcUtil.CheckIsInArea(heatAssay.Select(a => a.Qbad * 1000).ToList(), "Qbad"))
-				isvalid = true;
-			if (heatAssay.Count == 4 && !isvalid)
+			if (heatAssay.Count > 1)
 			{
-				decimal t = 120m;
-				IList<Decimal> temp1 = new List<Decimal>() { heatAssay[0].Qbad * 1000, heatAssay[1].Qbad * 1000, heatAssay[2].Qbad * 1000 };
-				IList<Decimal> temp2 = new List<Decimal>() { heatAssay[0].Qbad * 1000, heatAssay[1].Qbad * 1000, heatAssay[3].Qbad * 1000 };
-				IList<Decimal> temp3 = new List<Decimal>() { heatAssay[0].Qbad * 1000, heatAssay[2].Qbad * 1000, heatAssay[3].Qbad * 1000 };
-				IList<Decimal> temp4 = new List<Decimal>() { heatAssay[1].Qbad * 1000, heatAssay[2].Qbad * 1000, heatAssay[3].Qbad * 1000 };
-				if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
-					heatAssay.RemoveAt(3);
-				else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
-					heatAssay.RemoveAt(2);
-				else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
-					heatAssay.RemoveAt(1);
-				else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
-					heatAssay.RemoveAt(0);
+				if (AssayCalcUtil.CheckIsInArea(heatAssay.Select(a => a.Qbad * 1000).ToList(), "Qbad"))
+					isvalid = true;
+				if (heatAssay.Count == 4 && !isvalid)
+				{
+					decimal t = 120m;
+					IList<Decimal> temp1 = new List<Decimal>() { heatAssay[0].Qbad * 1000, heatAssay[1].Qbad * 1000, heatAssay[2].Qbad * 1000 };
+					IList<Decimal> temp2 = new List<Decimal>() { heatAssay[0].Qbad * 1000, heatAssay[1].Qbad * 1000, heatAssay[3].Qbad * 1000 };
+					IList<Decimal> temp3 = new List<Decimal>() { heatAssay[0].Qbad * 1000, heatAssay[2].Qbad * 1000, heatAssay[3].Qbad * 1000 };
+					IList<Decimal> temp4 = new List<Decimal>() { heatAssay[1].Qbad * 1000, heatAssay[2].Qbad * 1000, heatAssay[3].Qbad * 1000 };
+					if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
+						heatAssay.RemoveAt(3);
+					else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
+						heatAssay.RemoveAt(2);
+					else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
+						heatAssay.RemoveAt(1);
+					else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
+						heatAssay.RemoveAt(0);
+				}
 			}
+			else if (heatAssay.Count == 1 && heatAssay[0].SampleNumber.Contains("CYCC"))
+				isvalid = true;
 			foreach (CmcsHeatAssay item in heatAssay)
 			{
 				if (isvalid)
@@ -577,37 +632,41 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			if (commonDAO.SelfDber.Count<CmcsSulfurAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = assayBillnumber }) > 0)
 				return;
 			IList<CmcsSulfurAssay> stadAssay = Dbers.GetInstance().SelfDber.TopEntities<CmcsSulfurAssay>(4, "where SAMPLENUMBER=:assayBillnumber and IsEffective=0 order by AssayTime", new { assayBillnumber = assayBillnumber }).ToList();
-			if (stadAssay == null || stadAssay.Count < 2 || stadAssay.Count > 4) return;
+			if (stadAssay == null || stadAssay.Count > 4) return;
 
 			bool isvalid = false;
-
-			if (AssayCalcUtil.CheckIsInArea(stadAssay.Select(a => a.Stad).ToList(), "Stad"))
-				isvalid = true;
-			if (stadAssay.Count == 4 && !isvalid)
+			if (stadAssay.Count > 1)
 			{
-				decimal t = 120m;
-				decimal minVal = stadAssay.Min(a => a.Stad);
-				decimal maxVal = stadAssay.Max(a => a.Stad);
-				if (minVal <= 1.5m)
-					t = 0.05m;
-				else if (minVal > 1.5m && minVal <= 4m)
-					t = 0.1m;
-				else if (minVal > 4m)
-					t = 0.2m;
+				if (AssayCalcUtil.CheckIsInArea(stadAssay.Select(a => a.Stad).ToList(), "Stad"))
+					isvalid = true;
+				if (stadAssay.Count == 4 && !isvalid)
+				{
+					decimal t = 120m;
+					decimal minVal = stadAssay.Min(a => a.Stad);
+					decimal maxVal = stadAssay.Max(a => a.Stad);
+					if (minVal <= 1.5m)
+						t = 0.05m;
+					else if (minVal > 1.5m && minVal <= 4m)
+						t = 0.1m;
+					else if (minVal > 4m)
+						t = 0.2m;
 
-				IList<Decimal> temp1 = new List<Decimal>() { stadAssay[0].Stad, stadAssay[1].Stad, stadAssay[2].Stad };
-				IList<Decimal> temp2 = new List<Decimal>() { stadAssay[0].Stad, stadAssay[1].Stad, stadAssay[3].Stad };
-				IList<Decimal> temp3 = new List<Decimal>() { stadAssay[0].Stad, stadAssay[2].Stad, stadAssay[3].Stad };
-				IList<Decimal> temp4 = new List<Decimal>() { stadAssay[1].Stad, stadAssay[2].Stad, stadAssay[3].Stad };
-				if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
-					stadAssay.RemoveAt(3);
-				else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
-					stadAssay.RemoveAt(2);
-				else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
-					stadAssay.RemoveAt(1);
-				else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
-					stadAssay.RemoveAt(0);
+					IList<Decimal> temp1 = new List<Decimal>() { stadAssay[0].Stad, stadAssay[1].Stad, stadAssay[2].Stad };
+					IList<Decimal> temp2 = new List<Decimal>() { stadAssay[0].Stad, stadAssay[1].Stad, stadAssay[3].Stad };
+					IList<Decimal> temp3 = new List<Decimal>() { stadAssay[0].Stad, stadAssay[2].Stad, stadAssay[3].Stad };
+					IList<Decimal> temp4 = new List<Decimal>() { stadAssay[1].Stad, stadAssay[2].Stad, stadAssay[3].Stad };
+					if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
+						stadAssay.RemoveAt(3);
+					else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
+						stadAssay.RemoveAt(2);
+					else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
+						stadAssay.RemoveAt(1);
+					else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
+						stadAssay.RemoveAt(0);
+				}
 			}
+			else if (stadAssay.Count == 1 && stadAssay[0].SampleNumber.Contains("CYCC"))
+				isvalid = true;
 			foreach (CmcsSulfurAssay item in stadAssay)
 			{
 				if (isvalid)
@@ -641,33 +700,37 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			if (commonDAO.SelfDber.Count<CmcsMoistureAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = make.MakeCode }) > 0)
 				return;
 			IList<CmcsMoistureAssay> mtAssay = Dbers.GetInstance().SelfDber.TopEntities<CmcsMoistureAssay>(4, "where SAMPLENUMBER=:assayBillnumber and IsEffective=0 order by AssayTime", new { assayBillnumber = make.MakeCode }).ToList();
-			if (mtAssay == null || mtAssay.Count < 2 || mtAssay.Count > 4) return;
+			if (mtAssay == null || mtAssay.Count > 4) return;
 
 			bool isvalid = false;
-
-			isvalid = AssayCalcUtil.CheckIsInArea(mtAssay.Select(a => a.Mar).ToList(), "Mt");
-			if (mtAssay.Count == 4 && !isvalid)
+			if (mtAssay.Count > 1)
 			{
-				decimal t = 120m;
-				decimal minVal = mtAssay.Min(a => a.Mar);
-				decimal maxVal = mtAssay.Max(a => a.Mar);
-				if (minVal <= 10m)
-					t = 0.4m;
-				else
-					t = 0.5m;
-				IList<Decimal> temp1 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[1].Mar, mtAssay[2].Mar };
-				IList<Decimal> temp2 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[1].Mar, mtAssay[3].Mar };
-				IList<Decimal> temp3 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[2].Mar, mtAssay[3].Mar };
-				IList<Decimal> temp4 = new List<Decimal>() { mtAssay[1].Mar, mtAssay[2].Mar, mtAssay[3].Mar };
-				if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
-					mtAssay.RemoveAt(3);
-				else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
-					mtAssay.RemoveAt(2);
-				else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
-					mtAssay.RemoveAt(1);
-				else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
-					mtAssay.RemoveAt(0);
+				isvalid = AssayCalcUtil.CheckIsInArea(mtAssay.Select(a => a.Mar).ToList(), "Mt");
+				if (mtAssay.Count == 4 && !isvalid)
+				{
+					decimal t = 120m;
+					decimal minVal = mtAssay.Min(a => a.Mar);
+					decimal maxVal = mtAssay.Max(a => a.Mar);
+					if (minVal <= 10m)
+						t = 0.4m;
+					else
+						t = 0.5m;
+					IList<Decimal> temp1 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[1].Mar, mtAssay[2].Mar };
+					IList<Decimal> temp2 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[1].Mar, mtAssay[3].Mar };
+					IList<Decimal> temp3 = new List<Decimal>() { mtAssay[0].Mar, mtAssay[2].Mar, mtAssay[3].Mar };
+					IList<Decimal> temp4 = new List<Decimal>() { mtAssay[1].Mar, mtAssay[2].Mar, mtAssay[3].Mar };
+					if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
+						mtAssay.RemoveAt(3);
+					else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
+						mtAssay.RemoveAt(2);
+					else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
+						mtAssay.RemoveAt(1);
+					else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
+						mtAssay.RemoveAt(0);
+				}
 			}
+			else if (mtAssay.Count == 1 && mtAssay[0].SampleNumber.Contains("CYCC"))
+				isvalid = true;
 			foreach (CmcsMoistureAssay item in mtAssay)
 			{
 				if (isvalid)
@@ -720,9 +783,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 				{
 					isvalid = true;
 					mt = temp1.Max();
+					mtAssay = mtAssay.OrderBy(a => a.Mar).ToList();
+					mtAssay.Remove(mtAssay[0]);
 				}
 			}
-
+			else if (mtAssay.Count == 1 && mtAssay[0].SampleNumber.Contains("CYCC"))
+				isvalid = true;
 			foreach (CmcsMoistureAssay item in mtAssay)
 			{
 				if (isvalid)
@@ -751,38 +817,47 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			if (commonDAO.SelfDber.Count<CmcsProximateAssay>("where SampleNumber=:assayBillnumber and IsEffective=1", new { assayBillnumber = assayBillnumber }) > 0)
 				return;
 			IList<CmcsProximateAssay> madAssay = Dbers.GetInstance().SelfDber.Entities<CmcsProximateAssay>("where SAMPLENUMBER =:assayBillnumber and IsEffective=0", new { assayBillnumber = assayBillnumber });
-			if (madAssay == null || madAssay.Count < 2 || madAssay.Count > 4) return;
+			if (madAssay == null || madAssay.Count > 4) return;
+
 			bool isvalid_Mad = false, isvalid_Vad = false, isvalid_Aad = false;
-			isvalid_Mad = AssayCalcUtil.CheckIsInArea(madAssay.Select(a => a.Mad).ToList(), "Mad");
-			isvalid_Vad = AssayCalcUtil.CheckIsInArea(madAssay.Select(a => a.Vad).ToList(), "Vad");
-			isvalid_Aad = AssayCalcUtil.CheckIsInArea(madAssay.Select(a => a.Aad).ToList(), "Aad");
-
-			if (madAssay.Count == 4 && (!isvalid_Mad || !isvalid_Vad || !isvalid_Aad))
+			if (madAssay.Count > 1)
 			{
-				decimal t = 120m;
-				decimal minVal = madAssay.Min(a => a.Mad);
-				decimal maxVal = madAssay.Max(a => a.Mad);
-				if (minVal < 5m)
-					t = 0.2m;
-				else if (minVal >= 5m && minVal <= 10m)
-					t = 0.3m;
-				else if (minVal > 10m)
-					t = 0.4m;
-				IList<Decimal> temp1 = new List<Decimal>() { madAssay[0].Mad, madAssay[1].Mad, madAssay[2].Mad };
-				IList<Decimal> temp2 = new List<Decimal>() { madAssay[0].Mad, madAssay[1].Mad, madAssay[3].Mad };
-				IList<Decimal> temp3 = new List<Decimal>() { madAssay[0].Mad, madAssay[2].Mad, madAssay[3].Mad };
-				IList<Decimal> temp4 = new List<Decimal>() { madAssay[1].Mad, madAssay[2].Mad, madAssay[3].Mad };
-				if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
-					madAssay.RemoveAt(3);
-				else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
-					madAssay.RemoveAt(2);
-				else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
-					madAssay.RemoveAt(0);
-				else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
-					madAssay.RemoveAt(1);
-				madAssay.RemoveAt(0);
-			}
+				isvalid_Mad = AssayCalcUtil.CheckIsInArea(madAssay.Select(a => a.Mad).ToList(), "Mad");
+				isvalid_Vad = AssayCalcUtil.CheckIsInArea(madAssay.Select(a => a.Vad).ToList(), "Vad");
+				isvalid_Aad = AssayCalcUtil.CheckIsInArea(madAssay.Select(a => a.Aad).ToList(), "Aad");
 
+				if (madAssay.Count == 4 && (!isvalid_Mad || !isvalid_Vad || !isvalid_Aad))
+				{
+					decimal t = 120m;
+					decimal minVal = madAssay.Min(a => a.Mad);
+					decimal maxVal = madAssay.Max(a => a.Mad);
+					if (minVal < 5m)
+						t = 0.2m;
+					else if (minVal >= 5m && minVal <= 10m)
+						t = 0.3m;
+					else if (minVal > 10m)
+						t = 0.4m;
+					IList<Decimal> temp1 = new List<Decimal>() { madAssay[0].Mad, madAssay[1].Mad, madAssay[2].Mad };
+					IList<Decimal> temp2 = new List<Decimal>() { madAssay[0].Mad, madAssay[1].Mad, madAssay[3].Mad };
+					IList<Decimal> temp3 = new List<Decimal>() { madAssay[0].Mad, madAssay[2].Mad, madAssay[3].Mad };
+					IList<Decimal> temp4 = new List<Decimal>() { madAssay[1].Mad, madAssay[2].Mad, madAssay[3].Mad };
+					if (Math.Abs(temp1.Max() - temp1.Min()) <= (1.2m * t))
+						madAssay.RemoveAt(3);
+					else if (Math.Abs(temp2.Max() - temp2.Min()) <= (1.2m * t))
+						madAssay.RemoveAt(2);
+					else if (Math.Abs(temp4.Max() - temp4.Min()) <= (1.2m * t))
+						madAssay.RemoveAt(0);
+					else if (Math.Abs(temp3.Max() - temp3.Min()) <= (1.2m * t))
+						madAssay.RemoveAt(1);
+					madAssay.RemoveAt(0);
+				}
+			}
+			else if (madAssay.Count == 1 && madAssay[0].SampleNumber.Contains("CYCC"))
+			{
+				isvalid_Mad = true;
+				isvalid_Vad = true;
+				isvalid_Aad = true;
+			}
 			foreach (CmcsProximateAssay item in madAssay)
 			{
 				if (isvalid_Mad && isvalid_Vad && isvalid_Aad)
@@ -917,7 +992,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			}
 			else
 			{
-				Quality.Ad = Math.Round((100 / (100 - Quality.Mad) * Quality.Aad), 2);
+				Quality.Ad = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad) * Quality.Aad), 2);
 			}
 			if (100 - Quality.Mad == 0)
 			{
@@ -926,7 +1001,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				// 收到基会发份(Var)%   Vad(%)*((100-Mar)/(100-Mad))
-				Quality.Var = Math.Round((Quality.Vad) * (100 - Quality.Mt) / (100 - Quality.Mad), 2);
+				Quality.Var = AssayCalcUtil.mathRount((Quality.Vad) * (100 - Quality.Mt) / (100 - Quality.Mad), 2);
 
 			}
 			if (100 - Quality.Mad - Quality.Aad == 0)
@@ -936,7 +1011,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				//干燥无灰基挥发份(Vdaf)%  Vdaf=100/(100-Mad-Aad)*Vad
-				Quality.Vdaf = Math.Round((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Vad), 2);
+				Quality.Vdaf = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Vad), 2);
 
 			}
 			if (100 - Quality.Mad == 0)
@@ -947,7 +1022,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 
 				// 干燥基全硫(St,d)%   St,d=100/(100-Mad)*St,ad
-				Quality.Std = Math.Round((100 / (100 - Quality.Mad) * Quality.Stad), 2);
+				Quality.Std = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad) * Quality.Stad), 2);
 
 
 			}
@@ -958,7 +1033,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				//收到基全硫(St,ar)%   St,ar=(100-Mar)/(100-M)*ST
-				Quality.Star = Math.Round(((100 - Quality.Mt) / (100 - Quality.Mad) * Quality.Stad), 2);
+				Quality.Star = AssayCalcUtil.mathRount(((100 - Quality.Mt) / (100 - Quality.Mad) * Quality.Stad), 2);
 			}
 			decimal a = 0.001m;
 			if (Quality.QbAd <= 16.70m)
@@ -971,9 +1046,8 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					a = 0.0012m;
 			}
 
-
 			//if (Qgrad.Attributes["type"] == "balance")
-			Quality.Qgrad = Math.Round(((Quality.QbAd * 1000 - (94.1m * Quality.Stad + a * Quality.QbAd * 1000m)) / 1000), 3);
+			Quality.Qgrad = AssayCalcUtil.mathRount(((Quality.QbAd * 1000 - (94.1m * Quality.Stad + a * Quality.QbAd * 1000m)) / 1000), 3);
 			//else
 			//    Qgrad.Text = CalcAvgValue(((decimal.Parse(QbAd.Text) * 1000 - (94.1m * decimal.Parse(Stad.Text) + a * decimal.Parse(QbAd.Text) * 1000m)) / 1000), 2).ToString();
 
@@ -986,12 +1060,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 				//Qnet,ar  MJ/kg
 
-				Quality.Qj = Math.Round((((qbj * 1000 - 206 * Quality.Had) * ((100 - Quality.Mt) / (100 - Quality.Mad)) - 23 * Quality.Mt) / 1000), 3);
+				Quality.Qj = AssayCalcUtil.mathRount((((qbj * 1000 - 206 * Quality.Had) * ((100 - Quality.Mt) / (100 - Quality.Mad)) - 23 * Quality.Mt) / 1000), 3);
 
 			}
 			//(Qnet,ar)Kcal/kg
 
-			Quality.Qcal = decimal.Parse(Math.Round((Quality.Qj * 1000m / 4.1816m), 2).ToString("0"));
+			Quality.Qcal = decimal.Parse((Quality.Qj * 1000m / 4.1816m).ToString("0"));
 
 
 			if (100 - Quality.Mad == 0)
@@ -1002,7 +1076,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 
 				// MJ/kg
-				Quality.Qgrd = Math.Round((Quality.Qgrad * (100 / (100 - Quality.Mad))), 3);
+				Quality.Qgrd = AssayCalcUtil.mathRount((Quality.Qgrad * (100 / (100 - Quality.Mad))), 3);
 
 			}
 			if (100 - Quality.Mad == 0)
@@ -1012,7 +1086,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 
-				Quality.Aar = Math.Round((Quality.Aad * ((100 - Quality.Mt) / (100 - Quality.Mad))), 2);
+				Quality.Aar = AssayCalcUtil.mathRount((Quality.Aad * ((100 - Quality.Mt) / (100 - Quality.Mad))), 2);
 
 
 			}
@@ -1022,7 +1096,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			}
 			else
 			{
-				Quality.Vd = Math.Round(Quality.Vad * (100 / (100 - (Quality.Mad))), 2);
+				Quality.Vd = AssayCalcUtil.mathRount(Quality.Vad * (100 / (100 - (Quality.Mad))), 2);
 			}
 			Quality.FCad = (100 - (Quality.Mad + Quality.Aad + Quality.Vad));
 
@@ -1043,7 +1117,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				//干燥无灰基氢值(H,daf)%
-				Quality.Hdaf = Math.Round((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Had), 2);
+				Quality.Hdaf = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Had), 2);
 
 			}
 			if (100 - Quality.Mad == 0)
@@ -1053,7 +1127,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				//收到基氢值(H,ar)%
-				Quality.Har = Math.Round((Quality.Had * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
+				Quality.Har = AssayCalcUtil.mathRount((Quality.Had * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
 
 			}
 			if (100 - Quality.Mad == 0)
@@ -1063,7 +1137,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				//干燥基氢值(H,d)%
-				Quality.Hd = Math.Round((100 / (100 - Quality.Mad) * Quality.Had), 2);
+				Quality.Hd = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad) * Quality.Had), 2);
 
 			}
 			//干燥基固定碳(FC,d)%
@@ -1073,7 +1147,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			}
 			else
 			{
-				Quality.FCd = Math.Round((100 / (100 - Quality.Mad) * Quality.FCad), 2);
+				Quality.FCd = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad) * Quality.FCad), 2);
 			}
 			if (100 - Quality.Mad == 0)
 			{
@@ -1083,7 +1157,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 				//收到基固定碳(FC,ar)%
 
-				Quality.FCar = Math.Round((Quality.FCad * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
+				Quality.FCar = AssayCalcUtil.mathRount((Quality.FCad * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
 
 
 			}
@@ -1095,7 +1169,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 				//干燥无灰基高位热量(Qnet,daf)MJ/kg
 
-				Quality.Qnetdaf = Math.Round((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Qgrad), 2);
+				Quality.Qnetdaf = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Qgrad), 2);
 			}
 
 			if (100 - Quality.Mad - Quality.Aad == 0)
@@ -1106,7 +1180,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 				// 干燥无灰基硫(St,daf)%
 
-				Quality.Stadf = Math.Round((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Stad), 2);
+				Quality.Stadf = AssayCalcUtil.mathRount((100 / (100 - Quality.Mad - Quality.Aad) * Quality.Stad), 2);
 
 
 			}
@@ -1118,12 +1192,12 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			{
 				//收到基高位热量(Qgr,ar)MJ/kg
 
-				Quality.Qgrar = Math.Round((Quality.Qgrad * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
+				Quality.Qgrar = AssayCalcUtil.mathRount((Quality.Qgrad * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
 
 			}
 			//干燥无灰基氢值（Hadf）= 0.00117*干燥基灰分+0.57*根号干燥无灰基挥发分(V,daf)%  +0.1362*干燥无灰基高位热值/1000-2.806
 
-			Quality.Hdaf = Math.Round(0.00117m * Quality.Ad + 0.57m * Convert.ToDecimal(Math.Sqrt(double.Parse(Quality.Vdaf.ToString()))) + 0.1362m * Quality.Qnetdaf - 2.806m, 2);
+			Quality.Hdaf = AssayCalcUtil.mathRount(0.00117m * Quality.Ad + 0.57m * Convert.ToDecimal(Math.Sqrt(double.Parse(Quality.Vdaf.ToString()))) + 0.1362m * Quality.Qnetdaf - 2.806m, 2);
 
 
 			////空干基氢值=（100-空干基水分—空干基灰分）/100*干燥无灰基氢值（Hadf）
@@ -1136,7 +1210,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			else
 			{
 				//收到基氢值(H, ar) %
-				Quality.Har = Math.Round((Quality.Had * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
+				Quality.Har = AssayCalcUtil.mathRount((Quality.Had * (100 - Quality.Mt) / (100 - Quality.Mad)), 2);
 
 			}
 			return Quality;

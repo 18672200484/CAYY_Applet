@@ -25,6 +25,13 @@ namespace CMCS.Monitor.Win.Html
             this.type = type;
         }
 
+        public HtmlDataItem(string key, string value, object obj, eHtmlDataItemType type = eHtmlDataItemType.key_value)
+        {
+            this.key = key;
+            this.value = value;
+            this.Obj = obj;
+            this.type = type;
+        }
         public HtmlDataItem(string key, string value, string value2, string tag, eHtmlDataItemType type = eHtmlDataItemType.key_value)
         {
             this.key = key;
@@ -82,6 +89,14 @@ namespace CMCS.Monitor.Win.Html
         {
             get { return this.tag; }
             set { this.tag = value; }
+        }
+
+        private object obj;
+
+        public object Obj
+        {
+            get { return obj; }
+            set { obj = value; }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace CMCS.DumblyConcealer.Tasks.WeightBridger
 		{
 			int res = 0;
 
-			IList<CarInfoMutual> carInfos = DcDbers.GetInstance().TurnCarWeighterMutualDber.Entities<CarInfoMutual>(" where DataFlag=1 and CreateDate>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
+			IList<CarInfoMutual> carInfos = DcDbers.GetInstance().TurnCarWeighterMutualDber.Entities<CarInfoMutual>(" where DataFlag=1 and SuttleWeight>0 and CreateDate>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
 			foreach (var item in carInfos)
 			{
 				//同步到批次明细

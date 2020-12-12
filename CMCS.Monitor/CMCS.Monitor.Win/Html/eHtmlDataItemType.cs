@@ -35,6 +35,10 @@ namespace CMCS.Monitor.Win.Html
         /// </summary>
         svg_width = 5,
         /// <summary>
+		/// SVG动态变色
+		/// </summary>
+		svg_dyncolor = 6,
+        /// <summary>
         /// SVG旋转
         /// </summary>
         svg_scroll = 9999,

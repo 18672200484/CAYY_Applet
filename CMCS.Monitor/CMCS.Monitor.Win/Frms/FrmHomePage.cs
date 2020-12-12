@@ -193,7 +193,7 @@ namespace CMCS.Monitor.Win.Frms
 		{
 			DataTable data = commonDAO.SelfDber.ExecuteDataTable(string.Format(@"select t.infactorybatchid,a.batch,b.samplecode,c.makecode,d.assaycode,a.fueltype,a.transportnumber,a.fuelkindname,a.minename,a.ticketqty,a.suttleqty 
 																					from fultbtransport t inner join fultbinfactorybatch a on t.infactorybatchid=a.id inner join cmcstbrcsampling b on a.id=b.infactorybatchid inner join 
-																					cmcstbmake c on c.samplingid=b.id inner join cmcstbassay d on d.makeid=c.id where transportno='{0}' and b.samplingtype='皮带采样'", carnumber));
+																					cmcstbmake c on c.samplingid=b.id inner join cmcstbassay d on d.makeid=c.id where trunc(a.factarrivedate)=trunc(sysdate) and t.transportno='{0}' and b.samplingtype!='人工采样'", carnumber));
 			if (data != null && data.Rows.Count > 0)
 			{
 				datas.Add(new HtmlDataItem(flag + "批次编号", data.Rows[0]["batch"].ToString(), eHtmlDataItemType.svg_text));
@@ -265,6 +265,10 @@ namespace CMCS.Monitor.Win.Frms
 				SelfVars.MainFrameForm.OpenTruckWeighter();
 			else if (message.Name == "TruckWeighterChangeSelected")
 				SelfVars.TruckWeighterForm.CurrentMachineCode = MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(message.Arguments.GetString(0));
+			else if (message.Name == "CarSamplerChangeSelected")
+				SelfVars.CarSamplerForm.CurrentMachineCode = MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(message.Arguments.GetString(0));
+			else if (message.Name == "TrainSamplerChangeSelected")
+				SelfVars.TrainSamplerForm.CurrentMachineCode = message.Arguments.GetString(0);
 
 			return true;
 		}

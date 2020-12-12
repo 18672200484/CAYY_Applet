@@ -103,5 +103,15 @@ namespace CMCS.Monitor.Win.Utilities
         {
             return (string.IsNullOrEmpty(status) ? "0" : status) == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(EquipmentStatusColors.Forbidden);
         }
-    }
+
+		/// <summary>
+		/// 转换布尔类型状态为颜色值
+		/// </summary>
+		/// <param name="status">状态</param>
+		/// <returns></returns>
+		public string ConvertStatusToColor(string status)
+		{
+			return (string.IsNullOrEmpty(status) ? "停止" : status) == "运行" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(EquipmentStatusColors.Forbidden);
+		}
+	}
 }

@@ -24,28 +24,28 @@
 		// 注册SVG元素脚本事件
 		function initSvgElementEvent() {
 
-			canvas1.find("*[inkscape\\:label=汽车衡_1号衡点击域],*[inkscape\\:label=汽车衡_2号衡点击域],*[inkscape\\:label=汽车衡_3号衡点击域]").bind("click", function (evt) {
+			canvas1.find("*[inkscape\\:label=#1火车机械采样机点击区域],*[inkscape\\:label=#2火车机械采样机点击区域],*[inkscape\\:label=#3火车机械采样机点击区域]").bind("click", function (evt) {
+				changeSelected(evt.target.parentElement.getAttribute("inkscape:label"));
 				// 选中汽车衡
-				TruckWeighterV8Cef.ChangeSelected(evt.target.getAttribute("inkscape:label"));
-				changeSelected(evt.target.getAttribute("inkscape:label"));
+				TrainSamplerV8Cef.ChangeSelected(evt.target.parentElement.getAttribute("inkscape:label").replace("点击区域", ""));
 			});
 
-			canvas1.find("*[inkscape\\:label=汽车衡_1号衡点击域],*[inkscape\\:label=汽车衡_2号衡点击域],*[inkscape\\:label=汽车衡_3号衡点击域]").css("cursor", "pointer");
+			canvas1.find("*[inkscape\\:label=#1火车机械采样机点击区域],*[inkscape\\:label=#2火车机械采样机点击区域],*[inkscape\\:label=#3火车机械采样机点击区域]").css("cursor", "pointer");
 		}
 
-		var list = ["汽车衡_1号衡", "汽车衡_2号衡", "汽车衡_3号衡"];
-		var currentSelected = "汽车衡_1号衡点击域";
+		var list = ["#1火车机械采样机点击区域", "#2火车机械采样机点击区域", "#3火车机械采样机点击区域"];
+		var currentSelected = "#1火车机械采样机点击区域";
 
 		function changeSelected(selVal) {
-
 			for (var i = 0; i < list.length; i++) {
 				if (selVal.indexOf(list[i]) != -1) {
-					changeColor1(canvas1.find("*[inkscape\\:label=" + list[i] + "选中]"), "#00A551");
+					changeColor1(canvas1.find("*[inkscape\\:label=" + list[i] + "]"), "#00A551");
 					currentSelected = selVal;
 				}
 				else
-					changeColor1(canvas1.find("*[inkscape\\:label=" + list[i] + "选中]"), "#FDFDFD");
+					changeColor1(canvas1.find("*[inkscape\\:label=" + list[i] + "]"), "#FDFDFD");
 			}
+			canvas1.find("*[inkscape\\:label=当前采样机]").html(selVal.replace("点击区域", ""));
 		}
 
 		// 请求数据 - 后台调用
@@ -53,8 +53,6 @@
 			for (var i = 0; i < datas.length; i++) {
 				dataHandler(datas[i]);
 			}
-			canvas1.find("*[inkscape\\:label=#卡车]").attr("transform", "scale(-1 1)");
-			canvas1.find("*[inkscape\\:label=#卡车]").attr("transform", "rotate(180 100 100)");
 		}
 
 		// 处理数据
@@ -92,7 +90,6 @@
 		}
 
 		function initpage() {
-			// dataHandler({ Key: "卡车", Type: 8999, Value: "1" });
 		}
 		// 测试
 		function test1() {

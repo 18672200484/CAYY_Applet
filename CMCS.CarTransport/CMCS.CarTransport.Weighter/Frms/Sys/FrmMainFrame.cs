@@ -29,6 +29,7 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
 			this.superTabControl1.Tabs.Clear();
 			FrmMainFrame.superTabControlManager = new SuperTabControlManager(this.superTabControl1);
 			this.Text = CommonAppConfig.GetInstance().AppIdentifier;
+			this.lab_Title.Text = CommonAppConfig.GetInstance().AppIdentifier;
 			OpenWeight();
 		}
 

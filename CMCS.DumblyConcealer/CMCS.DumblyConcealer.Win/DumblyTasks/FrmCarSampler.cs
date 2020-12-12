@@ -81,6 +81,16 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				EquCarJXSamplerOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
 			}, 0, OutputError);
 
+			taskSimpleScheduler.StartNewTask("#1汽车机械采样机执行命令", () =>
+			{
+				EquCarJXSamplerOPC.GetInstance().RunCmd1(this.rTxtOutputer.Output);
+			}, 500, OutputError);
+
+			taskSimpleScheduler.StartNewTask("#2汽车机械采样机执行命令", () =>
+			{
+				EquCarJXSamplerOPC.GetInstance().RunCmd2(this.rTxtOutputer.Output);
+			}, 500, OutputError);
+
 			#endregion
 
 		}

@@ -602,10 +602,9 @@ namespace CMCS.CarTransport.Weighter.Frms
 		/// <param name="value2">第二行内容</param>
 		private void UpdateLed1Show(string value1 = "", string value2 = "")
 		{
-			FrmDebugConsole.GetInstance().Output("更新LED1:|" + value1 + "|" + value2 + "|");
-
 			if (!this.LED1ConnectStatus) return;
 			if (this.LED1PrevLedFileContent == value1 + value2) return;
+			FrmDebugConsole.GetInstance().Output("更新LED1:|" + value1 + "|" + value2 + "|");
 
 			this.LED1PrevLedFileContent = value1 + value2;
 			EQ2013.User_DelAllProgram(g_iCardNum);
@@ -688,109 +687,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 		#endregion
 
-		#region 海康视频
-
-		/// <summary>
-		/// 海康网络摄像机
-		/// </summary>
-		IPCer iPCer1 = new IPCer();
-		IPCer iPCer2 = new IPCer();
-
-		/// <summary>
-		/// 执行摄像头抓拍，并保存数据
-		/// </summary>
-		/// <param name="transportId">运输记录Id</param>
-		private void CamareCapturePicture(string transportId)
-		{
-			try
-			{
-				// 抓拍照片服务器发布地址
-				string pictureWebUrl = commonDAO.GetCommonAppletConfigString("汽车智能化_抓拍照片发布路径");
-
-				// 摄像机1
-				string picture1FileName = Path.Combine(SelfVars.CapturePicturePath, Guid.NewGuid().ToString() + ".bmp");
-				if (iPCer1.CapturePicture(picture1FileName))
-				{
-					CmcsTransportPicture transportPicture = new CmcsTransportPicture()
-					{
-						CaptureTime = DateTime.Now,
-						CaptureType = CommonAppConfig.GetInstance().AppIdentifier,
-						TransportId = transportId,
-						PicturePath = pictureWebUrl + Path.GetFileName(picture1FileName)
-					};
-
-					if (commonDAO.SelfDber.Insert(transportPicture) > 0) waitForUpload.Enqueue(picture1FileName);
-				}
-
-				// 摄像机2
-				string picture2FileName = Path.Combine(SelfVars.CapturePicturePath, "Camera", Guid.NewGuid().ToString() + ".bmp");
-				if (iPCer2.CapturePicture(picture2FileName))
-				{
-					CmcsTransportPicture transportPicture = new CmcsTransportPicture()
-					{
-						CaptureTime = DateTime.Now,
-						CaptureType = CommonAppConfig.GetInstance().AppIdentifier,
-						TransportId = transportId,
-						PicturePath = pictureWebUrl + Path.GetFileName(picture1FileName)
-					};
-
-					if (commonDAO.SelfDber.Insert(transportPicture) > 0) waitForUpload.Enqueue(picture2FileName);
-				}
-			}
-			catch (Exception ex)
-			{
-				Log4Neter.Error("摄像机抓拍", ex);
-			}
-		}
-
-		/// <summary>
-		/// 上传抓拍照片到服务器共享文件夹
-		/// </summary>
-		private void UploadCapturePicture()
-		{
-			string serverPath = commonDAO.GetCommonAppletConfigString("汽车智能化_抓拍照片服务器共享路径");
-			if (string.IsNullOrEmpty(serverPath)) return;
-
-			string fileName = string.Empty;
-			while (this.waitForUpload.Count > 0)
-			{
-				fileName = this.waitForUpload.Dequeue();
-				if (!string.IsNullOrEmpty(fileName) && File.Exists(fileName))
-				{
-					try
-					{
-						if (Directory.Exists(serverPath)) File.Copy(fileName, Path.Combine(serverPath, Path.GetFileName(fileName)), true);
-					}
-					catch (Exception ex)
-					{
-						Log4Neter.Error("上传抓拍照片", ex);
-
-						break;
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// 清理过期的抓拍照片
-		/// </summary> 
-		public void ClearExpireCapturePicture()
-		{
-			foreach (string item in Directory.GetFiles(SelfVars.CapturePicturePath).Where(a =>
-			{
-				return new FileInfo(a).LastWriteTime > DateTime.Now.AddMonths(-6);
-			}))
-			{
-				try
-				{
-					File.Delete(item);
-				}
-				catch { }
-			}
-		}
-
-		#endregion
-
 		#region 设备初始化与卸载
 
 		/// <summary>
@@ -838,34 +734,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 					success = Hardwarer.Rwer2.OpenCom(commonDAO.GetAppletConfigInt32("读卡器2_串口"));
 					if (!success) MessageBoxEx.Show("读卡器2连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
-
-				#region 海康视频
-
-				//IPCer.InitSDK();
-
-				//CmcsCamare video1 = commonDAO.SelfDber.Entity<CmcsCamare>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = "重车衡摄像头1" });
-				//if (video1 != null)
-				//{
-				//	if (CommonUtil.PingReplyTest(video1.Ip))
-				//	{
-				//		if (iPCer1.Login(video1.Ip, video1.Port, video1.UserName, video1.Password))
-				//		{
-				//			bool res = iPCer1.StartPreview(panVideo1.Handle, video1.Channel);
-				//		}
-				//	}
-				//}
-
-				//CmcsCamare video2 = commonDAO.SelfDber.Entity<CmcsCamare>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = "摄像机2" });
-				//if (video2 != null)
-				//{
-				//	if (CommonUtil.PingReplyTest(video2.Ip))
-				//	{
-				//		if (iPCer2.Login(video2.Ip, video2.Port, video2.UserName, video2.Password))
-				//			iPCer2.StartPreview(panVideo2.Handle, video2.Channel);
-				//	}
-				//}
-
-				#endregion
 
 				#region LED控制卡
 
@@ -935,11 +803,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 				}
 			}
 			catch { }
-			try
-			{
-				//IPCer.CleanupSDK();
-			}
-			catch { }
 		}
 
 		#endregion
@@ -1007,7 +870,13 @@ namespace CMCS.CarTransport.Weighter.Frms
 			{
 				// 执行远程命令
 				ExecAppRemoteControlCmd();
-
+				if (!commonDAO.GetAppletConfigBoolen("启动过衡"))
+				{
+					UpdateLed1Show("停止过磅");
+					return;
+				}
+				else
+					UpdateLed1Show("等待车辆");
 				switch (this.CurrentFlowFlag)
 				{
 					case eFlowFlag.等待车辆:
@@ -1136,10 +1005,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 			try
 			{
-				// 上传抓拍照片
-				UploadCapturePicture();
-				// 清理抓拍照片
-				if (DateTime.Now.Hour == 0) ClearExpireCapturePicture();
+				
 			}
 			catch (Exception ex)
 			{
@@ -1339,15 +1205,21 @@ namespace CMCS.CarTransport.Weighter.Frms
 					this.CurrentBuyFuelTransport = commonDAO.SelfDber.Get<CmcsBuyFuelTransport>(this.CurrentBuyFuelTransport.Id);
 
 					btnSaveTransport_BuyFuel.Enabled = false;
-					if (this.Direction == "双向磅")
-					//if (this.CurrentBuyFuelTransport.StepName == eTruckInFactoryStep.重车.ToString())
+					if (commonDAO.GetAppletConfigBoolen("启动采样"))
 					{
-						this.CurrentFlowFlag = eFlowFlag.准备采样;
-						UpdateLedShow("称重完毕", "开始采样");
-						this.voiceSpeaker.Speak("称重完毕 开始采样", 1, false);
+						if (this.CurrentBuyFuelTransport.StepName == eTruckInFactoryStep.重车.ToString())
+						{
+							this.CurrentFlowFlag = eFlowFlag.准备采样;
+							UpdateLedShow("称重完毕", "开始采样");
+							this.voiceSpeaker.Speak("称重完毕 开始采样", 1, false);
+						}
+						else
+						{
+							UpdateLedShow("未称重", "不允许采样");
+							this.voiceSpeaker.Speak("未称重 不允许采样", 1, false);
+						}
 					}
-					else if (this.Direction == "单向磅")
-					//if (this.CurrentBuyFuelTransport.StepName == eTruckInFactoryStep.轻车.ToString())
+					else
 					{
 						FrontGateUp();
 						this.CurrentFlowFlag = eFlowFlag.等待离开;
@@ -1356,8 +1228,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 					}
 					LoadTodayUnFinishBuyFuelTransport();
 					LoadTodayFinishBuyFuelTransport();
-
-					CamareCapturePicture(this.CurrentBuyFuelTransport.Id);
 
 					return true;
 				}
@@ -1723,8 +1593,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 					LoadTodayUnFinishGoodsTransport();
 					LoadTodayFinishGoodsTransport();
-
-					CamareCapturePicture(this.CurrentGoodsTransport.Id);
 
 					return true;
 				}

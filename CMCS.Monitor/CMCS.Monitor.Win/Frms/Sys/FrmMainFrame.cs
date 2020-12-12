@@ -163,12 +163,12 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		{
 			this.InvokeEx(() =>
 			{
-				string uniqueKey = FrmDoor.UniqueKey;
+				string uniqueKey = FrmDoorManager.UniqueKey;
 
 				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
 				{
-					FrmDoor frm = new FrmDoor();
-					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
+					FrmDoorManager frm = new FrmDoorManager();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
 				}
 				else
 					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
@@ -191,6 +191,79 @@ namespace CMCS.Monitor.Win.Frms.Sys
 				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
 		}
 
+		/// <summary>
+		/// 打开汽车机械采样机监控
+		/// </summary>
+		public void OpenCarSampler1()
+		{
+			this.InvokeEx(() =>
+			{
+				string uniqueKey = FrmCarSampler.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					SelfVars.CarSamplerForm = new FrmCarSampler();
+					FrmMainFrame.superTabControlManager.CreateTab(SelfVars.CarSamplerForm.Text, uniqueKey, SelfVars.CarSamplerForm, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
+		}
+
+
+		/// <summary>
+		/// 打开化验室网络管理监控
+		/// </summary>
+		public void OpenAssayManage()
+		{
+			this.InvokeEx(() =>
+			{
+				string uniqueKey = FrmAssayManage.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmAssayManage frm = new FrmAssayManage();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
+		}
+
+		/// <summary>
+		/// 打开翻车机信息界面
+		/// </summary>
+		public void OpenCarDumper()
+		{
+			string uniqueKey = FrmCarDumper.UniqueKey;
+
+			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			{
+				FrmCarDumper frm = new FrmCarDumper();
+				FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+			}
+			else
+				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+		}
+
+		/// <summary>
+		/// 打开皮带采样机监控
+		/// </summary>
+		public void OpenTrainBeltSampler()
+		{
+			//this.InvokeEx(() =>
+			//{
+			string uniqueKey = FrmTrainBeltSampler.UniqueKey;
+
+			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			{
+				FrmTrainBeltSampler frmTrainBeltSampler = new FrmTrainBeltSampler();
+				FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
+			}
+			else
+				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			//});
+		}
 		#endregion
 
 		/// <summary>
@@ -292,7 +365,56 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			OpenDoor();
 		}
+		/// <summary>
+		/// 打开汽车采样机
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenCarSampler_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
 
+			OpenCarSampler1();
+		}
+
+		/// <summary>
+		/// 化验室网络
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenAssayManage_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+			OpenAssayManage();
+		}
+
+		/// <summary>
+		/// 翻车机信息
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenCarDumper_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenCarDumper();
+		}
+
+		/// <summary>
+		/// 火车皮带采样机
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void OpenTrainBeltSampler_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainBeltSampler();
+		}
 		#endregion
 
 		#region 设备状态监控
@@ -482,6 +604,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			this.Invoke(action);
 		}
+
 
 	}
 }

@@ -43,6 +43,14 @@ namespace CMCS.CarTransport.Weighter.Frms
 			InitParityComboBoxs(cmbIocerParity, cmbWberParity);
 			InitWeberType(cmbWeberType);
 			InitDirection(cmbDecrtion);
+
+			if (commonAppConfig.AppIdentifier.Contains("空车"))
+			{
+				txtSampleMahineCode.Visible = false;
+				labelX33.Visible = false;
+				chk_Sampler.Visible = false;
+				chk_Sampler.Checked = false;
+			}
 		}
 
 		private void FrmSetting_Load(object sender, EventArgs e)
@@ -106,7 +114,9 @@ namespace CMCS.CarTransport.Weighter.Frms
 			txtSelfConnStr.Text = commonAppConfig.SelfConnStr;
 			chbStartup.Checked = (commonDAO.GetAppletConfigString("开机启动") == "1");
 			txtSampleMahineCode.Text = commonDAO.GetAppletConfigString("采样机编码");
-			SelectedComboBoxItem(cmbIocerCom, commonDAO.GetAppletConfigString("上磅方向"));
+			SelectedComboBoxItem(cmbDecrtion, commonDAO.GetAppletConfigString("上磅方向"));
+			chk_Sampler.Checked = (commonDAO.GetAppletConfigString("启动采样") == "1");
+			chk_Use.Checked = (commonDAO.GetAppletConfigString("启动过衡") == "1");
 			// IO控制器
 			SelectedComboBoxItem(cmbIocerCom, commonDAO.GetAppletConfigInt32("IO控制器_串口").ToString());
 			SelectedComboBoxItem(cmbIocerBandrate, commonDAO.GetAppletConfigInt32("IO控制器_波特率").ToString());
@@ -165,6 +175,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			commonDAO.SetAppletConfig("开机启动", Convert.ToInt16(chbStartup.Checked).ToString());
 			commonDAO.SetAppletConfig("采样机编码", txtSampleMahineCode.Text);
 			commonDAO.SetAppletConfig("上磅方向", (cmbDecrtion.SelectedItem as DataItem).Value);
+			commonDAO.SetAppletConfig("启动采样", Convert.ToInt16(chk_Sampler.Checked).ToString());
+			commonDAO.SetAppletConfig("启动过衡", Convert.ToInt16(chk_Use.Checked).ToString());
 			try
 			{
 #if DEBUG

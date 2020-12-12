@@ -39,7 +39,7 @@ namespace CMCS.Monitor.Win.Frms
 		private void FormInit()
 		{
 			Application.Idle += Application_Idle;
-			appBox.AppFilename = @"D:\Program Files (x86)\tencent\WeChat\WeChat.exe";// CommonDAO.GetInstance().GetCommonAppletConfigString("门禁程序路径");
+			appBox.AppFilename = CommonDAO.GetInstance().GetCommonAppletConfigString("门禁程序路径");
 			appBox.Start();
 			if (appBox.IsStarted)
 			{

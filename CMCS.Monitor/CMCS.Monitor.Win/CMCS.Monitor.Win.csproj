@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CefGlue\CefMenuHandler.cs" />
+    <Compile Include="CefGlue\CefV8Handlers\TrainSamplerCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\HomePageCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\TruckWeighterCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\CarSamplerCefV8Handler.cs" />
@@ -102,11 +103,29 @@
     <Compile Include="CefGlue\CefV8Handlers\CefTesterCefV8Handler.cs" />
     <Compile Include="Core\PreviewCarBmp.cs" />
     <Compile Include="Core\SelfVars.cs" />
-    <Compile Include="Frms\FrmTrainBeltSampler.cs">
+    <Compile Include="Frms\FrmAssayManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frms\FrmTrainBeltSampler.Designer.cs">
-      <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
+    <Compile Include="Frms\FrmAssayManage.Designer.cs">
+      <DependentUpon>FrmAssayManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmCarDumper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmCarDumper.Designer.cs">
+      <DependentUpon>FrmCarDumper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmCarSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmCarSampler.designer.cs">
+      <DependentUpon>FrmCarSampler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmDoorManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmDoorManager.Designer.cs">
+      <DependentUpon>FrmDoorManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Frms\FrmDoor.cs">
       <SubType>Form</SubType>
@@ -119,6 +138,12 @@
     </Compile>
     <Compile Include="Frms\FrmHomePage.Designer.cs">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmTrainBeltSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmTrainBeltSampler.designer.cs">
+      <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
     </Compile>
     <Compile Include="Frms\FrmTrainSampler.cs">
       <SubType>Form</SubType>
@@ -177,14 +202,26 @@
     <Compile Include="Utilities\MonitorCommon.cs" />
     <Compile Include="Utilities\SuperTabControlManager.cs" />
     <Compile Include="Utilities\WarningBoxUtil.cs" />
-    <EmbeddedResource Include="Frms\FrmTrainBeltSampler.resx">
-      <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
+    <EmbeddedResource Include="Frms\FrmAssayManage.resx">
+      <DependentUpon>FrmAssayManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmCarDumper.resx">
+      <DependentUpon>FrmCarDumper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmCarSampler.resx">
+      <DependentUpon>FrmCarSampler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmDoorManager.resx">
+      <DependentUpon>FrmDoorManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmDoor.resx">
       <DependentUpon>FrmDoor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmTrainBeltSampler.resx">
+      <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTrainSampler.resx">
       <DependentUpon>FrmTrainSampler.cs</DependentUpon>
@@ -249,6 +286,10 @@
       <Project>{543ED9EB-DADE-4694-BA6C-7ECEAA5D135C}</Project>
       <Name>CMCS.Forms.UserControls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Hardware\HikVisionSDK.Core\HikVisionSDK.Core.csproj">
+      <Project>{3c06e562-08c1-44f5-a735-c0a14cc94a7f}</Project>
+      <Name>HikVisionSDK.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Hardware\SmileWei.EmbeddedApp\SmileWei.EmbeddedApp.csproj">
       <Project>{90b74adf-891a-47e2-922c-450be2271164}</Project>
       <Name>SmileWei.EmbeddedApp</Name>
@@ -261,6 +302,15 @@
   <ItemGroup>
     <Content Include="bin\Common.AppConfig.xml" />
     <Content Include="bin\update.xml" />
+    <Content Include="bin\Web\AssayManage\index.htm" />
+    <Content Include="bin\Web\AssayManage\Resources\AssayManage.svg" />
+    <Content Include="bin\Web\CarSampler\index.htm" />
+    <Content Include="bin\Web\CarSampler\Resources\CarSampler.svg" />
+    <Content Include="bin\Web\CarSampler\Resources\images\Autotruck.png" />
+    <Content Include="bin\Web\CarSampler\Resources\images\barrel-empty.png" />
+    <Content Include="bin\Web\CarSampler\Resources\images\barrel-full.png" />
+    <Content Include="bin\Web\CarSampler\Resources\images\barrel-notfull.png" />
+    <Content Include="bin\Web\CarSampler\Resources\js\register.js" />
     <Content Include="bin\Web\CefTester\index.htm" />
     <Content Include="bin\Web\CefTester\Resources\js\register.js" />
     <Content Include="bin\Web\HomePage\index.htm" />
@@ -281,9 +331,21 @@
     <Content Include="bin\Web\Resources\plugins\layer\skin\layer.ext.css" />
     <Content Include="bin\Web\Resources\plugins\svg\svg.js" />
     <Content Include="bin\Web\Resources\js\svgHelper.js" />
+    <Content Include="bin\Web\TrainBeltSampler\index.htm" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-empty.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-full-1.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-full-2.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-full-3.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-notfull-1.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-notfull-2.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-notfull-3.png" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\js\register.js" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\TrainBeltSampler.svg" />
     <Content Include="bin\Web\TrainSampler\index.htm" />
     <Content Include="bin\Web\TrainSampler\Resources\js\register.js" />
-    <Content Include="bin\Web\TrainSampler\Resources\TrainSampler.svg" />
+    <Content Include="bin\Web\TrainSampler\Resources\TrainSampler.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="bin\Web\TruckWeighter\index.htm" />
     <Content Include="bin\Web\TruckWeighter\Resources\js\register.js" />
     <Content Include="bin\Web\TruckWeighter\Resources\TruckWeighter.svg" />
@@ -292,6 +354,8 @@
     <None Include="Resources\CompanyLogo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Web\AssayManage\Resources\images\" />
+    <Folder Include="bin\Web\AssayManage\Resources\js\" />
     <Folder Include="bin\Web\HomePage\Resources\images\" />
     <Folder Include="bin\Web\Resources\images\" />
     <Folder Include="bin\Web\TrainSampler\Resources\images\" />

@@ -30,15 +30,17 @@
         {
 			this.components = new System.ComponentModel.Container();
 			this.panWebBrower = new DevComponents.DotNetBar.PanelEx();
+			this.panel1 = new DevComponents.DotNetBar.PanelEx();
 			this.appBox = new SmileWei.EmbeddedApp.AppContainer(this.components);
 			this.panWebBrower.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panWebBrower
 			// 
 			this.panWebBrower.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panWebBrower.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panWebBrower.Controls.Add(this.appBox);
+			this.panWebBrower.Controls.Add(this.panel1);
 			this.panWebBrower.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panWebBrower.Location = new System.Drawing.Point(0, 0);
 			this.panWebBrower.Name = "panWebBrower";
@@ -49,6 +51,22 @@
 			this.panWebBrower.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
 			this.panWebBrower.Style.GradientAngle = 90;
 			this.panWebBrower.TabIndex = 2;
+			// 
+			// panel1
+			// 
+			this.panel1.CanvasColor = System.Drawing.SystemColors.Control;
+			this.panel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panel1.Controls.Add(this.appBox);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1910, 920);
+			this.panel1.Style.Alignment = System.Drawing.StringAlignment.Center;
+			this.panel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+			this.panel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.panel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+			this.panel1.Style.GradientAngle = 90;
+			this.panel1.TabIndex = 3;
 			// 
 			// appBox
 			// 
@@ -68,17 +86,18 @@
 			this.Controls.Add(this.panWebBrower);
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.MinimumSize = new System.Drawing.Size(1910, 920);
 			this.Name = "FrmDoor";
 			this.Text = "设备监控";
 			this.Load += new System.EventHandler(this.FrmCarMonitor_Load);
 			this.panWebBrower.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
 
         #endregion
         private DevComponents.DotNetBar.PanelEx panWebBrower;
+		private DevComponents.DotNetBar.PanelEx panel1;
 		private SmileWei.EmbeddedApp.AppContainer appBox;
 	}
 }

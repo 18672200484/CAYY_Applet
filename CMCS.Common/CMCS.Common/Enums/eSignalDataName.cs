@@ -80,7 +80,11 @@ namespace CMCS.Common.Enums
 		汽车出厂车数,
 		制样合批数,
 		存样数,
-		待化验数
+		待化验数,
+		采样编码,
+		矿发量,
+		采样时间,
+		采样点数
 		#endregion
 	}
 }

@@ -48,7 +48,14 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.btnOpenTruckWeighter = new DevComponents.DotNetBar.ButtonItem();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel_Buttons = new DevComponents.DotNetBar.PanelEx();
+			this.btnOpenTrainBeltSampler = new DevComponents.DotNetBar.ButtonX();
+			this.btnOpenCarDumper = new DevComponents.DotNetBar.ButtonX();
+			this.btnOpenAssayManage = new DevComponents.DotNetBar.ButtonX();
+			this.btnOpenCarSampler = new DevComponents.DotNetBar.ButtonX();
+			this.btnOpenDoor = new DevComponents.DotNetBar.ButtonX();
 			this.btnTrainSampler = new DevComponents.DotNetBar.ButtonX();
+			this.btnOpenTrainSampler = new DevComponents.DotNetBar.ButtonItem();
+			this.btnOpenBeltSampler = new DevComponents.DotNetBar.ButtonItem();
 			this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
 			this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
 			this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
@@ -57,9 +64,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.timer_EquipmentStatus = new System.Windows.Forms.Timer(this.components);
 			this.timer_MsgTime = new System.Windows.Forms.Timer(this.components);
-			this.btnOpenDoor = new DevComponents.DotNetBar.ButtonX();
-			this.btnOpenTrainSampler = new DevComponents.DotNetBar.ButtonItem();
-			this.btnOpenBeltSampler = new DevComponents.DotNetBar.ButtonItem();
 			this.panelEx1.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel_Buttons.SuspendLayout();
@@ -240,6 +244,10 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			// 
 			this.panel_Buttons.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panel_Buttons.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panel_Buttons.Controls.Add(this.btnOpenTrainBeltSampler);
+			this.panel_Buttons.Controls.Add(this.btnOpenCarDumper);
+			this.panel_Buttons.Controls.Add(this.btnOpenAssayManage);
+			this.panel_Buttons.Controls.Add(this.btnOpenCarSampler);
 			this.panel_Buttons.Controls.Add(this.btnOpenDoor);
 			this.panel_Buttons.Controls.Add(this.btnTrainSampler);
 			this.panel_Buttons.Controls.Add(this.btnOpenMainPage);
@@ -254,6 +262,76 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.panel_Buttons.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
 			this.panel_Buttons.Style.GradientAngle = 90;
 			this.panel_Buttons.TabIndex = 0;
+			// 
+			// btnOpenTrainBeltSampler
+			// 
+			this.btnOpenTrainBeltSampler.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnOpenTrainBeltSampler.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.btnOpenTrainBeltSampler.AutoExpandOnClick = true;
+			this.btnOpenTrainBeltSampler.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnOpenTrainBeltSampler.Location = new System.Drawing.Point(801, 3);
+			this.btnOpenTrainBeltSampler.Name = "btnOpenTrainBeltSampler";
+			this.btnOpenTrainBeltSampler.Size = new System.Drawing.Size(143, 31);
+			this.btnOpenTrainBeltSampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnOpenTrainBeltSampler.TabIndex = 16;
+			this.btnOpenTrainBeltSampler.Text = "火车皮带采样机";
+			this.btnOpenTrainBeltSampler.Click += new System.EventHandler(this.OpenTrainBeltSampler_Click);
+			// 
+			// btnOpenCarDumper
+			// 
+			this.btnOpenCarDumper.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnOpenCarDumper.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.btnOpenCarDumper.AutoExpandOnClick = true;
+			this.btnOpenCarDumper.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnOpenCarDumper.Location = new System.Drawing.Point(687, 3);
+			this.btnOpenCarDumper.Name = "btnOpenCarDumper";
+			this.btnOpenCarDumper.Size = new System.Drawing.Size(108, 31);
+			this.btnOpenCarDumper.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnOpenCarDumper.TabIndex = 15;
+			this.btnOpenCarDumper.Text = "翻车信息";
+			this.btnOpenCarDumper.Click += new System.EventHandler(this.btnOpenCarDumper_Click);
+			// 
+			// btnOpenAssayManage
+			// 
+			this.btnOpenAssayManage.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnOpenAssayManage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.btnOpenAssayManage.AutoExpandOnClick = true;
+			this.btnOpenAssayManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnOpenAssayManage.Location = new System.Drawing.Point(573, 3);
+			this.btnOpenAssayManage.Name = "btnOpenAssayManage";
+			this.btnOpenAssayManage.Size = new System.Drawing.Size(108, 31);
+			this.btnOpenAssayManage.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnOpenAssayManage.TabIndex = 14;
+			this.btnOpenAssayManage.Text = "化验室网络";
+			this.btnOpenAssayManage.Click += new System.EventHandler(this.btnOpenAssayManage_Click);
+			// 
+			// btnOpenCarSampler
+			// 
+			this.btnOpenCarSampler.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnOpenCarSampler.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.btnOpenCarSampler.AutoExpandOnClick = true;
+			this.btnOpenCarSampler.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnOpenCarSampler.Location = new System.Drawing.Point(459, 3);
+			this.btnOpenCarSampler.Name = "btnOpenCarSampler";
+			this.btnOpenCarSampler.Size = new System.Drawing.Size(108, 31);
+			this.btnOpenCarSampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnOpenCarSampler.TabIndex = 13;
+			this.btnOpenCarSampler.Text = "汽车采样机";
+			this.btnOpenCarSampler.Click += new System.EventHandler(this.btnOpenCarSampler_Click);
+			// 
+			// btnOpenDoor
+			// 
+			this.btnOpenDoor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnOpenDoor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.btnOpenDoor.AutoExpandOnClick = true;
+			this.btnOpenDoor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnOpenDoor.Location = new System.Drawing.Point(345, 2);
+			this.btnOpenDoor.Name = "btnOpenDoor";
+			this.btnOpenDoor.Size = new System.Drawing.Size(108, 31);
+			this.btnOpenDoor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnOpenDoor.TabIndex = 12;
+			this.btnOpenDoor.Text = "门 禁 管 理";
+			this.btnOpenDoor.Click += new System.EventHandler(this.btnOpenDoor_Click);
 			// 
 			// btnTrainSampler
 			// 
@@ -270,6 +348,20 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.btnOpenBeltSampler});
 			this.btnTrainSampler.TabIndex = 11;
 			this.btnTrainSampler.Text = "火车采样机";
+			// 
+			// btnOpenTrainSampler
+			// 
+			this.btnOpenTrainSampler.GlobalItem = false;
+			this.btnOpenTrainSampler.Name = "btnOpenTrainSampler";
+			this.btnOpenTrainSampler.Text = "机械采样机";
+			this.btnOpenTrainSampler.Click += new System.EventHandler(this.btnOpenTrainSampler_Click);
+			// 
+			// btnOpenBeltSampler
+			// 
+			this.btnOpenBeltSampler.GlobalItem = false;
+			this.btnOpenBeltSampler.Name = "btnOpenBeltSampler";
+			this.btnOpenBeltSampler.Text = "远 程 控 制";
+			this.btnOpenBeltSampler.Click += new System.EventHandler(this.btnOpenBeltSampler_Click);
 			// 
 			// superTabControl1
 			// 
@@ -351,34 +443,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.timer_MsgTime.Interval = 1000;
 			this.timer_MsgTime.Tick += new System.EventHandler(this.timer_MsgTime_Tick);
 			// 
-			// btnOpenDoor
-			// 
-			this.btnOpenDoor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnOpenDoor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.btnOpenDoor.AutoExpandOnClick = true;
-			this.btnOpenDoor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnOpenDoor.Location = new System.Drawing.Point(345, 2);
-			this.btnOpenDoor.Name = "btnOpenDoor";
-			this.btnOpenDoor.Size = new System.Drawing.Size(108, 31);
-			this.btnOpenDoor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnOpenDoor.TabIndex = 12;
-			this.btnOpenDoor.Text = "门 禁 管 理";
-			this.btnOpenDoor.Click += new System.EventHandler(this.btnOpenDoor_Click);
-			// 
-			// btnOpenTrainSampler
-			// 
-			this.btnOpenTrainSampler.GlobalItem = false;
-			this.btnOpenTrainSampler.Name = "btnOpenTrainSampler";
-			this.btnOpenTrainSampler.Text = "机械采样机";
-			this.btnOpenTrainSampler.Click += new System.EventHandler(this.btnOpenTrainSampler_Click);
-			// 
-			// btnOpenBeltSampler
-			// 
-			this.btnOpenBeltSampler.GlobalItem = false;
-			this.btnOpenBeltSampler.Name = "btnOpenBeltSampler";
-			this.btnOpenBeltSampler.Text = "远 程 控 制";
-			this.btnOpenBeltSampler.Click += new System.EventHandler(this.btnOpenBeltSampler_Click);
-			// 
 			// FrmMainFrame
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -387,7 +451,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Controls.Add(this.metroStatusBar1);
 			this.DoubleBuffered = true;
-			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(1598, 816);
@@ -438,6 +501,10 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		private DevComponents.DotNetBar.ButtonX btnOpenDoor;
 		private DevComponents.DotNetBar.ButtonItem btnOpenTrainSampler;
 		private DevComponents.DotNetBar.ButtonItem btnOpenBeltSampler;
-	}
+		private DevComponents.DotNetBar.ButtonX btnOpenCarSampler;
+        private DevComponents.DotNetBar.ButtonX btnOpenAssayManage;
+        private DevComponents.DotNetBar.ButtonX btnOpenCarDumper;
+        private DevComponents.DotNetBar.ButtonX btnOpenTrainBeltSampler;
+    }
 }
 

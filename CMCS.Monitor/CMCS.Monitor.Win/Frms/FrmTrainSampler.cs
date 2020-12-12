@@ -30,9 +30,9 @@ namespace CMCS.Monitor.Win.Frms
 
 		CefWebBrowserEx cefWebBrowser = new CefWebBrowserEx();
 
-		string currentMachineCode = GlobalVars.MachineCode_QC_Weighter_1;
+		string currentMachineCode = GlobalVars.MachineCode_HCJXCYJ_1;
 		/// <summary>
-		/// 当前选中的衡器
+		/// 当前选中的设备
 		/// </summary>
 		public string CurrentMachineCode
 		{
@@ -108,28 +108,31 @@ namespace CMCS.Monitor.Win.Frms
 			machineCode = this.CurrentMachineCode;
 
 			datas.Add(new HtmlDataItem("汽车衡_当前衡器", machineCode, eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("汽车衡_1号衡系统", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_2号衡系统", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_3号衡系统", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_3, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_系统", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_IO控制器", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.IO控制器_连接状态.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_地磅仪表", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.地磅仪表_连接状态.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_LED屏", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.LED屏1_连接状态.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_抓拍相机", monitorCommon.ConvertBooleanToColor(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.抓拍相机_连接状态.ToString())), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_仪表重量", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.地磅仪表_实时重量.ToString()) + " 吨", eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("汽车衡_仪表重量", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.地磅仪表_稳定.ToString()).ToLower() == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.BeReady) : ColorTranslator.ToHtml(EquipmentStatusColors.Working), eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_当前车号", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.当前车号.ToString()), eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("汽车衡_毛重", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.毛重.ToString()) + " 吨", eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("汽车衡_皮重", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.皮重.ToString()) + " 吨", eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("汽车衡_卡车", (!string.IsNullOrEmpty(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.当前车号.ToString()))).ToString(), eHtmlDataItemType.svg_visible));
-			datas.Add(new HtmlDataItem("汽车衡_地感1", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.地感1信号.ToString()).ToLower() == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : "#c0c0c0", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_地感2", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.地感2信号.ToString()).ToLower() == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : "#c0c0c0", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_对射1", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.对射1信号.ToString()).ToLower() == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : "#c0c0c0", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_对射2", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.对射2信号.ToString()).ToLower() == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : "#c0c0c0", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_对射3", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.对射3信号.ToString()).ToLower() == "1" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : "#c0c0c0", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("汽车衡_道闸1", (commonDAO.GetSignalDataValue(machineCode, eSignalDataName.道闸1升杆.ToString()) == "0").ToString(), eHtmlDataItemType.svg_visible));
-			datas.Add(new HtmlDataItem("汽车衡_道闸2", (commonDAO.GetSignalDataValue(machineCode, eSignalDataName.道闸2升杆.ToString()) == "0").ToString(), eHtmlDataItemType.svg_visible));
-			datas.Add(new HtmlDataItem("汽车衡_卡车", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.上磅方向.ToString()), eHtmlDataItemType.svg_scare));
+			datas.Add(new HtmlDataItem("#1采样机状态", monitorCommon.ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_1, eSignalDataName.设备状态.ToString())), eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("#2采样机状态", monitorCommon.ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.设备状态.ToString())), eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("#3采样机状态", monitorCommon.ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_3, eSignalDataName.设备状态.ToString())), eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("当前设备状态", monitorCommon.ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(machineCode, eSignalDataName.设备状态.ToString())), eHtmlDataItemType.svg_color));
+
+			datas.Add(new HtmlDataItem("采样码", commonDAO.GetSignalDataValue(machineCode, "采样码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("矿发量", commonDAO.GetSignalDataValue(machineCode, "矿发量"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("开始时间", commonDAO.GetSignalDataValue(machineCode, "开始时间"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("来煤车数", commonDAO.GetSignalDataValue(machineCode, "来煤车数"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("采样点数", commonDAO.GetSignalDataValue(machineCode, "采样点数"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("当前车号", commonDAO.GetSignalDataValue(machineCode, "当前车号"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("2道允许牵车", commonDAO.GetSignalDataValue(machineCode, "2道允许牵车"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("4道允许牵车", commonDAO.GetSignalDataValue(machineCode, "4道允许牵车"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("料斗", monitorCommon.ConvertStatusToColor(commonDAO.GetSignalDataValue(machineCode, "料斗")), eHtmlDataItemType.svg_color));
+			string point = commonDAO.GetSignalDataValue(machineCode, "实时坐标");
+			if (!string.IsNullOrEmpty(point))
+			{
+				string[] points = point.Split(',');
+				if (points.Length == 3)
+				{
+					datas.Add(new HtmlDataItem("大车坐标", points[0], eHtmlDataItemType.svg_text));
+					datas.Add(new HtmlDataItem("小车坐标", points[1], eHtmlDataItemType.svg_text));
+					datas.Add(new HtmlDataItem("升降坐标", points[2], eHtmlDataItemType.svg_text));
+				}
+			}
 			// 添加更多...
 
 			// 发送到页面

@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,7 +44,7 @@
     <Reference Include="Interop.OPCAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Interop.OPCAutomation.dll</HintPath>
+      <HintPath>..\CMCS.DumblyConcealer.Win\bin\Interop.OPCAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess">
       <HintPath>..\..\CMCS.Resources\Oracle.ManagedDataAccess\Oracle.ManagedDataAccess.dll</HintPath>
@@ -105,6 +106,7 @@
     <Compile Include="Tasks\TrainDiscriminator\TrainDiscriminatorTCPIP.cs" />
     <Compile Include="Tasks\WeightBridger\Entities\CarInfoMutual.cs" />
     <Compile Include="Tasks\WeightBridger\EquWeightBridgerDAO.cs" />
+    <Compile Include="Utilities\OPCClientDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
@@ -115,10 +117,13 @@
       <Project>{6384F3D5-7CB5-4D1F-8A1F-3FA9B0A78F05}</Project>
       <Name>CMCS.DapperDber</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Hardware\OPCClientCore\OPCClientCore.csproj">
+      <Project>{97c30535-2803-48be-9df8-83ad2864872e}</Project>
+      <Name>OPCClientCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tasks\TrainDiscriminator\Entities\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tasks\AssayDevice\Entities\从化验设备取数后的中间库映射实体.txt" />

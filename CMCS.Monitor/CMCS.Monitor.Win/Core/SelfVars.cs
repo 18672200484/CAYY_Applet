@@ -55,6 +55,10 @@ namespace CMCS.Monitor.Win.Core
 
         #region 汽车采样机
         /// <summary>
+        /// 汽车采样机窗体引用
+        /// </summary>
+        public static FrmCarSampler CarSamplerForm;
+        /// <summary>
         /// 网页地址 - 汽车采样机
         /// </summary>
         public static string Url_CarSampler = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/CarSampler/index.htm");

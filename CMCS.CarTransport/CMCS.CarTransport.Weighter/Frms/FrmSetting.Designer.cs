@@ -37,6 +37,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControl1 = new DevComponents.DotNetBar.TabControl();
 			this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
 			this.cmbDecrtion = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.comboItem3 = new DevComponents.Editors.ComboItem();
+			this.comboItem4 = new DevComponents.Editors.ComboItem();
 			this.labelX34 = new DevComponents.DotNetBar.LabelX();
 			this.txtSampleMahineCode = new DevComponents.DotNetBar.Controls.TextBoxX();
 			this.labelX33 = new DevComponents.DotNetBar.LabelX();
@@ -123,8 +125,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbVoiceName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
 			this.labelX31 = new DevComponents.DotNetBar.LabelX();
 			this.tabItem6 = new DevComponents.DotNetBar.TabItem(this.components);
-			this.comboItem3 = new DevComponents.Editors.ComboItem();
-			this.comboItem4 = new DevComponents.Editors.ComboItem();
+			this.chk_Sampler = new DevComponents.DotNetBar.Controls.CheckBoxX();
+			this.chk_Use = new DevComponents.DotNetBar.Controls.CheckBoxX();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panelEx1.SuspendLayout();
 			this.panelEx2.SuspendLayout();
@@ -142,13 +144,13 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// tableLayoutPanel1
 			// 
-			this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+			this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
 			this.tableLayoutPanel1.ColumnCount = 1;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.Controls.Add(this.panelEx1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.panelEx2, 0, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
+			this.tableLayoutPanel1.ForeColor = System.Drawing.Color.Black;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
@@ -220,7 +222,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// tabControl1
 			// 
-			this.tabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControl1.BackColor = System.Drawing.Color.White;
 			this.tabControl1.CanReorderTabs = false;
 			this.tabControl1.ColorScheme.TabItemBackgroundColorBlend.AddRange(new DevComponents.DotNetBar.BackgroundColorBlend[] {
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.Empty, 0F),
@@ -251,7 +253,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControl1.Controls.Add(this.tabControlPanel6);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tabControl1.ForeColor = System.Drawing.Color.White;
+			this.tabControl1.ForeColor = System.Drawing.Color.Black;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedTabFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,6 +272,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// tabControlPanel1
 			// 
+			this.tabControlPanel1.Controls.Add(this.chk_Use);
+			this.tabControlPanel1.Controls.Add(this.chk_Sampler);
 			this.tabControlPanel1.Controls.Add(this.cmbDecrtion);
 			this.tabControlPanel1.Controls.Add(this.labelX34);
 			this.tabControlPanel1.Controls.Add(this.txtSampleMahineCode);
@@ -284,7 +288,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControlPanel1.Name = "tabControlPanel1";
 			this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
 			this.tabControlPanel1.Size = new System.Drawing.Size(703, 432);
-			this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White;
 			this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
@@ -298,17 +302,25 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbDecrtion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbDecrtion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbDecrtion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbDecrtion.ForeColor = System.Drawing.Color.White;
+			this.cmbDecrtion.ForeColor = System.Drawing.Color.Black;
 			this.cmbDecrtion.FormattingEnabled = true;
 			this.cmbDecrtion.ItemHeight = 21;
 			this.cmbDecrtion.Items.AddRange(new object[] {
             this.comboItem3,
             this.comboItem4});
-			this.cmbDecrtion.Location = new System.Drawing.Point(167, 177);
+			this.cmbDecrtion.Location = new System.Drawing.Point(166, 138);
 			this.cmbDecrtion.Name = "cmbDecrtion";
 			this.cmbDecrtion.Size = new System.Drawing.Size(180, 27);
 			this.cmbDecrtion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
 			this.cmbDecrtion.TabIndex = 24;
+			// 
+			// comboItem3
+			// 
+			this.comboItem3.Text = "双向磅";
+			// 
+			// comboItem4
+			// 
+			this.comboItem4.Text = "单向磅";
 			// 
 			// labelX34
 			// 
@@ -319,8 +331,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX34.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX34.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX34.ForeColor = System.Drawing.Color.White;
-			this.labelX34.Location = new System.Drawing.Point(94, 180);
+			this.labelX34.ForeColor = System.Drawing.Color.Black;
+			this.labelX34.Location = new System.Drawing.Point(93, 141);
 			this.labelX34.Name = "labelX34";
 			this.labelX34.Size = new System.Drawing.Size(72, 24);
 			this.labelX34.TabIndex = 23;
@@ -328,15 +340,15 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// txtSampleMahineCode
 			// 
-			this.txtSampleMahineCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.txtSampleMahineCode.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
 			this.txtSampleMahineCode.Border.Class = "TextBoxBorder";
 			this.txtSampleMahineCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.txtSampleMahineCode.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSampleMahineCode.ForeColor = System.Drawing.Color.White;
-			this.txtSampleMahineCode.Location = new System.Drawing.Point(167, 135);
+			this.txtSampleMahineCode.ForeColor = System.Drawing.Color.Black;
+			this.txtSampleMahineCode.Location = new System.Drawing.Point(166, 181);
 			this.txtSampleMahineCode.Name = "txtSampleMahineCode";
 			this.txtSampleMahineCode.Size = new System.Drawing.Size(180, 27);
 			this.txtSampleMahineCode.TabIndex = 22;
@@ -350,8 +362,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX33.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX33.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX33.ForeColor = System.Drawing.Color.White;
-			this.labelX33.Location = new System.Drawing.Point(78, 138);
+			this.labelX33.ForeColor = System.Drawing.Color.Black;
+			this.labelX33.Location = new System.Drawing.Point(77, 184);
 			this.labelX33.Name = "labelX33";
 			this.labelX33.Size = new System.Drawing.Size(88, 24);
 			this.labelX33.TabIndex = 21;
@@ -359,14 +371,14 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// txtSelfConnStr
 			// 
-			this.txtSelfConnStr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.txtSelfConnStr.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
 			this.txtSelfConnStr.Border.Class = "TextBoxBorder";
 			this.txtSelfConnStr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.txtSelfConnStr.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSelfConnStr.ForeColor = System.Drawing.Color.White;
+			this.txtSelfConnStr.ForeColor = System.Drawing.Color.Black;
 			this.txtSelfConnStr.Location = new System.Drawing.Point(167, 67);
 			this.txtSelfConnStr.Name = "txtSelfConnStr";
 			this.txtSelfConnStr.Size = new System.Drawing.Size(446, 27);
@@ -381,7 +393,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX20.ForeColor = System.Drawing.Color.White;
+			this.labelX20.ForeColor = System.Drawing.Color.Black;
 			this.labelX20.Location = new System.Drawing.Point(30, 69);
 			this.labelX20.Name = "labelX20";
 			this.labelX20.Size = new System.Drawing.Size(137, 24);
@@ -397,7 +409,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.chbStartup.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.chbStartup.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chbStartup.ForeColor = System.Drawing.Color.White;
+			this.chbStartup.ForeColor = System.Drawing.Color.Black;
 			this.chbStartup.Location = new System.Drawing.Point(167, 105);
 			this.chbStartup.Name = "chbStartup";
 			this.chbStartup.Size = new System.Drawing.Size(92, 24);
@@ -407,14 +419,14 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// txtAppIdentifier
 			// 
-			this.txtAppIdentifier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.txtAppIdentifier.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
 			this.txtAppIdentifier.Border.Class = "TextBoxBorder";
 			this.txtAppIdentifier.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.txtAppIdentifier.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtAppIdentifier.ForeColor = System.Drawing.Color.White;
+			this.txtAppIdentifier.ForeColor = System.Drawing.Color.Black;
 			this.txtAppIdentifier.Location = new System.Drawing.Point(167, 29);
 			this.txtAppIdentifier.Name = "txtAppIdentifier";
 			this.txtAppIdentifier.Size = new System.Drawing.Size(180, 27);
@@ -429,7 +441,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX4.ForeColor = System.Drawing.Color.White;
+			this.labelX4.ForeColor = System.Drawing.Color.Black;
 			this.labelX4.Location = new System.Drawing.Point(61, 31);
 			this.labelX4.Name = "labelX4";
 			this.labelX4.Size = new System.Drawing.Size(105, 24);
@@ -483,7 +495,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControlPanel2.Name = "tabControlPanel2";
 			this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
 			this.tabControlPanel2.Size = new System.Drawing.Size(703, 432);
-			this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.White;
 			this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
@@ -497,7 +509,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbIocerParity.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbIocerParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbIocerParity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbIocerParity.ForeColor = System.Drawing.Color.White;
+			this.cmbIocerParity.ForeColor = System.Drawing.Color.Black;
 			this.cmbIocerParity.FormattingEnabled = true;
 			this.cmbIocerParity.ItemHeight = 21;
 			this.cmbIocerParity.Location = new System.Drawing.Point(167, 105);
@@ -515,7 +527,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX1.ForeColor = System.Drawing.Color.White;
+			this.labelX1.ForeColor = System.Drawing.Color.Black;
 			this.labelX1.Location = new System.Drawing.Point(107, 107);
 			this.labelX1.Name = "labelX1";
 			this.labelX1.Size = new System.Drawing.Size(56, 24);
@@ -528,7 +540,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbSignalLight2Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbSignalLight2Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbSignalLight2Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbSignalLight2Port.ForeColor = System.Drawing.Color.White;
+			this.cmbSignalLight2Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbSignalLight2Port.FormattingEnabled = true;
 			this.cmbSignalLight2Port.ItemHeight = 21;
 			this.cmbSignalLight2Port.Location = new System.Drawing.Point(464, 333);
@@ -546,7 +558,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX18.ForeColor = System.Drawing.Color.White;
+			this.labelX18.ForeColor = System.Drawing.Color.Black;
 			this.labelX18.Location = new System.Drawing.Point(364, 335);
 			this.labelX18.Name = "labelX18";
 			this.labelX18.Size = new System.Drawing.Size(97, 24);
@@ -559,7 +571,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbSignalLight1Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbSignalLight1Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbSignalLight1Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbSignalLight1Port.ForeColor = System.Drawing.Color.White;
+			this.cmbSignalLight1Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbSignalLight1Port.FormattingEnabled = true;
 			this.cmbSignalLight1Port.ItemHeight = 21;
 			this.cmbSignalLight1Port.Location = new System.Drawing.Point(167, 333);
@@ -577,7 +589,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX19.ForeColor = System.Drawing.Color.White;
+			this.labelX19.ForeColor = System.Drawing.Color.Black;
 			this.labelX19.Location = new System.Drawing.Point(67, 335);
 			this.labelX19.Name = "labelX19";
 			this.labelX19.Size = new System.Drawing.Size(97, 24);
@@ -590,7 +602,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbGate2DownPort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbGate2DownPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbGate2DownPort.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbGate2DownPort.ForeColor = System.Drawing.Color.White;
+			this.cmbGate2DownPort.ForeColor = System.Drawing.Color.Black;
 			this.cmbGate2DownPort.FormattingEnabled = true;
 			this.cmbGate2DownPort.ItemHeight = 21;
 			this.cmbGate2DownPort.Location = new System.Drawing.Point(464, 295);
@@ -608,7 +620,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX16.ForeColor = System.Drawing.Color.White;
+			this.labelX16.ForeColor = System.Drawing.Color.Black;
 			this.labelX16.Location = new System.Drawing.Point(349, 297);
 			this.labelX16.Name = "labelX16";
 			this.labelX16.Size = new System.Drawing.Size(113, 24);
@@ -621,7 +633,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbGate2UpPort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbGate2UpPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbGate2UpPort.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbGate2UpPort.ForeColor = System.Drawing.Color.White;
+			this.cmbGate2UpPort.ForeColor = System.Drawing.Color.Black;
 			this.cmbGate2UpPort.FormattingEnabled = true;
 			this.cmbGate2UpPort.ItemHeight = 21;
 			this.cmbGate2UpPort.Location = new System.Drawing.Point(167, 295);
@@ -639,7 +651,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX17.ForeColor = System.Drawing.Color.White;
+			this.labelX17.ForeColor = System.Drawing.Color.Black;
 			this.labelX17.Location = new System.Drawing.Point(52, 297);
 			this.labelX17.Name = "labelX17";
 			this.labelX17.Size = new System.Drawing.Size(113, 24);
@@ -652,7 +664,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbGate1DownPort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbGate1DownPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbGate1DownPort.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbGate1DownPort.ForeColor = System.Drawing.Color.White;
+			this.cmbGate1DownPort.ForeColor = System.Drawing.Color.Black;
 			this.cmbGate1DownPort.FormattingEnabled = true;
 			this.cmbGate1DownPort.ItemHeight = 21;
 			this.cmbGate1DownPort.Location = new System.Drawing.Point(464, 257);
@@ -670,7 +682,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX14.ForeColor = System.Drawing.Color.White;
+			this.labelX14.ForeColor = System.Drawing.Color.Black;
 			this.labelX14.Location = new System.Drawing.Point(349, 259);
 			this.labelX14.Name = "labelX14";
 			this.labelX14.Size = new System.Drawing.Size(113, 24);
@@ -683,7 +695,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbGate1UpPort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbGate1UpPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbGate1UpPort.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbGate1UpPort.ForeColor = System.Drawing.Color.White;
+			this.cmbGate1UpPort.ForeColor = System.Drawing.Color.Black;
 			this.cmbGate1UpPort.FormattingEnabled = true;
 			this.cmbGate1UpPort.ItemHeight = 21;
 			this.cmbGate1UpPort.Location = new System.Drawing.Point(167, 257);
@@ -701,7 +713,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX15.ForeColor = System.Drawing.Color.White;
+			this.labelX15.ForeColor = System.Drawing.Color.Black;
 			this.labelX15.Location = new System.Drawing.Point(52, 259);
 			this.labelX15.Name = "labelX15";
 			this.labelX15.Size = new System.Drawing.Size(113, 24);
@@ -714,7 +726,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbInfraredSensor2Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbInfraredSensor2Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbInfraredSensor2Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbInfraredSensor2Port.ForeColor = System.Drawing.Color.White;
+			this.cmbInfraredSensor2Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbInfraredSensor2Port.FormattingEnabled = true;
 			this.cmbInfraredSensor2Port.ItemHeight = 21;
 			this.cmbInfraredSensor2Port.Location = new System.Drawing.Point(464, 219);
@@ -732,7 +744,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX12.ForeColor = System.Drawing.Color.White;
+			this.labelX12.ForeColor = System.Drawing.Color.Black;
 			this.labelX12.Location = new System.Drawing.Point(380, 221);
 			this.labelX12.Name = "labelX12";
 			this.labelX12.Size = new System.Drawing.Size(81, 24);
@@ -745,7 +757,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbInfraredSensor1Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbInfraredSensor1Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbInfraredSensor1Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbInfraredSensor1Port.ForeColor = System.Drawing.Color.White;
+			this.cmbInfraredSensor1Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbInfraredSensor1Port.FormattingEnabled = true;
 			this.cmbInfraredSensor1Port.ItemHeight = 21;
 			this.cmbInfraredSensor1Port.Location = new System.Drawing.Point(167, 219);
@@ -763,7 +775,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX13.ForeColor = System.Drawing.Color.White;
+			this.labelX13.ForeColor = System.Drawing.Color.Black;
 			this.labelX13.Location = new System.Drawing.Point(83, 221);
 			this.labelX13.Name = "labelX13";
 			this.labelX13.Size = new System.Drawing.Size(81, 24);
@@ -776,7 +788,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbInductorCoil4Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbInductorCoil4Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbInductorCoil4Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbInductorCoil4Port.ForeColor = System.Drawing.Color.White;
+			this.cmbInductorCoil4Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbInductorCoil4Port.FormattingEnabled = true;
 			this.cmbInductorCoil4Port.ItemHeight = 21;
 			this.cmbInductorCoil4Port.Location = new System.Drawing.Point(464, 181);
@@ -794,7 +806,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX10.ForeColor = System.Drawing.Color.White;
+			this.labelX10.ForeColor = System.Drawing.Color.Black;
 			this.labelX10.Location = new System.Drawing.Point(380, 183);
 			this.labelX10.Name = "labelX10";
 			this.labelX10.Size = new System.Drawing.Size(81, 24);
@@ -807,7 +819,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbInductorCoil3Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbInductorCoil3Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbInductorCoil3Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbInductorCoil3Port.ForeColor = System.Drawing.Color.White;
+			this.cmbInductorCoil3Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbInductorCoil3Port.FormattingEnabled = true;
 			this.cmbInductorCoil3Port.ItemHeight = 21;
 			this.cmbInductorCoil3Port.Location = new System.Drawing.Point(167, 181);
@@ -825,7 +837,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX11.ForeColor = System.Drawing.Color.White;
+			this.labelX11.ForeColor = System.Drawing.Color.Black;
 			this.labelX11.Location = new System.Drawing.Point(83, 183);
 			this.labelX11.Name = "labelX11";
 			this.labelX11.Size = new System.Drawing.Size(81, 24);
@@ -838,7 +850,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbInductorCoil2Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbInductorCoil2Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbInductorCoil2Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbInductorCoil2Port.ForeColor = System.Drawing.Color.White;
+			this.cmbInductorCoil2Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbInductorCoil2Port.FormattingEnabled = true;
 			this.cmbInductorCoil2Port.ItemHeight = 21;
 			this.cmbInductorCoil2Port.Location = new System.Drawing.Point(464, 143);
@@ -856,7 +868,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX9.ForeColor = System.Drawing.Color.White;
+			this.labelX9.ForeColor = System.Drawing.Color.Black;
 			this.labelX9.Location = new System.Drawing.Point(380, 145);
 			this.labelX9.Name = "labelX9";
 			this.labelX9.Size = new System.Drawing.Size(81, 24);
@@ -869,7 +881,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbInductorCoil1Port.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbInductorCoil1Port.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbInductorCoil1Port.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbInductorCoil1Port.ForeColor = System.Drawing.Color.White;
+			this.cmbInductorCoil1Port.ForeColor = System.Drawing.Color.Black;
 			this.cmbInductorCoil1Port.FormattingEnabled = true;
 			this.cmbInductorCoil1Port.ItemHeight = 21;
 			this.cmbInductorCoil1Port.Location = new System.Drawing.Point(167, 143);
@@ -887,7 +899,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX8.ForeColor = System.Drawing.Color.White;
+			this.labelX8.ForeColor = System.Drawing.Color.Black;
 			this.labelX8.Location = new System.Drawing.Point(83, 145);
 			this.labelX8.Name = "labelX8";
 			this.labelX8.Size = new System.Drawing.Size(81, 24);
@@ -900,7 +912,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbIocerStopBits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbIocerStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbIocerStopBits.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbIocerStopBits.ForeColor = System.Drawing.Color.White;
+			this.cmbIocerStopBits.ForeColor = System.Drawing.Color.Black;
 			this.cmbIocerStopBits.FormattingEnabled = true;
 			this.cmbIocerStopBits.ItemHeight = 21;
 			this.cmbIocerStopBits.Location = new System.Drawing.Point(464, 67);
@@ -918,7 +930,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX7.ForeColor = System.Drawing.Color.White;
+			this.labelX7.ForeColor = System.Drawing.Color.Black;
 			this.labelX7.Location = new System.Drawing.Point(404, 69);
 			this.labelX7.Name = "labelX7";
 			this.labelX7.Size = new System.Drawing.Size(56, 24);
@@ -931,7 +943,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbIocerDataBits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbIocerDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbIocerDataBits.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbIocerDataBits.ForeColor = System.Drawing.Color.White;
+			this.cmbIocerDataBits.ForeColor = System.Drawing.Color.Black;
 			this.cmbIocerDataBits.FormattingEnabled = true;
 			this.cmbIocerDataBits.ItemHeight = 21;
 			this.cmbIocerDataBits.Location = new System.Drawing.Point(167, 67);
@@ -949,7 +961,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX6.ForeColor = System.Drawing.Color.White;
+			this.labelX6.ForeColor = System.Drawing.Color.Black;
 			this.labelX6.Location = new System.Drawing.Point(107, 69);
 			this.labelX6.Name = "labelX6";
 			this.labelX6.Size = new System.Drawing.Size(56, 24);
@@ -962,7 +974,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbIocerBandrate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbIocerBandrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbIocerBandrate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbIocerBandrate.ForeColor = System.Drawing.Color.White;
+			this.cmbIocerBandrate.ForeColor = System.Drawing.Color.Black;
 			this.cmbIocerBandrate.FormattingEnabled = true;
 			this.cmbIocerBandrate.ItemHeight = 21;
 			this.cmbIocerBandrate.Location = new System.Drawing.Point(464, 29);
@@ -980,7 +992,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX5.ForeColor = System.Drawing.Color.White;
+			this.labelX5.ForeColor = System.Drawing.Color.Black;
 			this.labelX5.Location = new System.Drawing.Point(404, 31);
 			this.labelX5.Name = "labelX5";
 			this.labelX5.Size = new System.Drawing.Size(56, 24);
@@ -993,7 +1005,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbIocerCom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbIocerCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbIocerCom.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbIocerCom.ForeColor = System.Drawing.Color.White;
+			this.cmbIocerCom.ForeColor = System.Drawing.Color.Black;
 			this.cmbIocerCom.FormattingEnabled = true;
 			this.cmbIocerCom.ItemHeight = 21;
 			this.cmbIocerCom.Location = new System.Drawing.Point(167, 29);
@@ -1011,7 +1023,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX2.ForeColor = System.Drawing.Color.White;
+			this.labelX2.ForeColor = System.Drawing.Color.Black;
 			this.labelX2.Location = new System.Drawing.Point(122, 31);
 			this.labelX2.Name = "labelX2";
 			this.labelX2.Size = new System.Drawing.Size(40, 24);
@@ -1045,7 +1057,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControlPanel3.Name = "tabControlPanel3";
 			this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
 			this.tabControlPanel3.Size = new System.Drawing.Size(703, 432);
-			this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.White;
 			this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
@@ -1059,7 +1071,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbWeberType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbWeberType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbWeberType.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbWeberType.ForeColor = System.Drawing.Color.White;
+			this.cmbWeberType.ForeColor = System.Drawing.Color.Black;
 			this.cmbWeberType.FormattingEnabled = true;
 			this.cmbWeberType.ItemHeight = 21;
 			this.cmbWeberType.Items.AddRange(new object[] {
@@ -1088,7 +1100,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX30.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX30.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX30.ForeColor = System.Drawing.Color.White;
+			this.labelX30.ForeColor = System.Drawing.Color.Black;
 			this.labelX30.Location = new System.Drawing.Point(84, 12);
 			this.labelX30.Name = "labelX30";
 			this.labelX30.Size = new System.Drawing.Size(72, 24);
@@ -1101,7 +1113,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbWberParity.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbWberParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbWberParity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbWberParity.ForeColor = System.Drawing.Color.White;
+			this.cmbWberParity.ForeColor = System.Drawing.Color.Black;
 			this.cmbWberParity.FormattingEnabled = true;
 			this.cmbWberParity.ItemHeight = 21;
 			this.cmbWberParity.Location = new System.Drawing.Point(160, 118);
@@ -1119,7 +1131,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX3.ForeColor = System.Drawing.Color.White;
+			this.labelX3.ForeColor = System.Drawing.Color.Black;
 			this.labelX3.Location = new System.Drawing.Point(100, 120);
 			this.labelX3.Name = "labelX3";
 			this.labelX3.Size = new System.Drawing.Size(56, 24);
@@ -1129,14 +1141,14 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// dbtxtMinWeight
 			// 
 			this.dbtxtMinWeight.AllowEmptyState = false;
-			this.dbtxtMinWeight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.dbtxtMinWeight.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
 			this.dbtxtMinWeight.BackgroundStyle.Class = "DateTimeInputBackground";
 			this.dbtxtMinWeight.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.dbtxtMinWeight.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-			this.dbtxtMinWeight.ForeColor = System.Drawing.Color.White;
+			this.dbtxtMinWeight.ForeColor = System.Drawing.Color.Black;
 			this.dbtxtMinWeight.Increment = 1D;
 			this.dbtxtMinWeight.Location = new System.Drawing.Point(457, 118);
 			this.dbtxtMinWeight.MaxValue = 10D;
@@ -1155,7 +1167,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX23.ForeColor = System.Drawing.Color.White;
+			this.labelX23.ForeColor = System.Drawing.Color.Black;
 			this.labelX23.Location = new System.Drawing.Point(381, 120);
 			this.labelX23.Name = "labelX23";
 			this.labelX23.Size = new System.Drawing.Size(72, 24);
@@ -1168,7 +1180,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbWberStopBits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbWberStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbWberStopBits.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbWberStopBits.ForeColor = System.Drawing.Color.White;
+			this.cmbWberStopBits.ForeColor = System.Drawing.Color.Black;
 			this.cmbWberStopBits.FormattingEnabled = true;
 			this.cmbWberStopBits.ItemHeight = 21;
 			this.cmbWberStopBits.Location = new System.Drawing.Point(457, 80);
@@ -1186,7 +1198,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX24.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX24.ForeColor = System.Drawing.Color.White;
+			this.labelX24.ForeColor = System.Drawing.Color.Black;
 			this.labelX24.Location = new System.Drawing.Point(397, 82);
 			this.labelX24.Name = "labelX24";
 			this.labelX24.Size = new System.Drawing.Size(56, 24);
@@ -1199,7 +1211,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbWberDataBits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbWberDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbWberDataBits.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbWberDataBits.ForeColor = System.Drawing.Color.White;
+			this.cmbWberDataBits.ForeColor = System.Drawing.Color.Black;
 			this.cmbWberDataBits.FormattingEnabled = true;
 			this.cmbWberDataBits.ItemHeight = 21;
 			this.cmbWberDataBits.Location = new System.Drawing.Point(160, 80);
@@ -1217,7 +1229,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX25.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX25.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX25.ForeColor = System.Drawing.Color.White;
+			this.labelX25.ForeColor = System.Drawing.Color.Black;
 			this.labelX25.Location = new System.Drawing.Point(100, 82);
 			this.labelX25.Name = "labelX25";
 			this.labelX25.Size = new System.Drawing.Size(56, 24);
@@ -1230,7 +1242,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbWberBandrate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbWberBandrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbWberBandrate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbWberBandrate.ForeColor = System.Drawing.Color.White;
+			this.cmbWberBandrate.ForeColor = System.Drawing.Color.Black;
 			this.cmbWberBandrate.FormattingEnabled = true;
 			this.cmbWberBandrate.ItemHeight = 21;
 			this.cmbWberBandrate.Location = new System.Drawing.Point(457, 42);
@@ -1248,7 +1260,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX26.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX26.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX26.ForeColor = System.Drawing.Color.White;
+			this.labelX26.ForeColor = System.Drawing.Color.Black;
 			this.labelX26.Location = new System.Drawing.Point(397, 44);
 			this.labelX26.Name = "labelX26";
 			this.labelX26.Size = new System.Drawing.Size(56, 24);
@@ -1261,7 +1273,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbWberCom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbWberCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbWberCom.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbWberCom.ForeColor = System.Drawing.Color.White;
+			this.cmbWberCom.ForeColor = System.Drawing.Color.Black;
 			this.cmbWberCom.FormattingEnabled = true;
 			this.cmbWberCom.ItemHeight = 21;
 			this.cmbWberCom.Location = new System.Drawing.Point(160, 42);
@@ -1279,7 +1291,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX27.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX27.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX27.ForeColor = System.Drawing.Color.White;
+			this.labelX27.ForeColor = System.Drawing.Color.Black;
 			this.labelX27.Location = new System.Drawing.Point(115, 44);
 			this.labelX27.Name = "labelX27";
 			this.labelX27.Size = new System.Drawing.Size(40, 24);
@@ -1305,7 +1317,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControlPanel4.Name = "tabControlPanel4";
 			this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
 			this.tabControlPanel4.Size = new System.Drawing.Size(703, 432);
-			this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.White;
 			this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
@@ -1315,13 +1327,13 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// txtRwerTagStartWith
 			// 
-			this.txtRwerTagStartWith.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.txtRwerTagStartWith.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
 			this.txtRwerTagStartWith.Border.Class = "TextBoxBorder";
 			this.txtRwerTagStartWith.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtRwerTagStartWith.ForeColor = System.Drawing.Color.White;
+			this.txtRwerTagStartWith.ForeColor = System.Drawing.Color.Black;
 			this.txtRwerTagStartWith.Location = new System.Drawing.Point(167, 67);
 			this.txtRwerTagStartWith.Name = "txtRwerTagStartWith";
 			this.txtRwerTagStartWith.Size = new System.Drawing.Size(198, 27);
@@ -1333,7 +1345,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbRwer2Com.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbRwer2Com.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbRwer2Com.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbRwer2Com.ForeColor = System.Drawing.Color.White;
+			this.cmbRwer2Com.ForeColor = System.Drawing.Color.Black;
 			this.cmbRwer2Com.FormattingEnabled = true;
 			this.cmbRwer2Com.ItemHeight = 21;
 			this.cmbRwer2Com.Location = new System.Drawing.Point(464, 29);
@@ -1351,7 +1363,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX21.ForeColor = System.Drawing.Color.White;
+			this.labelX21.ForeColor = System.Drawing.Color.Black;
 			this.labelX21.Location = new System.Drawing.Point(364, 31);
 			this.labelX21.Name = "labelX21";
 			this.labelX21.Size = new System.Drawing.Size(97, 24);
@@ -1367,7 +1379,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX22.ForeColor = System.Drawing.Color.White;
+			this.labelX22.ForeColor = System.Drawing.Color.Black;
 			this.labelX22.Location = new System.Drawing.Point(76, 69);
 			this.labelX22.Name = "labelX22";
 			this.labelX22.Size = new System.Drawing.Size(88, 24);
@@ -1380,7 +1392,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbRwer1Com.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbRwer1Com.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbRwer1Com.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbRwer1Com.ForeColor = System.Drawing.Color.White;
+			this.cmbRwer1Com.ForeColor = System.Drawing.Color.Black;
 			this.cmbRwer1Com.FormattingEnabled = true;
 			this.cmbRwer1Com.ItemHeight = 21;
 			this.cmbRwer1Com.Location = new System.Drawing.Point(167, 29);
@@ -1398,7 +1410,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX28.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX28.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX28.ForeColor = System.Drawing.Color.White;
+			this.labelX28.ForeColor = System.Drawing.Color.Black;
 			this.labelX28.Location = new System.Drawing.Point(67, 31);
 			this.labelX28.Name = "labelX28";
 			this.labelX28.Size = new System.Drawing.Size(97, 24);
@@ -1420,7 +1432,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControlPanel5.Name = "tabControlPanel5";
 			this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
 			this.tabControlPanel5.Size = new System.Drawing.Size(703, 432);
-			this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.White;
 			this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
@@ -1431,7 +1443,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// iptxtLED1IP
 			// 
 			this.iptxtLED1IP.AutoOverwrite = true;
-			this.iptxtLED1IP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.iptxtLED1IP.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
@@ -1439,7 +1451,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.iptxtLED1IP.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.iptxtLED1IP.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
 			this.iptxtLED1IP.ButtonFreeText.Visible = true;
-			this.iptxtLED1IP.ForeColor = System.Drawing.Color.White;
+			this.iptxtLED1IP.ForeColor = System.Drawing.Color.Black;
 			this.iptxtLED1IP.Location = new System.Drawing.Point(248, 29);
 			this.iptxtLED1IP.Name = "iptxtLED1IP";
 			this.iptxtLED1IP.Size = new System.Drawing.Size(185, 27);
@@ -1455,7 +1467,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX32.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX32.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX32.ForeColor = System.Drawing.Color.White;
+			this.labelX32.ForeColor = System.Drawing.Color.Black;
 			this.labelX32.Location = new System.Drawing.Point(148, 31);
 			this.labelX32.Name = "labelX32";
 			this.labelX32.Size = new System.Drawing.Size(97, 24);
@@ -1484,7 +1496,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabControlPanel6.Name = "tabControlPanel6";
 			this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
 			this.tabControlPanel6.Size = new System.Drawing.Size(703, 432);
-			this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.White;
 			this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
@@ -1499,7 +1511,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// 
 			this.lblVoiceVolume.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.lblVoiceVolume.ForeColor = System.Drawing.Color.White;
+			this.lblVoiceVolume.ForeColor = System.Drawing.Color.Black;
 			this.lblVoiceVolume.Location = new System.Drawing.Point(422, 126);
 			this.lblVoiceVolume.Name = "lblVoiceVolume";
 			this.lblVoiceVolume.Size = new System.Drawing.Size(35, 20);
@@ -1514,7 +1526,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// 
 			this.lblVoiceRate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.lblVoiceRate.ForeColor = System.Drawing.Color.White;
+			this.lblVoiceRate.ForeColor = System.Drawing.Color.Black;
 			this.lblVoiceRate.Location = new System.Drawing.Point(428, 79);
 			this.lblVoiceRate.Name = "lblVoiceRate";
 			this.lblVoiceRate.Size = new System.Drawing.Size(28, 20);
@@ -1529,7 +1541,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// 
 			this.sldVoiceVolume.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.sldVoiceVolume.ForeColor = System.Drawing.Color.White;
+			this.sldVoiceVolume.ForeColor = System.Drawing.Color.Black;
 			this.sldVoiceVolume.LabelWidth = 40;
 			this.sldVoiceVolume.Location = new System.Drawing.Point(241, 143);
 			this.sldVoiceVolume.Name = "sldVoiceVolume";
@@ -1547,7 +1559,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// 
 			this.sldVoiceRate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.sldVoiceRate.ForeColor = System.Drawing.Color.White;
+			this.sldVoiceRate.ForeColor = System.Drawing.Color.Black;
 			this.sldVoiceRate.LabelWidth = 40;
 			this.sldVoiceRate.Location = new System.Drawing.Point(241, 97);
 			this.sldVoiceRate.Maximum = 10;
@@ -1575,13 +1587,13 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			// txtListen
 			// 
-			this.txtListen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.txtListen.BackColor = System.Drawing.Color.White;
 			// 
 			// 
 			// 
 			this.txtListen.Border.Class = "TextBoxBorder";
 			this.txtListen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtListen.ForeColor = System.Drawing.Color.White;
+			this.txtListen.ForeColor = System.Drawing.Color.Black;
 			this.txtListen.Location = new System.Drawing.Point(242, 188);
 			this.txtListen.Name = "txtListen";
 			this.txtListen.Size = new System.Drawing.Size(211, 27);
@@ -1597,7 +1609,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX29.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX29.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX29.ForeColor = System.Drawing.Color.White;
+			this.labelX29.ForeColor = System.Drawing.Color.Black;
 			this.labelX29.Location = new System.Drawing.Point(166, 191);
 			this.labelX29.Name = "labelX29";
 			this.labelX29.Size = new System.Drawing.Size(72, 24);
@@ -1610,7 +1622,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.cmbVoiceName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbVoiceName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbVoiceName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cmbVoiceName.ForeColor = System.Drawing.Color.White;
+			this.cmbVoiceName.ForeColor = System.Drawing.Color.Black;
 			this.cmbVoiceName.FormattingEnabled = true;
 			this.cmbVoiceName.ItemHeight = 21;
 			this.cmbVoiceName.Location = new System.Drawing.Point(242, 46);
@@ -1628,7 +1640,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			// 
 			this.labelX31.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
 			this.labelX31.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelX31.ForeColor = System.Drawing.Color.White;
+			this.labelX31.ForeColor = System.Drawing.Color.Black;
 			this.labelX31.Location = new System.Drawing.Point(166, 48);
 			this.labelX31.Name = "labelX31";
 			this.labelX31.Size = new System.Drawing.Size(72, 24);
@@ -1642,13 +1654,39 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.tabItem6.Text = "语音设置";
 			this.tabItem6.Visible = false;
 			// 
-			// comboItem3
+			// chk_Sampler
 			// 
-			this.comboItem3.Text = "双向磅";
+			this.chk_Sampler.AutoSize = true;
+			this.chk_Sampler.BackColor = System.Drawing.Color.Transparent;
 			// 
-			// comboItem4
 			// 
-			this.comboItem4.Text = "单向磅";
+			// 
+			this.chk_Sampler.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.chk_Sampler.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chk_Sampler.ForeColor = System.Drawing.Color.Black;
+			this.chk_Sampler.Location = new System.Drawing.Point(381, 105);
+			this.chk_Sampler.Name = "chk_Sampler";
+			this.chk_Sampler.Size = new System.Drawing.Size(92, 24);
+			this.chk_Sampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.chk_Sampler.TabIndex = 25;
+			this.chk_Sampler.Text = "启动采样";
+			// 
+			// chk_Use
+			// 
+			this.chk_Use.AutoSize = true;
+			this.chk_Use.BackColor = System.Drawing.Color.Transparent;
+			// 
+			// 
+			// 
+			this.chk_Use.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.chk_Use.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chk_Use.ForeColor = System.Drawing.Color.Black;
+			this.chk_Use.Location = new System.Drawing.Point(273, 105);
+			this.chk_Use.Name = "chk_Use";
+			this.chk_Use.Size = new System.Drawing.Size(92, 24);
+			this.chk_Use.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.chk_Use.TabIndex = 26;
+			this.chk_Use.Text = "启动过衡";
 			// 
 			// FrmSetting
 			// 
@@ -1660,7 +1698,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ForeColor = System.Drawing.Color.White;
 			this.MaximizeBox = false;
 			this.Name = "FrmSetting";
 			this.ShowIcon = false;
@@ -1790,5 +1827,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 		private DevComponents.DotNetBar.LabelX labelX34;
 		private DevComponents.Editors.ComboItem comboItem3;
 		private DevComponents.Editors.ComboItem comboItem4;
+		private DevComponents.DotNetBar.Controls.CheckBoxX chk_Sampler;
+		private DevComponents.DotNetBar.Controls.CheckBoxX chk_Use;
 	}
 }

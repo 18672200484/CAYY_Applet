@@ -27,10 +27,14 @@ function changeColor($elements, color) {
     $elements.each(function () {
         var $this = $(this);
 
-        if ($this[0].tagName.toLowerCase() == "path")
+        if ($this[0].tagName.toLowerCase() == "path") {
             $this.css({ "fill": color });
+        }
         else
+        {
+            $this.css({ "fill": color });
             $this.css({ "stroke": color });
+        }
     });
 }
 

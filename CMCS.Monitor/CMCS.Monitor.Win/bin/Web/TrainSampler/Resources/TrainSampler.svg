@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
@@ -168,6 +169,62 @@
      id="stop585-1" /></linearGradient>
 	
 
+<linearGradient
+   id="rect776-4-6_1_-9"
+   gradientUnits="userSpaceOnUse"
+   x1="855.97662"
+   y1="327.6333"
+   x2="860.83759"
+   y2="327.6333"
+   gradientTransform="matrix(3.2084,0,0,-27.862834,-1943.2844,9675.0943)"><stop
+     offset="0"
+     style="stop-color:#666666"
+     id="stop598-3" /><stop
+     offset="0.502"
+     style="stop-color:#DCDCDC"
+     id="stop600-2" /><stop
+     offset="1"
+     style="stop-color:#666666"
+     id="stop602-0" /></linearGradient><linearGradient
+   id="linearGradient947"
+   gradientUnits="userSpaceOnUse"
+   x1="878.20068"
+   y1="385.38062"
+   x2="908.69757"
+   y2="385.38062"
+   gradientTransform="matrix(1.0611,0,0,-1.0611,39.4935,981.9968)"><stop
+     offset="0"
+     style="stop-color:#666666"
+     id="stop606-8" /><stop
+     offset="0.502"
+     style="stop-color:#DCDCDC"
+     id="stop608-4" /><stop
+     offset="1"
+     style="stop-color:#666666"
+     id="stop610-0" /></linearGradient><linearGradient
+   inkscape:collect="always"
+   xlink:href="#polygon750-9_1_"
+   id="linearGradient950"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1.0611,0,0,-1.0611,39.4935,981.9968)"
+   x1="878.2007"
+   y1="385.3806"
+   x2="908.6976"
+   y2="385.3806" />
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+		
 </defs>
 <style
    type="text/css"
@@ -249,8 +306,8 @@
    guidetolerance="10"
    id="namedview844"
    inkscape:current-layer="svg2"
-   inkscape:cx="998.20803"
-   inkscape:cy="411.30959"
+   inkscape:cx="261.614"
+   inkscape:cy="581.5985"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-height="1017"
@@ -265,9 +322,10 @@
 	</sodipodi:namedview>
 <rect
    id="rect326"
-   y="0"
+   y="-2"
    width="1910"
-   height="920" />
+   height="920"
+   x="0" />
 <rect
    id="_199940152"
    x="495.10001"
@@ -622,7 +680,8 @@
    class="st9"
    width="16.9"
    height="148.7"
-   style="fill:url(#_199936936_1_)" />
+   style="fill:url(#_199936936_1_)"
+   inkscape:label="升降" />
 <polygon
    id="_199936864"
    class="st3"
@@ -718,12 +777,7 @@
    style="stop-color:#FFFFFF"
    id="stop95" />
 </linearGradient>
-<polygon
-   id="_125264040-8_1_"
-   class="st10"
-   points="1180.8,194.6 1300.2,194.6 1300.2,233.8 1180.8,233.8 "
-   style="fill:url(#_125264040-8_2_)"
-   transform="translate(0,-14)" />
+
 <linearGradient
    id="_125266704-8_2_"
    gradientUnits="userSpaceOnUse"
@@ -741,12 +795,7 @@
    style="stop-color:#FFFFFF"
    id="stop101" />
 </linearGradient>
-<polygon
-   id="_125266704-8_1_"
-   class="st11"
-   points="1340.6,233.8 1340.6,194.6 1469.2,194.6 1469.2,233.8 "
-   style="fill:url(#_125266704-8_2_)"
-   transform="matrix(0.83236288,0,0,1,196.73433,-14)" />
+
 <text
    id="_125265504-7_1_"
    class="st12 st13"
@@ -755,6 +804,8 @@
    style="font-size:18.41600037px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
      sodipodi:role="line"
      id="tspan811">故障信息</tspan></text>
+
+
 
 
 <text
@@ -769,38 +820,24 @@
      x="1341.7928"
      y="206.59827">停  止</tspan></text>
 
-<text
-   id="_125277168-3_1_"
-   class="st14 st12 st15"
-   x="839.28967"
-   y="368.7507"
-   style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">给料皮带机</text>
-
-
-<text
-   id="_125276232-1_1_"
-   class="st14 st12 st15"
-   x="998.95398"
-   y="535.55103"
-   style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">旋式缩分器</text>
 
 
 
 
-<text
-   id="_125276232-1_4_"
-   class="st14 st12 st15"
-   x="1011.785"
-   y="580.43597"
-   style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">进料样口</text>
 
 
-<text
-   id="_125276232-1_3_"
-   class="st14 st12 st15"
-   x="866.98682"
-   y="580.43597"
-   style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">弃料样口</text>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <text
@@ -811,6 +848,8 @@
    style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">火车</text>
 
 
+
+
 <text
    id="_159350584-0_1_"
    class="st14 st12 st15"
@@ -819,40 +858,36 @@
    style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">电动接料斗</text>
 
 
-<text
-   id="_159347800-8_1_"
-   class="st14 st12 st15"
-   x="856.94873"
-   y="491.12329"
-   style="font-size:16.14266713px;font-family:MicrosoftYaHeiLight;fill:#ffffff;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
-     sodipodi:role="line"
-     id="tspan546">卧式破碎机</tspan></text>
+
+
+
+
 
 
 <polygon
    id="_196370240"
    class="st16"
-   points="587.4,147.1 587.4,96.8 492.7,96.8 492.7,147.1 "
-   transform="translate(0,-14)"
+   points="492.7,96.8 492.7,147.1 587.4,147.1 587.4,96.8 "
+   transform="translate(-479.49022,-83.478474)"
    style="fill:#26a9e0;fill-opacity:0.12940004" />
 <rect
    id="_196370168"
-   x="587.40002"
-   y="82.800003"
+   x="107.9098"
+   y="13.321526"
    class="st17"
    width="1.3"
    height="50.299999"
    style="fill:#808184" />
 <path
    class="st18"
-   d="m 491.4,81.5 v 52.8 H 1421 V 81.5 Z m 928.4,51.6 H 492.7 V 82.8 h 927.1 z"
+   d="M 11.909771,12.021526 V 64.821527 H 404.01594 V 12.021526 Z M 403.50978,63.621527 H 12.458112 V 13.321526 H 403.50978 Z"
    id="path118"
    inkscape:connector-curvature="0"
-   style="fill:#6d6e70" />
+   style="fill:#6d6e70;stroke-width:0.64946204" />
 <rect
    id="_196370024"
-   x="702.29999"
-   y="82.800003"
+   x="222.80975"
+   y="13.321526"
    class="st17"
    width="1.3"
    height="50.299999"
@@ -860,54 +895,63 @@
 <text
    id="_196369904"
    class="st14 st12 st19"
-   x="503.68359"
-   y="114.4014"
+   x="24.193365"
+   y="44.92292"
    style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">采样编码</text>
+
+
 
 
 <text
    id="_196369784"
    class="st14 st12 st19"
-   x="597.45947"
-   y="114.9316"
+   x="117.96925"
+   y="45.453125"
    style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
    inkscape:label="采样码">170220001</text>
+
+
 
 
 <polygon
    id="_196369712"
    class="st16"
-   points="703.6,147.1 703.6,96.8 792,96.8 792,147.1 "
-   transform="translate(0,-14)"
+   points="792,96.8 792,147.1 703.6,147.1 703.6,96.8 "
+   transform="translate(-479.49022,-83.478474)"
    style="fill:#26a9e0;fill-opacity:0.12940004" />
 <text
    id="_196369592"
    class="st14 st12 st19"
-   x="720.34857"
-   y="114.3389"
+   x="240.85834"
+   y="44.86042"
    style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">矿发量</text>
+
+
 
 
 <text
    id="_196369472"
    class="st14 st12 st19"
-   x="812.71631"
-   y="114.9316"
-   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">1250t</text>
+   x="333.22607"
+   y="45.453125"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="矿发量">1250t</text>
+
+
 
 
 <rect
    id="_196369400"
-   x="792"
-   y="82.800003"
+   x="312.50977"
+   y="13.321526"
    class="st17"
    width="1.3"
    height="50.299999"
    style="fill:#808184" />
 <rect
    id="_196369328"
-   x="881.70001"
-   y="82.800003"
+   x="402.20978"
+   y="13.321526"
    class="st17"
    width="1.3"
    height="50.299999"
@@ -916,74 +960,84 @@
    id="_196369256"
    class="st16"
    points="883,147.1 883,96.8 971.4,96.8 971.4,147.1 "
-   transform="translate(0,-14)"
+   transform="matrix(1.0827723,0,0,1,-943.62984,-30.678473)"
    style="fill:#26a9e0;fill-opacity:0.12940004" />
 <text
    id="_196369136"
    class="st14 st12 st19"
-   x="890.8916"
-   y="114.3555"
+   x="20.349701"
+   y="97.67701"
    style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">开始时间</text>
+
+
 
 
 <text
    id="_196369016"
    class="st14 st12 st19"
-   x="993.41211"
-   y="114.9316"
-   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">15:36</text>
+   x="138.87024"
+   y="98.25312"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="开始时间">15:36</text>
+
+
 
 
 <rect
    id="_196368944"
-   x="971.40002"
-   y="82.800003"
+   x="222.80978"
+   y="63.621529"
    class="st17"
    width="1.3"
-   height="50.299999"
-   style="fill:#808184" />
+   height="53.043903"
+   style="fill:#808184;stroke-width:1.02691317" />
 <rect
    id="_196368872"
-   x="1061.1"
-   y="82.800003"
+   x="312.50977"
+   y="63.621529"
    class="st17"
    width="1.3"
-   height="50.299999"
-   style="fill:#808184" />
+   height="52.671394"
+   style="fill:#808184;stroke-width:1.02330101" />
 <polygon
    id="_196368800"
    class="st16"
-   points="1062.3,147.1 1062.3,96.8 1150.7,96.8 1150.7,147.1 "
-   transform="translate(0,-14)"
+   points="1062.3,96.8 1150.7,96.8 1150.7,147.1 1062.3,147.1 "
+   transform="translate(-838.89024,-31.178472)"
    style="fill:#26a9e0;fill-opacity:0.12940004" />
 <text
    id="_196368680"
    class="st14 st12 st19"
-   x="1069.7246"
-   y="114.3101"
+   x="232.83438"
+   y="95.131615"
    style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">来煤车数</text>
+
+
 
 
 <text
    id="_196368560"
    class="st14 st12 st19"
-   x="1185.7891"
-   y="114.8999"
-   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">20</text>
+   x="348.89883"
+   y="95.721428"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="来煤车数">20</text>
+
+
 
 
 <rect
    id="_196368488"
-   x="1150.7"
-   y="82.800003"
+   x="108.17517"
+   y="66.121529"
    class="st17"
    width="1.3"
    height="50.299999"
    style="fill:#808184" />
 <rect
    id="_196368416"
-   x="1240.4"
-   y="82.800003"
+   x="402.20978"
+   y="66.121529"
    class="st17"
    width="1.3"
    height="50.299999"
@@ -992,66 +1046,48 @@
    id="_196368344"
    class="st16"
    points="1241.7,147.1 1241.7,96.8 1330.1,96.8 1330.1,147.1 "
-   transform="translate(0,-14)"
+   transform="matrix(1.0780385,0,0,1,-1326.6907,23.321527)"
    style="fill:#26a9e0;fill-opacity:0.12940004" />
 <text
    id="_196368224"
    class="st14 st12 st19"
-   x="1249.0742"
-   y="114.2559"
+   x="19.284004"
+   y="151.57742"
    style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">采样点数</text>
+
+
 
 
 <text
    id="_196368104"
    class="st14 st12 st19"
-   x="1370.8359"
-   y="114.8999"
-   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff">3</text>
+   x="155.04573"
+   y="152.22144"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="采样点数">3</text>
 
 
-<rect
-   id="_196368032"
-   x="1330.1"
-   y="82.800003"
-   class="st17"
-   width="1.3"
-   height="50.299999"
-   style="fill:#808184" />
-<g
-   id="_196367792"
-   transform="matrix(1.0611111,0,0,1.0611111,1.2177802,-31.467592)">
-	<text
-   id="_196367888"
-   transform="matrix(0.9424,0,0,0.9424,826.3464,86.8666)"
+
+
+
+<text
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.15866597px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#ffffff;stroke-width:0.99999112;"
    class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">#</text>
-
-
-	<text
    id="text434"
-   transform="matrix(0.9424,0,0,0.9424,864.616,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">火车采样机</text>
-
-
-	<text
-   id="text436"
-   transform="matrix(0.9424,0,0,0.9424,846.2883,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">2</text>
-
-
-	
-		<circle
-   id="_196367816"
+   x="866.67145"
+   y="60.70752"
+   inkscape:label="当前采样机"><tspan
+     sodipodi:role="line"
+     id="tspan964">#1火车机械采样机</tspan></text>
+<circle
+   style="fill:#00a551;stroke-width:1.06111109"
+   r="15.916666"
+   cy="49.070744"
+   cx="843.95221"
    class="st21"
-   cx="794.20001"
-   cy="75.900002"
-   r="15"
-   style="fill:#00a551">
+   id="_196367816"
+   inkscape:label="当前设备状态">
 	</circle>
-</g>
 <polygon
    id="polygon439"
    class="st3"
@@ -1067,8 +1103,8 @@
 <polygon
    id="polygon447"
    class="st3"
-   points="784.1,786.7 720.9,786.7 733,778.5 772,778.5 "
-   transform="matrix(0.75440101,0,0,0.8394607,141.05232,109.7758)"
+   points="720.9,786.7 733,778.5 772,778.5 784.1,786.7 "
+   transform="matrix(0.75440101,0,0,0.8394607,167.05232,109.7758)"
    style="fill:#404040" />
 <linearGradient
    id="polygon449_1_"
@@ -1094,14 +1130,14 @@
 <polygon
    id="polygon449"
    class="st22"
-   points="781.3,785.9 771.8,779.3 733.3,779.3 723.7,785.9 "
+   points="771.8,779.3 733.3,779.3 723.7,785.9 781.3,785.9 "
    style="fill:url(#polygon449_1_)"
-   transform="matrix(0.75440101,0,0,0.8394607,141.05232,109.7758)" />
+   transform="matrix(0.75440101,0,0,0.8394607,167.05232,109.7758)" />
 <path
    id="path451"
    inkscape:connector-curvature="0"
    class="st3"
-   d="m 684.9,770.17953 h 47.67814 v 44.65931 c 0,2.93812 -10.63705,5.2886 -23.83907,5.2886 -13.12658,0 -23.83907,-2.35048 -23.83907,-5.2886 z"
+   d="m 710.9,770.17953 h 47.67814 v 44.65931 c 0,2.93812 -10.63705,5.2886 -23.83907,5.2886 -13.12658,0 -23.83907,-2.35048 -23.83907,-5.2886 z"
    style="fill:#404040;stroke-width:0.7957952" />
 <linearGradient
    id="path453_1_"
@@ -1110,7 +1146,7 @@
    y1="156.3576"
    x2="736.7499"
    y2="156.3576"
-   gradientTransform="matrix(0.79237991,0,0,-0.8818406,148.66354,932.48342)">
+   gradientTransform="matrix(0.79237991,0,0,-0.8818406,174.66354,932.48342)">
 	<stop
    offset="0"
    style="stop-color:#00CCFF"
@@ -1128,13 +1164,13 @@
    id="path453"
    inkscape:connector-curvature="0"
    class="st23"
-   d="m 686.57814,770.17953 v 44.21254 c 0,1.49591 5.4513,2.82562 6.42208,2.99183 5.30195,1.16349 11.12662,1.49591 16.57792,1.49591 5.37663,0 11.27598,-0.33242 16.57792,-1.49591 0.89611,-0.16621 6.42208,-1.57902 6.42208,-2.99183 v -44.21254 z"
+   d="m 712.57814,770.17953 v 44.21254 c 0,1.49591 5.4513,2.82562 6.42208,2.99183 5.30195,1.16349 11.12662,1.49591 16.57792,1.49591 5.37663,0 11.27598,-0.33242 16.57792,-1.49591 0.89611,-0.16621 6.42208,-1.57902 6.42208,-2.99183 v -44.21254 z"
    style="fill:url(#path453_1_);stroke-width:0.78778094" />
 <polygon
    id="polygon455"
    class="st3"
-   points="773.8,771 731.3,771 733,779.3 772,779.3 "
-   transform="matrix(0.75440101,0,0,0.8394607,141.05232,109.7758)"
+   points="731.3,771 733,779.3 772,779.3 773.8,771 "
+   transform="matrix(0.75440101,0,0,0.8394607,167.05232,109.7758)"
    style="fill:#404040" />
 <linearGradient
    id="polygon457_1_"
@@ -1160,20 +1196,20 @@
 <polygon
    id="polygon457"
    class="st24"
-   points="733.7,778.5 771.3,778.5 772.7,771.9 732.3,771.9 "
+   points="771.3,778.5 772.7,771.9 732.3,771.9 733.7,778.5 "
    style="fill:url(#polygon457_1_)"
-   transform="matrix(0.74675328,0,0,0.83106267,146.57245,116.87466)" />
+   transform="matrix(0.74675328,0,0,0.83106267,172.57245,116.87466)" />
 <polygon
    id="polygon459"
    class="st25"
    points="749,736.5 756,736.5 756,751.4 759.5,751.4 752.5,765.6 745.5,751.4 749,751.4 "
-   transform="translate(-42,-14)"
+   transform="translate(-18,-14)"
    style="fill:#ff0000" />
 <polygon
    id="polygon461"
    class="st3"
-   points="822.1,786.8 834.1,778.5 873.2,778.5 885.2,786.8 "
-   transform="matrix(0.7278481,0,0,0.81009296,159.44586,134.92112)"
+   points="873.2,778.5 885.2,786.8 822.1,786.8 834.1,778.5 "
+   transform="matrix(0.7278481,0,0,0.81009296,195.44586,134.92112)"
    style="fill:#404040" />
 <linearGradient
    id="polygon463_1_"
@@ -1199,14 +1235,14 @@
 <polygon
    id="polygon463"
    class="st26"
-   points="872.9,779.3 834.4,779.3 824.8,785.9 882.4,785.9 "
+   points="824.8,785.9 882.4,785.9 872.9,779.3 834.4,779.3 "
    style="fill:url(#polygon463_1_)"
-   transform="matrix(0.7278481,0,0,0.81009296,159.44586,134.92112)" />
+   transform="matrix(0.7278481,0,0,0.81009296,195.44586,134.92112)" />
 <path
    id="path465"
    inkscape:connector-curvature="0"
    class="st3"
-   d="m 757.80978,772.30226 h 46 v 43.09694 c 0,2.83533 -10.26266,5.10359 -23,5.10359 -12.66456,0 -23,-2.26826 -23,-5.10359 z"
+   d="m 793.80978,772.30226 h 46 v 43.09694 c 0,2.83533 -10.26266,5.10359 -23,5.10359 -12.66456,0 -23,-2.26826 -23,-5.10359 z"
    style="fill:#404040;stroke-width:0.76787019" />
 <linearGradient
    id="path467_1_"
@@ -1215,7 +1251,7 @@
    y1="156.3561"
    x2="832.0449"
    y2="156.3561"
-   gradientTransform="matrix(0.77231962,0,0,-0.85958964,160.51012,930.42981)">
+   gradientTransform="matrix(0.77231962,0,0,-0.85958964,196.51012,930.42981)">
 	<stop
    offset="0"
    style="stop-color:#E77817"
@@ -1233,13 +1269,13 @@
    id="path467"
    inkscape:connector-curvature="0"
    class="st27"
-   d="m 758.39206,772.30226 v 43.09694 c 0,1.45817 5.31329,2.75432 6.25949,2.91634 5.16772,1.13413 10.84494,1.45817 16.15823,1.45817 5.24051,0 10.99051,-0.32404 16.15823,-1.45817 0.87342,-0.16202 6.25949,-1.53918 6.25949,-2.91634 v -43.09694 z"
+   d="m 794.39206,772.30226 v 43.09694 c 0,1.45817 5.31329,2.75432 6.25949,2.91634 5.16772,1.13413 10.84494,1.45817 16.15823,1.45817 5.24051,0 10.99051,-0.32404 16.15823,-1.45817 0.87342,-0.16202 6.25949,-1.53918 6.25949,-2.91634 v -43.09694 z"
    style="fill:url(#path467_1_);stroke-width:0.76787019" />
 <polygon
    id="polygon469"
    class="st3"
-   points="832.4,771 834.1,779.3 873.2,779.3 874.9,771 "
-   transform="matrix(0.7278481,0,0,0.81009296,159.44586,134.92112)"
+   points="873.2,779.3 874.9,771 832.4,771 834.1,779.3 "
+   transform="matrix(0.7278481,0,0,0.81009296,195.44586,134.92112)"
    style="fill:#404040" />
 <linearGradient
    id="polygon471_1_"
@@ -1265,20 +1301,20 @@
 <polygon
    id="polygon471"
    class="st28"
-   points="833.5,771.9 834.8,778.5 872.5,778.5 873.8,771.9 "
+   points="872.5,778.5 873.8,771.9 833.5,771.9 834.8,778.5 "
    style="fill:url(#polygon471_1_)"
-   transform="matrix(0.7278481,0,0,0.81009296,159.44586,134.92112)" />
+   transform="matrix(0.7278481,0,0,0.81009296,195.44586,134.92112)" />
 <polygon
    id="polygon473"
    class="st25"
-   points="850.1,736.5 857.2,736.5 857.2,751.4 860.7,751.4 853.6,765.6 846.6,751.4 850.1,751.4 "
-   transform="translate(-70.326498,-15.724651)"
+   points="853.6,765.6 846.6,751.4 850.1,751.4 850.1,736.5 857.2,736.5 857.2,751.4 860.7,751.4 "
+   transform="translate(-38.326498,-15.724651)"
    style="fill:#ff0000" />
 <polygon
    id="polygon495"
    class="st3"
-   points="923.2,786.8 935.2,778.5 974.3,778.5 986.3,786.8 "
-   transform="matrix(0.7278481,0,0,0.81009296,156.77902,134.92112)"
+   points="935.2,778.5 974.3,778.5 986.3,786.8 923.2,786.8 "
+   transform="matrix(0.7278481,0,0,0.81009296,202.77902,134.92112)"
    style="fill:#404040" />
 <linearGradient
    id="polygon497_1_"
@@ -1304,14 +1340,14 @@
 <polygon
    id="polygon497"
    class="st29"
-   points="974,779.3 935.5,779.3 926,785.9 983.6,785.9 "
+   points="935.5,779.3 926,785.9 983.6,785.9 974,779.3 "
    style="fill:url(#polygon497_1_)"
-   transform="matrix(0.7278481,0,0,0.81009296,156.77902,134.92112)" />
+   transform="matrix(0.7278481,0,0,0.81009296,202.77902,134.92112)" />
 <path
    id="path499"
    inkscape:connector-curvature="0"
    class="st3"
-   d="m 828.72839,772.30226 h 46 v 43.09694 c 0,2.83533 -10.26266,5.10359 -23,5.10359 -12.66456,0 -23,-2.26826 -23,-5.10359 z"
+   d="m 874.72839,772.30226 h 46 v 43.09694 c 0,2.83533 -10.26266,5.10359 -23,5.10359 -12.66456,0 -23,-2.26826 -23,-5.10359 z"
    style="fill:#404040;stroke-width:0.76787019" />
 <linearGradient
    id="path501_1_"
@@ -1320,7 +1356,7 @@
    y1="156.3561"
    x2="927.341"
    y2="156.3561"
-   gradientTransform="matrix(0.77231962,0,0,-0.85958964,157.84328,930.42981)">
+   gradientTransform="matrix(0.77231962,0,0,-0.85958964,203.84328,930.42981)">
 	<stop
    offset="0"
    style="stop-color:#3C746B"
@@ -1338,13 +1374,13 @@
    id="path501"
    inkscape:connector-curvature="0"
    class="st30"
-   d="m 829.31067,772.30226 v 43.09694 c 0,1.45817 5.31329,2.75432 6.25949,2.91634 5.16772,1.13413 10.84494,1.45817 16.15823,1.45817 5.24051,0 10.99051,-0.32404 16.15823,-1.45817 0.87342,-0.16202 6.25949,-1.53918 6.25949,-2.91634 v -43.09694 z"
+   d="m 875.31067,772.30226 v 43.09694 c 0,1.45817 5.31329,2.75432 6.25949,2.91634 5.16772,1.13413 10.84494,1.45817 16.15823,1.45817 5.24051,0 10.99051,-0.32404 16.15823,-1.45817 0.87342,-0.16202 6.25949,-1.53918 6.25949,-2.91634 v -43.09694 z"
    style="fill:url(#path501_1_);stroke-width:0.76787019" />
 <polygon
    id="polygon503"
    class="st3"
-   points="933.5,771 935.2,779.3 974.3,779.3 976,771 "
-   transform="matrix(0.7278481,0,0,0.81009296,156.77902,134.92112)"
+   points="935.2,779.3 974.3,779.3 976,771 933.5,771 "
+   transform="matrix(0.7278481,0,0,0.81009296,202.77902,134.92112)"
    style="fill:#404040" />
 <linearGradient
    id="polygon505_1_"
@@ -1370,20 +1406,20 @@
 <polygon
    id="polygon505"
    class="st31"
-   points="934.6,771.9 935.9,778.5 973.6,778.5 974.9,771.9 "
+   points="935.9,778.5 973.6,778.5 974.9,771.9 934.6,771.9 "
    style="fill:url(#polygon505_1_)"
-   transform="matrix(0.7278481,0,0,0.81009296,156.77902,134.92112)" />
+   transform="matrix(0.7278481,0,0,0.81009296,202.77902,134.92112)" />
 <polygon
    id="polygon507"
    class="st25"
-   points="947.7,751.4 951.2,751.4 951.2,736.5 958.3,736.5 958.3,751.4 961.8,751.4 954.8,765.6 "
-   transform="translate(-101.37021,-14)"
+   points="951.2,751.4 951.2,736.5 958.3,736.5 958.3,751.4 961.8,751.4 954.8,765.6 947.7,751.4 "
+   transform="translate(-57.37021,-14)"
    style="fill:#ff0000" />
 <polygon
    id="polygon509"
    class="st3"
-   points="1075.4,778.5 1087.5,786.8 1024.3,786.8 1036.4,778.5 "
-   transform="matrix(0.7278481,0,0,0.81009296,156.69917,136.33415)"
+   points="1087.5,786.8 1024.3,786.8 1036.4,778.5 1075.4,778.5 "
+   transform="matrix(0.7278481,0,0,0.81009296,218.69917,136.33415)"
    style="fill:#404040" />
 <linearGradient
    id="polygon511_1_"
@@ -1409,14 +1445,14 @@
 <polygon
    id="polygon511"
    class="st32"
-   points="1027.1,785.9 1084.7,785.9 1075.1,779.3 1036.6,779.3 "
+   points="1084.7,785.9 1075.1,779.3 1036.6,779.3 1027.1,785.9 "
    style="fill:url(#polygon511_1_)"
-   transform="matrix(0.7278481,0,0,0.81009296,156.69917,136.33415)" />
+   transform="matrix(0.7278481,0,0,0.81009296,218.69917,136.33415)" />
 <path
    id="path513"
    inkscape:connector-curvature="0"
    class="st3"
-   d="m 902.23398,773.71529 h 46 v 43.09694 c 0,2.83533 -10.2627,5.10359 -23,5.10359 -12.6646,0 -23,-2.26826 -23,-5.10359 z"
+   d="m 964.23398,773.71529 h 46.00002 v 43.09694 c 0,2.83533 -10.26272,5.10359 -23.00002,5.10359 -12.6646,0 -23,-2.26826 -23,-5.10359 z"
    style="fill:#404040;stroke-width:0.76787019" />
 <linearGradient
    id="path515_1_"
@@ -1425,7 +1461,7 @@
    y1="156.3561"
    x2="1022.6368"
    y2="156.3561"
-   gradientTransform="matrix(0.77231962,0,0,-0.85958964,157.76343,931.84284)">
+   gradientTransform="matrix(0.77231962,0,0,-0.85958964,219.76343,931.84284)">
 	<stop
    offset="0"
    style="stop-color:#666666"
@@ -1443,7 +1479,7 @@
    id="path515"
    inkscape:connector-curvature="0"
    class="st33"
-   d="m 902.88908,773.71529 v 43.09694 c 0,1.45817 5.3133,2.75432 6.2595,2.91634 5.1677,1.13413 10.8449,1.45817 16.1582,1.45817 5.3133,0 10.9905,-0.32404 16.1582,-1.45817 0.8734,-0.16202 6.2595,-1.53918 6.2595,-2.91634 v -43.09694 z"
+   d="m 964.88908,773.71529 v 43.09694 c 0,1.45817 5.3133,2.75432 6.2595,2.91634 5.1677,1.13413 10.8449,1.45817 16.1582,1.45817 5.3133,0 10.9905,-0.32404 16.15822,-1.45817 0.8734,-0.16202 6.2595,-1.53918 6.2595,-2.91634 v -43.09694 z"
    style="fill:url(#path515_1_);stroke-width:0.76787019" />
 <linearGradient
    id="path517_1_"
@@ -1452,7 +1488,7 @@
    y1="143.9415"
    x2="1022.6368"
    y2="143.9415"
-   gradientTransform="matrix(0.77231962,0,0,-0.85958964,157.76343,931.84284)">
+   gradientTransform="matrix(0.77231962,0,0,-0.85958964,219.76343,931.84284)">
 	<stop
    offset="0"
    style="stop-color:#00CCFF"
@@ -1470,13 +1506,13 @@
    id="path517"
    inkscape:connector-curvature="0"
    class="st34"
-   d="m 902.88908,795.02073 v 21.7105 c 0,1.45816 5.3133,2.75431 6.2595,2.91633 5.1677,1.13413 10.8449,1.45817 16.1582,1.45817 5.3133,0 10.9905,-0.32404 16.1582,-1.45817 0.8734,-0.16202 6.2595,-1.53918 6.2595,-2.91633 v -21.7105 z"
+   d="m 964.88908,795.02073 v 21.7105 c 0,1.45816 5.3133,2.75431 6.2595,2.91633 5.1677,1.13413 10.8449,1.45817 16.1582,1.45817 5.3133,0 10.9905,-0.32404 16.15822,-1.45817 0.8734,-0.16202 6.2595,-1.53918 6.2595,-2.91633 v -21.7105 z"
    style="fill:url(#path517_1_);stroke-width:0.76787019" />
 <polygon
    id="polygon519"
    class="st3"
-   points="1075.4,779.3 1077.1,771 1034.6,771 1036.4,779.3 "
-   transform="matrix(0.7278481,0,0,0.81009296,156.69917,136.33415)"
+   points="1077.1,771 1034.6,771 1036.4,779.3 1075.4,779.3 "
+   transform="matrix(0.7278481,0,0,0.81009296,218.69917,136.33415)"
    style="fill:#404040" />
 <linearGradient
    id="polygon521_1_"
@@ -1502,38 +1538,38 @@
 <polygon
    id="polygon521"
    class="st35"
-   points="1074.7,778.5 1076.1,771.9 1035.7,771.9 1037.1,778.5 "
+   points="1076.1,771.9 1035.7,771.9 1037.1,778.5 1074.7,778.5 "
    style="fill:url(#polygon521_1_)"
-   transform="matrix(0.7278481,0,0,0.81009296,156.69917,136.33415)" />
+   transform="matrix(0.7278481,0,0,0.81009296,218.69917,136.33415)" />
 <polygon
    id="polygon523"
    class="st25"
-   points="1052.4,751.4 1052.4,736.5 1059.4,736.5 1059.4,751.4 1062.9,751.4 1055.9,765.6 1048.8,751.4 "
-   transform="translate(-128.1023,-14)"
+   points="1059.4,736.5 1059.4,751.4 1062.9,751.4 1055.9,765.6 1048.8,751.4 1052.4,751.4 1052.4,736.5 "
+   transform="translate(-68.1023,-14)"
    style="fill:#ff0000" />
 <polygon
    id="_196270832"
    class="st3"
-   points="1125.4,786.8 1137.5,778.5 1176.5,778.5 1188.6,786.8 "
-   transform="matrix(0.7278481,0,0,0.81009296,158.34397,136.64577)"
+   points="1137.5,778.5 1176.5,778.5 1188.6,786.8 1125.4,786.8 "
+   transform="matrix(0.7278481,0,0,0.81009296,230.34397,136.64577)"
    style="fill:#404040" />
 <path
    id="_196270688"
    inkscape:connector-curvature="0"
    class="st3"
-   d="m 977.46422,774.02691 h 45.99998 v 43.09694 c 0,2.83533 -10.2627,5.10359 -23,5.10359 -12.6646,0 -22.99998,-2.26826 -22.99998,-5.10359 z"
+   d="m 1049.4642,774.02691 h 46 v 43.09694 c 0,2.83533 -10.2627,5.10359 -23,5.10359 -12.6646,0 -23,-2.26826 -23,-5.10359 z"
    style="fill:#404040;stroke-width:0.76787019" />
 <polygon
    id="_196270544"
    class="st3"
-   points="1135.8,771 1137.5,779.3 1176.5,779.3 1178.2,771 "
-   transform="matrix(0.7278481,0,0,0.81009296,158.34397,136.64577)"
+   points="1137.5,779.3 1176.5,779.3 1178.2,771 1135.8,771 "
+   transform="matrix(0.7278481,0,0,0.81009296,230.34397,136.64577)"
    style="fill:#404040" />
 <polygon
    id="_196270376"
    class="st25"
-   points="1160.5,736.5 1160.5,751.4 1164,751.4 1157,765.6 1150,751.4 1153.5,751.4 1153.5,736.5 "
-   transform="translate(-153.69671,-14.862325)"
+   points="1153.5,736.5 1160.5,736.5 1160.5,751.4 1164,751.4 1157,765.6 1150,751.4 1153.5,751.4 "
+   transform="translate(-85.69671,-14.862325)"
    style="fill:#ff0000" />
 <g
    id="_196270208"
@@ -2105,12 +2141,13 @@
    class="st37"
    points="836.3,358.1 825.3,399.6 794.6,399.6 783.6,358.1 "
    style="fill:url(#polygon655_1_)"
-   transform="translate(0,-14)" />
+   transform="translate(0,-14)"
+   inkscape:label="料斗" />
 <polygon
    id="polygon657"
    class="st3"
-   points="982.6,438.1 982.6,446.1 950.6,446.1 950.6,438.6 762.4,438.6 762.4,417.6 781.3,398.5 967.6,398.5 982.5,411.9 982.5,436.5 "
-   transform="translate(0,-14)"
+   points="982.6,446.1 950.6,446.1 950.6,438.6 762.4,438.6 762.4,417.6 781.3,398.5 967.6,398.5 982.5,411.9 982.5,436.5 982.6,438.1 "
+   transform="matrix(0.42237517,0,0,1,440.38117,-14)"
    style="fill:#404040" />
 <linearGradient
    id="polygon659_1_"
@@ -2136,9 +2173,9 @@
 <polygon
    id="polygon659"
    class="st38"
-   points="951.7,437.5 763.5,437.5 763.5,418 781.8,399.6 967.1,399.6 981.4,412.4 981.4,436.5 981.5,438.1 981.5,445 951.7,445 "
+   points="763.5,437.5 763.5,418 781.8,399.6 967.1,399.6 981.4,412.4 981.4,436.5 981.5,438.1 981.5,445 951.7,445 951.7,437.5 "
    style="fill:url(#polygon659_1_)"
-   transform="translate(0,-14)" />
+   transform="matrix(0.42445717,0,0,1,439.42695,-14)" />
 <rect
    id="rect661"
    x="791.79999"
@@ -2156,59 +2193,19 @@
    class="st14 st12 st15"
    x="472.3999"
    y="565.80652"
-   style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff">1430665</text>
+   style="font-size:16.1427002px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="当前车号">1430665</text>
 
 
-<rect
-   id="rect666"
-   x="851.90002"
-   y="378.10001"
-   class="st3"
-   width="11.4"
-   height="7.6999998"
-   style="fill:#404040" />
-<rect
-   id="rect668"
-   x="852.90002"
-   y="379.20001"
-   class="st2"
-   width="9.1999998"
-   height="5.5"
-   style="fill:#808080" />
-<rect
-   id="rect670"
-   x="930.40002"
-   y="375"
-   class="st3"
-   width="34.799999"
-   height="8.6999998"
-   style="fill:#404040" />
-<rect
-   id="rect672"
-   x="931.5"
-   y="376.10001"
-   class="st2"
-   width="32.599998"
-   height="6.5"
-   style="fill:#808080" />
-<path
-   id="path674"
-   inkscape:connector-curvature="0"
-   class="st3"
-   d="m 941.5,366.2 h 12.6 c 1.9,0 3,1.9 3,3.6 v 8.5 h -18.6 v -8.5 c 0,-1.8 1.2,-3.6 3,-3.6 z"
-   style="fill:#404040" />
-<path
-   id="path676"
-   inkscape:connector-curvature="0"
-   class="st2"
-   d="m 941.5,367.3 h 12.6 c 1,0 1.9,1.1 1.9,2.5 v 7.4 h -16.4 v -7.4 c 0,-1.4 0.9,-2.5 1.9,-2.5 z"
-   style="fill:#808080" />
-<rect
-   id="rect678"
-   x="946.59998"
-   y="365.79999"
-   width="2.5"
-   height="6.9000001" />
+
+
+
+
+
+
+
+
+
 <rect
    id="rect680"
    x="763.5"
@@ -2262,63 +2259,34 @@
    x="826.59998"
    y="389.5"
    class="st3"
-   width="127.5"
+   width="26.607935"
    height="6.9000001"
-   style="fill:#404040" />
+   style="fill:#404040;stroke-width:0.45682567" />
 <polygon
    id="polygon694"
    class="st39"
-   points="826.6,404.6 826.6,409.4 954.1,409.4 954.1,404.6 "
-   transform="translate(0,-14)"
+   points="826.6,409.4 954.1,409.4 954.1,404.6 826.6,404.6 "
+   transform="matrix(0.21883469,0,0,1,645.71125,-14)"
    style="fill:#8c8c8c" />
-<rect
-   id="rect696"
-   x="922.09998"
-   y="390.60001"
-   width="1.1"
-   height="4.6999998" />
+
 <rect
    id="rect698"
    x="794.59998"
    y="416.60001"
    class="st3"
-   width="159.60001"
+   width="61.294918"
    height="6.9000001"
-   style="fill:#404040" />
+   style="fill:#404040;stroke-width:0.6197204" />
 <polygon
    id="polygon700"
    class="st39"
-   points="794.6,431.7 794.6,436.4 954.1,436.4 954.1,431.7 "
-   transform="translate(0,-14)"
+   points="794.6,436.4 954.1,436.4 954.1,431.7 794.6,431.7 "
+   transform="matrix(0.38366715,0,0,1,489.73808,-14)"
    style="fill:#8c8c8c" />
-<rect
-   id="rect702"
-   x="896.09998"
-   y="417.70001"
-   width="1.1"
-   height="4.6999998" />
-<rect
-   id="rect704"
-   x="958.40002"
-   y="430.89999"
-   class="st3"
-   width="20.299999"
-   height="24.200001"
-   style="fill:#404040" />
-<rect
-   id="rect706"
-   x="959.5"
-   y="432"
-   class="st40"
-   width="18.1"
-   height="22"
-   style="fill:#d1cfcf" />
-<polygon
-   id="polygon708"
-   class="st3"
-   points="944.9,467.9 992.1,467.9 983,485.1 954,485.1 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
+
+
+
+
 <linearGradient
    id="polygon710_1_"
    gradientUnits="userSpaceOnUse"
@@ -2340,34 +2308,10 @@
    style="stop-color:#666666"
    id="stop410" />
 </linearGradient>
-<polygon
-   id="polygon710"
-   class="st41"
-   points="982.4,484 990.3,469 946.7,469 954.7,484 "
-   style="fill:url(#polygon710_1_)"
-   transform="translate(0,-14)" />
-<rect
-   id="rect712"
-   x="948"
-   y="469.89999"
-   class="st3"
-   width="41"
-   height="6.3000002"
-   style="fill:#404040" />
-<rect
-   id="rect714"
-   x="949.09998"
-   y="471"
-   class="st2"
-   width="38.799999"
-   height="4.0999999"
-   style="fill:#808080" />
-<polygon
-   id="polygon716"
-   class="st3"
-   points="949.3,489 987.8,489 987.8,508.4 949.3,508.4 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
+
+
+
+
 <linearGradient
    id="rect718_1_"
    gradientUnits="userSpaceOnUse"
@@ -2389,86 +2333,17 @@
    style="stop-color:#666666"
    id="stop421" />
 </linearGradient>
-<rect
-   id="rect718"
-   x="950.29999"
-   y="476.10001"
-   class="st42"
-   width="36.400002"
-   height="17.200001"
-   style="fill:url(#rect718_1_)" />
-<polygon
-   id="polygon720"
-   class="st36"
-   points="959.7,494.5 977.4,494.5 977.4,500.6 959.7,500.6 "
-   transform="translate(0,-14)"
-   style="fill:#505050" />
-<rect
-   id="rect722"
-   x="960.70001"
-   y="481.60001"
-   class="st14"
-   width="15.6"
-   height="3.9000001"
-   style="fill:#ffffff" />
-<rect
-   id="rect724"
-   x="947.59998"
-   y="493.20001"
-   class="st3"
-   width="41.900002"
-   height="3.7"
-   style="fill:#404040" />
-<rect
-   id="rect726"
-   x="948.70001"
-   y="494.29999"
-   class="st2"
-   width="39.700001"
-   height="1.5"
-   style="fill:#808080" />
-<polygon
-   id="polygon728"
-   class="st3"
-   points="943.1,510.8 993.9,510.8 993.9,521.3 943.1,521.3 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
-<rect
-   id="rect732"
-   x="939.90002"
-   y="506.09998"
-   class="st3"
-   width="57.299999"
-   height="3.7"
-   style="fill:#404040" />
-<rect
-   id="rect734"
-   x="941"
-   y="507.20001"
-   class="st2"
-   width="55.099998"
-   height="1.5"
-   style="fill:#808080" />
-<polygon
-   id="polygon736"
-   class="st3"
-   points="958.2,522.6 978.8,522.6 978.8,532.8 958.2,532.8 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
-<rect
-   id="rect738"
-   x="959.29999"
-   y="509.70001"
-   class="st40"
-   width="18.4"
-   height="8"
-   style="fill:#d1cfcf" />
-<polygon
-   id="polygon740"
-   class="st3"
-   points="978.4,531.6 985.5,545.9 951.6,545.9 958.6,531.6 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
+
+
+
+
+
+
+
+
+
+
+
 <linearGradient
    id="polygon742_1_"
    gradientUnits="userSpaceOnUse"
@@ -2490,18 +2365,8 @@
    style="stop-color:#666666"
    id="stop439" />
 </linearGradient>
-<polygon
-   id="polygon742"
-   class="st43"
-   points="977.7,532.7 983.7,544.8 953.3,544.8 959.3,532.7 "
-   style="fill:url(#polygon742_1_)"
-   transform="translate(0,-14)" />
-<polygon
-   id="polygon744"
-   class="st3"
-   points="952.7,544.7 973.7,544.7 960.2,566.6 939.2,566.6 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
+
+
 <linearGradient
    id="polygon746_1_"
    gradientUnits="userSpaceOnUse"
@@ -2523,18 +2388,8 @@
    style="stop-color:#666666"
    id="stop448" />
 </linearGradient>
-<polygon
-   id="polygon746"
-   class="st44"
-   points="959.5,565.5 971.8,545.8 953.3,545.8 941.1,565.5 "
-   style="fill:url(#polygon746_1_)"
-   transform="translate(0,-14)" />
-<polygon
-   id="polygon748"
-   class="st3"
-   points="931.5,565.4 967.5,565.4 959.4,580.7 939.6,580.7 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
+
+
 <linearGradient
    id="polygon750_1_"
    gradientUnits="userSpaceOnUse"
@@ -2556,58 +2411,17 @@
    style="stop-color:#666666"
    id="stop457" />
 </linearGradient>
-<polygon
-   id="polygon750"
-   class="st45"
-   points="958.7,579.6 965.7,566.5 933.3,566.5 940.3,579.6 "
-   style="fill:url(#polygon750_1_)"
-   transform="translate(0,-14)" />
-<polygon
-   id="polygon752"
-   class="st3"
-   points="976.9,566.6 963.3,544.7 984.3,544.7 997.9,566.6 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
-<polygon
-   id="polygon754"
-   class="st3"
-   points="977.7,580.7 969.5,565.4 1005.5,565.4 997.4,580.7 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
-<rect
-   id="rect758"
-   x="940.59998"
-   y="565.5"
-   class="st3"
-   width="17.799999"
-   height="24.700001"
-   style="fill:#404040" />
-<rect
-   id="rect762"
-   x="978.70001"
-   y="565.5"
-   class="st3"
-   width="17.799999"
-   height="24.700001"
-   style="fill:#404040" />
-<polygon
-   id="polygon766"
-   class="st3"
-   points="977.7,620.5 969.5,605.2 1005.5,605.2 997.4,620.5 "
-   transform="translate(0,-14)"
-   style="fill:#404040" />
-<rect
-   id="rect770"
-   x="978.70001"
-   y="605.29999"
-   class="st3"
-   width="17.799999"
-   height="32.700001"
-   style="fill:#404040" />
+
+
+
+
+
+
+
 <rect
    id="rect774"
-   x="911.29999"
-   y="677.29999"
+   x="733.66095"
+   y="691.52838"
    class="st36"
    width="7.3000002"
    height="10.6"
@@ -2619,7 +2433,7 @@
    y1="268.9418"
    x2="863.3605"
    y2="268.9418"
-   gradientTransform="matrix(1.0611,0,0,-1.0611,1.4622,967.9968)">
+   gradientTransform="matrix(1.0611,0,0,-1.0611,-176.17682,982.22517)">
 	<stop
    offset="0"
    style="stop-color:#666666"
@@ -2635,16 +2449,16 @@
 </linearGradient>
 <rect
    id="rect776"
-   x="912.40002"
-   y="678.40002"
+   x="734.76099"
+   y="692.62842"
    class="st46"
    width="5.1999998"
    height="8.3999996"
    style="fill:url(#rect776_1_)" />
 <rect
    id="rect778"
-   x="981.40002"
-   y="681.70001"
+   x="803.76099"
+   y="695.92841"
    class="st36"
    width="9.1000004"
    height="12.2"
@@ -2656,7 +2470,7 @@
    y1="284.4066"
    x2="862.391"
    y2="284.4066"
-   gradientTransform="matrix(1.4285,0,0,-1.2719,-242.5485,1049.5662)">
+   gradientTransform="matrix(1.4285,0,0,-1.2719,-420.18752,1063.7945)">
 	<stop
    offset="0"
    style="stop-color:#666666"
@@ -2672,16 +2486,16 @@
 </linearGradient>
 <rect
    id="rect776-8"
-   x="982.5"
-   y="682.79999"
+   x="804.86096"
+   y="697.02838"
    class="st47"
    width="6.9000001"
    height="10"
    style="fill:url(#rect776-8_1_)" />
 <rect
    id="rect782"
-   x="1053.4"
-   y="677.29999"
+   x="875.76099"
+   y="691.52838"
    class="st36"
    width="7.3000002"
    height="10.6"
@@ -2693,7 +2507,7 @@
    y1="268.9418"
    x2="863.3606"
    y2="268.9418"
-   gradientTransform="matrix(1.0611,0,0,-1.0611,143.5217,967.9968)">
+   gradientTransform="matrix(1.0611,0,0,-1.0611,-34.11732,982.22517)">
 	<stop
    offset="0"
    style="stop-color:#666666"
@@ -2709,8 +2523,8 @@
 </linearGradient>
 <rect
    id="rect776-40"
-   x="1054.5"
-   y="678.40002"
+   x="876.86096"
+   y="692.62842"
    class="st48"
    width="5.1999998"
    height="8.3999996"
@@ -2718,8 +2532,8 @@
 <ellipse
    id="ellipse786"
    class="st36"
-   cx="987.20001"
-   cy="676"
+   cx="809.56097"
+   cy="690.22839"
    rx="79.800003"
    ry="9"
    style="fill:#505050">
@@ -2731,7 +2545,7 @@
    y1="275.2155"
    x2="1003.1722"
    y2="275.2155"
-   gradientTransform="matrix(1.0611,0,0,-1.0611,1.4622,967.9968)">
+   gradientTransform="matrix(1.0611,0,0,-1.0611,-176.17682,982.22517)">
 	<stop
    offset="0"
    style="stop-color:#666666"
@@ -2748,17 +2562,18 @@
 <ellipse
    id="ellipse788"
    class="st49"
-   cx="987.20001"
-   cy="676"
+   cx="809.56097"
+   cy="690.22839"
    rx="78.699997"
    ry="7.9000001"
-   style="fill:url(#ellipse788_1_)">
+   style="fill:url(#ellipse788_1_)"
+   inkscape:label="分矿机">
 </ellipse>
 <polygon
    id="polygon790"
    class="st3"
-   points="945.1,657.6 943.7,665.1 921.3,665.1 919.9,657.6 "
-   transform="translate(0,-14)"
+   points="919.9,657.6 945.1,657.6 943.7,665.1 921.3,665.1 "
+   transform="translate(-177.63902,0.22836816)"
    style="fill:#404040" />
 <linearGradient
    id="polygon792_1_"
@@ -2784,14 +2599,14 @@
 <polygon
    id="polygon792"
    class="st50"
-   points="943.8,658.7 942.8,664.1 922.2,664.1 921.2,658.7 "
+   points="921.2,658.7 943.8,658.7 942.8,664.1 922.2,664.1 "
    style="fill:url(#polygon792_1_)"
-   transform="translate(0,-14)" />
+   transform="translate(-177.63902,0.22836816)" />
 <polygon
    id="polygon794"
    class="st3"
-   points="919.6,663 945.3,663 947.9,666.5 917,666.5 "
-   transform="translate(0,-14)"
+   points="917,666.5 919.6,663 945.3,663 947.9,666.5 "
+   transform="translate(-177.63902,0.22836816)"
    style="fill:#404040" />
 <linearGradient
    id="polygon796_1_"
@@ -2817,14 +2632,14 @@
 <polygon
    id="polygon796"
    class="st51"
-   points="945.8,665.4 944.8,664.1 920.2,664.1 919.2,665.4 "
+   points="919.2,665.4 945.8,665.4 944.8,664.1 920.2,664.1 "
    style="fill:url(#polygon796_1_)"
-   transform="translate(0,-14)" />
+   transform="translate(-177.63902,0.22836816)" />
 <polygon
    id="polygon798"
    class="st3"
-   points="947.9,666.5 947.9,691.5 917,691.5 917,666.5 "
-   transform="translate(0,-14)"
+   points="917,666.5 947.9,666.5 947.9,691.5 917,691.5 "
+   transform="translate(-177.63902,0.22836816)"
    style="fill:#404040" />
 <linearGradient
    id="polygon800_1_"
@@ -2850,66 +2665,22 @@
 <polygon
    id="polygon800"
    class="st52"
-   points="946.8,666.5 946.8,690.4 918.1,690.4 918.1,666.5 "
+   points="918.1,666.5 946.8,666.5 946.8,690.4 918.1,690.4 "
    style="fill:url(#polygon800_1_)"
-   transform="translate(0,-14)" />
-<rect
-   id="rect802"
-   x="944"
-   y="381.60001"
-   class="st3"
-   width="7.5999999"
-   height="46.599998"
-   style="fill:#404040" />
-<rect
-   id="rect804"
-   x="945.09998"
-   y="382.60001"
-   class="st2"
-   width="5.4000001"
-   height="44.400002"
-   style="fill:#808080" />
-<path
-   id="path806"
-   inkscape:connector-curvature="0"
-   class="st3"
-   d="m 954.1,389.5 c 9.3,0.2 16.7,7.7 16.7,17 0,9.3 -7.5,16.8 -16.7,17 v -6.9 c 5.4,-0.2 9.8,-4.6 9.8,-10.1 0,-5.5 -4.4,-9.9 -9.8,-10.1 z"
-   style="fill:#404040" />
-<path
-   id="path808"
-   inkscape:connector-curvature="0"
-   class="st39"
-   d="m 954.1,395.4 c 6,0.2 10.9,5.1 10.9,11.2 0,6.1 -4.8,11 -10.9,11.2 v 4.7 c 8.7,-0.2 15.6,-7.2 15.6,-15.9 0,-8.7 -7,-15.8 -15.6,-15.9 z"
-   style="fill:#8c8c8c" />
-<path
-   id="path810"
-   inkscape:connector-curvature="0"
-   class="st3"
-   d="m 956.1,402.2 c 2.7,0 4.9,2.2 4.9,4.9 0,2.7 -2.2,4.9 -4.9,4.9 -2.7,0 -4.9,-2.2 -4.9,-4.9 0,-2.7 2.2,-4.9 4.9,-4.9 z"
-   style="fill:#404040" />
-<path
-   id="path812"
-   inkscape:connector-curvature="0"
-   class="st39"
-   d="m 956.1,403.7 c 1.9,0 3.5,1.5 3.5,3.5 0,1.9 -1.5,3.5 -3.5,3.5 -1.9,0 -3.5,-1.5 -3.5,-3.5 0.1,-2 1.6,-3.5 3.5,-3.5 z"
-   style="fill:#8c8c8c" />
-<rect
-   id="rect814"
-   x="959.5"
-   y="437.5"
-   width="18.1"
-   height="7.6999998" />
-<rect
-   id="rect816"
-   x="959.5"
-   y="513"
-   width="18.1"
-   height="4.0999999" />
+   transform="translate(-177.63902,0.22836816)" />
+
+
+
+
+
+
+
+
 <polygon
    id="polygon818"
    class="st3"
-   points="1000.8,655.6 999.4,663.2 977,663.2 975.6,655.6 "
-   transform="translate(0,-14)"
+   points="975.6,655.6 1000.8,655.6 999.4,663.2 977,663.2 "
+   transform="translate(-177.63902,0.22836816)"
    style="fill:#404040" />
 <linearGradient
    id="polygon792-6_1_"
@@ -2935,20 +2706,20 @@
 <polygon
    id="polygon792-6"
    class="st53"
-   points="999.5,656.7 998.5,662.1 977.9,662.1 976.9,656.7 "
+   points="976.9,656.7 999.5,656.7 998.5,662.1 977.9,662.1 "
    style="fill:url(#polygon792-6_1_)"
-   transform="translate(0,-14)" />
+   transform="translate(-177.63902,0.22836816)" />
 <polygon
    id="polygon822"
    class="st3"
-   points="975.4,661 1001.1,661 1003.7,664.5 972.8,664.5 "
-   transform="translate(0,-14)"
+   points="972.8,664.5 975.4,661 1001.1,661 1003.7,664.5 "
+   transform="translate(-177.63902,0.22836816)"
    style="fill:#404040" />
 <polygon
    id="polygon826"
    class="st3"
-   points="1003.6,664.5 1003.6,697.4 972.8,697.4 972.8,664.5 "
-   transform="translate(0,-14)"
+   points="972.8,664.5 1003.6,664.5 1003.6,697.4 972.8,697.4 "
+   transform="translate(-177.63902,0.22836816)"
    style="fill:#404040" />
 <linearGradient
    id="polygon828_1_"
@@ -2974,9 +2745,9 @@
 <polygon
    id="polygon828"
    class="st54"
-   points="1002.5,664.5 1002.5,696.4 973.9,696.4 973.9,664.5 "
+   points="973.9,664.5 1002.5,664.5 1002.5,696.4 973.9,696.4 "
    style="fill:url(#polygon828_1_)"
-   transform="translate(0,-14)" />
+   transform="translate(-177.63902,0.22836816)" />
 <linearGradient
    id="polygon842_1_"
    gradientUnits="userSpaceOnUse"
@@ -2998,15 +2769,10 @@
    style="stop-color:#666666"
    id="stop561" />
 </linearGradient>
-<polygon
-   id="polygon842"
-   class="st55"
-   points="977.5,565.5 965.3,545.8 983.7,545.8 995.9,565.5 "
-   style="fill:url(#polygon842_1_)"
-   transform="translate(0,-14)" />
+
 <g
    id="g4503"
-   transform="matrix(0.7723277,0,0,0.85959863,164.55815,133.82385)">
+   transform="matrix(0.7723277,0,0,0.85959863,236.55815,133.82385)">
 	
 		<linearGradient
    id="polygon511-7_1_"
@@ -3032,7 +2798,7 @@
 	<polygon
    id="polygon511-7"
    class="st56"
-   points="1100.5,737.7 1064.2,737.7 1055.2,743.9 1109.5,743.9 "
+   points="1064.2,737.7 1055.2,743.9 1109.5,743.9 1100.5,737.7 "
    style="fill:url(#polygon511-7_1_)" />
 	
 		<linearGradient
@@ -3087,7 +2853,7 @@
 	<polygon
    id="polygon521-1"
    class="st58"
-   points="1063.3,730.7 1064.6,736.9 1100.1,736.9 1101.3,730.7 "
+   points="1064.6,736.9 1100.1,736.9 1101.3,730.7 1063.3,730.7 "
    style="fill:url(#polygon521-1_1_)" />
 </g>
 <linearGradient
@@ -3111,14 +2877,7 @@
    style="stop-color:#666666"
    id="stop594" />
 </linearGradient>
-<rect
-   id="rect776-4"
-   x="941.70001"
-   y="566.59998"
-   class="st59"
-   width="15.6"
-   height="22.5"
-   style="fill:url(#rect776-4_1_)" />
+
 <linearGradient
    id="rect776-4-6_1_"
    gradientUnits="userSpaceOnUse"
@@ -3140,14 +2899,7 @@
    style="stop-color:#666666"
    id="stop602" />
 </linearGradient>
-<rect
-   id="rect776-4-6"
-   x="979.70001"
-   y="566.59998"
-   class="st60"
-   width="15.6"
-   height="22.5"
-   style="fill:url(#rect776-4-6_1_)" />
+
 <linearGradient
    id="polygon750-9_1_"
    gradientUnits="userSpaceOnUse"
@@ -3169,12 +2921,7 @@
    style="stop-color:#666666"
    id="stop610" />
 </linearGradient>
-<polygon
-   id="polygon750-9"
-   class="st61"
-   points="996.8,579.6 1003.7,566.5 971.4,566.5 978.3,579.6 "
-   style="fill:url(#polygon750-9_1_)"
-   transform="translate(0,-14)" />
+
 <linearGradient
    id="rect718-8_1_"
    gradientUnits="userSpaceOnUse"
@@ -3196,14 +2943,7 @@
    style="stop-color:#666666"
    id="stop618" />
 </linearGradient>
-<rect
-   id="rect718-8"
-   x="944.20001"
-   y="497.89999"
-   class="st62"
-   width="48.599998"
-   height="8.3000002"
-   style="fill:url(#rect718-8_1_)" />
+
 <linearGradient
    id="polygon750-9-9_1_"
    gradientUnits="userSpaceOnUse"
@@ -3225,12 +2965,7 @@
    style="stop-color:#666666"
    id="stop626" />
 </linearGradient>
-<polygon
-   id="polygon750-9-9"
-   class="st63"
-   points="1003.7,606.3 971.4,606.3 978.3,619.4 996.8,619.4 "
-   style="fill:url(#polygon750-9-9_1_)"
-   transform="translate(0,-14)" />
+
 <linearGradient
    id="rect776-4-6-5_1_"
    gradientUnits="userSpaceOnUse"
@@ -3252,14 +2987,7 @@
    style="stop-color:#666666"
    id="stop634" />
 </linearGradient>
-<rect
-   id="rect776-4-6-5"
-   x="979.70001"
-   y="606.40002"
-   class="st64"
-   width="15.6"
-   height="30.5"
-   style="fill:url(#rect776-4-6-5_1_)" />
+
 <linearGradient
    id="polygon796-5_1_"
    gradientUnits="userSpaceOnUse"
@@ -3284,16 +3012,16 @@
 <polygon
    id="polygon796-5"
    class="st65"
-   points="1000.5,662.1 975.9,662.1 974.9,663.4 1001.5,663.4 "
+   points="1001.5,663.4 1000.5,662.1 975.9,662.1 974.9,663.4 "
    style="fill:url(#polygon796-5_1_)"
-   transform="translate(0,-14)" />
+   transform="translate(-177.63902,0.22836816)" />
 <g
    id="g6516"
-   transform="translate(-0.847815,12.4637)">
+   transform="translate(-178.48684,26.692068)">
 	<polygon
    id="polygon790-4"
    class="st3"
-   points="1053.9,638.7 1031.5,638.7 1030.1,631.2 1055.3,631.2 "
+   points="1055.3,631.2 1053.9,638.7 1031.5,638.7 1030.1,631.2 "
    style="fill:#404040" />
 	
 		<linearGradient
@@ -3320,12 +3048,12 @@
 	<polygon
    id="polygon792-4"
    class="st66"
-   points="1053,637.6 1032.4,637.6 1031.4,632.3 1054,632.3 "
+   points="1054,632.3 1053,637.6 1032.4,637.6 1031.4,632.3 "
    style="fill:url(#polygon792-4_1_)" />
 	<polygon
    id="polygon794-6"
    class="st3"
-   points="1055.5,636.5 1058.1,640 1027.2,640 1029.8,636.5 "
+   points="1029.8,636.5 1055.5,636.5 1058.1,640 1027.2,640 "
    style="fill:#404040" />
 	
 		<linearGradient
@@ -3352,12 +3080,12 @@
 	<polygon
    id="polygon796-0"
    class="st67"
-   points="1055,637.6 1030.4,637.6 1029.4,638.9 1056,638.9 "
+   points="1056,638.9 1055,637.6 1030.4,637.6 1029.4,638.9 "
    style="fill:url(#polygon796-0_1_)" />
 	<polygon
    id="polygon798-6"
    class="st3"
-   points="1058.1,665 1027.2,665 1027.2,640 1058.1,640 "
+   points="1058.1,640 1058.1,665 1027.2,665 1027.2,640 "
    style="fill:#404040" />
 	
 		<linearGradient
@@ -3384,30 +3112,30 @@
 	<polygon
    id="polygon800-6"
    class="st68"
-   points="1057,663.9 1028.3,663.9 1028.3,640 1057,640 "
+   points="1057,640 1057,663.9 1028.3,663.9 1028.3,640 "
    style="fill:url(#polygon800-6_1_)" />
 </g>
 <g
    id="_196367792-7"
-   transform="matrix(1.0611111,0,0,1.0611111,-401.8865,802.81283)"><text
-   id="_196367888-5"
-   transform="matrix(0.9424,0,0,0.9424,826.3464,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">#</text>
+   transform="matrix(1.0611111,0,0,1.0611111,-437.8865,802.81283)">
+
 
 <text
    id="text434-1"
-   transform="matrix(0.9424,0,0,0.9424,864.616,86.8666)"
    class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">火车采样机</text>
-
-<text
-   id="text436-6"
-   transform="matrix(0.9424,0,0,0.9424,846.2883,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15896106px;font-family:MicrosoftYaHeiLight;fill:#ffffff;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.24900436px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.94239998"
+   x="817.49536"
+   y="86.8666"
+   inkscape:label="#1火车机械采样机点击区域"><tspan
      sodipodi:role="line"
-     id="tspan768">1</tspan></text>
+     id="tspan966"
+     x="817.49536"
+     y="86.8666">#1火车机械采样机</tspan></text>
+
+
+
+
+
 
 <circle
    id="_196367816-4"
@@ -3415,25 +3143,26 @@
    cx="794.20001"
    cy="75.900002"
    r="15"
-   style="fill:#00a551" /></g><g
+   style="fill:#00a551"
+   inkscape:label="#1采样机状态" /></g><g
    id="_196367792-7-6"
-   transform="matrix(1.0611111,0,0,1.0611111,-94.898669,802.81283)"><text
-   id="_196367888-5-2"
-   transform="matrix(0.9424,0,0,0.9424,826.3464,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">#</text>
+   transform="matrix(1.0611111,0,0,1.0611111,-94.898669,802.81283)">
+
 
 <text
    id="text434-1-9"
-   transform="matrix(0.9424,0,0,0.9424,864.616,86.8666)"
    class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">火车采样机</text>
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.24900491px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#ffffff;stroke-width:0.94239998;"
+   x="824.39124"
+   y="86.8666"
+   inkscape:label="#2火车机械采样机点击区域"><tspan
+     sodipodi:role="line"
+     id="tspan968">#2火车机械采样机</tspan></text>
 
-<text
-   id="text436-6-4"
-   transform="matrix(0.9424,0,0,0.9424,846.2883,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">2</text>
+
+
+
+
 
 <circle
    id="_196367816-4-4"
@@ -3441,27 +3170,28 @@
    cx="794.20001"
    cy="75.900002"
    r="15"
-   style="fill:#00a551" /></g><g
+   style="fill:#00a551"
+   inkscape:label="#2采样机状态" /></g><g
    id="_196367792-7-5"
-   transform="matrix(1.0611111,0,0,1.0611111,239.68356,802.81283)"><text
-   id="_196367888-5-6"
-   transform="matrix(0.9424,0,0,0.9424,826.3464,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">#</text>
+   transform="matrix(1.0611111,0,0,1.0611111,267.68356,802.81283)">
+
 
 <text
    id="text434-1-8"
-   transform="matrix(0.9424,0,0,0.9424,864.616,86.8666)"
    class="st14 st12 st20"
-   style="font-size:33.15950012px;font-family:MicrosoftYaHeiLight;fill:#ffffff">火车采样机</text>
-
-<text
-   id="text436-6-5"
-   transform="matrix(0.9424,0,0,0.9424,846.2883,86.8666)"
-   class="st14 st12 st20"
-   style="font-size:33.15896106px;font-family:MicrosoftYaHeiLight;fill:#ffffff;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.24900436px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.94239998"
+   x="819.79413"
+   y="86.8666"
+   inkscape:label="#3火车机械采样机点击区域"><tspan
      sodipodi:role="line"
-     id="tspan770">3</tspan></text>
+     id="tspan970"
+     x="819.79413"
+     y="86.8666">#3火车机械采样机</tspan></text>
+
+
+
+
+
 
 <circle
    id="_196367816-4-0"
@@ -3469,29 +3199,30 @@
    cx="794.20001"
    cy="75.900002"
    r="15"
-   style="fill:#00a551" /></g><polygon
+   style="fill:#00a551"
+   inkscape:label="#3采样机状态爱" /></g><polygon
    id="_196270832-0"
    class="st3"
-   points="1137.5,778.5 1176.5,778.5 1188.6,786.8 1125.4,786.8 "
-   transform="matrix(0.7278481,0,0,0.81009296,225.82273,136.39325)"
+   points="1176.5,778.5 1188.6,786.8 1125.4,786.8 1137.5,778.5 "
+   transform="matrix(0.7278481,0,0,0.81009296,323.82273,136.39325)"
    style="fill:#404040" /><path
    id="_196270688-5"
    inkscape:connector-curvature="0"
    class="st3"
-   d="m 1044.943,773.77439 h 45.9999 v 43.09694 c 0,2.83533 -10.2627,5.10359 -23,5.10359 -12.6646,0 -22.9999,-2.26826 -22.9999,-5.10359 z"
+   d="m 1142.943,773.77439 h 45.9999 v 43.09694 c 0,2.83533 -10.2627,5.10359 -23,5.10359 -12.6646,0 -22.9999,-2.26826 -22.9999,-5.10359 z"
    style="fill:#404040;stroke-width:0.76787019" /><polygon
    id="_196270544-7"
    class="st3"
-   points="1137.5,779.3 1176.5,779.3 1178.2,771 1135.8,771 "
-   transform="matrix(0.7278481,0,0,0.81009296,225.82273,136.39325)"
+   points="1176.5,779.3 1178.2,771 1135.8,771 1137.5,779.3 "
+   transform="matrix(0.7278481,0,0,0.81009296,323.82273,136.39325)"
    style="fill:#404040" /><polygon
    id="_196270376-1"
    class="st25"
-   points="1150,751.4 1153.5,751.4 1153.5,736.5 1160.5,736.5 1160.5,751.4 1164,751.4 1157,765.6 "
-   transform="translate(-88.217925,-15.114847)"
+   points="1157,765.6 1150,751.4 1153.5,751.4 1153.5,736.5 1160.5,736.5 1160.5,751.4 1164,751.4 "
+   transform="translate(7.782075,-15.114847)"
    style="fill:#ff0000" /><g
    id="g4503-2"
-   transform="matrix(0.7723277,0,0,0.85959863,232.03691,133.57133)"><linearGradient
+   transform="matrix(0.7723277,0,0,0.85959863,330.03691,133.57133)"><linearGradient
      id="linearGradient578"
      gradientUnits="userSpaceOnUse"
      x1="902.83282"
@@ -3510,7 +3241,7 @@
        id="stop576" /></linearGradient><polygon
      id="polygon511-7-0"
      class="st56"
-     points="1064.2,737.7 1055.2,743.9 1109.5,743.9 1100.5,737.7 "
+     points="1055.2,743.9 1109.5,743.9 1100.5,737.7 1064.2,737.7 "
      style="fill:url(#polygon511-7_1_-3)" /><linearGradient
      id="linearGradient588"
      gradientUnits="userSpaceOnUse"
@@ -3551,171 +3282,339 @@
        id="stop595" /></linearGradient><polygon
      id="polygon521-1-5"
      class="st58"
-     points="1064.6,736.9 1100.1,736.9 1101.3,730.7 1063.3,730.7 "
-     style="fill:url(#polygon521-1_1_-3)" /></g><polygon
-   id="_196270832-02"
-   class="st3"
-   points="1137.5,778.5 1176.5,778.5 1188.6,786.8 1125.4,786.8 "
-   transform="matrix(0.7278481,0,0,0.81009296,292.22178,136.39325)"
-   style="fill:#404040" /><path
-   id="_196270688-3"
+     points="1100.1,736.9 1101.3,730.7 1063.3,730.7 1064.6,736.9 "
+     style="fill:url(#polygon521-1_1_-3)" /></g><path
+   class="st18"
+   d="M 11.909771,64.821527 V 117.62153 H 404.01594 V 64.821527 Z M 403.50977,116.42153 H 12.458112 V 66.121527 H 403.50977 Z"
+   id="path118-8"
    inkscape:connector-curvature="0"
-   class="st3"
-   d="m 1111.3421,773.77439 h 45.9999 v 43.09694 c 0,2.83533 -10.2627,5.10359 -23,5.10359 -12.6646,0 -22.9999,-2.26826 -22.9999,-5.10359 z"
-   style="fill:#404040;stroke-width:0.76787019" /><polygon
-   id="_196270544-3"
-   class="st3"
-   points="1137.5,779.3 1176.5,779.3 1178.2,771 1135.8,771 "
-   transform="matrix(0.7278481,0,0,0.81009296,292.22178,136.39325)"
-   style="fill:#404040" /><polygon
-   id="_196270376-0"
-   class="st25"
-   points="1160.5,736.5 1160.5,751.4 1164,751.4 1157,765.6 1150,751.4 1153.5,751.4 1153.5,736.5 "
-   transform="translate(-13.818872,-15.114847)"
-   style="fill:#ff0000" /><g
-   id="g4503-20"
-   transform="matrix(0.7723277,0,0,0.85959863,298.43596,133.57133)"><linearGradient
-     id="linearGradient724"
-     gradientUnits="userSpaceOnUse"
-     x1="902.83282"
-     y1="180.3681"
-     x2="957.12878"
-     y2="180.3681"
-     gradientTransform="matrix(1.0611,0,0,-1.0611,97.1646,932.2084)"><stop
-       offset="0"
-       style="stop-color:#666666"
-       id="stop572-8" /><stop
-       offset="0.502"
-       style="stop-color:#DCDCDC"
-       id="stop574-2" /><stop
-       offset="1"
-       style="stop-color:#666666"
-       id="stop576-8" /></linearGradient><polygon
-     id="polygon511-7-4"
-     class="st56"
-     points="1064.2,737.7 1055.2,743.9 1109.5,743.9 1100.5,737.7 "
-     style="fill:url(#polygon511-7_1_-8)" /><linearGradient
-     id="linearGradient730"
-     gradientUnits="userSpaceOnUse"
-     x1="901.13647"
-     y1="150.6342"
-     x2="959.02979"
-     y2="150.6342"
-     gradientTransform="matrix(1.0611,0,0,-1.0611,97.1646,932.2084)"><stop
-       offset="0"
-       style="stop-color:#666666"
-       id="stop582-7" /><stop
-       offset="0.502"
-       style="stop-color:#DCDCDC"
-       id="stop584-0" /><stop
-       offset="1"
-       style="stop-color:#666666"
-       id="stop586-6" /></linearGradient><path
-     id="path515-1-5"
-     inkscape:connector-curvature="0"
-     class="st57"
-     d="m 1053.4,744.7 v 50.1 c 0,1.7 6.9,3.2 8.1,3.4 6.7,1.3 14.1,1.7 20.9,1.7 6.8,0 14.2,-0.4 20.9,-1.7 1.1,-0.2 8.1,-1.8 8.1,-3.4 v -50.1 z"
-     style="fill:url(#path515-1_1_-7)" /><linearGradient
-     id="linearGradient736"
-     gradientUnits="userSpaceOnUse"
-     x1="910.48798"
-     y1="186.9649"
-     x2="948.54108"
-     y2="186.9649"
-     gradientTransform="matrix(1.0611,0,0,-1.0611,97.1646,932.2084)"><stop
-       offset="0"
-       style="stop-color:#666666"
-       id="stop591-0" /><stop
-       offset="0.502"
-       style="stop-color:#DCDCDC"
-       id="stop593-8" /><stop
-       offset="1"
-       style="stop-color:#666666"
-       id="stop595-3" /></linearGradient><polygon
-     id="polygon521-1-0"
-     class="st58"
-     points="1064.6,736.9 1100.1,736.9 1101.3,730.7 1063.3,730.7 "
-     style="fill:url(#polygon521-1_1_-9)" /></g><polygon
-   id="_196270832-7"
-   class="st3"
-   points="1188.6,786.8 1125.4,786.8 1137.5,778.5 1176.5,778.5 "
-   transform="matrix(0.7278481,0,0,0.81009296,360.24065,136.9081)"
-   style="fill:#404040" /><path
-   id="_196270688-4"
+   style="fill:#6d6e70;stroke-width:0.64946204" /><path
+   class="st18"
+   d="m 11.909768,117.62153 v 52.8 H 404.01594 v -52.8 z m 391.599992,51.6 H 12.458109 v -50.3 H 403.50976 Z"
+   id="path118-8-1"
    inkscape:connector-curvature="0"
-   class="st3"
-   d="m 1179.3609,774.28923 h 46 v 43.09694 c 0,2.83533 -10.2627,5.1036 -23,5.1036 -12.6646,0 -23,-2.26827 -23,-5.1036 z"
-   style="fill:#404040;stroke-width:0.76787019" /><polygon
-   id="_196270544-9"
-   class="st3"
-   points="1178.2,771 1135.8,771 1137.5,779.3 1176.5,779.3 "
-   transform="matrix(0.7278481,0,0,0.81009296,360.24065,136.9081)"
-   style="fill:#404040" /><polygon
-   id="_196270376-08"
-   class="st25"
-   points="1153.5,751.4 1153.5,736.5 1160.5,736.5 1160.5,751.4 1164,751.4 1157,765.6 1150,751.4 "
-   transform="translate(38.2,-14.6)"
-   style="fill:#ff0000" /><g
-   id="g4503-0"
-   transform="matrix(0.7723277,0,0,0.85959863,366.45483,134.08618)"><linearGradient
-     id="linearGradient795"
-     gradientUnits="userSpaceOnUse"
-     x1="902.83282"
-     y1="180.3681"
-     x2="957.12878"
-     y2="180.3681"
-     gradientTransform="matrix(1.0611,0,0,-1.0611,97.1646,932.2084)"><stop
-       offset="0"
-       style="stop-color:#666666"
-       id="stop572-82" /><stop
-       offset="0.502"
-       style="stop-color:#DCDCDC"
-       id="stop574-7" /><stop
-       offset="1"
-       style="stop-color:#666666"
-       id="stop576-7" /></linearGradient><polygon
-     id="polygon511-7-8"
-     class="st56"
-     points="1109.5,743.9 1100.5,737.7 1064.2,737.7 1055.2,743.9 "
-     style="fill:url(#polygon511-7_1_-0)" /><linearGradient
-     id="linearGradient801"
-     gradientUnits="userSpaceOnUse"
-     x1="901.13647"
-     y1="150.6342"
-     x2="959.02979"
-     y2="150.6342"
-     gradientTransform="matrix(1.0611,0,0,-1.0611,97.1646,932.2084)"><stop
-       offset="0"
-       style="stop-color:#666666"
-       id="stop582-0" /><stop
-       offset="0.502"
-       style="stop-color:#DCDCDC"
-       id="stop584-1" /><stop
-       offset="1"
-       style="stop-color:#666666"
-       id="stop586-9" /></linearGradient><path
-     id="path515-1-1"
-     inkscape:connector-curvature="0"
-     class="st57"
-     d="m 1053.4,744.7 v 50.1 c 0,1.7 6.9,3.2 8.1,3.4 6.7,1.3 14.1,1.7 20.9,1.7 6.8,0 14.2,-0.4 20.9,-1.7 1.1,-0.2 8.1,-1.8 8.1,-3.4 v -50.1 z"
-     style="fill:url(#path515-1_1_-4)" /><linearGradient
-     id="linearGradient807"
-     gradientUnits="userSpaceOnUse"
-     x1="910.48798"
-     y1="186.9649"
-     x2="948.54108"
-     y2="186.9649"
-     gradientTransform="matrix(1.0611,0,0,-1.0611,97.1646,932.2084)"><stop
-       offset="0"
-       style="stop-color:#666666"
-       id="stop591-9" /><stop
-       offset="0.502"
-       style="stop-color:#DCDCDC"
-       id="stop593-9" /><stop
-       offset="1"
-       style="stop-color:#666666"
-       id="stop595-9" /></linearGradient><polygon
-     id="polygon521-1-7"
-     class="st58"
-     points="1101.3,730.7 1063.3,730.7 1064.6,736.9 1100.1,736.9 "
-     style="fill:url(#polygon521-1_1_-8)" /></g></svg>
+   style="fill:#6d6e70;stroke-width:0.64946204" /><rect
+   id="_196368032-7"
+   x="108.17846"
+   y="118.88194"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368488-9"
+   x="12.458097"
+   y="66.121529"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368488-9-7"
+   x="12.447581"
+   y="13.321533"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368488-9-3"
+   x="12.45811"
+   y="118.92153"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0"
+   x="222.82091"
+   y="118.88931"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-7"
+   x="312.48187"
+   y="118.75718"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><polygon
+   id="_196369256-9"
+   class="st16"
+   points="971.4,96.8 971.4,147.1 883,147.1 883,96.8 "
+   transform="matrix(1.019366,0,0,1,-677.27929,22.089305)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><text
+   id="_196368680-3"
+   class="st14 st12 st19"
+   x="233.57614"
+   y="146.93277"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173336px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"><tspan
+     sodipodi:role="line"
+     id="tspan699"
+     x="233.57614"
+     y="146.93277">设备状态</tspan></text>
+<text
+   id="_196368560-9"
+   class="st14 st12 st19"
+   x="322.59674"
+   y="149.57419"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173336px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   inkscape:label="设备状态"><tspan
+     sodipodi:role="line"
+     id="tspan840"
+     x="322.59674"
+     y="149.57419">就绪待机</tspan></text>
+<polygon
+   id="_196368344-2"
+   class="st16"
+   points="1330.1,96.8 1330.1,147.1 1241.7,147.1 1241.7,96.8 "
+   transform="matrix(1.0780385,0,0,1,-1326.6908,74.121527)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><text
+   id="_196368224-4"
+   class="st14 st12 st19"
+   x="19.283943"
+   y="202.37741"
+   style="font-size:18.41733297px;font-family:MicrosoftYaHeiLight;fill:#ffffff;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+     sodipodi:role="line"
+     id="tspan842">大车坐标</tspan></text>
+<text
+   id="_196368104-5"
+   class="st14 st12 st19"
+   x="141.04567"
+   y="203.02142"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173336px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   inkscape:label="大车坐标"><tspan
+     sodipodi:role="line"
+     id="tspan844"
+     x="141.04567"
+     y="203.02142">1000</tspan></text>
+<path
+   class="st18"
+   d="m 11.909705,168.42153 v 52.8 H 404.01587 v -52.8 z m 391.599985,51.6 H 12.458046 v -50.3 H 403.50969 Z"
+   id="path118-8-1-6"
+   inkscape:connector-curvature="0"
+   style="fill:#6d6e70;stroke-width:0.64946204" /><rect
+   id="_196368032-7-9"
+   x="108.17839"
+   y="169.68195"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368488-9-3-5"
+   x="12.458049"
+   y="169.72153"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-4"
+   x="222.82085"
+   y="169.68932"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-7-3"
+   x="312.48181"
+   y="169.55717"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><polygon
+   id="_196369256-9-5"
+   class="st16"
+   points="883,147.1 883,96.8 971.4,96.8 971.4,147.1 "
+   transform="matrix(1.019366,0,0,1,-677.27936,72.889307)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><text
+   id="_196368680-3-6"
+   class="st14 st12 st19"
+   x="233.57608"
+   y="197.73276"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41733297px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#ffffff;"><tspan
+     sodipodi:role="line"
+     id="tspan846">小车坐标</tspan></text>
+<text
+   id="_196368560-9-0"
+   class="st14 st12 st19"
+   x="347.17294"
+   y="201.23651"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="小车坐标">20</text>
+<polygon
+   id="_196368344-2-2"
+   class="st16"
+   points="1330.1,96.8 1330.1,147.1 1241.7,147.1 1241.7,96.8 "
+   transform="matrix(1.0780385,0,0,1,-1326.6908,126.42153)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><text
+   id="_196368224-4-7"
+   class="st14 st12 st19"
+   x="19.283943"
+   y="254.6774"
+   style="font-size:18.41733297px;font-family:MicrosoftYaHeiLight;fill:#ffffff;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+     sodipodi:role="line"
+     id="tspan848">升降坐标</tspan></text>
+<text
+   id="_196368104-5-9"
+   class="st14 st12 st19"
+   x="145.04567"
+   y="255.32144"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   inkscape:label="升降坐标">3</text>
+<path
+   class="st18"
+   d="m 11.909706,220.72154 v 52.8 H 404.01587 v -52.8 z m 391.599984,51.6 H 12.458046 v -50.3 H 403.50969 Z"
+   id="path118-8-1-6-0"
+   inkscape:connector-curvature="0"
+   style="fill:#6d6e70;stroke-width:0.64946204" /><rect
+   id="_196368032-7-9-1"
+   x="108.17839"
+   y="221.98195"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368488-9-3-5-7"
+   x="12.458046"
+   y="222.02153"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-4-3"
+   x="222.82085"
+   y="221.98932"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-7-3-1"
+   x="312.48181"
+   y="221.85718"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><polygon
+   id="_196369256-9-5-0"
+   class="st16"
+   points="883,96.8 971.4,96.8 971.4,147.1 883,147.1 "
+   transform="matrix(1.019366,0,0,1,-677.27936,123.18931)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><text
+   id="_196368680-3-6-6"
+   class="st14 st12 st19"
+   x="233.57608"
+   y="250.03276"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41733297px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#ffffff;"><tspan
+     sodipodi:role="line"
+     id="tspan860">2道牵车</tspan></text>
+<text
+   id="_196368560-9-0-5"
+   class="st14 st12 st19"
+   x="320.0097"
+   y="251.38071"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173336px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   inkscape:label="2道允许牵车"><tspan
+     sodipodi:role="line"
+     id="tspan852"
+     x="320.0097"
+     y="251.38071">允许牵车</tspan></text>
+<polygon
+   id="_196368344-2-9"
+   class="st16"
+   points="1330.1,147.1 1241.7,147.1 1241.7,96.8 1330.1,96.8 "
+   transform="matrix(1.0780385,0,0,1,-1326.6908,177.22154)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><text
+   id="_196368224-4-9"
+   class="st14 st12 st19"
+   x="19.283949"
+   y="305.47742"
+   style="font-size:18.41733297px;font-family:MicrosoftYaHeiLight;fill:#ffffff;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+     sodipodi:role="line"
+     id="tspan858">4道牵车</tspan></text>
+<text
+   id="_196368104-5-6"
+   class="st14 st12 st19"
+   x="128.31358"
+   y="304.82794"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173336px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   inkscape:label="4道允许牵车"><tspan
+     sodipodi:role="line"
+     id="tspan856"
+     x="128.31358"
+     y="304.82794">允许牵车</tspan></text>
+<path
+   class="st18"
+   d="m 11.90971,271.52154 v 52.8 h 392.10616 v -52.8 z m 391.59998,51.6 H 12.458051 v -50.3 H 403.50969 Z"
+   id="path118-8-1-6-2"
+   inkscape:connector-curvature="0"
+   style="fill:#6d6e70;stroke-width:0.64946204" /><rect
+   id="_196368032-7-9-7"
+   x="108.17839"
+   y="272.78195"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368488-9-3-5-1"
+   x="12.458051"
+   y="272.82153"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-4-1"
+   x="222.82085"
+   y="272.78934"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368032-7-0-7-3-8"
+   x="312.48181"
+   y="272.6572"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><polygon
+   id="_196369256-9-5-1"
+   class="st16"
+   points="883,96.8 971.4,96.8 971.4,147.1 883,147.1 "
+   transform="matrix(1.019366,0,0,1,-677.27936,175.98932)"
+   style="fill:#26a9e0;fill-opacity:0.12940004" /><rect
+   id="_196368416-1"
+   x="402.20978"
+   y="118.92153"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368416-9"
+   x="402.16373"
+   y="170.44281"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368416-7"
+   x="402.20972"
+   y="222.02155"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="_196368416-2"
+   x="402.22668"
+   y="273.46835"
+   class="st17"
+   width="1.3"
+   height="50.299999"
+   style="fill:#808184" /><rect
+   id="rect776-4-6-7"
+   x="802.99872"
+   y="436.49222"
+   class="st60"
+   width="15.6"
+   height="219.14697"
+   style="fill:url(#rect776-4-6_1_-9);stroke-width:3.12087584" /><polygon
+   id="polygon750-9-8"
+   class="st61"
+   points="1003.7,566.5 971.4,566.5 978.3,579.6 996.8,579.6 "
+   style="fill:url(#linearGradient950)"
+   transform="translate(-176.80002,-143)" /></svg>
