@@ -10,6 +10,7 @@ using CMCS.Monitor.Win.Core;
 using CMCS.Monitor.Win.Frms;
 using CMCS.Monitor.Win.Frms.Sys;
 using CMCS.Monitor.Win.Html;
+using CMCS.Monitor.Win.Utilities;
 //
 using Xilium.CefGlue;
 
@@ -21,6 +22,7 @@ namespace CMCS.Monitor.Win.CefGlue
     public class CarSamplerCefV8Handler : CefV8Handler
     {
         List<InfEquInfHitch> equInfHitchs = new List<InfEquInfHitch>();
+        CommonDAO commonDAO = CommonDAO.GetInstance();
 
         protected override bool Execute(string name, CefV8Value obj, CefV8Value[] arguments, out CefV8Value returnValue, out string exception)
         {
@@ -32,10 +34,7 @@ namespace CMCS.Monitor.Win.CefGlue
             {
                 // 急停
                 case "Stop":
-                    if (paramSampler == "#1")
-                        MessageBox.Show("#1 Stop");
-                    else if (paramSampler == "#2")
-                        MessageBox.Show("#2 Stop");
+                    commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()), "急停", "1");
                     break;
                 // 车辆信息
                 case "CarInfo":
@@ -73,6 +72,13 @@ namespace CMCS.Monitor.Win.CefGlue
                     CefProcessMessage cefMsg = CefProcessMessage.Create("CarSamplerChangeSelected");
                     cefMsg.Arguments.SetSize(0);
                     cefMsg.Arguments.SetString(0, paramSampler);
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg);
+                    break;
+                //  打开实时视频预览
+                case "OpenHikVideo":
+                    cefMsg = CefProcessMessage.Create("OpenHikVideo");
+                    cefMsg.Arguments.SetSize(0);
+                    cefMsg.Arguments.SetString(0, arguments[0].GetStringValue());
                     CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg);
                     break;
                 default:

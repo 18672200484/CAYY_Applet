@@ -37,7 +37,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		CommonDAO commonDAO = CommonDAO.GetInstance();
 
 		#region OPC变量
-		OPCClientDAO opcServere = null;
+		static OPCClientDAO opcServere = null;
 		string[] tags = new string[] { "运行状态", "当前采样点数", "当前桶号", "当前X坐标", "当前Y坐标", "当前Z坐标", "大车故障", "小车故障", "升降故障",
 			"动力头故障","匀料器故障","给料皮带故障","环锤故障","反击板故障","缩分故障","样料故障","弃料故障","桶故障","道闸故障","大车运行","小车运行","升降运行",
 		"动力头运行","匀料器运行","给料皮带运行","环锤运行","反击板运行","缩分运行","样料运行","弃料运行","样煤仓运行","道闸运行","前边界","后边界","左边界","右边界",
@@ -75,9 +75,9 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 			{
 				if (appRemoteControlCmd.CmdCode == "急停")
 				{
-					Log4Neter.Info("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param);
+					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
-					cmd.Add("急停/复位", 1);
+					cmd.Add("汽车机械采样机.#1采样机." + "急停/复位", appRemoteControlCmd.CmdCode);
 					if (opcServere.WriteOPCItemValue(cmd))
 						// 更新执行结果
 						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
@@ -96,9 +96,9 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 			{
 				if (appRemoteControlCmd.CmdCode == "急停")
 				{
-					Log4Neter.Info("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param);
+					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
-					cmd.Add("急停/复位", 1);
+					cmd.Add("汽车机械采样机.#2采样机." + "急停/复位", appRemoteControlCmd.CmdCode);
 					if (opcServere.WriteOPCItemValue(cmd))
 						// 更新执行结果
 						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);

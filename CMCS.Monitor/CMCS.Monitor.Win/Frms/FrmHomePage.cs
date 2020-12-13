@@ -269,7 +269,11 @@ namespace CMCS.Monitor.Win.Frms
 				SelfVars.CarSamplerForm.CurrentMachineCode = MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(message.Arguments.GetString(0));
 			else if (message.Name == "TrainSamplerChangeSelected")
 				SelfVars.TrainSamplerForm.CurrentMachineCode = message.Arguments.GetString(0);
-
+			else if (message.Name == "OpenHikVideo")
+			{
+				// ”∆µ‘§¿¿
+				SelfVars.MainFrameForm.OpenHikVideo(MonitorCommon.GetInstance().GetVideoBySelected(message.Arguments.GetString(0)));
+			}
 			return true;
 		}
 

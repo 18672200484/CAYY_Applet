@@ -264,6 +264,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
 			//});
 		}
+
+		/// <summary>
+		/// 打开视频预览
+		/// </summary>
+		/// <param name="param"></param>
+		/// <param name="videoName"></param>
+		public void OpenHikVideo(string videoName)
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				if (!string.IsNullOrEmpty(videoName))
+				{
+					FrmHikVideo frm = new FrmHikVideo(videoName);
+					frm.ShowDialog();
+				}
+				else
+					MessageBoxEx.Show("视频名称未配置");
+			}));
+		}
 		#endregion
 
 		/// <summary>

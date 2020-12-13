@@ -91,12 +91,12 @@ namespace CMCS.DumblyConcealer.Utilities
 			{
 				if (item.ItemName.Contains("#1采样机"))
 				{
-					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_1, item.ItemName.Replace("汽车机械采样机.#1采样机.", ""), item.Value.ToString().Replace("False", "0").Replace("True", "1"));
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_1, item.ItemName.Replace("汽车机械采样机.#1采样机.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
 					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
 				}
 				else if (item.ItemName.Contains("#2采样机"))
 				{
-					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_2, item.ItemName.Replace("汽车机械采样机.#2采样机.", ""), item.Value.ToString().Replace("False", "0").Replace("True", "1"));
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_2, item.ItemName.Replace("汽车机械采样机.#2采样机.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
 					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
 				}
 			}

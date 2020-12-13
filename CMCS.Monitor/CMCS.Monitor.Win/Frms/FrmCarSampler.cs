@@ -103,28 +103,31 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("机械采样机_采样时间", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.采样时间.ToString()), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("机械采样机_车牌号", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.当前车号.ToString()), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("机械采样机_采样点数", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.采样点数.ToString()), eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("机械采样机_小车1", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#rect1770_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_小车2", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#rect1752_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_小车3", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#rect1761_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_小车4", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#rect1716_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_小车5", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#rect1725_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_小车6", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#rect1734_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_小车7", commonDAO.GetSignalDataValue(machineCode, "小车") == "1" ? "Red" : "url(#polygon1743_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_接料斗1", commonDAO.GetSignalDataValue(machineCode, "接料斗") == "1" ? "Red" : "url(#_164344952_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_接料斗2", commonDAO.GetSignalDataValue(machineCode, "接料斗") == "1" ? "Red" : "url(#_130855712_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_接料斗3", commonDAO.GetSignalDataValue(machineCode, "接料斗") == "1" ? "Red" : "url(#_164355560_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_接料斗4", commonDAO.GetSignalDataValue(machineCode, "接料斗") == "1" ? "Red" : "url(#_164351936_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_除铁给料皮带", commonDAO.GetSignalDataValue(machineCode, "给料皮带") == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_溜煤管", commonDAO.GetSignalDataValue(machineCode, "溜煤管") == "1" ? "Red" : "url(#polygon984_1_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机1", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_125277864-0_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机2", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_164348960_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机3", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_130854176_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机4", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_130859336-4_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机5", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_164347592_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机6", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_164343680_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机7", commonDAO.GetSignalDataValue(machineCode, "锤式破碎机") == "1" ? "Red" : "url(#_164356088_2_)", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_缩分皮带", commonDAO.GetSignalDataValue(machineCode, "缩分皮带") == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-			datas.Add(new HtmlDataItem("机械采样机_弃料斗", commonDAO.GetSignalDataValue(machineCode, "弃料斗") == "1" ? "Red" : "url(#_164344952-8_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_X坐标", commonDAO.GetSignalDataValue(machineCode, "当前X坐标"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("机械采样机_Y坐标", commonDAO.GetSignalDataValue(machineCode, "当前Y坐标"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("机械采样机_Z坐标", commonDAO.GetSignalDataValue(machineCode, "当前Z坐标"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("机械采样机_小车1", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#rect1770_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_小车2", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#rect1752_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_小车3", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#rect1761_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_小车4", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#rect1716_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_小车5", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#rect1725_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_小车6", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#rect1734_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_小车7", commonDAO.GetSignalDataValue(machineCode, "小车运行") == "1" ? "Red" : "url(#polygon1743_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_接料斗1", commonDAO.GetSignalDataValue(machineCode, "样料运行") == "1" ? "Red" : "url(#_164344952_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_接料斗2", commonDAO.GetSignalDataValue(machineCode, "样料运行") == "1" ? "Red" : "url(#_130855712_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_接料斗3", commonDAO.GetSignalDataValue(machineCode, "样料运行") == "1" ? "Red" : "url(#_164355560_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_接料斗4", commonDAO.GetSignalDataValue(machineCode, "样料运行") == "1" ? "Red" : "url(#_164351936_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_除铁给料皮带", commonDAO.GetSignalDataValue(machineCode, "给料皮带运行") == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_溜煤管", commonDAO.GetSignalDataValue(machineCode, "匀料器运行") == "1" ? "Red" : "url(#polygon984_1_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机1", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_125277864-0_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机2", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_164348960_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机3", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_130854176_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机4", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_130859336-4_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机5", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_164347592_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机6", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_164343680_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_锤式破碎机7", commonDAO.GetSignalDataValue(machineCode, "环锤运行") == "1" ? "Red" : "url(#_164356088_2_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_缩分皮带", commonDAO.GetSignalDataValue(machineCode, "缩分运行") == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("机械采样机_弃料斗", commonDAO.GetSignalDataValue(machineCode, "弃料运行") == "1" ? "Red" : "url(#_164344952-8_1_)", eHtmlDataItemType.svg_color));
 
 			string carNumber = commonDAO.GetSignalDataValue(machineCode, "车牌号");
 			if (string.IsNullOrEmpty(carNumber))
@@ -212,5 +215,6 @@ namespace CMCS.Monitor.Win.Frms
 			return false;
 		}
 
+	
 	}
 }

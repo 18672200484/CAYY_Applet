@@ -116,8 +116,8 @@ namespace CMCS.Monitor.Win.CefGlue
 
 			Program.frmLogin = new FrmLogin();
 
-			//Application.Run(Program.frmLogin);
-			Application.Run(new FrmMainFrame());
+			Application.Run(Program.frmLogin);
+			//Application.Run(new FrmMainFrame());
 		}
 
 		/// <summary>

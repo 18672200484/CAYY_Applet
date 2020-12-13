@@ -60,6 +60,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
 			this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
 			this.panelEx6 = new DevComponents.DotNetBar.PanelEx();
+			this.btnErrorReset = new DevComponents.DotNetBar.ButtonX();
 			this.btnSystemReset = new DevComponents.DotNetBar.ButtonX();
 			this.btnEndSampler = new DevComponents.DotNetBar.ButtonX();
 			this.btnSendSamplePlan = new DevComponents.DotNetBar.ButtonX();
@@ -91,6 +92,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.timer2 = new System.Windows.Forms.Timer(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.btnChangeTrain = new DevComponents.DotNetBar.ButtonX();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -445,6 +447,8 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			// 
 			this.panelEx6.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panelEx6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelEx6.Controls.Add(this.btnChangeTrain);
+			this.panelEx6.Controls.Add(this.btnErrorReset);
 			this.panelEx6.Controls.Add(this.btnSystemReset);
 			this.panelEx6.Controls.Add(this.btnEndSampler);
 			this.panelEx6.Controls.Add(this.btnSendSamplePlan);
@@ -465,11 +469,23 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.panelEx6.Style.GradientAngle = 90;
 			this.panelEx6.TabIndex = 38;
 			// 
+			// btnErrorReset
+			// 
+			this.btnErrorReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnErrorReset.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnErrorReset.Location = new System.Drawing.Point(5, 212);
+			this.btnErrorReset.Name = "btnErrorReset";
+			this.btnErrorReset.Size = new System.Drawing.Size(90, 38);
+			this.btnErrorReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnErrorReset.TabIndex = 44;
+			this.btnErrorReset.Text = "故障复位";
+			this.btnErrorReset.Click += new System.EventHandler(this.btnErrorReset_Click);
+			// 
 			// btnSystemReset
 			// 
 			this.btnSystemReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.btnSystemReset.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnSystemReset.Location = new System.Drawing.Point(201, 175);
+			this.btnSystemReset.Location = new System.Drawing.Point(201, 168);
 			this.btnSystemReset.Name = "btnSystemReset";
 			this.btnSystemReset.Size = new System.Drawing.Size(94, 38);
 			this.btnSystemReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -481,9 +497,9 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			// 
 			this.btnEndSampler.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.btnEndSampler.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnEndSampler.Location = new System.Drawing.Point(101, 175);
+			this.btnEndSampler.Location = new System.Drawing.Point(101, 168);
 			this.btnEndSampler.Name = "btnEndSampler";
-			this.btnEndSampler.Size = new System.Drawing.Size(94, 38);
+			this.btnEndSampler.Size = new System.Drawing.Size(90, 38);
 			this.btnEndSampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
 			this.btnEndSampler.TabIndex = 42;
 			this.btnEndSampler.Text = "停止采样";
@@ -505,7 +521,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			// 
 			this.btnStartSampler.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.btnStartSampler.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnStartSampler.Location = new System.Drawing.Point(5, 175);
+			this.btnStartSampler.Location = new System.Drawing.Point(5, 168);
 			this.btnStartSampler.Name = "btnStartSampler";
 			this.btnStartSampler.Size = new System.Drawing.Size(90, 38);
 			this.btnStartSampler.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -833,6 +849,18 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.timer2.Interval = 2000;
 			this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
 			// 
+			// btnChangeTrain
+			// 
+			this.btnChangeTrain.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnChangeTrain.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnChangeTrain.Location = new System.Drawing.Point(101, 212);
+			this.btnChangeTrain.Name = "btnChangeTrain";
+			this.btnChangeTrain.Size = new System.Drawing.Size(90, 38);
+			this.btnChangeTrain.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnChangeTrain.TabIndex = 45;
+			this.btnChangeTrain.Text = "切换轨道";
+			this.btnChangeTrain.Click += new System.EventHandler(this.btnChangeTrain_Click);
+			// 
 			// FrmBeltSampler
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -842,6 +870,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			this.Controls.Add(this.buttonX2);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FrmBeltSampler";
 			this.Text = " 入 厂 煤 采 样 ";
@@ -921,5 +950,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		private DevComponents.DotNetBar.ButtonX btnSendSamplePlan;
 		private DevComponents.DotNetBar.ButtonX btnEndSampler;
 		private DevComponents.DotNetBar.ButtonX btnSystemReset;
+		private DevComponents.DotNetBar.ButtonX btnErrorReset;
+		private DevComponents.DotNetBar.ButtonX btnChangeTrain;
 	}
 }

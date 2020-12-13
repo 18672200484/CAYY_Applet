@@ -295,13 +295,13 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		/// <param name="e"></param>
 		private void btnStartSampler_Click(object sender, EventArgs e)
 		{
-			if (this.CurrentFlowFlag == eFlowFlag.等待执行)
-			{ MessageBoxEx.Show("等待当前命令执行完成"); return; }
+			//if (this.CurrentFlowFlag == eFlowFlag.等待执行)
+			//{ MessageBoxEx.Show("等待当前命令执行完成"); return; }
 			if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
 
-			if (!SendSamplingCMD(eEquInfSamplerCmd.开始采样)) { MessageBoxEx.Show("采样命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+			if (!SendSamplingCMD(eEquInfSamplerCmd.开始采样)) { MessageBoxEx.Show("开始采样命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
-			MessageBoxEx.Show("命令发送成功，等待执行");
+			MessageBoxEx.Show("开始采样命令发送成功，等待执行");
 			timer1.Enabled = true;
 			this.CurrentFlowFlag = eFlowFlag.等待执行;
 		}
@@ -313,13 +313,13 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		/// <param name="e"></param>
 		private void btnSystemReset_Click(object sender, EventArgs e)
 		{
-			if (this.CurrentFlowFlag == eFlowFlag.等待执行)
-			{ MessageBoxEx.Show("等待当前命令执行完成"); return; }
+			//if (this.CurrentFlowFlag == eFlowFlag.等待执行)
+			//{ MessageBoxEx.Show("等待当前命令执行完成"); return; }
 			if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
 
-			if (!SendSamplingCMD(eEquInfSamplerCmd.系统复位)) { MessageBoxEx.Show("采样命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+			if (!SendSamplingCMD(eEquInfSamplerCmd.系统复位)) { MessageBoxEx.Show("系统复位命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
-			MessageBoxEx.Show("命令发送成功，等待执行");
+			MessageBoxEx.Show("系统复位命令发送成功，等待执行");
 			timer1.Enabled = true;
 			this.CurrentFlowFlag = eFlowFlag.等待执行;
 		}
@@ -330,16 +330,46 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		/// <param name="e"></param>
 		private void btnEndSampler_Click(object sender, EventArgs e)
 		{
-			if (this.CurrentFlowFlag == eFlowFlag.等待执行)
-			{ MessageBoxEx.Show("等待当前命令执行完成"); return; }
-			if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
+			//if (this.CurrentFlowFlag == eFlowFlag.等待执行)
+			//{ MessageBoxEx.Show("等待当前命令执行完成"); return; }
+			//if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
 
-			if (!SendSamplingCMD(eEquInfSamplerCmd.系统暂停)) { MessageBoxEx.Show("采样命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+			if (!SendSamplingCMD(eEquInfSamplerCmd.系统暂停)) { MessageBoxEx.Show("系统暂停命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
-			MessageBoxEx.Show("命令发送成功，等待执行");
+			MessageBoxEx.Show("系统暂停命令发送成功，等待执行");
 			timer1.Enabled = true;
 			this.CurrentFlowFlag = eFlowFlag.等待执行;
 		}
+
+		/// <summary>
+		/// 故障复位
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnErrorReset_Click(object sender, EventArgs e)
+		{
+
+			if (!SendSamplingCMD(eEquInfSamplerCmd.故障复位)) { MessageBoxEx.Show("故障复位命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+
+			MessageBoxEx.Show("故障复位命令发送成功，等待执行");
+			timer1.Enabled = true;
+			this.CurrentFlowFlag = eFlowFlag.等待执行;
+		}
+
+		/// <summary>
+		/// 切换轨道
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnChangeTrain_Click(object sender, EventArgs e)
+		{
+			if (!SendSamplingCMD(eEquInfSamplerCmd.切换轨道)) { MessageBoxEx.Show("切换轨道命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+
+			MessageBoxEx.Show("切换轨道命令发送成功，等待执行");
+			timer1.Enabled = true;
+			this.CurrentFlowFlag = eFlowFlag.等待执行;
+		}
+
 		/// <summary>
 		/// 设置当前采样单
 		/// </summary>
@@ -374,6 +404,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.Mt = 0;
 				oldBeltSamplePlan.TicketWeight = 0;
 				oldBeltSamplePlan.GatherType = "样桶";
+				oldBeltSamplePlan.TrainCode = "4";
 				oldBeltSamplePlan.SampleType = CurrentRCSampling.SamplingType;
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
@@ -406,7 +437,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.SampleType = CurrentRCSampling.SamplingType;
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
-				oldBeltSamplePlan.TrainCode = "#2";
+				oldBeltSamplePlan.TrainCode = "#4";
 				oldBeltSamplePlan.SyncFlag = 0;
 				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString())
 				{
@@ -445,7 +476,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				InterfaceType = this.CurrentSampleMachine.InterfaceType,
 				MachineCode = this.CurrentSampleMachine.EquipmentCode,
 				ResultCode = eEquInfCmdResultCode.默认.ToString(),
-				SampleCode = this.CurrentRCSampling.SampleCode,
+				SampleCode = this.CurrentRCSampling == null ? "" : this.CurrentRCSampling.SampleCode,
 				CmdCode = cmd.ToString()
 			};
 			if (Dbers.GetInstance().SelfDber.Insert<InfBeltSampleCmd>(CurrentSampleCMD) > 0)

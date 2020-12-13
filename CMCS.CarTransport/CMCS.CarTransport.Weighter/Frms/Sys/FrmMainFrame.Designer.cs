@@ -43,12 +43,12 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
 			this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
 			this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
 			this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+			this.lab_Title = new System.Windows.Forms.Label();
 			this.btnDebugConsole = new DevComponents.DotNetBar.ButtonX();
 			this.lblCurrentTime = new System.Windows.Forms.Label();
 			this.btnApplicationExit = new DevComponents.DotNetBar.ButtonX();
 			this.btnOpenSetting = new DevComponents.DotNetBar.ButtonX();
 			this.timer_CurrentTime = new System.Windows.Forms.Timer(this.components);
-			this.lab_Title = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
 			this.superTabControl1.SuspendLayout();
@@ -198,6 +198,18 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
 			this.panelEx2.Style.GradientAngle = 90;
 			this.panelEx2.TabIndex = 0;
 			// 
+			// lab_Title
+			// 
+			this.lab_Title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.lab_Title.AutoSize = true;
+			this.lab_Title.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lab_Title.ForeColor = System.Drawing.Color.Black;
+			this.lab_Title.Location = new System.Drawing.Point(598, 11);
+			this.lab_Title.Name = "lab_Title";
+			this.lab_Title.Size = new System.Drawing.Size(203, 28);
+			this.lab_Title.TabIndex = 21;
+			this.lab_Title.Text = "汽车智能化-#1过衡端";
+			// 
 			// btnDebugConsole
 			// 
 			this.btnDebugConsole.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -259,19 +271,6 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
 			this.timer_CurrentTime.Interval = 1000;
 			this.timer_CurrentTime.Tick += new System.EventHandler(this.timer_CurrentTime_Tick);
 			// 
-			// lab_Title
-			// 
-			this.lab_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.lab_Title.AutoSize = true;
-			this.lab_Title.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lab_Title.ForeColor = System.Drawing.Color.Black;
-			this.lab_Title.Location = new System.Drawing.Point(598, 11);
-			this.lab_Title.Name = "lab_Title";
-			this.lab_Title.Size = new System.Drawing.Size(203, 28);
-			this.lab_Title.TabIndex = 21;
-			this.lab_Title.Text = "汽车智能化-#1过衡端";
-			// 
 			// FrmMainFrame
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -280,6 +279,7 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Controls.Add(this.metroStatusBar1);
 			this.DoubleBuffered = true;
+			this.ForeColor = System.Drawing.Color.Black;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(1440, 850);
 			this.Name = "FrmMainFrame";

@@ -90,7 +90,7 @@ namespace HikVisionSDK.Core
 			if (m_lUserID < 0) return false;
 
 			lRealHandle = CHCNetSDK.NET_DVR_RealPlay_V40(m_lUserID, ref previewInfo, null, new IntPtr());
-			return lRealHandle < 0;
+			return lRealHandle == 0;
 		}
 
 		/// <summary>
