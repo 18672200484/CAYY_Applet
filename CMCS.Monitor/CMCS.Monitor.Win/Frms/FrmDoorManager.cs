@@ -30,6 +30,7 @@ namespace CMCS.Monitor.Win.Frms
 		/// 窗体唯一标识符
 		/// </summary>
 		public static string UniqueKey = "FrmDoorManager";
+		CommonDAO commonDAO = CommonDAO.GetInstance();
 
 		public FrmDoorManager()
 		{
@@ -74,6 +75,7 @@ namespace CMCS.Monitor.Win.Frms
 			{
 				IsLogin = true;
 				MessageBoxEx.Show("开门成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				commonDAO.SaveOperationLog(camera.Name+"开门", GlobalVars.LoginUser.Name);
 			}
 		}
 

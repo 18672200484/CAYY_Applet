@@ -13,6 +13,7 @@ using CMCS.Common.Views;
 using CMCS.Forms.UserControls;
 using DevComponents.DotNetBar;
 using DevComponents.DotNetBar.SuperGrid;
+using DevComponents.Editors;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -283,8 +284,8 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		private void btnSendSamplePlan_Click(object sender, EventArgs e)
 		{
 			if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
-
-			if (!SendSamplingPlan()) { MessageBoxEx.Show("采样命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+			if (this.CurrentSampleMachine.EquipmentName != GlobalVars.MachineCode_HCJXCYJ_3 && cmbTrainCode.SelectedItem == null) { MessageBoxEx.Show("请先选择轨道编号"); return; }
+			if (!SendSamplingPlan()) { MessageBoxEx.Show("采样计划发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
 			MessageBoxEx.Show("采样计划发送成功");
 		}
@@ -404,7 +405,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.Mt = 0;
 				oldBeltSamplePlan.TicketWeight = 0;
 				oldBeltSamplePlan.GatherType = "样桶";
-				oldBeltSamplePlan.TrainCode = "4";
+				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem).Text;
 				oldBeltSamplePlan.SampleType = CurrentRCSampling.SamplingType;
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
@@ -437,7 +438,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.SampleType = CurrentRCSampling.SamplingType;
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
-				oldBeltSamplePlan.TrainCode = "#4";
+				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem).Text;
 				oldBeltSamplePlan.SyncFlag = 0;
 				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString())
 				{

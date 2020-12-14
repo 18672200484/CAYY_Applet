@@ -3,7 +3,7 @@
   <!--本地版本号-->
   <Version>1.0.0.0</Version>
   <!--更新地址-->
-  <UpdateUrl>http://localhost/AU/</UpdateUrl>
+  <UpdateUrl>http://192.168.70.88/AU/Mintor/</UpdateUrl>
   <!--备份路径,为空时不备份-->
   <BackupPath></BackupPath>
   <!--更新后执行文件路径,为空时不执行-->

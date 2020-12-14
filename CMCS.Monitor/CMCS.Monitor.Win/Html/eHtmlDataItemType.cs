@@ -58,6 +58,10 @@ namespace CMCS.Monitor.Win.Html
         /// SVGTemp
         /// </summary>
         svg_Temp = 5050,
+        /// <summary>
+        /// 按钮字体切换
+        /// </summary>
+        btn_text = 6789,
     }
 
 }

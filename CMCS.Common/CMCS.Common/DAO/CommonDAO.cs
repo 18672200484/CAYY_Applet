@@ -1440,6 +1440,27 @@ namespace CMCS.Common.DAO
 			}
 		}
 
+		/// <summary>
+		/// 操作日志记录
+		/// </summary>
+		/// <param name="operationItems">操作事项</param>
+		/// <param name="operationUser">操作人</param>
+		/// <param name="remark">备注</param>
+		public void SaveOperationLog(string operationItems, string operationUser, string remark = "")
+		{
+
+			Dbers.GetInstance().SelfDber.Insert(new CmcsOperationLog()
+			{
+				AppIdentifier = CommonAppConfig.GetInstance().AppIdentifier,
+				MoudleIP = GetIPAddress(),
+				OperationItems = operationItems,
+				OperationTime = DateTime.Now,
+				OperationUser = operationUser,
+				Remark = remark
+			});
+
+		}
+
 		private static string GetIPAddress()
 		{
 			foreach (IPAddress ipAddress in Dns.GetHostEntry(Dns.GetHostName()).AddressList)

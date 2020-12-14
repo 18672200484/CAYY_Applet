@@ -35,6 +35,11 @@ namespace CMCS.Monitor.Win.CefGlue
                 // 急停
                 case "Stop":
                     commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()), "急停", "1");
+
+                    CefProcessMessage cefMsg1 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg1.Arguments.SetSize(0);
+                    cefMsg1.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()) + "急停");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg1);
                     break;
                 // 车辆信息
                 case "CarInfo":

@@ -87,6 +87,9 @@
 					changeScale(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), true);
 				else
 					changeScale(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), false);
+            }
+			else if (data.Type == 6789) {
+					$("#" + data.Key).val(data.Value);
 			}
 
 		}
@@ -119,6 +122,15 @@
 			TruckWeighterV8Cef.Gate2Down(currentSelected);
 		}
 
+		// 切换过衡
+		function changeGH() {
+			TruckWeighterV8Cef.ChangeGH(currentSelected);
+        }
+
+		// 切换采样
+		function changeCY() {
+			TruckWeighterV8Cef.ChangeCY(currentSelected);
+		}
 	</script>
 	<style type="text/css">
 		html, body {
@@ -137,7 +149,7 @@
 
 		.button1 {
 			position: absolute;
-			width: 80px;
+			width: 100px;
 			height: 32px;
 			font-family: 微软雅黑;
 			font-size: 20px;
@@ -153,6 +165,10 @@
 </head>
 <body onload="initpage();" onselectstart="return false;">
 	<div class="div-root">
+		<input type="button" id="QGCY" value="启动采样" class="button1" style="top: 330px;
+            left: 900px;" onclick="changeCY()" />
+		<input type="button" id="QDGH" value="启动过衡" class="button1" style="top: 330px;
+            left: 750px;" onclick="changeGH()" />
 		<input type="button" id="btnGate1Up" value="升 杆" class="button1" style="top: 500px;
             left: 335px;" onclick="gate1Up();" />
 		<input type="button" id="btnGate1Down" value="降 杆" class="button1" style="top: 550px;

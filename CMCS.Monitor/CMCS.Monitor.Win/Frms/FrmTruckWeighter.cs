@@ -136,6 +136,8 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("汽车衡_道闸2", (commonDAO.GetSignalDataValue(machineCode, eSignalDataName.道闸2升杆.ToString()) == "1").ToString(), eHtmlDataItemType.svg_visible));
             datas.Add(new HtmlDataItem("汽车衡_卡车", commonDAO.GetSignalDataValue(machineCode, eSignalDataName.上磅方向.ToString()), eHtmlDataItemType.svg_scare));
             // 添加更多...
+            datas.Add(new HtmlDataItem("QDGH", commonDAO.GetAppletConfigString(machineCode, "启动过衡")=="1"? "停止过衡" : "启动过衡", eHtmlDataItemType.btn_text));
+            datas.Add(new HtmlDataItem("QGCY", commonDAO.GetAppletConfigString(machineCode, "启动采样") == "1" ? "停止采样" : "启动采样", eHtmlDataItemType.btn_text));
 
             // 发送到页面
             cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("requestData(" + Newtonsoft.Json.JsonConvert.SerializeObject(datas) + ");", "", 0);

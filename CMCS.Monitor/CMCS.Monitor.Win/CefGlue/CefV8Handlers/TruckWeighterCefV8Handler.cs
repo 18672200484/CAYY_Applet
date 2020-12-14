@@ -31,24 +31,87 @@ namespace CMCS.Monitor.Win.CefGlue
                 // 道闸1升杆
                 case "Gate1Up":
                     commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "控制道闸", "Gate1Up");
+                   
+                    CefProcessMessage cefMsg3 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg3.Arguments.SetSize(0);
+                    cefMsg3.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "道闸1升杆");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg3);
                     break;
                 // 道闸1降杆
                 case "Gate1Down":
                     commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "控制道闸", "Gate1Down");
+                   
+                    CefProcessMessage cefMsg4 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg4.Arguments.SetSize(0);
+                    cefMsg4.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "道闸1降杆");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg4);
                     break;
                 // 道闸2升杆
                 case "Gate2Up":
                     commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "控制道闸", "Gate2Up");
+
+                    CefProcessMessage cefMsg5 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg5.Arguments.SetSize(0);
+                    cefMsg5.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "道闸2升杆");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg5);
                     break;
                 // 道闸2降杆
                 case "Gate2Down":
                     commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "控制道闸", "Gate2Down");
+
+                    CefProcessMessage cefMsg6 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg6.Arguments.SetSize(0);
+                    cefMsg6.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "道闸2降杆");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg6);
                     break;
                 case "ChangeSelected":
                     CefProcessMessage cefMsg = CefProcessMessage.Create("TruckWeighterChangeSelected");
                     cefMsg.Arguments.SetSize(0);
                     cefMsg.Arguments.SetString(0, arguments[0].GetStringValue());
                     CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg);
+                    break;
+                case "ChangeGH":
+                    CefProcessMessage cefMsg1 = CefProcessMessage.Create("SaveOperationLog");
+                    if (commonDAO.GetAppletConfigString(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "启动过衡") == "1") 
+                    {
+                        commonDAO.SetAppletConfig(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "启动过衡", "0");
+
+                        cefMsg1.Arguments.SetSize(0);
+                        cefMsg1.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "停止过衡");
+                        CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg1);
+
+                    }
+                    else
+                    {
+                        commonDAO.SetAppletConfig(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "启动过衡", "1");
+
+                        cefMsg1.Arguments.SetSize(0);
+                        cefMsg1.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "启动过衡");
+                        CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg1);
+                    }
+                    
+                    
+                    break;
+                case "ChangeCY":
+                    CefProcessMessage cefMsg2 = CefProcessMessage.Create("SaveOperationLog");
+                    if (commonDAO.GetAppletConfigString(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "启动采样") == "1")
+                    {
+                        commonDAO.SetAppletConfig(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "启动采样", "0");
+
+                        cefMsg2.Arguments.SetSize(0);
+                        cefMsg2.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "停止采样");
+                        CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg2);
+                    }
+                    else
+                    {
+                        commonDAO.SetAppletConfig(MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()), "启动采样", "1");
+
+                        cefMsg2.Arguments.SetSize(0);
+                        cefMsg2.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetTruckWeighterMachineCodeBySelected(arguments[0].GetStringValue()) + "启动采样");
+                        CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg2);
+                    }
+
+
                     break;
                 default:
                     returnValue = null;

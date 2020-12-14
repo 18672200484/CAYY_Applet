@@ -276,7 +276,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 					samplecmdEqu.CarModel = entity.CarModel.Substring(0, 3);
 					samplecmdEqu.CyCount = entity.CyCount;
 					samplecmdEqu.OrderNumber = entity.OrderNumber;
-					samplecmdEqu.DataFlag = 0;
+					//samplecmdEqu.DataFlag = 0;
 					isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
 				}
 
@@ -381,7 +381,13 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 				//samplecmdInf.Point4 = entity.Point4;
 				//samplecmdInf.Point5 = entity.Point5;
 				//samplecmdInf.Point6 = entity.Point6;
-				samplecmdInf.ResultCode = entity.ResultCode;
+				if (entity.ResultCode.Contains("失败"))
+				{
+					samplecmdInf.ResultCode = eEquInfCmdResultCode.失败.ToString();
+					commonDAO.SaveEquInfHitch(this.MachineCode, DateTime.Now, entity.ResultCode);
+				}
+				else
+					samplecmdInf.ResultCode = entity.ResultCode;
 
 				if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
 				{

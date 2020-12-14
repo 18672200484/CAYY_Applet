@@ -283,6 +283,22 @@ namespace CMCS.Monitor.Win.Frms.Sys
 					MessageBoxEx.Show("视频名称未配置");
 			}));
 		}
+
+		/// <summary>
+		/// 打开操作日志界面
+		/// </summary>
+		public void OpenOperationLogs()
+		{
+			string uniqueKey = FrmOperationLogs.UniqueKey;
+
+			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			{
+				FrmOperationLogs frm = new FrmOperationLogs();
+				FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+			}
+			else
+				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+		}
 		#endregion
 
 		/// <summary>
@@ -433,6 +449,19 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenTrainBeltSampler();
+		}
+
+		/// <summary>
+		/// 操作日志
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenOperationLogs_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenOperationLogs();
 		}
 		#endregion
 
@@ -624,6 +653,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Invoke(action);
 		}
 
-
+		
 	}
 }

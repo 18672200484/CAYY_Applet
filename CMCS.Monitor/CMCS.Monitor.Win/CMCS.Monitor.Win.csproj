@@ -145,6 +145,12 @@
     <Compile Include="Frms\FrmHomePage.Designer.cs">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmOperationLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmOperationLogs.Designer.cs">
+      <DependentUpon>FrmOperationLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\FrmTrainBeltSampler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmOperationLogs.resx">
+      <DependentUpon>FrmOperationLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTrainBeltSampler.resx">
       <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>

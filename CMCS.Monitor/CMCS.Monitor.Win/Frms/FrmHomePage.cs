@@ -252,6 +252,7 @@ namespace CMCS.Monitor.Win.Frms
 	public class HomePageCefWebClient : CefWebClient
 	{
 		CefWebBrowser cefWebBrowser;
+		CommonDAO commonDAO = CommonDAO.GetInstance();
 
 		public HomePageCefWebClient(CefWebBrowser cefWebBrowser)
 			: base(cefWebBrowser)
@@ -273,6 +274,10 @@ namespace CMCS.Monitor.Win.Frms
 			{
 				// ”∆µ‘§¿¿
 				SelfVars.MainFrameForm.OpenHikVideo(MonitorCommon.GetInstance().GetVideoBySelected(message.Arguments.GetString(0)));
+			}
+			else if (message.Name == "SaveOperationLog")
+			{
+				commonDAO.SaveOperationLog(message.Arguments.GetString(0), GlobalVars.LoginUser.Name);
 			}
 			return true;
 		}
