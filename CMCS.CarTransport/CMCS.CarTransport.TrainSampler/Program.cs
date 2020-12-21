@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BasisPlatform;
 using CMCS.CarTransport.BeltSampler.Frms.Sys;
+using CMCS.CarTransport.TrainSampler.Frms.Sys;
 using CMCS.Common;
 using CMCS.Common.Enums;
 using CMCS.DotNetBar.Utilities;
