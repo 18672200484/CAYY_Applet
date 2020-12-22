@@ -35,7 +35,7 @@ namespace CMCS.Common.Entities.SampleCabinet
         /// <summary>
         /// 发送弃样命令人员
         /// </summary>
-        public string SendCmdpPle { get; set; }
+        public string SendCmdPle { get; set; }
 
         /// <summary>
         /// 发送弃样命令时间

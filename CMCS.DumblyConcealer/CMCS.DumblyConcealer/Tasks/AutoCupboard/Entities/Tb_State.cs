@@ -8,14 +8,14 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard.Entities
     /// <summary>
     /// 设备状态信息表
     /// </summary>
-    [CMCS.DapperDber.Attrs.DapperBind("tb_status")]
+    [CMCS.DapperDber.Attrs.DapperBind("tb_state")]
     public class Tb_State
     {
-        /// <summary>
-        /// 自增主键
-        /// </summary>
-        [CMCS.DapperDber.Attrs.DapperPrimaryKey, CMCS.DapperDber.Attrs.DapperAutoPrimaryKey]
-        public Int32 Id { get; set; }
+        ///// <summary>
+        ///// 自增主键
+        ///// </summary>
+        //[CMCS.DapperDber.Attrs.DapperPrimaryKey, CMCS.DapperDber.Attrs.DapperAutoPrimaryKey]
+        //public Int32 Id { get; set; }
 
         /// <summary>
         /// 总体设备编号
@@ -25,6 +25,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard.Entities
         /// <summary>
         /// 详细设备编号
         /// </summary>
+        [CMCS.DapperDber.Attrs.DapperPrimaryKey]
         public String DeviceCode { get; set; }
 
         /// <summary>

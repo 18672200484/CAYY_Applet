@@ -218,7 +218,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
         public int SyncCYGCmd(Action<string, eOutputType> output)
         {
             int res = 0, resdetail = 0;
-            foreach (InfCYGControlCMD item in Dbers.GetInstance().SelfDber.Entities<InfCYGControlCMD>("where DataFlag=0 and MachineCode=:MachineCode", new { MachineCode = this.MachineCode }))
+            foreach (InfCYGControlCMD item in Dbers.GetInstance().SelfDber.Entities<InfCYGControlCMD>("where DataFlag=0"))
             {
                 foreach (InfCYGControlCMDDetail detail in item.CmdDetails)
                 {
@@ -271,50 +271,58 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
         public int SyncCYGResult(Action<string, eOutputType> output)
         {
             int res = 0, res3 = 0, res4 = 0;
-            foreach (Tb_PreAction item in this.EquDber.Entities<Tb_PreAction>("where DoneState=2 or DoneState=3 order by Sample_Id desc"))
+            foreach (Tb_PreAction item in this.EquDber.Entities<Tb_PreAction>("where ReadState=0 and (DoneState=2 or DoneState=3) order by I_Time desc"))
             {
-                InfCYGControlCMDDetail cygdetail = Dbers.GetInstance().SelfDber.Entity<InfCYGControlCMDDetail>("where MakeCode=:MakeCode and MachineCode=:MachineCode order by CreateDate desc", new { MakeCode = item.Sample_Id, MachineCode = KYMachineToData(item.MachineCode) });
+                InfCYGControlCMDDetail cygdetail = Dbers.GetInstance().SelfDber.Entity<InfCYGControlCMDDetail>("where MakeCode=:MakeCode and MachineCode=:MachineCode order by CREATIONTIME desc", new { MakeCode = item.Sample_Id, MachineCode = KYMachineToData(item.MachineCode) });
                 if (cygdetail == null) continue;
                 if (item.DoneState == 2)
                     cygdetail.ResultCode = eEquInfCmdResultCode.失败.ToString();
                 else if (item.DoneState == 3)
                     cygdetail.ResultCode = eEquInfCmdResultCode.成功.ToString();
                 cygdetail.Status = "1";
-                if (Dbers.GetInstance().SelfDber.Update(cygdetail) > 0)
-                    res++;
-                //给主表的status赋值  0 默认 1成功 2 失败
+                
 
+                //回写弃样结果
                 CmcsSampleClearDetail clear = Dbers.GetInstance().SelfDber.Entity<CmcsSampleClearDetail>(String.Format("where SampleCode={0}", item.Sample_Id));
                 if (clear != null)
                 {
                     if (item.DoneState==2)
                     {
-                        clear.DataFlag = 2;
+                        clear.DataFlag = 3;
                         if (Dbers.GetInstance().SelfDber.Update(clear) > 0)
                             res3++;
                     }
                     else if (item.DoneState == 3)
                     {
-                        clear.DataFlag = 3;
+                        clear.DataFlag =2;
                         if (Dbers.GetInstance().SelfDber.Update(clear) > 0)
                             res3++;
                     }
                 }
+
+                //回写取样结果
                 CmcsSampleTakeDetail take = Dbers.GetInstance().SelfDber.Entity<CmcsSampleTakeDetail>(String.Format("where SampleCode={0}", item.Sample_Id));
                 if (take != null)
                 {
                     if (item.DoneState == 2)
                     {
-                        take.DataFlag = 2;
+                        take.DataFlag = 3;
                         if (Dbers.GetInstance().SelfDber.Update(take) > 0)
                             res4++;
                     }
                     else if (item.DoneState == 3)
                     {
-                        take.DataFlag = 3;
+                        take.DataFlag = 2;
                         if (Dbers.GetInstance().SelfDber.Update(take) > 0)
                             res4++;
                     }
+                }
+
+                if (Dbers.GetInstance().SelfDber.Update(cygdetail) > 0)
+                {
+                    res++;
+                    item.ReadState = 1;
+                    this.EquDber.Update(item);
                 }
             }
             output(string.Format("同步存样柜命令结果:{0}条)", res), eOutputType.Normal);
@@ -336,7 +344,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
             int resi = 0;//新增
             bool returnresult = false;
 
-            foreach (Tb_Bolt item in this.EquDber.Entities<Tb_Bolt>("where STATUS=0"))
+            foreach (Tb_Bolt item in this.EquDber.Entities<Tb_Bolt>("where STATUS=0 or status is null"))
             {
                 InfCYGSamHistory infcygsamhistory = new InfCYGSamHistory();
                 InfCYGSam infcygsam = Dbers.GetInstance().SelfDber.Entity<InfCYGSam>(" where MachineCode=:MachineCode and CellIndex=:CellIndex and ColumnIndex=:ColumnIndex and AreaNumber=:AreaNumber", new { MachineCode = MachineCode, CellIndex = item.RowNo, ColumnIndex = item.ColumnNo, AreaNumber = item.RotateNo });
@@ -466,16 +474,15 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                 this.EquDber.Update(entity);
             }
 
-            //foreach (EquCYGSignal entity in this.EquDber.Entities<EquCYGSignal>())
-            //{
-            //    res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "机械手行走", entity.JXS_行走) ? 1 : 0;
-            //    res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "机械手升降", entity.JXS_升降) ? 1 : 0;
-            //    res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "机械手旋转", entity.JXS_旋转) ? 1 : 0;
-            //}
+            foreach (Tb_State entity in this.EquDber.Entities<Tb_State>())
+            {
+                res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, entity.DeviceName, entity.DeviceStatus.ToString()) ? 1 : 0;
+            }
 
-            int ready = 0, big = 0, middle=0, small = 0, bigCW = 624, smallCW = 416, TotalCW = 1040;
+            int ready = 0, big = 0, middle=0, small = 0, bigCW = 600, middleCW = 600, smallCW = 600, TotalCW = 1800;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "共有仓位", TotalCW.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "大瓶仓位", bigCW.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "中瓶仓位", middleCW.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "小瓶仓位", smallCW.ToString()) ? 1 : 0;
 
             IList<Tb_Bolt> bolts = this.EquDber.Entities<Tb_Bolt>(" where Bolt_State=1");
@@ -726,7 +733,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                         InfCYGControlCMD cmd = new InfCYGControlCMD();
                         cmd.Id = Guid.NewGuid().ToString();
                         cmd.Bill = entity.Id;
-                        cmd.OperPerson = entity.SendCmdpPle;
+                        cmd.OperPerson = entity.SendCmdPle;
                         cmd.OperType = "弃样";
                         cmd.UpdateTime = DateTime.Now;
                         cmd.DataFlag = 0;
@@ -759,7 +766,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                     }
                     else
                     {
-                        infCYGControlCMD.OperPerson = entity.SendCmdpPle;
+                        infCYGControlCMD.OperPerson = entity.SendCmdPle;
                         infCYGControlCMD.OperType = "弃样";
                         infCYGControlCMD.UpdateTime = DateTime.Now;
                         infCYGControlCMD.DataFlag = 0;
@@ -773,6 +780,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                                 InfCYGControlCMDDetail cmddetail = Dbers.GetInstance().SelfDber.Entity<InfCYGControlCMDDetail>(String.Format("where MakeCode='{0}'", detail.SampleCode));
                                 if (cmddetail == null)
                                 {
+                                    cmddetail = new InfCYGControlCMDDetail();
                                     cmddetail.CYGControlCMDId = infCYGControlCMD.Id;
                                     cmddetail.MachineCode = detail.MachineName;
                                     cmddetail.MakeCode = detail.SampleCode;
@@ -889,6 +897,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                                 InfCYGControlCMDDetail cmddetail = Dbers.GetInstance().SelfDber.Entity<InfCYGControlCMDDetail>(String.Format("where MakeCode='{0}'", detail.SampleCode));
                                 if (cmddetail == null)
                                 {
+                                    cmddetail = new InfCYGControlCMDDetail();
                                     cmddetail.CYGControlCMDId = infCYGControlCMD.Id;
                                     cmddetail.MachineCode = detail.MachineName;
                                     cmddetail.MakeCode = detail.SampleCode;

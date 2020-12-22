@@ -10,7 +10,7 @@ namespace CMCS.Common.Entities.AutoCupboard
     /// 自动存样柜-命令从表（一次性操作多个样瓶）
     /// </summary>
     [CMCS.DapperDber.Attrs.DapperBind("InfTBCYGCONTROLCMDDETAIL")]
-    public class InfCYGControlCMDDetail : EntityBase1
+    public class InfCYGControlCMDDetail : EntityBase
     {
         /// <summary>
         /// 设备编号
