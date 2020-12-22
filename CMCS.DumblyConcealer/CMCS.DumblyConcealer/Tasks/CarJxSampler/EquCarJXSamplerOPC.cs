@@ -79,8 +79,11 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
 					cmd.Add("汽车机械采样机.#1采样机." + "急停/复位", appRemoteControlCmd.CmdCode);
 					if (opcServere.WriteOPCItemValue(cmd))
+					{
 						// 更新执行结果
 						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
+						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "急停", appRemoteControlCmd.AppIdentifier + "急停执行成功");
+					}
 				}
 			}
 		}
@@ -100,8 +103,11 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
 					cmd.Add("汽车机械采样机.#2采样机." + "急停/复位", appRemoteControlCmd.CmdCode);
 					if (opcServere.WriteOPCItemValue(cmd))
+					{
 						// 更新执行结果
 						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
+						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "急停", appRemoteControlCmd.AppIdentifier + "急停执行成功");
+					}
 				}
 			}
 		}

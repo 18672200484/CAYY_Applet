@@ -18,6 +18,7 @@ using Xilium.CefGlue.WindowsForms;
 using CMCS.Monitor.Win.Utilities;
 using CMCS.Monitor.Win.CefGlue;
 using CMCS.Common.Entities.Fuel;
+using CMCS.Common.Entities.Inf;
 
 namespace CMCS.Monitor.Win.Frms
 {
@@ -182,6 +183,10 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("门禁_化验室进", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HomePage_1, "门禁_化验室进"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("门禁_集控室进", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HomePage_1, "门禁_集控室进"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("门禁_办公楼进", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HomePage_1, "门禁_办公楼进"), eHtmlDataItemType.svg_text));
+
+			//异常信息
+			List<InfEquInfHitch> infHitches = Dbers.GetInstance().SelfDber.TopEntities<InfEquInfHitch>(8, " order by HitchTime desc");
+			cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadHitchs(" + Newtonsoft.Json.JsonConvert.SerializeObject(infHitches.Select(a => new { machineCode=a.MachineCode, abnormalTime = a.HitchTime.Year < 2000 ? "" : a.HitchTime.ToString("yyyy-MM-dd HH:mm"), abnormalInfo = a.HitchDescribe })) + ");", "", 0);
 
 			// 添加更多...
 

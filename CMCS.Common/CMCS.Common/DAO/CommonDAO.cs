@@ -1194,6 +1194,17 @@ namespace CMCS.Common.DAO
 				return string.Format("{0}-{1}-{2}", prefix, dt.ToString("yyyyMMdd"), (Convert.ToInt16(entity.Batch.Replace(string.Format("{0}-{1}-", prefix, dt.ToString("yyyyMMdd")), "")) + 1).ToString().PadLeft(2, '0'));
 		}
 
+		/// <summary>
+		/// 根据采样码获取批次ID
+		/// </summary>
+		/// <param name="sampleCode"></param>
+		/// <returns></returns>
+		public string GetBatchIdBySampleCode(string sampleCode)
+		{
+			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc");
+			if (sampling != null) return sampling.InFactoryBatchId;
+			return string.Empty;
+		}
 		#endregion
 
 		#region 采制化三级编码

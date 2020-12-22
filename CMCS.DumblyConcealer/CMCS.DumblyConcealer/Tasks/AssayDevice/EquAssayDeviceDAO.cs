@@ -105,7 +105,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			int res = 0;
 
 			// .量热仪 型号：5E_KCⅢ
-			foreach (LRY_5E_KCⅢ entity in Dbers.GetInstance().SelfDber.Entities<LRY_5E_KCⅢ>("where Date_ex>= :TestTime and number_ex is not null", new { TestTime = DateTime.Now.AddDays(-days).Date }))
+			foreach (LRY_5E_KCⅢ entity in Dbers.GetInstance().SelfDber.Entities<LRY_5E_KCⅢ>("where TestTime>= :TestTime and MINGCHEN is not null", new { TestTime = DateTime.Now.AddDays(-days).Date }))
 			{
 				CmcsHeatAssay item = Dbers.GetInstance().SelfDber.Entity<CmcsHeatAssay>("where PKID=:PKID", new { PKID = entity.PKID });
 				if (item == null)
@@ -565,7 +565,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 			if (originaldata_rc.Where(a => a.AssayTarget == "Had").ToList().Count != 0)
 				Quality.Had = originaldata_rc.Where(a => a.AssayTarget == "Had").FirstOrDefault().OAssayCalValue;
 
-			Quality = getQuality(Quality);
+			//Quality = getQuality(Quality);
 
 			return Quality;
 
@@ -617,9 +617,10 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						OAssayCalValue = AssayCalcUtil.CalcAvgValue(heatAssay.Select(a => a.Qbad).ToList(), 3),
 						OAssayUser = item.AssayUser,
 						OAssayTime = item.AssayTime,
-						Isvalid = isvalid
+						Isvalid = isvalid,
 					});
 					item.IsEffective = 1;
+					item.DataFrom = "自动提取";
 				}
 				else if (heatAssay.Count == 4)
 					item.IsEffective = 2;
@@ -683,6 +684,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						Isvalid = isvalid
 					});
 					item.ISEFFECTIVE = 1;
+					item.DataFrom = "自动提取";
 				}
 				else if (stadAssay.Count == 4)
 					item.ISEFFECTIVE = 2;
@@ -747,6 +749,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						Isvalid = isvalid
 					});
 					item.IsEffective = 1;
+					item.DataFrom = "自动提取";
 				}
 				else if (mtAssay.Count == 4)
 					item.IsEffective = 2;
@@ -805,6 +808,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						Isvalid = isvalid
 					});
 					item.IsEffective = 1;
+					item.DataFrom = "自动提取";
 				}
 				else if (mtAssay.Count == 4)
 					item.IsEffective = 2;
@@ -898,6 +902,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						Isvalid = isvalid_Aad
 					});
 					item.IsEffective = 1;
+					item.DataFrom = "自动提取";
 				}
 				else if (madAssay.Count == 4)
 					item.IsEffective = 2;

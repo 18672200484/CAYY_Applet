@@ -49,6 +49,7 @@
 			this.tsslblVersion = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.tsmiOpenAutoMt = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -75,7 +76,8 @@
             this.tsmiOpenFrmAssayDevice,
             this.tsmiOpenFrmCarSampler,
             this.tsmiOpenFrmAutoMaker,
-            this.tsmiOpenTrainSampler});
+            this.tsmiOpenTrainSampler,
+            this.tsmiOpenAutoMt});
 			this.tsmiTasks.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
 			this.tsmiTasks.Name = "tsmiTasks";
 			this.tsmiTasks.Size = new System.Drawing.Size(59, 21);
@@ -194,9 +196,15 @@
 			// 
 			// timer1
 			// 
-			this.timer1.Enabled = true;
 			this.timer1.Interval = 2000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
+			// tsmiOpenAutoMt
+			// 
+			this.tsmiOpenAutoMt.Name = "tsmiOpenAutoMt";
+			this.tsmiOpenAutoMt.Size = new System.Drawing.Size(213, 22);
+			this.tsmiOpenAutoMt.Text = "09.在线全水测试仪接口";
+			this.tsmiOpenAutoMt.Click += new System.EventHandler(this.tsmiOpenAutoMt_Click);
 			// 
 			// MDIParent
 			// 
@@ -244,6 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenFrmCarSampler;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenFrmAutoMaker;
 		private System.Windows.Forms.ToolStripMenuItem tsmiOpenTrainSampler;
+		private System.Windows.Forms.ToolStripMenuItem tsmiOpenAutoMt;
 	}
 }
 

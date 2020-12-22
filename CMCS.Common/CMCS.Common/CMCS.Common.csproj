@@ -86,6 +86,9 @@
     <Compile Include="Entities\CarTransport\CmcsAutoTruck.cs" />
     <Compile Include="Entities\CarTransport\CmcsTransportPosition.cs" />
     <Compile Include="Entities\Sys\CmcsOperationLog.cs" />
+    <Compile Include="Enums\eEquInfBeltSamplerUnloadStatus.cs" />
+    <Compile Include="Enums\eEquInfMtSystemStatus.cs" />
+    <Compile Include="Enums\eEquInfBeltSamplerSystemStatus.cs" />
     <Compile Include="Views\View_RCSampling.cs" />
     <Compile Include="Entities\iEAA\CmcsUser.cs" />
     <Compile Include="Entities\Inf\InfBeltSamplePlanDetail.cs" />

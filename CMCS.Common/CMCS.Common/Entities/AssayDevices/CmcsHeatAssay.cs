@@ -76,5 +76,5 @@ namespace CMCS.Common.Entities.AssayDevices
         /// 数据来源
         /// </summary>
         public String DataFrom { get; set; }
-    }
+	}
 }

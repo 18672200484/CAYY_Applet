@@ -84,7 +84,11 @@ namespace CMCS.Common.Enums
 		采样编码,
 		矿发量,
 		采样时间,
-		采样点数
+		采样点数,
+		#endregion
+
+		#region 皮带采样机
+		卸料机状态,
 		#endregion
 	}
 }

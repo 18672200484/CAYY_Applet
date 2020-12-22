@@ -6,12 +6,12 @@ using System.Text;
 namespace CMCS.Common.Enums
 {
 	/// <summary>
-	/// 全自动制样机接口 - 命令代码
+	/// 第三方设备接口 - 全水测试仪系统状态
 	/// </summary>
-	public enum eEquInfMakerCmd
+	public enum eEquInfMtSystemStatus
 	{
-		开始制样 = 1,
-		停止制样 = 2,
-		继续制样 = 3,
+		就绪待机 = 0,
+		正在运行 = 1,
+		发生故障 = 9,
 	}
 }

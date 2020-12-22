@@ -121,6 +121,10 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("当前车号", commonDAO.GetSignalDataValue(machineCode, "当前车号"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("2道允许牵车", commonDAO.GetSignalDataValue(machineCode, "2道允许牵车"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("4道允许牵车", commonDAO.GetSignalDataValue(machineCode, "4道允许牵车"), eHtmlDataItemType.svg_text));
+
+			datas.Add(new HtmlDataItem("2道允许采样", commonDAO.GetSignalDataValue(machineCode, "2道允许采样"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("4道允许采样", commonDAO.GetSignalDataValue(machineCode, "4道允许采样"), eHtmlDataItemType.svg_text));
+
 			datas.Add(new HtmlDataItem("料斗", monitorCommon.ConvertStatusToColor(commonDAO.GetSignalDataValue(machineCode, "料斗")), eHtmlDataItemType.svg_color));
 			string point = commonDAO.GetSignalDataValue(machineCode, "实时坐标");
 			if (!string.IsNullOrEmpty(point))

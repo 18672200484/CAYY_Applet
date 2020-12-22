@@ -147,7 +147,9 @@ namespace CMCS.DumblyConcealer.Win
 				case 7:
 					//tsmiOpenTrainSampler_Click(null, null);
 					break;
-
+				case 8:
+					tsmiOpenAutoMt_Click(null, null);
+					break;
 			}
 
 			if (taskFormIndex == 8)
@@ -270,6 +272,21 @@ namespace CMCS.DumblyConcealer.Win
 		private void tsmiOpenTrainSampler_Click(object sender, EventArgs e)
 		{
 			TaskForm taskForm = new FrmTrainSampler();
+			if (HaveOpened(taskForm, this))
+			{
+				taskForm.MdiParent = this;
+				taskForm.Show();
+			}
+		}
+
+		/// <summary>
+		/// 全水测试仪
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void tsmiOpenAutoMt_Click(object sender, EventArgs e)
+		{
+			TaskForm taskForm = new FrmAutoMt();
 			if (HaveOpened(taskForm, this))
 			{
 				taskForm.MdiParent = this;

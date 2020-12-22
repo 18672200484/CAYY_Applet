@@ -83,6 +83,12 @@
     <Compile Include="DumblyTasks\FrmAssayDevice.designer.cs">
       <DependentUpon>FrmAssayDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="DumblyTasks\FrmAutoMt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAutoMt.designer.cs">
+      <DependentUpon>FrmAutoMt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DumblyTasks\FrmAutoMaker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmAssayDevice.resx">
       <DependentUpon>FrmAssayDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmAutoMt.resx">
+      <DependentUpon>FrmAutoMt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmAutoMaker.resx">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>

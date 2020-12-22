@@ -51,7 +51,17 @@ namespace CMCS.Common
 		/// <summary>
 		/// 接口类型 - 徐州赛摩皮带采样机
 		/// </summary>
-		public static string InterfaceType_PDCYJ = "徐州赛摩皮带采样机";
+		public static string InterfaceType_PDCYJ = "长沙开元皮带采样机";
+
+		/// <summary>
+		/// 设备编码 - 开元皮带采样机 #1
+		/// </summary>
+		public static string MachineCode_PDCYJKY_1 = "#1皮带采样机";
+
+		/// <summary>
+		/// 设备编码 - 开元皮带采样机 #2
+		/// </summary>
+		public static string MachineCode_PDCYJKY_2 = "#2皮带采样机";
 
 		#endregion
 
@@ -86,14 +96,19 @@ namespace CMCS.Common
 		/// </summary>
 		public static string MachineCode_QZDZYJ_1 = "#1全自动制样机";
 		/// <summary>
-		/// 设备编码 - 全自动制样机 #2
+		/// 设备编码 - 在线全水分析仪 
 		/// </summary>
-		public static string MachineCode_QZDZYJ_2 = "#2全自动制样机";
+		public static string MachineCode_ZXQS_1 = "#1在线全水分析仪";
 
 		/// <summary>
 		/// 接口类型 - 全自动制样机
 		/// </summary>
 		public static string InterfaceType_QZDZYJ = "全自动制样机";
+
+		/// <summary>
+		/// 开元设备编码 - 全自动制样机 #1 开元
+		/// </summary>
+		public static string MachineCode_QZDZYJ_KY_1 = "01";
 
 		#endregion
 

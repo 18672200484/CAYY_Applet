@@ -359,7 +359,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		{
 			if (transport != null && !string.IsNullOrEmpty(transport.InFactoryBatchId))
 			{
-				CmcsRCSampling sampling = Dbers.GetInstance().SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId and SamplingType!='人工采样' order by SamplingDate desc", new { InFactoryBatchId = transport.InFactoryBatchId });
+				CmcsRCSampling sampling = Dbers.GetInstance().SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId and SamplingType!='抽查采样' order by SamplingDate desc", new { InFactoryBatchId = transport.InFactoryBatchId });
 				if (sampling != null)
 				{
 					if (DcDbers.GetInstance().TurnCarWeighterMutualDber.Entity<CarInfoMutual>(" where  TurnCarNumber='" + trunNumber + "' and  CarNumber='" + transport.TransportNo + "' and DataFlag=0 ") == null)
@@ -414,7 +414,8 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 			if (oldtrain == null) return false;
 			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + oldtrain.Id + "' order by CreationTime desc");
 			if (entity == null) return false;
-
+			oldtrain.MachineCode = "0";
+			Dbers.GetInstance().SelfDber.Update(oldtrain);
 			return Dbers.GetInstance().SelfDber.Delete<CmcsTransportPosition>(entity.Id) > 0;
 		}
 

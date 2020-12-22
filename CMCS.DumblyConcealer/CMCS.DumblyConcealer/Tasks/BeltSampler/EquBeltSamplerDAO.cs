@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using CMCS.Common;
+using System.Linq;
+using System.Text;
 using CMCS.Common.DAO;
-using CMCS.Common.Entities.CarTransport;
-using CMCS.Common.Entities.Fuel;
-using CMCS.Common.Entities.Inf;
-using CMCS.Common.Enums;
+using CMCS.DumblyConcealer.Tasks.BeltSampler.Entities;
+using CMCS.Common;
 using CMCS.DapperDber.Dbs.SqlServerDb;
 using CMCS.DumblyConcealer.Enums;
-using CMCS.DumblyConcealer.Tasks.TrainJxSampler.Entities;
+using CMCS.Common.Entities.Inf;
+using CMCS.Common.Enums;
 
-namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
+namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 {
 	/// <summary>
-	/// 火车机械采样机接口业务
+	/// 皮带采样机接口业务
 	/// </summary>
-	public class EquTrainJXSamplerDAO
+	public class EquBeltSamplerDAO
 	{
 		/// <summary>
 		/// EquCarJXSamplerDAO
 		/// </summary>
 		/// <param name="machineCode">设备编码</param>
 		/// <param name="equDber">第三方数据库访问对象</param>
-		public EquTrainJXSamplerDAO(string machineCode, SqlServerDapperDber equDber)
+		public EquBeltSamplerDAO(string machineCode, SqlServerDapperDber equDber)
 		{
 			this.MachineCode = machineCode;
 			this.EquDber = equDber;
@@ -38,14 +38,36 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 		/// 设备编码
 		/// </summary>
 		string MachineCode;
+
+		#region 设备编号转换
 		/// <summary>
-		/// 是否处于故障状态
+		/// 设备编码转换为开元编码
 		/// </summary>
-		bool IsHitch = false;
+		/// <param name="machinecode"></param>
+		/// <returns></returns>
+		public string MachineCodeToKY(string machinecode)
+		{
+			if (machinecode == GlobalVars.MachineCode_PDCYJ_1)
+				return GlobalVars.MachineCode_PDCYJKY_1;
+			else if (machinecode == GlobalVars.MachineCode_PDCYJ_2)
+				return GlobalVars.MachineCode_PDCYJKY_2;
+			return string.Empty;
+		}
+
 		/// <summary>
-		/// 上一次上位机心跳值
+		/// 开元编码转换为设备编码
 		/// </summary>
-		string PrevHeartbeat = string.Empty;
+		/// <param name="machinecode"></param>
+		/// <returns></returns>
+		public string KYToMachineCode(string machinecode)
+		{
+			if (machinecode == GlobalVars.MachineCode_PDCYJKY_1)
+				return GlobalVars.MachineCode_PDCYJ_1;
+			else if (machinecode == GlobalVars.MachineCode_PDCYJKY_2)
+				return GlobalVars.MachineCode_PDCYJ_2;
+			return string.Empty;
+		}
+		#endregion
 
 		/// <summary>
 		/// 同步实时信号到集中管控
@@ -56,47 +78,24 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 		public int SyncSignal(Action<string, eOutputType> output)
 		{
 			int res = 0;
-
-			foreach (EquHCQSCYJSignal entity in this.EquDber.Entities<EquHCQSCYJSignal>())
+			foreach (KY_CYJ_P_STATE state in this.EquDber.Entities<KY_CYJ_P_STATE>())
 			{
-				entity.TagName = entity.TagName.Replace("系统", "设备状态");
-				if (entity.TagName == GlobalVars.EquHeartbeatName) continue;
-				if (entity.TagName == "实时坐标")
-				{
+				eEquInfBeltSamplerSystemStatus system = eEquInfBeltSamplerSystemStatus.等待采样;
+				Enum.TryParse<eEquInfBeltSamplerSystemStatus>(state.CY_State, out system);
+				res += commonDAO.SetSignalDataValue(KYToMachineCode(state.CYJ_Machine), eSignalDataName.设备状态.ToString(), system.ToString()) ? 1 : 0;
 
-				}
-				// 当心跳检测为故障时，则不更新系统状态，保持 eSampleSystemStatus.发生故障
-				if (entity.TagName == eSignalDataName.系统.ToString() && IsHitch) continue;
+				eEquInfBeltSamplerUnloadStatus systemXL = eEquInfBeltSamplerUnloadStatus.默认;
+				Enum.TryParse<eEquInfBeltSamplerSystemStatus>(state.XL_State, out system);
+				res += commonDAO.SetSignalDataValue(KYToMachineCode(state.CYJ_Machine), KYToMachineCode(state.CYJ_Machine) + eSignalDataName.卸料机状态.ToString(), systemXL.ToString()) ? 1 : 0;
+			}
 
-				res += commonDAO.SetSignalDataValue(this.MachineCode, entity.TagName, entity.TagValue) ? 1 : 0;
+			foreach (EquSignalData item in this.EquDber.Entities<EquSignalData>())
+			{
+
 			}
 			output(string.Format("同步实时信号 {0} 条", res), eOutputType.Normal);
 
 			return res;
-		}
-
-		/// <summary>
-		/// 获取上位机运行状态表 - 心跳值
-		/// 每隔30s读取该值，如果数值不变化则表示设备上位机出现故障
-		/// </summary>
-		/// <param name="MachineCode">设备编码</param>
-		public void SyncHeartbeatSignal()
-		{
-			EquHCQSCYJSignal pDCYSignal = this.EquDber.Entity<EquHCQSCYJSignal>("where TagName=@TagName", new { TagName = GlobalVars.EquHeartbeatName });
-			ChangeSystemHitchStatus((pDCYSignal != null && pDCYSignal.TagValue == this.PrevHeartbeat));
-
-			this.PrevHeartbeat = pDCYSignal != null ? pDCYSignal.TagValue : string.Empty;
-		}
-
-		/// <summary>
-		/// 改变系统状态值
-		/// </summary>
-		/// <param name="isHitch">是否故障</param> 
-		public void ChangeSystemHitchStatus(bool isHitch)
-		{
-			IsHitch = isHitch;
-
-			if (IsHitch) commonDAO.SetSignalDataValue(this.MachineCode, eSignalDataName.系统.ToString(), eEquInfSamplerSystemStatus.发生故障.ToString());
 		}
 
 		/// <summary>
@@ -108,26 +107,22 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 		{
 			int res = 0;
 
-			List<EquHCQSCYJBarrel> infpdcybarrels = this.EquDber.Entities<EquHCQSCYJBarrel>();
-			foreach (EquHCQSCYJBarrel entity in infpdcybarrels)
+			List<KY_CYJ_P_BARREL> infpdcybarrels = this.EquDber.Entities<KY_CYJ_P_BARREL>();
+			foreach (KY_CYJ_P_BARREL entity in infpdcybarrels)
 			{
 				if (commonDAO.SaveEquInfSampleBarrel(new InfEquInfSampleBarrel
 				{
-					BarrelNumber = entity.BarrelNumber,
-					BarrelStatus = entity.BarrelStatus.ToString(),
+					BarrelNumber = entity.Barrel_Code,
+					BarrelStatus = entity.Down_Full == 1 ? "已满" : "未满".ToString(),
 					MachineCode = this.MachineCode,
-					InFactoryBatchId = entity.InFactoryBatchId,
-					InterfaceType = commonDAO.GetMachineInterfaceTypeByCode(this.MachineCode),
-					IsCurrent = entity.IsCurrent,
-					SampleCode = entity.SampleCode,
-					SampleCount = entity.SampleCount,
-					UpdateTime = entity.UpdateTime,
-					BarrelType = "塑料桶",
+					InterfaceType = GlobalVars.InterfaceType_PDCYJ,
+					SampleCode = entity.Batch_Number,
+					InFactoryBatchId = commonDAO.GetBatchIdBySampleCode(entity.Barrel_Code),
+					SampleCount = entity.Down_Count,
+					UpdateTime = entity.End_Time,
+					BarrelType = "底卸式",
 				}))
 				{
-					entity.DataFlag = 1;
-					this.EquDber.Update(entity);
-
 					res++;
 				}
 			}
@@ -172,33 +167,23 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 			{
 				bool isSuccess = false;
 				// 需调整：命令中的水分等信息视接口而定
-				EquHCQSCYJPlan samplecmdEqu = this.EquDber.Get<EquHCQSCYJPlan>(entity.Id);
+				KY_CYJ_P_OUTRUN samplecmdEqu = this.EquDber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=:CY_Code and CYJ_Machine=:CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
 				if (samplecmdEqu == null)
 				{
-					isSuccess = this.EquDber.Insert(new EquHCQSCYJPlan
+					isSuccess = this.EquDber.Insert(new KY_CYJ_P_OUTRUN
 					{
-						// 保持相同的Id
-						Id = entity.Id,
-						SampleCode = entity.SampleCode,
-						MachineCode = this.MachineCode,
-						TrainCode = entity.TrainCode,
-						InFactoryBatchId = entity.InFactoryBatchId,
-						TicketWeight = entity.TicketWeight,
-						CarCount = entity.CarCount,
-						Mt = entity.Mt,
-						DataFlag = 0
+						CYJ_Machine = MachineCodeToKY(this.MachineCode),
+						CY_Code = entity.SampleCode,
+						Send_Time = DateTime.Now,
+						CY_Flag = 0
 					}) > 0;
 				}
 				else
 				{
-					samplecmdEqu.SampleCode = entity.SampleCode;
-					samplecmdEqu.MachineCode = this.MachineCode;
-					samplecmdEqu.TrainCode = entity.TrainCode;
-					samplecmdEqu.InFactoryBatchId = entity.InFactoryBatchId;
-					samplecmdEqu.TicketWeight = entity.TicketWeight;
-					samplecmdEqu.CarCount = entity.CarCount;
-					samplecmdEqu.Mt = entity.Mt;
-					samplecmdEqu.DataFlag = 0;
+					samplecmdEqu.CYJ_Machine = MachineCodeToKY(this.MachineCode);
+					samplecmdEqu.CY_Code = entity.SampleCode;
+					samplecmdEqu.Send_Time = DateTime.Now;
+					samplecmdEqu.CY_Flag = 0;
 					isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
 				}
 
@@ -378,12 +363,6 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 				InfBeltSampleCmd samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSampleCmd>(entity.Id);
 				if (samplecmdInf == null) continue;
 
-				//samplecmdInf.Point1 = entity.Point1;
-				//samplecmdInf.Point2 = entity.Point2;
-				//samplecmdInf.Point3 = entity.Point3;
-				//samplecmdInf.Point4 = entity.Point4;
-				//samplecmdInf.Point5 = entity.Point5;
-				//samplecmdInf.Point6 = entity.Point6;
 				if (entity.ResultCode.Contains("失败"))
 				{
 					samplecmdInf.ResultCode = eEquInfCmdResultCode.失败.ToString();

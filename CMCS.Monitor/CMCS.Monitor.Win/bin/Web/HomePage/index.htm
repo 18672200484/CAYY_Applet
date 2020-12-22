@@ -99,6 +99,16 @@
             }
         }
 
+        // 加载异常信息
+        function LoadHitchs(datas) {
+
+            for (var nums = 1; nums <= 8; nums++) {
+                getCanvas1().find("*[inkscape\\:label=machineCode" + nums + "]").html(datas[nums - 1].machineCode);
+                getCanvas1().find("*[inkscape\\:label=abnormalTime" + nums + "]").html(datas[nums - 1].abnormalTime);
+                getCanvas1().find("*[inkscape\\:label=abnormalInfo" + nums + "]").html(datas[nums - 1].abnormalInfo);
+            }
+        }
+
         // 测试
         function test1() {
 
