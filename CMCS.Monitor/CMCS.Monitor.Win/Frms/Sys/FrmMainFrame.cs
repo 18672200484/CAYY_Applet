@@ -266,6 +266,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		}
 
 		/// <summary>
+		/// 打开全自动制样机
+		/// </summary>
+		public void OpenAutoMaker()
+		{
+			//this.InvokeEx(() =>
+			//{
+			string uniqueKey = FrmAutoMaker.UniqueKey;
+
+			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			{
+				FrmAutoMaker frmTrainBeltSampler = new FrmAutoMaker();
+				FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
+			}
+			else
+				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			//});
+		}
+
+		/// <summary>
 		/// 打开视频预览
 		/// </summary>
 		/// <param name="param"></param>
@@ -445,12 +464,24 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		/// <param name="e"></param>
 		private void OpenTrainBeltSampler_Click(object sender, EventArgs e)
 		{
-			ButtonX button = (ButtonX)sender;
+			ButtonItem button = (ButtonItem)sender;
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenTrainBeltSampler();
 		}
 
+		/// <summary>
+		/// 全自动制样机
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenAutoMaker_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenAutoMaker();
+		}
 		/// <summary>
 		/// 操作日志
 		/// </summary>
@@ -653,6 +684,5 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Invoke(action);
 		}
 
-		
 	}
 }

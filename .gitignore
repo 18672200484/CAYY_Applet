@@ -587,3 +587,7 @@ Logs/
 /CMCS.Applets/CMCS.WeighCheck/CMCS.WeighCheck.SampleWeigh/bin/CMCS.CarTransport.dll
 /CMCS.Applets/CMCS.WeighCheck/CMCS.WeighCheck.SampleWeigh/bin/BasisPlatform.Forms.dll
 /CMCS.Applets/CMCS.WeighCheck/CMCS.WeighCheck.SampleWeigh/bin/WB.TOLEDO.IND231.dll
+/CMCS.CarTransport/CMCS.CarTransport.BeltSampler/bin/CMCS.CarTransport.BeltSampler.exe
+/CMCS.CarTransport/CMCS.CarTransport.BeltSampler/bin/CMCS.Common.dll
+/CMCS.CarTransport/CMCS.CarTransport.BeltSampler/bin/CMCS.CarTransport.dll
+/CMCS.Monitor/CMCS.Monitor/bin/CMCS.Monitor.dll

@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="../Resources/plugins/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
+    <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
+    <script type="text/javascript">
+
+        $(function ($) {
+
+
+        });
+
+        // 获取SVG jquery对象
+        function getSVGjQuery(id) {
+            return $(document.getElementById(id).getSVGDocument())
+        }
+
+        // 获取 svgCanvas1 SVG jquery对象
+        function getCanvas1() {
+            return getSVGjQuery("svgCanvas1");
+        }
+
+        // 请求数据 - 后台调用
+        function requestData(datas) {
+            for (var i = 0; i < datas.length; i++) {
+                dataHandler(datas[i]);
+            }
+        }
+
+        var angle = 1;
+        // 处理数据
+        function dataHandler(data) {
+            try {
+                // key_value
+                if (data.Type == 0)
+                    $("#" + data.Key).html(data.Value);
+                // json_data
+                else if (data.Type == 1) {
+                    if (data.Key == "采样机1_集样罐" || data.Key == "采样机2_集样罐") loadBarrels(data);
+                }
+                // svg_text
+                else if (data.Type == 2) {
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+                }
+                // svg_color
+                else if (data.Type == 3) {
+                    changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                }
+                else if (data.Type = 9999) {
+                    keys = data.Value;
+                }
+            } catch (e) {
+                //alert(e.Message);
+            }
+        }
+
+        // 测试 改变数据
+        function test1() {
+            dataHandler({ Key: "制样机_6mm缩分", Type: "9999", Value: "制样机_6mm破碎" });
+        }
+
+        // 测试 旋转
+        function testColor() {
+            dataHandler({ Key: "制样机_6mm缩分1", Type: "9999", Value: "制样机_一体机" });
+        }
+
+        // 旋转
+        var i = 1;
+        var keys = "";
+        window.setInterval(function () {
+
+            if (keys.indexOf("制样机_6mm破碎") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_6mm破碎]"), i + ",273.07,292.4");
+            if (keys.indexOf("制样机_6mm缩分1") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_6mm缩分1]"), i + ",429.74,292.4");
+            if (keys.indexOf("制样机_6mm缩分2") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_6mm缩分2]"), i + ",559.85,292.4");
+            if (keys.indexOf("制样机_3mm破碎") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_3mm破碎]"), i + ",697.75,292.4");
+            if (keys.indexOf("制样机_3mm缩分1") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_3mm缩分1]"), i + ",824.49,292.4");
+            if (keys.indexOf("制样机_3mm缩分2") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_3mm缩分2]"), i + ",949.63,292.4");
+            if (keys.indexOf("制样机_干燥") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_干燥]"), i + ",1077.63,292.4");
+            if (keys.indexOf("制样机_3mm缩分3") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_3mm缩分3]"), i + ",1215.66,292.4");
+            if (keys.indexOf("制样机_02mm破碎") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_02mm破碎]"), i + ",1344.5,292.4");
+            if (keys.indexOf("制样机_02mm缩分") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_02mm缩分]"), i + ",1486.5,292.4");
+
+            if (keys.indexOf("制样机_6mm缩分3") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_6mm缩分3]"), i + ",559,428.2");
+            if (keys.indexOf("制样机_6mm弃料") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_6mm弃料]"), i + ",697,428.2");
+            if (keys.indexOf("制样机_弃料清洗样") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_弃料清洗样]"), i + ",1076,428.2");
+            if (keys.indexOf("制样机_鼓风机") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_鼓风机]"), i + ",168,626");
+            if (keys.indexOf("制样机_一体机") >= 0)
+                changeScroll(getCanvas1().find("*[inkscape\\:label=制样机_一体机]"), i + ",1461,627");
+
+            i += 90;
+            if (i >= 360)
+                i = 0;
+        }, 100);
+
+        //加载出样信息
+        function LoadSampleInfo(datas) {
+            $("#sampletable").empty();
+            var table = $("<table class=\"SampleTable\" border=\"1\">");
+            table.appendTo($("#sampletable"));
+
+            if (datas.length > 3)
+                $("#sampletableTitle").css("width", "906px");
+            else
+                $("#sampletableTitle").css("width", "100%");
+
+            //创建表头
+            var trTitle = $("<tr class=\"trSampleTitle\"></tr>");
+            trTitle.appendTo(table);
+            var tdTitle = $("<td style=\"width: 240px;\">出样时间</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 168px;\">样品类型</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 168px;\">异常内容</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 169px;\">样重(g)</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 178px;\">状态</td>");
+            tdTitle.appendTo(trTitle);
+
+            for (var i = 0; i < datas.length; i++) {
+                //创建内容
+                var tr = $("<tr class=\"trSampleContent\"></tr>");
+                tr.appendTo(table);
+                var td = $("<td>" + datas[i].EndTime + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].YPType + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].BarrelCode + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].YPWeight + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].Status + "</td>");
+                td.appendTo(tr);
+            }
+            $("#sampletable").append("</table>");
+        }
+
+        // 加载异常信息
+        function LoadHitchs(datas) {
+            $("#createtable").empty();
+            var table = $("<table class=\"table\" border=\"1\">");
+            table.appendTo($("#createtable"));
+            //创建表头
+            var trTitle = $("<tr class=\"trTitle\"></tr>");
+            trTitle.appendTo(table);
+            var tdTitle = $("<td style=\"width: 180px;\">设备名称</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 140px;\">异常时间</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td>异常内容</td>");
+            tdTitle.appendTo(trTitle);
+
+            for (var i = 0; i < datas.length; i++) {
+                //创建内容
+                tr = $("<tr class=\"trContent\"></tr>");
+                tr.appendTo(table);
+                var td = $("<td>" + datas[i].MachineCode + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].HitchTime + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].HitchDescribe + "</td>");
+                td.appendTo(tr);
+            }
+            $("#createtable").append("</table>");
+        }
+
+        function ShowHitchs(param) {
+            var res = AutoMakerV8Cef.GetHitchs(param);
+            LoadHitchs(eval(res));
+            ShowLayerFrom("异常信息", $("#createtable"));
+        }
+
+        function ShowLayerFrom(strtitle, domObj) {
+            $.layer({
+                type: 1,
+                title: strtitle,
+                btns: 0,
+                area: ['800px', '420px'],
+                border: [1, 0.3, '#000'],
+                page: {
+                    dom: domObj
+                }, close: function (index) {
+                    // 层右上角关闭按钮的点击事件触发回调函数
+                    //alert("close");
+                }, end: function () {
+                    // 层被彻底关闭后执行的回调函数
+                }
+            });
+        }
+     
+    </script>
+    <style type="text/css">
+        html, body
+        {
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+            background-color: rgb(43, 47, 51);
+        }
+        
+        .div-root
+        {
+            position: relative;
+            margin: 0px auto;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+        .divMain
+        {
+            position: absolute;
+            top: 69px;
+            left: 596px;
+            width: 922px;
+            height: 139px;
+            overflow: hidden;
+            border: 1px solid #5C6065;
+        }
+        .button1
+        {
+            position: absolute;
+            width: 86px;
+            height: 23px;
+            font-family: 微软雅黑;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .button1:hover
+        {
+            background-color: #00CED1;
+            border-color: #00CED1;
+            color: White;
+        }
+        
+        /*异常table样式*/
+        .table
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        
+        .table td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 20px;
+            color: White;
+            height: 40px;
+        }
+        .trContent
+        {
+            text-align: center;
+            height: 30px;
+        }
+        
+        /*出样table样式*/
+        .SampleTable
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        .SampleTable td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trSampleTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 17px;
+            font-family: 微软雅黑;
+            color: White;
+            height: 36px;
+        }
+        .trSampleContent
+        {
+            text-align: center;
+            height: 34px;
+            color: White;
+        }
+    </style>
+</head>
+<body onselectstart="return false;">
+    <div class="div-root" id="divCanvas">
+        <div class="divMain" id="divMain">
+            <div id="sampletableTitle" style="position: absolute; width: 100%; height: 37px;
+                z-index: 999; top: 0px; left: 0px;">
+                <table class="SampleTable" border="1">
+                    <tr class="trSampleTitle">
+                        <td style="width: 240px;">
+                            出样时间
+                        </td>
+                        <td style="width: 168px;">
+                            样品类型
+                        </td>
+                        <td style="width: 168px;">
+                            样品编码
+                        </td>
+                        <td style="width: 169px;">
+                            样重(g)
+                        </td>
+                        <td style="width: 178px;">
+                            状态
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="sampletable" style="width: 100%; height: 100%; overflow: auto;">
+                <table class="SampleTable" border="1">
+                    <tr class="trSampleTitle">
+                        <td style="width: 240px;">
+                            出样时间
+                        </td>
+                        <td style="width: 168px;">
+                            样品类型
+                        </td>
+                        <td style="width: 168px;">
+                            样品编码
+                        </td>
+                        <td style="width: 169px;">
+                            样重(g)
+                        </td>
+                        <td style="width: 178px;">
+                            状态
+                        </td>
+                    </tr>
+                    <tr class="trSampleContent">
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr class="trSampleContent">
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr class="trSampleContent">
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td >
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="position: absolute; top: 35px; left: 1375px;">
+            <input type="button" value="查看异常信息" class="button1" onclick="ShowHitchs('#1')" />
+        </div>
+        <embed id="svgCanvas1" src="Resources/AutoMaker.svg" type="image/svg+xml" />
+    </div>
+    <div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
+    </div>
+</body>
+</html>
