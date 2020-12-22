@@ -45,7 +45,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
                 //if (CommonDAO.GetInstance().TestPing(autoCupboard_DAO.EquDber.Connection.DataSource))
                 //{
                     //#1存样柜
-                    autoCupboard_DAO.SyncCYGToBSInfo(this.rTxtOutputer.Output);
+                    ///autoCupboard_DAO.SyncCYGToBSInfo(this.rTxtOutputer.Output);
                     //autoCupboard_DAO.SyncCYGHistoryToBSInfo(this.rTxtOutputer.Output);
                     //autoCupboard_DAO.SyncClearCmdToCS(this.rTxtOutputer.Output);
                     //autoCupboard_DAO.SyncTakeCmdToCS(this.rTxtOutputer.Output);

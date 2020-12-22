@@ -72,6 +72,22 @@
     <Compile Include="Tasks\AssayDevice\Entities\SFY_WS_M700.cs" />
     <Compile Include="Tasks\AssayDevice\Entities\TQY_SDCHN435.cs" />
     <Compile Include="Tasks\AssayDevice\EquAssayDeviceDAO.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\EquCYGBillRecord.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\EquCYGCmd.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\EquCYGDataFlag.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\EquCYGError.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\EquCYGSample.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\EquCYGSignal.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\Tb_Action.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\tb_AlarmDataRecord.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\Tb_Bolt.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\Tb_PreAction.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\Tb_State.cs" />
+    <Compile Include="Tasks\AutoCupboard\Entities\Tb_Status.cs" />
+    <Compile Include="Tasks\AutoCupboard\Enums\eCmdCode.cs" />
+    <Compile Include="Tasks\AutoCupboard\Enums\eOperateCode.cs" />
+    <Compile Include="Tasks\AutoCupboard\Enums\eYPLX.cs" />
+    <Compile Include="Tasks\AutoCupboard\EquAutoCupboardDAO.cs" />
     <Compile Include="Tasks\AutoMt\Entities\YQ_Status.cs" />
     <Compile Include="Tasks\AutoMt\Entities\Tb_TestResult.cs" />
     <Compile Include="Tasks\AutoMt\EquAutoMtDAO.cs" />
@@ -144,6 +160,7 @@
   <ItemGroup>
     <Content Include="Tasks\AssayDevice\Entities\从化验设备取数后的中间库映射实体.txt" />
     <Content Include="Tasks\AssayDevice\化验数据同步接口.txt" />
+    <Content Include="Tasks\AutoCupboard\开元存样柜.txt" />
     <Content Include="Tasks\AutoMt\全自动制样机接口.txt" />
     <Content Include="Tasks\AutoMaker\全自动制样机接口.txt" />
     <Content Include="Tasks\BeltSampler\皮带采样机同步程序.txt" />
