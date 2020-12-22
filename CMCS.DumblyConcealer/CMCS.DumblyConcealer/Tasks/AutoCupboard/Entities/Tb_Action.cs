@@ -22,7 +22,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard.Entities
         /// <summary>
         /// 柜号
         /// </summary>
-        public Int32 MachineCode { get; set; }
+        public string MachineCode { get; set; }
 
         /// <summary>
         /// 瓶底RFID全码

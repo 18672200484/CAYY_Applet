@@ -45,37 +45,22 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
                 //if (CommonDAO.GetInstance().TestPing(autoCupboard_DAO.EquDber.Connection.DataSource))
                 //{
                     //#1存样柜
-                    ///autoCupboard_DAO.SyncCYGToBSInfo(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncCYGHistoryToBSInfo(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncClearCmdToCS(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncTakeCmdToCS(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGToBSInfo(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGHistoryToBSInfo(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncClearCmdToCS(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncTakeCmdToCS(this.rTxtOutputer.Output);
                     
-                    //autoCupboard_DAO.SyncCYGError(this.rTxtOutputer.Output);
-                    ///autoCupboard_DAO.SyncCYGInfo(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncCYGCmd(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncCYGResult(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncSignalDatal(this.rTxtOutputer.Output);
-                    //autoCupboard_DAO.SyncCYGRecord(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGError(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGInfo(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGCmd(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGResult(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncSignalDatal(this.rTxtOutputer.Output);
+                    autoCupboard_DAO.SyncCYGRecord(this.rTxtOutputer.Output);
                 //}
                 //else
                 //    rTxtOutputer.Output(autoCupboard_DAO.MachineCode + "网络不通", eOutputType.Warn);
             }, 5000, OutputError);
 
-            //this.taskSimpleScheduler.StartNewTask("同步上位机2运行状态", () =>
-            //{
-            //    EquAutoCupboardDAO autoCupboard_DAO2 = new EquAutoCupboardDAO(GlobalVars.MachineCode_CYG2, new SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("智能存样柜2接口连接字符串")));
-            //    if (CommonDAO.GetInstance().TestPing(autoCupboard_DAO2.EquDber.Connection.DataSource))
-            //    { //#2存样柜
-            //        autoCupboard_DAO2.SyncCYGError(this.rTxtOutputer.Output);
-            //        autoCupboard_DAO2.SyncCYGInfo(this.rTxtOutputer.Output);
-            //        autoCupboard_DAO2.SyncCYGCmd(this.rTxtOutputer.Output);
-            //        autoCupboard_DAO2.SyncCYGResult(this.rTxtOutputer.Output);
-            //        autoCupboard_DAO2.SyncSignalDatal(this.rTxtOutputer.Output);
-            //        autoCupboard_DAO2.SyncCYGRecord(this.rTxtOutputer.Output);
-            //    }
-            //    else
-            //        rTxtOutputer.Output(autoCupboard_DAO2.MachineCode + "网络不通", eOutputType.Warn);
-            //}, 5000, OutputError);
         }
 
         /// <summary>

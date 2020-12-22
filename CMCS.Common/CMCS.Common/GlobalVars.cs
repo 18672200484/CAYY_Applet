@@ -128,7 +128,7 @@ namespace CMCS.Common
 		/// <summary>
 		/// 开元设备编码 - 智能存样柜
 		/// </summary>
-		public static string MachineCode_CYG1_KY = "1";
+		public static string MachineCode_CYG1_KY = "ASS001";
 
 		/// <summary>
 		/// 开元设备编码 - 智能存样柜

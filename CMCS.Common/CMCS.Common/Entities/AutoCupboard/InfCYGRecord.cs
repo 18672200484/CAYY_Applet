@@ -10,7 +10,7 @@ namespace CMCS.Common.Entities.AutoCupboard
     /// 操作记录表
     /// </summary>
     [CMCS.DapperDber.Attrs.DapperBind("INFTBCYGRecord")]
-    public class InfCYGRecord : EntityBase1
+    public class InfCYGRecord : EntityBase
     {
         /// <summary>
         /// 设备编码

@@ -10,7 +10,7 @@ namespace CMCS.Common.Entities.AutoCupboard
     /// 自动存样柜-命令主表
     /// </summary>
     [CMCS.DapperDber.Attrs.DapperBind("InfTBCYGCONTROLCMD")]
-    public class InfCYGControlCMD : EntityBase1
+    public class InfCYGControlCMD : EntityBase
     {
         /// <summary>
         /// 存样柜命令编号
