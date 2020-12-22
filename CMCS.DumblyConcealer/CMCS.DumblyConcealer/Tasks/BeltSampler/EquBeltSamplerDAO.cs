@@ -130,312 +130,312 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			output(string.Format("同步集样罐记录 {0} 条", res), eOutputType.Normal);
 		}
 
-		/// <summary>
-		/// 同步故障信息到集中管控
-		/// </summary>
-		/// <param name="output"></param>
-		/// <returns></returns>
-		public void SyncQCJXCYJError(Action<string, eOutputType> output)
-		{
-			int res = 0;
+		///// <summary>
+		///// 同步故障信息到集中管控
+		///// </summary>
+		///// <param name="output"></param>
+		///// <returns></returns>
+		//public void SyncQCJXCYJError(Action<string, eOutputType> output)
+		//{
+		//	int res = 0;
 
-			foreach (EquHCQSCYJError entity in this.EquDber.Entities<EquHCQSCYJError>("where DataFlag=0"))
-			{
-				if (commonDAO.SaveEquInfHitch(this.MachineCode, entity.ErrorTime, "故障代码 " + entity.ErrorCode + "，" + entity.ErrorDescribe))
-				{
-					entity.DataFlag = 1;
-					this.EquDber.Update(entity);
+		//	foreach (EquHCQSCYJError entity in this.EquDber.Entities<EquHCQSCYJError>("where DataFlag=0"))
+		//	{
+		//		if (commonDAO.SaveEquInfHitch(this.MachineCode, entity.ErrorTime, "故障代码 " + entity.ErrorCode + "，" + entity.ErrorDescribe))
+		//		{
+		//			entity.DataFlag = 1;
+		//			this.EquDber.Update(entity);
 
-					res++;
-				}
-			}
+		//			res++;
+		//		}
+		//	}
 
-			output(string.Format("同步故障信息记录 {0} 条", res), eOutputType.Normal);
-		}
+		//	output(string.Format("同步故障信息记录 {0} 条", res), eOutputType.Normal);
+		//}
 
-		/// <summary>
-		/// 同步采样计划
-		/// </summary>
-		/// <param name="output"></param>
-		/// <param name="MachineCode">设备编码</param>
-		public void SyncSamplePlan(Action<string, eOutputType> output)
-		{
-			int res = 0;
+		///// <summary>
+		///// 同步采样计划
+		///// </summary>
+		///// <param name="output"></param>
+		///// <param name="MachineCode">设备编码</param>
+		//public void SyncSamplePlan(Action<string, eOutputType> output)
+		//{
+		//	int res = 0;
 
-			// 集中管控 > 第三方 
-			foreach (InfBeltSamplePlan entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSamplePlan(this.MachineCode))
-			{
-				bool isSuccess = false;
-				// 需调整：命令中的水分等信息视接口而定
-				KY_CYJ_P_OUTRUN samplecmdEqu = this.EquDber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=:CY_Code and CYJ_Machine=:CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
-				if (samplecmdEqu == null)
-				{
-					isSuccess = this.EquDber.Insert(new KY_CYJ_P_OUTRUN
-					{
-						CYJ_Machine = MachineCodeToKY(this.MachineCode),
-						CY_Code = entity.SampleCode,
-						Send_Time = DateTime.Now,
-						CY_Flag = 0
-					}) > 0;
-				}
-				else
-				{
-					samplecmdEqu.CYJ_Machine = MachineCodeToKY(this.MachineCode);
-					samplecmdEqu.CY_Code = entity.SampleCode;
-					samplecmdEqu.Send_Time = DateTime.Now;
-					samplecmdEqu.CY_Flag = 0;
-					isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
-				}
+		//	// 集中管控 > 第三方 
+		//	foreach (InfBeltSamplePlan entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSamplePlan(this.MachineCode))
+		//	{
+		//		bool isSuccess = false;
+		//		// 需调整：命令中的水分等信息视接口而定
+		//		KY_CYJ_P_OUTRUN samplecmdEqu = this.EquDber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=:CY_Code and CYJ_Machine=:CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
+		//		if (samplecmdEqu == null)
+		//		{
+		//			isSuccess = this.EquDber.Insert(new KY_CYJ_P_OUTRUN
+		//			{
+		//				CYJ_Machine = MachineCodeToKY(this.MachineCode),
+		//				CY_Code = entity.SampleCode,
+		//				Send_Time = DateTime.Now,
+		//				CY_Flag = 0
+		//			}) > 0;
+		//		}
+		//		else
+		//		{
+		//			samplecmdEqu.CYJ_Machine = MachineCodeToKY(this.MachineCode);
+		//			samplecmdEqu.CY_Code = entity.SampleCode;
+		//			samplecmdEqu.Send_Time = DateTime.Now;
+		//			samplecmdEqu.CY_Flag = 0;
+		//			isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
+		//		}
 
-				if (isSuccess)
-				{
-					entity.SyncFlag = 1;
-					Dbers.GetInstance().SelfDber.Update(entity);
+		//		if (isSuccess)
+		//		{
+		//			entity.SyncFlag = 1;
+		//			Dbers.GetInstance().SelfDber.Update(entity);
 
-					res++;
-				}
-			}
-			output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
-
-
-			res = 0;
-			// 第三方 > 集中管控
-			foreach (EquHCQSCYJPlan entity in this.EquDber.Entities<EquHCQSCYJPlan>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
-			{
-				InfBeltSamplePlan samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSamplePlan>(entity.Id);
-				if (samplecmdInf == null) continue;
-
-				//samplecmdInf.Point1 = entity.Point1;
-				//samplecmdInf.Point2 = entity.Point2;
-				//samplecmdInf.Point3 = entity.Point3;
-				//samplecmdInf.Point4 = entity.Point4;
-				//samplecmdInf.Point5 = entity.Point5;
-				//samplecmdInf.Point6 = entity.Point6;
-				samplecmdInf.StartTime = entity.StartTime;
-				samplecmdInf.EndTime = entity.EndTime;
-				samplecmdInf.SampleUser = entity.SampleUser;
-
-				if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
-				{
-					// 我方已读
-					entity.DataFlag = 3;
-					this.EquDber.Update(entity);
-
-					res++;
-				}
-			}
-			output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
-		}
-
-		/// <summary>
-		/// 同步采样计划明细
-		/// </summary>
-		/// <param name="output"></param>
-		/// <param name="MachineCode">设备编码</param>
-		public void SyncSamplePlanDetail(Action<string, eOutputType> output)
-		{
-			int res = 0;
-
-			// 集中管控 > 第三方 
-			foreach (InfBeltSamplePlanDetail entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSamplePlanDetail(this.MachineCode))
-			{
-				bool isSuccess = false;
-				EquHCQSCYJPlanDetail samplecmdEqu = this.EquDber.Get<EquHCQSCYJPlanDetail>(entity.Id);
-				if (samplecmdEqu == null)
-				{
-					isSuccess = this.EquDber.Insert(new EquHCQSCYJPlanDetail
-					{
-						// 保持相同的Id
-						Id = entity.Id,
-						PlanId = entity.PlanId,
-						MachineCode = this.MachineCode,
-						CarNumber = entity.CarNumber,
-						CarModel = entity.CarModel.Substring(0, 3),
-						CyCount = entity.CyCount,
-						OrderNumber = entity.OrderNumber,
-						DataFlag = 0
-					}) > 0;
-				}
-				else
-				{
-					samplecmdEqu.PlanId = entity.PlanId;
-					samplecmdEqu.MachineCode = this.MachineCode;
-					samplecmdEqu.CarNumber = entity.CarNumber;
-					samplecmdEqu.CarModel = entity.CarModel.Substring(0, 3);
-					samplecmdEqu.CyCount = entity.CyCount;
-					samplecmdEqu.OrderNumber = entity.OrderNumber;
-					//samplecmdEqu.DataFlag = 0;
-					isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
-				}
-
-				if (isSuccess)
-				{
-					entity.SyncFlag = 1;
-					Dbers.GetInstance().SelfDber.Update(entity);
-
-					res++;
-				}
-			}
-			output(string.Format("同步采样计划明细 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
+		//			res++;
+		//		}
+		//	}
+		//	output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
 
 
-			res = 0;
-			// 第三方 > 集中管控
-			foreach (EquHCQSCYJPlanDetail entity in this.EquDber.Entities<EquHCQSCYJPlanDetail>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
-			{
-				InfBeltSamplePlanDetail samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSamplePlanDetail>(entity.Id);
-				if (samplecmdInf == null) continue;
+		//	res = 0;
+		//	// 第三方 > 集中管控
+		//	foreach (EquHCQSCYJPlan entity in this.EquDber.Entities<EquHCQSCYJPlan>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
+		//	{
+		//		InfBeltSamplePlan samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSamplePlan>(entity.Id);
+		//		if (samplecmdInf == null) continue;
 
-				//samplecmdInf.Point1 = entity.Point1;
-				//samplecmdInf.Point2 = entity.Point2;
-				//samplecmdInf.Point3 = entity.Point3;
-				//samplecmdInf.Point4 = entity.Point4;
-				//samplecmdInf.Point5 = entity.Point5;
-				//samplecmdInf.Point6 = entity.Point6;
-				samplecmdInf.StartTime = entity.StartTime;
-				samplecmdInf.EndTime = entity.EndTime;
-				samplecmdInf.SampleUser = entity.SampleUser;
+		//		//samplecmdInf.Point1 = entity.Point1;
+		//		//samplecmdInf.Point2 = entity.Point2;
+		//		//samplecmdInf.Point3 = entity.Point3;
+		//		//samplecmdInf.Point4 = entity.Point4;
+		//		//samplecmdInf.Point5 = entity.Point5;
+		//		//samplecmdInf.Point6 = entity.Point6;
+		//		samplecmdInf.StartTime = entity.StartTime;
+		//		samplecmdInf.EndTime = entity.EndTime;
+		//		samplecmdInf.SampleUser = entity.SampleUser;
 
-				if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
-				{
-					// 我方已读
-					entity.DataFlag = 3;
-					this.EquDber.Update(entity);
+		//		if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
+		//		{
+		//			// 我方已读
+		//			entity.DataFlag = 3;
+		//			this.EquDber.Update(entity);
 
-					res++;
-				}
-			}
-			output(string.Format("同步采样计划明细 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
-		}
+		//			res++;
+		//		}
+		//	}
+		//	output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+		//}
 
-		/// <summary>
-		/// 同步采样命令
-		/// </summary>
-		/// <param name="output"></param>
-		/// <param name="MachineCode">设备编码</param>
-		public void SyncSampleCmd(Action<string, eOutputType> output)
-		{
-			int res = 0;
+		///// <summary>
+		///// 同步采样计划明细
+		///// </summary>
+		///// <param name="output"></param>
+		///// <param name="MachineCode">设备编码</param>
+		//public void SyncSamplePlanDetail(Action<string, eOutputType> output)
+		//{
+		//	int res = 0;
 
-			// 集中管控 > 第三方 
-			foreach (InfBeltSampleCmd entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSampleCmd(this.MachineCode))
-			{
-				bool isSuccess = false;
-				// 需调整：命令中的水分等信息视接口而定
-				EquHCQSCYJSampleCmd samplecmdEqu = this.EquDber.Get<EquHCQSCYJSampleCmd>(entity.Id);
-				if (samplecmdEqu == null)
-				{
-					isSuccess = this.EquDber.Insert(new EquHCQSCYJSampleCmd
-					{
-						// 保持相同的Id
-						Id = entity.Id,
-						SampleCode = entity.SampleCode,
-						CmdCode = entity.CmdCode,
-						ResultCode = entity.ResultCode,
-						MachineCode = this.MachineCode,
-						DataFlag = 0
-					}) > 0;
-				}
-				else
-				{
-					samplecmdEqu.SampleCode = entity.SampleCode;
-					samplecmdEqu.CmdCode = entity.CmdCode;
-					samplecmdEqu.ResultCode = entity.ResultCode;
-					samplecmdEqu.DataFlag = 0;
-					isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
-				}
+		//	// 集中管控 > 第三方 
+		//	foreach (InfBeltSamplePlanDetail entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSamplePlanDetail(this.MachineCode))
+		//	{
+		//		bool isSuccess = false;
+		//		EquHCQSCYJPlanDetail samplecmdEqu = this.EquDber.Get<EquHCQSCYJPlanDetail>(entity.Id);
+		//		if (samplecmdEqu == null)
+		//		{
+		//			isSuccess = this.EquDber.Insert(new EquHCQSCYJPlanDetail
+		//			{
+		//				// 保持相同的Id
+		//				Id = entity.Id,
+		//				PlanId = entity.PlanId,
+		//				MachineCode = this.MachineCode,
+		//				CarNumber = entity.CarNumber,
+		//				CarModel = entity.CarModel.Substring(0, 3),
+		//				CyCount = entity.CyCount,
+		//				OrderNumber = entity.OrderNumber,
+		//				DataFlag = 0
+		//			}) > 0;
+		//		}
+		//		else
+		//		{
+		//			samplecmdEqu.PlanId = entity.PlanId;
+		//			samplecmdEqu.MachineCode = this.MachineCode;
+		//			samplecmdEqu.CarNumber = entity.CarNumber;
+		//			samplecmdEqu.CarModel = entity.CarModel.Substring(0, 3);
+		//			samplecmdEqu.CyCount = entity.CyCount;
+		//			samplecmdEqu.OrderNumber = entity.OrderNumber;
+		//			//samplecmdEqu.DataFlag = 0;
+		//			isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
+		//		}
 
-				if (isSuccess)
-				{
-					entity.SyncFlag = 1;
-					Dbers.GetInstance().SelfDber.Update(entity);
+		//		if (isSuccess)
+		//		{
+		//			entity.SyncFlag = 1;
+		//			Dbers.GetInstance().SelfDber.Update(entity);
 
-					res++;
-				}
-			}
-			output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
+		//			res++;
+		//		}
+		//	}
+		//	output(string.Format("同步采样计划明细 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
 
 
-			res = 0;
-			// 第三方 > 集中管控
-			foreach (EquHCQSCYJSampleCmd entity in this.EquDber.Entities<EquHCQSCYJSampleCmd>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
-			{
-				InfBeltSampleCmd samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSampleCmd>(entity.Id);
-				if (samplecmdInf == null) continue;
+		//	res = 0;
+		//	// 第三方 > 集中管控
+		//	foreach (EquHCQSCYJPlanDetail entity in this.EquDber.Entities<EquHCQSCYJPlanDetail>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
+		//	{
+		//		InfBeltSamplePlanDetail samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSamplePlanDetail>(entity.Id);
+		//		if (samplecmdInf == null) continue;
 
-				if (entity.ResultCode.Contains("失败"))
-				{
-					samplecmdInf.ResultCode = eEquInfCmdResultCode.失败.ToString();
-					commonDAO.SaveEquInfHitch(this.MachineCode, DateTime.Now, entity.ResultCode);
-				}
-				else
-					samplecmdInf.ResultCode = entity.ResultCode;
+		//		//samplecmdInf.Point1 = entity.Point1;
+		//		//samplecmdInf.Point2 = entity.Point2;
+		//		//samplecmdInf.Point3 = entity.Point3;
+		//		//samplecmdInf.Point4 = entity.Point4;
+		//		//samplecmdInf.Point5 = entity.Point5;
+		//		//samplecmdInf.Point6 = entity.Point6;
+		//		samplecmdInf.StartTime = entity.StartTime;
+		//		samplecmdInf.EndTime = entity.EndTime;
+		//		samplecmdInf.SampleUser = entity.SampleUser;
 
-				if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
-				{
-					// 我方已读
-					entity.DataFlag = 3;
-					this.EquDber.Update(entity);
+		//		if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
+		//		{
+		//			// 我方已读
+		//			entity.DataFlag = 3;
+		//			this.EquDber.Update(entity);
 
-					res++;
-				}
-			}
-			output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
-		}
+		//			res++;
+		//		}
+		//	}
+		//	output(string.Format("同步采样计划明细 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+		//}
 
-		/// <summary>
-		/// 同步历史卸样结果
-		/// </summary>
-		/// <param name="output"></param>
-		/// <param name="MachineCode"></param>
-		public void SyncUnloadResult(Action<string, eOutputType> output)
-		{
-			int res = 0;
+		///// <summary>
+		///// 同步采样命令
+		///// </summary>
+		///// <param name="output"></param>
+		///// <param name="MachineCode">设备编码</param>
+		//public void SyncSampleCmd(Action<string, eOutputType> output)
+		//{
+		//	int res = 0;
 
-			res = 0;
-			// 第三方 > 集中管控
-			foreach (EquHCQSCYJUnloadResult entity in this.EquDber.Entities<EquHCQSCYJUnloadResult>("where DataFlag=0"))
-			{
-				InfBeltSamplerUnloadResult oldUnloadResult = commonDAO.SelfDber.Get<InfBeltSamplerUnloadResult>(entity.Id);
-				if (oldUnloadResult == null)
-				{
-					// 查找采样命令
-					EquHCQSCYJPlan qCJXCYJSampleCmd = this.EquDber.Entity<EquHCQSCYJPlan>("where SampleCode=@SampleCode", new { SampleCode = entity.SampleCode });
-					if (qCJXCYJSampleCmd != null)
-					{
-						// 生成采样桶记录
-						CmcsRCSampleBarrel rCSampleBarrel = new CmcsRCSampleBarrel()
-						{
-							BarrelCode = entity.BarrelCode,
-							BarrellingTime = entity.UnloadTime,
-							BarrelNumber = entity.BarrelNumber,
-							InFactoryBatchId = qCJXCYJSampleCmd.InFactoryBatchId,
-							SamplerName = this.MachineCode,
-							SampleType = eSamplingType.机械采样.ToString(),
-							SamplingId = entity.SamplingId
-						};
+		//	// 集中管控 > 第三方 
+		//	foreach (InfBeltSampleCmd entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSampleCmd(this.MachineCode))
+		//	{
+		//		bool isSuccess = false;
+		//		// 需调整：命令中的水分等信息视接口而定
+		//		EquHCQSCYJSampleCmd samplecmdEqu = this.EquDber.Get<EquHCQSCYJSampleCmd>(entity.Id);
+		//		if (samplecmdEqu == null)
+		//		{
+		//			isSuccess = this.EquDber.Insert(new EquHCQSCYJSampleCmd
+		//			{
+		//				// 保持相同的Id
+		//				Id = entity.Id,
+		//				SampleCode = entity.SampleCode,
+		//				CmdCode = entity.CmdCode,
+		//				ResultCode = entity.ResultCode,
+		//				MachineCode = this.MachineCode,
+		//				DataFlag = 0
+		//			}) > 0;
+		//		}
+		//		else
+		//		{
+		//			samplecmdEqu.SampleCode = entity.SampleCode;
+		//			samplecmdEqu.CmdCode = entity.CmdCode;
+		//			samplecmdEqu.ResultCode = entity.ResultCode;
+		//			samplecmdEqu.DataFlag = 0;
+		//			isSuccess = this.EquDber.Update(samplecmdEqu) > 0;
+		//		}
 
-						if (commonDAO.SelfDber.Insert(rCSampleBarrel) > 0)
-						{
-							if (commonDAO.SelfDber.Insert(new InfQCJXCYJUnloadResult
-							{
-								MachineCode = this.MachineCode,
-								SampleCode = entity.SampleCode,
-								BarrelCode = entity.BarrelCode,
-								UnloadTime = entity.UnloadTime,
-								DataFlag = entity.DataFlag
-							}) > 0)
-							{
-								entity.DataFlag = 1;
-								this.EquDber.Update(entity);
+		//		if (isSuccess)
+		//		{
+		//			entity.SyncFlag = 1;
+		//			Dbers.GetInstance().SelfDber.Update(entity);
 
-								res++;
-							}
-						}
-					}
-				}
-			}
-			output(string.Format("同步卸样结果 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
-		}
+		//			res++;
+		//		}
+		//	}
+		//	output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
+
+
+		//	res = 0;
+		//	// 第三方 > 集中管控
+		//	foreach (EquHCQSCYJSampleCmd entity in this.EquDber.Entities<EquHCQSCYJSampleCmd>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
+		//	{
+		//		InfBeltSampleCmd samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSampleCmd>(entity.Id);
+		//		if (samplecmdInf == null) continue;
+
+		//		if (entity.ResultCode.Contains("失败"))
+		//		{
+		//			samplecmdInf.ResultCode = eEquInfCmdResultCode.失败.ToString();
+		//			commonDAO.SaveEquInfHitch(this.MachineCode, DateTime.Now, entity.ResultCode);
+		//		}
+		//		else
+		//			samplecmdInf.ResultCode = entity.ResultCode;
+
+		//		if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
+		//		{
+		//			// 我方已读
+		//			entity.DataFlag = 3;
+		//			this.EquDber.Update(entity);
+
+		//			res++;
+		//		}
+		//	}
+		//	output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+		//}
+
+		///// <summary>
+		///// 同步历史卸样结果
+		///// </summary>
+		///// <param name="output"></param>
+		///// <param name="MachineCode"></param>
+		//public void SyncUnloadResult(Action<string, eOutputType> output)
+		//{
+		//	int res = 0;
+
+		//	res = 0;
+		//	// 第三方 > 集中管控
+		//	foreach (EquHCQSCYJUnloadResult entity in this.EquDber.Entities<EquHCQSCYJUnloadResult>("where DataFlag=0"))
+		//	{
+		//		InfBeltSamplerUnloadResult oldUnloadResult = commonDAO.SelfDber.Get<InfBeltSamplerUnloadResult>(entity.Id);
+		//		if (oldUnloadResult == null)
+		//		{
+		//			// 查找采样命令
+		//			EquHCQSCYJPlan qCJXCYJSampleCmd = this.EquDber.Entity<EquHCQSCYJPlan>("where SampleCode=@SampleCode", new { SampleCode = entity.SampleCode });
+		//			if (qCJXCYJSampleCmd != null)
+		//			{
+		//				// 生成采样桶记录
+		//				CmcsRCSampleBarrel rCSampleBarrel = new CmcsRCSampleBarrel()
+		//				{
+		//					BarrelCode = entity.BarrelCode,
+		//					BarrellingTime = entity.UnloadTime,
+		//					BarrelNumber = entity.BarrelNumber,
+		//					InFactoryBatchId = qCJXCYJSampleCmd.InFactoryBatchId,
+		//					SamplerName = this.MachineCode,
+		//					SampleType = eSamplingType.机械采样.ToString(),
+		//					SamplingId = entity.SamplingId
+		//				};
+
+		//				if (commonDAO.SelfDber.Insert(rCSampleBarrel) > 0)
+		//				{
+		//					if (commonDAO.SelfDber.Insert(new InfQCJXCYJUnloadResult
+		//					{
+		//						MachineCode = this.MachineCode,
+		//						SampleCode = entity.SampleCode,
+		//						BarrelCode = entity.BarrelCode,
+		//						UnloadTime = entity.UnloadTime,
+		//						DataFlag = entity.DataFlag
+		//					}) > 0)
+		//					{
+		//						entity.DataFlag = 1;
+		//						this.EquDber.Update(entity);
+
+		//						res++;
+		//					}
+		//				}
+		//			}
+		//		}
+		//	}
+		//	output(string.Format("同步卸样结果 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+		//}
 	}
 }
