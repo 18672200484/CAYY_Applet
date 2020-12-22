@@ -56,12 +56,12 @@ namespace CMCS.Common
 		/// <summary>
 		/// 设备编码 - 开元皮带采样机 #1
 		/// </summary>
-		public static string MachineCode_PDCYJKY_1 = "#1皮带采样机";
+		public static string MachineCode_PDCYJKY_1 = "PC01";
 
 		/// <summary>
 		/// 设备编码 - 开元皮带采样机 #2
 		/// </summary>
-		public static string MachineCode_PDCYJKY_2 = "#2皮带采样机";
+		public static string MachineCode_PDCYJKY_2 = "PC02";
 
 		#endregion
 

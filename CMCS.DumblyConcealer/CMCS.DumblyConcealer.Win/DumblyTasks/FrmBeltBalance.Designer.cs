@@ -1,6 +1,6 @@
 namespace CMCS.DumblyConcealer.Win.DumblyTasks
 {
-    partial class FrmBeltBalancer
+    partial class FrmBeltBalance
     {
         /// <summary>
         /// Required designer variable.

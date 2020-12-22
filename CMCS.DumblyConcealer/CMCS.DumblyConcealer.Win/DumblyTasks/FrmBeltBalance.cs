@@ -19,7 +19,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
     /// <summary>
     /// 皮带秤称重数据同步程序
     /// </summary>
-    public partial class FrmBeltBalancer : TaskForm
+    public partial class FrmBeltBalance : TaskForm
     {
         RTxtOutputer rTxtOutputer;
 
@@ -51,7 +51,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 
         DateTime prevHistoryTime2 = DateTime.Now.AddMinutes(-10);
 
-        public FrmBeltBalancer()
+        public FrmBeltBalance()
         {
             InitializeComponent();
         }
