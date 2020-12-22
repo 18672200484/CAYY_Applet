@@ -5,6 +5,7 @@ using System.Text;
 using CMCS.Common.Entities;
 using CMCS.CarTransport.BeltSampler.Frms.Sys;
 using CMCS.Common.Entities.iEAA;
+using CMCS.CarTransport.TrainSampler.Frms.Sys;
 
 namespace CMCS.CarTransport.BeltSampler.Core
 {

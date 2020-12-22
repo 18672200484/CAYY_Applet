@@ -124,6 +124,16 @@ namespace CMCS.Common
 		/// </summary>
 		public static string MachineCode_CYG2 = "#2智能存样柜";
 
+
+		/// <summary>
+		/// 开元设备编码 - 智能存样柜
+		/// </summary>
+		public static string MachineCode_CYG1_KY = "1";
+
+		/// <summary>
+		/// 开元设备编码 - 智能存样柜
+		/// </summary>
+		public static string MachineCode_CYG2_KY = "2";
 		#endregion
 
 		#region 气动传输

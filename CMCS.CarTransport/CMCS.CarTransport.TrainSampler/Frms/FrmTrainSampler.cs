@@ -179,7 +179,7 @@ namespace CMCS.CarTransport.TrainSampler.Frms
 		{
 			InitForm();
 
-			CreateSamplerButton();
+			//CreateSamplerButton();
 			BindRCSampling(superGridControl2);
 			// 触发第一个按钮
 		}

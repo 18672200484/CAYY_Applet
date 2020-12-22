@@ -448,7 +448,7 @@ namespace CMCS.TrainTipper.Frms
                 Log4Neter.Info(this.trainTipper.EquipmentName + " - 向[" + this.trainBeltSampler.EquipmentCode + "]发送[结束采样]命令，采样码：" + sampleCode);
 
                 string cmdId;
-                bool sendSuccess = beltSamplerDAO.SendSampleCmd(this.trainBeltSampler.EquipmentCode, eEquInfSamplerCmd.结束采样, sampleCode, out cmdId);
+                bool sendSuccess = beltSamplerDAO.SendSampleCmd(this.trainBeltSampler.EquipmentCode, eEquInfSamplerCmd.系统暂停, sampleCode, out cmdId);
 
                 ChangeUIEnabled(false);
                 OutputRunInfo("等待皮带采样机返回命令(结束采样)执行结果");
