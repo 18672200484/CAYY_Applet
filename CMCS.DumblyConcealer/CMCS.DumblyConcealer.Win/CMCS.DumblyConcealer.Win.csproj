@@ -101,11 +101,17 @@
     <Compile Include="DumblyTasks\FrmAutoMaker.designer.cs">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
     </Compile>
-    <Compile Include="DumblyTasks\FrmBeltBalancer.cs">
+    <Compile Include="DumblyTasks\FrmBeltBalance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DumblyTasks\FrmBeltBalancer.Designer.cs">
-      <DependentUpon>FrmBeltBalancer.cs</DependentUpon>
+    <Compile Include="DumblyTasks\FrmBeltBalance.Designer.cs">
+      <DependentUpon>FrmBeltBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmBeltSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmBeltSampler.designer.cs">
+      <DependentUpon>FrmBeltSampler.cs</DependentUpon>
     </Compile>
     <Compile Include="DumblyTasks\FrmTrainSampler.cs">
       <SubType>Form</SubType>
@@ -160,8 +166,11 @@
     <EmbeddedResource Include="DumblyTasks\FrmAutoMaker.resx">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmBeltBalancer.resx">
-      <DependentUpon>FrmBeltBalancer.cs</DependentUpon>
+    <EmbeddedResource Include="DumblyTasks\FrmBeltBalance.resx">
+      <DependentUpon>FrmBeltBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmBeltSampler.resx">
+      <DependentUpon>FrmBeltSampler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmTrainSampler.resx">
       <DependentUpon>FrmTrainSampler.cs</DependentUpon>

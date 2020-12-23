@@ -79,6 +79,14 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				if (value != null)
 				{
 					lblCurrSamplerName.Text = value.EquipmentName;
+					if (value.EquipmentName.Contains("皮带"))
+					{
+						cmbTrainCode.Visible = false;
+						label2.Visible = false;
+						btnChangeTrain.Visible = false;
+						btnSystemReset.Visible = false;
+						btnErrorReset.Visible = false;
+					}
 				}
 			}
 		}
@@ -197,7 +205,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 
 		#region 公共业务
 		/// <summary>
-		/// 读卡、车号识别任务
+		/// 
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -284,7 +292,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		private void btnSendSamplePlan_Click(object sender, EventArgs e)
 		{
 			if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
-			if (this.CurrentSampleMachine.EquipmentName != GlobalVars.MachineCode_HCJXCYJ_3 && cmbTrainCode.SelectedItem == null) { MessageBoxEx.Show("请先选择轨道编号"); return; }
+			if (this.CurrentSampleMachine.EquipmentName != GlobalVars.MachineCode_HCJXCYJ_3 && !this.CurrentSampleMachine.EquipmentName.Contains("皮带") && cmbTrainCode.SelectedItem == null) { MessageBoxEx.Show("请先选择轨道编号"); return; }
 			if (!SendSamplingPlan()) { MessageBoxEx.Show("采样计划发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
 			MessageBoxEx.Show("采样计划发送成功");
@@ -393,7 +401,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		/// <returns></returns>
 		bool SendSamplingPlan()
 		{
-			InfBeltSamplePlan oldBeltSamplePlan = Dbers.GetInstance().SelfDber.Entity<InfBeltSamplePlan>("where InFactoryBatchId=:InFactoryBatchId and SampleCode=:SampleCode", new { InFactoryBatchId = this.CurrentRCSampling.BatchId, SampleCode = this.CurrentRCSampling.SampleCode });
+			InfBeltSamplePlan oldBeltSamplePlan = Dbers.GetInstance().SelfDber.Entity<InfBeltSamplePlan>("where InFactoryBatchId=:InFactoryBatchId and SampleCode=:SampleCode and MachineCode=:MachineCode", new { InFactoryBatchId = this.CurrentRCSampling.BatchId, SampleCode = this.CurrentRCSampling.SampleCode, MachineCode = this.CurrentSampleMachine.EquipmentName });
 			if (oldBeltSamplePlan == null)
 			{
 				oldBeltSamplePlan = new InfBeltSamplePlan();
@@ -405,7 +413,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.Mt = 0;
 				oldBeltSamplePlan.TicketWeight = 0;
 				oldBeltSamplePlan.GatherType = "样桶";
-				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem).Text;
+				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem) != null ? ((ComboItem)cmbTrainCode.SelectedItem).Text : "";
 				oldBeltSamplePlan.SampleType = CurrentRCSampling.SamplingType;
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
@@ -438,7 +446,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.SampleType = CurrentRCSampling.SamplingType;
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
-				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem).Text;
+				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem) != null ? ((ComboItem)cmbTrainCode.SelectedItem).Text : "";
 				oldBeltSamplePlan.SyncFlag = 0;
 				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString())
 				{
@@ -642,6 +650,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		{
 			RadioButton rbtnSampler = sender as RadioButton;
 			this.CurrentSampleMachine = rbtnSampler.Tag as CmcsCMEquipment;
+
 			BindBeltSampleBarrel(superGridControl1, this.CurrentSampleMachine.EquipmentCode);
 		}
 
