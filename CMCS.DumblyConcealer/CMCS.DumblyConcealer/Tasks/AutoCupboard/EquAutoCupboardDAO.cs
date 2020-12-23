@@ -182,7 +182,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
         public int SyncCYGRecord(Action<string, eOutputType> output)
         {
             int res = 0;
-            foreach (Tb_Action item in this.EquDber.Entities<Tb_Action>("where STATUS=0 order by operate_time desc", new { MachineCode = DataToKYMachine(this.MachineCode) }))
+            foreach (Tb_Action item in this.EquDber.Entities<Tb_Action>("where STATUS=-1 order by operate_time desc", new { MachineCode = DataToKYMachine(this.MachineCode) }))
             {
                 eOperateCode eOperCode;
                 Enum.TryParse<eOperateCode>(item.Operate_Code.ToString(), false, out eOperCode);
@@ -479,26 +479,34 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                 res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, entity.DeviceName, entity.DeviceStatus.ToString()) ? 1 : 0;
             }
 
-            int ready = 0, big = 0, middle=0, small = 0, bigCW = 600, middleCW = 600, smallCW = 600, TotalCW = 1800;
+            int ready = 0, big = 0, middle=0, small = 0, bigCW = 0, middleCW = 0, smallCW = 0, TotalCW = 0;
+
+            IList<Tb_Bolt> bolts = this.EquDber.Entities<Tb_Bolt>();
+            if (bolts != null)
+            {
+                TotalCW = bolts.Count;
+                bigCW = bolts.Where(a => a.Big == 1).Count();
+                middleCW = bolts.Where(a => a.Middle == 1).Count();
+                smallCW = bolts.Where(a => a.Small == 1).Count();
+
+                ready = bolts.Where(a => a.Bolt_State == 1).Count();
+                big = bolts.Where(a => a.Big == 1&&a.Bolt_State==1).Count();
+                middle = bolts.Where(a => a.Middle == 1 && a.Bolt_State == 1).Count();
+                small = bolts.Where(a => a.Small == 1 && a.Bolt_State == 1).Count();
+            }
+
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "共有仓位", TotalCW.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "大瓶仓位", bigCW.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "中瓶仓位", middleCW.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "小瓶仓位", smallCW.ToString()) ? 1 : 0;
 
-            IList<Tb_Bolt> bolts = this.EquDber.Entities<Tb_Bolt>(" where Bolt_State=1");
-            if (bolts != null)
-            {
-                ready = bolts.Count;
-                big = bolts.Where(a => a.Big == 1).Count();
-                middle = bolts.Where(a => a.Middle == 1).Count();
-                small = bolts.Where(a => a.Small == 1).Count();
-            }
+           
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "已存仓位", ready.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "未存仓位", (TotalCW - ready).ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "大瓶已存仓位", big.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "中瓶已存仓位", middle.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "小瓶已存仓位", small.ToString()) ? 1 : 0;
-            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "存样率", (ready * 100 / TotalCW).ToString("f2") + "%") ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "存样率", ((decimal)ready * 100 / TotalCW).ToString("f2") + "%") ? 1 : 0;
 
             output(string.Format("智能存样柜-同步实时信号 {0} 条", res), eOutputType.Normal);
 
