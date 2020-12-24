@@ -60,6 +60,10 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 			{
 				lists.Add("汽车机械采样机.#1采样机." + tags[i]);
 			}
+			for (int i = 0; i < tags.Length; i++)
+			{
+				lists.Add("汽车机械采样机.#2采样机." + tags[i]);
+			}
 			opcServere = new OPCClientDAO(lists, "Kepware.KEPServerEX.V6", "127.0.0.1");
 			opcServere.InitOPC(output);
 		}

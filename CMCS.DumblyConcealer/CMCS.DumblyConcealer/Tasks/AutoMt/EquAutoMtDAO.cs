@@ -38,7 +38,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 		/// 设备编码
 		/// </summary>
 		public string MachineCode;
-		
+
 		/// <summary>
 		/// 上一次上位机心跳值
 		/// </summary>
@@ -126,7 +126,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 		{
 			int res = 0;
 
-			foreach (Tb_TestResult entity in this.EquDber.Entities<Tb_TestResult>("where SampleName is not null and EndingTime is not null and Moisture!=0 order by EndingTime asc"))
+			foreach (Tb_TestResult entity in this.EquDber.Entities<Tb_TestResult>("where SampleName is not null and EndingTime is not null and Moisture!=0 and endingtime >=getdate()-1 order by EndingTime asc"))
 			{
 				CmcsMoistureAssay moisture = commonDAO.SelfDber.Entity<CmcsMoistureAssay>("where PKID=:PKID", new
 				{
