@@ -34,7 +34,6 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			this.rTxtOutputer = new RTxtOutputer(rtxtOutput);
 
 			ExecuteAllTask();
-
 		}
 
 		/// <summary>

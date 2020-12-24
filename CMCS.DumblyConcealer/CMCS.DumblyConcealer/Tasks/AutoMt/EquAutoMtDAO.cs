@@ -38,10 +38,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 		/// 设备编码
 		/// </summary>
 		public string MachineCode;
-		/// <summary>
-		/// 是否处于故障状态
-		/// </summary>
-		bool IsHitch = false;
+		
 		/// <summary>
 		/// 上一次上位机心跳值
 		/// </summary>
@@ -92,6 +89,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 
 				output(string.Format("同步实时信号 {0} 条", res), eOutputType.Normal);
 			}
+
 			return res;
 		}
 

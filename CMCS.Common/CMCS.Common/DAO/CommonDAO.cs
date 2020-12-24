@@ -1201,7 +1201,7 @@ namespace CMCS.Common.DAO
 		/// <returns></returns>
 		public string GetBatchIdBySampleCode(string sampleCode)
 		{
-			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc");
+			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc", new { SampleCode = sampleCode });
 			if (sampling != null) return sampling.InFactoryBatchId;
 			return string.Empty;
 		}
@@ -1213,7 +1213,7 @@ namespace CMCS.Common.DAO
 		/// <returns></returns>
 		public int GetCarCountBySampleCode(string sampleCode)
 		{
-			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc");
+			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc", new { SampleCode = sampleCode });
 			if (sampling != null)
 			{
 				return SelfDber.Count<CmcsTransport>("where InFactoryBatchId=:InFactoryBatchId ", new { sampling.InFactoryBatchId });
@@ -1228,7 +1228,7 @@ namespace CMCS.Common.DAO
 		/// <returns></returns>
 		public int GetRealyCarCountBySampleCode(string sampleCode)
 		{
-			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc");
+			CmcsRCSampling sampling = SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode order by CreationTime desc", new { SampleCode = sampleCode });
 			if (sampling != null)
 			{
 				return SelfDber.Count<CmcsTransport>("where InFactoryBatchId=:InFactoryBatchId and GrossQty>0 and SkinQty>0", new { sampling.InFactoryBatchId });

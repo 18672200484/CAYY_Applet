@@ -92,11 +92,6 @@
     <Compile Include="Tasks\AutoMt\Entities\YQ_Status.cs" />
     <Compile Include="Tasks\AutoMt\Entities\Tb_TestResult.cs" />
     <Compile Include="Tasks\AutoMt\EquAutoMtDAO.cs" />
-    <Compile Include="Tasks\AutoMaker\Entities\EquQZDZYJCmd.cs" />
-    <Compile Include="Tasks\AutoMaker\Entities\EquQZDZYJDetail.cs" />
-    <Compile Include="Tasks\AutoMaker\Entities\EquQZDZYJError.cs" />
-    <Compile Include="Tasks\AutoMaker\Entities\EquQZDZYJPlan.cs" />
-    <Compile Include="Tasks\AutoMaker\Entities\EquQZDZYJSignal.cs" />
     <Compile Include="Tasks\AutoMaker\Entities\KY_Down_Opt.cs" />
     <Compile Include="Tasks\AutoMaker\Entities\ZY_Cmd_Tb.cs" />
     <Compile Include="Tasks\AutoMaker\Entities\ZY_Error_Tb.cs" />

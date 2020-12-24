@@ -166,7 +166,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 				{
 					interfacetb = new ZY_Interface_Tb();
 					interfacetb.SampleID = entity.MakeCode;
-					interfacetb.Type = 4;
+					interfacetb.Type = 1;
 					interfacetb.Size = 1;
 					interfacetb.Water = 1;
 					interfacetb.SendCommandTime = DateTime.Now;
@@ -239,19 +239,18 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 				if (rCMake.MakeDate < makeDetail.EndTime) rCMake.MakeDate = makeDetail.EndTime;
 				if (rCMake.MakeDate != rCMake.CreationTime && rCMake.MakeDate > makeDetail.StartTime)
 				{
-					rCMake.GetDate = DateTime.Now;
-					rCMake.MakeDate = makeDetail.StartTime;
+					rCMake.GetDate = makeDetail.StartTime;
+					rCMake.MakeDate = makeDetail.EndTime;
 				}
 				commonDAO.SelfDber.Update(rCMake);
 
-				CmcsRCMakeDetail rCMakeDetail = commonDAO.SelfDber.Entity<CmcsRCMakeDetail>("where MakeId=:MakeId and SampleType=:SampleType", new { MakeId = rCMake.Id, SampleType = makeDetail.SampleType });
+				CmcsRCMakeDetail rCMakeDetail = commonDAO.SelfDber.Entity<CmcsRCMakeDetail>("where MakeId=:MakeId and SampleType=:SampleType", new { MakeId = rCMake.Id, SampleType = MakeTypeChange(makeDetail.SampleType) });
 				if (rCMakeDetail != null)
 				{
 					rCMakeDetail.LastModificAtionTime = DateTime.Now;
 					rCMakeDetail.CreationTime = DateTime.Now;
 					rCMakeDetail.SampleWeight = makeDetail.SamepleWeight;
-					rCMakeDetail.SampleType = makeDetail.SampleType;//AutoMakerDAO.GetInstance().GetKYMakeType(makeDetail.SampleType.ToString());
-																	//rCMakeDetail.BarrelCode = makeDetail.PackCode;
+					rCMakeDetail.SampleType = MakeTypeChange(makeDetail.SampleType);
 					return commonDAO.SelfDber.Update(rCMakeDetail) > 0;
 				}
 				else
@@ -261,14 +260,39 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 					rCMakeDetail.LastModificAtionTime = DateTime.Now;
 					rCMakeDetail.CreationTime = DateTime.Now;
 					rCMakeDetail.SampleWeight = makeDetail.SamepleWeight;
-					rCMakeDetail.SampleType = makeDetail.SampleType;//AutoMakerDAO.GetInstance().GetKYMakeType(makeDetail.SampleType.ToString());
-					rCMakeDetail.BackupCode = makeDetail.PackCode;
+					rCMakeDetail.SampleType = MakeTypeChange(makeDetail.SampleType);//AutoMakerDAO.GetInstance().GetKYMakeType(makeDetail.SampleType.ToString());
+					rCMakeDetail.SampleCode = makeDetail.PackCode;
 					return commonDAO.SelfDber.Insert(rCMakeDetail) > 0;
 				}
 			}
 			else
 				return true;
 
+		}
+
+		/// <summary>
+		/// 制样类型转换
+		/// </summary>
+		/// <param name="type"></param>
+		/// <returns></returns>
+		private string MakeTypeChange(string type)
+		{
+			string makeType = "6mm全水样";
+			switch (type)
+			{
+				case "1":
+					makeType = "6mm全水样";
+					break;
+				case "3":
+					makeType = "3mm备查样";
+					break;
+				case "4":
+					makeType = "0.2mm分析样";
+					break;
+				default:
+					break;
+			}
+			return makeType;
 		}
 	}
 }
