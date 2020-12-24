@@ -34,7 +34,6 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			this.rTxtOutputer = new RTxtOutputer(rtxtOutput);
 
 			ExecuteAllTask();
-
 		}
 
 		/// <summary>
@@ -47,10 +46,9 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			EquAutoMtDAO autoMakerDAO1 = new EquAutoMtDAO(GlobalVars.MachineCode_ZXQS_1, new DapperDber.Dbs.SqlServerDb.SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#1在线全水分析接口连接字符串")));
 			taskSimpleScheduler.StartNewTask("在线全水测试-快速同步", () =>
 			{
-				//autoMakerDAO1.SyncError(this.rTxtOutputer.Output);
-				autoMakerDAO1.SyncSignal(this.rTxtOutputer.Output);
 				autoMakerDAO1.SyncMtResult(this.rTxtOutputer.Output);
-
+				autoMakerDAO1.SyncError(this.rTxtOutputer.Output);
+				autoMakerDAO1.SyncSignal(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
 			#endregion
 		}

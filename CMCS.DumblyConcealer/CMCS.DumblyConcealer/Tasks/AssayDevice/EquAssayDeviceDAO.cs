@@ -512,7 +512,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		/// <returns></returns>
 		public int AutoRCAssay(Action<string, eOutputType> output)
 		{
-			List<CmcsRCAssay> Assaylist = Dbers.GetInstance().SelfDber.Entities<CmcsRCAssay>("where CreationTime>:assayDate and WfName is null order by CreationTime asc", new { assayDate = DateTime.Now.AddDays(-2).Date });
+			List<CmcsRCAssay> Assaylist = Dbers.GetInstance().SelfDber.Entities<CmcsRCAssay>("where CreationTime>:assayDate and (WfName is null or WfName='开始') order by CreationTime asc", new { assayDate = DateTime.Now.AddDays(-2).Date });
 			int res = 0;
 			foreach (var item in Assaylist)
 			{
@@ -602,7 +602,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						heatAssay.RemoveAt(0);
 				}
 			}
-			else if (heatAssay.Count == 1 && heatAssay[0].SampleNumber.Contains("CYCC"))
+			else if (heatAssay.Count == 1 && heatAssay[0].SampleNumber.Contains("HYCC"))
 				isvalid = true;
 			foreach (CmcsHeatAssay item in heatAssay)
 			{
@@ -666,7 +666,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						stadAssay.RemoveAt(0);
 				}
 			}
-			else if (stadAssay.Count == 1 && stadAssay[0].SampleNumber.Contains("CYCC"))
+			else if (stadAssay.Count == 1 && stadAssay[0].SampleNumber.Contains("HYCC"))
 				isvalid = true;
 			foreach (CmcsSulfurAssay item in stadAssay)
 			{
@@ -731,7 +731,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 						mtAssay.RemoveAt(0);
 				}
 			}
-			else if (mtAssay.Count == 1 && mtAssay[0].SampleNumber.Contains("CYCC"))
+			else if (mtAssay.Count == 1 && mtAssay[0].SampleNumber.Contains("ZYCC"))
 				isvalid = true;
 			foreach (CmcsMoistureAssay item in mtAssay)
 			{
@@ -790,7 +790,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					mtAssay.Remove(mtAssay[0]);
 				}
 			}
-			else if (mtAssay.Count == 1 && mtAssay[0].SampleNumber.Contains("CYCC"))
+			else if (mtAssay.Count == 1 && (mtAssay[0].SampleNumber.Contains("ZYCC") || mtAssay[0].SampleNumber.Contains("RH")))
 				isvalid = true;
 			foreach (CmcsMoistureAssay item in mtAssay)
 			{
@@ -856,7 +856,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					madAssay.RemoveAt(0);
 				}
 			}
-			else if (madAssay.Count == 1 && madAssay[0].SampleNumber.Contains("CYCC"))
+			else if (madAssay.Count == 1 && madAssay[0].SampleNumber.Contains("HYCC"))
 			{
 				isvalid_Mad = true;
 				isvalid_Vad = true;

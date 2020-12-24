@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace CMCS.CarTransport.BeltSampler.Frms
 {
@@ -434,7 +435,10 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 						//samplePlanDetail.TrainCode = "#2";
 						Dbers.GetInstance().SelfDber.Insert<InfBeltSamplePlanDetail>(samplePlanDetail);
 					}
+					commonDAO.SetSignalDataValue(this.CurrentSampleMachine.EquipmentName, eSignalDataName.矿发量.ToString(), transports.Sum(a => a.TicketQty).ToString());
 				}
+				commonDAO.SetSignalDataValue(this.CurrentSampleMachine.EquipmentName, eSignalDataName.采样编码.ToString(), this.CurrentRCSampling.SampleCode);
+
 				return Dbers.GetInstance().SelfDber.Insert<InfBeltSamplePlan>(oldBeltSamplePlan) > 0;
 			}
 			else

@@ -103,7 +103,7 @@ namespace CMCS.Common
 		/// <summary>
 		/// 接口类型 - 全自动制样机
 		/// </summary>
-		public static string InterfaceType_QZDZYJ = "全自动制样机";
+		public static string InterfaceType_QZDZYJ = "长沙开元全自动制样机";
 
 		/// <summary>
 		/// 开元设备编码 - 全自动制样机 #1 开元

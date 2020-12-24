@@ -84,10 +84,10 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 				res += commonDAO.SetSignalDataValue(KYToMachineCode(state.CYJ_Machine), KYToMachineCode(state.CYJ_Machine) + eSignalDataName.卸料机状态.ToString(), systemXL.ToString()) ? 1 : 0;
 			}
 
-			foreach (EquSignalData item in DcDbers.GetInstance().BeltSampler_Dber.Entities<EquSignalData>())
-			{
+			//foreach (EquSignalData item in DcDbers.GetInstance().BeltSampler_Dber.Entities<EquSignalData>())
+			//{
 
-			}
+			//}
 			output(string.Format("同步实时信号 {0} 条", res), eOutputType.Normal);
 
 			return res;
@@ -162,7 +162,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			{
 				bool isSuccess = false;
 				// 需调整：命令中的水分等信息视接口而定
-				KY_CYJ_P_OUTRUN samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=:CY_Code and CYJ_Machine=:CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
+				KY_CYJ_P_OUTRUN samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=@CY_Code and CYJ_Machine=@CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
 				if (samplecmdEqu == null)
 				{
 					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(new KY_CYJ_P_OUTRUN
@@ -173,6 +173,18 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 						CY_Flag = 0,
 						Stop_Flag = 0
 					}) > 0;
+					KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code", new { CY_Code = entity.SampleCode });
+					if (turn == null)
+					{
+						turn = new KY_CYJ_P_TurnOver();
+						turn.Send_Time = DateTime.Now;
+						turn.CY_Code = entity.SampleCode;
+						turn.DataFlag = 0;
+						turn.Car_Count = commonDAO.GetCarCountBySampleCode(entity.SampleCode);
+						turn.Ready_Count = commonDAO.GetRealyCarCountBySampleCode(entity.SampleCode);
+						turn.IsDone = 0;
+						DcDbers.GetInstance().BeltSampler_Dber.Insert(turn);
+					}
 				}
 				else
 				{
@@ -222,6 +234,25 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			//	}
 			//}
 			//output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+		}
+
+		/// <summary>
+		/// 同步翻车信息
+		/// </summary>
+		/// <param name="output"></param>
+		public void SyncTurn(Action<string, eOutputType> output)
+		{
+			int res = 0;
+			foreach (KY_CYJ_P_TurnOver entity in DcDbers.GetInstance().BeltSampler_Dber.Entities<KY_CYJ_P_TurnOver>("where IsDone=0 order by Send_Time"))
+			{
+				entity.Ready_Count = commonDAO.GetRealyCarCountBySampleCode(entity.CY_Code);
+				if (entity.Ready_Count == entity.Car_Count)
+					entity.IsDone = 1;
+				entity.DataFlag = 0;
+				entity.Send_Time = DateTime.Now;
+				res += DcDbers.GetInstance().BeltSampler_Dber.Update(entity);
+			}
+			output(string.Format("同步翻车信息{0}条", res), eOutputType.Normal);
 		}
 
 		///// <summary>
