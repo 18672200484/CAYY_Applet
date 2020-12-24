@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="../Resources/plugins/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
+    <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
+    <script type="text/javascript">
+
+        var indexside = 0;
+        var indexpage = 0;
+        window.onload = function () {
+
+            getCanvas1().find("*[inkscape\\:label=故障信息],*[inkscape\\:label=传输记录]").css("cursor", "pointer");
+            
+
+            // 注册SVG元素脚本事件
+            getCanvas1().find("*[inkscape\\:label=故障信息]").bind("click", function () {
+                // 打开故障信息
+                AutoCupboardV8Cef.ShowHitchs();
+            });
+            getCanvas1().find("*[inkscape\\:label=传输记录]").bind("click", function () {
+                // 打开样瓶传输记录
+                AutoCupboardV8Cef.ShowCygControlCmd();
+            });
+
+        };
+        function initpage() {
+            dataHandler({ Key: "四向转换器1", Type: "9999", Value: 1 });
+            dataHandler({ Key: "四向转换器2", Type: "9999", Value: 1 });
+            dataHandler({ Key: "四向转换器3", Type: "9999", Value: 1 });
+            //dataHandler({ Key: "二项转换器", Type: "9998", Value: 2 });
+        }
+        function LoadSamInfo(datas) {
+            tempboxdatas = datas;
+            reloadBox();
+        }
+
+        // 改变颜色
+        // $element:SVG.jQuery对象
+        // color:颜色
+        function changeColorFill($elements, color) {
+            $elements.each(function () {
+                var $this = $(this);
+                $this.css({ "fill": color });
+            });
+        }
+
+        var tempboxdatas;
+        function reloadBox() {
+                        var g = 0 + 156 * (indexside * 5 + indexpage);
+//            var g = 0 ;
+            var temp = "";
+            for (var j = 0; j < 12; j++) {
+                for (var i = 0; i < 13; i++) {
+                    temp = temp += "<div style='position: absolute;width: 42px; height: 30px;left:" + 47 * (i + 1) + "px;top:" + (36.8 * j + 5) + "px; background-color: " + (tempboxdatas[g].Type == "1" ? "#00a551" : (tempboxdatas[g].Type == "0" ? "#ec1c24" : "#a6a8ab")) + ";'><label style='font-size: 12px; top:6px; left:3px;position: absolute;text-align: center;'>" + tempboxdatas[g++].Name + "</label></div>";
+                }
+            }
+            $('#sambox').html(temp);
+        }
+
+
+        // 获取SVG jquery对象
+        function getSVGjQuery(id) {
+            return $(document.getElementById(id).getSVGDocument())
+        }
+
+        // 获取 svgCanvas1 SVG jquery对象
+        function getCanvas1() {
+            return getSVGjQuery("svgCanvas1");
+        }
+
+        function StartTwinkle() {
+            alert(example.getDateTime());
+        }
+
+        function StartTwinkle2() {
+            alert(example.showConform("确定要删除？"));
+        }
+
+        // 请求数据 - 后台调用
+        function requestData(datas) {
+            for (var i = 0; i < datas.length; i++) {
+                dataHandler(datas[i]);
+            }
+        }
+
+        var angle = 1;
+        // 处理数据
+        function dataHandler(data) {
+
+            try {
+                // key_value
+                if (data.Type == 0)
+                    if (data.Tag == "ShowDiv")
+                        CaclDiv($("#" + data.Key), data.Value, data.Value2);
+                    else
+                        $("#" + data.Key).html(data.Value);
+                // json_data
+                else if (data.Type == 1) {
+                    if (data.Key == "采样机1_集样罐" || data.Key == "采样机2_集样罐") loadBarrels(data);
+                }
+                // svg_text
+                else if (data.Type == 2) {
+                    if (data.Key == "传输记录") {
+                       // Createtable(data.Value);
+                    }
+                    else {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+                    }
+                }
+                // svg_color
+                else if (data.Type == 3) {
+                    svgChangeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                }
+                // svg_blinkcolor
+                else if (data.Type == 7) {
+                    svgChangeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                    if (data.Value == "#FF0000" || data.Value == "Red") {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").animate({ opacity: 0.25 }, 1000);
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").animate({ opacity: 1 }, 1000);
+                    }
+                }
+                // svg_scroll
+                else if (data.Type == 9999) {
+                    if (data.Value == 1) {
+                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-15,1252.744,-556.003");
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_4]").hide();
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a1]"), "#ee4036");
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
+                    } if (data.Value == 2) {
+                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,200.04816,157.75323");
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_4]").hide();
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2]"), "#ee4036");
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a1],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
+                    } if (data.Value == 3) {
+                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "0,200.04816,157.75323");
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_3]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_4]").hide();
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a3]"), "#ee4036");
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2],*[inkscape\\:label=" + data.Key + "a1],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
+                    } if (data.Value == 4) {
+                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "12,200.04816,157.75323");
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_4]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_1]").hide();
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a4]"), "#ee4036");
+                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a1]"), "#ffffff");
+                    }
+                }
+                // svg_scroll
+                else if (data.Type == 9998) {
+                    if (data.Value == 1) {
+                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,477.5,219");
+                    } if (data.Value == 2) {
+                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "0,477.5,219");
+                    }
+                }
+                // svg_scroll
+                else if (data.Type == 9997) {
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").hide();
+                    keys = data.Value;
+                }
+            } catch (e) {
+                //alert(e.Message);
+            }
+        }
+
+        var newtimes = new Array("自动存查样管理系统", "化验室", "弃样工作站", "制样机1");
+        // 测试
+        var tempnums = 0;
+        var tempstrs = "";
+        function test() {
+
+            getCanvas1().find("*[inkscape\\:label=Code1]").html("111");
+
+            changeColor1(getCanvas1().find("*[inkscape\\:label=Code1]"), "#ee4036");
+        }
+
+        // 测试 改变颜色
+        function testColor() {
+            //dataHandler({ Key: "风机", Type: "3", Value: "Red" });
+        }
+
+        var i = 0;
+        var j = 0;
+        window.setInterval(function () {
+            if (keys.indexOf("风机正转") >= 0)
+                $("#气动鼓风机").css("transform", "rotate(" + j + "deg)");
+            if (keys.indexOf("风机反转") >= 0)
+                $("#气动鼓风机").css("transform", "rotate(" + i + "deg)");
+
+            i += 120;
+            if (i >= 360)
+                i = 0;
+
+            j -= 120;
+            if (j <= 0)
+                j = 360;
+
+        }, 100);
+
+        var keys = "";
+
+        //显示div存样信息
+        function CaclDiv(divObj, exist, pass) {
+
+            divObj.children().eq(0).css("height", (224 - pass - exist) * divObj.height() / 224);
+            divObj.children().eq(1).css("height", pass * divObj.height() / 224);
+            divObj.children().eq(2).css("height", exist * divObj.height() / 224);
+        }
+
+        //加载样品传输信息
+        function LoadSampleInfo(datas) {
+            getCanvas1().find("*[inkscape\\:label=time]").html("传输时间");
+            getCanvas1().find("*[inkscape\\:label=code]").html("样品编码");
+            getCanvas1().find("*[inkscape\\:label=type]").html("样品类型");
+            getCanvas1().find("*[inkscape\\:label=status]").html("传输状态");
+            for (var nums = 1; nums <= 6; nums++) {
+                getCanvas1().find("*[inkscape\\:label=UpdateTime" + nums + "]").html(datas[nums - 1].UpdateTime);
+                getCanvas1().find("*[inkscape\\:label=Code" + nums + "]").html(datas[nums - 1].Code);
+                getCanvas1().find("*[inkscape\\:label=SamType" + nums + "]").html(datas[nums - 1].SamType);
+                getCanvas1().find("*[inkscape\\:label=Status" + nums + "]").html(datas[nums - 1].Status);
+            }
+        }
+
+        // 加载异常信息
+        function LoadHitchs(datas) {
+            getCanvas1().find("*[inkscape\\:label=time]").html("异常时间");
+            getCanvas1().find("*[inkscape\\:label=code]").html("异常描述");
+            getCanvas1().find("*[inkscape\\:label=type]").html("设备名称");
+            getCanvas1().find("*[inkscape\\:label=status]").html("设备编码");
+            for (var nums = 1; nums <= 6; nums++) {
+                getCanvas1().find("*[inkscape\\:label=UpdateTime" + nums + "]").html(datas[nums - 1].UpdateTime);
+                getCanvas1().find("*[inkscape\\:label=Code" + nums + "]").html(datas[nums - 1].Code);
+                getCanvas1().find("*[inkscape\\:label=SamType" + nums + "]").html(datas[nums - 1].SamType);
+                getCanvas1().find("*[inkscape\\:label=Status" + nums + "]").html(datas[nums - 1].Status);
+            }
+        }
+
+        //显示异常信息
+        function ShowHitchs(param) {
+            var res = AutoCupboardV8Cef.GetHitchs(param);
+            LoadHitchs(eval(res));
+            ShowLayerFrom("异常信息", $("#createtable"));
+        }
+
+        function ShowLayerFrom(strtitle, domObj) {
+            $.layer({
+                type: 1,
+                title: strtitle,
+                btns: 0,
+                area: ['800px', '420px'],
+                border: [1, 0.3, '#000'],
+                page: {
+                    dom: domObj
+                }, close: function (index) {
+                    // 层右上角关闭按钮的点击事件触发回调函数
+                    //alert("close");
+                }, end: function () {
+                    // 层被彻底关闭后执行的回调函数
+                }
+            });
+        }
+     
+    </script>
+    <style type="text/css">
+        html, body
+        {
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+            background-color: rgb(0, 0, 0);
+        }
+        .div-root
+        {
+            position: relative;
+            margin: 0px auto;
+            width: 1910px;
+            height: 920px;
+        }
+        .divMain
+        {
+            position: absolute;
+            top: 455px;
+            left: 950px;
+            width: 583px;
+            height: 241px;
+            overflow: hidden;
+            border: 1px solid #5C6065;
+        }
+        .button1
+        {
+            position: absolute;
+            width: 70px;
+            height: 23px;
+            font-family: 微软雅黑;
+            font-size: 14px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        
+        .button1:hover
+        {
+            background-color: #00CED1;
+            border-color: #00CED1;
+            color: White;
+        }
+        
+        /*异常table样式*/
+        .table
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        
+        .table td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 20px;
+            color: White;
+            height: 40px;
+        }
+        .trContent
+        {
+            text-align: center;
+            height: 30px;
+        }
+        
+        /*出样table样式*/
+        .SampleTable
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        .SampleTable td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trSampleTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 17px;
+            font-family: 微软雅黑;
+            color: White;
+            height: 36px;
+        }
+        .trSampleContent
+        {
+            text-align: center;
+            height: 34px;
+            color: White;
+        }
+    </style>
+</head>
+<body onload="initpage()" style="background-color: #231F20;" onselectstart="return false;">
+    <div class="div-root" id="divCanvas">
+        <div id="sambox" style="width: 668px; height: 450px; position: absolute; top: 400px;
+            left: 77px;">
+        </div>
+        <img id="气动鼓风机" src="Resources/g3516.png" style="position: absolute; top: 608px; left: 76px; width: 44px;height: 44px;" />
+
+        <embed id="svgCanvas1" src="Resources/AutoCupboardPneumaticTransfer.svg" type="image/svg+xml" />
+    </div>
+    <div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
+    </div>
+    <input type="text" id="displayvalue" value="123" style="display: none;" />
+</body>
+</html>

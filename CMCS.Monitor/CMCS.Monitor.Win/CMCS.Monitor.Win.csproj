@@ -109,6 +109,12 @@
     <Compile Include="Frms\FrmAssayManage.Designer.cs">
       <DependentUpon>FrmAssayManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmAutoCupboardPneumaticTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmAutoCupboardPneumaticTransfer.designer.cs">
+      <DependentUpon>FrmAutoCupboardPneumaticTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\FrmAutoMaker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="Frms\FrmAssayManage.resx">
       <DependentUpon>FrmAssayManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmAutoCupboardPneumaticTransfer.resx">
+      <DependentUpon>FrmAutoCupboardPneumaticTransfer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmAutoMaker.resx">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +340,11 @@
     <Content Include="bin\update.xml" />
     <Content Include="bin\Web\AssayManage\index.htm" />
     <Content Include="bin\Web\AssayManage\Resources\AssayManage.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\index.htm" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer20200820.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\g3516.png" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\js\register.js" />
     <Content Include="bin\Web\AutoMaker\index.htm" />
     <Content Include="bin\Web\AutoMaker\Resources\images\g3886.png" />
     <Content Include="bin\Web\AutoMaker\Resources\js\register.js" />

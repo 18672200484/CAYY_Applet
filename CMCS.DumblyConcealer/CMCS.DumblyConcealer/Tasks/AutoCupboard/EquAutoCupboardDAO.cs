@@ -344,7 +344,8 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
             int resi = 0;//新增
             bool returnresult = false;
 
-            foreach (Tb_Bolt item in this.EquDber.Entities<Tb_Bolt>("where STATUS=0 or status is null"))
+            //foreach (Tb_Bolt item in this.EquDber.Entities<Tb_Bolt>("where STATUS=0 or status is null"))
+            foreach (Tb_Bolt item in this.EquDber.Entities<Tb_Bolt>())
             {
                 InfCYGSamHistory infcygsamhistory = new InfCYGSamHistory();
                 InfCYGSam infcygsam = Dbers.GetInstance().SelfDber.Entity<InfCYGSam>(" where MachineCode=:MachineCode and CellIndex=:CellIndex and ColumnIndex=:ColumnIndex and AreaNumber=:AreaNumber", new { MachineCode = MachineCode, CellIndex = item.RowNo, ColumnIndex = item.ColumnNo, AreaNumber = item.RotateNo });
@@ -354,11 +355,12 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                     infcygsam = new InfCYGSam();
                     infcygsam.UpdateTime = item.Date;
                     infcygsam.Code = item.Sample_Id;
-                    infcygsam.SamType = item.Big == 1 ? "大瓶" :item.Middle==1?"中瓶": "小瓶";
+                    infcygsam.SamType = item.Big == 1 ? "大瓶" : item.Middle == 1 ? "中瓶" : "小瓶";
                     infcygsam.CellIndex = item.RowNo;
                     infcygsam.ColumnIndex = item.ColumnNo;
                     infcygsam.AreaNumber = item.RotateNo;
                     infcygsam.MachineCode = MachineCode;
+                    infcygsam.DataFlag = 0;
                     if (!String.IsNullOrEmpty(item.Sample_Id)) { infcygsam.IsNew = 1; } else { infcygsam.IsNew = 0; }
                     if (Dbers.GetInstance().SelfDber.Insert(infcygsam) > 0)
                     {
@@ -418,6 +420,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                     infcygsam.ColumnIndex = item.ColumnNo;
                     infcygsam.AreaNumber = item.RotateNo;
                     infcygsam.MachineCode = MachineCode;
+                    infcygsam.DataFlag = 0;
                     if (!String.IsNullOrEmpty(item.Sample_Id)) { infcygsam.IsNew = 1; } else { infcygsam.IsNew = 0; }
                     if (Dbers.GetInstance().SelfDber.Update(infcygsam) > 0)
                     {

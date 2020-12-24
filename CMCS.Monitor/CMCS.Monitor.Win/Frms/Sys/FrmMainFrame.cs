@@ -318,6 +318,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			else
 				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
 		}
+
+		/// <summary>
+		/// 打开智能存样柜与气动传输监控
+		/// </summary>
+		public void OpenAutoCupboard()
+		{
+			this.Invoke((Action)(() =>
+			{
+				string uniqueKey = FrmAutoCupboardPneumaticTransfer.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmAutoCupboardPneumaticTransfer frm = new FrmAutoCupboardPneumaticTransfer();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			}));
+		}
 		#endregion
 
 		/// <summary>
@@ -493,6 +512,19 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenOperationLogs();
+		}
+
+		/// <summary>
+		/// 打开气动传输存样柜监控
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenAutoCupboard_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenAutoCupboard();
 		}
 		#endregion
 
@@ -684,5 +716,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Invoke(action);
 		}
 
+		
 	}
 }
