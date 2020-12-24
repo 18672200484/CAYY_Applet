@@ -88,6 +88,7 @@
     <Compile Include="Tasks\AutoCupboard\Enums\eOperateCode.cs" />
     <Compile Include="Tasks\AutoCupboard\Enums\eYPLX.cs" />
     <Compile Include="Tasks\AutoCupboard\EquAutoCupboardDAO.cs" />
+    <Compile Include="Tasks\AutoMt\Entities\TB_YQ_ERRORCODE.cs" />
     <Compile Include="Tasks\AutoMt\Entities\YQ_Status.cs" />
     <Compile Include="Tasks\AutoMt\Entities\Tb_TestResult.cs" />
     <Compile Include="Tasks\AutoMt\EquAutoMtDAO.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Tasks\AutoMaker\EquAutoMakerDAO.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquSignalData.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquUnloadResult.cs" />
+    <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_TurnOver.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_BARREL.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_STATE.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_OUTRUN.cs" />

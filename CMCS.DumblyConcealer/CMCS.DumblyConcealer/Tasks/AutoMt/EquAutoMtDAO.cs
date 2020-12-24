@@ -104,14 +104,15 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 		{
 			int res = 0;
 
-			foreach (var entity in this.EquDber.Entities<ZY_Error_Tb>("where ReadStatus=0"))
+			foreach (var entity in this.EquDber.Entities<YQ_Status>())
 			{
-				if (CommonDAO.GetInstance().SaveEquInfHitch(this.MachineCode, entity.DateTime, entity.AlarmName))
+				TB_YQ_ERRORCODE error = this.EquDber.Entity<TB_YQ_ERRORCODE>("where ErrorCode=@ErrorCode", new { ErrorCode = entity.ErroeCode });
+				if (error != null)
 				{
-					entity.ReadStatus = 1;
-					this.EquDber.Update(entity);
-
-					res++;
+					if (CommonDAO.GetInstance().SaveEquInfHitch(this.MachineCode, entity.St_Time, error.ErrorDes))
+					{
+						res++;
+					}
 				}
 			}
 
@@ -127,7 +128,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 		{
 			int res = 0;
 
-			foreach (Tb_TestResult entity in this.EquDber.Entities<Tb_TestResult>("where SampleName is not null order by EndingTime asc"))
+			foreach (Tb_TestResult entity in this.EquDber.Entities<Tb_TestResult>("where SampleName is not null and EndingTime is not null and Moisture!=0 order by EndingTime asc"))
 			{
 				CmcsMoistureAssay moisture = commonDAO.SelfDber.Entity<CmcsMoistureAssay>("where PKID=:PKID", new
 				{
@@ -145,7 +146,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 					moisture.ContainerWeight = entity.TrayWeight;
 					moisture.DryWeight = entity.LeftWeight;
 					moisture.AssayTime = entity.EndingTime;
-					moisture.WaterType = entity.SampleName;
+					moisture.WaterType = entity.SampleName == "全水样" ? "mt" : "mar";
 					moisture.DataFrom = "在线全水仪";
 					moisture.AssayUser = entity.Operator;
 					res += Dbers.GetInstance().SelfDber.Insert(moisture);
@@ -160,7 +161,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 					moisture.ContainerWeight = entity.TrayWeight;
 					moisture.DryWeight = entity.LeftWeight;
 					moisture.AssayTime = entity.EndingTime;
-					moisture.WaterType = entity.SampleName;
+					moisture.WaterType = entity.SampleName == "全水样" ? "mt" : "mar";
 					moisture.DataFrom = "在线全水仪";
 					moisture.AssayUser = entity.Operator;
 					res += Dbers.GetInstance().SelfDber.Update(moisture);

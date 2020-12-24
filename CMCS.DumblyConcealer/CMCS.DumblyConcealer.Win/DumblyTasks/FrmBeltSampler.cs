@@ -44,27 +44,27 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 		{
 			#region #1皮带采样机
 
-			EquBeltSamplerDAO beltSamplerDAO1 = new EquBeltSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_1);
+			EquBeltSamplerDAO beltSamplerDAO1 = new EquBeltSamplerDAO(GlobalVars.MachineCode_PDCYJ_1);
 
 			taskSimpleScheduler.StartNewTask("#1皮带采样机-快速同步", () =>
 			{
 				beltSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
+				beltSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
 				beltSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output);
-
-
+				beltSamplerDAO1.SyncTurn(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
 
 			#endregion
 
 			#region #2皮带采样机
 
-			EquBeltSamplerDAO beltSamplerDAO2 = new EquBeltSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_2);
+			EquBeltSamplerDAO beltSamplerDAO2 = new EquBeltSamplerDAO(GlobalVars.MachineCode_PDCYJ_1);
 
 			taskSimpleScheduler.StartNewTask("#2皮带采样机-快速同步", () =>
 			{
 				beltSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
+				beltSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
 				beltSamplerDAO2.SyncBarrel(this.rTxtOutputer.Output);
-
 			}, 2000, OutputError);
 
 			#endregion

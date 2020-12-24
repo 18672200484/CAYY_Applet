@@ -125,8 +125,8 @@ namespace CMCS.DumblyConcealer.Win
 					tsmiOpenFrmWeightBridger_Click(null, null);
 					break;
 				case 2:
-					//皮带秤称重数据同步程序
-					tsmiOpenFrmBeltBalancer_Click(null, null);
+					//皮带采样机数据同步程序
+					tsmiOpenFrmBeltSampler_Click(null, null);
 					break;
 				case 3:
 					//车号识别报文TCP/IP同步业务
@@ -142,10 +142,10 @@ namespace CMCS.DumblyConcealer.Win
 					break;
 				case 6:
 					//07.全自动制样机接口
-					//tsmiOpenFrmAutoMaker_Click(null, null);
+					tsmiOpenFrmAutoMaker_Click(null, null);
 					break;
 				case 7:
-					//tsmiOpenTrainSampler_Click(null, null);
+					tsmiOpenTrainSampler_Click(null, null);
 					break;
 				case 8:
 					tsmiOpenFrmAutoCupboard_NCGM_Click(null, null);
@@ -195,13 +195,13 @@ namespace CMCS.DumblyConcealer.Win
 		}
 
 		/// <summary>
-		/// 03.皮带秤称重数据同步程序
+		/// 03.皮带采样机数据同步程序
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void tsmiOpenFrmBeltBalancer_Click(object sender, EventArgs e)
+		private void tsmiOpenFrmBeltSampler_Click(object sender, EventArgs e)
 		{
-			TaskForm taskForm = new FrmBeltBalance();
+			TaskForm taskForm = new FrmBeltSampler();
 			if (HaveOpened(taskForm, this))
 			{
 				taskForm.MdiParent = this;
