@@ -47,7 +47,7 @@
 				}
 				// svg_color
 				else if (data.Type == 3) {
-					changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+					svgChangeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
 				}
 				else if (data.Type = 9999) {
 					keys = data.Value;
@@ -300,9 +300,9 @@
 </head>
 <body onselectstart="return false;">
 	<div class="div-root" id="divCanvas">
-		<div class="divMain" id="divMain">
-			<div id="sampletableTitle" style="position: absolute; width: 100%; height: 37px;
-                z-index: 999; top: 0px; left: 0px;">
+		<!--<div class="divMain" id="divMain">-->
+			<!--<div id="sampletableTitle" style="position: absolute; width: 100%; height: 37px;
+                z-index: 999; top: 0px; left: 0px;">-->
 				<!--<table class="SampleTable" border="1">
 					<tr class="trSampleTitle">
 						<td style="width: 240px;">
@@ -322,7 +322,7 @@
 						</td>
 					</tr>
 				</table>-->
-			</div>
+			<!--</div>-->
 			<!--<div id="sampletable" style="width: 100%; height: 100%; overflow: auto;">
 				<table class="SampleTable" border="1">
 					<tr class="trSampleTitle">
@@ -380,13 +380,13 @@
 					</tr>
 				</table>
 			</div>-->
-		</div>
+		<!--</div>-->
 		<!--<div style="position: absolute; top: 35px; left: 1375px;">
 			<input type="button" value="查看异常信息" class="button1" onclick="ShowHitchs('#1')" />
 		</div>-->
 		<embed id="svgCanvas1" src="Resources/AutoMaker.svg" type="image/svg+xml" />
 	</div>
-	<div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
-	</div>
+	<!--<div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
+	</div>-->
 </body>
 </html>

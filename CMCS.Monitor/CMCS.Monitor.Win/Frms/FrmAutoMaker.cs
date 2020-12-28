@@ -26,7 +26,7 @@ namespace CMCS.Monitor.Win.Frms
 		/// 窗体唯一标识符
 		/// </summary>
 		public static string UniqueKey = "FrmAutoMakerCSKY";
-		public string[] strSignal = new string[] { "制样机_6mm破碎", "制样机_6mm缩分1", "制样机_6mm缩分2", "制样机_3mm破碎", "制样机_3mm缩分1",
+		public string[] strSignal = new string[] { "湿煤破碎机", "链式缩分驱动器运行信号", "对辊破碎机", "3mm一级缩分器驱动器运行信号", "制样机_3mm缩分1",
 			"制样机_3mm缩分2","制样机_干燥","制样机_3mm缩分3","制样机_02mm破碎","制样机_02mm缩分","制样机_6mm缩分3","制样机_6mm弃料","制样机_弃料清洗样",
 			"制样机_鼓风机","制样机_一体机"};
 
@@ -98,20 +98,104 @@ namespace CMCS.Monitor.Win.Frms
 				datas.Add(new HtmlDataItem("制样机_系统", "#c0c0c0", eHtmlDataItemType.svg_color));
 
 			//信号状态
-			string keys = string.Empty;
-			foreach (string item in strSignal)
+			//string keys = string.Empty;
+			//foreach (string item in strSignal)
+			//{
+			//	if (commonDAO.GetSignalDataValue(machineCode, item) == "1")
+			//	{
+			//		keys += item;
+			//		datas.Add(new HtmlDataItem(item, "Red", eHtmlDataItemType.svg_color));
+			//	}
+			//	else
+			//		datas.Add(new HtmlDataItem(item + "_Line", "#6d6e71", eHtmlDataItemType.svg_color));
+			//}
+
+			//datas.Add(new HtmlDataItem("Keys", keys, eHtmlDataItemType.svg_scroll));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "湿煤破碎机");
+			datas.Add(new HtmlDataItem("湿煤破碎机1", value == "1" ? "Red" : "url(#SVGID_120_)", eHtmlDataItemType.svg_color));
+			//datas.Add(new HtmlDataItem("湿煤破碎机2", value == "1" ? "Red" : "url(#SVGID_120_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("湿煤破碎机3", value == "1" ? "Red" : "url(#SVGID_121_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("湿煤破碎机4", value == "1" ? "Red" : "#606060", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("湿煤破碎机5", value == "1" ? "Red" : "#FD0B08", eHtmlDataItemType.svg_color));
+			
+			value = commonDAO.GetSignalDataValue(machineCode, "链式缩分驱动器运行信号");
+			datas.Add(new HtmlDataItem("链式缩分器1", value == "1" ? "Red" : "url(#SVGID_122_)", eHtmlDataItemType.svg_color));
+			//datas.Add(new HtmlDataItem("链式缩分器2", value == "1" ? "Red" : "url(#SVGID_122_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("链式缩分器3", value == "1" ? "Red" : "#CEC9C6", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("链式缩分器4", value == "1" ? "Red" : "#BCB296", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("链式缩分器5", value == "1" ? "Red" : "#F6E1C6", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("链式缩分器6", value == "1" ? "Red" : "#FA090D", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "对辊破碎机");
+			datas.Add(new HtmlDataItem("对辊破碎机1", value == "1" ? "Red" : "url(#SVGID_113_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("对辊破碎机2", value == "1" ? "Red" : "url(#SVGID_114_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("对辊破碎机3", value == "1" ? "Red" : "#FA090D", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "3mm一级缩分器驱动器运行信号");
+			datas.Add(new HtmlDataItem("3mm一级缩分器1", value == "1" ? "Red" : "url(#SVGID_129_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm一级缩分器2", value == "1" ? "Red" : "#000000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm一级缩分器3", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm一级缩分器4", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm一级缩分器5", value == "1" ? "Red" : "#FA090D", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带");
+			datas.Add(new HtmlDataItem("3mm弃料皮带", value == "1" ? "Red" : "url(#SVGID_116_)", eHtmlDataItemType.svg_color));
+
+			//value = commonDAO.GetSignalDataValue(machineCode, "粉碎单元真空上料机");
+			//datas.Add(new HtmlDataItem("弃料真空上料机", value == "1" ? "Red" : "url(#g1256)", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "3mm筛分破碎机正转");
+			if (value == "1")
 			{
-				if (commonDAO.GetSignalDataValue(machineCode, item) == "1")
-				{
-					keys += item;
-					datas.Add(new HtmlDataItem(item + "_Line", "Red", eHtmlDataItemType.svg_color));
-				}
-				else
-					datas.Add(new HtmlDataItem(item + "_Line", "#6d6e71", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎1", value == "1" ? "Red" : "url(#SVGID_130_)", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎2", value == "1" ? "Red" : "url(#SVGID_132_)", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎3", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+				//datas.Add(new HtmlDataItem("筛分破碎4", value == "1" ? "Red" : "url(#SVGID_130_)", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎5", value == "1" ? "Red" : "#FA090D", eHtmlDataItemType.svg_color));
+			}
+			else
+			{
+				datas.Add(new HtmlDataItem("筛分破碎1", value == "1" ? "Red" : "url(#SVGID_130_)", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎2", value == "1" ? "Red" : "url(#SVGID_132_)", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎3", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+				//datas.Add(new HtmlDataItem("筛分破碎4", value == "1" ? "Red" : "url(#SVGID_130_)", eHtmlDataItemType.svg_color));
+				datas.Add(new HtmlDataItem("筛分破碎5", value == "1" ? "Red" : "#FA090D", eHtmlDataItemType.svg_color));
 			}
 
-			datas.Add(new HtmlDataItem("Keys", keys, eHtmlDataItemType.svg_scroll));
+			value = commonDAO.GetSignalDataValue(machineCode, "3mm二级缩分器驱动器运行信号");
+			datas.Add(new HtmlDataItem("3mm二级圆盘缩分器1", value == "1" ? "Red" : "url(#SVGID_104_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm二级圆盘缩分器2", value == "1" ? "Red" : "#000000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm二级圆盘缩分器3", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm二级圆盘缩分器4", value == "1" ? "Red" : "#FA090D", eHtmlDataItemType.svg_color));
 
+			value = commonDAO.GetSignalDataValue(machineCode, "0_2mm制粉机变频器运行信号");
+			datas.Add(new HtmlDataItem("粉碎机1", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("粉碎机2", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("粉碎机3", value == "1" ? "Red" : "url(#SVGID_150_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("粉碎机4", value == "1" ? "Red" : "url(#SVGID_148_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("粉碎机5", value == "1" ? "Red" : "url(#SVGID_149_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("粉碎机6", value == "1" ? "Red" : "#545452", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "粉碎单元真空上料机");
+			datas.Add(new HtmlDataItem("真空上料机1", value == "1" ? "Red" : "url(#SVGID_35_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("真空上料机2", value == "1" ? "Red" : "url(#SVGID_37_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("真空上料机3", value == "1" ? "Red" : "url(#SVGID_36_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("真空上料机4", value == "1" ? "Red" : "url(#SVGID_39_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("真空上料机5", value == "1" ? "Red" : "url(#SVGID_40_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("真空上料机6", value == "1" ? "Red" : "url(#SVGID_38_)", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "左侧PTC加热器");
+			datas.Add(new HtmlDataItem("左侧PTC加热器1", value == "1" ? "Red" : "url(#SVGID_137_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("左侧PTC加热器2", value == "1" ? "Red" : "url(#SVGID_133_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("左侧PTC加热器3", value == "1" ? "Red" : "url(#SVGID_138_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("左侧PTC加热器4", value == "1" ? "Red" : "url(#SVGID_134_)", eHtmlDataItemType.svg_color));
+
+			value = commonDAO.GetSignalDataValue(machineCode, "右侧PTC加热器");
+			datas.Add(new HtmlDataItem("右侧PTC加热器1", value == "1" ? "Red" : "url(#SVGID_140_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("右侧PTC加热器2", value == "1" ? "Red" : "url(#SVGID_139_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("右侧PTC加热器3", value == "1" ? "Red" : "url(#SVGID_144_)", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("右侧PTC加热器4", value == "1" ? "Red" : "url(#SVGID_143_)", eHtmlDataItemType.svg_color));
 			#endregion
 
 			// 发送到页面

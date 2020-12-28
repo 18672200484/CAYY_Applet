@@ -79,8 +79,13 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			{
 				assayDeviceDAO.AutoRCAssay(this.rTxtOutputer.Output);
 
-			}, 30000, OutputError);
+			}, 30000, OutputError); 
 
+			taskSimpleScheduler.StartNewTask("生成化验设备集控数据", () =>
+			{
+				assayDeviceDAO.SaveToJK(this.rTxtOutputer.Output);
+
+			}, 30000, OutputError);
 		}
 
 		/// <summary>

@@ -8,43 +8,43 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="AssayManage.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   version="1.1"
-   id="svg2"
-   viewBox="0 0 1920 922.97542"
-   style="fill-rule:evenodd"
-   height="906"
+   xml:space="preserve"
    width="1920"
-   xml:space="preserve"><metadata
+   height="906"
+   style="fill-rule:evenodd"
+   viewBox="0 0 1920 922.97542"
+   id="svg2"
+   version="1.1"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="AssayManage.svg"><metadata
    id="metadata2052"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
-   inkscape:document-rotation="0"
-   inkscape:current-layer="svg2"
-   inkscape:window-maximized="1"
-   inkscape:window-y="-8"
-   inkscape:window-x="-8"
-   inkscape:cy="448.82428"
-   inkscape:cx="822.59883"
-   inkscape:zoom="0.86888892"
-   showgrid="false"
-   id="namedview2050"
-   inkscape:window-height="1017"
-   inkscape:window-width="1920"
-   inkscape:pageshadow="2"
-   inkscape:pageopacity="0"
-   guidetolerance="10"
-   gridtolerance="10"
-   objecttolerance="10"
-   borderopacity="1"
+   pagecolor="#ffffff"
    bordercolor="#666666"
-   pagecolor="#ffffff" />
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview2050"
+   showgrid="false"
+   inkscape:zoom="0.86888892"
+   inkscape:cx="1686.8323"
+   inkscape:cy="494.86008"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg2"
+   inkscape:document-rotation="0" />
  <defs
    id="defs4">
   <style
-   id="style6"
-   type="text/css">
+   type="text/css"
+   id="style6">
    
     .fil6 {fill:teal}
     .fil7 {fill:#0099FF}
@@ -1065,13 +1065,13 @@
    
   </defs>
  <rect
-   class="fil0"
-   x="-17.987183"
-   y="8.5839847e-006"
-   width="1955.9744"
-   height="922.9754"
+   style="fill:#3f3f3f"
    id="rect10"
-   style="fill:#3f3f3f" />
+   height="922.9754"
+   width="1955.9744"
+   y="8.5839847e-006"
+   x="-17.987183"
+   class="fil0" />
 
 
 
@@ -1127,23 +1127,23 @@
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   id="text239"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   y="77.174751"
    x="1050.7787"
-   y="77.174751">已审核样品</text>
-
-
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   id="text247"
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
    font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   id="text239"
+   transform="scale(1.0522166,0.95037467)">已审核样品</text>
+
+
+
+
+<text
+   y="77.173401"
    x="1278.8541"
-   y="77.173401">未审核样品</text>
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text247"
+   transform="scale(1.0522166,0.95037467)">未审核样品</text>
 
 
 
@@ -1165,87 +1165,87 @@
 
 
 <line
-   id="line291"
-   y2="190.26822"
-   x2="1281.4296"
-   y1="52.093864"
+   style="fill:none;stroke:#808184;stroke-width:1.35357976"
    x1="1281.4296"
-   style="fill:none;stroke:#808184;stroke-width:1.35357976" /><line
-   id="line293"
-   y2="190.26309"
-   x2="1507.7087"
-   y1="52.090008"
+   y1="52.093864"
+   x2="1281.4296"
+   y2="190.26822"
+   id="line291" /><line
+   style="fill:none;stroke:#808184;stroke-width:1.35357976"
    x1="1507.7087"
-   style="fill:none;stroke:#808184;stroke-width:1.35357976" /><circle
-   inkscape:label="待机"
-   id="circle141"
-   r="10.306"
-   cy="118.063"
-   cx="1192.224"
-   sodipodi:cx="1192.224"
-   sodipodi:cy="118.063"
-   sodipodi:rx="10.306"
-   sodipodi:ry="10.306"
+   y1="52.090008"
+   x2="1507.7087"
+   y2="190.26309"
+   id="line293" /><circle
+   d="m 1202.53,118.063 c 0,5.69185 -4.6142,10.306 -10.306,10.306 -5.6918,0 -10.306,-4.61415 -10.306,-10.306 0,-5.69184 4.6142,-10.306 10.306,-10.306 5.6918,0 10.306,4.61416 10.306,10.306 z"
+   transform="matrix(1.4242591,0,0,1.2864079,-45.906142,1.8765856)"
    style="fill:#ec1c24"
-   transform="matrix(1.4242591,0,0,1.2864079,-45.906142,1.8765856)"
-   d="m 1202.53,118.063 c 0,5.69185 -4.6142,10.306 -10.306,10.306 -5.6918,0 -10.306,-4.61415 -10.306,-10.306 0,-5.69184 4.6142,-10.306 10.306,-10.306 5.6918,0 10.306,4.61416 10.306,10.306 z" /><circle
-   inkscape:label="正在运行"
-   id="circle191"
-   r="10.306"
-   cy="82.164001"
-   cx="1192.224"
-   sodipodi:cx="1192.224"
-   sodipodi:cy="82.164001"
-   sodipodi:rx="10.306"
    sodipodi:ry="10.306"
-   style="fill:#00a551"
+   sodipodi:rx="10.306"
+   sodipodi:cy="118.063"
+   sodipodi:cx="1192.224"
+   cx="1192.224"
+   cy="118.063"
+   r="10.306"
+   id="circle141"
+   inkscape:label="待机" /><circle
+   d="m 1202.53,82.164001 c 0,5.691847 -4.6142,10.306 -10.306,10.306 -5.6918,0 -10.306,-4.614153 -10.306,-10.306 0,-5.691846 4.6142,-10.305999 10.306,-10.305999 5.6918,0 10.306,4.614153 10.306,10.305999 z"
    transform="matrix(1.4242591,0,0,1.2864079,-45.906142,1.8765856)"
-   d="m 1202.53,82.164001 c 0,5.691847 -4.6142,10.306 -10.306,10.306 -5.6918,0 -10.306,-4.614153 -10.306,-10.306 0,-5.691846 4.6142,-10.305999 10.306,-10.305999 5.6918,0 10.306,4.614153 10.306,10.305999 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="已审核样品个数"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   y="148.81195"
-   x="1068.9923"
+   style="fill:#00a551"
+   sodipodi:ry="10.306"
+   sodipodi:rx="10.306"
+   sodipodi:cy="82.164001"
+   sodipodi:cx="1192.224"
+   cx="1192.224"
+   cy="82.164001"
+   r="10.306"
+   id="circle191"
+   inkscape:label="正在运行" /><text
+   font-size="14.2861"
    id="text295"
-   font-size="14.2861">10个</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="未审核样品个数"
+   x="1068.9923"
+   y="148.81195"
    style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   y="150.48747"
-   x="1312.3381"
+   inkscape:label="已审核样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<text
+   font-size="14.2861"
    id="text297"
-   font-size="14.2861">2个</text>
+   x="1312.3381"
+   y="150.48747"
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="未审核样品个数"
+   transform="scale(1.0522166,0.95037467)">2个</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   style="font-size:19.87704849px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   y="168.11475"
-   x="1611.4227"
+   font-size="14.6848"
    id="text305"
-   font-size="14.6848">正在运行</text>
+   x="1611.4227"
+   y="168.11475"
+   style="font-size:19.87704849px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   transform="scale(1.0522166,0.95037467)">正在运行</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   style="font-size:19.87704849px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   y="120.40509"
-   x="1629.1503"
+   font-size="14.6848"
    id="text307"
-   font-size="14.6848">待机</text>
+   x="1629.1503"
+   y="120.40509"
+   style="font-size:19.87704849px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   transform="scale(1.0522166,0.95037467)">待机</text>
 
 
 
 <line
-   id="line375"
-   y2="566.09924"
-   x2="1466.4391"
-   y1="566.09924"
+   style="fill:none;stroke:#bbbdbf;stroke-width:1.9199326"
    x1="1111.782"
-   style="fill:none;stroke:#bbbdbf;stroke-width:1.9199326" />
+   y1="566.09924"
+   x2="1466.4391"
+   y2="566.09924"
+   id="line375" />
 
 
 
@@ -1269,70 +1269,70 @@
 
 
 <rect
-   id="rect437"
-   height="86.437607"
-   width="170.84985"
-   y="271.06586"
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
    x="1539.1715"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><image
-   id="image435"
-   xlink:href="data:image/png;base64,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 4AOotf8JMABv/V2pSN90NgAAAABJRU5ErkJggg=="
-   height="77.971115"
-   width="89.192085"
-   enable-background="new    "
-   overflow="visible"
-   style="overflow:visible"
+   y="271.06586"
+   width="170.84985"
+   height="86.437607"
+   id="rect437" /><image
+   y="276.24457"
    x="1539.9962"
-   y="276.24457" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text439"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   style="overflow:visible"
+   overflow="visible"
+   enable-background="new    "
+   width="89.192085"
+   height="77.971115"
+   xlink:href="data:image/png;base64,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 4AOotf8JMABv/V2pSN90NgAAAABJRU5ErkJggg=="
+   id="image435" /><text
+   y="347.20224"
    x="1560.6412"
-   y="347.20224">今日化验</text>
+   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text439"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="测硫仪1_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
-   y="363.03275"
-   x="1571.47"
+   font-size="10"
    id="text441"
-   font-size="10">10个</text>
+   x="1571.47"
+   y="363.03275"
+   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="测硫仪1_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
 
 
 <circle
-   inkscape:label="测硫仪1_运行状态"
-   id="circle443"
-   r="8.4549999"
-   cy="643.914"
-   cx="799.27399"
-   sodipodi:cx="799.27399"
-   sodipodi:cy="643.914"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#ec1c24"
+   d="m 807.72899,643.914 c 0,4.66957 -3.78544,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66956,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,532.32429,-528.43396)"
-   d="m 807.72899,643.914 c 0,4.66957 -3.78544,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66956,0 8.455,3.78543 8.455,8.455 z" /><rect
-   id="rect445"
-   height="24.225634"
-   width="172.11458"
-   y="246.16493"
+   style="fill:#ec1c24"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="643.914"
+   sodipodi:cx="799.27399"
+   cx="799.27399"
+   cy="643.914"
+   r="8.4549999"
+   id="circle443"
+   inkscape:label="测硫仪1_运行状态" /><rect
+   style="fill:#808184"
    x="1538.5049"
-   style="fill:#808184" /><line
-   id="line447"
-   y2="351.02124"
-   x2="1632.1115"
-   y1="290.28741"
+   y="246.16493"
+   width="172.11458"
+   height="24.225634"
+   id="rect445" /><line
+   style="fill:none;stroke:#929497;stroke-width:1.35357976"
    x1="1632.1115"
-   style="fill:none;stroke:#929497;stroke-width:1.35357976" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text499"
-   font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   y1="290.28741"
+   x2="1632.1115"
+   y2="351.02124"
+   id="line447" /><text
+   y="277.09772"
    x="1478.9697"
-   y="277.09772">#1测硫仪</text>
+   style="font-size:16.24295616px;fill:#ffffff;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   font-size="12"
+   id="text499"
+   transform="scale(1.0522166,0.95037467)">#1测硫仪</text>
 
 
 
@@ -1347,70 +1347,70 @@
 
 
 <image
-   id="image7"
-   xlink:href="data:image/png;base64,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 KRYAAAAASUVORK5CYII="
-   height="77.957474"
-   width="89.224846"
-   enable-background="new    "
-   overflow="visible"
-   style="overflow:visible"
+   y="408.82178"
    x="1539.9933"
-   y="408.82178" /><rect
-   id="rect107"
-   height="86.437607"
-   width="170.84985"
-   y="403.62622"
+   style="overflow:visible"
+   overflow="visible"
+   enable-background="new    "
+   width="89.224846"
+   height="77.957474"
+   xlink:href="data:image/png;base64,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 KRYAAAAASUVORK5CYII="
+   id="image7" /><rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
    x="1539.1715"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text121"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   y="403.62622"
+   width="170.84985"
+   height="86.437607"
+   id="rect107" /><text
+   y="486.98892"
    x="1558.788"
-   y="486.98892">今日化验</text>
+   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text121"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="测硫仪3_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
-   y="502.81943"
-   x="1569.6165"
+   font-size="10"
    id="text123"
-   font-size="10">10个</text>
+   x="1569.6165"
+   y="502.81943"
+   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="测硫仪3_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
 
 
 <circle
-   inkscape:label="测硫仪3_运行状态"
-   id="circle153"
-   r="8.4549999"
-   cy="643.91199"
-   cx="1064.7209"
-   sodipodi:cx="1064.7209"
-   sodipodi:cy="643.91199"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#ec1c24"
+   d="m 1073.1759,643.91199 c 0,4.66956 -3.7854,8.455 -8.455,8.455 -4.6695,0 -8.455,-3.78544 -8.455,-8.455 0,-4.66957 3.7855,-8.455 8.455,-8.455 4.6696,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,154.26045,-395.58423)"
-   d="m 1073.1759,643.91199 c 0,4.66956 -3.7854,8.455 -8.455,8.455 -4.6695,0 -8.455,-3.78544 -8.455,-8.455 0,-4.66957 3.7855,-8.455 8.455,-8.455 4.6696,0 8.455,3.78543 8.455,8.455 z" /><rect
-   id="rect383"
-   height="24.225634"
-   width="172.11601"
-   y="378.7226"
+   style="fill:#ec1c24"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="643.91199"
+   sodipodi:cx="1064.7209"
+   cx="1064.7209"
+   cy="643.91199"
+   r="8.4549999"
+   id="circle153"
+   inkscape:label="测硫仪3_运行状态" /><rect
+   style="fill:#808184"
    x="1538.5035"
-   style="fill:#808184" /><line
-   id="line419"
-   y2="483.5816"
-   x2="1632.1144"
-   y1="422.84772"
+   y="378.7226"
+   width="172.11601"
+   height="24.225634"
+   id="rect383" /><line
+   style="fill:none;stroke:#929497;stroke-width:1.35357976"
    x1="1632.1144"
-   style="fill:none;stroke:#929497;stroke-width:1.35357976" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text503"
-   font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   y1="422.84772"
+   x2="1632.1144"
+   y2="483.5816"
+   id="line419" /><text
+   y="418.03571"
    x="1467.7147"
-   y="418.03571">#3测硫仪</text>
+   style="font-size:16.24295616px;fill:#ffffff;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   font-size="12"
+   id="text503"
+   transform="scale(1.0522166,0.95037467)">#3测硫仪</text>
 
 
 
@@ -1427,63 +1427,63 @@
 
 
 <rect
-   id="rect211"
-   height="123.04568"
-   width="294.70578"
-   y="501.18408"
+   style="fill:none;stroke:#26a9e0;stroke-width:5.53683615"
    x="818.61902"
-   style="fill:none;stroke:#26a9e0;stroke-width:5.53683615" /><g
-   transform="translate(-8.2271412,-9.3223523)"
-   id="g5301"><text
-   y="573.71033"
-   x="857.65027"
-   style="font-size:19.33737564px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
-   font-size="14.2861"
+   y="501.18408"
+   width="294.70578"
+   height="123.04568"
+   id="rect211" /><g
+   id="g5301"
+   transform="translate(-8.2271412,-9.3223523)"><text
+   transform="scale(1.0522166,0.95037467)"
    id="text221"
-   transform="scale(1.0522166,0.95037467)">化验室</text>
+   font-size="14.2861"
+   style="font-size:19.33737564px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   x="857.65027"
+   y="573.71033">化验室</text>
 
 
 <text
-   y="573.80475"
-   x="916.72736"
-   style="font-size:19.33737564px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
-   font-size="14.2861"
+   transform="scale(1.0522166,0.95037467)"
    id="text223"
-   transform="scale(1.0522166,0.95037467)">网络管理</text>
+   font-size="14.2861"
+   style="font-size:19.33737564px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   x="916.72736"
+   y="573.80475">网络管理</text>
 
 
 </g><line
-   id="line341"
-   y2="718.70837"
-   x2="965.97192"
-   y1="627.91779"
+   style="fill:none;stroke:#d0d2d3;stroke-width:3.31661105"
    x1="965.97192"
-   style="fill:none;stroke:#d0d2d3;stroke-width:3.31661105" /><g
-   id="g529"
-   transform="matrix(2.0509533,0,0,1.8524456,-502.74033,-242.62565)"><g
+   y1="627.91779"
+   x2="965.97192"
+   y2="718.70837"
+   id="line341" /><g
+   transform="matrix(2.0509533,0,0,1.8524456,-502.74033,-242.62565)"
+   id="g529"><g
      id="g531"><g
        id="g533"><path
-         id="path535"
-         d="m 736.898,457.17 h -41.146 c -0.573,0 -1.049,-0.472 -1.049,-1.054 V 429.89 c 0,-0.573 0.476,-1.062 1.049,-1.062 h 41.146 c 0.577,0 1.048,0.487 1.048,1.062 v 26.226 c 10e-4,0.582 -0.47,1.054 -1.048,1.054 z m -40.857,-1.351 h 40.567 V 430.19 h -40.567 v 25.629 z"
+         style="fill:#f5f5f5"
          inkscape:connector-curvature="0"
-         style="fill:#f5f5f5" /></g></g><g
+         d="m 736.898,457.17 h -41.146 c -0.573,0 -1.049,-0.472 -1.049,-1.054 V 429.89 c 0,-0.573 0.476,-1.062 1.049,-1.062 h 41.146 c 0.577,0 1.048,0.487 1.048,1.062 v 26.226 c 10e-4,0.582 -0.47,1.054 -1.048,1.054 z m -40.857,-1.351 h 40.567 V 430.19 h -40.567 v 25.629 z"
+         id="path535" /></g></g><g
      id="g537"><g
        id="g539"><rect
-         id="rect541"
-         height="22.212999"
-         width="36.339001"
-         y="431.97299"
+         style="fill:#f5f5f5"
          x="698.15198"
-         style="fill:#f5f5f5" /></g></g><g
+         y="431.97299"
+         width="36.339001"
+         height="22.212999"
+         id="rect541" /></g></g><g
      id="g543"><path
-       id="path545"
+       style="fill:#f5f5f5"
+       inkscape:connector-curvature="0"
        d="m 741.789,459.164 c 0.055,0 0.113,-0.047 0.113,-0.126 v -1.122 h -51.584 v 1.122 c 0,0.079 0.055,0.126 0.139,0.126 h 51.332 z m -18.238,-0.707 h 17.425 c 0.137,0 0.235,0.11 0.235,0.235 0,0.126 -0.099,0.236 -0.235,0.236 h -17.425 c -0.143,0 -0.251,-0.11 -0.251,-0.236 -10e-4,-0.124 0.108,-0.235 0.251,-0.235 z m -8.272,0 h 5.691 c 0.129,0 0.234,0.11 0.234,0.235 0,0.126 -0.105,0.236 -0.234,0.236 h -5.691 c -0.129,0 -0.228,-0.11 -0.228,-0.236 10e-4,-0.124 0.098,-0.235 0.228,-0.235 z m -3.33,-0.173 c 0.229,0 0.416,0.182 0.416,0.408 0,0.229 -0.188,0.409 -0.416,0.409 -0.22,0 -0.417,-0.181 -0.417,-0.409 0,-0.226 0.197,-0.408 0.417,-0.408 z"
+       id="path545" /><path
+       style="fill:#f5f5f5"
        inkscape:connector-curvature="0"
-       style="fill:#f5f5f5" /><path
-       id="path547"
        d="m 689.654,457.248 v 1.79 c 0,0.44 0.354,0.817 0.801,0.817 h 51.334 c 0.432,0 0.781,-0.377 0.781,-0.817 v -1.79 h -52.916 z m 52.585,0.329 v 1.461 c 0,0.269 -0.212,0.473 -0.452,0.473 h -51.333 c -0.259,0 -0.459,-0.204 -0.459,-0.473 v -1.461"
-       inkscape:connector-curvature="0"
-       style="fill:#f5f5f5" /></g></g>
+       id="path547" /></g></g>
 
 
 
@@ -1493,432 +1493,432 @@
 
 
 <circle
-   inkscape:label="量热仪1_运行状态"
-   id="circle173"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#00a551"
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,847.49575,385.86701)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
+   style="fill:#00a551"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173"
+   inkscape:label="量热仪1_运行状态" /><text
+   y="744.89734"
+   x="1552.2229"
+   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
    id="text193"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
-   x="1552.2229"
-   y="744.89734">今日化验</text>
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="量热仪1_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
-   y="760.72534"
-   x="1565.7587"
+   font-size="10"
    id="text195"
-   font-size="10">10个</text>
-
-
-<rect
-   id="rect207"
-   height="86.437607"
-   width="170.84985"
-   y="652.87769"
-   x="1539.1715"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393"
-   height="24.225634"
-   width="172.12027"
-   y="627.86346"
-   x="1538.5377"
-   style="fill:#808184" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461"
-   font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;font-family:AdobeSongStd-Light-GBpc-EUC-H"
-   x="1472.1985"
-   y="679.03595">#1量热仪</text>
-
-
-<circle
-   inkscape:label="量热仪3_运行状态"
-   id="circle173-7"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#00a551;fill-rule:evenodd"
-   transform="matrix(1.4242591,0,0,1.2864079,1041.8429,386.34326)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-4"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="1736.9255"
-   y="745.3985">今日化验</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="量热仪3_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="761.22644"
-   x="1750.4613"
-   id="text195-0"
-   font-size="10">10个</text>
-
-
-<rect
-   id="rect207-9"
-   height="86.437607"
-   width="170.84985"
-   y="653.35394"
-   x="1733.5187"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-4"
-   height="24.225634"
-   width="172.12027"
-   y="628.33972"
-   x="1732.8849"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-8"
-   font-size="12"
-   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
-   x="1656.9011"
-   y="679.53711">#3量热仪</text>
-
-
-<circle
-   inkscape:label="量热仪5_运行状态"
-   id="circle173-4"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#00a551;fill-rule:evenodd"
-   transform="matrix(1.4242591,0,0,1.2864079,847.49575,518.99186)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-5"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="1552.2229"
-   y="884.97351">今日化验</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="量热仪5_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="900.80151"
    x="1565.7587"
-   id="text195-5"
-   font-size="10">10个</text>
+   y="760.72534"
+   style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="量热仪1_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
 
 
 <rect
-   id="rect207-1"
-   height="86.437607"
-   width="170.84985"
-   y="786.00256"
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
    x="1539.1715"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-7"
-   height="24.225634"
-   width="172.12027"
-   y="760.98834"
+   y="652.87769"
+   width="170.84985"
+   height="86.437607"
+   id="rect207" /><rect
+   style="fill:#808184"
    x="1538.5377"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-1"
-   font-size="12"
-   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
+   y="627.86346"
+   width="172.12027"
+   height="24.225634"
+   id="rect393" /><text
+   y="679.03595"
    x="1472.1985"
-   y="819.11212">#5量热仪</text>
-
-
-<g
-   transform="translate(-1.1380975,191.91849)"
-   id="g3661"><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909"
-     x1="1517.4204"
-     y1="402.3598"
-     x2="1517.4204"
-     y2="701.91406"
-     id="line327-8" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667"
-     x1="1925.3148"
-     y1="402.65515"
-     x2="1925.3148"
-     y2="703.1554"
-     id="line327-8-7" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755"
-     x1="1924.724"
-     y1="702.4519"
-     x2="1516.7675"
-     y2="702.44226"
-     id="line333-1" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447"
-     x1="1926.0596"
-     y1="403.05197"
-     x2="1517.3776"
-     y2="403.04233"
-     id="line333-1-8" /></g><text
-   transform="scale(1.0522166,0.95037466)"
-   id="text221-9"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="1607.6315"
-   y="647.71918">量热室</text>
-
-
-<g
-   transform="matrix(1,0,0,1.0012616,-1.1380974,-199.37304)"
-   id="g3661-2"
-   style="fill-rule:evenodd"><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909"
-     x1="1517.4204"
-     y1="402.3598"
-     x2="1517.4204"
-     y2="701.91406"
-     id="line327-8-79" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667"
-     x1="1925.3148"
-     y1="402.65515"
-     x2="1925.3148"
-     y2="703.1554"
-     id="line327-8-7-5" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755"
-     x1="1924.724"
-     y1="702.4519"
-     x2="1516.7675"
-     y2="702.44226"
-     id="line333-1-4" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447"
-     x1="1926.0596"
-     y1="403.05197"
-     x2="1517.3776"
-     y2="403.04233"
-     id="line333-1-8-3" /></g><text
-   transform="scale(1.0522166,0.95037466)"
-   id="text221-9-1"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="1623.0934"
-   y="243.82076">测硫室</text>
-
-
-<ellipse
-   ry="10.876578"
-   rx="12.04211"
-   inkscape:label="水分仪1_运行状态"
-   id="circle173-42"
-   cy="815.47943"
-   cx="913.50177"
-   style="fill:#00a551;fill-rule:evenodd;stroke-width:1.35358" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-77"
-   font-size="10"
-   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
-   x="838.84863"
-   y="891.14191">今日化验</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="水分仪1_样品个数"
-   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
-   y="906.96991"
-   x="852.38434"
-   id="text195-9"
-   font-size="10">10个</text>
-
-
-<rect
-   id="rect207-3"
-   height="86.437607"
-   width="170.84985"
-   y="791.86487"
-   x="788.54718"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35358" /><rect
-   id="rect393-1"
-   height="24.225634"
-   width="172.12027"
-   y="766.85065"
-   x="787.91333"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-9"
+   style="font-size:16.24295616px;fill:#ffffff;font-family:AdobeSongStd-Light-GBpc-EUC-H"
    font-size="12"
-   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
-   x="758.82416"
-   y="825.28052">#1水分仪</text>
-
-
-<ellipse
-   ry="10.876578"
-   rx="12.04211"
-   inkscape:label="水分仪2_运行状态"
-   id="circle173-7-0"
-   cy="815.47943"
-   cx="1105.6034"
-   style="fill:#00a551;fill-rule:evenodd;stroke-width:1.35358" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-4-2"
-   font-size="10"
-   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
-   x="1021.4171"
-   y="891.14191">今日化验</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="水分仪2_样品个数"
-   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
-   y="906.96991"
-   x="1034.9529"
-   id="text195-0-8"
-   font-size="10">10个</text>
-
-
-<rect
-   id="rect207-9-6"
-   height="86.437607"
-   width="170.84985"
-   y="791.86487"
-   x="980.6488"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35358" /><rect
-   id="rect393-4-0"
-   height="24.225634"
-   width="172.12027"
-   y="766.85065"
-   x="980.01495"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-8-2"
-   font-size="12"
-   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
-   x="941.39264"
-   y="825.28052">#2水分仪</text>
-
-
-
-
-
-
-
-
-
-
-
-<g
-   transform="matrix(1.0043328,0,0,0.55622221,-758.0297,494.90923)"
-   id="g3661-1"
-   style="fill-rule:evenodd"><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.3738"
-     x1="1517.4204"
-     y1="402.3598"
-     x2="1517.4204"
-     y2="701.91406"
-     id="line327-8-3" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37597"
-     x1="1925.3148"
-     y1="402.65515"
-     x2="1925.3148"
-     y2="703.1554"
-     id="line327-8-7-8" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37091"
-     x1="1924.724"
-     y1="702.4519"
-     x2="1516.7675"
-     y2="702.44226"
-     id="line333-1-9" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092"
-     x1="1926.0596"
-     y1="403.05197"
-     x2="1517.3776"
-     y2="403.04233"
-     id="line333-1-8-34" /></g><text
-   transform="scale(1.0522166,0.95037466)"
-   id="text221-9-4"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="889.2558"
-   y="783.51416">水分室</text>
+   id="text461"
+   transform="scale(1.0522166,0.95037467)">#1量热仪</text>
 
 
 <circle
-   inkscape:label="碳氢仪1_运行状态"
-   id="circle173-42-0"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
+   transform="matrix(1.4242591,0,0,1.2864079,1041.8429,386.34326)"
    style="fill:#00a551;fill-rule:evenodd"
-   transform="matrix(1.4242591,0,0,1.2864079,-677.54598,518.99186)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-77-6"
-   font-size="10"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-7"
+   inkscape:label="量热仪2_运行状态" /><text
+   y="745.3985"
+   x="1736.9255"
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="102.86191"
-   y="884.97351">今日化验</text>
+   font-size="10"
+   id="text193-4"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="碳氢仪1_样品个数"
+   font-size="10"
+   id="text195-0"
+   x="1750.4613"
+   y="761.22644"
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="900.80151"
-   x="116.39761"
-   id="text195-9-6"
-   font-size="10">10个</text>
+   inkscape:label="量热仪2_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
 
 
 <rect
-   id="rect207-3-1"
-   height="86.437607"
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
+   x="1733.5187"
+   y="653.35394"
    width="170.84985"
-   y="786.00256"
-   x="14.129797"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-1-8"
-   height="24.225634"
+   height="86.437607"
+   id="rect207-9" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="1732.8849"
+   y="628.33972"
    width="172.12027"
-   y="760.98834"
-   x="13.495947"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-9-4"
-   font-size="12"
+   height="24.225634"
+   id="rect393-4" /><text
+   y="679.53711"
+   x="1656.9011"
    style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
+   font-size="12"
+   id="text461-8"
+   transform="scale(1.0522166,0.95037467)">#2量热仪</text>
+
+
+<circle
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
+   transform="matrix(1.4242591,0,0,1.2864079,847.49575,518.99186)"
+   style="fill:#00a551;fill-rule:evenodd"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-4"
+   inkscape:label="量热仪3_运行状态" /><text
+   y="884.97351"
+   x="1552.2229"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text193-5"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
+
+
+<text
+   font-size="10"
+   id="text195-5"
+   x="1565.7587"
+   y="900.80151"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="量热仪3_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
+   x="1539.1715"
+   y="786.00256"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-1" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="1538.5377"
+   y="760.98834"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-7" /><text
+   y="819.11212"
+   x="1472.1985"
+   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
+   font-size="12"
+   id="text461-1"
+   transform="scale(1.0522166,0.95037467)">#3量热仪</text>
+
+
+<g
+   id="g3661"
+   transform="translate(-1.1380975,191.91849)"><line
+     id="line327-8"
+     y2="701.91406"
+     x2="1517.4204"
+     y1="402.3598"
+     x1="1517.4204"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909" /><line
+     id="line327-8-7"
+     y2="703.1554"
+     x2="1925.3148"
+     y1="402.65515"
+     x1="1925.3148"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667" /><line
+     id="line333-1"
+     y2="702.44226"
+     x2="1516.7675"
+     y1="702.4519"
+     x1="1924.724"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755" /><line
+     id="line333-1-8"
+     y2="403.04233"
+     x2="1517.3776"
+     y1="403.05197"
+     x1="1926.0596"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447" /></g><text
+   y="647.71918"
+   x="1607.6315"
+   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text221-9"
+   transform="scale(1.0522166,0.95037466)">量热室</text>
+
+
+<g
+   style="fill-rule:evenodd"
+   id="g3661-2"
+   transform="matrix(1,0,0,1.0012616,-1.1380974,-199.37304)"><line
+     id="line327-8-79"
+     y2="701.91406"
+     x2="1517.4204"
+     y1="402.3598"
+     x1="1517.4204"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909" /><line
+     id="line327-8-7-5"
+     y2="703.1554"
+     x2="1925.3148"
+     y1="402.65515"
+     x1="1925.3148"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667" /><line
+     id="line333-1-4"
+     y2="702.44226"
+     x2="1516.7675"
+     y1="702.4519"
+     x1="1924.724"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755" /><line
+     id="line333-1-8-3"
+     y2="403.04233"
+     x2="1517.3776"
+     y1="403.05197"
+     x1="1926.0596"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447" /></g><text
+   y="243.82076"
+   x="1623.0934"
+   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text221-9-1"
+   transform="scale(1.0522166,0.95037466)">测硫室</text>
+
+
+<ellipse
+   style="fill:#00a551;fill-rule:evenodd;stroke-width:1.35358"
+   cx="913.50177"
+   cy="815.47943"
+   id="circle173-42"
+   inkscape:label="水分仪1_运行状态"
+   rx="12.04211"
+   ry="10.876578" /><text
+   y="891.14191"
+   x="838.84863"
+   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
+   font-size="10"
+   id="text193-77"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
+
+
+<text
+   font-size="10"
+   id="text195-9"
+   x="852.38434"
+   y="906.96991"
+   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
+   inkscape:label="水分仪1_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35358"
+   x="788.54718"
+   y="791.86487"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-3" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="787.91333"
+   y="766.85065"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-1" /><text
+   y="825.28052"
+   x="758.82416"
+   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
+   font-size="12"
+   id="text461-9"
+   transform="scale(1.0522166,0.95037467)">#1水分仪</text>
+
+
+<ellipse
+   style="fill:#00a551;fill-rule:evenodd;stroke-width:1.35358"
+   cx="1105.6034"
+   cy="815.47943"
+   id="circle173-7-0"
+   inkscape:label="水分仪2_运行状态"
+   rx="12.04211"
+   ry="10.876578" /><text
+   y="891.14191"
+   x="1021.4171"
+   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
+   font-size="10"
+   id="text193-4-2"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
+
+
+<text
+   font-size="10"
+   id="text195-0-8"
+   x="1034.9529"
+   y="906.96991"
+   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
+   inkscape:label="水分仪2_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35358"
+   x="980.6488"
+   y="791.86487"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-9-6" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="980.01495"
+   y="766.85065"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-4-0" /><text
+   y="825.28052"
+   x="941.39264"
+   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
+   font-size="12"
+   id="text461-8-2"
+   transform="scale(1.0522166,0.95037467)">#2水分仪</text>
+
+
+
+
+
+
+
+
+
+
+
+<g
+   style="fill-rule:evenodd"
+   id="g3661-1"
+   transform="matrix(1.0043328,0,0,0.55622221,-758.0297,494.90923)"><line
+     id="line327-8-3"
+     y2="701.91406"
+     x2="1517.4204"
+     y1="402.3598"
+     x1="1517.4204"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.3738" /><line
+     id="line327-8-7-8"
+     y2="703.1554"
+     x2="1925.3148"
+     y1="402.65515"
+     x1="1925.3148"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37597" /><line
+     id="line333-1-9"
+     y2="702.44226"
+     x2="1516.7675"
+     y1="702.4519"
+     x1="1924.724"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37091" /><line
+     id="line333-1-8-34"
+     y2="403.04233"
+     x2="1517.3776"
+     y1="403.05197"
+     x1="1926.0596"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092" /></g><text
+   y="783.51416"
+   x="889.2558"
+   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text221-9-4"
+   transform="scale(1.0522166,0.95037466)">水分室</text>
+
+
+<circle
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
+   transform="matrix(1.4242591,0,0,1.2864079,-677.54598,518.99186)"
+   style="fill:#00a551;fill-rule:evenodd"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-42-0"
+   inkscape:label="碳氢仪1_运行状态" /><text
+   y="884.97351"
+   x="102.86191"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text193-77-6"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
+
+
+<text
+   font-size="10"
+   id="text195-9-6"
+   x="116.39761"
+   y="900.80151"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="碳氢仪1_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
+   x="14.129797"
+   y="786.00256"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-3-1" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="13.495947"
+   y="760.98834"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-1-8" /><text
+   y="819.11212"
    x="22.837429"
-   y="819.11212">#1碳氢仪</text>
+   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd"
+   font-size="12"
+   id="text461-9-4"
+   transform="scale(1.0522166,0.95037467)">#1碳氢仪</text>
 
 
 <image
-   id="image561-86-9"
-   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
-   height="75.749619"
-   width="72.840591"
-   overflow="visible"
-   style="fill-rule:evenodd;overflow:visible"
+   y="789.93109"
    x="21.793371"
-   y="789.93109" />
+   style="fill-rule:evenodd;overflow:visible"
+   overflow="visible"
+   width="72.840591"
+   height="75.749619"
+   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
+   id="image561-86-9" />
 
 
 
@@ -1928,39 +1928,39 @@
 
 
 <g
-   transform="matrix(1,0,0,0.55766581,-1524.5615,494.11143)"
+   style="fill-rule:evenodd"
    id="g3661-1-3"
-   style="fill-rule:evenodd"><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909"
-     x1="1517.4204"
-     y1="402.3598"
-     x2="1517.4204"
+   transform="matrix(1,0,0,0.55766581,-1524.5615,494.11143)"><line
+     id="line327-8-3-5"
      y2="701.91406"
-     id="line327-8-3-5" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667"
-     x1="1925.3148"
-     y1="402.65515"
-     x2="1925.3148"
+     x2="1517.4204"
+     y1="402.3598"
+     x1="1517.4204"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909" /><line
+     id="line327-8-7-8-9"
      y2="703.1554"
-     id="line327-8-7-8-9" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755"
-     x1="1924.724"
-     y1="702.4519"
-     x2="1516.7675"
+     x2="1925.3148"
+     y1="402.65515"
+     x1="1925.3148"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667" /><line
+     id="line333-1-9-8"
      y2="702.44226"
-     id="line333-1-9-8" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447"
-     x1="1926.0596"
-     y1="403.05197"
-     x2="1517.3776"
+     x2="1516.7675"
+     y1="702.4519"
+     x1="1924.724"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755" /><line
+     id="line333-1-8-34-4"
      y2="403.04233"
-     id="line333-1-8-34-4" /></g><text
-   transform="scale(1.0522166,0.95037466)"
-   id="text221-9-4-6"
-   font-size="14.2861"
-   style="font-size:19.3374px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
+     x2="1517.3776"
+     y1="403.05197"
+     x1="1926.0596"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447" /></g><text
+   y="786.25"
    x="164.05563"
-   y="786.25">碳氢室</text>
+   style="font-size:19.3374px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd"
+   font-size="14.2861"
+   id="text221-9-4-6"
+   transform="scale(1.0522166,0.95037466)">碳氢室</text>
 
 
 
@@ -1985,889 +1985,986 @@
 
 
 <line
-   id="line375-0"
-   y2="566.09924"
-   x2="817.74817"
-   y1="566.09924"
+   style="fill:none;stroke:#bbbdbf;stroke-width:1.96291"
    x1="447.03421"
-   style="fill:none;stroke:#bbbdbf;stroke-width:1.96291" /><circle
-   inkscape:label="工分仪4_运行状态"
-   id="circle173-2-4"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#00a551;fill-rule:evenodd"
+   y1="566.09924"
+   x2="817.74817"
+   y2="566.09924"
+   id="line375-0" /><circle
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,-481.57799,130.11085)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
+   style="fill:#00a551;fill-rule:evenodd"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-2-4"
+   inkscape:label="工分仪4_运行状态" /><text
+   y="475.78647"
+   x="289.10492"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
    id="text193-7-6"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="289.10492"
-   y="475.78647">今日化验</text>
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="工分仪4_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="491.61444"
-   x="302.64063"
+   font-size="10"
    id="text195-6-0"
-   font-size="10">10个</text>
-
-
-<rect
-   id="rect207-14-7"
-   height="86.437607"
-   width="170.84985"
-   y="397.12152"
-   x="210.09779"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-2-17"
-   height="24.225634"
-   width="172.12027"
-   y="372.1073"
-   x="209.46394"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-3-7"
-   font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
-   x="209.08044"
-   y="409.92508">#4工分仪</text>
-
-
-<image
-   id="image561-2-7"
-   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
-   height="75.749619"
-   width="72.840591"
-   overflow="visible"
-   style="fill-rule:evenodd;overflow:visible"
-   x="217.76137"
-   y="401.05008" /><circle
-   inkscape:label="工分仪1_运行状态"
-   id="circle173-3"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#00a551;fill-rule:evenodd"
-   transform="matrix(1.4242591,0,0,1.2864079,-677.54598,4.1118289)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-59"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="102.86191"
-   y="343.20822">今日化验</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="工分仪1_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="359.03619"
-   x="116.39761"
-   id="text195-98"
-   font-size="10">10个</text>
-
-
-<rect
-   id="rect207-18"
-   height="86.437607"
-   width="170.84985"
-   y="271.1225"
-   x="14.129797"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-26"
-   height="24.225634"
-   width="172.12027"
-   y="246.10829"
-   x="13.495947"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-6"
-   font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
-   x="22.837429"
-   y="277.34683">#1工分仪</text>
-
-
-<image
-   id="image561-0"
-   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
-   height="75.749619"
-   width="72.840591"
-   overflow="visible"
-   style="fill-rule:evenodd;overflow:visible"
-   x="21.793371"
-   y="276.03677" /><circle
-   inkscape:label="工分仪2_运行状态"
-   id="circle173-7-8"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
-   style="fill:#00a551;fill-rule:evenodd"
-   transform="matrix(1.4242591,0,0,1.2864079,-481.57799,4.1118289)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-4-0"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="289.10492"
-   y="343.20822">今日化验</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="工分仪2_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="359.03619"
    x="302.64063"
-   id="text195-0-1"
-   font-size="10">10个</text>
+   y="491.61444"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="工分仪4_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
 
 
 <rect
-   id="rect207-9-2"
-   height="86.437607"
-   width="170.84985"
-   y="271.1225"
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
    x="210.09779"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-4-5"
-   height="24.225634"
-   width="172.12027"
-   y="246.10829"
+   y="397.12152"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-14-7" /><rect
+   style="fill:#808184;fill-rule:evenodd"
    x="209.46394"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-8-0"
-   font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   y="372.1073"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-2-17" /><text
+   y="409.92508"
    x="209.08044"
-   y="277.34683">#2工分仪</text>
+   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   font-size="12"
+   id="text461-3-7"
+   transform="scale(1.0522166,0.95037467)">#4工分仪</text>
 
 
 <image
-   id="image561-8-9"
-   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
-   height="75.749619"
-   width="72.840591"
-   overflow="visible"
-   style="fill-rule:evenodd;overflow:visible"
+   y="401.05008"
    x="217.76137"
-   y="276.03677" /><circle
-   inkscape:label="工分仪3_运行状态"
-   id="circle173-4-7"
-   r="8.4549999"
-   cy="225.92"
-   cx="573.37201"
-   sodipodi:cx="573.37201"
-   sodipodi:cy="225.92"
-   sodipodi:rx="8.4549999"
-   sodipodi:ry="8.4549999"
+   style="fill-rule:evenodd;overflow:visible"
+   overflow="visible"
+   width="72.840591"
+   height="75.749619"
+   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
+   id="image561-2-7" /><circle
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
+   transform="matrix(1.4242591,0,0,1.2864079,-677.54598,4.1118289)"
    style="fill:#00a551;fill-rule:evenodd"
-   transform="matrix(1.4242591,0,0,1.2864079,-677.54598,130.93991)"
-   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text193-5-8"
-   font-size="10"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-3"
+   inkscape:label="工分仪1_运行状态" /><text
+   y="343.20822"
    x="102.86191"
-   y="476.65881">今日化验</text>
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text193-59"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
 
 
 <text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="工分仪3_样品个数"
-   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   y="492.48679"
+   font-size="10"
+   id="text195-98"
    x="116.39761"
-   id="text195-5-3"
-   font-size="10">10个</text>
+   y="359.03619"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="工分仪1_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
 
 
 <rect
-   id="rect207-1-5"
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
+   x="14.129797"
+   y="271.1225"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-18" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="13.495947"
+   y="246.10829"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-26" /><text
+   y="277.34683"
+   x="22.837429"
+   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   font-size="12"
+   id="text461-6"
+   transform="scale(1.0522166,0.95037467)">#1工分仪</text>
+
+
+<image
+   y="276.03677"
+   x="21.793371"
+   style="fill-rule:evenodd;overflow:visible"
+   overflow="visible"
+   width="72.840591"
+   height="75.749619"
+   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
+   id="image561-0" /><circle
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
+   transform="matrix(1.4242591,0,0,1.2864079,-481.57799,4.1118289)"
+   style="fill:#00a551;fill-rule:evenodd"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-7-8"
+   inkscape:label="工分仪2_运行状态" /><text
+   y="343.20822"
+   x="289.10492"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text193-4-0"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
+
+
+<text
+   font-size="10"
+   id="text195-0-1"
+   x="302.64063"
+   y="359.03619"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="工分仪2_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
+   x="210.09779"
+   y="271.1225"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-9-2" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="209.46394"
+   y="246.10829"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-4-5" /><text
+   y="277.34683"
+   x="209.08044"
+   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   font-size="12"
+   id="text461-8-0"
+   transform="scale(1.0522166,0.95037467)">#2工分仪</text>
+
+
+<image
+   y="276.03677"
+   x="217.76137"
+   style="fill-rule:evenodd;overflow:visible"
+   overflow="visible"
+   width="72.840591"
+   height="75.749619"
+   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
+   id="image561-8-9" /><circle
+   d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
+   transform="matrix(1.4242591,0,0,1.2864079,-677.54598,130.93991)"
+   style="fill:#00a551;fill-rule:evenodd"
+   sodipodi:ry="8.4549999"
+   sodipodi:rx="8.4549999"
+   sodipodi:cy="225.92"
+   sodipodi:cx="573.37201"
+   cx="573.37201"
+   cy="225.92"
+   r="8.4549999"
+   id="circle173-4-7"
+   inkscape:label="工分仪3_运行状态" /><text
+   y="476.65881"
+   x="102.86191"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="10"
+   id="text193-5-8"
+   transform="scale(1.0522166,0.95037467)">今日化验</text>
+
+
+<text
+   font-size="10"
+   id="text195-5-3"
+   x="116.39761"
+   y="492.48679"
+   style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   inkscape:label="工分仪3_样品个数"
+   transform="scale(1.0522166,0.95037467)">10个</text>
+
+
+<rect
+   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
+   x="14.129797"
+   y="397.95059"
+   width="170.84985"
+   height="86.437607"
+   id="rect207-1-5" /><rect
+   style="fill:#808184;fill-rule:evenodd"
+   x="13.495947"
+   y="372.93637"
+   width="172.12027"
+   height="24.225634"
+   id="rect393-7-1" /><text
+   y="410.79742"
+   x="22.837429"
+   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
+   font-size="12"
+   id="text461-1-2"
+   transform="scale(1.0522166,0.95037467)">#3工分仪</text>
+
+
+<image
+   y="401.87915"
+   x="21.793371"
+   style="fill-rule:evenodd;overflow:visible"
+   overflow="visible"
+   width="72.840591"
+   height="75.749619"
+   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
+   id="image561-1-0" /><line
+   style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909"
+   x1="-7.1410899"
+   y1="204.62746"
+   x2="-7.1410899"
+   y2="504.1817"
+   id="line327-8-4" /><line
+   style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667"
+   x1="400.75333"
+   y1="204.92281"
+   x2="400.75333"
+   y2="505.42303"
+   id="line327-8-7-0" /><line
+   style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755"
+   x1="400.16251"
+   y1="504.71954"
+   x2="-7.794044"
+   y2="504.7099"
+   id="line333-1-6" /><line
+   style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447"
+   x1="401.49808"
+   y1="205.31963"
+   x2="-7.1839366"
+   y2="205.30998"
+   id="line333-1-8-1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<text
+   y="241.41948"
+   x="164.28224"
+   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text221-9-4-6-0-8"
+   transform="scale(1.0522166,0.95037466)">工分仪</text>
+
+
+
+
+
+<rect
+   style="fill:#bbbdbf"
+   x="140.04538"
+   y="98.801865"
+   width="553.82318"
+   height="19.058132"
+   id="rect255" /><rect
+   style="fill:#bbbdbf"
+   x="140.04538"
+   y="157.58043"
+   width="553.82318"
+   height="19.058132"
+   id="rect259" /><rect
+   style="fill:#a6a8ab"
+   x="10.746854"
+   y="157.58043"
+   width="21.098974"
+   height="19.058132"
+   id="rect253" /><text
+   y="181.62582"
+   x="33.289097"
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text287"
+   transform="scale(1.0522166,0.95037467)">待化验数</text>
+
+
+<rect
+   style="fill:#1b75bb"
+   x="10.746854"
+   y="98.801865"
+   width="21.098974"
+   height="19.058132"
+   id="rect249" /><rect
+   style="fill:#00a551"
+   x="10.746854"
+   y="128.44971"
+   width="21.098974"
+   height="19.056847"
+   id="rect251" /><text
+   y="119.78022"
+   x="33.289097"
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text283"
+   transform="scale(1.0522166,0.95037467)">化验完成</text>
+
+
+<text
+   y="150.97467"
+   x="42.957706"
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text285"
+   transform="scale(1.0522166,0.95037467)">化验中</text>
+
+
+<g
+   id="g5633"
+   transform="matrix(1.0339431,0,0,1,0.28782073,8.0602133)"><rect
+     id="rect241"
+     height="138.08292"
+     width="926.69788"
+     y="42.764393"
+     x="-7.7576256"
+     style="fill:none;stroke:#a6a8ab;stroke-width:1.44374073" /><rect
+     id="rect243"
+     height="31.990393"
+     width="926.78802"
+     y="40.374393"
+     x="-7.8027062"
+     style="fill:#808184" /></g><text
+   y="75.318031"
+   x="9.2736092"
+   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text245"
+   transform="scale(1.0522166,0.95037467)">每日化验工作</text>
+
+
+<rect
+   style="fill:#bbbdbf"
+   x="140.04538"
+   y="128.44971"
+   width="553.82318"
+   height="19.056847"
+   id="rect257" /><rect
+   x="138.10266"
+   y="98.801865"
+   width="457.76544"
+   height="19.058132"
+   id="rect261"
+   style="fill:#1b75bb"
+   inkscape:label="化验完成_Line" /><rect
+   style="fill:#6d6e70"
+   x="138.10266"
+   y="157.58043"
+   width="205.65732"
+   height="19.058132"
+   id="rect265"
+   inkscape:label="待化验数_Line" /><text
+   y="119.76831"
+   x="705.43231"
+   style="font-size:19.3374px;font-family:MicrosoftYaHei-Bold;fill:#00adee"
+   font-size="14.2861"
+   id="text299"
+   inkscape:label="化验完成_Count"
+   transform="scale(1.0522166,0.95037467)">9</text>
+
+
+<text
+   y="150.96155"
+   x="705.82251"
+   style="font-size:19.33737564px;fill:#00a551;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text301"
+   inkscape:label="化验中_Count"
+   transform="scale(1.0522166,0.95037467)">2</text>
+
+
+<text
+   y="181.61269"
+   x="705.82318"
+   style="font-size:19.33737564px;fill:#d0d2d3;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text303"
+   inkscape:label="待化验数_Count"
+   transform="scale(1.0522166,0.95037467)">8</text>
+
+
+<rect
+   style="fill:#00a551"
+   x="138.10268"
+   y="128.44969"
+   width="70.311394"
+   height="19.056847"
+   id="rect263"
+   inkscape:label="化验中_Line" /><g
+   style="fill-rule:evenodd"
+   transform="matrix(1.4242591,0,0,1.2864079,-232.07364,525.54607)"
+   id="g11"><rect
+     style="fill:#bbbdbf"
+     x="725.70898"
+     y="218.604"
+     width="40.244999"
+     height="46.049"
+     id="rect13" /><rect
+     style="fill:#d0d2d3"
+     x="725.68298"
+     y="216.81"
+     width="40.247002"
+     height="1.794"
+     id="rect15" /><rect
+     style="fill:#d0d2d3"
+     x="732"
+     y="224.04201"
+     width="27.341"
+     height="12.042"
+     id="rect17" /><rect
+     style="fill:#d0d2d3"
+     x="732.883"
+     y="245.73599"
+     width="25.899"
+     height="13.874"
+     id="rect19" /><polygon
+     style="fill:#a6a8ab"
+     points="761.775,242.938 758.739,245.736 732.841,245.736 729.946,242.938 "
+     id="polygon21" /><polygon
+     style="fill:#a6a8ab"
+     points="761.656,263.327 758.75,259.61 732.852,259.61 729.959,263.327 "
+     id="polygon23" /><polygon
+     style="fill:#929497"
+     points="729.959,242.981 732.887,245.742 732.887,259.616 729.959,263.359 "
+     id="polygon25" /><polygon
+     style="fill:#e6e7e8"
+     points="761.709,242.981 758.782,245.742 758.782,259.616 761.709,263.359 "
+     id="polygon27" /><circle
+     style="fill:#404041;stroke:#a6a8ab"
+     cx="745.66998"
+     cy="232.871"
+     r="1.474"
+     id="circle29" /><circle
+     style="fill:#404041"
+     cx="757.164"
+     cy="230.062"
+     r="0.57800001"
+     id="circle31" /><circle
+     style="fill:#ec1c24"
+     cx="760.245"
+     cy="247.005"
+     r="0.57800001"
+     id="circle33" /><rect
+     style="fill:#58595b"
+     x="760.349"
+     y="248.55299"
+     width="0.69300002"
+     height="7.7020001"
+     id="rect35" /></g><g
+   style="fill-rule:evenodd"
+   transform="matrix(1.4242591,0,0,1.2864079,-28.126424,525.54607)"
+   id="g11-9"><rect
+     style="fill:#bbbdbf"
+     x="725.70898"
+     y="218.604"
+     width="40.244999"
+     height="46.049"
+     id="rect13-0" /><rect
+     style="fill:#d0d2d3"
+     x="725.68298"
+     y="216.81"
+     width="40.247002"
+     height="1.794"
+     id="rect15-7" /><rect
+     style="fill:#d0d2d3"
+     x="732"
+     y="224.04201"
+     width="27.341"
+     height="12.042"
+     id="rect17-8" /><rect
+     style="fill:#d0d2d3"
+     x="732.883"
+     y="245.73599"
+     width="25.899"
+     height="13.874"
+     id="rect19-1" /><polygon
+     style="fill:#a6a8ab"
+     points="761.775,242.938 758.739,245.736 732.841,245.736 729.946,242.938 "
+     id="polygon21-5" /><polygon
+     style="fill:#a6a8ab"
+     points="761.656,263.327 758.75,259.61 732.852,259.61 729.959,263.327 "
+     id="polygon23-8" /><polygon
+     style="fill:#929497"
+     points="729.959,242.981 732.887,245.742 732.887,259.616 729.959,263.359 "
+     id="polygon25-6" /><polygon
+     style="fill:#e6e7e8"
+     points="761.709,242.981 758.782,245.742 758.782,259.616 761.709,263.359 "
+     id="polygon27-1" /><circle
+     style="fill:#404041;stroke:#a6a8ab"
+     cx="745.66998"
+     cy="232.871"
+     r="1.474"
+     id="circle29-2" /><circle
+     style="fill:#404041"
+     cx="757.164"
+     cy="230.062"
+     r="0.57800001"
+     id="circle31-4" /><circle
+     style="fill:#ec1c24"
+     cx="760.245"
+     cy="247.005"
+     r="0.57800001"
+     id="circle33-2" /><rect
+     style="fill:#58595b"
+     x="760.349"
+     y="248.55299"
+     width="0.69300002"
+     height="7.7020001"
+     id="rect35-5" /></g><rect
+   style="opacity:0.02293576;fill:#d0d2d3;fill-opacity:1;stroke:none"
+   id="rect5500"
+   width="60.99744"
+   height="124.29668"
+   x="-219.82097"
+   y="199.35039"
+   transform="matrix(1.0187367,0,0,1.0187367,-17.9872,0)" /><g
+   id="g5597"
+   transform="translate(0,-8.3784907)"><line
+     id="line315-0-9-1-1-2"
+     y2="370.74722"
+     x2="401.01328"
+     y1="370.74722"
+     x1="447.33957"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.2020781" /><line
+     id="line327-8-7-0-9"
+     y2="812.33826"
+     x2="447.47903"
+     y1="370.29382"
+     x1="447.47903"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.66885459" /><line
+     id="line315-0-9-1-1-2-5"
+     y2="811.8822"
+     x2="401.36578"
+     y1="811.8822"
+     x1="448.0892"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.20721948" /></g><g
+   id="g5592"
+   transform="matrix(-1,0,0,0.87293255,2968.7553,16.033152)"><line
+     id="line315-0-9-1-1-2-2"
+     y2="403.11819"
+     x2="1455.7446"
+     y1="403.11819"
+     x1="1502.0709"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.2020781" /><line
+     id="line327-8-7-0-9-0"
+     y2="844.70923"
+     x2="1502.2104"
+     y1="402.66479"
+     x1="1502.2104"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.66885459" /><line
+     id="line315-0-9-1-1-2-5-0"
+     y2="844.25317"
+     x2="1456.0972"
+     y1="844.25317"
+     x1="1502.8206"
+     style="fill:none;stroke:#d0d2d3;stroke-width:1.20721948" /></g><g
+   transform="matrix(1.0232243,0,0,1,984.58673,8.0602133)"
+   style="fill-rule:evenodd"
+   id="g5633-9"><rect
+     id="rect241-1"
+     height="138.08292"
+     width="926.69788"
+     y="42.764393"
+     x="-7.7576256"
+     style="fill:none;stroke:#a6a8ab;stroke-width:1.44374073" /><rect
+     id="rect243-8"
+     height="31.990393"
+     width="926.78802"
+     y="40.374393"
+     x="-7.8027062"
+     style="fill:#808184" /></g><text
+   y="75.176399"
+   x="1051.214"
+   style="font-size:19.33737564px;fill:#ffffff;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text239-2"
+   transform="scale(1.0522166,0.95037466)">已审核样品</text>
+
+
+<text
+   y="75.204727"
+   x="1281.2258"
+   style="font-size:19.33737564px;fill:#ffffff;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
+   font-size="14.2861"
+   id="text247-8"
+   transform="scale(1.0522166,0.95037466)">未审核样品</text>
+
+
+<g
+   style="fill-rule:evenodd"
+   id="_123600944"
+   transform="matrix(1.6768766,0,0,1.6768766,1547.9695,795.30486)"><path
+     style="fill:#cccccc"
+     inkscape:connector-curvature="0"
+     d="m 3.86466,13.098 5.20558,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 l 0,18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 l -19.0291,0 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 l 0,-18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
+     class="fil0"
+     id="_123602840" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 5.18244,32.8873 c 0.334405,0 0.605454,0.271049 0.605454,0.605454 0,0.334405 -0.271049,0.605454 -0.605454,0.605454 -0.334405,0 -0.605454,-0.271049 -0.605454,-0.605454 0,-0.334405 0.271049,-0.605454 0.605454,-0.605454 z m 0,-0.117896 c 0.399412,0 0.72335,0.323937 0.72335,0.72335 0,0.399412 -0.323937,0.72335 -0.72335,0.72335 -0.399412,0 -0.722799,-0.323937 -0.722799,-0.72335 0,-0.399412 0.323386,-0.72335 0.722799,-0.72335 z"
+     class="fil1"
+     id="_123886840" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 19.7189,11.2138 0,2.60527 -9.22946,0 0,-2.60527 0,0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 l 0,0 z"
+     class="fil1"
+     id="_123887056" /><circle
+     style="fill:#666666"
+     sodipodi:ry="2.0255499"
+     sodipodi:rx="2.0255499"
+     sodipodi:cy="9.7182198"
+     sodipodi:cx="15.1648"
+     d="m 17.19035,9.7182198 c 0,1.1186802 -0.90687,2.0255502 -2.02555,2.0255502 -1.118681,0 -2.02555,-0.90687 -2.02555,-2.0255502 0,-1.1186804 0.906869,-2.0255499 2.02555,-2.0255499 1.11868,0 2.02555,0.9068695 2.02555,2.0255499 z"
+     r="2.0255499"
+     cy="9.7182198"
+     cx="15.1648"
+     class="fil5"
+     id="_123884824" /><circle
+     style="fill:#666666"
+     sodipodi:ry="0.63410801"
+     sodipodi:rx="0.63410801"
+     sodipodi:cy="12.6844"
+     sodipodi:cx="17.856001"
+     d="m 18.490109,12.6844 c 0,0.350208 -0.2839,0.634108 -0.634108,0.634108 -0.350208,0 -0.634108,-0.2839 -0.634108,-0.634108 0,-0.350209 0.2839,-0.634108 0.634108,-0.634108 0.350208,0 0.634108,0.283899 0.634108,0.634108 z"
+     r="0.63410801"
+     cy="12.6844"
+     cx="17.856001"
+     class="fil5"
+     id="_123884704" /><path
+     style="fill:#cccccc"
+     inkscape:connector-curvature="0"
+     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 l -20.2709,0 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 l 0,-20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     class="fil0"
+     id="_123884560" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,2.85043 -23.0354,0 0,-2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     class="fil1"
+     id="_123884488" /><ellipse
+     style="fill:#666666"
+     sodipodi:ry="1.50156"
+     sodipodi:rx="4.01051"
+     sodipodi:cy="15.1072"
+     sodipodi:cx="33.505501"
+     d="m 37.516011,15.1072 c 0,0.829288 -1.795567,1.50156 -4.01051,1.50156 -2.214944,0 -4.01051,-0.672272 -4.01051,-1.50156 0,-0.829289 1.795566,-1.50156 4.01051,-1.50156 2.214943,0 4.01051,0.672271 4.01051,1.50156 z"
+     ry="1.50156"
+     rx="4.01051"
+     cy="15.1072"
+     cx="33.505501"
+     class="fil5"
+     id="_123884392" /><rect
+     style="fill:#666666"
+     height="4.24579"
+     width="0.19908699"
+     y="12.9467"
+     x="38.882599"
+     class="fil5"
+     id="_123884272" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 1.65439,11.7554 3.53742,0 c 0.760261,0 1.40428,0.506841 1.596,1.19163 l -6.72941,0 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 z m 2.21027,1.34258 2.95786,0 2.24773,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 l 0,1.99376 -23.2067,0 0,-1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 l -0.130567,0 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 l 0,0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 l 3.84041997,0 z"
+     class="fil1"
+     id="_123884176" /></g><g
+   style="fill-rule:evenodd"
+   id="_123600944-7"
+   transform="matrix(1.6768766,0,0,1.6768766,1547.1404,663.86467)"><path
+     style="fill:#cccccc"
+     inkscape:connector-curvature="0"
+     d="m 3.86466,13.098 5.20558,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 l 0,18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 l -19.0291,0 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 l 0,-18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
+     class="fil0"
+     id="_123602840-9" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 5.18244,32.8873 c 0.334405,0 0.605454,0.271049 0.605454,0.605454 0,0.334405 -0.271049,0.605454 -0.605454,0.605454 -0.334405,0 -0.605454,-0.271049 -0.605454,-0.605454 0,-0.334405 0.271049,-0.605454 0.605454,-0.605454 z m 0,-0.117896 c 0.399412,0 0.72335,0.323937 0.72335,0.72335 0,0.399412 -0.323937,0.72335 -0.72335,0.72335 -0.399412,0 -0.722799,-0.323937 -0.722799,-0.72335 0,-0.399412 0.323386,-0.72335 0.722799,-0.72335 z"
+     class="fil1"
+     id="_123886840-8" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 19.7189,11.2138 0,2.60527 -9.22946,0 0,-2.60527 0,0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 l 0,0 z"
+     class="fil1"
+     id="_123887056-3" /><circle
+     style="fill:#666666"
+     sodipodi:ry="2.0255499"
+     sodipodi:rx="2.0255499"
+     sodipodi:cy="9.7182198"
+     sodipodi:cx="15.1648"
+     d="m 17.19035,9.7182198 c 0,1.1186802 -0.90687,2.0255502 -2.02555,2.0255502 -1.118681,0 -2.02555,-0.90687 -2.02555,-2.0255502 0,-1.1186804 0.906869,-2.0255499 2.02555,-2.0255499 1.11868,0 2.02555,0.9068695 2.02555,2.0255499 z"
+     r="2.0255499"
+     cy="9.7182198"
+     cx="15.1648"
+     class="fil5"
+     id="_123884824-0" /><circle
+     style="fill:#666666"
+     sodipodi:ry="0.63410801"
+     sodipodi:rx="0.63410801"
+     sodipodi:cy="12.6844"
+     sodipodi:cx="17.856001"
+     d="m 18.490109,12.6844 c 0,0.350208 -0.2839,0.634108 -0.634108,0.634108 -0.350208,0 -0.634108,-0.2839 -0.634108,-0.634108 0,-0.350209 0.2839,-0.634108 0.634108,-0.634108 0.350208,0 0.634108,0.283899 0.634108,0.634108 z"
+     r="0.63410801"
+     cy="12.6844"
+     cx="17.856001"
+     class="fil5"
+     id="_123884704-2" /><path
+     style="fill:#cccccc"
+     inkscape:connector-curvature="0"
+     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 l -20.2709,0 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 l 0,-20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     class="fil0"
+     id="_123884560-2" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,2.85043 -23.0354,0 0,-2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     class="fil1"
+     id="_123884488-3" /><ellipse
+     style="fill:#666666"
+     sodipodi:ry="1.50156"
+     sodipodi:rx="4.01051"
+     sodipodi:cy="15.1072"
+     sodipodi:cx="33.505501"
+     d="m 37.516011,15.1072 c 0,0.829288 -1.795567,1.50156 -4.01051,1.50156 -2.214944,0 -4.01051,-0.672272 -4.01051,-1.50156 0,-0.829289 1.795566,-1.50156 4.01051,-1.50156 2.214943,0 4.01051,0.672271 4.01051,1.50156 z"
+     ry="1.50156"
+     rx="4.01051"
+     cy="15.1072"
+     cx="33.505501"
+     class="fil5"
+     id="_123884392-6" /><rect
+     style="fill:#666666"
+     height="4.24579"
+     width="0.19908699"
+     y="12.9467"
+     x="38.882599"
+     class="fil5"
+     id="_123884272-7" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 1.65439,11.7554 3.53742,0 c 0.760261,0 1.40428,0.506841 1.596,1.19163 l -6.72941,0 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 z m 2.21027,1.34258 2.95786,0 2.24773,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 l 0,1.99376 -23.2067,0 0,-1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 l -0.130567,0 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 l 0,0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 l 3.84041997,0 z"
+     class="fil1"
+     id="_123884176-1" /></g><g
+   style="fill-rule:evenodd"
+   id="_123600944-5"
+   transform="matrix(1.6768766,0,0,1.6768766,1741.139,663.86467)"><path
+     style="fill:#cccccc"
+     inkscape:connector-curvature="0"
+     d="m 3.86466,13.098 5.20558,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 l 0,18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 l -19.0291,0 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 l 0,-18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
+     class="fil0"
+     id="_123602840-5" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 5.18244,32.8873 c 0.334405,0 0.605454,0.271049 0.605454,0.605454 0,0.334405 -0.271049,0.605454 -0.605454,0.605454 -0.334405,0 -0.605454,-0.271049 -0.605454,-0.605454 0,-0.334405 0.271049,-0.605454 0.605454,-0.605454 z m 0,-0.117896 c 0.399412,0 0.72335,0.323937 0.72335,0.72335 0,0.399412 -0.323937,0.72335 -0.72335,0.72335 -0.399412,0 -0.722799,-0.323937 -0.722799,-0.72335 0,-0.399412 0.323386,-0.72335 0.722799,-0.72335 z"
+     class="fil1"
+     id="_123886840-40" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 19.7189,11.2138 0,2.60527 -9.22946,0 0,-2.60527 0,0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 l 0,0 z"
+     class="fil1"
+     id="_123887056-2" /><circle
+     style="fill:#666666"
+     sodipodi:ry="2.0255499"
+     sodipodi:rx="2.0255499"
+     sodipodi:cy="9.7182198"
+     sodipodi:cx="15.1648"
+     d="m 17.19035,9.7182198 c 0,1.1186802 -0.90687,2.0255502 -2.02555,2.0255502 -1.118681,0 -2.02555,-0.90687 -2.02555,-2.0255502 0,-1.1186804 0.906869,-2.0255499 2.02555,-2.0255499 1.11868,0 2.02555,0.9068695 2.02555,2.0255499 z"
+     r="2.0255499"
+     cy="9.7182198"
+     cx="15.1648"
+     class="fil5"
+     id="_123884824-6" /><circle
+     style="fill:#666666"
+     sodipodi:ry="0.63410801"
+     sodipodi:rx="0.63410801"
+     sodipodi:cy="12.6844"
+     sodipodi:cx="17.856001"
+     d="m 18.490109,12.6844 c 0,0.350208 -0.2839,0.634108 -0.634108,0.634108 -0.350208,0 -0.634108,-0.2839 -0.634108,-0.634108 0,-0.350209 0.2839,-0.634108 0.634108,-0.634108 0.350208,0 0.634108,0.283899 0.634108,0.634108 z"
+     r="0.63410801"
+     cy="12.6844"
+     cx="17.856001"
+     class="fil5"
+     id="_123884704-0" /><path
+     style="fill:#cccccc"
+     inkscape:connector-curvature="0"
+     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 l -20.2709,0 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 l 0,-20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     class="fil0"
+     id="_123884560-6" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,2.85043 -23.0354,0 0,-2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     class="fil1"
+     id="_123884488-1" /><ellipse
+     style="fill:#666666"
+     sodipodi:ry="1.50156"
+     sodipodi:rx="4.01051"
+     sodipodi:cy="15.1072"
+     sodipodi:cx="33.505501"
+     d="m 37.516011,15.1072 c 0,0.829288 -1.795567,1.50156 -4.01051,1.50156 -2.214944,0 -4.01051,-0.672272 -4.01051,-1.50156 0,-0.829289 1.795566,-1.50156 4.01051,-1.50156 2.214943,0 4.01051,0.672271 4.01051,1.50156 z"
+     ry="1.50156"
+     rx="4.01051"
+     cy="15.1072"
+     cx="33.505501"
+     class="fil5"
+     id="_123884392-1" /><rect
+     style="fill:#666666"
+     height="4.24579"
+     width="0.19908699"
+     y="12.9467"
+     x="38.882599"
+     class="fil5"
+     id="_123884272-1" /><path
+     style="fill:#999999"
+     inkscape:connector-curvature="0"
+     d="m 1.65439,11.7554 3.53742,0 c 0.760261,0 1.40428,0.506841 1.596,1.19163 l -6.72941,0 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 z m 2.21027,1.34258 2.95786,0 2.24773,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 l 0,1.99376 -23.2067,0 0,-1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 l -0.130567,0 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 l 0,0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 l 3.84041997,0 z"
+     class="fil1"
+     id="_123884176-7" /></g><ellipse
+   ry="10.876578"
+   rx="12.04211"
+   inkscape:label="量热仪4_运行状态"
+   id="circle173-4-3"
+   cy="809.76837"
+   cx="1859.9581"
+   style="fill:#00a551;fill-rule:evenodd;stroke-width:1.35358" /><text
+   transform="scale(1.0522166,0.95037466)"
+   id="text193-5-7"
+   font-size="10"
+   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd;stroke-width:1"
+   x="1738.3369"
+   y="885.13269">今日化验</text><text
+   transform="scale(1.0522166,0.95037466)"
+   inkscape:label="量热仪4_样品个数"
+   style="font-size:13.5358px;font-family:MicrosoftYaHei-Bold;fill:#f1f1f2;fill-rule:evenodd;stroke-width:1"
+   y="900.96069"
+   x="1751.8727"
+   id="text195-5-6"
+   font-size="10">10个</text><rect
+   id="rect207-1-2"
    height="86.437607"
    width="170.84985"
-   y="397.95059"
-   x="14.129797"
-   style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976" /><rect
-   id="rect393-7-1"
+   y="786.15381"
+   x="1735.0037"
+   style="fill:none;fill-rule:evenodd;stroke:#a6a8ab;stroke-width:1.35358" /><rect
+   id="rect393-7-2"
    height="24.225634"
    width="172.12027"
-   y="372.93637"
-   x="13.495947"
-   style="fill:#808184;fill-rule:evenodd" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text461-1-2"
+   y="761.13959"
+   x="1734.3699"
+   style="fill:#808184;fill-rule:evenodd;stroke-width:1" /><text
+   transform="scale(1.0522166,0.95037466)"
+   id="text461-1-3"
    font-size="12"
-   style="font-size:16.24295616px;fill:#ffffff;fill-rule:evenodd;font-family:AdobeSongStd-Light-GBpc-EUC-H"
-   x="22.837429"
-   y="410.79742">#3工分仪</text>
-
-
-<image
-   id="image561-1-0"
-   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAEACAYAAADcJMhcAAAACXBIWXMAAC82AAAvNgG7vivJAAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACWpJREFUeNrs3ctvVOcZwOHPnrGN jU2AcnFwAhQBVlDVXESIsohEK3qR2kp0ETVZVFU3+N/IKpuqUrvoBaRWTaSmqrJJValSlVZKpVYi CmrSLJISUpKCIeF+MbbBnrH7foexRSi9EI+Nz8zzSK8G2wR5zpyfv3PmnEBKAAAAAAAAAABwL3TY BHfnwIEDD7fLcz106NDfvOKLo2oT3LVftNFzfdTLLbzl4hGbgIXqtAlAeCA8QHggPEB4IDxAeCA8 QHggPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EBwgPhAcID4QHCA+E B8IDhAfCA4QHwgOEB8IDPqljMf7QgwcP5j+3K6Y/ZiCmr/FxR9k32DvvvPNWu+wcu3bteqRFnsp0 zPWYazFXY6ZGRkZmWiq8iK4SD+tjdsTkF25XzLaYtTHVsr+CExMTj7RLeH19fa3yQ+ZizKmYd2P+ GvP3/HHEV2uJ8CK6nnjYEvPlmG/E7IxZFbOyseI5tOVemGqseGMxZ2J+G/ObHGDEN1nq8BrRfS7m mZgvxWxvHGJ2eN1ZRuoxJ2P+EvOzmMP3Ir6OJkWXV7LPx3ynsdI9ENMtOpZxfFdi/hjzo5g/R3z1 pfwGmnXONRizP+ZrMQ+mFnkjhZaV34dYHbMvZjxmNOYfS/kNLPicK1a7HO8XY74es1l0lERnI76v xnwr9uPuUoUXhtLNN1O2O7ykZPK+mt+B/2a6+S58qcLbk25eMugVHSU97Nwa85WyhfdozP2NJwBl lC93faFs4W1pHCu7RkdZ9TSO2pZMM97VXOPc7u7MzMyker0+P/njPLOzs/OPc3PHE5OOjvnp7Oyc f8xTqVTmJ3/M/70AbSxbeD0OM/+zHM/09HQxtTwR2vXr1/OtZ8Vcn5xMN27cKGb+99VqqZ7jjMfb 48uRVarVVImoqvHY1dVVTHdPT1qRp7c33+pVzIoVK4oA535Pnvzfc0e9ZQvPj9Xb5FUshzQ1NVVE duXy5XQpJj+OjY0Vn7t9tbt11Ztb+f7rRm+sdLeudrevejm8/oGBtHr16rQm5r6YHGeOtCcm/x7u zX7crAvofoyGHFsO68qVK+nc2bPp/IUL6erVq2k6AswR5pWsdodV7NMerv7PFyWirJ47V6yM3d3d qStmVYT4mXXr0oYNG9J9q1algfi4JwJlaVVtguascJcuXUonT55M7x09ms6cObPsDnMnJ2/ejng+ Qjx+/Hjx6xzf8PBwenDz5rRmzRoroPDKI69gJ0+cSG+88Ub6+OOPS/W9n41VOc/GwcH0+OOPp80R YF4dabHj2lY0Gqvcq6++WrrobnUmvvc/xHPIKzbCK4XXX3+9eLOk7PJzOHz4sBdUeOWQ3zxpFWMt 9FyE1+K279jREm9K5MsQ27dv94IKrxz27NmTtmzdWlwzK6v8vW/ZsiXteeIJL+gS8RbWAq1cuTLt 27cvvfnmm+mDDz5I1xoXyMsSXL7A/tn4wfHoY4+V+oeH8NpQ3mGffPLJ4lDt2LFj6dToaHE7WL52 li+cLyf5Qnpv47ayoaGhtGPnzrR+/XovovDKK+/AeXJwoxHf6dOn0/nz54v7MXOAcxez8wX3pZDP PefuWsmTf0Csi+9v0/33p6EHHijiQ3gtI68oO3bsKCZfYM/xXbx4MV2KybeUXbt2bf72seKG6Hzf Zr5XM9+7me/VbNy3md3pJum5N0Pm79PM92Y27tHMoc1Nf39/cSi5ds2atHbt2uJWsXyjNMJr/Q0c AQwODhYzJ4eWA8wzMT6eJuOccO6wNE/+enGI2rjl61ZFOBFcXsFyaHOrWY69N1a0vjjnzPdf5nEL mPC47RAw/x8DeWhPLieA8EB4gPBAeIDwQHiA8EB4gPDg3mjGLWNvtdMGGxsb29suz3VgYOA1iSwO fxHtXTpw4MBsuzzXQ4cO2T8caoIVb97BgwcfTjf/ma62cPTo0bY5/BoeHt7bTjGMjIz8qUzneD+I 2dtGO2M77Yvtdo63ZIfWDjXBOR4IDxAeCA8QHggPEB4IDxAeCA+EBwgPhAcID4QHCA+EBwgPhAfC A4QHwgOEB8IDhAfCA4QHwgPhAcKDFrTgfx+vv7/fVoSlDq/N/qFGcKgJwgOEB8IDhAfCA+EBwgPh AcID4QHCA+EBwgPhgfAA4YHwAOGB8ADhgfAA4YHwQHiA8EB4gPBAeIDwQHiA8EB4IDxAeCA8QHgg PEB4IDxAeCA8EB4gPBAeIDwQHiA8EB4gPBAeIDwQHggPEB4IDxAeCA8QHggPEB4ID4QHCA+EByxM 1Sag9KvH5GTqOXUqVcbGio/rAwPpxtBQmuntFR4sVnSrX3strX/55dR39GjxuYnh4XTu6afT5b17 l218wqPUBo4cSZuffz5VIsA5/W+/nXqPHUv1/v505amnnONBsw2+8MInopuTPzf44ovLd6X20lFm c4eXd/s14cEC1Fat+lRfEx4swKV9+9JspfJvn8+fy19brry5QqmdffbZ1Pvee8WbKdXG5YTawECa 3LkznX3mGeHBYpgaHEwfPvdcWvfKK2nlu+8Wnxt/6KF0fv/+NL1xo/BgseTAPhoZKdX37BwPhAfC A4QHwgOEB8IDhAfLz4IvoNdqNVsRljq8Cxcu2Iqw1OGNjo7aiuAcD4QHCA+EB8IDhAfCA4QHwgOE B8IDhAfCg3ZWpr/QdrYxtI+OxgjvHql1dnaOx1y/5QWhtc3Mzs721uv1lakF/8bzMjyhWqVSOdHT 0/N2PJ4pqgv2y9YW0dVmZmbWTU1N7Z6ent7cavEt5yeTDyvr1Wr1xIoVK34d8zvhtVV49XgYuHHj xv7x8fFvR3xb4uOK8BY/ulpEN9rb2/tSd3f3z7u6uv65adOmGbtkezl16tRHeV+I+L7biK+zFU41 qk0MpVkbYzYWtBzdyTi8/FU8/mTr1q2n7YLtaWho6EzE98NYAacmJiZGarXa5vh1pezxdTYpumaq x+o2GoeWL8Xjj7dt2yY68Y319fV9P+ansU+cyPvIIh1llWfFi/Ouq/V6/XKzfgLFhr0Yh5bFSic6 5sRpRo7te++//341VrwDcdi5upl/fhxlzZQqvAjk9zMzM8djYzQlvIjuo4jvl6LjTvLKF/taivA2 NDWEanVJw1twLEeOHLE30BJ2795dqnM8QHggPEB4IDwQHiA8EB4gPBAeIDwQHiA8WDb+JcAAMknQ nSQyFYUAAAAASUVORK5CYII="
-   height="75.749619"
-   width="72.840591"
-   overflow="visible"
-   style="fill-rule:evenodd;overflow:visible"
-   x="21.793371"
-   y="401.87915" /><line
-   id="line327-8-4"
-   y2="504.1817"
-   x2="-7.1410899"
-   y1="204.62746"
-   x1="-7.1410899"
-   style="fill:none;stroke:#d0d2d3;stroke-width:1.37379909" /><line
-   id="line327-8-7-0"
-   y2="505.42303"
-   x2="400.75333"
-   y1="204.92281"
-   x1="400.75333"
-   style="fill:none;stroke:#d0d2d3;stroke-width:1.37596667" /><line
-   id="line333-1-6"
-   y2="504.7099"
-   x2="-7.794044"
-   y1="504.71954"
-   x1="400.16251"
-   style="fill:none;stroke:#d0d2d3;stroke-width:1.37090755" /><line
-   id="line333-1-8-1"
-   y2="205.30998"
-   x2="-7.1839366"
-   y1="205.31963"
-   x1="401.49808"
-   style="fill:none;stroke:#d0d2d3;stroke-width:1.37092447" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<text
-   transform="scale(1.0522166,0.95037466)"
-   id="text221-9-4-6-0-8"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="164.28224"
-   y="241.41948">工分仪</text>
-
-
-
-
-
-<rect
-   id="rect255"
-   height="19.058132"
-   width="553.82318"
-   y="98.801865"
-   x="140.04538"
-   style="fill:#bbbdbf" /><rect
-   id="rect259"
-   height="19.058132"
-   width="553.82318"
-   y="157.58043"
-   x="140.04538"
-   style="fill:#bbbdbf" /><rect
-   id="rect253"
-   height="19.058132"
-   width="21.098974"
-   y="157.58043"
-   x="10.746854"
-   style="fill:#a6a8ab" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text287"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   x="33.289097"
-   y="181.62582">待化验数</text>
-
-
-<rect
-   id="rect249"
-   height="19.058132"
-   width="21.098974"
-   y="98.801865"
-   x="10.746854"
-   style="fill:#1b75bb" /><rect
-   id="rect251"
-   height="19.056847"
-   width="21.098974"
-   y="128.44971"
-   x="10.746854"
-   style="fill:#00a551" /><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text283"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   x="33.289097"
-   y="119.78022">化验完成</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   id="text285"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   x="42.957706"
-   y="150.97467">化验中</text>
-
-
-<g
-   transform="matrix(1.0339431,0,0,1,0.28782073,8.0602133)"
-   id="g5633"><rect
-     style="fill:none;stroke:#a6a8ab;stroke-width:1.44374073"
-     x="-7.7576256"
-     y="42.764393"
-     width="926.69788"
-     height="138.08292"
-     id="rect241" /><rect
-     style="fill:#808184"
-     x="-7.8027062"
-     y="40.374393"
-     width="926.78802"
-     height="31.990393"
-     id="rect243" /></g><text
-   transform="scale(1.0522166,0.95037467)"
-   id="text245"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
-   x="9.2736092"
-   y="75.318031">每日化验工作</text>
-
-
-<rect
-   id="rect257"
-   height="19.056847"
-   width="553.82318"
-   y="128.44971"
-   x="140.04538"
-   style="fill:#bbbdbf" /><rect
-   inkscape:label="化验完成_Line"
-   style="fill:#1b75bb"
-   id="rect261"
-   height="19.058132"
-   width="457.76544"
-   y="98.801865"
-   x="138.10266" /><rect
-   inkscape:label="待化验数_Line"
-   id="rect265"
-   height="19.058132"
-   width="205.65732"
-   y="157.58043"
-   x="138.10266"
-   style="fill:#6d6e70" /><text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="化验完成_Count"
-   id="text299"
-   font-size="14.2861"
-   style="font-size:19.3374px;font-family:MicrosoftYaHei-Bold;fill:#00adee"
-   x="705.43231"
-   y="119.76831">9</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="化验中_Count"
-   id="text301"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#00a551;font-family:MicrosoftYaHei-Bold"
-   x="705.82251"
-   y="150.96155">2</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037467)"
-   inkscape:label="待化验数_Count"
-   id="text303"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#d0d2d3;font-family:MicrosoftYaHei-Bold"
-   x="705.82318"
-   y="181.61269">8</text>
-
-
-<rect
-   inkscape:label="化验中_Line"
-   id="rect263"
-   height="19.056847"
-   width="70.311394"
-   y="128.44969"
-   x="138.10268"
-   style="fill:#00a551" /><g
-   id="g11"
-   transform="matrix(1.4242591,0,0,1.2864079,-232.07364,525.54607)"
-   style="fill-rule:evenodd"><rect
-     id="rect13"
-     height="46.049"
-     width="40.244999"
-     y="218.604"
-     x="725.70898"
-     style="fill:#bbbdbf" /><rect
-     id="rect15"
-     height="1.794"
-     width="40.247002"
-     y="216.81"
-     x="725.68298"
-     style="fill:#d0d2d3" /><rect
-     id="rect17"
-     height="12.042"
-     width="27.341"
-     y="224.04201"
-     x="732"
-     style="fill:#d0d2d3" /><rect
-     id="rect19"
-     height="13.874"
-     width="25.899"
-     y="245.73599"
-     x="732.883"
-     style="fill:#d0d2d3" /><polygon
-     id="polygon21"
-     points="761.775,242.938 758.739,245.736 732.841,245.736 729.946,242.938 "
-     style="fill:#a6a8ab" /><polygon
-     id="polygon23"
-     points="761.656,263.327 758.75,259.61 732.852,259.61 729.959,263.327 "
-     style="fill:#a6a8ab" /><polygon
-     id="polygon25"
-     points="729.959,242.981 732.887,245.742 732.887,259.616 729.959,263.359 "
-     style="fill:#929497" /><polygon
-     id="polygon27"
-     points="761.709,242.981 758.782,245.742 758.782,259.616 761.709,263.359 "
-     style="fill:#e6e7e8" /><circle
-     id="circle29"
-     r="1.474"
-     cy="232.871"
-     cx="745.66998"
-     style="fill:#404041;stroke:#a6a8ab" /><circle
-     id="circle31"
-     r="0.57800001"
-     cy="230.062"
-     cx="757.164"
-     style="fill:#404041" /><circle
-     id="circle33"
-     r="0.57800001"
-     cy="247.005"
-     cx="760.245"
-     style="fill:#ec1c24" /><rect
-     id="rect35"
-     height="7.7020001"
-     width="0.69300002"
-     y="248.55299"
-     x="760.349"
-     style="fill:#58595b" /></g><g
-   id="g11-9"
-   transform="matrix(1.4242591,0,0,1.2864079,-28.126424,525.54607)"
-   style="fill-rule:evenodd"><rect
-     id="rect13-0"
-     height="46.049"
-     width="40.244999"
-     y="218.604"
-     x="725.70898"
-     style="fill:#bbbdbf" /><rect
-     id="rect15-7"
-     height="1.794"
-     width="40.247002"
-     y="216.81"
-     x="725.68298"
-     style="fill:#d0d2d3" /><rect
-     id="rect17-8"
-     height="12.042"
-     width="27.341"
-     y="224.04201"
-     x="732"
-     style="fill:#d0d2d3" /><rect
-     id="rect19-1"
-     height="13.874"
-     width="25.899"
-     y="245.73599"
-     x="732.883"
-     style="fill:#d0d2d3" /><polygon
-     id="polygon21-5"
-     points="761.775,242.938 758.739,245.736 732.841,245.736 729.946,242.938 "
-     style="fill:#a6a8ab" /><polygon
-     id="polygon23-8"
-     points="761.656,263.327 758.75,259.61 732.852,259.61 729.959,263.327 "
-     style="fill:#a6a8ab" /><polygon
-     id="polygon25-6"
-     points="729.959,242.981 732.887,245.742 732.887,259.616 729.959,263.359 "
-     style="fill:#929497" /><polygon
-     id="polygon27-1"
-     points="761.709,242.981 758.782,245.742 758.782,259.616 761.709,263.359 "
-     style="fill:#e6e7e8" /><circle
-     id="circle29-2"
-     r="1.474"
-     cy="232.871"
-     cx="745.66998"
-     style="fill:#404041;stroke:#a6a8ab" /><circle
-     id="circle31-4"
-     r="0.57800001"
-     cy="230.062"
-     cx="757.164"
-     style="fill:#404041" /><circle
-     id="circle33-2"
-     r="0.57800001"
-     cy="247.005"
-     cx="760.245"
-     style="fill:#ec1c24" /><rect
-     id="rect35-5"
-     height="7.7020001"
-     width="0.69300002"
-     y="248.55299"
-     x="760.349"
-     style="fill:#58595b" /></g><rect
-   transform="matrix(1.0187367,0,0,1.0187367,-17.9872,0)"
-   y="199.35039"
-   x="-219.82097"
-   height="124.29668"
-   width="60.99744"
-   id="rect5500"
-   style="opacity:0.02293576;fill:#d0d2d3;fill-opacity:1;stroke:none" /><g
-   transform="translate(0,-8.3784907)"
-   id="g5597"><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.2020781"
-     x1="447.33957"
-     y1="370.74722"
-     x2="401.01328"
-     y2="370.74722"
-     id="line315-0-9-1-1-2" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.66885459"
-     x1="447.47903"
-     y1="370.29382"
-     x2="447.47903"
-     y2="812.33826"
-     id="line327-8-7-0-9" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.20721948"
-     x1="448.0892"
-     y1="811.8822"
-     x2="401.36578"
-     y2="811.8822"
-     id="line315-0-9-1-1-2-5" /></g><g
-   transform="matrix(-1,0,0,0.87293255,2968.7553,16.033152)"
-   id="g5592"><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.2020781"
-     x1="1502.0709"
-     y1="403.11819"
-     x2="1455.7446"
-     y2="403.11819"
-     id="line315-0-9-1-1-2-2" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.66885459"
-     x1="1502.2104"
-     y1="402.66479"
-     x2="1502.2104"
-     y2="844.70923"
-     id="line327-8-7-0-9-0" /><line
-     style="fill:none;stroke:#d0d2d3;stroke-width:1.20721948"
-     x1="1502.8206"
-     y1="844.25317"
-     x2="1456.0972"
-     y2="844.25317"
-     id="line315-0-9-1-1-2-5-0" /></g><g
-   id="g5633-9"
-   style="fill-rule:evenodd"
-   transform="matrix(1.0232243,0,0,1,984.58673,8.0602133)"><rect
-     style="fill:none;stroke:#a6a8ab;stroke-width:1.44374073"
-     x="-7.7576256"
-     y="42.764393"
-     width="926.69788"
-     height="138.08292"
-     id="rect241-1" /><rect
-     style="fill:#808184"
-     x="-7.8027062"
-     y="40.374393"
-     width="926.78802"
-     height="31.990393"
-     id="rect243-8" /></g><text
-   transform="scale(1.0522166,0.95037466)"
-   id="text239-2"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="1051.214"
-   y="75.176399">已审核样品</text>
-
-
-<text
-   transform="scale(1.0522166,0.95037466)"
-   id="text247-8"
-   font-size="14.2861"
-   style="font-size:19.33737564px;fill:#ffffff;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
-   x="1281.2258"
-   y="75.204727">未审核样品</text>
-
-
-<g
-   transform="matrix(1.6768766,0,0,1.6768766,1547.9695,795.30486)"
-   id="_123600944"
+   style="font-size:16.243px;font-family:AdobeSongStd-Light-GBpc-EUC-H;fill:#ffffff;fill-rule:evenodd;stroke-width:1"
+   x="1658.3125"
+   y="819.2713">#5量热仪</text><g
+   transform="matrix(1.6768766,0,0,1.6768766,1743.8016,795.45616)"
+   id="_123600944-0"
    style="fill-rule:evenodd"><path
-     id="_123602840"
+     id="_123602840-8"
      class="fil0"
-     d="m 3.86466,13.098 5.20558,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 l 0,18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 l -19.0291,0 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 l 0,-18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
+     d="m 3.86466,13.098 h 5.20558 l 1.79433,1.76127 h 8.72868 L 21.38813,13.098 h 1.50565 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 v 18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 H 3.86468 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 v -18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
      inkscape:connector-curvature="0"
      style="fill:#cccccc" /><path
-     id="_123886840"
+     id="_123886840-86"
      class="fil1"
      d="m 5.18244,32.8873 c 0.334405,0 0.605454,0.271049 0.605454,0.605454 0,0.334405 -0.271049,0.605454 -0.605454,0.605454 -0.334405,0 -0.605454,-0.271049 -0.605454,-0.605454 0,-0.334405 0.271049,-0.605454 0.605454,-0.605454 z m 0,-0.117896 c 0.399412,0 0.72335,0.323937 0.72335,0.72335 0,0.399412 -0.323937,0.72335 -0.72335,0.72335 -0.399412,0 -0.722799,-0.323937 -0.722799,-0.72335 0,-0.399412 0.323386,-0.72335 0.722799,-0.72335 z"
      inkscape:connector-curvature="0"
      style="fill:#999999" /><path
-     id="_123887056"
+     id="_123887056-0"
      class="fil1"
-     d="m 19.7189,11.2138 0,2.60527 -9.22946,0 0,-2.60527 0,0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 l 0,0 z"
+     d="m 19.7189,11.2138 v 2.60527 h -9.22946 v -2.60527 0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 v 0 z"
      inkscape:connector-curvature="0"
      style="fill:#999999" /><circle
-     id="_123884824"
+     id="_123884824-7"
      class="fil5"
      cx="15.1648"
      cy="9.7182198"
      r="2.0255499"
-     d="m 17.19035,9.7182198 c 0,1.1186802 -0.90687,2.0255502 -2.02555,2.0255502 -1.118681,0 -2.02555,-0.90687 -2.02555,-2.0255502 0,-1.1186804 0.906869,-2.0255499 2.02555,-2.0255499 1.11868,0 2.02555,0.9068695 2.02555,2.0255499 z"
-     sodipodi:cx="15.1648"
-     sodipodi:cy="9.7182198"
-     sodipodi:rx="2.0255499"
-     sodipodi:ry="2.0255499"
      style="fill:#666666" /><circle
-     id="_123884704"
+     id="_123884704-22"
      class="fil5"
      cx="17.856001"
      cy="12.6844"
      r="0.63410801"
-     d="m 18.490109,12.6844 c 0,0.350208 -0.2839,0.634108 -0.634108,0.634108 -0.350208,0 -0.634108,-0.2839 -0.634108,-0.634108 0,-0.350209 0.2839,-0.634108 0.634108,-0.634108 0.350208,0 0.634108,0.283899 0.634108,0.634108 z"
-     sodipodi:cx="17.856001"
-     sodipodi:cy="12.6844"
-     sodipodi:rx="0.63410801"
-     sodipodi:ry="0.63410801"
      style="fill:#666666" /><path
-     id="_123884560"
+     id="_123884560-5"
      class="fil0"
-     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 l -20.2709,0 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 l 0,-20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     d="m 26.9485,12.9465 h 20.2709 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 v 20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 H 26.9485 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 v -20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
      inkscape:connector-curvature="0"
      style="fill:#cccccc" /><path
-     id="_123884488"
+     id="_123884488-5"
      class="fil1"
-     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,2.85043 -23.0354,0 0,-2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
+     d="m 26.9485,12.9465 h 20.2709 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 v 2.85043 h -23.0354 v -2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
      inkscape:connector-curvature="0"
      style="fill:#999999" /><ellipse
-     id="_123884392"
+     id="_123884392-8"
      class="fil5"
      cx="33.505501"
      cy="15.1072"
      rx="4.01051"
      ry="1.50156"
-     d="m 37.516011,15.1072 c 0,0.829288 -1.795567,1.50156 -4.01051,1.50156 -2.214944,0 -4.01051,-0.672272 -4.01051,-1.50156 0,-0.829289 1.795566,-1.50156 4.01051,-1.50156 2.214943,0 4.01051,0.672271 4.01051,1.50156 z"
-     sodipodi:cx="33.505501"
-     sodipodi:cy="15.1072"
-     sodipodi:rx="4.01051"
-     sodipodi:ry="1.50156"
      style="fill:#666666" /><rect
-     id="_123884272"
+     id="_123884272-72"
      class="fil5"
      x="38.882599"
      y="12.9467"
      width="0.19908699"
      height="4.24579"
      style="fill:#666666" /><path
-     id="_123884176"
+     id="_123884176-2"
      class="fil1"
-     d="m 1.65439,11.7554 3.53742,0 c 0.760261,0 1.40428,0.506841 1.596,1.19163 l -6.72941,0 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 z m 2.21027,1.34258 2.95786,0 2.24773,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 l 0,1.99376 -23.2067,0 0,-1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 l -0.130567,0 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 l 0,0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 l 3.84041997,0 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /></g><g
-   transform="matrix(1.6768766,0,0,1.6768766,1547.1404,663.86467)"
-   id="_123600944-7"
-   style="fill-rule:evenodd"><path
-     id="_123602840-9"
-     class="fil0"
-     d="m 3.86466,13.098 5.20558,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 l 0,18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 l -19.0291,0 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 l 0,-18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
-     inkscape:connector-curvature="0"
-     style="fill:#cccccc" /><path
-     id="_123886840-8"
-     class="fil1"
-     d="m 5.18244,32.8873 c 0.334405,0 0.605454,0.271049 0.605454,0.605454 0,0.334405 -0.271049,0.605454 -0.605454,0.605454 -0.334405,0 -0.605454,-0.271049 -0.605454,-0.605454 0,-0.334405 0.271049,-0.605454 0.605454,-0.605454 z m 0,-0.117896 c 0.399412,0 0.72335,0.323937 0.72335,0.72335 0,0.399412 -0.323937,0.72335 -0.72335,0.72335 -0.399412,0 -0.722799,-0.323937 -0.722799,-0.72335 0,-0.399412 0.323386,-0.72335 0.722799,-0.72335 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /><path
-     id="_123887056-3"
-     class="fil1"
-     d="m 19.7189,11.2138 0,2.60527 -9.22946,0 0,-2.60527 0,0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 l 0,0 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /><circle
-     id="_123884824-0"
-     class="fil5"
-     cx="15.1648"
-     cy="9.7182198"
-     r="2.0255499"
-     d="m 17.19035,9.7182198 c 0,1.1186802 -0.90687,2.0255502 -2.02555,2.0255502 -1.118681,0 -2.02555,-0.90687 -2.02555,-2.0255502 0,-1.1186804 0.906869,-2.0255499 2.02555,-2.0255499 1.11868,0 2.02555,0.9068695 2.02555,2.0255499 z"
-     sodipodi:cx="15.1648"
-     sodipodi:cy="9.7182198"
-     sodipodi:rx="2.0255499"
-     sodipodi:ry="2.0255499"
-     style="fill:#666666" /><circle
-     id="_123884704-2"
-     class="fil5"
-     cx="17.856001"
-     cy="12.6844"
-     r="0.63410801"
-     d="m 18.490109,12.6844 c 0,0.350208 -0.2839,0.634108 -0.634108,0.634108 -0.350208,0 -0.634108,-0.2839 -0.634108,-0.634108 0,-0.350209 0.2839,-0.634108 0.634108,-0.634108 0.350208,0 0.634108,0.283899 0.634108,0.634108 z"
-     sodipodi:cx="17.856001"
-     sodipodi:cy="12.6844"
-     sodipodi:rx="0.63410801"
-     sodipodi:ry="0.63410801"
-     style="fill:#666666" /><path
-     id="_123884560-2"
-     class="fil0"
-     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 l -20.2709,0 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 l 0,-20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
-     inkscape:connector-curvature="0"
-     style="fill:#cccccc" /><path
-     id="_123884488-3"
-     class="fil1"
-     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,2.85043 -23.0354,0 0,-2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /><ellipse
-     id="_123884392-6"
-     class="fil5"
-     cx="33.505501"
-     cy="15.1072"
-     rx="4.01051"
-     ry="1.50156"
-     d="m 37.516011,15.1072 c 0,0.829288 -1.795567,1.50156 -4.01051,1.50156 -2.214944,0 -4.01051,-0.672272 -4.01051,-1.50156 0,-0.829289 1.795566,-1.50156 4.01051,-1.50156 2.214943,0 4.01051,0.672271 4.01051,1.50156 z"
-     sodipodi:cx="33.505501"
-     sodipodi:cy="15.1072"
-     sodipodi:rx="4.01051"
-     sodipodi:ry="1.50156"
-     style="fill:#666666" /><rect
-     id="_123884272-7"
-     class="fil5"
-     x="38.882599"
-     y="12.9467"
-     width="0.19908699"
-     height="4.24579"
-     style="fill:#666666" /><path
-     id="_123884176-1"
-     class="fil1"
-     d="m 1.65439,11.7554 3.53742,0 c 0.760261,0 1.40428,0.506841 1.596,1.19163 l -6.72941,0 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 z m 2.21027,1.34258 2.95786,0 2.24773,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 l 0,1.99376 -23.2067,0 0,-1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 l -0.130567,0 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 l 0,0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 l 3.84041997,0 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /></g><g
-   transform="matrix(1.6768766,0,0,1.6768766,1741.139,663.86467)"
-   id="_123600944-5"
-   style="fill-rule:evenodd"><path
-     id="_123602840-5"
-     class="fil0"
-     d="m 3.86466,13.098 5.20558,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937104 2.08851,2.08245 l 0,18.974 c 0,1.1459 -0.939859,2.083 -2.08851,2.083 l -19.0291,0 c -1.14921,0 -2.08906,-0.937104 -2.08906,-2.083 l 0,-18.974 c 0,-1.14535 0.939859,-2.08245 2.08906,-2.08245 z"
-     inkscape:connector-curvature="0"
-     style="fill:#cccccc" /><path
-     id="_123886840-40"
-     class="fil1"
-     d="m 5.18244,32.8873 c 0.334405,0 0.605454,0.271049 0.605454,0.605454 0,0.334405 -0.271049,0.605454 -0.605454,0.605454 -0.334405,0 -0.605454,-0.271049 -0.605454,-0.605454 0,-0.334405 0.271049,-0.605454 0.605454,-0.605454 z m 0,-0.117896 c 0.399412,0 0.72335,0.323937 0.72335,0.72335 0,0.399412 -0.323937,0.72335 -0.72335,0.72335 -0.399412,0 -0.722799,-0.323937 -0.722799,-0.72335 0,-0.399412 0.323386,-0.72335 0.722799,-0.72335 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /><path
-     id="_123887056-2"
-     class="fil1"
-     d="m 19.7189,11.2138 0,2.60527 -9.22946,0 0,-2.60527 0,0 c 0,-2.54798 2.06648,-4.61445 4.61445,-4.61445 2.54853,0 4.615,2.06648 4.615,4.61445 l 0,0 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /><circle
-     id="_123884824-6"
-     class="fil5"
-     cx="15.1648"
-     cy="9.7182198"
-     r="2.0255499"
-     d="m 17.19035,9.7182198 c 0,1.1186802 -0.90687,2.0255502 -2.02555,2.0255502 -1.118681,0 -2.02555,-0.90687 -2.02555,-2.0255502 0,-1.1186804 0.906869,-2.0255499 2.02555,-2.0255499 1.11868,0 2.02555,0.9068695 2.02555,2.0255499 z"
-     sodipodi:cx="15.1648"
-     sodipodi:cy="9.7182198"
-     sodipodi:rx="2.0255499"
-     sodipodi:ry="2.0255499"
-     style="fill:#666666" /><circle
-     id="_123884704-0"
-     class="fil5"
-     cx="17.856001"
-     cy="12.6844"
-     r="0.63410801"
-     d="m 18.490109,12.6844 c 0,0.350208 -0.2839,0.634108 -0.634108,0.634108 -0.350208,0 -0.634108,-0.2839 -0.634108,-0.634108 0,-0.350209 0.2839,-0.634108 0.634108,-0.634108 0.350208,0 0.634108,0.283899 0.634108,0.634108 z"
-     sodipodi:cx="17.856001"
-     sodipodi:cy="12.6844"
-     sodipodi:rx="0.63410801"
-     sodipodi:ry="0.63410801"
-     style="fill:#666666" /><path
-     id="_123884560-6"
-     class="fil0"
-     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,20.7144 c 0,0.767423 -0.621981,1.39491 -1.38224,1.39491 l -20.2709,0 c -0.760261,0 -1.38224,-0.627491 -1.38224,-1.39491 l 0,-20.7144 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
-     inkscape:connector-curvature="0"
-     style="fill:#cccccc" /><path
-     id="_123884488-1"
-     class="fil1"
-     d="m 26.9485,12.9465 20.2709,0 c 0.760261,0 1.38224,0.628042 1.38224,1.39546 l 0,2.85043 -23.0354,0 0,-2.85043 c 0,-0.767423 0.621981,-1.39546 1.38224,-1.39546 z"
-     inkscape:connector-curvature="0"
-     style="fill:#999999" /><ellipse
-     id="_123884392-1"
-     class="fil5"
-     cx="33.505501"
-     cy="15.1072"
-     rx="4.01051"
-     ry="1.50156"
-     d="m 37.516011,15.1072 c 0,0.829288 -1.795567,1.50156 -4.01051,1.50156 -2.214944,0 -4.01051,-0.672272 -4.01051,-1.50156 0,-0.829289 1.795566,-1.50156 4.01051,-1.50156 2.214943,0 4.01051,0.672271 4.01051,1.50156 z"
-     sodipodi:cx="33.505501"
-     sodipodi:cy="15.1072"
-     sodipodi:rx="4.01051"
-     sodipodi:ry="1.50156"
-     style="fill:#666666" /><rect
-     id="_123884272-1"
-     class="fil5"
-     x="38.882599"
-     y="12.9467"
-     width="0.19908699"
-     height="4.24579"
-     style="fill:#666666" /><path
-     id="_123884176-7"
-     class="fil1"
-     d="m 1.65439,11.7554 3.53742,0 c 0.760261,0 1.40428,0.506841 1.596,1.19163 l -6.72941,0 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 z m 2.21027,1.34258 2.95786,0 2.24773,0 1.79433,1.76127 8.72868,0 1.79488,-1.76127 1.50565,0 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 l 0,1.99376 -23.2067,0 0,-1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 l -0.130567,0 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 l 0,0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 l 3.84041997,0 z"
+     d="m 1.65439,11.7554 h 3.53742 c 0.760261,0 1.40428,0.506841 1.596,1.19163 H 0.0584 C 0.250118,12.262244 0.894687,11.7554 1.6544,11.7554 Z m 2.21027,1.34258 h 2.95786 2.24773 l 1.79433,1.76127 h 8.72868 l 1.79488,-1.76127 h 1.50565 c 1.14865,0 2.08851,0.937655 2.08851,2.08245 v 1.99376 H 1.7756 v -1.99376 c 0,-0.06556 0.00331,-0.130016 0.00937,-0.194473 H 1.654403 c -0.90955797,0 -1.65438997,-0.726655 -1.65438997,-1.61528 v 0 c 0,-0.0931 0.0082637,-0.184005 0.0242402,-0.272702 H 3.8646732 Z"
      inkscape:connector-curvature="0"
      style="fill:#999999" /></g></svg>

@@ -71,10 +71,10 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 
 			try
 			{
-				BindGD(superGridControl1,"#2");
-				BindGD(superGridControl2,"#4");
-				BindGD(superGridControl3, "#1");
-				BindGD(superGridControl4, "#5");
+				BindGD_WF(superGridControl1,"#2");
+				BindGD_WF(superGridControl2,"#4");
+				BindGD_YF(superGridControl3, "#1");
+				BindGD_YF(superGridControl4, "#5");
 				CountCH();
 
 			}
@@ -128,21 +128,60 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		/// </summary>
 		/// <param name="superGridControl"></param>
 		/// <param name="machineCode">设备编码</param>
-		private void BindGD(SuperGridControl superGridControl,string gd)
+		private void BindGD_WF(SuperGridControl superGridControl,string gd)
 		{
-			string sql = string.Format(@"select t2.batch,
-										t5.ordernum,t5.trainnumber,t5.carmodel,t5.PASSTIME,case when t6.isdischarged=1 then '已翻车' else '未翻车' end IsFC,t1.GROSSQTY,t1.SKINQTY,t1.SUTTLEQTY
+			string sql = string.Format(@"select t2.id batchid,
+										t5.ordernum,t5.trainnumber,t5.carmodel,t5.PASSTIME,case when t6.isdischarged=1 then '已翻车' else '未翻车' end IsFC,t1.GROSSQTY,t1.SKINQTY,t1.SUTTLEQTY,'' as SampleCode
 										from cmcstbtraincarriagepass t5 
 										left join fultbtransport t1 on t1.pkid=t5.id
 										left join fultbinfactorybatch t2 on t1.infactorybatchid=t2.id
 										inner join cmcstbtransportposition t6 on t5.id=t6.transportid 
 										where t6.tracknumber='{0}'  and t5.passtime>sysdate-1
-										order by t5.passtime desc,t5.ordernum
+										order by t5.passtime,t5.ordernum
 										", gd);
 			DataTable list = commonDAO.SelfDber.ExecuteDataTable(sql);
+			for (int i = 0; i < list.Rows.Count; i++)
+			{
+				if (list.Rows[i]["batchid"] != DBNull.Value)
+				{
+					string sql1 = string.Format(@"select SampleCode from cmcstbrcsampling t1 where t1.infactorybatchid='{0}' and t1.samplecode not like 'CYCC%'", list.Rows[i]["batchid"].ToString());
+					DataTable dt = commonDAO.SelfDber.ExecuteDataTable(sql1);
+					if (dt != null && dt.Rows.Count > 0)
+					{
+						list.Rows[i]["SampleCode"] = dt.Rows[0]["SampleCode"];
+					}
+				}
+			}
 			superGridControl.PrimaryGrid.DataSource = list;
 		}
-		
+
+		private void BindGD_YF(SuperGridControl superGridControl, string gd)
+		{
+			string sql = string.Format(@"select t2.id batchid,
+										t5.ordernum,t5.trainnumber,t5.carmodel,t5.PASSTIME,case when t6.isdischarged=1 then '已翻车' else '未翻车' end IsFC,t1.GROSSQTY,t1.SKINQTY,t1.SUTTLEQTY,'' as SampleCode
+										from cmcstbtraincarriagepass t5 
+										left join fultbtransport t1 on t1.pkid=t5.id
+										left join fultbinfactorybatch t2 on t1.infactorybatchid=t2.id
+										inner join cmcstbtransportposition t6 on t5.id=t6.transportid 
+										where t6.tracknumber='{0}'  and t5.passtime>sysdate-1
+										order by t5.passtime desc,t5.ordernum desc
+										", gd);
+			DataTable list = commonDAO.SelfDber.ExecuteDataTable(sql);
+			for (int i = 0; i < list.Rows.Count; i++)
+			{
+				if (list.Rows[i]["batchid"] != DBNull.Value)
+				{
+					string sql1 = string.Format(@"select SampleCode from cmcstbrcsampling t1 where t1.infactorybatchid='{0}' and t1.samplecode not like 'CYCC%'", list.Rows[i]["batchid"].ToString());
+					DataTable dt = commonDAO.SelfDber.ExecuteDataTable(sql1);
+					if (dt != null && dt.Rows.Count > 0)
+					{
+						list.Rows[i]["SampleCode"] = dt.Rows[0]["SampleCode"];
+					}
+				}
+			}
+			superGridControl.PrimaryGrid.DataSource = list;
+		}
+
 		/// <summary>
 		/// 计算车数
 		/// </summary>

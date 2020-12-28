@@ -85,42 +85,38 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("量热仪2_运行状态", commonDAO.GetSignalDataValue(machineCode, "量热仪2_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("量热仪3_运行状态", commonDAO.GetSignalDataValue(machineCode, "量热仪3_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("量热仪4_运行状态", commonDAO.GetSignalDataValue(machineCode, "量热仪4_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("量热仪5_运行状态", commonDAO.GetSignalDataValue(machineCode, "量热仪5_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("量热仪6_运行状态", commonDAO.GetSignalDataValue(machineCode, "量热仪6_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("量热仪7_运行状态", commonDAO.GetSignalDataValue(machineCode, "量热仪7_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("量热仪1_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热仪2_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热仪3_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热仪4_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热仪5_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热仪6_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热仪7_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("光波水分仪1_运行状态", commonDAO.GetSignalDataValue(machineCode, "光波水分仪1_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("光波水分仪2_运行状态", commonDAO.GetSignalDataValue(machineCode, "光波水分仪2_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("光波水分仪3_运行状态", commonDAO.GetSignalDataValue(machineCode, "光波水分仪3_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("光波水分仪1_样品个数", commonDAO.GetSignalDataValue(machineCode, "光波水分仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("光波水分仪2_样品个数", commonDAO.GetSignalDataValue(machineCode, "光波水分仪2_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("光波水分仪3_样品个数", commonDAO.GetSignalDataValue(machineCode, "光波水分仪3_样品个数") + "个", eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("量热仪2_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪2_样品个数") + "个", eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("量热仪3_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪3_样品个数") + "个", eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("量热仪4_样品个数", commonDAO.GetSignalDataValue(machineCode, "量热仪4_样品个数") + "个", eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("水分仪1_运行状态", commonDAO.GetSignalDataValue(machineCode, "水分仪1_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("水分仪2_运行状态", commonDAO.GetSignalDataValue(machineCode, "水分仪2_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("水分仪1_样品个数", commonDAO.GetSignalDataValue(machineCode, "水分仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("水分仪2_样品个数", commonDAO.GetSignalDataValue(machineCode, "水分仪2_样品个数") + "个", eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("测硫仪1_运行状态", commonDAO.GetSignalDataValue(machineCode, "测硫仪1_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("测硫仪2_运行状态", commonDAO.GetSignalDataValue(machineCode, "测硫仪2_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("测硫仪3_运行状态", commonDAO.GetSignalDataValue(machineCode, "测硫仪3_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("测硫仪1_样品个数", commonDAO.GetSignalDataValue(machineCode, "测硫仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("测硫仪2_样品个数", commonDAO.GetSignalDataValue(machineCode, "测硫仪2_样品个数") + "个", eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("测硫仪3_样品个数", commonDAO.GetSignalDataValue(machineCode, "测硫仪3_样品个数") + "个", eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("工分仪1_运行状态", commonDAO.GetSignalDataValue(machineCode, "工分仪1_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("工分仪2_运行状态", commonDAO.GetSignalDataValue(machineCode, "工分仪2_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("工分仪3_运行状态", commonDAO.GetSignalDataValue(machineCode, "工分仪3_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("工分仪4_运行状态", commonDAO.GetSignalDataValue(machineCode, "工分仪4_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("工分仪1_样品个数", commonDAO.GetSignalDataValue(machineCode, "工分仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("工分仪2_样品个数", commonDAO.GetSignalDataValue(machineCode, "工分仪2_样品个数") + "个", eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("工分仪3_样品个数", commonDAO.GetSignalDataValue(machineCode, "工分仪3_样品个数") + "个", eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("水分室温度", commonDAO.GetSignalDataValue(machineCode, "水分室温度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("水分室湿度", commonDAO.GetSignalDataValue(machineCode, "水分室湿度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("工分室温度", commonDAO.GetSignalDataValue(machineCode, "工分室温度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("工分室湿度", commonDAO.GetSignalDataValue(machineCode, "工分室湿度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("测硫室温度", commonDAO.GetSignalDataValue(machineCode, "测硫室温度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("测硫室湿度", commonDAO.GetSignalDataValue(machineCode, "测硫室湿度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热室温度", commonDAO.GetSignalDataValue(machineCode, "量热室温度"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("量热室湿度", commonDAO.GetSignalDataValue(machineCode, "量热室湿度"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("工分仪4_样品个数", commonDAO.GetSignalDataValue(machineCode, "工分仪4_样品个数") + "个", eHtmlDataItemType.svg_text));
+
+            datas.Add(new HtmlDataItem("碳氢仪1_运行状态", commonDAO.GetSignalDataValue(machineCode, "碳氢仪1_运行状态") == "1" ? "Red" : "#00A551", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("碳氢仪1_样品个数", commonDAO.GetSignalDataValue(machineCode, "碳氢仪1_样品个数") + "个", eHtmlDataItemType.svg_text));
+
+            //datas.Add(new HtmlDataItem("水分室温度", commonDAO.GetSignalDataValue(machineCode, "水分室温度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("水分室湿度", commonDAO.GetSignalDataValue(machineCode, "水分室湿度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("工分室温度", commonDAO.GetSignalDataValue(machineCode, "工分室温度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("工分室湿度", commonDAO.GetSignalDataValue(machineCode, "工分室湿度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("测硫室温度", commonDAO.GetSignalDataValue(machineCode, "测硫室温度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("测硫室湿度", commonDAO.GetSignalDataValue(machineCode, "测硫室湿度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("量热室温度", commonDAO.GetSignalDataValue(machineCode, "量热室温度"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("量热室湿度", commonDAO.GetSignalDataValue(machineCode, "量热室湿度"), eHtmlDataItemType.svg_text));
             #endregion
 
             // 发送到页面

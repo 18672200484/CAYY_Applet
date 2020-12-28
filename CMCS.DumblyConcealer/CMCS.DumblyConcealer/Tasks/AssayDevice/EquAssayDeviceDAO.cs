@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 //
 using CMCS.Common;
@@ -213,7 +214,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.MadContainerWeight = entity.EMPTYGGWEIGHT;
 					item.MadSampleWeight = entity.COLEWEIGHT;
 					item.MadDryWeight = entity.ADDCOLEWEIGHT;
-					item.Mad = entity.MAD;
+					item.Mad = Math.Round(entity.MAD, 2, MidpointRounding.AwayFromZero);
 					item.VadContainerNumber = entity.OBJCODEV.ToString();
 					item.VadContainerWeight = entity.VEMPTYGGWEIGHT;
 					item.VadSampleWeight = entity.VWEIGHT;
@@ -235,7 +236,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.MadContainerWeight = entity.EMPTYGGWEIGHT;
 					item.MadSampleWeight = entity.COLEWEIGHT;
 					item.MadDryWeight = entity.ADDCOLEWEIGHT;
-					item.Mad = entity.MAD;
+					item.Mad = Math.Round(entity.MAD, 2, MidpointRounding.AwayFromZero);
 					item.VadContainerNumber = entity.OBJCODEV.ToString();
 					item.VadContainerWeight = entity.VEMPTYGGWEIGHT;
 					item.VadSampleWeight = entity.VWEIGHT;
@@ -307,6 +308,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					ProximateCount++;
 				}
 			}
+
 
 			output(string.Format("生成标准工分仪数据 {0} 条", res), eOutputType.Normal);
 
@@ -1222,9 +1224,155 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		}
 
 		#endregion
+
+		#region 生成化验室集控信号
+		public int SaveToJK(Action<string, eOutputType> output)
+		{
+			int res = 0;
+
+			#region 工分仪
+			int gfy1 = 0, gfy2 = 0, gfy3 = 0, gfy4 = 0;
+			string date = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+			string sql = string.Format(@"select t.facilitynumber,count(t.facilitynumber) tCount from CMCSTBPROXIMATEASSAY t
+									where to_char(t.assaytime, 'yyyy-MM-dd') = '{0}'
+									 group by t.facilitynumber
+									", date);
+			DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+			if (dt != null && dt.Rows.Count > 0)
+			{
+				for (int i = 0; i < dt.Rows.Count; i++)
+				{
+					if (dt.Rows[i]["facilitynumber"].ToString().Contains("1"))
+					{
+						gfy1 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("2"))
+					{
+						gfy2 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("3"))
+					{
+						gfy3 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("4"))
+					{
+						gfy4 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+				}
+			}
+			commonDAO.SetSignalDataValue("化验室网络管理", "工分仪1_样品个数", gfy1.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "工分仪2_样品个数", gfy2.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "工分仪3_样品个数", gfy3.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "工分仪4_样品个数", gfy4.ToString());
+			#endregion
+
+			#region 测硫仪
+			int cly1 = 0, cly3 = 0;
+		    sql = string.Format(@"select t.facilitynumber,count(t.facilitynumber) tCount from CMCSTBSULFURASSAY t
+									where to_char(t.assaytime, 'yyyy-MM-dd') = '{0}'
+									 group by t.facilitynumber
+									", date);
+		    dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+			if (dt != null && dt.Rows.Count > 0)
+			{
+				for (int i = 0; i < dt.Rows.Count; i++)
+				{
+					if (dt.Rows[i]["facilitynumber"].ToString().Contains("1"))
+					{
+						cly1 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("3"))
+					{
+						cly3 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+				}
+			}
+			commonDAO.SetSignalDataValue("化验室网络管理", "测硫仪1_样品个数", cly1.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "测硫仪3_样品个数", cly3.ToString());
+			#endregion
+
+			#region 量热仪
+			int lry1 = 0, lry2 = 0, lry3 = 0, lry4 = 0;
+			sql = string.Format(@"select t.facilitynumber,count(t.facilitynumber) tCount from CMCSTBHEATASSAY t
+									where to_char(t.assaytime, 'yyyy-MM-dd') = '{0}'
+									 group by t.facilitynumber
+									", date);
+			dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+			if (dt != null && dt.Rows.Count > 0)
+			{
+				for (int i = 0; i < dt.Rows.Count; i++)
+				{
+					if (dt.Rows[i]["facilitynumber"].ToString().Contains("1"))
+					{
+						lry1 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("2"))
+					{
+						lry2 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("3"))
+					{
+						lry3 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("4"))
+					{
+						lry4 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+				}
+			}
+			commonDAO.SetSignalDataValue("化验室网络管理", "量热仪1_样品个数", lry1.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "量热仪2_样品个数", lry2.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "量热仪3_样品个数", lry3.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "量热仪4_样品个数", lry4.ToString());
+			#endregion
+
+			#region 碳氢仪
+			int cqy1 = 0;
+			sql = string.Format(@"select count(*) tCount from CMCSHyDROCARBONASSAY t
+								where to_char(t.testdate,'yyyy-MM-dd')='{0}'
+									", date);
+			dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+			if (dt != null && dt.Rows.Count > 0)
+			{
+				cqy1 = Convert.ToInt32(dt.Rows[0]["tCount"]);
+			}
+			commonDAO.SetSignalDataValue("化验室网络管理", "碳氢仪1_样品个数", cqy1.ToString());
+
+			#endregion
+
+			#region 水分仪
+			int sfy1 = 0, sfy2 = 0;
+			sql = string.Format(@"select t.facilitynumber,count(t.facilitynumber) tCount from CMCSTBMOISTUREASSAY t
+									where to_char(t.assaytime, 'yyyy-MM-dd') = '{0}'
+									 group by t.facilitynumber
+									", date);
+			dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+			if (dt != null && dt.Rows.Count > 0)
+			{
+				for (int i = 0; i < dt.Rows.Count; i++)
+				{
+					if (dt.Rows[i]["facilitynumber"].ToString().Contains("1"))
+					{
+						sfy1 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+					else if (dt.Rows[i]["facilitynumber"].ToString().Contains("2"))
+					{
+						sfy2 = Convert.ToInt32(dt.Rows[i]["tCount"]);
+					}
+				}
+			}
+			commonDAO.SetSignalDataValue("化验室网络管理", "水分仪1_样品个数", sfy1.ToString());
+			commonDAO.SetSignalDataValue("化验室网络管理", "水分仪2_样品个数", sfy2.ToString());
+			#endregion
+
+			int sum = gfy1 + gfy2 + gfy3 + gfy4 + cly1 + cly3 + lry1 + lry2 + lry3 + lry4 + cqy1 + sfy1 + sfy2;
+			commonDAO.SetSignalDataValue("化验室网络管理", "化验完成个数", sfy2.ToString());
+			return res;
+		}
+		#endregion
 	}
 
-	[Serializable]
+    [Serializable]
 	class OriginalData
 	{
 		/// <summary>
