@@ -41,12 +41,12 @@ namespace CMCS.Common
 		/// <summary>
 		/// 设备编码 - 皮带采样机 #1
 		/// </summary>
-		public static string MachineCode_PDCYJ_1 = "#1皮带采样机";
+		public static string MachineCode_PDCYJ_1 = "2PA皮带采样机";
 
 		/// <summary>
 		/// 设备编码 - 皮带采样机 #2
 		/// </summary>
-		public static string MachineCode_PDCYJ_2 = "#2皮带采样机";
+		public static string MachineCode_PDCYJ_2 = "2PB皮带采样机";
 
 		/// <summary>
 		/// 接口类型 - 徐州赛摩皮带采样机

@@ -348,6 +348,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.WaterType = entity.CSLB;
 					item.AssayTime = entity.JSSJ;
 					item.AssayUser = entity.HYY;
+					item.DeterMination = "红外水分仪";
 					res += Dbers.GetInstance().SelfDber.Insert<CmcsMoistureAssay>(item);
 					commonDAO.SetSignalDataValue("化验室网络管理", entity.MachineCode + "_运行状态", "1");
 				}

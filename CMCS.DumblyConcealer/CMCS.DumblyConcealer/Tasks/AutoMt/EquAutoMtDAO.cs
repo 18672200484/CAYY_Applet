@@ -147,6 +147,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 					moisture.WaterType = entity.SampleName == "全水样" ? "mt" : "mar";
 					moisture.DataFrom = "在线全水仪";
 					moisture.AssayUser = entity.Operator;
+					moisture.DeterMination = "在线全水仪";
 					res += Dbers.GetInstance().SelfDber.Insert(moisture);
 				}
 				else

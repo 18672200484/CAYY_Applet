@@ -171,7 +171,8 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 						CY_Code = entity.SampleCode,
 						Send_Time = DateTime.Now,
 						CY_Flag = 0,
-						Stop_Flag = 0
+						Stop_Flag = 0,
+						TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2"
 					}) > 0;
 					KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code", new { CY_Code = entity.SampleCode });
 					if (turn == null)
@@ -183,6 +184,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 						turn.Car_Count = commonDAO.GetCarCountBySampleCode(entity.SampleCode);
 						turn.Ready_Count = commonDAO.GetRealyCarCountBySampleCode(entity.SampleCode);
 						turn.IsDone = 0;
+						turn.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
 						DcDbers.GetInstance().BeltSampler_Dber.Insert(turn);
 					}
 				}
