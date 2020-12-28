@@ -45,5 +45,11 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler.Entities
 		/// 发送时间
 		/// </summary>
 		public DateTime Send_Time { get; set; }
+
+		/// <summary>
+		/// 翻车机编号
+		/// </summary>
+		public string TurnCode { get; set; }
+
 	}
 }

@@ -79,5 +79,10 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler.Entities
 		/// </summary>
 		public int Stop_Flag { get; set; }
 
+		/// <summary>
+		/// 翻车机编号
+		/// </summary>
+		public string TurnCode { get; set; }
+
 	}
 }
