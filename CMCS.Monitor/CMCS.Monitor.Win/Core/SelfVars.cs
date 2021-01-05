@@ -89,6 +89,12 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public static string Url_AutoCupboardPneumaticTransfer = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/AutoCupboardPneumaticTransfer/index.htm");
 
+        /// <summary>
+        /// 网页地址 - 智能存样柜
+        /// </summary>
+        public static string Url_SampleCabinet = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/SampleCabinet/index.htm");
+
+
         #endregion
 
         #region 翻车机

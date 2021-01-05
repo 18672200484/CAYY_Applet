@@ -48,6 +48,10 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.btnOpenTruckWeighter = new DevComponents.DotNetBar.ButtonItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Buttons = new DevComponents.DotNetBar.PanelEx();
+            this.button10 = new DevComponents.DotNetBar.ButtonX();
+            this.btnOpenSampleCabinet = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnOpenAutoCupboard = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenOperationLogs = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenAutoMaker = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenCarDumper = new DevComponents.DotNetBar.ButtonX();
@@ -66,7 +70,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer_EquipmentStatus = new System.Windows.Forms.Timer(this.components);
             this.timer_MsgTime = new System.Windows.Forms.Timer(this.components);
-            this.btnOpenAutoCupboard = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttons.SuspendLayout();
@@ -247,6 +250,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
             // 
             this.panel_Buttons.CanvasColor = System.Drawing.SystemColors.Control;
             this.panel_Buttons.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panel_Buttons.Controls.Add(this.button10);
             this.panel_Buttons.Controls.Add(this.btnOpenAutoCupboard);
             this.panel_Buttons.Controls.Add(this.btnOpenOperationLogs);
             this.panel_Buttons.Controls.Add(this.btnOpenAutoMaker);
@@ -267,6 +271,49 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.panel_Buttons.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panel_Buttons.Style.GradientAngle = 90;
             this.panel_Buttons.TabIndex = 0;
+            // 
+            // button10
+            // 
+            this.button10.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button10.AutoExpandOnClick = true;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(1183, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(108, 31);
+            this.button10.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.button10.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnOpenSampleCabinet,
+            this.buttonItem4});
+            this.button10.TabIndex = 18;
+            this.button10.Text = "存 样 柜 ";
+            // 
+            // btnOpenSampleCabinet
+            // 
+            this.btnOpenSampleCabinet.GlobalItem = false;
+            this.btnOpenSampleCabinet.Name = "btnOpenSampleCabinet";
+            this.btnOpenSampleCabinet.Text = "样柜信息";
+            this.btnOpenSampleCabinet.Click += new System.EventHandler(this.btnOpenSampleCabinet_Click);
+            // 
+            // buttonItem4
+            // 
+            this.buttonItem4.GlobalItem = false;
+            this.buttonItem4.Name = "buttonItem4";
+            this.buttonItem4.Text = "样品取弃样";
+            // 
+            // btnOpenAutoCupboard
+            // 
+            this.btnOpenAutoCupboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnOpenAutoCupboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnOpenAutoCupboard.AutoExpandOnClick = true;
+            this.btnOpenAutoCupboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenAutoCupboard.Location = new System.Drawing.Point(1039, 3);
+            this.btnOpenAutoCupboard.Name = "btnOpenAutoCupboard";
+            this.btnOpenAutoCupboard.Size = new System.Drawing.Size(138, 31);
+            this.btnOpenAutoCupboard.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnOpenAutoCupboard.TabIndex = 13;
+            this.btnOpenAutoCupboard.Text = "气动传输存样柜";
+            this.btnOpenAutoCupboard.Click += new System.EventHandler(this.btnOpenAutoCupboard_Click);
             // 
             // btnOpenOperationLogs
             // 
@@ -470,20 +517,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.timer_MsgTime.Interval = 1000;
             this.timer_MsgTime.Tick += new System.EventHandler(this.timer_MsgTime_Tick);
             // 
-            // btnOpenAutoCupboard
-            // 
-            this.btnOpenAutoCupboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnOpenAutoCupboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnOpenAutoCupboard.AutoExpandOnClick = true;
-            this.btnOpenAutoCupboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenAutoCupboard.Location = new System.Drawing.Point(1039, 3);
-            this.btnOpenAutoCupboard.Name = "btnOpenAutoCupboard";
-            this.btnOpenAutoCupboard.Size = new System.Drawing.Size(138, 31);
-            this.btnOpenAutoCupboard.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnOpenAutoCupboard.TabIndex = 13;
-            this.btnOpenAutoCupboard.Text = "气动传输存样柜";
-            this.btnOpenAutoCupboard.Click += new System.EventHandler(this.btnOpenAutoCupboard_Click);
-            // 
             // FrmMainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -550,6 +583,9 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		private DevComponents.DotNetBar.ButtonX btnOpenOperationLogs;
 		private DevComponents.DotNetBar.ButtonItem btnOpenTrainBeltSampler;
 		private DevComponents.DotNetBar.ButtonX btnOpenAutoCupboard;
-	}
+        private DevComponents.DotNetBar.ButtonX button10;
+        private DevComponents.DotNetBar.ButtonItem btnOpenSampleCabinet;
+        private DevComponents.DotNetBar.ButtonItem buttonItem4;
+    }
 }
 

@@ -9,21 +9,21 @@
     <script type="text/javascript">
 
         window.onload = function () {
-            getCanvas1().find("*[inkscape\\:label=#1故障信息],*[inkscape\\:label=#2故障信息],*[inkscape\\:label=采样记录]").css("cursor", "pointer");
+            //getCanvas1().find("*[inkscape\\:label=#1故障信息],*[inkscape\\:label=#2故障信息],*[inkscape\\:label=采样记录]").css("cursor", "pointer");
 
-            // 注册SVG元素脚本事件
-            getCanvas1().find("*[inkscape\\:label=#1故障信息]").bind("click", function () {
-                // 打开故障信息
-                ShowHitchs('#1');
-            });
-            getCanvas1().find("*[inkscape\\:label=#2故障信息]").bind("click", function () {
-                // 打开故障信息
-                ShowHitchs('#2');
-            });
-            getCanvas1().find("*[inkscape\\:label=采样记录]").bind("click", function () {
-                // 打开采样记录
-                ShowSamplePlan();
-            });
+            //// 注册SVG元素脚本事件
+            //getCanvas1().find("*[inkscape\\:label=#1故障信息]").bind("click", function () {
+            //    // 打开故障信息
+            //    ShowHitchs('#1');
+            //});
+            //getCanvas1().find("*[inkscape\\:label=#2故障信息]").bind("click", function () {
+            //    // 打开故障信息
+            //    ShowHitchs('#2');
+            //});
+            //getCanvas1().find("*[inkscape\\:label=采样记录]").bind("click", function () {
+            //    // 打开采样记录
+            //    ShowSamplePlan();
+            //});
         };
 
         // 获取SVG jquery对象
@@ -333,7 +333,7 @@
             <embed id="svgCanvas1" src="Resources/TrainBeltSampler.svg" type="image/svg+xml" />
         </div>
         <!--采样机一 集样罐-->
-        <ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 728px; left: 132px;">
+        <!--<ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 728px; left: 132px;">
             <li>
                 <img src="Resources/images/barrel-notfull-1.png" />
             </li>
@@ -352,12 +352,12 @@
             <li>
                 <img src="Resources/images/barrel-empty.png" />
             </li>
-        </ul>
+        </ul>-->
         <!--采样机二 集样罐-->
-        <ul id="ulSampler2Barrel" class="ul-svg-barrel" style="top: 728px; left: 1048px;">
+        <!--<ul id="ulSampler2Barrel" class="ul-svg-barrel" style="top: 728px; left: 1048px;">
             <li>
-                <!--<div class="div-inbarrel-arrow">
-                </div>-->
+                <div class="div-inbarrel-arrow">
+                </div>
                 <img src="Resources/images/barrel-empty.png" />
             </li>
             <li>
@@ -375,7 +375,7 @@
             <li>
                 <img src="Resources/images/barrel-empty.png" />
             </li>
-        </ul>
+        </ul>-->
     </div>
     <div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
     </div>

@@ -286,7 +286,13 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                 CmcsSampleClearDetail clear = Dbers.GetInstance().SelfDber.Entity<CmcsSampleClearDetail>(String.Format("where SampleCode={0}", item.Sample_Id));
                 if (clear != null)
                 {
-                    if (item.DoneState==2)
+                    if (item.DoneState == 1)
+                    {
+                        clear.DataFlag = 1;
+                        if (Dbers.GetInstance().SelfDber.Update(clear) > 0)
+                            res3++;
+                    }
+                    else if (item.DoneState==2)
                     {
                         clear.DataFlag = 3;
                         if (Dbers.GetInstance().SelfDber.Update(clear) > 0)
@@ -304,7 +310,13 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                 CmcsSampleTakeDetail take = Dbers.GetInstance().SelfDber.Entity<CmcsSampleTakeDetail>(String.Format("where SampleCode={0}", item.Sample_Id));
                 if (take != null)
                 {
-                    if (item.DoneState == 2)
+                    if (item.DoneState == 1)
+                    {
+                        take.DataFlag = 1;
+                        if (Dbers.GetInstance().SelfDber.Update(take) > 0)
+                            res4++;
+                    }
+                    else if (item.DoneState == 2)
                     {
                         take.DataFlag = 3;
                         if (Dbers.GetInstance().SelfDber.Update(take) > 0)

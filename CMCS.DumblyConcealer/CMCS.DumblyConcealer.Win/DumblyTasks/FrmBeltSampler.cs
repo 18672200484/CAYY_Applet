@@ -58,12 +58,12 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 
 			#region #2皮带采样机
 
-			EquBeltSamplerDAO beltSamplerDAO2 = new EquBeltSamplerDAO(GlobalVars.MachineCode_PDCYJ_1);
+			EquBeltSamplerDAO beltSamplerDAO2 = new EquBeltSamplerDAO(GlobalVars.MachineCode_PDCYJ_2);
 
 			taskSimpleScheduler.StartNewTask("#2皮带采样机-快速同步", () =>
 			{
 				beltSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
-				beltSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
+				beltSamplerDAO2.SyncSamplePlan(this.rTxtOutputer.Output);
 				beltSamplerDAO2.SyncBarrel(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
 

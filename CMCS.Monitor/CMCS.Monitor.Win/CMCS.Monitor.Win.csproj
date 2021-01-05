@@ -163,6 +163,12 @@
     <Compile Include="Frms\FrmOperationLogs.Designer.cs">
       <DependentUpon>FrmOperationLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmSampleCabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmSampleCabinet.designer.cs">
+      <DependentUpon>FrmSampleCabinet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\FrmTrainBeltSampler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmOperationLogs.resx">
       <DependentUpon>FrmOperationLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmSampleCabinet.resx">
+      <DependentUpon>FrmSampleCabinet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTrainBeltSampler.resx">
       <DependentUpon>FrmTrainBeltSampler.cs</DependentUpon>
@@ -376,6 +385,11 @@
     <Content Include="bin\Web\Resources\plugins\layer\skin\layer.ext.css" />
     <Content Include="bin\Web\Resources\plugins\svg\svg.js" />
     <Content Include="bin\Web\Resources\js\svgHelper.js" />
+    <Content Include="bin\Web\SampleCabinet\index.htm" />
+    <Content Include="bin\Web\SampleCabinet\Resources\AutoCupboardPneumaticTransfer.svg" />
+    <Content Include="bin\Web\SampleCabinet\Resources\js\jquery-1.8.2.min.js" />
+    <Content Include="bin\Web\SampleCabinet\Resources\js\layer.min.js" />
+    <Content Include="bin\Web\SampleCabinet\Resources\js\register.js" />
     <Content Include="bin\Web\TrainBeltSampler\index.htm" />
     <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-empty.png" />
     <Content Include="bin\Web\TrainBeltSampler\Resources\images\barrel-full-1.png" />

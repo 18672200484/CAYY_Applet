@@ -122,52 +122,52 @@ namespace CMCS.Monitor.Win.Frms
 
             #region 皮带采样机 #1
 
-            datas.Clear();
-            machineCode = GlobalVars.MachineCode_PDCYJ_1;
-            equInfSamplerSystemStatus = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
-            datas.Add(new HtmlDataItem("#1皮采_采样编码", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "采样编码")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1皮采_矿发量", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "矿发量")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1皮采_开始时间", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "截取开始时间")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1皮采_来煤车数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "来煤车数")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1皮采_采样次数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "次采次数")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1皮采_系统", ConvertMachineStatusToColor(equInfSamplerSystemStatus), eHtmlDataItemType.svg_color));
+            //datas.Clear();
+            //machineCode = GlobalVars.MachineCode_PDCYJ_1;
+            //equInfSamplerSystemStatus = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
+            //datas.Add(new HtmlDataItem("#1皮采_采样编码", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "采样编码")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#1皮采_矿发量", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "矿发量")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#1皮采_开始时间", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "截取开始时间")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#1皮采_来煤车数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "来煤车数")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#1皮采_采样次数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "次采次数")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#1皮采_系统", ConvertMachineStatusToColor(equInfSamplerSystemStatus), eHtmlDataItemType.svg_color));
 
-            // 集样罐   
-            List<InfEquInfSampleBarrel> barrels1 = MonitorDAO.GetInstance().GetEquInfSampleBarrels(machineCode);
-            datas.Add(new HtmlDataItem("#1皮采_集样罐", Newtonsoft.Json.JsonConvert.SerializeObject(barrels1.Select(a => new { SampleCode = a.SampleCode, BarrelNumber = a.BarrelNumber, IsCurrent = a.IsCurrent, BarrelStatus = a.BarrelStatus, SampleCount = a.SampleCount })), eHtmlDataItemType.json_data));
+            //// 集样罐   
+            //List<InfEquInfSampleBarrel> barrels1 = MonitorDAO.GetInstance().GetEquInfSampleBarrels(machineCode);
+            //datas.Add(new HtmlDataItem("#1皮采_集样罐", Newtonsoft.Json.JsonConvert.SerializeObject(barrels1.Select(a => new { SampleCode = a.SampleCode, BarrelNumber = a.BarrelNumber, IsCurrent = a.IsCurrent, BarrelStatus = a.BarrelStatus, SampleCount = a.SampleCount })), eHtmlDataItemType.json_data));
 
-            value = commonDAO.GetSignalDataValue(machineCode, "采样头");
-            datas.Add(new HtmlDataItem("#1皮采_采样头", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "1A输送机");
-            datas.Add(new HtmlDataItem("#1皮采_1A输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_1A输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
-            value = commonDAO.GetSignalDataValue(machineCode, "煤流检测");
-            datas.Add(new HtmlDataItem("#1皮采_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
-            value = commonDAO.GetSignalDataValue(machineCode, "螺旋给料机");
-            datas.Add(new HtmlDataItem("#1皮采_螺旋给料机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "皮带机");
-            datas.Add(new HtmlDataItem("#1皮采_皮带机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_皮带机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
-            datas.Add(new HtmlDataItem("#1皮采_皮带机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
-            value = commonDAO.GetSignalDataValue(machineCode, "骨架粉碎机");
-            datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机1", value == "1" ? "Red" : "url(#linearGradient21005)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机2", value == "1" ? "Red" : "url(#linearGradient21007)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机3", value == "1" ? "Red" : "url(#linearGradient21009)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机4", value == "1" ? "Red" : "url(#linearGradient21011)", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "缩分输送机");
-            datas.Add(new HtmlDataItem("#1皮采_缩分输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_缩分输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
-            datas.Add(new HtmlDataItem("#1皮采_缩分输送机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
-            value = commonDAO.GetSignalDataValue(machineCode, "缩分器");
-            datas.Add(new HtmlDataItem("#1皮采_缩分器1", value == "1" ? "Red" : "url(#linearGradient21093)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_缩分器2", value == "1" ? "Red" : "url(#linearGradient7693)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_缩分器3", value == "1" ? "Red" : "url(#linearGradient7697)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_缩分器4", value == "1" ? "Red" : "url(#linearGradient21081)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1皮采_缩分器5", value == "1" ? "Red" : "url(#linearGradient7689)", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "无轴螺旋输送机");
-            datas.Add(new HtmlDataItem("#1皮采_无轴螺旋输送机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "斗提机");
-            datas.Add(new HtmlDataItem("#1皮采_斗提机", value == "1" ? "Red" : "url(#linearGradient21061)", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "采样头");
+            //datas.Add(new HtmlDataItem("#1皮采_采样头", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "1A输送机");
+            //datas.Add(new HtmlDataItem("#1皮采_1A输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_1A输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
+            //value = commonDAO.GetSignalDataValue(machineCode, "煤流检测");
+            //datas.Add(new HtmlDataItem("#1皮采_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
+            //value = commonDAO.GetSignalDataValue(machineCode, "螺旋给料机");
+            //datas.Add(new HtmlDataItem("#1皮采_螺旋给料机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "皮带机");
+            //datas.Add(new HtmlDataItem("#1皮采_皮带机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_皮带机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
+            //datas.Add(new HtmlDataItem("#1皮采_皮带机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
+            //value = commonDAO.GetSignalDataValue(machineCode, "骨架粉碎机");
+            //datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机1", value == "1" ? "Red" : "url(#linearGradient21005)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机2", value == "1" ? "Red" : "url(#linearGradient21007)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机3", value == "1" ? "Red" : "url(#linearGradient21009)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_骨架粉碎机4", value == "1" ? "Red" : "url(#linearGradient21011)", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "缩分输送机");
+            //datas.Add(new HtmlDataItem("#1皮采_缩分输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_缩分输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
+            //datas.Add(new HtmlDataItem("#1皮采_缩分输送机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
+            //value = commonDAO.GetSignalDataValue(machineCode, "缩分器");
+            //datas.Add(new HtmlDataItem("#1皮采_缩分器1", value == "1" ? "Red" : "url(#linearGradient21093)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_缩分器2", value == "1" ? "Red" : "url(#linearGradient7693)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_缩分器3", value == "1" ? "Red" : "url(#linearGradient7697)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_缩分器4", value == "1" ? "Red" : "url(#linearGradient21081)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#1皮采_缩分器5", value == "1" ? "Red" : "url(#linearGradient7689)", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "无轴螺旋输送机");
+            //datas.Add(new HtmlDataItem("#1皮采_无轴螺旋输送机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "斗提机");
+            //datas.Add(new HtmlDataItem("#1皮采_斗提机", value == "1" ? "Red" : "url(#linearGradient21061)", eHtmlDataItemType.svg_color));
 
             // 添加更多...
 
@@ -178,52 +178,52 @@ namespace CMCS.Monitor.Win.Frms
 
             #region 皮带采样机 #2
 
-            datas.Clear();
-            machineCode = GlobalVars.MachineCode_PDCYJ_2;
-            equInfSamplerSystemStatus = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
-            datas.Add(new HtmlDataItem("#2皮采_采样编码", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "采样编码")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2皮采_矿发量", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "矿发量")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2皮采_开始时间", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "截取开始时间")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2皮采_来煤车数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "来煤车数")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2皮采_采样次数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "次采次数")), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2皮采_系统", ConvertMachineStatusToColor(equInfSamplerSystemStatus), eHtmlDataItemType.svg_color));
+            //datas.Clear();
+            //machineCode = GlobalVars.MachineCode_PDCYJ_2;
+            //equInfSamplerSystemStatus = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
+            //datas.Add(new HtmlDataItem("#2皮采_采样编码", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "采样编码")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#2皮采_矿发量", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "矿发量")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#2皮采_开始时间", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "截取开始时间")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#2皮采_来煤车数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "来煤车数")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#2皮采_采样次数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "次采次数")), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("#2皮采_系统", ConvertMachineStatusToColor(equInfSamplerSystemStatus), eHtmlDataItemType.svg_color));
 
-            // 集样罐   
-            List<InfEquInfSampleBarrel> barrels2 = MonitorDAO.GetInstance().GetEquInfSampleBarrels(machineCode);
-            datas.Add(new HtmlDataItem("#2皮采_集样罐", Newtonsoft.Json.JsonConvert.SerializeObject(barrels2.Select(a => new { SampleCode = a.SampleCode, BarrelNumber = a.BarrelNumber, IsCurrent = a.IsCurrent, BarrelStatus = a.BarrelStatus, SampleCount = a.SampleCount })), eHtmlDataItemType.json_data));
+            //// 集样罐   
+            //List<InfEquInfSampleBarrel> barrels2 = MonitorDAO.GetInstance().GetEquInfSampleBarrels(machineCode);
+            //datas.Add(new HtmlDataItem("#2皮采_集样罐", Newtonsoft.Json.JsonConvert.SerializeObject(barrels2.Select(a => new { SampleCode = a.SampleCode, BarrelNumber = a.BarrelNumber, IsCurrent = a.IsCurrent, BarrelStatus = a.BarrelStatus, SampleCount = a.SampleCount })), eHtmlDataItemType.json_data));
 
-            value = commonDAO.GetSignalDataValue(machineCode, "采样头");
-            datas.Add(new HtmlDataItem("#2皮采_采样头", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "1B输送机");
-            datas.Add(new HtmlDataItem("#2皮采_1B输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_1B输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
-            value = commonDAO.GetSignalDataValue(machineCode, "煤流检测");
-            datas.Add(new HtmlDataItem("#2皮采_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
-            value = commonDAO.GetSignalDataValue(machineCode, "螺旋给料机");
-            datas.Add(new HtmlDataItem("#2皮采_螺旋给料机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "皮带机");
-            datas.Add(new HtmlDataItem("#2皮采_皮带机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_皮带机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
-            datas.Add(new HtmlDataItem("#2皮采_皮带机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
-            value = commonDAO.GetSignalDataValue(machineCode, "骨架粉碎机");
-            datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机1", value == "1" ? "Red" : "url(#linearGradient21185)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机2", value == "1" ? "Red" : "url(#linearGradient21187)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机3", value == "1" ? "Red" : "url(#linearGradient21189)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机4", value == "1" ? "Red" : "url(#linearGradient21191)", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "缩分输送机");
-            datas.Add(new HtmlDataItem("#2皮采_缩分输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_缩分输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
-            datas.Add(new HtmlDataItem("#2皮采_缩分输送机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
-            value = commonDAO.GetSignalDataValue(machineCode, "缩分器");
-            datas.Add(new HtmlDataItem("#2皮采_缩分器1", value == "1" ? "Red" : "url(#linearGradient21273)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_缩分器2", value == "1" ? "Red" : "url(#linearGradient8507)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_缩分器3", value == "1" ? "Red" : "url(#linearGradient8511)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_缩分器4", value == "1" ? "Red" : "url(#linearGradient21261)", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮采_缩分器5", value == "1" ? "Red" : "url(#linearGradient8503)", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "无轴螺旋输送机");
-            datas.Add(new HtmlDataItem("#2皮采_无轴螺旋输送机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "斗提机");
-            datas.Add(new HtmlDataItem("#2皮采_斗提机", value == "1" ? "Red" : "url(#linearGradient21061)", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "采样头");
+            //datas.Add(new HtmlDataItem("#2皮采_采样头", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "1B输送机");
+            //datas.Add(new HtmlDataItem("#2皮采_1B输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_1B输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
+            //value = commonDAO.GetSignalDataValue(machineCode, "煤流检测");
+            //datas.Add(new HtmlDataItem("#2皮采_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
+            //value = commonDAO.GetSignalDataValue(machineCode, "螺旋给料机");
+            //datas.Add(new HtmlDataItem("#2皮采_螺旋给料机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "皮带机");
+            //datas.Add(new HtmlDataItem("#2皮采_皮带机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_皮带机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
+            //datas.Add(new HtmlDataItem("#2皮采_皮带机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
+            //value = commonDAO.GetSignalDataValue(machineCode, "骨架粉碎机");
+            //datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机1", value == "1" ? "Red" : "url(#linearGradient21185)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机2", value == "1" ? "Red" : "url(#linearGradient21187)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机3", value == "1" ? "Red" : "url(#linearGradient21189)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_骨架粉碎机4", value == "1" ? "Red" : "url(#linearGradient21191)", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "缩分输送机");
+            //datas.Add(new HtmlDataItem("#2皮采_缩分输送机", value == "1" ? "Red" : "#808080", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_缩分输送机", value, tempBool, eHtmlDataItemType.svg_dyncolor));
+            //datas.Add(new HtmlDataItem("#2皮采_缩分输送机_煤堆", value, tempBool, eHtmlDataItemType.svg_visible));
+            //value = commonDAO.GetSignalDataValue(machineCode, "缩分器");
+            //datas.Add(new HtmlDataItem("#2皮采_缩分器1", value == "1" ? "Red" : "url(#linearGradient21273)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_缩分器2", value == "1" ? "Red" : "url(#linearGradient8507)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_缩分器3", value == "1" ? "Red" : "url(#linearGradient8511)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_缩分器4", value == "1" ? "Red" : "url(#linearGradient21261)", eHtmlDataItemType.svg_color));
+            //datas.Add(new HtmlDataItem("#2皮采_缩分器5", value == "1" ? "Red" : "url(#linearGradient8503)", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "无轴螺旋输送机");
+            //datas.Add(new HtmlDataItem("#2皮采_无轴螺旋输送机", value == "1" ? "Red" : "#c0c0c0", eHtmlDataItemType.svg_color));
+            //value = commonDAO.GetSignalDataValue(machineCode, "斗提机");
+            //datas.Add(new HtmlDataItem("#2皮采_斗提机", value == "1" ? "Red" : "url(#linearGradient21061)", eHtmlDataItemType.svg_color));
 
             // 添加更多...
 

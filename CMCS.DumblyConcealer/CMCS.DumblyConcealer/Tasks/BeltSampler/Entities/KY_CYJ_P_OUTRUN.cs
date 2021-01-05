@@ -39,7 +39,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler.Entities
 		/// <summary>
 		/// 采样间隔 单位s
 		/// </summary>
-		public int CY_Time { get; set; }
+		public string CY_Time { get; set; }
 
 		/// <summary>
 		/// 缩分比

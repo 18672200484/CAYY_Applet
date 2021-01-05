@@ -337,6 +337,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
 			}));
 		}
+		
+		/// <summary>
+		/// 打开智能存样柜与气动传输监控
+		/// </summary>
+		public void OpenSampleCabinet()
+		{
+			this.Invoke((Action)(() =>
+			{
+				string uniqueKey = FrmSampleCabinet.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmSampleCabinet frm = new FrmSampleCabinet();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			}));
+		}
 		#endregion
 
 		/// <summary>
@@ -525,6 +544,19 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenAutoCupboard();
+		}
+
+		/// <summary>
+		/// 打开存样柜
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenSampleCabinet_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenSampleCabinet();
 		}
 		#endregion
 

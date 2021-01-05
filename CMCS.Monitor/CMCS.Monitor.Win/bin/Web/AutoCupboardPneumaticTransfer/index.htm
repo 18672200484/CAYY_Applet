@@ -27,10 +27,8 @@
 
         };
         function initpage() {
-            dataHandler({ Key: "四向转换器1", Type: "9999", Value: 1 });
-            dataHandler({ Key: "四向转换器2", Type: "9999", Value: 1 });
-            dataHandler({ Key: "四向转换器3", Type: "9999", Value: 1 });
-            //dataHandler({ Key: "二项转换器", Type: "9998", Value: 2 });
+            dataHandler({ Key: "转换器1", Type: "9999", Value: 1 });
+            dataHandler({ Key: "转换器2", Type: "9999", Value: 1 });
         }
         function LoadSamInfo(datas) {
             tempboxdatas = datas;
@@ -136,18 +134,6 @@
                         getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_4]").hide();
                         changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2]"), "#ee4036");
                         changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a1],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
-                    } if (data.Value == 3) {
-                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "0,200.04816,157.75323");
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_3]").show();
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_4]").hide();
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a3]"), "#ee4036");
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2],*[inkscape\\:label=" + data.Key + "a1],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
-                    } if (data.Value == 4) {
-                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "12,200.04816,157.75323");
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_4]").show();
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_1]").hide();
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a4]"), "#ee4036");
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a1]"), "#ffffff");
                     }
                 }
                 // svg_scroll

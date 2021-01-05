@@ -7,22 +7,22 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="svg2"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="AutoCupboardPneumaticTransfer.svg"
-   x="0px"
-   y="0px"
-   viewBox="0 0 1910 920"
+   xml:space="preserve"
    style="enable-background:new 0 0 1910 920;"
-   xml:space="preserve"><metadata
+   viewBox="0 0 1910 920"
+   y="0px"
+   x="0px"
+   sodipodi:docname="AutoCupboardPneumaticTransfer.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg2"
+   version="1.1"><metadata
    id="metadata398"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
    id="defs396" />
 <style
-   type="text/css"
-   id="style2">
+   id="style2"
+   type="text/css">
 	.st0{fill:#FFFFFF;}
 	.st1{font-family:'MicrosoftYaHei';}
 	.st2{font-size:41.1038px;}
@@ -48,1492 +48,1496 @@
 	.st22{fill:#929497;}
 </style>
 <sodipodi:namedview
-   bordercolor="#666666"
-   borderopacity="1"
-   gridtolerance="10"
-   guidetolerance="10"
-   id="namedview856"
-   inkscape:current-layer="svg2"
-   inkscape:cx="789.97824"
-   inkscape:cy="454.52122"
-   inkscape:guide-bbox="true"
-   inkscape:pageopacity="0"
-   inkscape:pageshadow="2"
-   inkscape:window-height="1017"
-   inkscape:window-maximized="1"
-   inkscape:window-width="1920"
-   inkscape:window-x="-8"
-   inkscape:window-y="-8"
-   inkscape:zoom="1"
-   objecttolerance="10"
-   pagecolor="#ffffff"
-   showgrid="false"
+   inkscape:document-rotation="0"
    showguides="true"
-   inkscape:document-rotation="0">
+   showgrid="false"
+   pagecolor="#ffffff"
+   objecttolerance="10"
+   inkscape:zoom="1"
+   inkscape:window-y="-8"
+   inkscape:window-x="-8"
+   inkscape:window-width="1920"
+   inkscape:window-maximized="1"
+   inkscape:window-height="1017"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   inkscape:guide-bbox="true"
+   inkscape:cy="454.52122"
+   inkscape:cx="789.97824"
+   inkscape:current-layer="svg2"
+   id="namedview856"
+   guidetolerance="10"
+   gridtolerance="10"
+   borderopacity="1"
+   bordercolor="#666666">
 	<inkscape:grid
-   empspacing="5"
-   enabled="true"
-   id="grid3737"
-   snapvisiblegridlinesonly="true"
+   visible="true"
    type="xygrid"
-   visible="true">
+   snapvisiblegridlinesonly="true"
+   id="grid3737"
+   enabled="true"
+   empspacing="5">
 		</inkscape:grid>
 </sodipodi:namedview>
 <rect
-   id="rect388"
-   sodipodi:insensitive="true"
+   height="920"
    width="1910"
-   height="920">
+   sodipodi:insensitive="true"
+   id="rect388">
 </rect>
 <text
-   id="text217-4"
-   transform="matrix(0.9897,0,0,1,765.2043,73.4365)"
+   style="line-height:0%"
    class="st0 st1 st2"
-   style="line-height:0%">5E-SPT样瓶气送系统</text>
+   transform="matrix(0.9897,0,0,1,765.2043,73.4365)"
+   id="text217-4">5E-SPT样瓶气送系统</text>
 <rect
-   id="rect106_1_"
-   x="192.4"
-   y="195.4"
-   class="st3"
+   height="451.3"
    width="10.9"
-   height="451.3" />
-<rect
-   id="rect112_1_"
-   x="192.4"
-   y="194"
    class="st3"
+   y="195.4"
+   x="192.4"
+   id="rect106_1_" />
+<rect
+   height="11.2"
    width="86.7"
-   height="11.2" />
+   class="st3"
+   y="194"
+   x="192.4"
+   id="rect112_1_" />
 <text
-   transform="matrix(0.9897,0,0,1,319.4244,280.0122)"
-   class="st0 st4 st5"
+   style="line-height:0%"
    id="text10"
-   style="line-height:0%">转换器1</text>
+   class="st0 st4 st5"
+   transform="matrix(0.9897,0,0,1,319.4244,280.0122)">转换器1</text>
 <text
-   id="text205_1_"
-   transform="matrix(0.9897,0,0,1,162.2741,807.3887)"
+   style="line-height:0%"
    class="st0 st1 st6"
-   style="line-height:0%">风机站</text>
+   transform="matrix(0.9897,0,0,1,162.2741,807.3887)"
+   id="text205_1_">风机站</text>
 <g
    id="g29">
 	<rect
-   id="rect127_1_"
-   x="158"
-   y="663.7"
-   class="st7"
+   height="110"
    width="79.7"
-   height="110" />
+   class="st7"
+   y="663.7"
+   x="158"
+   id="rect127_1_" />
 	<path
-   id="path397_1_"
-   inkscape:connector-curvature="0"
+   d="M158,773.6h79.7V663.7H158V773.6L158,773.6z M155,776.7   v-116h85.8v116L155,776.7L155,776.7z"
    class="st8"
-   d="M158,773.6h79.7V663.7H158V773.6L158,773.6z M155,776.7   v-116h85.8v116L155,776.7L155,776.7z" />
+   inkscape:connector-curvature="0"
+   id="path397_1_" />
 	<rect
-   id="rect129_1_"
-   x="159.3"
-   y="665.3"
-   class="st9"
+   height="42"
    width="77"
-   height="42" />
+   class="st9"
+   y="665.3"
+   x="159.3"
+   id="rect129_1_" />
 	
 		<linearGradient
-   id="rect138_2_"
-   gradientUnits="userSpaceOnUse"
-   x1="153.6548"
-   y1="711.4017"
-   x2="177.979"
+   gradientTransform="matrix(1.3037 0 0 1.3173 -18.2914 -283.4691)"
    y2="711.4017"
-   gradientTransform="matrix(1.3037 0 0 1.3173 -18.2914 -283.4691)">
+   x2="177.979"
+   y1="711.4017"
+   x1="153.6548"
+   gradientUnits="userSpaceOnUse"
+   id="rect138_2_">
 		<stop
-   offset="0"
+   id="stop16"
    style="stop-color:#FFFFFF"
-   id="stop16" />
+   offset="0" />
 		<stop
-   offset="1"
+   id="stop18"
    style="stop-color:#231F20"
-   id="stop18" />
+   offset="1" />
 	</linearGradient>
 	<polygon
-   id="rect138_1_"
+   points="182.1,647.5 182.1,659.8 213.7,659.8 213.7,647.5  "
    class="st10"
-   points="182.1,647.5 182.1,659.8 213.7,659.8 213.7,647.5  " />
+   id="rect138_1_" />
 	<path
-   id="path401_1_"
-   inkscape:connector-curvature="0"
+   d="M182.1,659.8h31.7v-12.4h-31.7V659.8z M214.2,660.7h-32.5   h-0.4v-0.4v-13.1v-0.4h0.4h32.5h0.4v0.4v13.1v0.4H214.2z"
    class="st9"
-   d="M182.1,659.8h31.7v-12.4h-31.7V659.8z M214.2,660.7h-32.5   h-0.4v-0.4v-13.1v-0.4h0.4h32.5h0.4v0.4v13.1v0.4H214.2z" />
-	<path
-   id="path412_1_"
    inkscape:connector-curvature="0"
+   id="path401_1_" />
+	<path
+   d="M218.4,695.9h-19.3h-0.2v-0.2v-18.9v-0.2h0.2h19.3h0.1h0.1   c10.2,9.9,0,19.1,0,19.1L218.4,695.9L218.4,695.9L218.4,695.9z M199.3,695.5h19c0.8-0.8,9.4-9.3,0-18.4h-19V695.5L199.3,695.5z"
    class="st11"
-   d="M218.4,695.9h-19.3h-0.2v-0.2v-18.9v-0.2h0.2h19.3h0.1h0.1   c10.2,9.9,0,19.1,0,19.1L218.4,695.9L218.4,695.9L218.4,695.9z M199.3,695.5h19c0.8-0.8,9.4-9.3,0-18.4h-19V695.5L199.3,695.5z" />
-	<path
-   id="path414_1_"
    inkscape:connector-curvature="0"
-   inkscape:label="妞嬪孩婧€"
+   id="path412_1_" />
+	<path
+   d="M199.3,695.5h19   c0.8-0.8,9.4-9.3,0-18.4h-19V695.5L199.3,695.5z"
    class="st12"
-   d="M199.3,695.5h19   c0.8-0.8,9.4-9.3,0-18.4h-19V695.5L199.3,695.5z" />
-	<path
-   id="path416_1_"
+   inkscape:label="妞嬪孩婧€"
    inkscape:connector-curvature="0"
+   id="path414_1_" />
+	<path
+   d="M177.4,676.6h19.3h0.2v0.2v18.9v0.2h-0.2h-19.3h-0.1h-0.1   c-10.2-9.9,0-19.1,0-19.1L177.4,676.6L177.4,676.6L177.4,676.6z M196.5,677.1h-19.1c-0.8,0.8-9.4,9.3,0,18.4h19L196.5,677.1   L196.5,677.1z"
    class="st11"
-   d="M177.4,676.6h19.3h0.2v0.2v18.9v0.2h-0.2h-19.3h-0.1h-0.1   c-10.2-9.9,0-19.1,0-19.1L177.4,676.6L177.4,676.6L177.4,676.6z M196.5,677.1h-19.1c-0.8,0.8-9.4,9.3,0,18.4h19L196.5,677.1   L196.5,677.1z" />
-	<path
-   id="path418_1_"
    inkscape:connector-curvature="0"
+   id="path416_1_" />
+	<path
+   d="M196.5,677.1h-19.1c-0.8,0.8-9.4,9.3,0,18.4h19   L196.5,677.1L196.5,677.1z"
    class="st13"
-   d="M196.5,677.1h-19.1c-0.8,0.8-9.4,9.3,0,18.4h19   L196.5,677.1L196.5,677.1z" />
+   inkscape:connector-curvature="0"
+   id="path418_1_" />
 	
 		<g
-   id="g3516_1_"
+   inkscape:label="濮樻柨濮╂导鐘虹翻_妞嬪孩婧€"
    transform="matrix(1.2299415,0,0,1.2427133,-20.75129,9.0402335)"
-   inkscape:label="濮樻柨濮╂导鐘虹翻_妞嬪孩婧€">
+   id="g3516_1_">
 		<path
-   id="path471_1_"
-   inkscape:connector-curvature="0"
+   d="M184.5,588c0,1.3-0.3,2.5-1,3.6l10.8,6.6    c-3.4,5.4-9.2,9.1-16,9.3l-0.3-12.7c-1.3,0-2.5-0.3-3.6-1l-6.6,10.8c-5.4-3.4-9.1-9.2-9.3-16l12.8-0.3c0-1.3,0.3-2.5,1-3.6    l-10.8-6.6c3.4-5.4,9.3-9.1,16-9.2l0.3,12.7c1.3,0,2.5,0.3,3.6,1l6.6-10.8c5.4,3.4,9.1,9.2,9.2,16L184.5,588L184.5,588z"
    class="st14"
-   d="M184.5,588c0,1.3-0.3,2.5-1,3.6l10.8,6.6    c-3.4,5.4-9.2,9.1-16,9.3l-0.3-12.7c-1.3,0-2.5-0.3-3.6-1l-6.6,10.8c-5.4-3.4-9.1-9.2-9.3-16l12.8-0.3c0-1.3,0.3-2.5,1-3.6    l-10.8-6.6c3.4-5.4,9.3-9.1,16-9.2l0.3,12.7c1.3,0,2.5,0.3,3.6,1l6.6-10.8c5.4,3.4,9.1,9.2,9.2,16L184.5,588L184.5,588z" />
+   inkscape:connector-curvature="0"
+   id="path471_1_" />
 	</g>
 </g>
 <polygon
-   id="polygon473_1_"
+   points="467,200.4 467,211.1 435.4,211.1 435.4,200.4 "
    class="st15"
-   points="467,200.4 467,211.1 435.4,211.1 435.4,200.4 " />
+   id="polygon473_1_" />
 <polygon
-   id="polygon475_12_"
+   points="500.4,245.2 511,245.2 511,628.4 500.4,628.4 "
    class="st15"
-   points="500.4,245.2 511,245.2 511,628.4 500.4,628.4 " />
+   id="polygon475_12_" />
 <polygon
-   id="polygon475_11_"
+   points="829.5,188.1 840.2,188.1 840.2,628.4 829.5,628.4 "
    class="st15"
-   points="829.5,188.1 840.2,188.1 840.2,628.4 829.5,628.4 " />
+   id="polygon475_11_" />
 <path
-   id="path477_15_"
-   inkscape:connector-curvature="0"
+   d="M467,200.4c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V200.4L467,200.4z"
    class="st15"
-   d="M467,200.4c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V200.4L467,200.4z" />
+   inkscape:connector-curvature="0"
+   id="path477_15_" />
 <path
-   id="path477_12_"
+   d="M796.2,146c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V146L796.2,146z"
+   class="st15"
    inkscape:connector-curvature="0"
-   class="st15"
-   d="M796.2,146c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V146L796.2,146z" />
+   id="path477_12_" />
 <polygon
-   id="polygon806_15_"
+   points="797,146 797,156.8 435.2,156.8 435.2,146 "
    class="st15"
-   points="797,146 797,156.8 435.2,156.8 435.2,146 " />
+   id="polygon806_15_" />
 <polygon
-   id="polygon806_13_"
+   points="791.2,227 791.2,237.7 435.4,237.7 435.4,227 "
    class="st15"
-   points="791.2,227 791.2,237.7 435.4,237.7 435.4,227 " />
+   id="polygon806_13_" />
 <rect
-   id="rect108_8_"
-   x="406.9"
-   y="139.5"
-   class="st8"
+   height="104.5"
    width="6.7"
-   height="104.5" />
-<path
-   id="path730_4_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M415.1,163.1h18.5v-22h-18.5V163.1z M434.4,164.6h-20h-0.8  v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H434.4z" />
-<path
-   id="path732_4_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M415.1,190.2h18.5v-22h-18.5V190.2z M434.4,191.7h-20h-0.8  V191v-23.5v-0.8h0.8h20h0.8v0.8V191v0.8H434.4z" />
-<rect
-   id="rect114_4_"
-   x="293.1"
+   class="st8"
    y="139.5"
+   x="406.9"
+   id="rect108_8_" />
+<path
+   d="M415.1,163.1h18.5v-22h-18.5V163.1z M434.4,164.6h-20h-0.8  v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H434.4z"
    class="st9"
+   inkscape:connector-curvature="0"
+   id="path730_4_" />
+<path
+   d="M415.1,190.2h18.5v-22h-18.5V190.2z M434.4,191.7h-20h-0.8  V191v-23.5v-0.8h0.8h20h0.8v0.8V191v0.8H434.4z"
+   class="st9"
+   inkscape:connector-curvature="0"
+   id="path732_4_" />
+<rect
+   height="26.4"
    width="113.8"
-   height="26.4" />
+   class="st9"
+   y="139.5"
+   x="293.1"
+   id="rect114_4_" />
 <linearGradient
-   id="rect121_2_"
-   gradientUnits="userSpaceOnUse"
-   x1="282.4865"
-   y1="341.157"
-   x2="282.4865"
+   gradientTransform="matrix(1.3037 0 0 1.3173 -18.2914 -283.4691)"
    y2="400.5378"
-   gradientTransform="matrix(1.3037 0 0 1.3173 -18.2914 -283.4691)">
+   x2="282.4865"
+   y1="341.157"
+   x1="282.4865"
+   gradientUnits="userSpaceOnUse"
+   id="rect121_2_">
 	<stop
-   offset="0"
+   id="stop42"
    style="stop-color:#BBBDBF"
-   id="stop42" />
+   offset="0" />
 	<stop
-   offset="0.9882"
+   id="stop44"
    style="stop-color:#404041"
-   id="stop44" />
+   offset="0.9882" />
 	<stop
-   offset="1"
+   id="stop46"
    style="stop-color:#404041"
-   id="stop46" />
+   offset="1" />
 </linearGradient>
 <polygon
-   id="rect121_1_"
+   points="293.1,165.9 293.1,244.2 406.9,244.2 406.9,165.9 "
    class="st16"
-   points="293.1,165.9 293.1,244.2 406.9,244.2 406.9,165.9 " />
+   id="rect121_1_" />
 <rect
-   id="rect110_4_"
-   x="415.1"
+   height="22"
+   width="18.5"
+   class="st17"
    y="141.1"
-   class="st17"
-   width="18.5"
-   height="22" />
+   x="415.1"
+   id="rect110_4_" />
 <text
-   id="text164_4_"
-   inkscape:label="转换器1a1"
+   style="line-height:0%"
+   class="st18 st4 st19"
    transform="matrix(0.9897,0,0,1,419.5553,158.063)"
-   class="st18 st4 st19"
-   style="line-height:0%">1</text>
+   inkscape:label="转换器1a1"
+   id="text164_4_">1</text>
 <rect
-   id="rect110_48_4_"
-   x="415.1"
+   height="22"
+   width="18.5"
+   class="st17"
    y="168.2"
-   class="st17"
-   width="18.5"
-   height="22" />
-<text
-   id="text174_4_"
-   inkscape:label="转换器1a3"
-   transform="matrix(0.9897,0,0,1,419.6217,184.623)"
-   class="st18 st4 st19"
-   style="line-height:0%">3</text>
-<path
-   id="_126014344_4_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M415.1,242.6h18.5v-22.1h-18.5V242.6z M434.4,244.2h-20  h-0.8v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H434.4z" />
-<rect
-   id="rect110_49_4_"
    x="415.1"
-   y="220.6"
-   class="st17"
-   width="18.5"
-   height="22" />
+   id="rect110_48_4_" />
 <text
-   id="text168_4_"
-   inkscape:label="转换器1a4"
-   transform="matrix(0.9897,0,0,1,419.3277,236.8965)"
-   class="st20 st4 st19"
-   style="line-height:0%">4</text>
-<path
-   id="_126014344-1_4_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M415.4,216.5h18.4v-20.6h-18.4V216.5z M434.6,217.9  h-19.9h-0.8v-0.8v-22v-0.8h0.8h19.9h0.8v0.8v22v0.8H434.6z" />
-<rect
-   id="rect110_48-4_4_"
-   x="415.4"
-   y="195.9"
-   class="st17"
-   width="18.5"
-   height="20.7" />
-<text
-   id="text170_4_"
-   inkscape:label="转换器1a2"
-   transform="matrix(0.9897,0,0,1,419.4303,211.563)"
+   style="line-height:0%"
    class="st18 st4 st19"
-   style="line-height:0%">2</text>
+   transform="matrix(0.9897,0,0,1,419.6217,184.623)"
+   inkscape:label="转换器1a3"
+   id="text174_4_">3</text>
+<path
+   d="M415.1,242.6h18.5v-22.1h-18.5V242.6z M434.4,244.2h-20  h-0.8v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H434.4z"
+   class="st9"
+   inkscape:connector-curvature="0"
+   id="_126014344_4_" />
+<rect
+   height="22"
+   width="18.5"
+   class="st17"
+   y="220.6"
+   x="415.1"
+   id="rect110_49_4_" />
+<text
+   style="line-height:0%"
+   class="st20 st4 st19"
+   transform="matrix(0.9897,0,0,1,419.3277,236.8965)"
+   inkscape:label="转换器1a4"
+   id="text168_4_">4</text>
+<path
+   d="M415.4,216.5h18.4v-20.6h-18.4V216.5z M434.6,217.9  h-19.9h-0.8v-0.8v-22v-0.8h0.8h19.9h0.8v0.8v22v0.8H434.6z"
+   class="st9"
+   inkscape:connector-curvature="0"
+   id="_126014344-1_4_" />
+<rect
+   height="20.7"
+   width="18.5"
+   class="st17"
+   y="195.9"
+   x="415.4"
+   id="rect110_48-4_4_" />
+<text
+   style="line-height:0%"
+   class="st18 st4 st19"
+   transform="matrix(0.9897,0,0,1,419.4303,211.563)"
+   inkscape:label="转换器1a2"
+   id="text170_4_">2</text>
 <g
    id="g66">
 	<path
-   class="st7"
+   id="path60"
    d="M675.1,140.7v21.3c-19.4,0-15.6,0-35.2,0v-21.3C659.5,140.7,655.7,140.7,675.1,140.7z"
-   id="path60" />
+   class="st7" />
 	<path
-   d="M642,159.9h31c0-5.2,0-11.8,0-17.1h-31C642,149.3,642,153.6,642,159.9z"
-   id="path62" />
+   id="path62"
+   d="M642,159.9h31c0-5.2,0-11.8,0-17.1h-31C642,149.3,642,153.6,642,159.9z" />
 	<path
-   class="st7"
+   id="path64"
    d="M658.9,143.9h-11.8v15.3h11.8h1.8l0,0l8.9-7.7l-8.9-7.7l0,0l0,0h-1.8V143.9z M660.7,146.4l6,5.1l-6,5.1V146.4z    M648.9,145.6h9.9v11.5h-9.9V145.6z"
-   id="path64" />
+   class="st7" />
 </g>
 <g
    id="g74">
 	<path
-   class="st7"
+   id="path68"
    d="M516.3,377.1H495c0-19.4,0-15.6,0-35.2h21.3C516.3,361.5,516.3,357.7,516.3,377.1z"
-   id="path68" />
+   class="st7" />
 	<path
-   d="M497.2,343.9v31c5.2,0,11.8,0,17.1,0v-31C507.8,343.9,503.5,343.9,497.2,343.9z"
-   id="path70" />
+   id="path70"
+   d="M497.2,343.9v31c5.2,0,11.8,0,17.1,0v-31C507.8,343.9,503.5,343.9,497.2,343.9z" />
 	<path
-   class="st7"
+   id="path72"
    d="M513.2,360.8V349h-15.3v11.8v1.8l0,0l7.7,8.9l7.7-8.9l0,0l0,0v-1.8H513.2z M510.7,362.7l-5.1,6l-5.1-6H510.7z    M511.5,350.9v9.9H500v-9.9H511.5z"
-   id="path72" />
+   class="st7" />
 </g>
 <polygon
-   id="polygon473_5_"
+   points="1228.6,200.4 1228.6,211.1 1059.4,211.1 1059.4,200.4 "
    class="st15"
-   points="1228.6,200.4 1228.6,211.1 1059.4,211.1 1059.4,200.4 " />
+   id="polygon473_5_" />
 <polygon
-   id="polygon475_15_"
+   points="1262,245.2 1272.6,245.2 1272.6,628.4 1262,628.4 "
    class="st15"
-   points="1262,245.2 1272.6,245.2 1272.6,628.4 1262,628.4 " />
+   id="polygon475_15_" />
 <path
-   id="path477_17_"
-   inkscape:connector-curvature="0"
+   d="M1228.6,200.4c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V200.4L1228.6,200.4z"
    class="st15"
-   d="M1228.6,200.4c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V200.4L1228.6,200.4z" />
+   inkscape:connector-curvature="0"
+   id="path477_17_" />
 <g
    id="g85">
 	<path
-   class="st7"
+   id="path79"
    d="M1278,377.1h-21.3c0-19.4,0-15.6,0-35.2h21.3C1278,361.5,1278,357.7,1278,377.1z"
-   id="path79" />
+   class="st7" />
 	<path
-   d="M1258.8,343.9v31c5.2,0,11.8,0,17.1,0v-31C1269.4,343.9,1265.1,343.9,1258.8,343.9z"
-   id="path81" />
+   id="path81"
+   d="M1258.8,343.9v31c5.2,0,11.8,0,17.1,0v-31C1269.4,343.9,1265.1,343.9,1258.8,343.9z" />
 	<path
-   class="st7"
+   id="path83"
    d="M1274.8,360.8V349h-15.3v11.8v1.8l0,0l7.7,8.9l7.7-8.9l0,0l0,0v-1.8H1274.8z M1272.3,362.7l-5.1,6l-5.1-6   H1272.3z M1273.1,350.9v9.9h-11.5v-9.9H1273.1z"
-   id="path83" />
+   class="st7" />
 </g>
 <g
    id="g98">
 	<polygon
-   id="polygon473_6_"
+   points="1066.1,227 1066.1,237.7 1059.4,237.7 1059.4,227  "
    class="st15"
-   points="1066.1,227 1066.1,237.7 1059.4,237.7 1059.4,227  " />
+   id="polygon473_6_" />
 	<polygon
-   id="polygon475_16_"
+   points="1099.5,271.8 1110.1,271.8 1110.1,628.4 1099.5,628.4  "
    class="st15"
-   points="1099.5,271.8 1110.1,271.8 1110.1,628.4 1099.5,628.4  " />
+   id="polygon475_16_" />
 	<path
-   id="path477_18_"
-   inkscape:connector-curvature="0"
+   d="M1066.1,227c5.1,0,44,1,44,44.9h-10.7   c0-35.8-33.2-34.1-33.3-34.1V227L1066.1,227z"
    class="st15"
-   d="M1066.1,227c5.1,0,44,1,44,44.9h-10.7   c0-35.8-33.2-34.1-33.3-34.1V227L1066.1,227z" />
+   inkscape:connector-curvature="0"
+   id="path477_18_" />
 	<g
    id="g96">
 		<path
-   class="st7"
+   id="path90"
    d="M1115.4,403.7h-21.3c0-19.4,0-15.6,0-35.2h21.3C1115.4,388.1,1115.4,384.3,1115.4,403.7z"
-   id="path90" />
+   class="st7" />
 		<path
-   d="M1096.3,370.5v31c5.2,0,11.8,0,17.1,0v-31C1106.9,370.5,1102.6,370.5,1096.3,370.5z"
-   id="path92" />
+   id="path92"
+   d="M1096.3,370.5v31c5.2,0,11.8,0,17.1,0v-31C1106.9,370.5,1102.6,370.5,1096.3,370.5z" />
 		<path
-   class="st7"
+   id="path94"
    d="M1112.3,387.4v-11.8H1097v11.8v1.8l0,0l7.7,8.9l7.7-8.9l0,0l0,0v-1.8H1112.3z M1109.8,389.3l-5.1,6l-5.1-6    H1109.8z M1110.6,377.5v9.9h-11.5v-9.9H1110.6z"
-   id="path94" />
+   class="st7" />
 	</g>
 </g>
 <polygon
-   id="polygon473_2_"
+   points="629.5,174 629.5,184.7 435.4,184.7 435.4,174 "
    class="st15"
-   points="629.5,174 629.5,184.7 435.4,184.7 435.4,174 " />
+   id="polygon473_2_" />
 <polygon
-   id="polygon473_3_"
+   points="909.9,195.6 909.9,206.3 791.2,237.7 791.2,227 "
    class="st15"
-   points="909.9,195.6 909.9,206.3 791.2,237.7 791.2,227 " />
+   id="polygon473_3_" />
 <polygon
-   id="polygon475_13_"
+   points="662.9,218.8 673.5,218.8 673.5,628.4 662.9,628.4 "
    class="st15"
-   points="662.9,218.8 673.5,218.8 673.5,628.4 662.9,628.4 " />
+   id="polygon475_13_" />
 <path
-   id="path477_16_"
-   inkscape:connector-curvature="0"
+   d="M629.5,174c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V174L629.5,174z"
    class="st15"
-   d="M629.5,174c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V174L629.5,174z" />
+   inkscape:connector-curvature="0"
+   id="path477_16_" />
 <g
    id="g110">
 	<path
-   class="st7"
+   id="path104"
    d="M678.9,350.7h-21.3c0-19.4,0-15.6,0-35.2h21.3C678.9,335.1,678.9,331.3,678.9,350.7z"
-   id="path104" />
+   class="st7" />
 	<path
-   d="M659.7,317.6v31c5.2,0,11.8,0,17.1,0v-31C670.3,317.6,666,317.6,659.7,317.6z"
-   id="path106" />
+   id="path106"
+   d="M659.7,317.6v31c5.2,0,11.8,0,17.1,0v-31C670.3,317.6,666,317.6,659.7,317.6z" />
 	<path
-   class="st7"
+   id="path108"
    d="M675.7,334.5v-11.8h-15.3v11.8v1.8l0,0l7.7,8.9l7.7-8.9l0,0l0,0v-1.8H675.7z M673.2,336.3l-5.1,6l-5.1-6H673.2   z M674,324.5v9.9h-11.5v-9.9H674z"
-   id="path108" />
+   class="st7" />
 </g>
 <g
    id="g118">
 	<path
-   class="st7"
+   id="path112"
    d="M845.5,403.4h-21.3c0-19.4,0-15.6,0-35.2h21.3C845.5,387.8,845.5,384,845.5,403.4z"
-   id="path112" />
+   class="st7" />
 	<path
-   d="M826.3,370.2v31c5.2,0,11.8,0,17.1,0v-31C837,370.2,832.6,370.2,826.3,370.2z"
-   id="path114" />
+   id="path114"
+   d="M826.3,370.2v31c5.2,0,11.8,0,17.1,0v-31C837,370.2,832.6,370.2,826.3,370.2z" />
 	<path
-   class="st7"
+   id="path116"
    d="M842.4,387.1v-11.8h-15.3v11.8v1.8l0,0l7.7,8.9l7.7-8.9l0,0l0,0v-1.8H842.4z M839.9,389l-5.1,6l-5.1-6H839.9z    M840.6,377.2v9.9h-11.5v-9.9H840.6z"
-   id="path116" />
+   class="st7" />
 </g>
 <polygon
-   id="polygon475_14_"
-   class="st15"
+   transform="translate(49.8,1.8)"
    points="1692.8,188.1 1692.8,628.4 1682.2,628.4 1682.2,188.1 "
-   transform="translate(49.8,1.8)" />
+   class="st15"
+   id="polygon475_14_" />
 <path
-   id="path477_14_"
+   d="m 1698.8,145 c 5.1,0 44,1 44,44.9 H 1732 c 0,-35.8 -33.2,-34.1 -33.3,-34.1 V 145 Z"
+   class="st15"
    inkscape:connector-curvature="0"
-   class="st15"
-   d="m 1698.8,145 c 5.1,0 44,1 44,44.9 H 1732 c 0,-35.8 -33.2,-34.1 -33.3,-34.1 V 145 Z" />
+   id="path477_14_" />
 <polygon
-   id="polygon806_12_"
-   class="st15"
+   transform="matrix(1.110795,0,0,1,-117.35402,0)"
    points="1649.6,156.8 1059.2,156.8 1059.2,146 1649.6,146 "
-   transform="matrix(1.110795,0,0,1,-117.35402,0)" />
+   class="st15"
+   id="polygon806_12_" />
 <g
    id="g129">
 	<path
-   class="st7"
+   id="path123"
    d="M1242.8,140.7v21.3c-19.4,0-15.6,0-35.2,0v-21.3C1227.2,140.7,1223.4,140.7,1242.8,140.7z"
-   id="path123" />
+   class="st7" />
 	<path
-   d="M1209.7,159.9h31c0-5.2,0-11.8,0-17.1h-31C1209.7,149.3,1209.7,153.6,1209.7,159.9z"
-   id="path125" />
+   id="path125"
+   d="M1209.7,159.9h31c0-5.2,0-11.8,0-17.1h-31C1209.7,149.3,1209.7,153.6,1209.7,159.9z" />
 	<path
-   class="st7"
+   id="path127"
    d="M1226.6,143.9h-11.8v15.3h11.8h1.8l0,0l8.9-7.7l-8.9-7.7l0,0l0,0h-1.8V143.9z M1228.4,146.4l6,5.1l-6,5.1   V146.4z M1216.6,145.6h9.9v11.5h-9.9V145.6z"
-   id="path127" />
+   class="st7" />
 </g>
 <polygon
-   id="polygon473_4_"
+   points="1508.1,174 1508.1,184.7 1059.4,184.7 1059.4,174 "
    class="st15"
-   points="1508.1,174 1508.1,184.7 1059.4,184.7 1059.4,174 " />
+   id="polygon473_4_" />
 <polygon
-   id="polygon475_10_"
-   class="st15"
+   transform="matrix(1,0,0,0.8617048,0,30.258989)"
    points="1552.1,218.8 1552.1,616.5 1541.5,616.5 1541.5,218.8 "
-   transform="matrix(1,0,0,0.8617048,0,30.258989)" />
-<path
-   id="path477_13_"
-   inkscape:connector-curvature="0"
    class="st15"
-   d="M1508.1,174c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V174L1508.1,174z" />
+   id="polygon475_10_" />
+<path
+   d="M1508.1,174c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V174L1508.1,174z"
+   class="st15"
+   inkscape:connector-curvature="0"
+   id="path477_13_" />
 <g
    id="g140">
 	<path
-   class="st7"
+   id="path134"
    d="M1557.5,350.7h-21.3c0-19.4,0-15.6,0-35.2h21.3C1557.5,335.1,1557.5,331.3,1557.5,350.7z"
-   id="path134" />
+   class="st7" />
 	<path
-   d="M1538.3,317.6v31c5.2,0,11.8,0,17.1,0v-31C1548.9,317.6,1544.6,317.6,1538.3,317.6z"
-   id="path136" />
+   id="path136"
+   d="M1538.3,317.6v31c5.2,0,11.8,0,17.1,0v-31C1548.9,317.6,1544.6,317.6,1538.3,317.6z" />
 	<path
-   class="st7"
+   id="path138"
    d="M1554.3,334.5v-11.8h-15.3v11.8v1.8l0,0l7.7,8.9l7.7-8.9l0,0l0,0v-1.8H1554.3z M1551.8,336.3l-5.1,6l-5.1-6   H1551.8z M1552.6,324.5v9.9h-11.5v-9.9H1552.6z"
-   id="path138" />
+   class="st7" />
 </g>
 <g
-   id="g148"
-   transform="translate(50,-11)">
+   transform="translate(50,-11)"
+   id="g148">
 	<path
-   class="st7"
+   id="path142"
    d="m 1698.1,403.4 h -21.3 c 0,-19.4 0,-15.6 0,-35.2 h 21.3 c 0,19.6 0,15.8 0,35.2 z"
-   id="path142" />
+   class="st7" />
 	<path
-   d="m 1679,370.2 v 31 c 5.2,0 11.8,0 17.1,0 v -31 c -6.5,0 -10.9,0 -17.1,0 z"
-   id="path144" />
+   id="path144"
+   d="m 1679,370.2 v 31 c 5.2,0 11.8,0 17.1,0 v -31 c -6.5,0 -10.9,0 -17.1,0 z" />
 	<path
-   class="st7"
+   id="path146"
    d="m 1695,387.1 v -11.8 h -15.3 v 11.8 1.8 0 l 7.7,8.9 7.7,-8.9 v 0 0 -1.8 z m -2.5,1.9 -5.1,6 -5.1,-6 z m 0.8,-11.8 v 9.9 h -11.5 v -9.9 z"
-   id="path146" />
+   class="st7" />
 </g>
 <g
    id="g156">
 	<path
-   class="st7"
+   id="path150"
    d="M581.8,221.7V243c-19.4,0-15.6,0-35.2,0v-21.3C566.2,221.7,562.4,221.7,581.8,221.7z"
-   id="path150" />
+   class="st7" />
 	<path
-   d="M548.6,240.9h31c0-5.2,0-11.8,0-17.1h-31C548.6,230.3,548.6,234.6,548.6,240.9z"
-   id="path152" />
+   id="path152"
+   d="M548.6,240.9h31c0-5.2,0-11.8,0-17.1h-31C548.6,230.3,548.6,234.6,548.6,240.9z" />
 	<path
-   class="st7"
+   id="path154"
    d="M565.5,224.8h-11.8v15.3h11.8h1.8l0,0l8.9-7.7l-8.9-7.7l0,0l0,0h-1.8V224.8z M567.4,227.3l6,5.1l-6,5.1V227.3z    M555.6,226.6h9.9v11.5h-9.9V226.6z"
-   id="path154" />
+   class="st7" />
 </g>
 <g
    id="g164">
 	<path
-   class="st7"
+   id="path158"
    d="M747.2,221.7V243c-19.4,0-15.6,0-35.2,0v-21.3C731.6,221.7,727.8,221.7,747.2,221.7z"
-   id="path158" />
+   class="st7" />
 	<path
-   d="M714,240.9h31c0-5.2,0-11.8,0-17.1h-31C714,230.3,714,234.6,714,240.9z"
-   id="path160" />
+   id="path160"
+   d="M714,240.9h31c0-5.2,0-11.8,0-17.1h-31C714,230.3,714,234.6,714,240.9z" />
 	<path
-   class="st7"
+   id="path162"
    d="M731,224.8h-11.8v15.3H731h1.8l0,0l8.9-7.7l-8.9-7.7l0,0l0,0H731V224.8z M732.8,227.3l6,5.1l-6,5.1V227.3z    M721,226.6h9.9v11.5H721V226.6z"
-   id="path162" />
+   class="st7" />
 </g>
 <g
-   id="g4554_12_"
+   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮"
    transform="matrix(1.2017766,0,0,1.2427133,-16.300152,9.0402335)"
-   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮">
+   id="g4554_12_">
 	<rect
-   id="rect172_12_"
-   x="247"
-   y="147.2"
-   inkscape:label="#rect172"
-   class="st7"
+   height="16.6"
    width="10.5"
-   height="16.6">
+   class="st7"
+   inkscape:label="#rect172"
+   y="147.2"
+   x="247"
+   id="rect172_12_">
 	</rect>
 	<path
-   id="path737_12_"
-   inkscape:connector-curvature="0"
+   d="M247,163.8h10.4v-16.6H247V163.8L247,163.8z M258.1,165   h-11.7h-0.7v-0.7v-17.8v-0.7h0.7h11.7h0.7v0.7v17.8v0.7H258.1z"
    class="st9"
-   d="M247,163.8h10.4v-16.6H247V163.8L247,163.8z M258.1,165   h-11.7h-0.7v-0.7v-17.8v-0.7h0.7h11.7h0.7v0.7v17.8v0.7H258.1z" />
+   inkscape:connector-curvature="0"
+   id="path737_12_" />
 </g>
 <g
-   id="g4554_11_"
+   inkscape:label="转换器1_4"
    transform="matrix(1.2017766,0,0,1.2427133,-16.300152,9.0402335)"
-   inkscape:label="转换器1_4">
+   id="g4554_11_">
 	<polygon
-   id="rect172_11_"
-   inkscape:label="#rect172"
+   points="258.7,147.1 358,170.7 358,187.3 258.7,163.7  "
    class="st7"
-   points="258.7,147.1 358,170.7 358,187.3 258.7,163.7  ">
+   inkscape:label="#rect172"
+   id="rect172_11_">
 	</polygon>
 	<path
-   id="path737_11_"
-   inkscape:connector-curvature="0"
+   d="M258.7,163.7l99.2,23.6v-16.6l-99.2-23.6L258.7,163.7   L258.7,163.7z M358.6,188.6l-100.4-23.9l-0.7-0.1v-0.7v-17.8v-0.7l0.7,0.1l100.4,23.9l0.7,0.1v0.7v17.8v0.7L358.6,188.6z"
    class="st9"
-   d="M258.7,163.7l99.2,23.6v-16.6l-99.2-23.6L258.7,163.7   L258.7,163.7z M358.6,188.6l-100.4-23.9l-0.7-0.1v-0.7v-17.8v-0.7l0.7,0.1l100.4,23.9l0.7,0.1v0.7v17.8v0.7L358.6,188.6z" />
+   inkscape:connector-curvature="0"
+   id="path737_11_" />
 </g>
 <text
-   transform="matrix(0.9897,0,0,1,945.6368,280.0122)"
-   class="st0 st4 st5"
+   style="line-height:0%"
    id="text172"
-   style="line-height:0%">转换器2</text>
+   class="st0 st4 st5"
+   transform="matrix(0.9897,0,0,1,945.6368,280.0122)">转换器2</text>
 <rect
-   id="rect108_9_"
-   x="1030.9"
-   y="139.5"
-   class="st8"
+   height="104.5"
    width="6.7"
-   height="104.5" />
-<path
-   id="path730_5_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M1039.1,163.1h18.5v-22h-18.5V163.1z M1058.4,164.6h-20h-0.8  v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H1058.4z" />
-<path
-   id="path732_5_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M1039.1,190.2h18.5v-22h-18.5V190.2z M1058.4,191.7h-20h-0.8  V191v-23.5v-0.8h0.8h20h0.8v0.8V191v0.8H1058.4z" />
-<rect
-   id="rect114_5_"
-   x="917.2"
+   class="st8"
    y="139.5"
+   x="1030.9"
+   id="rect108_9_" />
+<path
+   d="M1039.1,163.1h18.5v-22h-18.5V163.1z M1058.4,164.6h-20h-0.8  v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H1058.4z"
    class="st9"
+   inkscape:connector-curvature="0"
+   id="path730_5_" />
+<path
+   d="M1039.1,190.2h18.5v-22h-18.5V190.2z M1058.4,191.7h-20h-0.8  V191v-23.5v-0.8h0.8h20h0.8v0.8V191v0.8H1058.4z"
+   class="st9"
+   inkscape:connector-curvature="0"
+   id="path732_5_" />
+<rect
+   height="26.4"
    width="113.8"
-   height="26.4" />
+   class="st9"
+   y="139.5"
+   x="917.2"
+   id="rect114_5_" />
 <linearGradient
-   id="rect121_3_"
-   gradientUnits="userSpaceOnUse"
-   x1="761.1594"
-   y1="341.157"
-   x2="761.1594"
+   gradientTransform="matrix(1.3037 0 0 1.3173 -18.2914 -283.4691)"
    y2="400.5378"
-   gradientTransform="matrix(1.3037 0 0 1.3173 -18.2914 -283.4691)">
+   x2="761.1594"
+   y1="341.157"
+   x1="761.1594"
+   gradientUnits="userSpaceOnUse"
+   id="rect121_3_">
 	<stop
-   offset="0"
+   id="stop178"
    style="stop-color:#BBBDBF"
-   id="stop178" />
+   offset="0" />
 	<stop
-   offset="0.9882"
+   id="stop180"
    style="stop-color:#404041"
-   id="stop180" />
+   offset="0.9882" />
 	<stop
-   offset="1"
+   id="stop182"
    style="stop-color:#404041"
-   id="stop182" />
+   offset="1" />
 </linearGradient>
 <polygon
-   id="rect121_12_"
+   points="917.2,165.9 917.2,244.2 1030.9,244.2 1030.9,165.9 "
    class="st21"
-   points="917.2,165.9 917.2,244.2 1030.9,244.2 1030.9,165.9 " />
+   id="rect121_12_" />
 <rect
-   id="rect110_5_"
-   x="1039.1"
+   inkscape:label="转换器2a1"
+   height="22"
+   width="18.5"
+   class="st17"
    y="141.1"
-   class="st17"
-   width="18.5"
-   height="22" />
-<rect
-   id="rect110_48_5_"
    x="1039.1"
+   id="rect110_5_" />
+<rect
+   inkscape:label="转换器2a3"
+   height="22"
+   width="18.5"
+   class="st17"
    y="168.2"
-   class="st17"
-   width="18.5"
-   height="22" />
-<path
-   id="_126014344_5_"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M1039.1,242.6h18.5v-22.1h-18.5V242.6z M1058.4,244.2h-20  h-0.8v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H1058.4z" />
-<rect
-   id="rect110_49_5_"
    x="1039.1"
-   y="220.6"
-   class="st17"
-   width="18.5"
-   height="22" />
+   id="rect110_48_5_" />
 <path
-   id="_126014344-1_5_"
-   inkscape:connector-curvature="0"
+   d="M1039.1,242.6h18.5v-22.1h-18.5V242.6z M1058.4,244.2h-20  h-0.8v-0.8v-23.5v-0.8h0.8h20h0.8v0.8v23.5v0.8H1058.4z"
    class="st9"
-   d="M1039.5,216.5h18.4v-20.6h-18.4V216.5z M1058.6,217.9  h-19.9h-0.8v-0.8v-22v-0.8h0.8h19.9h0.8v0.8v22v0.8H1058.6z" />
+   inkscape:connector-curvature="0"
+   id="_126014344_5_" />
 <rect
-   id="rect110_48-4_5_"
-   x="1039.5"
-   y="195.9"
-   class="st17"
+   inkscape:label="转换器2a4"
+   height="22"
    width="18.5"
-   height="20.7" />
+   class="st17"
+   y="220.6"
+   x="1039.1"
+   id="rect110_49_5_" />
+<path
+   d="M1039.5,216.5h18.4v-20.6h-18.4V216.5z M1058.6,217.9  h-19.9h-0.8v-0.8v-22v-0.8h0.8h19.9h0.8v0.8v22v0.8H1058.6z"
+   class="st9"
+   inkscape:connector-curvature="0"
+   id="_126014344-1_5_" />
+<rect
+   inkscape:label="转换器2a2"
+   height="20.7"
+   width="18.5"
+   class="st17"
+   y="195.9"
+   x="1039.5"
+   id="rect110_48-4_5_" />
 <g
-   id="g4554_14_"
+   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮"
    transform="matrix(1.2017766,0,0,1.2427133,-16.300152,9.0402335)"
-   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮">
+   id="g4554_14_">
 	<rect
-   id="rect172_14_"
-   x="766.3"
-   y="147.2"
-   inkscape:label="#rect172"
-   class="st7"
+   height="16.6"
    width="10.5"
-   height="16.6">
+   class="st7"
+   inkscape:label="#rect172"
+   y="147.2"
+   x="766.3"
+   id="rect172_14_">
 	</rect>
 	<path
-   id="path737_14_"
-   inkscape:connector-curvature="0"
+   d="M766.3,163.8h10.4v-16.6h-10.4V163.8L766.3,163.8z    M777.4,165h-11.7H765v-0.7v-17.8v-0.7h0.7h11.7h0.7v0.7v17.8v0.7H777.4z"
    class="st9"
-   d="M766.3,163.8h10.4v-16.6h-10.4V163.8L766.3,163.8z    M777.4,165h-11.7H765v-0.7v-17.8v-0.7h0.7h11.7h0.7v0.7v17.8v0.7H777.4z" />
+   inkscape:connector-curvature="0"
+   id="path737_14_" />
 </g>
 <g
-   id="g4554_13_"
+   inkscape:label="转换器2_4"
    transform="matrix(1.2017766,0,0,1.2427133,-16.300152,9.0402335)"
-   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮">
+   id="g4554_13_">
 	<polygon
-   id="rect172_13_"
-   inkscape:label="#rect172"
+   points="778,147.1 877.3,170.7 877.3,187.3 778,163.7  "
    class="st7"
-   points="778,147.1 877.3,170.7 877.3,187.3 778,163.7  ">
+   inkscape:label="#rect172"
+   id="rect172_13_">
 	</polygon>
 	<path
-   id="path737_13_"
-   inkscape:connector-curvature="0"
+   d="M778,163.7l99.2,23.6v-16.6L778,147.1V163.7L778,163.7z    M877.9,188.6l-100.4-23.9l-0.7-0.1v-0.7v-17.8v-0.7l0.7,0.1l100.4,23.9l0.7,0.1v0.7v17.8v0.7L877.9,188.6z"
    class="st9"
-   d="M778,163.7l99.2,23.6v-16.6L778,147.1V163.7L778,163.7z    M877.9,188.6l-100.4-23.9l-0.7-0.1v-0.7v-17.8v-0.7l0.7,0.1l100.4,23.9l0.7,0.1v0.7v17.8v0.7L877.9,188.6z" />
+   inkscape:connector-curvature="0"
+   id="path737_13_" />
 </g>
 <g
    id="g204">
 	<path
-   class="st7"
+   id="path198"
    d="M1157.2,168.7V190c-19.4,0-15.6,0-35.2,0v-21.3C1141.6,168.7,1137.8,168.7,1157.2,168.7z"
-   id="path198" />
+   class="st7" />
 	<path
-   d="M1124,187.9h31c0-5.2,0-11.8,0-17.1h-31C1124,177.2,1124,181.6,1124,187.9z"
-   id="path200" />
+   id="path200"
+   d="M1124,187.9h31c0-5.2,0-11.8,0-17.1h-31C1124,177.2,1124,181.6,1124,187.9z" />
 	<path
-   class="st7"
+   id="path202"
    d="M1140.9,171.8h-11.8v15.3h11.8h1.8l0,0l8.9-7.7l-8.9-7.7l0,0l0,0h-1.8V171.8z M1142.8,174.3l6,5.1l-6,5.1   V174.3z M1131,173.6h9.9V185h-9.9V173.6z"
-   id="path202" />
+   class="st7" />
 </g>
 <g
    id="g212">
 	<path
-   class="st7"
+   id="path206"
    d="M543.1,168.7V190c-19.4,0-15.6,0-35.2,0v-21.3C527.5,168.7,523.7,168.7,543.1,168.7z"
-   id="path206" />
+   class="st7" />
 	<path
-   d="M509.9,187.9h31c0-5.2,0-11.8,0-17.1h-31C509.9,177.2,509.9,181.6,509.9,187.9z"
-   id="path208" />
+   id="path208"
+   d="M509.9,187.9h31c0-5.2,0-11.8,0-17.1h-31C509.9,177.2,509.9,181.6,509.9,187.9z" />
 	<path
-   class="st7"
+   id="path210"
    d="M526.8,171.8H515v15.3h11.8h1.8l0,0l8.9-7.7l-8.9-7.7l0,0l0,0h-1.8V171.8z M528.7,174.3l6,5.1l-6,5.1V174.3z    M516.9,173.6h9.9V185h-9.9V173.6z"
-   id="path210" />
+   class="st7" />
 </g>
 <text
-   id="text213-4-0_5_"
+   style="line-height:0%"
+   class="st0 st1 st6"
    transform="matrix(0.9897,0,0,1,473.2242,807.3887)"
-   class="st0 st1 st6"
-   style="line-height:0%">人工站</text>
+   id="text213-4-0_5_">人工站</text>
 <text
-   id="text213-4-0_6_"
-   transform="matrix(0.9897,0,0,1,618.3146,807.3887)"
+   style="line-height:0%"
    class="st0 st1 st6"
-   style="line-height:0%">大瓶发送站</text>
+   transform="matrix(0.9897,0,0,1,618.3146,807.3887)"
+   id="text213-4-0_6_">大瓶发送站</text>
 <g
    id="g238">
 	<rect
-   x="487.4"
-   y="627.5"
-   class="st9"
-   width="41.5"
+   id="rect216"
    height="12.8"
-   id="rect216" />
+   width="41.5"
+   class="st9"
+   y="627.5"
+   x="487.4" />
 	<rect
-   x="463.4"
-   y="640"
-   class="st7"
-   width="85.7"
+   id="rect218"
    height="130.3"
-   id="rect218" />
+   width="85.7"
+   class="st7"
+   y="640"
+   x="463.4" />
 	<rect
-   x="463.4"
+   id="rect220"
+   height="11.4"
+   width="85.7"
+   class="st9"
    y="765.4"
-   class="st9"
-   width="85.7"
-   height="11.4"
-   id="rect220" />
+   x="463.4" />
 	<rect
-   x="463.4"
+   id="rect222"
+   height="11.4"
+   width="85.7"
+   class="st9"
    y="638"
-   class="st9"
-   width="85.7"
-   height="11.4"
-   id="rect222" />
+   x="463.4" />
 	<rect
-   x="471.1"
-   y="667.1"
-   class="st9"
-   width="67.2"
+   id="rect224"
    height="79.4"
-   id="rect224" />
+   width="67.2"
+   class="st9"
+   y="667.1"
+   x="471.1" />
 	<path
-   class="st22"
+   id="path226"
    d="M523.2,711.8h-25.9c-6.7,0-12.1-5.4-12.1-12.1v-22.3h25.9c6.7,0,12.1,5.4,12.1,12.1V711.8z"
-   id="path226" />
+   class="st22" />
 	<rect
-   x="473"
-   y="658.7"
-   class="st9"
-   width="6.4"
+   id="rect228"
    height="3"
-   id="rect228" />
-	<rect
-   x="503.1"
-   y="658.7"
-   class="st9"
    width="6.4"
-   height="3"
-   id="rect230" />
-	<rect
-   x="495.6"
-   y="658.7"
    class="st9"
-   width="6.4"
-   height="3"
-   id="rect232" />
-	<rect
-   x="488"
    y="658.7"
+   x="473" />
+	<rect
+   id="rect230"
+   height="3"
+   width="6.4"
    class="st9"
-   width="6.4"
-   height="3"
-   id="rect234" />
-	<rect
-   x="480.5"
    y="658.7"
+   x="503.1" />
+	<rect
+   id="rect232"
+   height="3"
+   width="6.4"
+   class="st9"
+   y="658.7"
+   x="495.6" />
+	<rect
+   id="rect234"
+   height="3"
+   width="6.4"
+   class="st9"
+   y="658.7"
+   x="488" />
+	<rect
+   id="rect236"
+   height="3"
+   width="6.4"
    class="st12"
-   width="6.4"
-   height="3"
-   id="rect236" />
+   y="658.7"
+   x="480.5" />
 </g>
 <g
    id="g250">
 	<rect
-   id="rect11"
-   x="635.5"
-   y="658.4"
-   class="st7"
+   height="96.3"
    width="46.9"
-   height="96.3" />
-	<rect
-   id="rect17"
-   x="682.3"
-   y="658.4"
-   class="st22"
-   width="31"
-   height="96.3" />
-	<rect
-   id="rect19"
-   x="635.5"
-   y="648.3"
-   class="st9"
-   width="77.8"
-   height="10.2" />
-	<rect
-   id="rect21"
-   x="648.3"
-   y="629.7"
-   class="st9"
-   width="34.1"
-   height="18.6" />
-	<rect
-   id="rect25"
-   x="627.1"
-   y="736"
-   class="st9"
-   width="8.4"
-   height="10.4" />
-	<rect
-   id="rect27"
-   x="627.1"
-   y="723"
    class="st7"
-   width="8.4"
-   height="13" />
-	<rect
-   id="rect29"
+   y="658.4"
    x="635.5"
-   y="754.8"
-   class="st9"
+   id="rect11" />
+	<rect
+   height="96.3"
+   width="31"
+   class="st22"
+   y="658.4"
+   x="682.3"
+   id="rect17" />
+	<rect
+   height="10.2"
    width="77.8"
-   height="9.9" />
+   class="st9"
+   y="648.3"
+   x="635.5"
+   id="rect19" />
+	<rect
+   height="18.6"
+   width="34.1"
+   class="st9"
+   y="629.7"
+   x="648.3"
+   id="rect21" />
+	<rect
+   height="10.4"
+   width="8.4"
+   class="st9"
+   y="736"
+   x="627.1"
+   id="rect25" />
+	<rect
+   height="13"
+   width="8.4"
+   class="st7"
+   y="723"
+   x="627.1"
+   id="rect27" />
+	<rect
+   height="9.9"
+   width="77.8"
+   class="st9"
+   y="754.8"
+   x="635.5"
+   id="rect29" />
 	<g
    id="g467">
 		<polygon
-   id="polygon41_2"
+   points="668.8,706.9 659.1,690.2 649.5,706.9 656.4,706.9 656.4,723.3 661.7,723.3     661.7,706.9   "
    class="st12"
-   points="668.8,706.9 659.1,690.2 649.5,706.9 656.4,706.9 656.4,723.3 661.7,723.3     661.7,706.9   " />
+   id="polygon41_2" />
 		<path
-   id="_156386808"
-   inkscape:connector-curvature="0"
+   d="M649.5,706.9h6.9h0.2v0.2v16.2h5.2v-16.2v-0.2h0.2h6.9    l-9.6-16.7L649.5,706.9L649.5,706.9L649.5,706.9z M656.2,707.3h-7h-0.3l0.1-0.3l9.9-17.3l0.1-0.3l0.1,0.3L669,707l0.1,0.3h-0.3h-7    v16.2v0.2h-0.2h-5.5h-0.2v-0.2L656.2,707.3L656.2,707.3L656.2,707.3z"
    class="st11"
-   d="M649.5,706.9h6.9h0.2v0.2v16.2h5.2v-16.2v-0.2h0.2h6.9    l-9.6-16.7L649.5,706.9L649.5,706.9L649.5,706.9z M656.2,707.3h-7h-0.3l0.1-0.3l9.9-17.3l0.1-0.3l0.1,0.3L669,707l0.1,0.3h-0.3h-7    v16.2v0.2h-0.2h-5.5h-0.2v-0.2L656.2,707.3L656.2,707.3L656.2,707.3z" />
+   inkscape:connector-curvature="0"
+   id="_156386808" />
 	</g>
 </g>
 <text
-   id="text213-4-0_7_"
-   transform="matrix(0.9897,0,0,1,784.799,807.3887)"
+   style="line-height:0%"
    class="st0 st1 st6"
-   style="line-height:0%">小瓶发送站</text>
+   transform="matrix(0.9897,0,0,1,784.799,807.3887)"
+   id="text213-4-0_7_">小瓶发送站</text>
 <g
    id="g263">
 	<rect
-   id="rect11_1_"
-   x="802"
-   y="658.4"
-   class="st7"
+   height="96.3"
    width="46.9"
-   height="96.3" />
-	<rect
-   id="rect17_1_"
-   x="848.8"
-   y="658.4"
-   class="st22"
-   width="31"
-   height="96.3" />
-	<rect
-   id="rect19_1_"
-   x="802"
-   y="648.3"
-   class="st9"
-   width="77.8"
-   height="10.2" />
-	<rect
-   id="rect21_1_"
-   x="814.8"
-   y="629.7"
-   class="st9"
-   width="34.1"
-   height="18.6" />
-	<rect
-   id="rect25_1_"
-   x="793.6"
-   y="736"
-   class="st9"
-   width="8.4"
-   height="10.4" />
-	<rect
-   id="rect27_1_"
-   x="793.6"
-   y="723"
    class="st7"
-   width="8.4"
-   height="13" />
-	<rect
-   id="rect29_1_"
+   y="658.4"
    x="802"
-   y="754.8"
-   class="st9"
+   id="rect11_1_" />
+	<rect
+   height="96.3"
+   width="31"
+   class="st22"
+   y="658.4"
+   x="848.8"
+   id="rect17_1_" />
+	<rect
+   height="10.2"
    width="77.8"
-   height="9.9" />
+   class="st9"
+   y="648.3"
+   x="802"
+   id="rect19_1_" />
+	<rect
+   height="18.6"
+   width="34.1"
+   class="st9"
+   y="629.7"
+   x="814.8"
+   id="rect21_1_" />
+	<rect
+   height="10.4"
+   width="8.4"
+   class="st9"
+   y="736"
+   x="793.6"
+   id="rect25_1_" />
+	<rect
+   height="13"
+   width="8.4"
+   class="st7"
+   y="723"
+   x="793.6"
+   id="rect27_1_" />
+	<rect
+   height="9.9"
+   width="77.8"
+   class="st9"
+   y="754.8"
+   x="802"
+   id="rect29_1_" />
 	<g
    id="g467_1_">
 		<polygon
-   id="polygon41_2_1_"
+   points="835.3,706.9 825.5,690.2 815.9,706.9 822.9,706.9 822.9,723.3 828.2,723.3     828.2,706.9   "
    class="st12"
-   points="835.3,706.9 825.5,690.2 815.9,706.9 822.9,706.9 822.9,723.3 828.2,723.3     828.2,706.9   " />
+   id="polygon41_2_1_" />
 		<path
-   id="_156386808_1_"
-   inkscape:connector-curvature="0"
+   d="M815.9,706.9h6.9h0.2v0.2v16.2h5.2v-16.2v-0.2h0.2h6.9    l-9.6-16.7L815.9,706.9L815.9,706.9L815.9,706.9z M822.6,707.3h-7h-0.3l0.1-0.3l9.9-17.3l0.1-0.3l0.1,0.3l9.9,17.3l0.1,0.3h-0.3    h-7v16.2v0.2h-0.2h-5.5h-0.2v-0.2L822.6,707.3L822.6,707.3L822.6,707.3z"
    class="st11"
-   d="M815.9,706.9h6.9h0.2v0.2v16.2h5.2v-16.2v-0.2h0.2h6.9    l-9.6-16.7L815.9,706.9L815.9,706.9L815.9,706.9z M822.6,707.3h-7h-0.3l0.1-0.3l9.9-17.3l0.1-0.3l0.1,0.3l9.9,17.3l0.1,0.3h-0.3    h-7v16.2v0.2h-0.2h-5.5h-0.2v-0.2L822.6,707.3L822.6,707.3L822.6,707.3z" />
+   inkscape:connector-curvature="0"
+   id="_156386808_1_" />
 	</g>
 </g>
 <text
-   id="text213-4-0_8_"
-   transform="matrix(0.9897,0,0,1,1040.2999,807.3887)"
+   style="line-height:0%"
    class="st0 st1 st6"
-   style="line-height:0%">化验室发送站</text>
+   transform="matrix(0.9897,0,0,1,1040.2999,807.3887)"
+   id="text213-4-0_8_">化验室发送站</text>
 <g
    id="g276">
 	<rect
-   id="rect11_2_"
-   x="1068.5"
-   y="658.4"
-   class="st7"
+   height="96.3"
    width="46.9"
-   height="96.3" />
-	<rect
-   id="rect17_2_"
-   x="1115.3"
-   y="658.4"
-   class="st22"
-   width="31"
-   height="96.3" />
-	<rect
-   id="rect19_2_"
-   x="1068.5"
-   y="648.3"
-   class="st9"
-   width="77.8"
-   height="10.2" />
-	<rect
-   id="rect21_2_"
-   x="1081.3"
-   y="629.7"
-   class="st9"
-   width="34.1"
-   height="18.6" />
-	<rect
-   id="rect25_2_"
-   x="1060.1"
-   y="736"
-   class="st9"
-   width="8.4"
-   height="10.4" />
-	<rect
-   id="rect27_2_"
-   x="1060.1"
-   y="723"
    class="st7"
-   width="8.4"
-   height="13" />
-	<rect
-   id="rect29_2_"
+   y="658.4"
    x="1068.5"
-   y="754.8"
-   class="st9"
+   id="rect11_2_" />
+	<rect
+   height="96.3"
+   width="31"
+   class="st22"
+   y="658.4"
+   x="1115.3"
+   id="rect17_2_" />
+	<rect
+   height="10.2"
    width="77.8"
-   height="9.9" />
+   class="st9"
+   y="648.3"
+   x="1068.5"
+   id="rect19_2_" />
+	<rect
+   height="18.6"
+   width="34.1"
+   class="st9"
+   y="629.7"
+   x="1081.3"
+   id="rect21_2_" />
+	<rect
+   height="10.4"
+   width="8.4"
+   class="st9"
+   y="736"
+   x="1060.1"
+   id="rect25_2_" />
+	<rect
+   height="13"
+   width="8.4"
+   class="st7"
+   y="723"
+   x="1060.1"
+   id="rect27_2_" />
+	<rect
+   height="9.9"
+   width="77.8"
+   class="st9"
+   y="754.8"
+   x="1068.5"
+   id="rect29_2_" />
 	<g
    id="g467_2_">
 		<polygon
-   id="polygon41_2_2_"
+   points="1101.8,706.9 1092.1,690.2 1082.5,706.9 1089.4,706.9 1089.4,723.3     1094.7,723.3 1094.7,706.9   "
    class="st12"
-   points="1101.8,706.9 1092.1,690.2 1082.5,706.9 1089.4,706.9 1089.4,723.3     1094.7,723.3 1094.7,706.9   " />
+   id="polygon41_2_2_" />
 		<path
-   id="_156386808_2_"
-   inkscape:connector-curvature="0"
+   d="M1082.5,706.9h6.9h0.2v0.2v16.2h5.2v-16.2v-0.2h0.2    h6.9l-9.6-16.7L1082.5,706.9L1082.5,706.9L1082.5,706.9z M1089.2,707.3h-7h-0.3l0.1-0.3l9.9-17.3l0.1-0.3l0.1,0.3l9.9,17.3    l0.1,0.3h-0.3h-7v16.2v0.2h-0.2h-5.5h-0.2v-0.2L1089.2,707.3L1089.2,707.3L1089.2,707.3z"
    class="st11"
-   d="M1082.5,706.9h6.9h0.2v0.2v16.2h5.2v-16.2v-0.2h0.2    h6.9l-9.6-16.7L1082.5,706.9L1082.5,706.9L1082.5,706.9z M1089.2,707.3h-7h-0.3l0.1-0.3l9.9-17.3l0.1-0.3l0.1,0.3l9.9,17.3    l0.1,0.3h-0.3h-7v16.2v0.2h-0.2h-5.5h-0.2v-0.2L1089.2,707.3L1089.2,707.3L1089.2,707.3z" />
+   inkscape:connector-curvature="0"
+   id="_156386808_2_" />
 	</g>
 </g>
 <text
-   id="text213-4-0_9_"
-   transform="matrix(0.9897,0,0,1,1236.3243,807.3887)"
+   style="line-height:0%"
    class="st0 st1 st6"
-   style="line-height:0%">弃样站</text>
+   transform="matrix(0.9897,0,0,1,1236.3243,807.3887)"
+   id="text213-4-0_9_">弃样站</text>
 <g
    id="g289">
 	<rect
-   id="rect11_3_"
-   x="1230.5"
-   y="658.4"
-   class="st7"
+   height="96.3"
    width="46.9"
-   height="96.3" />
-	<rect
-   id="rect17_3_"
-   x="1277.3"
-   y="658.4"
-   class="st22"
-   width="31"
-   height="96.3" />
-	<rect
-   id="rect19_3_"
-   x="1230.5"
-   y="648.3"
-   class="st9"
-   width="77.8"
-   height="10.2" />
-	<rect
-   id="rect21_3_"
-   x="1243.3"
-   y="629.7"
-   class="st9"
-   width="34.1"
-   height="18.6" />
-	<rect
-   id="rect25_3_"
-   x="1222"
-   y="736"
-   class="st9"
-   width="8.4"
-   height="10.4" />
-	<rect
-   id="rect27_3_"
-   x="1222"
-   y="723"
    class="st7"
-   width="8.4"
-   height="13" />
-	<rect
-   id="rect29_3_"
+   y="658.4"
    x="1230.5"
-   y="754.8"
-   class="st9"
+   id="rect11_3_" />
+	<rect
+   height="96.3"
+   width="31"
+   class="st22"
+   y="658.4"
+   x="1277.3"
+   id="rect17_3_" />
+	<rect
+   height="10.2"
    width="77.8"
-   height="9.9" />
+   class="st9"
+   y="648.3"
+   x="1230.5"
+   id="rect19_3_" />
+	<rect
+   height="18.6"
+   width="34.1"
+   class="st9"
+   y="629.7"
+   x="1243.3"
+   id="rect21_3_" />
+	<rect
+   height="10.4"
+   width="8.4"
+   class="st9"
+   y="736"
+   x="1222"
+   id="rect25_3_" />
+	<rect
+   height="13"
+   width="8.4"
+   class="st7"
+   y="723"
+   x="1222"
+   id="rect27_3_" />
+	<rect
+   height="9.9"
+   width="77.8"
+   class="st9"
+   y="754.8"
+   x="1230.5"
+   id="rect29_3_" />
 	<g
    id="g467_3_">
 		<polygon
-   id="polygon41_2_3_"
+   points="1256.7,706.2 1256.7,689.8 1251.4,689.8 1251.4,706.2 1244.4,706.2 1254,722.9     1263.7,706.2   "
    class="st12"
-   points="1256.7,706.2 1256.7,689.8 1251.4,689.8 1251.4,706.2 1244.4,706.2 1254,722.9     1263.7,706.2   " />
+   id="polygon41_2_3_" />
 		<path
-   id="_156386808_3_"
-   inkscape:connector-curvature="0"
+   d="M1244.4,706.2L1244.4,706.2l9.8,16.7l9.6-16.7h-6.9    h-0.2V706v-16.2h-5.2V706v0.2h-0.2H1244.4L1244.4,706.2z M1251.1,705.8L1251.1,705.8l-0.3-16.2v-0.2h0.2h5.5h0.2v0.2v16.2h7h0.3    l-0.1,0.3l-9.9,17.3l-0.1,0.3l-0.1-0.3l-9.9-17.3l-0.1-0.3h0.3L1251.1,705.8L1251.1,705.8z"
    class="st11"
-   d="M1244.4,706.2L1244.4,706.2l9.8,16.7l9.6-16.7h-6.9    h-0.2V706v-16.2h-5.2V706v0.2h-0.2H1244.4L1244.4,706.2z M1251.1,705.8L1251.1,705.8l-0.3-16.2v-0.2h0.2h5.5h0.2v0.2v16.2h7h0.3    l-0.1,0.3l-9.9,17.3l-0.1,0.3l-0.1-0.3l-9.9-17.3l-0.1-0.3h0.3L1251.1,705.8L1251.1,705.8z" />
+   inkscape:connector-curvature="0"
+   id="_156386808_3_" />
 	</g>
 </g>
 <text
-   id="text213-4-0_10_"
-   transform="scale(0.99483667,1.0051901)"
-   class="st0 st1 st6"
-   style="line-height:0%;stroke-width:0.994837"
+   y="805.21045"
    x="1679.303"
-   y="805.21045">化验室接收站</text>
+   style="line-height:0%;stroke-width:0.994837"
+   class="st0 st1 st6"
+   transform="scale(0.99483667,1.0051901)"
+   id="text213-4-0_10_">化验室接收站</text>
 <g
-   id="g309"
-   transform="translate(46,-3)">
+   transform="translate(46,-3)"
+   id="g309">
 	<rect
-   id="rect13_2_"
-   x="1642.1"
+   height="16.799999"
+   width="93.599998"
+   class="st7"
    y="641.70001"
-   class="st7"
-   width="93.599998"
-   height="16.799999" />
-	<rect
-   id="rect15_2_"
    x="1642.1"
+   id="rect13_2_" />
+	<rect
+   height="14.7"
+   width="93.599998"
+   class="st7"
    y="764.29999"
-   class="st7"
-   width="93.599998"
-   height="14.7" />
-	<rect
-   id="rect23_2_"
-   x="1672.4"
-   y="629.70001"
-   class="st9"
-   width="38.799999"
-   height="12" />
-	<rect
-   id="rect35_2_"
    x="1642.1"
-   y="658.40002"
+   id="rect15_2_" />
+	<rect
+   height="12"
+   width="38.799999"
    class="st9"
+   y="629.70001"
+   x="1672.4"
+   id="rect23_2_" />
+	<rect
+   height="105.9"
    width="93.599998"
-   height="105.9" />
+   class="st9"
+   y="658.40002"
+   x="1642.1"
+   id="rect35_2_" />
 	<polygon
-   id="polygon41_2_"
+   points="1707.7,669.9 1689.1,669.9 1689.1,675.9 1707.7,675.9 1707.7,684 1726.8,672.9 1707.7,661.8 "
    class="st13"
-   points="1707.7,669.9 1689.1,669.9 1689.1,675.9 1707.7,675.9 1707.7,684 1726.8,672.9 1707.7,661.8 " />
+   id="polygon41_2_" />
 	<path
-   id="_156391512_2_"
-   inkscape:connector-curvature="0"
+   d="m 1707.7,661.8 v 8 0.1 h -0.1 -18.5 v 6 h 18.5 0.1 v 0.1 8 l 19.1,-11.1 z m -0.4,7.7 v -8.1 -0.3 l 0.3,0.1 19.6,11.4 0.3,0.1 -0.3,0.1 -19.6,11.4 -0.3,0.1 v -0.3 -8.1 h -18.5 -0.1 v 0 -6.4 -0.1 h 0.1 18.5 z"
    class="st11"
-   d="m 1707.7,661.8 v 8 0.1 h -0.1 -18.5 v 6 h 18.5 0.1 v 0.1 8 l 19.1,-11.1 z m -0.4,7.7 v -8.1 -0.3 l 0.3,0.1 19.6,11.4 0.3,0.1 -0.3,0.1 -19.6,11.4 -0.3,0.1 v -0.3 -8.1 h -18.5 -0.1 v 0 -6.4 -0.1 h 0.1 18.5 z" />
+   inkscape:connector-curvature="0"
+   id="_156391512_2_" />
 	<polygon
-   id="polygon43_2_"
+   points="1669,661.8 1650,672.9 1669,684 1669,675.9 1687.7,675.9 1687.7,669.9 1669,669.9 "
    class="st12"
-   points="1669,661.8 1650,672.9 1669,684 1669,675.9 1687.7,675.9 1687.7,669.9 1669,669.9 " />
+   id="polygon43_2_" />
 	<path
-   id="_156391320_2_"
-   inkscape:connector-curvature="0"
+   d="m 1669,669.8 v -8 l -19.1,11.1 19.1,11.1 v -8 -0.1 h 0.1 18.5 v -6 h -18.5 -0.1 z m 0.3,-8.3 v 8.1 h 18.5 0.1 v 0.1 6.4 0.1 h -0.1 -18.5 v 8.1 0.3 l -0.3,-0.1 -19.6,-11.4 -0.3,-0.1 0.3,-0.1 19.6,-11.4 0.3,-0.1 v 0.1 z"
    class="st11"
-   d="m 1669,669.8 v -8 l -19.1,11.1 19.1,11.1 v -8 -0.1 h 0.1 18.5 v -6 h -18.5 -0.1 z m 0.3,-8.3 v 8.1 h 18.5 0.1 v 0.1 6.4 0.1 h -0.1 -18.5 v 8.1 0.3 l -0.3,-0.1 -19.6,-11.4 -0.3,-0.1 0.3,-0.1 19.6,-11.4 0.3,-0.1 v 0.1 z" />
-	<path
-   id="_156391248_2_"
    inkscape:connector-curvature="0"
+   id="_156391320_2_" />
+	<path
+   d="m 1707.7,748.8 v -19.4 -0.1 h 0.1 18.6 0.1 v 0.1 19.4 0.1 0 c -9.4,10.4 -18.6,0.1 -18.8,-0.1 v 0 0 z m 0.5,-19.2 v 19.3 c 0.7,0.7 9.2,9.6 18.2,0 v -19.3 h -18.2 z"
    class="st11"
-   d="m 1707.7,748.8 v -19.4 -0.1 h 0.1 18.6 0.1 v 0.1 19.4 0.1 0 c -9.4,10.4 -18.6,0.1 -18.8,-0.1 v 0 0 z m 0.5,-19.2 v 19.3 c 0.7,0.7 9.2,9.6 18.2,0 v -19.3 h -18.2 z" />
-	<path
-   id="_156391176_2_"
    inkscape:connector-curvature="0"
+   id="_156391248_2_" />
+	<path
+   d="m 1708.2,729.6 v 19.3 c 0.7,0.7 9.2,9.6 18.2,0 v -19.3 h -18.2 z"
    class="st12"
-   d="m 1708.2,729.6 v 19.3 c 0.7,0.7 9.2,9.6 18.2,0 v -19.3 h -18.2 z" />
-	<path
-   id="_156391104_2_"
    inkscape:connector-curvature="0"
+   id="_156391176_2_" />
+	<path
+   d="m 1726.4,726.7 v -19.3 c -0.7,-0.7 -9.2,-9.6 -18.2,0 v 19.3 h 18.2 z"
    class="st13"
-   d="m 1726.4,726.7 v -19.3 c -0.7,-0.7 -9.2,-9.6 -18.2,0 v 19.3 h 18.2 z" />
-	<path
-   id="_156391032_2_"
    inkscape:connector-curvature="0"
+   id="_156391104_2_" />
+	<path
+   d="m 1726.4,726.7 v -19.3 c -0.7,-0.7 -9.2,-9.6 -18.2,0 v 19.3 h 18.2 z m 0.4,-19.2 v 19.4 0.1 h -0.1 -18.7 -0.1 v -0.1 -19.4 -0.1 0 c 9.7,-10.4 18.9,-0.1 18.9,0.1 v 0 0 z"
    class="st11"
-   d="m 1726.4,726.7 v -19.3 c -0.7,-0.7 -9.2,-9.6 -18.2,0 v 19.3 h 18.2 z m 0.4,-19.2 v 19.4 0.1 h -0.1 -18.7 -0.1 v -0.1 -19.4 -0.1 0 c 9.7,-10.4 18.9,-0.1 18.9,0.1 v 0 0 z" />
+   inkscape:connector-curvature="0"
+   id="_156391032_2_" />
 	<g
    id="g445_2_">
 		<polygon
-   id="polygon41_0_2_"
+   points="1672.3,701.7 1672.3,720.6 1678.2,720.6 1678.2,701.7 1686.3,701.7 1675.3,682.5 1664.2,701.7 "
    class="st13"
-   points="1672.3,701.7 1672.3,720.6 1678.2,720.6 1678.2,701.7 1686.3,701.7 1675.3,682.5 1664.2,701.7 " />
+   id="polygon41_0_2_" />
 		<path
-   id="_156387216_2_"
-   inkscape:connector-curvature="0"
+   d="m 1664.2,701.7 h 7.9 0.1 v 0.1 18.7 h 5.9 v -18.7 -0.1 h 0.1 7.9 l -11,-19.3 z m 7.7,0.5 h -8.1 -0.3 l 0.1,-0.3 11.4,-19.9 0.1,-0.3 0.1,0.3 11.3,19.8 0.1,0.3 h -0.3 -8.1 v 18.7 0.1 h -0.1 -6.4 -0.1 v -0.1 -18.7 h 0.3 z"
    class="st11"
-   d="m 1664.2,701.7 h 7.9 0.1 v 0.1 18.7 h 5.9 v -18.7 -0.1 h 0.1 7.9 l -11,-19.3 z m 7.7,0.5 h -8.1 -0.3 l 0.1,-0.3 11.4,-19.9 0.1,-0.3 0.1,0.3 11.3,19.8 0.1,0.3 h -0.3 -8.1 v 18.7 0.1 h -0.1 -6.4 -0.1 v -0.1 -18.7 h 0.3 z" />
+   inkscape:connector-curvature="0"
+   id="_156387216_2_" />
 		<polygon
-   id="polygon43_1_2_"
+   points="1664.2,740.8 1675.3,760.1 1686.3,740.8 1678.2,740.8 1678.2,722 1672.3,722 1672.3,740.8 "
    class="st12"
-   points="1664.2,740.8 1675.3,760.1 1686.3,740.8 1678.2,740.8 1678.2,722 1672.3,722 1672.3,740.8 " />
+   id="polygon43_1_2_" />
 		<path
-   id="_156387024_2_"
-   inkscape:connector-curvature="0"
+   d="m 1672,740.8 h -7.9 l 11,19.3 11,-19.3 h -7.9 -0.1 V 740.7 722 h -5.9 v 18.7 0.1 h -0.2 z m -8,-0.4 h 8.1 v -18.7 -0.1 h 0.1 6.4 0.1 v 0.1 18.7 h 8.1 0.3 l -0.1,0.3 -11.3,19.8 -0.1,0.3 -0.1,-0.3 -11.3,-19.8 -0.1,-0.3 z"
    class="st11"
-   d="m 1672,740.8 h -7.9 l 11,19.3 11,-19.3 h -7.9 -0.1 V 740.7 722 h -5.9 v 18.7 0.1 h -0.2 z m -8,-0.4 h 8.1 v -18.7 -0.1 h 0.1 6.4 0.1 v 0.1 18.7 h 8.1 0.3 l -0.1,0.3 -11.3,19.8 -0.1,0.3 -0.1,-0.3 -11.3,-19.8 -0.1,-0.3 z" />
+   inkscape:connector-curvature="0"
+   id="_156387024_2_" />
 	</g>
 </g>
 
 
 <rect
-   id="rect287"
-   x="1339.65"
-   y="595.00476"
-   class="st7"
-   width="5.0999999"
+   style="fill:#404041"
    height="195.8"
-   style="fill:#404041" /><path
-   id="path499"
-   inkscape:connector-curvature="0"
-   class="st7"
-   d="m 1341.55,792.40479 h 163.6 v 31 h -163.6 z m -1.9,-1.5 v 33.9 h 167.1 v -33.9 c 0.2,0 -167.1,0 -167.1,0 z"
-   style="fill:#404041" /><polygon
-   id="polygon501"
-   class="st6"
-   points="249.1,812.8 249.1,781.8 413,781.8 413,812.8 "
-   style="fill:#58595b"
-   transform="translate(1091.95,10.704788)" /><text
-   id="text209_8"
-   transform="scale(0.99483669,1.0051901)"
-   class="st1 st2 st31"
-   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
-   x="1366.1305"
-   y="809.12183">共有仓位：</text><text
-   id="text504"
-   inkscape:label="存查样柜1_共有仓位"
-   transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st33"
-   style="font-size:16.0558px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1452.897"
-   y="809.96606">1174</text><path
-   id="path506"
-   inkscape:connector-curvature="0"
-   class="st7"
-   d="m 1662.45,792.40479 h -154 v 31 h 154.1 z m 1.7,-1.5 v 33.9 h -157.4 v -33.9 z"
-   style="fill:#404041" /><polygon
-   id="polygon508"
-   class="st6"
-   points="416.2,781.5 416.2,812.5 570.4,812.5 570.4,781.5 "
-   style="fill:#58595b"
-   transform="translate(1091.95,10.704788)" /><text
-   id="text209_9"
-   transform="scale(0.99483669,1.0051901)"
-   class="st1 st2 st31"
-   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
-   x="1532.7275"
-   y="807.18359">已存仓位：</text><text
-   id="text511"
-   inkscape:label="存查样柜1_已存仓位"
-   transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st31"
-   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1617.2245"
-   y="807.1214">877</text><path
-   id="path513"
-   inkscape:connector-curvature="0"
-   class="st7"
-   d="m 1504.75,826.50479 h -163 v 31 h 163 z m 1.9,-1.6 v 33.9 h -166.6 v -33.9 z"
-   style="fill:#404041" /><polygon
-   id="polygon515"
-   class="st6"
-   points="249.8,815.7 249.8,846.7 412.7,846.7 412.7,815.7 "
-   style="fill:#58595b"
-   transform="translate(1091.95,10.704788)" /><text
-   id="text209_10"
-   transform="scale(0.99483669,1.0051901)"
-   class="st1 st2 st31"
-   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
-   x="1365.2913"
-   y="841.38013">未存仓位：</text><text
-   id="text518"
-   inkscape:label="存查样柜1_未存仓位"
-   transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st33"
-   style="font-size:16.0558px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1457.0016"
-   y="842.36719">297</text><path
-   id="path520"
-   inkscape:connector-curvature="0"
-   class="st7"
-   d="m 1662.25,826.30479 h -154 v 30.9 h 154 z m 1.7,-1.6 v 33.9 h -157.3 v -33.9 z"
-   style="fill:#404041" /><polygon
-   id="polygon522"
-   class="st6"
-   points="416.4,815.4 416.4,846.4 570.3,846.4 570.3,815.4 "
-   style="fill:#58595b"
-   transform="translate(1091.95,10.704788)" /><text
-   id="text209_11"
-   transform="scale(0.99483669,1.0051901)"
-   class="st1 st2 st31"
-   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
-   x="1537.0801"
-   y="842.86658">存样率：</text><text
-   id="text68"
-   inkscape:label="存查样柜1_存样率"
-   transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st31"
-   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1607.7512"
-   y="843.25519">74.1%</text><rect
-   id="rect287_13"
-   x="665.71313"
-   y="-1659.9668"
-   class="st7"
    width="5.0999999"
-   height="320.36334"
-   style="fill:#404041;stroke-width:1.27588"
-   transform="rotate(90)" /><rect
-   id="rect287_17"
-   x="1659.25"
+   class="st7"
    y="595.00476"
+   x="1339.65"
+   id="rect287" /><path
+   style="fill:#404041"
+   d="m 1341.55,792.40479 h 163.6 v 31 h -163.6 z m -1.9,-1.5 v 33.9 h 167.1 v -33.9 c 0.2,0 -167.1,0 -167.1,0 z"
    class="st7"
-   width="5.0999999"
-   height="196"
-   style="fill:#404041" /><g
-   id="g3923"
-   transform="matrix(1.2299415,0,0,1.2427133,1071.1987,19.745028)"><path
-     id="path546"
-     inkscape:connector-curvature="0"
-     class="st7"
-     d="M 219.1,461.8 H 481.5 V 436.9 H 219.1 Z m -0.8,1.1 v -27.2 h 263.9 v 27.2 z" /></g><polygon
-   id="polygon548"
-   class="st6"
-   points="248.5,582.9 571.5,582.9 571.5,551.9 248.5,551.9 "
+   inkscape:connector-curvature="0"
+   id="path499" /><polygon
+   transform="translate(1091.95,10.704788)"
    style="fill:#58595b"
-   transform="translate(1091.95,10.704788)" /><text
-   id="text209_30-7-8"
-   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   points="249.1,812.8 249.1,781.8 413,781.8 413,812.8 "
+   class="st6"
+   id="polygon501" /><text
+   y="809.12183"
+   x="1366.1305"
+   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
+   class="st1 st2 st31"
    transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st32"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1427.6738"
-   y="642.2016">共有：</text><text
-   id="text209_30-7-8-2"
-   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   id="text209_8">共有仓位：</text><text
+   y="809.96606"
+   x="1452.897"
+   style="font-size:16.0558px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st33"
    transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st32"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1545.0624"
-   y="643.60852">已存：</text><text
-   id="text209_30-7-8-48"
-   inkscape:label="存查样柜1_大瓶共有"
+   inkscape:label="存查样柜1_共有仓位"
+   id="text504">1174</text><path
+   style="fill:#404041"
+   d="m 1662.45,792.40479 h -154 v 31 h 154.1 z m 1.7,-1.5 v 33.9 h -157.4 v -33.9 z"
+   class="st7"
+   inkscape:connector-curvature="0"
+   id="path506" /><polygon
+   transform="translate(1091.95,10.704788)"
+   style="fill:#58595b"
+   points="416.2,781.5 416.2,812.5 570.4,812.5 570.4,781.5 "
+   class="st6"
+   id="polygon508" /><text
+   y="807.18359"
+   x="1532.7275"
+   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
+   class="st1 st2 st31"
    transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st34"
-   style="font-size:20.5524px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1496.424"
-   y="644.59662">99</text><text
-   id="text209_30-7-8-48-00"
-   inkscape:label="存查样柜1_大瓶已存"
+   id="text209_9">已存仓位：</text><text
+   y="807.1214"
+   x="1617.2245"
+   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st31"
    transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st32"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1612.4915"
-   y="646.00354">99</text><text
-   id="text209"
+   inkscape:label="存查样柜1_已存仓位"
+   id="text511">877</text><path
+   style="fill:#404041"
+   d="m 1504.75,826.50479 h -163 v 31 h 163 z m 1.9,-1.6 v 33.9 h -166.6 v -33.9 z"
+   class="st7"
+   inkscape:connector-curvature="0"
+   id="path513" /><polygon
+   transform="translate(1091.95,10.704788)"
+   style="fill:#58595b"
+   points="249.8,815.7 249.8,846.7 412.7,846.7 412.7,815.7 "
+   class="st6"
+   id="polygon515" /><text
+   y="841.38013"
+   x="1365.2913"
+   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
+   class="st1 st2 st31"
    transform="scale(0.99483669,1.0051901)"
-   class="st1 st2 st3"
-   style="font-size:21.2429px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
-   x="1359.2347"
-   y="582.52527">#1智能存样柜</text><rect
+   id="text209_10">未存仓位：</text><text
+   y="842.36719"
+   x="1457.0016"
+   style="font-size:16.0558px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st33"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="存查样柜1_未存仓位"
+   id="text518">297</text><path
+   style="fill:#404041"
+   d="m 1662.25,826.30479 h -154 v 30.9 h 154 z m 1.7,-1.6 v 33.9 h -157.3 v -33.9 z"
+   class="st7"
+   inkscape:connector-curvature="0"
+   id="path520" /><polygon
+   transform="translate(1091.95,10.704788)"
+   style="fill:#58595b"
+   points="416.4,815.4 416.4,846.4 570.3,846.4 570.3,815.4 "
+   class="st6"
+   id="polygon522" /><text
+   y="842.86658"
+   x="1537.0801"
+   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
+   class="st1 st2 st31"
+   transform="scale(0.99483669,1.0051901)"
+   id="text209_11">存样率：</text><text
+   y="843.25519"
+   x="1607.7512"
+   style="font-size:16.0561px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st31"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="存查样柜1_存样率"
+   id="text68">74.1%</text><rect
    transform="rotate(90)"
    style="fill:#404041;stroke-width:1.27588"
    height="320.36334"
    width="5.0999999"
    class="st7"
-   y="-1664.9049"
+   y="-1659.9668"
+   x="665.71313"
+   id="rect287_13" /><rect
+   style="fill:#404041"
+   height="196"
+   width="5.0999999"
+   class="st7"
+   y="595.00476"
+   x="1659.25"
+   id="rect287_17" /><g
+   transform="matrix(1.2299415,0,0,1.2427133,1071.1987,19.745028)"
+   id="g3923"><path
+     d="M 219.1,461.8 H 481.5 V 436.9 H 219.1 Z m -0.8,1.1 v -27.2 h 263.9 v 27.2 z"
+     class="st7"
+     inkscape:connector-curvature="0"
+     id="path546" /></g><polygon
+   transform="translate(1091.95,10.704788)"
+   style="fill:#58595b"
+   points="248.5,582.9 571.5,582.9 571.5,551.9 248.5,551.9 "
+   class="st6"
+   id="polygon548" /><text
+   y="642.2016"
+   x="1427.6738"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st32"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   id="text209_30-7-8">共有：</text><text
+   y="643.60852"
+   x="1545.0624"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st32"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   id="text209_30-7-8-2">已存：</text><text
+   y="644.59662"
+   x="1496.424"
+   style="font-size:20.5524px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st34"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="存查样柜1_大瓶共有"
+   id="text209_30-7-8-48">99</text><text
+   y="646.00354"
+   x="1612.4915"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st32"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="存查样柜1_大瓶已存"
+   id="text209_30-7-8-48-00">99</text><text
+   y="582.52527"
+   x="1359.2347"
+   style="font-size:21.2429px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837"
+   class="st1 st2 st3"
+   transform="scale(0.99483669,1.0051901)"
+   id="text209">#1智能存样柜</text><rect
+   id="rect287_13-5"
    x="722.94159"
-   id="rect287_13-5" /><text
-   y="643.24957"
+   y="-1664.9049"
+   class="st7"
+   width="5.0999999"
+   height="320.36334"
+   style="fill:#404041;stroke-width:1.27588"
+   transform="rotate(90)" /><text
+   id="text209_30-7-8-6"
+   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   transform="scale(0.99483669,1.0051901)"
+   class="st17 st2 st32"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
    x="1367.11"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st32"
-   transform="scale(0.99483669,1.0051901)"
+   y="643.24957">大瓶</text><text
+   id="text209_30-7-8-7"
    inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
-   id="text209_30-7-8-6">大瓶</text><text
-   y="702.99487"
+   transform="scale(0.99483669,1.0051901)"
+   class="st17 st2 st32"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
    x="1425.9613"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st32"
-   transform="scale(0.99483669,1.0051901)"
+   y="702.99487">共有：</text><text
+   id="text209_30-7-8-2-6"
    inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
-   id="text209_30-7-8-7">共有：</text><text
-   y="704.40179"
+   transform="scale(0.99483669,1.0051901)"
+   class="st17 st2 st32"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
    x="1543.3499"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st32"
-   transform="scale(0.99483669,1.0051901)"
-   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
-   id="text209_30-7-8-2-6">已存：</text><text
-   y="705.38989"
-   x="1494.7114"
-   style="font-size:20.5524px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st34"
-   transform="scale(0.99483669,1.0051901)"
+   y="704.40179">已存：</text><text
+   id="text209_30-7-8-48-3"
    inkscape:label="存查样柜1_中瓶共有"
-   id="text209_30-7-8-48-3">99</text><text
-   y="706.79681"
-   x="1610.7789"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st32"
    transform="scale(0.99483669,1.0051901)"
-   inkscape:label="存查样柜1_中瓶已存"
-   id="text209_30-7-8-48-00-2">99</text><text
-   id="text209_30-7-8-6-1"
-   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
-   transform="scale(0.99483669,1.0051901)"
-   class="st17 st2 st32"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   x="1365.3975"
-   y="704.04285">中瓶</text><text
-   y="762.08514"
-   x="1425.9614"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st32"
-   transform="scale(0.99483669,1.0051901)"
-   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
-   id="text209_30-7-8-5">共有：</text><text
-   y="763.49207"
-   x="1543.35"
-   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
-   class="st17 st2 st32"
-   transform="scale(0.99483669,1.0051901)"
-   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
-   id="text209_30-7-8-2-66">已存：</text><text
-   y="764.48016"
-   x="1494.7115"
-   style="font-size:20.5524px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
    class="st17 st2 st34"
+   style="font-size:20.5524px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   x="1494.7114"
+   y="705.38989">99</text><text
+   id="text209_30-7-8-48-00-2"
+   inkscape:label="存查样柜1_中瓶已存"
    transform="scale(0.99483669,1.0051901)"
-   inkscape:label="存查样柜1_小瓶共有"
-   id="text209_30-7-8-48-8">99</text><text
-   y="765.88708"
-   x="1610.7791"
+   class="st17 st2 st32"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   x="1610.7789"
+   y="706.79681">99</text><text
+   y="704.04285"
+   x="1365.3975"
    style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
    class="st17 st2 st32"
    transform="scale(0.99483669,1.0051901)"
-   inkscape:label="存查样柜1_小瓶已存"
-   id="text209_30-7-8-48-00-1">99</text><text
-   id="text209_30-7-8-6-6"
+   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   id="text209_30-7-8-6-1">中瓶</text><text
+   id="text209_30-7-8-5"
    inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
    transform="scale(0.99483669,1.0051901)"
    class="st17 st2 st32"
    style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   x="1425.9614"
+   y="762.08514">共有：</text><text
+   id="text209_30-7-8-2-66"
+   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   transform="scale(0.99483669,1.0051901)"
+   class="st17 st2 st32"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   x="1543.35"
+   y="763.49207">已存：</text><text
+   id="text209_30-7-8-48-8"
+   inkscape:label="存查样柜1_小瓶共有"
+   transform="scale(0.99483669,1.0051901)"
+   class="st17 st2 st34"
+   style="font-size:20.5524px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   x="1494.7115"
+   y="764.48016">99</text><text
+   id="text209_30-7-8-48-00-1"
+   inkscape:label="存查样柜1_小瓶已存"
+   transform="scale(0.99483669,1.0051901)"
+   class="st17 st2 st32"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   x="1610.7791"
+   y="765.88708">99</text><text
+   y="763.13312"
    x="1365.3976"
-   y="763.13312">小瓶</text><g
-   inkscape:transform-center-y="-24.306194"
-   inkscape:transform-center-x="-60.5"
-   inkscape:label="转换器1_1"
+   style="font-size:20.5518px;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.994837;enable-background:new"
+   class="st17 st2 st32"
+   transform="scale(0.99483669,1.0051901)"
+   inkscape:label="#2闂佸搫鎳樼紓姘跺礂濡皷鍋撳☉娅虫垿鎮ч柆宥呰摕婵烇綁鏌涘▎鎾存暠闁绘挻鐗曢柟缁樺笧閹"
+   id="text209_30-7-8-6-6">小瓶</text><g
+   id="g4554_11_-7"
    transform="matrix(1.2017766,-0.7798158,0,1.2427133,-14.737842,210.22632)"
-   id="g4554_11_-7"><polygon
-     points="258.7,163.7 258.7,147.1 358,170.7 358,187.3 "
-     class="st7"
-     inkscape:label="#rect172"
-     id="rect172_11_-1" /><path
-     d="m 258.7,163.7 99.2,23.6 v -16.6 l -99.2,-23.6 z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z"
-     class="st9"
-     inkscape:connector-curvature="0"
-     id="path737_11_-0" /></g><g
-   inkscape:transform-center-y="-13.255181"
+   inkscape:label="转换器1_1"
    inkscape:transform-center-x="-60.5"
-   inkscape:label="转换器1_3"
+   inkscape:transform-center-y="-24.306194"><polygon
+     id="rect172_11_-1"
+     inkscape:label="#rect172"
+     class="st7"
+     points="258.7,163.7 258.7,147.1 358,170.7 358,187.3 " /><path
+     id="path737_11_-0"
+     inkscape:connector-curvature="0"
+     class="st9"
+     d="m 258.7,163.7 99.2,23.6 v -16.6 l -99.2,-23.6 z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z" /></g><g
+   id="g4554_11_-0"
    transform="matrix(1.2017766,-0.52153488,0,1.2427133,-15.33873,144.70677)"
-   id="g4554_11_-0"><polygon
-     points="258.7,147.1 358,170.7 358,187.3 258.7,163.7 "
-     class="st7"
-     inkscape:label="#rect172"
-     id="rect172_11_-3" /><path
-     d="m 258.7,163.7 99.2,23.6 v -16.6 l -99.2,-23.6 z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z"
-     class="st9"
-     inkscape:connector-curvature="0"
-     id="path737_11_-5" /></g><g
-   inkscape:transform-center-y="0.84144298"
-   inkscape:transform-center-x="-61"
-   inkscape:label="转换器1_2"
-   transform="matrix(1.2017766,-0.25924006,0,1.2427133,-15.33873,76.576774)"
-   id="g4554_11_-3"><polygon
-     points="358,187.3 258.7,163.7 258.7,147.1 358,170.7 "
-     class="st7"
-     inkscape:label="#rect172"
-     id="rect172_11_-8" /><path
-     d="m 258.7,163.7 99.2,23.6 v -16.6 l -99.2,-23.6 z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z"
-     class="st9"
-     inkscape:connector-curvature="0"
-     id="path737_11_-6" /></g><g
-   inkscape:transform-center-y="1.6675433"
+   inkscape:label="转换器1_3"
    inkscape:transform-center-x="-60.5"
-   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮"
+   inkscape:transform-center-y="-13.255181"><polygon
+     id="rect172_11_-3"
+     inkscape:label="#rect172"
+     class="st7"
+     points="258.7,147.1 358,170.7 358,187.3 258.7,163.7 " /><path
+     id="path737_11_-5"
+     inkscape:connector-curvature="0"
+     class="st9"
+     d="m 258.7,163.7 99.2,23.6 v -16.6 l -99.2,-23.6 z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z" /></g><g
+   id="g4554_11_-3"
+   transform="matrix(1.2017766,-0.25924006,0,1.2427133,-15.33873,76.576774)"
+   inkscape:label="转换器1_2"
+   inkscape:transform-center-x="-61"
+   inkscape:transform-center-y="0.84144298"><polygon
+     id="rect172_11_-8"
+     inkscape:label="#rect172"
+     class="st7"
+     points="358,187.3 258.7,163.7 258.7,147.1 358,170.7 " /><path
+     id="path737_11_-6"
+     inkscape:connector-curvature="0"
+     class="st9"
+     d="m 258.7,163.7 99.2,23.6 v -16.6 l -99.2,-23.6 z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z" /></g><g
+   id="g4554_13_-3"
    transform="matrix(1.2017766,-0.25490488,0,1.2427133,-15.579086,207.56536)"
-   id="g4554_13_-3"><polygon
-     points="778,147.1 877.3,170.7 877.3,187.3 778,163.7 "
-     class="st7"
+   inkscape:label="转换器2_2"
+   inkscape:transform-center-x="-60.5"
+   inkscape:transform-center-y="1.6675433"><polygon
+     id="rect172_13_-4"
      inkscape:label="#rect172"
-     id="rect172_13_-4" /><path
-     d="m 778,163.7 99.2,23.6 V 170.7 L 778,147.1 Z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z"
-     class="st9"
+     class="st7"
+     points="778,147.1 877.3,170.7 877.3,187.3 778,163.7 " /><path
+     id="path737_13_-3"
      inkscape:connector-curvature="0"
-     id="path737_13_-3" /></g><g
-   inkscape:transform-center-y="-12.541531"
-   inkscape:transform-center-x="-60"
-   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮"
+     class="st9"
+     d="m 778,163.7 99.2,23.6 V 170.7 L 778,147.1 Z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z" /></g><g
+   id="g4554_13_-8"
    transform="matrix(1.2017766,-0.53161652,0,1.2427133,-16.42033,422.89051)"
-   id="g4554_13_-8"><polygon
-     points="778,147.1 877.3,170.7 877.3,187.3 778,163.7 "
-     class="st7"
+   inkscape:label="转换器2_3"
+   inkscape:transform-center-x="-60"
+   inkscape:transform-center-y="-12.541531"><polygon
+     id="rect172_13_-5"
      inkscape:label="#rect172"
-     id="rect172_13_-5" /><path
-     d="m 778,163.7 99.2,23.6 V 170.7 L 778,147.1 Z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z"
-     class="st9"
+     class="st7"
+     points="778,147.1 877.3,170.7 877.3,187.3 778,163.7 " /><path
+     id="path737_13_-6"
      inkscape:connector-curvature="0"
-     id="path737_13_-6" /></g><g
-   inkscape:transform-center-y="-24.888479"
-   inkscape:transform-center-x="-59.5"
-   inkscape:label="閸ユ盯銆嶆潪宕查崳鈺涢弮瀣祮"
+     class="st9"
+     d="m 778,163.7 99.2,23.6 V 170.7 L 778,147.1 Z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z" /></g><g
+   id="g4554_13_-6"
    transform="matrix(1.2017766,-0.79556561,0,1.2427133,-15.819442,627.15132)"
-   id="g4554_13_-6"><polygon
-     points="877.3,187.3 778,163.7 778,147.1 877.3,170.7 "
-     class="st7"
+   inkscape:label="转换器2_1"
+   inkscape:transform-center-x="-59.5"
+   inkscape:transform-center-y="-24.888479"><polygon
+     id="rect172_13_-1"
      inkscape:label="#rect172"
-     id="rect172_13_-1" /><path
-     d="m 778,163.7 99.2,23.6 V 170.7 L 778,147.1 Z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z"
-     class="st9"
+     class="st7"
+     points="877.3,187.3 778,163.7 778,147.1 877.3,170.7 " /><path
+     id="path737_13_-5"
      inkscape:connector-curvature="0"
-     id="path737_13_-5" /></g></svg>
+     class="st9"
+     d="m 778,163.7 99.2,23.6 V 170.7 L 778,147.1 Z m 99.9,24.9 -100.4,-23.9 -0.7,-0.1 v -0.7 -17.8 -0.7 l 0.7,0.1 100.4,23.9 0.7,0.1 v 0.7 17.8 0.7 z" /></g></svg>

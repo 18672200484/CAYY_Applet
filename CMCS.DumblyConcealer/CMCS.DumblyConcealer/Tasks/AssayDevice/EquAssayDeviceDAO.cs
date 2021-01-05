@@ -1233,7 +1233,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 
 			#region 工分仪
 			int gfy1 = 0, gfy2 = 0, gfy3 = 0, gfy4 = 0;
-			string date = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+			string date = DateTime.Now.ToString("yyyy-MM-dd");
 			string sql = string.Format(@"select t.facilitynumber,count(t.facilitynumber) tCount from CMCSTBPROXIMATEASSAY t
 									where to_char(t.assaytime, 'yyyy-MM-dd') = '{0}'
 									 group by t.facilitynumber
