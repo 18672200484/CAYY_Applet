@@ -112,6 +112,12 @@
     <Compile Include="Tasks\BeltBalancer\EquBeltBalancerDAO.cs" />
     <Compile Include="Tasks\CarJxSampler\Entities\Interface_Data.cs" />
     <Compile Include="Tasks\CarJxSampler\EquCarJXSamplerOPC.cs" />
+    <Compile Include="Tasks\PneumaticTransfer\Entities\EquQDBill.cs" />
+    <Compile Include="Tasks\PneumaticTransfer\Entities\EquQDError.cs" />
+    <Compile Include="Tasks\PneumaticTransfer\Entities\EquQDStatus.cs" />
+    <Compile Include="Tasks\PneumaticTransfer\Enums\eOp.cs" />
+    <Compile Include="Tasks\PneumaticTransfer\EquPneumaticTransferOPC.cs" />
+    <Compile Include="Tasks\PneumaticTransfer\EquPneumaticTransferDAO.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJBarrel.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJError.cs" />
     <Compile Include="Tasks\TrainJxSampler\Entities\EquHCQSCYJPlanDetail.cs" />
@@ -162,6 +168,7 @@
     <Content Include="Tasks\AutoMaker\全自动制样机接口.txt" />
     <Content Include="Tasks\BeltSampler\皮带采样机同步程序.txt" />
     <Content Include="Tasks\BeltBalancer\皮带秤称重数据同步程序.txt" />
+    <Content Include="Tasks\PneumaticTransfer\气动传输.txt" />
     <Content Include="Tasks\TrainJxSampler\汽车机械采样机接口.txt" />
     <Content Include="Tasks\CarJxSampler\汽车机械采样机接口.txt" />
     <Content Include="Tasks\DataHandler\综合事件处理.txt" />

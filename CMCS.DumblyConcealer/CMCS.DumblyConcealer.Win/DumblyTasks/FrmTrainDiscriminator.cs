@@ -51,16 +51,32 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别3文件储存位置"), "3");
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别4文件储存位置"), "4");
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别5文件储存位置"), "5");
-			}, 30000, OutputError);
+			}, 10000, OutputError);
 
-			taskSimpleScheduler.StartNewTask("处理车号识别数据", () =>
+			taskSimpleScheduler.StartNewTask("处理车号识别数据1", () =>
 			{
 				trainWeight_DAO.CarSpotsHandle(this.rTxtOutputer.Output, 1);
+			}, 20000, OutputError);
+
+			taskSimpleScheduler.StartNewTask("处理车号识别数据2", () =>
+			{
 				trainWeight_DAO.CarSpotsHandle(this.rTxtOutputer.Output, 2);
+			}, 20000, OutputError);
+
+			taskSimpleScheduler.StartNewTask("处理车号识别数据3", () =>
+			{
 				trainWeight_DAO.CarSpotsHandle(this.rTxtOutputer.Output, 3);
+			}, 20000, OutputError);
+
+			taskSimpleScheduler.StartNewTask("处理车号识别数据4", () =>
+			{
 				trainWeight_DAO.CarSpotsHandle(this.rTxtOutputer.Output, 4);
+			}, 2000, OutputError);
+
+			taskSimpleScheduler.StartNewTask("处理车号识别数据5", () =>
+			{
 				trainWeight_DAO.CarSpotsHandle(this.rTxtOutputer.Output, 5);
-			}, 30000, OutputError);
+			}, 2000, OutputError);
 		}
 
 		/// <summary>

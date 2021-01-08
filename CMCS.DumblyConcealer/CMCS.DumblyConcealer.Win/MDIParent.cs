@@ -312,5 +312,20 @@ namespace CMCS.DumblyConcealer.Win
 				taskForm.Show();
 			}
 		}
+
+		/// <summary>
+		/// 11.气动传输
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void tsmiOpenFrmPneumaticTransfer_Click(object sender, EventArgs e)
+		{
+			TaskForm taskForm = new FrmPneumaticTransfer();
+			if (HaveOpened(taskForm, this))
+			{
+				taskForm.MdiParent = this;
+				taskForm.Show();
+			}
+		}
 	}
 }

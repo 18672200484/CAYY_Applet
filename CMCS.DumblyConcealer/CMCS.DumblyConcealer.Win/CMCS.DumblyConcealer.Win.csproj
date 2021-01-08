@@ -83,6 +83,12 @@
     <Compile Include="DumblyTasks\FrmAssayDevice.designer.cs">
       <DependentUpon>FrmAssayDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="DumblyTasks\FrmPneumaticTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPneumaticTransfer.designer.cs">
+      <DependentUpon>FrmPneumaticTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="DumblyTasks\FrmAutoCupboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmAssayDevice.resx">
       <DependentUpon>FrmAssayDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmPneumaticTransfer.resx">
+      <DependentUpon>FrmPneumaticTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmAutoCupboard.resx">
       <DependentUpon>FrmAutoCupboard.cs</DependentUpon>

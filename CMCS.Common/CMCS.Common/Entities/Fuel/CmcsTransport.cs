@@ -118,6 +118,11 @@ namespace CMCS.Common.Entities.Fuel
 		public Int32 OrderNumber { get; set; }
 
 		/// <summary>
+		/// 标识
+		/// </summary>
+		public Int32 DataFlag { get; set; }
+
+		/// <summary>
 		/// 备注
 		/// </summary>
 		public String Remark { get; set; }

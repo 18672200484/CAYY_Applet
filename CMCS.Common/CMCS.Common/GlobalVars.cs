@@ -141,7 +141,7 @@ namespace CMCS.Common
 		/// <summary>
 		/// 设备编码 - 气动传输
 		/// </summary>
-		public static string MachineCode_QD = "#1气动传输";
+		public static string MachineCode_QD = "气动传输";
 
 		#endregion
 
