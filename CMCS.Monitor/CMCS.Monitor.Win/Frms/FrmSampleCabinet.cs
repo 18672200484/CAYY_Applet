@@ -115,64 +115,63 @@ namespace CMCS.Monitor.Win.Frms
             //cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("requestData(" + Newtonsoft.Json.JsonConvert.SerializeObject(datas) + ");", "", 0);
             ////
 
-            List<InfCYGSam> lists = Dbers.GetInstance().SelfDber.Entities<InfCYGSam>(" where code is not null").ToList();
+            List<InfCYGSam> lists = Dbers.GetInstance().SelfDber.Entities<InfCYGSam>().ToList();
             List<Tempsam> tempsams = new List<Tempsam>();
-            List<TempGS> Temp = new List<TempGS>();
-            string[] sampleType = new string[] { "0.2mm样瓶", "3mm样瓶", "6mm样瓶", "总经理备查样瓶" };
-            for (int i = 0; i < sampleType.Length; i++)
+           foreach(var item in lists)
             {
-                TempGS lit = new TempGS();
-                lit.Type = sampleType[i];
-                lit.TmDay = 30;
-                Temp.Add(lit);
+                Tempsam tempsam = new Tempsam();
+                tempsam.Name = item.AreaNumber + "-" + item.ColumnIndex + "-" + item.CellIndex;
+                tempsam.Type = item.SamType;
+                tempsam.Code = item.Code;
+
+                tempsams.Add(tempsam);
             }
 
-            for (int box = 1; box > 0; box--)//柜号
-            {
-                for (int rowindex = 5; rowindex > 0; rowindex--)//层
-                {
-                    for (int colindex = rowindex * 4 - 4; colindex <= rowindex * 4; colindex++)//列
-                    {
-                        //Tempsam tempsam = new Tempsam();
-                        //InfCYGSam cmcscygsam = lists.Where(a => a.Place == box + rowindex.ToString().PadLeft(2, '0') + colindex.ToString().PadLeft(2, '0')).FirstOrDefault();
-                        //tempsam.Name = box + rowindex.ToString().PadLeft(2, '0') + colindex.ToString().PadLeft(3, '0');
-                        //if (cmcscygsam != null)
-                        //{
-                        //    int day = 0;
-                        //    List<TempGS> list = Temp.Where(a => a.Type == cmcscygsam.SamType).ToList();
-                        //    if (list.Count > 0)
-                        //    {
-                        //        day = list.FirstOrDefault().TmDay;
-                        //    }
-                        //    if (cmcscygsam.CreationTime.AddDays(day) > DateTime.Now)
-                        //        tempsam.Type = "1";
-                        //    else
-                        //        tempsam.Type = "0";
-                        //}
-                        //tempsams.Add(tempsam);
-                    }
-                }
-            }
 
-            cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadSamInfo(" + Newtonsoft.Json.JsonConvert.SerializeObject(tempsams) + ");", "", 0);
+            //拼Html
+            //string html = "";
+            //List<InfCYGSam> list = Dbers.GetInstance().SelfDber.Entities<InfCYGSam>().ToList();
 
-            ////制样机出样信息
-            //List<CmcsCYGControlCMDDetail> listMakerRecord = Dbers.GetInstance().SelfDber.Entities<CmcsCYGControlCMDDetail>(" order by CreationTime desc");
-            //listMakerRecord.Where(a => a.Status != "");
-            //List<CmcsCYGControlCMDDetail> listMakerRecords = new List<CmcsCYGControlCMDDetail>();
-            //for (int i = 0; i < 6; i++)
+            //html += "<div><div>";
+            //var list1 = list.Where(a => a.AreaNumber == 2).OrderByDescending(a=>a.ColumnIndex);
+            //foreach(var item in list1.GroupBy(a => a.ColumnIndex))
             //{
-            //    if (listMakerRecord.Count > i)
+            //    var item1 = item.OrderByDescending(a=>a.CellIndex).ToList();
+            //    foreach (var it in item1)
             //    {
-            //        listMakerRecords.Add(listMakerRecord[i]);
-            //    }
-            //    else
-            //    {
-            //        listMakerRecords.Add(new CmcsCYGControlCMDDetail() { CreationTime = new DateTime(1990, 1, 1), SamType = "", Code = "", Status = "" });
+            //        if (!string.IsNullOrEmpty(it.Code))
+            //        {
+            //            html += "<div class=\'guad_wc\' onclick=\'showBoxDetail(" + it.Code + ",this)\'>A0101</div>";
+            //        }
+            //        else
+            //        {
+            //            html += "<div class=\'guad_wc\'>A0101</div>";
+            //        }
             //    }
             //}
-            //cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadSampleInfo(" + Newtonsoft.Json.JsonConvert.SerializeObject(listMakerRecords.Select(a => new { UpdateTime = a.CreationTime.Year < 2000 ? "" : a.CreationTime.ToString("yyyy-MM-dd HH:mm"), Code = a.Code, SamType = a.SamType == null ? "" : ConvertToCmcsYpType(a.SamType), Status = a.Status == null ? "" : a.Status })) + ");", "", 0);
-            //#endregion
+            //html += "</div><div class=\'guad_yg\'>";
+            //var list2 = list.Where(a => a.AreaNumber == 1).OrderBy(a => a.ColumnIndex);
+            //foreach (var item in list2.GroupBy(a => a.ColumnIndex))
+            //{
+            //    var item1 = item.OrderByDescending(a => a.CellIndex).ToList();
+            //    foreach (var it in item1)
+            //    {
+            //        if (!string.IsNullOrEmpty(it.Code))
+            //        {
+            //            html += "<div class=\'guad_wc\' onclick=\'showBoxDetail(" + it.Code + ",this)\'>A0101</div>";
+            //        }
+            //        else
+            //        {
+            //            html += "<div class=\'guad_wc\'>A0101</div>";
+            //        }
+            //    }
+            //}
+            //html += "</div></div>";
+
+
+            cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadSamInfo(" +Newtonsoft.Json.JsonConvert.SerializeObject(tempsams) + ");", "", 0);
+
+       
         }
 
 
@@ -206,6 +205,8 @@ namespace CMCS.Monitor.Win.Frms
         {
             public string Name { get; set; }
             public string Type { get; set; }
+
+            public string Code { get; set; }
         }
 
 

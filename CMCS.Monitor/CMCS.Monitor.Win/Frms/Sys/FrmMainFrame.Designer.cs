@@ -50,7 +50,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.panel_Buttons = new DevComponents.DotNetBar.PanelEx();
             this.button10 = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenSampleCabinet = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnOpenSampleCabinetManager = new DevComponents.DotNetBar.ButtonItem();
             this.btnOpenAutoCupboard = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenOperationLogs = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenAutoMaker = new DevComponents.DotNetBar.ButtonX();
@@ -284,7 +284,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.button10.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.button10.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnOpenSampleCabinet,
-            this.buttonItem4});
+            this.btnOpenSampleCabinetManager});
             this.button10.TabIndex = 18;
             this.button10.Text = "存 样 柜 ";
             // 
@@ -295,11 +295,12 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.btnOpenSampleCabinet.Text = "样柜信息";
             this.btnOpenSampleCabinet.Click += new System.EventHandler(this.btnOpenSampleCabinet_Click);
             // 
-            // buttonItem4
+            // btnOpenSampleCabinetManager
             // 
-            this.buttonItem4.GlobalItem = false;
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.Text = "样品取弃样";
+            this.btnOpenSampleCabinetManager.GlobalItem = false;
+            this.btnOpenSampleCabinetManager.Name = "btnOpenSampleCabinetManager";
+            this.btnOpenSampleCabinetManager.Text = "样品取弃样";
+            this.btnOpenSampleCabinetManager.Click += new System.EventHandler(this.btnOpenSampleCabinetManager_Click);
             // 
             // btnOpenAutoCupboard
             // 
@@ -585,7 +586,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		private DevComponents.DotNetBar.ButtonX btnOpenAutoCupboard;
         private DevComponents.DotNetBar.ButtonX button10;
         private DevComponents.DotNetBar.ButtonItem btnOpenSampleCabinet;
-        private DevComponents.DotNetBar.ButtonItem buttonItem4;
+        private DevComponents.DotNetBar.ButtonItem btnOpenSampleCabinetManager;
     }
 }
 

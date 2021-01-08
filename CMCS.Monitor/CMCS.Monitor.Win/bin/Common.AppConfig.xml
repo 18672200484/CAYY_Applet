@@ -5,6 +5,7 @@
   <!--集中管控Oracle数据库连接字符串-->
   <!--<SelfConnStr>Data Source=server104_new;User ID=cmcs_base;Password=1234;Persist Security Info=False;</SelfConnStr>-->
   <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.70.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_cayy_eq;Password=Bossien1234;</SelfConnStr>
+  <!--<SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=LAPTOP-SSFRGNTI)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=c##bieos_yy;Password=1234;</SelfConnStr>-->
 </CommonAppConfig>
 
 

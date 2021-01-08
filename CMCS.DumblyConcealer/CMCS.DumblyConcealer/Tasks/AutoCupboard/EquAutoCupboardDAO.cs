@@ -367,7 +367,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
                     infcygsam = new InfCYGSam();
                     infcygsam.UpdateTime = item.Date;
                     infcygsam.Code = item.Sample_Id;
-                    infcygsam.SamType = item.Big == 1 ? "大瓶" : item.Middle == 1 ? "中瓶" : "小瓶";
+                    infcygsam.SamType = item.Big == 1 ? "大瓶" : item.Middle == 1 ? "中瓶" : item.Small == 1?"小瓶":"空位";
                     infcygsam.CellIndex = item.RowNo;
                     infcygsam.ColumnIndex = item.ColumnNo;
                     infcygsam.AreaNumber = item.RotateNo;
@@ -427,7 +427,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
 
                     infcygsam.UpdateTime = item.Date;
                     infcygsam.Code = item.Sample_Id;
-                    infcygsam.SamType = item.Big == 1 ? "大瓶" : item.Middle == 1 ? "中瓶" : "小瓶";
+                    infcygsam.SamType = item.Big == 1 ? "大瓶" : item.Middle == 1 ? "中瓶" : item.Small == 1 ? "小瓶" : "空位";
                     infcygsam.CellIndex = item.RowNo;
                     infcygsam.ColumnIndex = item.ColumnNo;
                     infcygsam.AreaNumber = item.RotateNo;

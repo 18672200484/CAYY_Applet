@@ -356,6 +356,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
 			}));
 		}
+
+		/// <summary>
+		/// 打开智能存样柜存取
+		/// </summary>
+		public void OpenSampleCabinetManager()
+		{
+			this.Invoke((Action)(() =>
+			{
+				string uniqueKey = FrmSampleCabinetManager.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmSampleCabinetManager frm = new FrmSampleCabinetManager();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			}));
+		}
 		#endregion
 
 		/// <summary>
@@ -557,6 +576,19 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenSampleCabinet();
+		}
+
+		/// <summary>
+		///  打开存样柜取弃
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenSampleCabinetManager_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenSampleCabinetManager();
 		}
 		#endregion
 

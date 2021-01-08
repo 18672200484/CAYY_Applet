@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -11,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="AutoCupboardPneumaticTransfer.svg"
    x="0px"
    y="0px"
@@ -29,6 +27,14 @@
 	
 		
 
+
+	
+
+
+
+
+
+	
 </defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
@@ -38,14 +44,18 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="640"
-   inkscape:window-height="480"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
    id="namedview937"
    showgrid="false"
-   inkscape:zoom="1.0928687"
-   inkscape:cx="830.47219"
-   inkscape:cy="667.99813"
-   inkscape:current-layer="svg2" />
+   inkscape:zoom="2.1857374"
+   inkscape:cx="1571.3962"
+   inkscape:cy="139.86581"
+   inkscape:current-layer="svg2"
+   inkscape:document-rotation="0"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1" />
 <style
    type="text/css"
    id="style3">
@@ -104,819 +114,137 @@
    height="920"
    x="0">
 </rect>
-<path
-   id="path577-1"
-   inkscape:connector-curvature="0"
-   class="st0"
-   d="m 322.7,179.8 h 16.7 v -19.7 h -16.7 v 19.7 z m 17.4,1.4 H 322 321.3 v -0.7 -21 -0.7 h 0.7 18.1 0.7 v 0.7 21 0.7 h -0.7 z"
-   style="fill:#404041" />
-<g
-   id="polygon434"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_1_"
-   gradientUnits="userSpaceOnUse"
-   x1="1553.5479"
-   y1="242.64751"
-   x2="1563.8887"
-   y2="242.64751">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop9" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop11" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop13" />
-	</linearGradient>
-	<rect
-   x="1553.5"
-   y="151.8"
-   class="st1"
-   width="10.3"
-   height="181.60001"
-   id="rect15"
-   style="fill:url(#SVGID_1_)" />
-	<path
-   class="st2"
-   d="M 1563.5,152.2 V 333 H 1554 V 152.2 h 9.5 m 0.8,-0.8 h -0.8 -9.5 -0.8 v 0.8 180.8 0.8 h 0.8 9.5 0.8 V 333 152.2 151.4 l 0,0 z"
-   id="path17"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<rect
-   id="rect112"
-   x="145"
-   y="162.39999"
-   class="st3"
-   width="54.900002"
-   height="10"
-   style="fill:#a6a8ab" />
-<text
-   class="st4 st5 st6"
-   id="text20"
-   x="214.1564"
-   y="88.590599"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">四项转换器</text>
-
-
-
-
-
-<text
-   id="text215"
-   class="st4 st5 st6"
-   x="1715.5957"
-   y="538.2666"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">取样工作站</text>
-
-
-
-
-
-<text
-   id="text213-4-0"
-   class="st4 st5 st6"
-   x="1734.4941"
-   y="514.69727"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">化验室</text>
-
-
-
-
-
-<g
-   id="g24"
-   transform="translate(0,26)">
-	<rect
-   id="rect13"
-   x="1722.1"
-   y="329.5"
-   class="st7"
-   width="84.599998"
-   height="15"
-   style="fill:#d0d2d3" />
-	<rect
-   id="rect27"
-   x="1722.1"
-   y="439.10001"
-   class="st7"
-   width="84.599998"
-   height="13.2"
-   style="fill:#d0d2d3" />
-	<rect
-   id="rect23"
-   x="1749.6"
-   y="318.89999"
-   class="st0"
-   width="35"
-   height="10.7"
-   style="fill:#404041" />
-	<rect
-   id="rect35"
-   x="1722.1"
-   y="344.60001"
-   class="st0"
-   width="84.599998"
-   height="94.599998"
-   style="fill:#404041" />
-	<polygon
-   id="polygon41"
-   class="st8"
-   points="1764.6,360.2 1781.4,360.2 1781.4,367.5 1798.7,357.5 1781.4,347.6 1781.4,354.8 1764.6,354.8 "
-   style="fill:#e6e7e8" />
-	<path
-   id="_271510064"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1781.4,347.6 v 7.1 0.2 h -0.2 -16.7 v 5.3 h 16.7 0.2 v 0.2 7.1 l 17.2,-9.9 -17.2,-10 0,0 z m -0.3,6.9 v -7.2 -0.3 l 0.3,0.1 17.7,10.2 0.3,0.1 -0.3,0.1 -17.7,10.2 -0.3,0.1 v -0.3 -7.2 h -16.7 -0.2 v -0.2 -5.7 -0.2 h 0.2 l 16.7,0.3 0,0 z"
-   style="fill:#231f20" />
-	<polygon
-   id="polygon43"
-   inkscape:label="鍖栭獙瀹"
-   class="st10"
-   points="1746.5,367.5 1746.5,360.2 1763.4,360.2 1763.4,354.8 1746.5,354.8 1746.5,347.6 1729.3,357.5 "
-   style="fill:#00a551">
-	</polygon>
-	<path
-   id="_271509872"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1746.5,354.7 v -7.1 l -17.2,9.9 17.2,9.9 v -7.1 -0.2 h 0.2 16.7 v -5.3 h -16.7 -0.2 v -0.1 z m 0.4,-7.4 v 7.2 h 16.7 0.2 v 0.2 5.7 0.2 h -0.2 -16.7 v 7.2 0.3 l -0.3,-0.1 -17.7,-10.2 -0.3,-0.1 0.3,-0.1 17.7,-10.2 0.3,-0.1 v 0 l 0,0 z"
-   style="fill:#231f20" />
-	<path
-   id="_271509800"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M 1781.6,425.4 V 408 407.8 h 0.2 16.8 0.2 v 0.2 17.4 0.1 l 0,0 c -8.8,9.2 -17.1,0 -17.1,0 l -0.1,-0.1 0,0 0,0 z m 0.3,-17.3 v 17.2 c 0.6,0.7 8.3,8.5 16.5,0 v -17.2 l -16.5,0 0,0 z"
-   style="fill:#231f20" />
-	<path
-   id="_271509728"
-   inkscape:connector-curvature="0"
-   inkscape:label="鍖栭獙瀹"
-   class="st10"
-   d="m 1781.9,408.1 v 17.2 c 0.6,0.7 8.3,8.5 16.5,0 v -17.2 l -16.5,0 0,0 z"
-   style="fill:#00a551" />
-	<path
-   id="_271509656"
-   inkscape:connector-curvature="0"
-   class="st8"
-   d="m 1798.4,405.6 v -17.2 c -0.6,-0.7 -8.3,-8.5 -16.5,0 v 17.2 l 16.5,0 0,0 z"
-   style="fill:#e6e7e8" />
-	<path
-   id="_271509584"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1798.4,405.6 v -17.2 c -0.6,-0.7 -8.3,-8.5 -16.5,0 v 17.2 l 16.5,0 0,0 z m 0.3,-17.3 v 17.4 0.2 h -0.2 -16.8 -0.2 v -0.2 -17.4 -0.1 l 0,0 c 8.8,-9.2 17.1,0 17.1,0 l 0.1,0.1 0,0 0,0 z"
-   style="fill:#231f20" />
-	<g
-   id="g458">
-		<polygon
-   id="polygon41_0"
-   class="st8"
-   points="1754.8,400.1 1754.8,383.3 1762.1,383.3 1752.1,366 1742.2,383.3 1749.4,383.3 1749.4,400.1 "
-   style="fill:#e6e7e8" />
-		<path
-   id="_271509152"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1742.2,383.3 h 7.1 0.2 v 0.2 16.7 h 5.3 v -16.7 -0.2 h 0.2 7.1 l -9.9,-17.2 -10,17.2 0,0 z m 6.9,0.3 h -7.2 -0.3 l 0.1,-0.3 10.2,-17.7 0.1,-0.3 0.1,0.3 10.2,17.7 0.1,0.3 h -0.3 -7.2 v 16.7 0.2 h -0.2 -5.7 -0.2 v -0.2 l 0.3,-16.7 0,0 z"
-   style="fill:#231f20" />
-		<polygon
-   id="polygon43_1"
-   inkscape:label="鍖栭獙瀹"
-   class="st10"
-   points="1762.1,418.2 1754.8,418.2 1754.8,401.3 1749.4,401.3 1749.4,418.2 1742.2,418.2 1752.1,435.4 "
-   style="fill:#00a551">
-		</polygon>
-		<path
-   id="_272215760"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1749.3,418.2 h -7.1 l 9.9,17.2 9.9,-17.2 h -7.1 -0.2 V 418 401.3 h -5.3 v 16.7 0.2 h -0.1 l 0,0 z m -7.4,-0.3 h 7.2 V 401.2 401 h 0.2 5.7 0.2 v 0.2 16.7 h 7.2 0.3 l -0.1,0.3 -10.2,17.7 -0.1,0.3 -0.1,-0.3 -10.2,-17.7 -0.1,-0.3 h 0 l 0,0 z"
-   style="fill:#231f20" />
-	</g>
-</g>
-<g
-   id="polygon464"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_2_"
-   gradientUnits="userSpaceOnUse"
-   x1="1367.7168"
-   y1="255.8054"
-   x2="1378.0674"
-   y2="255.8054">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop46" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop48" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop50" />
-	</linearGradient>
-	<rect
-   x="1367.7"
-   y="178.10001"
-   class="st11"
-   width="10.4"
-   height="155.3"
-   id="rect52"
-   style="fill:url(#SVGID_2_)" />
-	<path
-   class="st2"
-   d="M 1377.7,178.5 V 333 h -9.6 V 178.5 h 9.6 m 0.8,-0.8 h -0.8 -9.6 -0.8 v 0.8 154.5 0.8 h 0.8 9.6 0.8 V 333 178.5 177.7 l 0,0 z"
-   id="path54"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<text
-   id="text213"
-   class="st4 st5 st6"
-   x="1332.75"
-   y="538.2666"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">存样工作站</text>
-
-
-
-
-
-<text
-   id="text213-4"
-   class="st4 st5 st6"
-   x="1355.458"
-   y="514.80029"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">制样间</text>
-
-
-
-
-
-<g
-   id="g58"
-   transform="translate(0,26)">
-	<rect
-   id="rect11"
-   x="1341.4"
-   y="364.89999"
-   class="st7"
-   width="48.200001"
-   height="76.900002"
-   style="fill:#d0d2d3" />
-	<rect
-   id="rect17"
-   x="1389.6"
-   y="364.89999"
-   class="st12"
-   width="31.799999"
-   height="76.900002"
-   style="fill:#929497" />
-	<rect
-   id="rect19"
-   x="1341.4"
-   y="354.39999"
-   class="st0"
-   width="80"
-   height="10.5"
-   style="fill:#404041" />
-	<rect
-   id="rect21"
-   x="1354.6"
-   y="333.10001"
-   class="st0"
-   width="35"
-   height="21.4"
-   style="fill:#404041" />
-	<rect
-   id="rect25"
-   x="1332.8"
-   y="422.39999"
-   class="st0"
-   width="8.6000004"
-   height="10.7"
-   style="fill:#404041" />
-	<rect
-   id="rect65"
-   x="1332.8"
-   y="409"
-   class="st7"
-   width="8.6000004"
-   height="13.4"
-   style="fill:#d0d2d3" />
-	<rect
-   id="rect29"
-   x="1341.4"
-   y="441.79999"
-   class="st0"
-   width="80"
-   height="10.2"
-   style="fill:#404041" />
-	<g
-   id="g480">
-		<polygon
-   id="polygon41_2"
-   inkscape:label="鍒舵牱鏈"
-   class="st10"
-   points="1368.2,420.5 1368.2,403.7 1375.4,403.7 1365.5,386.5 1355.6,403.7 1362.8,403.7 1362.8,420.5 "
-   style="fill:#00a551">
-		</polygon>
-		<path
-   id="_272214176"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1355.6,403.7 h 7.1 0.2 v 0.2 16.7 h 5.3 v -16.7 -0.2 h 0.2 7.1 l -9.9,-17.2 -10,17.2 0,0 z m 6.9,0.3 h -7.2 -0.3 l 0.1,-0.3 10.2,-17.7 0.1,-0.3 0.1,0.3 10.2,17.7 0.1,0.3 h -0.3 -7.2 v 16.7 0.2 h -0.2 -5.7 -0.2 v -0.2 l 0.3,-16.7 0,0 z"
-   style="fill:#231f20" />
-	</g>
-</g>
-<text
-   id="text205"
-   class="st4 st5 st6"
-   x="86.422897"
-   y="235.0961"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">风机</text>
-
-
-
-
-
-<g
-   id="_272213120"
-   transform="matrix(1.0611111,0,0,1.0611111,-1.7184629e-5,-7.05161)">
-	<rect
-   id="rect127"
-   x="66.300003"
-   y="107.1"
-   class="st7"
-   width="67.800003"
-   height="92.599998"
-   style="fill:#d0d2d3" />
-	<path
-   id="_272213816"
-   inkscape:connector-curvature="0"
-   class="st13"
-   d="m 66.3,199.7 h 67.8 V 107.1 H 66.3 v 92.6 z m -2.6,2.6 v -97.7 h 73 v 97.7 h -73 z"
-   style="fill:#58595b" />
-	<rect
-   id="rect129"
-   x="67.400002"
-   y="108.4"
-   class="st0"
-   width="65.599998"
-   height="35.400002"
-   style="fill:#404041" />
-	
-		<linearGradient
-   id="rect138_1_"
-   gradientUnits="userSpaceOnUse"
-   x1="80.386002"
-   y1="839.64612"
-   x2="107.3673"
-   y2="839.64612"
-   gradientTransform="matrix(1.0611,0,0,-1.0611,1.378,989.6418)">
-		<stop
-   offset="0"
-   style="stop-color:#FFFFFF"
-   id="stop77" />
-		<stop
-   offset="1"
-   style="stop-color:#231F20"
-   id="stop79" />
-	</linearGradient>
-	<polygon
-   id="rect138"
-   class="st14"
-   points="86.7,103.9 113.7,103.9 113.7,93.5 86.7,93.5 "
-   style="fill:url(#rect138_1_)" />
-	<path
-   id="_272213504"
-   inkscape:connector-curvature="0"
-   class="st0"
-   d="m 86.7,103.9 h 27 V 93.5 h -27 v 10.4 z m 27.3,0.6 H 86.3 86 v -0.3 -11 -0.3 h 0.3 27.7 0.3 v 0.3 11.1 0.3 H 114 z"
-   style="fill:#404041" />
-	<path
-   id="_272213432"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="M 117.6,134.2 H 101.2 101 V 134 118.1 118 h 0.2 16.4 0.1 l 0,0 c 8.7,8.3 0,16.1 0,16.1 l -0.1,0.1 0,0 0,0 z m -16.2,-0.3 h 16.2 c 0.6,-0.6 8,-7.9 0,-15.5 h -16.2 l 0,15.5 0,0 z"
-   style="fill:#231f20" />
-	<path
-   id="_272213360"
-   inkscape:connector-curvature="0"
-   inkscape:label="椋庢満"
-   class="st10"
-   d="m 101.4,133.9 h 16.2 c 0.6,-0.6 8,-7.9 0,-15.5 h -16.2 l 0,15.5 0,0 z"
-   style="fill:#00a551" />
-	<path
-   id="_272213288"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 82.7,118 h 16.4 0.2 v 0.2 15.8 0.2 H 99.1 82.7 82.6 l 0,0 c -8.7,-8.3 0,-16.1 0,-16.1 l 0.1,-0.1 0,0 0,0 z M 99,118.3 H 82.8 c -0.6,0.6 -8,7.9 0,15.5 H 99 l 0,-15.5 0,0 z"
-   style="fill:#231f20" />
-	<path
-   id="_272213216"
-   inkscape:connector-curvature="0"
-   class="st8"
-   d="M 99,118.3 H 82.8 c -0.6,0.6 -8,7.9 0,15.5 H 99 l 0,-15.5 0,0 z"
-   style="fill:#e6e7e8" />
-	<path
-   id="_272213144"
-   inkscape:connector-curvature="0"
-   class="st15"
-   d="m 107.2,171.2 c 0,1.3 -0.3,2.6 -1,3.8 l 11.3,6.9 c -3.5,5.7 -9.7,9.5 -16.8,9.7 l -0.3,-13.3 c -1.3,0 -2.6,-0.3 -3.8,-1 l -6.9,11.4 C 84,185.2 80.1,179 80,171.9 l 13.3,-0.3 c 0,-1.3 0.3,-2.6 1,-3.8 l -11.4,-6.9 c 3.5,-5.7 9.7,-9.5 16.8,-9.7 l 0.3,13.3 c 1.3,0 2.6,0.3 3.8,1 l 6.9,-11.3 c 5.7,3.5 9.5,9.7 9.7,16.8 l -13.2,0.2 0,0 z"
-   style="fill:#414042" />
-</g>
-<g
-   id="polygon498"
-   transform="matrix(1,0,0,0.31673357,0,166.47958)">
-	<linearGradient
-   id="SVGID_3_"
-   gradientUnits="userSpaceOnUse"
-   x1="580.0376"
-   y1="255.1653"
-   x2="589.58759"
-   y2="255.1653">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop90" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop92" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop94" />
-	</linearGradient>
-	<rect
-   x="580"
-   y="205.60001"
-   class="st16"
-   width="9.6000004"
-   height="99.099998"
-   id="rect96"
-   style="fill:url(#SVGID_3_)" />
-</g>
-<rect
-   id="rect502"
-   x="1443.4"
-   y="763.70001"
-   class="st17"
-   width="411.5"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect504"
-   x="1443.4"
-   y="729.59998"
-   class="st17"
-   width="411.5"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect506"
-   x="1443.4"
-   y="695.59998"
-   class="st17"
-   width="411.5"
-   height="1"
-   style="fill:#808184" />
-<path
-   class="st18"
-   d="m 1442.4,662 v 238.4 h 413.5 V 662 h -413.5 z m 412.5,237.4 H 1443.4 V 663 l 0,0 h 411.5 v 236.4 z"
-   id="path101"
-   inkscape:connector-curvature="0"
-   style="fill:#6d6e70" />
-<rect
-   id="rect510"
-   x="1443.4"
-   y="831.79999"
-   class="st17"
-   width="411.5"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect512"
-   x="1443.4"
-   y="797.70001"
-   class="st17"
-   width="411.5"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect514"
-   x="1443.4"
-   y="865.79999"
-   class="st17"
-   width="411.5"
-   height="1"
-   style="fill:#808184" />
-<polygon
-   id="polygon516"
-   class="st19"
-   points="1443.4,637 1443.4,669.6 1587.6,669.6 1587.6,637 "
-   transform="matrix(0.85193047,0,0,1,213.72356,26)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<rect
-   id="rect518"
-   x="1567.3"
-   y="662.70001"
-   class="st17"
-   width="1"
-   height="236.7"
-   style="fill:#808184" />
-<polygon
-   id="polygon526"
-   class="st19"
-   points="1691.5,669.6 1588.2,669.6 1588.2,637 1691.5,637 "
-   transform="matrix(1.2568032,0,0,1,-428.55958,26)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<rect
-   id="rect528"
-   x="1697.5"
-   y="663"
-   class="st17"
-   width="1"
-   height="236.39999"
-   style="fill:#808184" />
-<polygon
-   id="polygon530"
-   class="st19"
-   points="1692.5,669.6 1692.5,637 1774,637 1774,669.6 "
-   transform="matrix(1.0793889,0,0,1,-128.54242,26)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<text
-   id="text532"
-   class="st4 st5 st20"
-   x="1477.8438"
-   y="684.4873"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">传输时间</text>
-
-
-
-
-
-<text
-   id="text538"
-   inkscape:label="UpdateTime2"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1503.2754"
-   y="753.34082">2000-01-01 00:00 </text>
-
-
-
-
-
-<text
-   id="text542"
-   class="st4 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:Sans;-inkscape-font-specification:Sans"
-   sodipodi:linespacing="125%"
-   x="1630.6309"
-   y="684.5459">样品编码</text>
-
-
-
-
-
-<text
-   id="text544"
-   class="st4 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:Sans;-inkscape-font-specification:Sans"
-   sodipodi:linespacing="125%"
-   x="1741.8047"
-   y="684.4541">样品类型</text>
-
-
-
-
-
-<text
-   id="text546"
-   inkscape:label="Code1"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1631.0547"
-   y="717.68073">000000000</text>
-
-
-
-
-
-<text
-   id="text548"
-   inkscape:label="Code2"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1631.0811"
-   y="753.34082">000000000</text>
-
-
-
-
-
-<text
-   id="text550"
-   inkscape:label="SamType1"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1742.418"
-   y="718.58691">------</text>
-
-
-
-
-
-<text
-   id="text552"
-   inkscape:label="SamType2"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1742.418"
-   y="753.5918">------</text>
-
-
-
-
-
-<rect
-   id="rect554"
-   x="1786"
-   y="663"
-   class="st17"
-   width="1"
-   height="236.39999"
-   style="fill:#808184" />
-<polygon
-   id="polygon556"
-   class="st19"
-   points="1775,669.6 1775,637 1854.9,637 1854.9,669.6 "
-   transform="matrix(0.84614067,0,0,1,285.39367,26)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<text
-   id="text558"
-   class="st4 st5 st20"
-   x="1789.6934"
-   y="684.49512"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">传输状态</text>
-
-
-
-
-
-<text
-   id="text560"
-   inkscape:label="Status1"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1820.3047"
-   y="718.58691">------</text>
-
-
-
-
-
-<text
-   id="text562"
-   inkscape:label="Status2"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1820.3047"
-   y="753.49323">------</text>
-
-
-
-
-
-<g
-   id="polygon568"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_4_"
-   gradientUnits="userSpaceOnUse"
-   x1="1760.791"
-   y1="141.71359"
-   x2="1771.1416"
-   y2="141.71359">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop126" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop128" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop130" />
-	</linearGradient>
-	<rect
-   x="1760.8"
-   y="122.6"
-   class="st22"
-   width="10.4"
-   height="38.299999"
-   id="rect132"
-   style="fill:url(#SVGID_4_)" />
-	<path
-   class="st2"
-   d="m 1770.7,123 v 37.5 h -9.6 V 123 h 9.6 m 0.8,-0.8 h -0.8 -9.6 -0.8 v 0.8 37.5 0.8 h 0.8 9.6 0.8 v -0.8 -37.5 -0.8 l 0,0 z"
-   id="path134"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon570"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_5_"
-   gradientUnits="userSpaceOnUse"
-   x1="1698.1777"
-   y1="92.875504"
-   x2="1698.1777"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop138" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop140" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop142" />
-	</linearGradient>
-	<rect
-   x="1664.9"
-   y="82.5"
-   class="st23"
-   width="66.5"
-   height="10.3"
-   id="rect144"
-   style="fill:url(#SVGID_5_)" />
-	<path
-   class="st2"
-   d="m 1731,82.9 v 9.5 h -65.7 v -9.5 h 65.7 m 0.8,-0.8 h -0.8 -65.7 -0.8 v 0.8 9.5 0.8 h 0.8 65.7 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path146"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<rect
-   id="rect108"
-   x="315.29999"
-   y="102.5"
-   class="st13"
-   width="6.0999999"
-   height="105.1"
-   style="fill:#58595b" />
-<rect
-   id="rect110_3-7"
-   x="322.70001"
-   y="160.10001"
-   class="st18"
-   width="16.700001"
-   height="19.700001"
-   style="fill:#6d6e70" />
-<path
-   id="path575"
-   inkscape:connector-curvature="0"
-   class="st0"
-   d="m 322.7,123.5 h 16.7 v -19.6 h -16.7 v 19.6 z m 17.4,1.4 H 322 321.3 v -0.7 -21 -0.7 h 0.7 18.1 0.7 v 0.7 21 0.7 h -0.7 z"
-   style="fill:#404041" />
-<path
-   id="path577"
-   inkscape:connector-curvature="0"
-   class="st0"
-   d="m 322.7,153.1 h 16.7 v -19.7 h -16.7 v 19.7 z m 17.4,1.4 H 322 321.3 v -0.7 -21 -0.7 h 0.7 18.1 0.7 v 0.7 21 0.7 h -0.7 z"
-   style="fill:#404041" />
-<rect
-   id="rect114"
-   x="212.60001"
-   y="102.5"
-   class="st0"
-   width="102.7"
-   height="27.5"
-   style="fill:#404041" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <linearGradient
    id="rect121_1_"
    gradientUnits="userSpaceOnUse"
@@ -938,888 +266,102 @@
    style="stop-color:#404041"
    id="stop158" />
 </linearGradient>
-<polygon
-   id="rect121"
-   class="st24"
-   points="212.6,181.6 315.3,181.6 315.3,104 212.6,104 "
-   style="fill:url(#rect121_1_)"
-   transform="translate(0,26)" />
-<rect
-   id="rect110"
-   x="322.70001"
-   y="103.9"
-   class="st18"
-   width="16.700001"
-   height="19.700001"
-   style="fill:#6d6e70" />
-<rect
-   id="rect110_3"
-   x="322.70001"
-   y="133.39999"
-   class="st18"
-   width="16.700001"
-   height="19.700001"
-   style="fill:#6d6e70" />
-<path
-   id="_272208224"
-   inkscape:connector-curvature="0"
-   class="st0"
-   d="m 322.7,206.2 h 16.7 v -19.7 h -16.7 v 19.7 z m 17.4,1.4 H 322 321.3 v -0.7 -21 -0.7 h 0.7 18.1 0.7 v 0.7 21 0.7 l -0.7,0 0,0 z"
-   style="fill:#404041" />
-<rect
-   id="rect110_4"
-   x="322.70001"
-   y="186.60001"
-   class="st18"
-   width="16.700001"
-   height="19.700001"
-   style="fill:#6d6e70" />
-<text
-   id="text213_12"
-   class="st4 st5 st6"
-   x="1519.6641"
-   y="538.2666"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">弃样工作站</text>
 
 
 
 
 
-<text
-   id="text213-4_13"
-   class="st4 st5 st6"
-   x="1539.083"
-   y="514.80029"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">弃样间</text>
 
 
 
 
 
-<g
-   id="g167"
-   transform="translate(0,26)">
-	<rect
-   id="rect11_5"
-   x="1528.3"
-   y="364.89999"
-   class="st7"
-   width="48.200001"
-   height="76.900002"
-   style="fill:#d0d2d3" />
-	<rect
-   id="rect17_6"
-   x="1576.5"
-   y="364.89999"
-   class="st12"
-   width="31.799999"
-   height="76.900002"
-   style="fill:#929497" />
-	<rect
-   id="rect19_7"
-   x="1528.3"
-   y="354.39999"
-   class="st0"
-   width="80"
-   height="10.5"
-   style="fill:#404041" />
-	<rect
-   id="rect21_8"
-   x="1541.5"
-   y="333.10001"
-   class="st0"
-   width="35"
-   height="21.4"
-   style="fill:#404041" />
-	<rect
-   id="rect25_9"
-   x="1519.7"
-   y="422.39999"
-   class="st0"
-   width="8.6000004"
-   height="10.7"
-   style="fill:#404041" />
-	<rect
-   id="rect27_10"
-   x="1519.7"
-   y="409"
-   class="st7"
-   width="8.6000004"
-   height="13.4"
-   style="fill:#d0d2d3" />
-	<rect
-   id="rect29_11"
-   x="1528.3"
-   y="441.79999"
-   class="st0"
-   width="80"
-   height="10.2"
-   style="fill:#404041" />
-	<g
-   id="g604">
-		<polygon
-   id="polygon43_14"
-   inkscape:label="寮冩牱"
-   class="st10"
-   points="1562.4,403 1555.1,403 1555.1,386.1 1549.7,386.1 1549.7,403 1542.5,403 1552.4,420.2 "
-   style="fill:#00a551">
-		</polygon>
-		<path
-   id="_272067416"
-   inkscape:connector-curvature="0"
-   class="st9"
-   d="m 1549.6,403 h -7.1 l 9.9,17.2 9.9,-17.2 h -7.1 -0.2 v -0.2 -16.7 h -5.3 v 16.7 0.2 l -0.1,0 0,0 z m -7.4,-0.4 h 7.2 v -16.7 -0.2 h 0.2 5.7 0.2 v 0.2 16.7 h 7.2 0.3 l -0.1,0.3 -10.2,17.7 -0.1,0.3 -0.1,-0.3 -10.2,-17.7 -0.1,-0.3 h 0 l 0,0 z"
-   style="fill:#231f20" />
-	</g>
-</g>
-<text
-   sodipodi:linespacing="125%"
-   style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Sans;-inkscape-font-specification:Sans"
-   y="72.005753"
-   x="999.51099"
-   class="st4 st5 st6"
-   id="text209">气动传输</text>
-
-
-
-<circle
-   inkscape:label="气动传输_状态"
-   style="fill:#00a551"
-   transform="matrix(1.4285714,0,0,1.4285714,-996.05575,-742.60141)"
-   d="m 1391.6,563.40002 c 0,6.18559 -5.0144,11.2 -11.2,11.2 -6.1856,0 -11.2,-5.01441 -11.2,-11.2 0,-6.18558 5.0144,-11.2 11.2,-11.2 6.1856,0 11.2,5.01442 11.2,11.2 z"
-   r="11.2"
-   cy="563.40002"
-   cx="1380.4"
-   class="st10"
-   sodipodi:ry="11.2"
-   sodipodi:rx="11.2"
-   sodipodi:cy="563.40002"
-   sodipodi:cx="1380.4"
-   id="_272067176" />
-
-<text
-   y="30.371845"
-   x="32.50325"
-   style="font-size:12.67660046px;fill:#ffffff;font-family:MicrosoftYaHei"
-   id="text26"
-   class="st0 st1 st7">设备就绪状态</text>
-
-
-
-<text
-   y="47.071003"
-   x="32.50325"
-   style="font-size:12.67660046px;fill:#ffffff;font-family:MicrosoftYaHei"
-   id="text29"
-   class="st0 st1 st7">设备运行状态</text>
-
-
-
-<text
-   y="63.769253"
-   x="32.50325"
-   style="font-size:12.67660046px;fill:#ffffff;font-family:MicrosoftYaHei"
-   id="text32"
-   class="st0 st1 st7">设备故障状态</text>
-
-
-
-<text
-   y="80.467506"
-   x="32.50325"
-   style="font-size:12.67660046px;fill:#ffffff;font-family:MicrosoftYaHei"
-   id="text35"
-   class="st0 st1 st7">设备停止状态</text>
-
-
-
-<ellipse
-   d="m 376.60001,56.900002 c 0,8.836556 -7.16345,16 -16,16 -8.83656,0 -16,-7.163444 -16,-16 0,-8.836556 7.16344,-16 16,-16 8.83655,0 16,7.163444 16,16 z"
-   transform="matrix(0.46875,0,0,0.46875,-149.10425,0.31713358)"
-   style="fill:#00a551"
-   ry="16"
-   rx="16"
-   cy="56.900002"
-   cx="360.60001"
-   class="st3"
-   sodipodi:ry="16"
-   sodipodi:rx="16"
-   sodipodi:cy="56.900002"
-   sodipodi:cx="360.60001"
-   inkscape:label="1号机械采样机_图例"
-   id="_125279232-1" /><ellipse
-   d="m 376.60001,56.900002 c 0,8.836556 -7.16345,16 -16,16 -8.83656,0 -16,-7.163444 -16,-16 0,-8.836556 7.16344,-16 16,-16 8.83655,0 16,7.163444 16,16 z"
-   transform="matrix(0.46875,0,0,0.46875,-149.1041,17.016124)"
-   style="fill:#ff0000"
-   ry="16"
-   rx="16"
-   cy="56.900002"
-   cx="360.60001"
-   class="st3"
-   sodipodi:ry="16"
-   sodipodi:rx="16"
-   sodipodi:cy="56.900002"
-   sodipodi:cx="360.60001"
-   inkscape:label="1号机械采样机_图例"
-   id="_125279232-1-7" /><ellipse
-   d="m 376.60001,56.900002 c 0,8.836556 -7.16345,16 -16,16 -8.83656,0 -16,-7.163444 -16,-16 0,-8.836556 7.16344,-16 16,-16 8.83655,0 16,7.163444 16,16 z"
-   transform="matrix(0.46875,0,0,0.46875,-149.1041,33.714129)"
-   style="fill:#ffff00"
-   ry="16"
-   rx="16"
-   cy="56.900002"
-   cx="360.60001"
-   class="st3"
-   sodipodi:ry="16"
-   sodipodi:rx="16"
-   sodipodi:cy="56.900002"
-   sodipodi:cx="360.60001"
-   inkscape:label="1号机械采样机_图例"
-   id="_125279232-1-4" /><ellipse
-   d="m 376.60001,56.900002 c 0,8.836556 -7.16345,16 -16,16 -8.83656,0 -16,-7.163444 -16,-16 0,-8.836556 7.16344,-16 16,-16 8.83655,0 16,7.163444 16,16 z"
-   transform="matrix(0.46875,0,0,0.46875,-149.1041,50.412124)"
-   style="fill:#808080"
-   ry="16"
-   rx="16"
-   cy="56.900002"
-   cx="360.60001"
-   class="st3"
-   sodipodi:ry="16"
-   sodipodi:rx="16"
-   sodipodi:cy="56.900002"
-   sodipodi:cx="360.60001"
-   inkscape:label="1号机械采样机_图例"
-   id="_125279232-1-0" />
-<g
-   id="polygon627"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_6_"
-   gradientUnits="userSpaceOnUse"
-   x1="1565.2681"
-   y1="92.875504"
-   x2="1565.2681"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop184" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop186" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop188" />
-	</linearGradient>
-	<rect
-   x="1496.6"
-   y="82.5"
-   class="st25"
-   width="137.3"
-   height="10.3"
-   id="rect190"
-   style="fill:url(#SVGID_6_)" />
-	<path
-   class="st2"
-   d="m 1633.5,82.9 v 9.5 H 1497 v -9.5 h 136.5 m 0.8,-0.8 h -0.8 -136.5 -0.8 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path192"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon629"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_7_"
-   gradientUnits="userSpaceOnUse"
-   x1="1396.9438"
-   y1="92.875504"
-   x2="1396.9438"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop196" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop198" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop200" />
-	</linearGradient>
-	<rect
-   x="1328.3"
-   y="82.5"
-   class="st26"
-   width="137.3"
-   height="10.3"
-   id="rect202"
-   style="fill:url(#SVGID_7_)" />
-	<path
-   class="st2"
-   d="m 1465.2,82.9 v 9.5 h -136.5 v -9.5 h 136.5 m 0.8,-0.8 h -0.8 -136.5 -0.8 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path204"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon631"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_8_"
-   gradientUnits="userSpaceOnUse"
-   x1="1228.6089"
-   y1="92.875504"
-   x2="1228.6089"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop208" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop210" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop212" />
-	</linearGradient>
-	<rect
-   x="1159.9"
-   y="82.5"
-   class="st27"
-   width="137.3"
-   height="10.3"
-   id="rect214"
-   style="fill:url(#SVGID_8_)" />
-	<path
-   class="st2"
-   d="m 1296.9,82.9 v 9.5 h -136.5 v -9.5 h 136.5 m 0.8,-0.8 h -0.8 -136.5 -0.8 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path216"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon633"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_9_"
-   gradientUnits="userSpaceOnUse"
-   x1="1060.2856"
-   y1="92.875504"
-   x2="1060.2856"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop220" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop222" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop224" />
-	</linearGradient>
-	<rect
-   x="991.59998"
-   y="82.5"
-   class="st28"
-   width="137.3"
-   height="10.3"
-   id="rect226"
-   style="fill:url(#SVGID_9_)" />
-	<path
-   class="st2"
-   d="m 1128.6,82.9 v 9.5 H 992 v -9.5 h 136.6 m 0.8,-0.8 h -0.8 -136.6 -0.8 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0.1,0 z"
-   id="path228"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon635"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_10_"
-   gradientUnits="userSpaceOnUse"
-   x1="891.95801"
-   y1="92.875504"
-   x2="891.95801"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop232" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop234" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop236" />
-	</linearGradient>
-	<rect
-   x="823.29999"
-   y="82.5"
-   class="st29"
-   width="137.3"
-   height="10.3"
-   id="rect238"
-   style="fill:url(#SVGID_10_)" />
-	<path
-   class="st2"
-   d="m 960.2,82.9 v 9.5 H 823.7 v -9.5 h 136.5 m 0.8,-0.8 h -0.8 -136.5 -0.8 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path240"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon637"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_11_"
-   gradientUnits="userSpaceOnUse"
-   x1="723.62921"
-   y1="92.875504"
-   x2="723.62921"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop244" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop246" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop248" />
-	</linearGradient>
-	<rect
-   x="655"
-   y="82.5"
-   class="st30"
-   width="137.3"
-   height="10.3"
-   id="rect250"
-   style="fill:url(#SVGID_11_)" />
-	<path
-   class="st2"
-   d="m 791.9,82.9 v 9.5 H 655.4 v -9.5 h 136.5 m 0.8,-0.8 h -0.8 -136.5 -0.8 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path252"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon639"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_12_"
-   gradientUnits="userSpaceOnUse"
-   x1="555.30249"
-   y1="92.875504"
-   x2="555.30249"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop256" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop258" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop260" />
-	</linearGradient>
-	<rect
-   x="486.60001"
-   y="82.5"
-   class="st31"
-   width="137.3"
-   height="10.3"
-   id="rect262"
-   style="fill:url(#SVGID_12_)" />
-	<path
-   class="st2"
-   d="m 623.6,82.9 v 9.5 H 487 v -9.5 h 136.6 m 0.8,-0.8 H 623.6 487 486.2 v 0.8 9.5 0.8 h 0.8 136.5 0.8 v -0.8 -9.5 -0.8 l 0.1,0 z"
-   id="path264"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="polygon641"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_13_"
-   gradientUnits="userSpaceOnUse"
-   x1="398.01291"
-   y1="92.875504"
-   x2="398.01291"
-   y2="82.526901">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop268" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop270" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop272" />
-	</linearGradient>
-	<rect
-   x="340.39999"
-   y="82.5"
-   class="st32"
-   width="115.3"
-   height="10.3"
-   id="rect274"
-   style="fill:url(#SVGID_13_)" />
-	<path
-   class="st2"
-   d="m 455.2,82.9 v 9.5 H 340.8 V 82.9 H 455.2 M 456,82.1 H 455.2 340.8 340 v 0.8 9.5 0.8 h 0.8 114.5 0.8 v -0.8 -9.5 -0.8 l -0.1,0 z"
-   id="path276"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="g278"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_14_"
-   gradientUnits="userSpaceOnUse"
-   x1="932.43213"
-   y1="122.4468"
-   x2="932.43213"
-   y2="112.0967">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop281" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop283" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop285" />
-	</linearGradient>
-	<rect
-   x="340.39999"
-   y="112.1"
-   class="st33"
-   width="1184.1"
-   height="10.4"
-   id="rect287"
-   style="fill:url(#SVGID_14_)" />
-	<path
-   class="st2"
-   d="m 1524.1,112.5 v 9.5 h -139.9 -0.5 -222.8 -0.5 H 960.2 952.3 791.9 781.6 623.6 610.9 455.2 451 340.8 v -9.5 h 110.3 4.2 155.6 12.7 158 10.3 160.5 7.9 200.1 0.5 222.8 0.5 139.9 m 0.8,-0.8 h -0.8 -139.9 -0.5 -222.8 -0.5 H 960.2 952.3 791.9 781.6 623.6 610.9 455.2 451 340.8 340 v 0.8 9.5 0.8 h 0.8 110.3 4.2 155.6 12.7 158 10.3 160.5 7.9 200.1 0.5 222.8 0.5 139.9 0.8 v -0.8 -9.5 -0.8 l 0,0 z"
-   id="path289"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="g291"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_15_"
-   gradientUnits="userSpaceOnUse"
-   x1="841.43768"
-   y1="149"
-   x2="841.43768"
-   y2="138.6499">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop294" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop296" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop298" />
-	</linearGradient>
-	<rect
-   x="344"
-   y="138.60001"
-   class="st34"
-   width="994.90002"
-   height="10.3"
-   id="rect300"
-   style="fill:url(#SVGID_15_)" />
-	<path
-   class="st2"
-   d="m 1338.5,139 v 9.6 h -178.2 v 0 H 1006.5 992 827.9 823.7 666.3 655.4 504 487 344.4 V 139 h 142.6 17 151.3 10.9 157.4 4.2 164.2 14.6 153.8 5.4 172.7 m 0.8,-0.7 h -0.8 -172.7 -5.4 H 1006.6 992 827.9 823.7 666.3 655.4 504 487 344.4 343.6 v 0.8 9.5 0.8 h 0.8 142.6 17 151.3 10.9 157.4 4.2 164.2 14.6 153 l 0.8,0 h 178.2 0.8 v -0.8 -9.6 -0.7 l -0.1,0 z"
-   id="path302"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<g
-   id="g304"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_16_"
-   gradientUnits="userSpaceOnUse"
-   x1="445.6322"
-   y1="175.1501"
-   x2="445.6322"
-   y2="165.6001">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop307" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop309" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop311" />
-	</linearGradient>
-	<polygon
-   class="st35"
-   points="451.1,175.2 550.5,175.2 550.5,165.6 455.2,165.6 451.1,165.6 340.8,165.6 340.8,175.1 451.1,175.1 "
-   id="polygon313"
-   style="fill:url(#SVGID_16_)" />
-</g>
-<g
-   id="_272064056"
-   transform="matrix(1.0611111,0,0,1.0611111,-1.7184629e-5,-7.05161)">
-	<text
-   id="text209_15"
-   transform="matrix(0.9424,0,0,0.9424,788.1489,237.1267)"
-   class="st4 st5 st6"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">已存</text>
 
 
 
 
 
-	<rect
-   id="_272064080"
-   x="832.70001"
-   y="221.39999"
-   class="st10"
-   width="18"
-   height="18"
-   style="fill:#00a551" />
-</g>
-<text
-   id="text209_16"
-   class="st4 st5 st6"
-   x="953.61462"
-   y="244.5661"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">超期</text>
 
 
 
 
 
-<rect
-   id="_272063864"
-   x="1000.9"
-   y="229"
-   class="st36"
-   width="19.1"
-   height="19.1"
-   style="fill:#ec1c24" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <path
    class="st0"
-   d="m 1183.9,897.9 v -0.2 -2.8 h 0 l -0.2,-589.8 v -39.6 0 -1.5 H 77.3 v 53.4 2.3 0 575.2 3 9.5 h 1106.6 v -9.5 l 0,0 z M 87.6,319.7 h 1086 V 894.9 H 87.6 V 319.7 z"
+   d="m 1911.2799,907.43176 v -0.28494 -3.98919 0 l -0.3448,-840.294171 v -56.4185195 0 -2.1370648 H 3.0800149 v 76.0795283 3.276846 0 819.493381 4.27413 13.53475 H 1911.2799 Z M 20.841138,83.664249 H 1893.5189 V 903.15763 H 20.841138 Z"
    id="path320"
    inkscape:connector-curvature="0"
-   style="fill:#404041" />
-<polygon
-   id="polygon1384"
-   class="st19"
-   points="1218.5,637.4 1218.5,667.1 1358,667.1 1358,637.4 "
-   transform="matrix(1,0,0,1.0924266,0,-32.912695)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<polygon
-   id="polygon1386"
-   class="st19"
-   points="1218.5,668.1 1218.5,697.7 1358,697.7 1358,668.1 "
-   transform="matrix(1,0,0,1.1545647,0,-75.43463)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<polygon
-   id="polygon1388"
-   class="st19"
-   points="1358,728.4 1358,698.7 1218.5,698.7 1218.5,728.4 "
-   transform="matrix(1,0,0,1.1232354,0,-54.104594)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<polygon
-   id="polygon1390"
-   class="st19"
-   points="1218.5,759.1 1358,759.1 1358,729.4 1218.5,729.4 "
-   transform="matrix(1,0,0,1.1232355,0,-54.632988)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<polygon
-   id="polygon1392"
-   class="st19"
-   points="1358,760.1 1218.5,760.1 1218.5,789.8 1358,789.8 "
-   transform="matrix(1,0,0,1.1307109,-0.16175475,-61.309491)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-
-<polygon
-   id="polygon1396"
-   class="st19"
-   points="1358,817.3 1218.5,817.3 1218.5,842.7 1358,842.7 "
-   transform="matrix(1,0,0,1.3566246,0,-276.52758)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<polygon
-   id="polygon1398"
-   class="st19"
-   points="1358,873.4 1358,843.7 1218.5,843.7 1218.5,873.4 "
-   transform="matrix(1,0,0,1.1089258,0,-69.135755)"
-   style="fill:#26a9e0;fill-opacity:0.12939998" />
-<rect
-   id="rect1400"
-   x="1218.7288"
-   y="763.77899"
-   class="st17"
-   width="214.7"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect1402"
-   x="1218.5"
-   y="729.64764"
-   class="st17"
-   width="214.7"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect1404"
-   x="1218.5"
-   y="695.38751"
-   class="st17"
-   width="214.7"
-   height="1"
-   style="fill:#808184" />
-<path
-   class="st18"
-   d="m 1217.5,662.4 0,0 v 238 h 216.7 v -238 h -216.7 z m 215.7,237 h -214.7 v -236 h 0 214.7 v 236 z"
-   id="path333"
-   inkscape:connector-curvature="0"
-   style="fill:#6d6e70" />
-<rect
-   id="rect1408"
-   x="1218.5"
-   y="831.49017"
-   class="st17"
-   width="214.7"
-   height="1"
-   style="fill:#808184" />
-<rect
-   id="rect1410"
-   x="1218.6617"
-   y="797.55511"
-   class="st17"
-   width="214.7"
-   height="1"
-   style="fill:#808184" />
-
-<rect
-   id="rect1414"
-   x="1358"
-   y="663.40002"
-   class="st17"
-   width="1"
-   height="236"
-   style="fill:#808184" />
-<text
-   id="text1416"
-   class="st4 st5 st20"
-   x="1265.5791"
-   y="682.78027"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">总仓位</text>
+   style="fill:#404041;stroke-width:1.56741" />
 
 
 
 
 
-<text
-   id="text1418"
-   class="st4 st5 st20"
-   x="1259.1653"
-   y="751.04681"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">已存仓位</text>
 
 
 
 
 
-<text
-   id="text1420"
-   class="st4 st5 st20"
-   x="1258.0215"
-   y="717.45801"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">未存仓位</text>
 
 
 
 
 
-<text
-   id="text1426"
-   inkscape:label="已存仓位"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1397.9631"
-   y="751.04681">0</text>
 
 
 
 
 
-<text
-   id="text1428"
-   inkscape:label="未存仓位"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1396.8193"
-   y="717.45697">0</text>
 
 
 
 
 
-<text
-   id="text1430"
-   class="st4 st5 st20"
-   x="1265.5781"
-   y="786.80658"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">存样率</text>
 
 
 
 
 
-<text
-   id="text1434"
-   class="st4 st5 st37"
-   x="1248.3721"
-   y="819.33008"
-   style="font-size:14.60589981px;fill:#ffffff;font-family:MicrosoftYaHei">6mm全水样</text>
 
 
 
@@ -1829,44 +371,16 @@
 
 
 
-<text
-   id="text1440"
-   class="st4 st5 st20"
-   x="1246.9854"
-   y="852.53809"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">3mm备查样</text>
 
 
 
 
 
-<text
-   id="text1444"
-   class="st4 st5 st20"
-   x="1240.7344"
-   y="887.11328"
-   style="font-size:15.11380005px;fill:#ffffff;font-family:MicrosoftYaHei">0.2mm备查样</text>
 
 
 
 
 
-<rect
-   id="rect1448"
-   x="1218.2827"
-   y="865.7735"
-   class="st17"
-   width="216.31755"
-   height="1"
-   style="fill:#808184" />
-<text
-   id="text1450"
-   inkscape:label="存样率"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1398.0967"
-   y="786.80762">0%</text>
 
 
 
@@ -1876,599 +390,212 @@
 
 
 
-<text
-   id="text1458"
-   inkscape:label="3mm备查样"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1396.8184"
-   y="853.34619">0</text>
 
 
 
 
 
-<text
-   id="text1460"
-   inkscape:label="02mm备查样"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1396.8184"
-   y="887.11432">0</text>
 
 
 
 
 
-<text
-   id="text538-1"
-   inkscape:label="UpdateTime1"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1503.7451"
-   y="718.18951">2000-01-01 00:00</text>
 
 
 
 
 
-<text
-   id="text538-7"
-   inkscape:label="UpdateTime3"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1504.6777"
-   y="786.66309">2000-01-01 00:00</text>
 
 
 
 
 
-<text
-   id="text548-4"
-   inkscape:label="Code3"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1631.6563"
-   y="786.66309">000000000</text>
 
 
 
 
 
-<text
-   id="text552-0"
-   inkscape:label="SamType3"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1742.418"
-   y="786.91498">------</text>
 
 
 
 
 
-<text
-   id="text562-9"
-   inkscape:label="Status3"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1820.3047"
-   y="786.81641">------</text>
 
 
 
 
 
-<text
-   id="text538-4"
-   inkscape:label="UpdateTime4"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1505.7012"
-   y="821.15039">2000-01-01 00:00</text>
 
 
 
 
 
-<text
-   id="text548-8"
-   inkscape:label="Code4"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1632.6807"
-   y="821.15039">000000000</text>
 
 
 
 
 
-<text
-   id="text552-8"
-   inkscape:label="SamType4"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1742.417"
-   y="821.40228">------</text>
 
 
 
 
 
-<text
-   id="text562-2"
-   inkscape:label="Status4"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1820.3057"
-   y="821.30371">------</text>
 
 
 
 
 
-<text
-   id="text538-45"
-   inkscape:label="UpdateTime5"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1505.7012"
-   y="854.61432">2000-01-01 00:00</text>
 
 
 
 
 
-<text
-   id="text548-5"
-   inkscape:label="Code5"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1632.6807"
-   y="854.61432">000000000</text>
 
 
 
 
 
-<text
-   id="text552-1"
-   inkscape:label="SamType5"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1742.417"
-   y="854.86517">------</text>
 
 
 
 
 
-<text
-   id="text562-7"
-   inkscape:label="Status5"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1820.3057"
-   y="854.7666">------</text>
 
 
 
 
 
-<text
-   id="text538-11"
-   inkscape:label="UpdateTime6"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1505.1895"
-   y="888.68158">2000-01-01 00:00</text>
 
 
 
 
 
-<text
-   id="text548-52"
-   inkscape:label="Code6"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1632.1689"
-   y="888.68158">000000000</text>
 
 
 
 
 
-<text
-   id="text552-7"
-   inkscape:label="SamType6"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1742.418"
-   y="888.93262">------</text>
 
 
 
 
 
-<text
-   id="text562-6"
-   inkscape:label="Status6"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1820.3047"
-   y="888.83502">------</text>
 
 
 
 
 
-<text
-   id="text1426-1"
-   inkscape:label="总仓位"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1396.8193"
-   y="682.78131">0</text>
 
 
 
 
 
-<text
-   id="text1426-4"
-   inkscape:label="6mm全水样"
-   sodipodi:linespacing="125%"
-   class="st21 st5 st20"
-   style="font-size:15.11380005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;enable-background:new;font-family:Sans;-inkscape-font-specification:Sans"
-   x="1396.8184"
-   y="819.4834">0</text>
 
 
 
 
 
-<path
-   id="path582"
-   inkscape:connector-curvature="0"
-   inkscape:label="涓夐」杞崲鍣"
-   class="st0"
-   d="M 201.3,179 H 343 V 160.6 H 201.3 l 0,18.4 0,0 z m 142.4,1.4 h -143.1 -0.7 v -0.7 -19.8 -0.7 h 0.7 143.1 0.7 v 0.7 19.8 0.7 h -0.7 z"
-   style="fill:#404041" />
-<rect
-   id="rect172"
-   x="201.2"
-   y="160.60001"
-   inkscape:label="涓夐」杞崲鍣"
-   class="st7"
-   width="141.7"
-   height="18.4"
-   style="fill:#d0d2d3">
-</rect>
-<text
-   id="text170"
-   inkscape:label="c3"
-   class="st38 st5 st39"
-   x="327.39279"
-   y="174.82291"
-   style="font-size:16.37059975px;fill:#ee4036;enable-background:new;font-family:MicrosoftYaHei">3</text>
 
 
 
 
 
-<text
-   id="text174"
-   inkscape:label="c2"
-   class="st21 st5 st39"
-   x="326.81451"
-   y="149.56729"
-   style="font-size:16.37059975px;fill:#ffffff;enable-background:new;font-family:MicrosoftYaHei">2</text>
 
 
 
 
 
-<text
-   id="text164"
-   inkscape:label="c1"
-   class="st21 st5 st39"
-   x="326.75299"
-   y="120.026"
-   style="font-size:16.37059975px;fill:#ffffff;enable-background:new;font-family:MicrosoftYaHei">1</text>
 
 
 
 
 
-<text
-   id="text166"
-   class="st4 st5 st39"
-   x="202.4879"
-   y="175.83749"
-   style="font-size:16.37059975px;fill:#ffffff;font-family:MicrosoftYaHei">0</text>
 
 
 
 
 
-<g
-   id="polygon568-7"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_17_"
-   gradientUnits="userSpaceOnUse"
-   x1="1760.791"
-   y1="255.4951"
-   x2="1771.1416"
-   y2="255.4951">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop381" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop383" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop385" />
-	</linearGradient>
-	<rect
-   x="1760.8"
-   y="191.89999"
-   class="st40"
-   width="10.4"
-   height="127.3"
-   id="rect387"
-   style="fill:url(#SVGID_17_)" />
-	<path
-   class="st2"
-   d="m 1770.7,192.3 v 126.5 h -9.6 V 192.3 h 9.6 m 0.8,-0.8 h -0.8 -9.6 -0.8 v 0.8 126.5 0.8 h 0.8 9.6 0.8 v -0.8 -126.5 -0.8 l 0,0 z"
-   id="path389"
-   inkscape:connector-curvature="0"
-   style="fill:#404040" />
-</g>
-<text
-   class="st4 st5 st6"
-   id="text391"
-   x="1069.4277"
-   y="244.56599"
-   style="font-size:19.89539909px;fill:#ffffff;font-family:MicrosoftYaHei">未存样</text>
 
 
 
 
 
-<rect
-   id="_272063864-4"
-   x="1136.9"
-   y="229"
-   class="st3"
-   width="19.1"
-   height="19.1"
-   style="fill:#a6a8ab" />
-<text
-   id="text168"
-   inkscape:label="c4"
-   class="st21 st5 st39"
-   x="326.54919"
-   y="202.5667"
-   style="font-size:16.37059975px;fill:#ffffff;enable-background:new;font-family:MicrosoftYaHei">4</text>
 
 
 
 
 
-<path
-   id="path611"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣6"
-   class="st7"
-   d="m 487,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.6,0 14.2,0 31.8,0 z m -18.7,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 0 l -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 V 108.6 H 470 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.8,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path613"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣7"
-   class="st7"
-   d="m 655.4,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.5,0 14.1,0 31.8,0 z m -18.8,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 0 l -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 v -10.3 h -8.9 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.9,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path615"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣8"
-   class="st7"
-   d="m 823.7,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.5,0 14.1,0 31.8,0 z m -18.8,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 l 0,0 -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 v -10.3 h -8.9 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.9,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path617"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣9"
-   class="st7"
-   d="m 992,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.6,0 14.1,0 31.8,0 z m -18.7,2.7 0,0 h 1.7 10.6 v 13.7 H 975 973.3 l 0,0 -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 V 108.6 H 975 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.8,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path619"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣A"
-   class="st7"
-   d="m 1160.3,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.6,0 14.2,0 31.8,0 z m -18.7,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 l 0,0 -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 v -10.3 h -8.9 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.9,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path621"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣B"
-   class="st7"
-   d="m 1328.7,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.5,0 14.1,0 31.8,0 z m -18.8,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 l 0,0 -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 v -10.3 h -8.9 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.9,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path623"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣C"
-   class="st7"
-   d="m 1497,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.5,0 14.1,0 31.8,0 z m -18.8,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 l 0,0 -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 v -10.3 h -8.9 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.9,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path625"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣D"
-   class="st7"
-   d="m 1665.3,104.2 v 19.1 c -17.7,0 -14.3,0 -31.8,0 v -19.1 c 17.6,0 14.1,0 31.8,0 z m -18.7,2.7 0,0 h 1.7 10.6 v 13.7 h -10.6 -1.7 l 0,0 -8,-6.8 8,-6.9 0,0 z m 1.7,1.7 v 10.3 h 8.9 v -10.3 h -8.9 z m -1.7,0.5 -5.4,4.6 5.4,4.6 v -9.2 z m 16.8,-3.1 h -28 c 0,4.8 0,10.7 0,15.3 h 28 c 0,-5.6 0,-9.5 0,-15.3 z"
-   style="fill:#d0d2d3" />
-<path
-   id="path625-1"
-   inkscape:connector-curvature="0"
-   inkscape:label="璺姴鎺㈡祴鍣E"
-   class="st7"
-   d="m 1756.4,218.2 h 19.1 c 0,-17.7 0,-14.3 0,-31.8 h -19.1 c 0,17.5 0,14.1 0,31.8 z m 2.7,-18.8 0,0 v 1.7 10.6 h 13.7 v -10.6 -1.7 l 0,0 -6.8,-8 -6.9,8 z m 1.7,1.7 h 10.3 v 8.9 h -10.3 v -8.9 z m 0.6,-1.7 4.6,-5.4 4.6,5.4 h -9.2 z m -3.1,16.9 v -28 c 4.8,0 10.7,0 15.3,0 v 28 c -5.6,0 -9.5,0 -15.3,0 z"
-   style="fill:#d0d2d3" />
-<g
-   id="path500"
-   inkscape:connector-curvature="0"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_18_"
-   gradientUnits="userSpaceOnUse"
-   x1="561.54529"
-   y1="194.0621"
-   x2="585.17932"
-   y2="169.68491">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop406" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop408" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop410" />
-	</linearGradient>
-	<path
-   class="st41"
-   d="m 549.9,165.6 c 4.6,0 39.7,0.9 39.7,40 H 580 c 0,-31.9 -30.1,-30.5 -30.2,-30.5 v -9.5 l 0.1,0 z"
-   id="path412"
-   style="fill:url(#SVGID_18_)"
-   inkscape:connector-curvature="0" />
-</g>
-<g
-   id="path500_1_"
-   inkscape:connector-curvature="0"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_19_"
-   gradientUnits="userSpaceOnUse"
-   x1="1349.6245"
-   y1="167.51199"
-   x2="1373.2585"
-   y2="143.1348">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop416" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop418" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop420" />
-	</linearGradient>
-	<path
-   class="st42"
-   d="m 1338,139 c 4.6,0 39.7,0.9 39.7,40 h -9.6 c 0,-31.9 -30.1,-30.5 -30.2,-30.5 V 139 l 0.1,0 z"
-   id="path422"
-   style="fill:url(#SVGID_19_)"
-   inkscape:connector-curvature="0" />
-</g>
-<g
-   id="path500_3_"
-   inkscape:connector-curvature="0"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_20_"
-   gradientUnits="userSpaceOnUse"
-   x1="1535.4457"
-   y1="140.96021"
-   x2="1559.0797"
-   y2="116.583">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop426" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop428" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop430" />
-	</linearGradient>
-	<path
-   class="st43"
-   d="m 1523.8,112.5 c 4.6,0 39.7,0.9 39.7,40 h -9.6 c 0,-31.9 -30.1,-30.5 -30.2,-30.5 v -9.5 l 0.1,0 z"
-   id="path432"
-   style="fill:url(#SVGID_20_)"
-   inkscape:connector-curvature="0" />
-</g>
-<g
-   id="path500_5_"
-   inkscape:connector-curvature="0"
-   transform="translate(0,26)">
-	<linearGradient
-   id="SVGID_21_"
-   gradientUnits="userSpaceOnUse"
-   x1="1742.6992"
-   y1="111.3902"
-   x2="1766.3333"
-   y2="87.013">
-		<stop
-   offset="0"
-   style="stop-color:#969696"
-   id="stop436" />
-		<stop
-   offset="0.502"
-   style="stop-color:#DCDCDC"
-   id="stop438" />
-		<stop
-   offset="1"
-   style="stop-color:#969696"
-   id="stop440" />
-	</linearGradient>
-	<path
-   class="st44"
-   d="m 1731,82.9 c 4.6,0 39.7,0.9 39.7,40 h -9.6 c 0,-31.9 -30.1,-30.5 -30.2,-30.5 v -9.5 l 0.1,0 z"
-   id="path442"
-   style="fill:url(#SVGID_21_)"
-   inkscape:connector-curvature="0" />
-</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2733,23 +860,52 @@
 
 <circle
    inkscape:label="全自动存样柜_状态"
-   style="fill:#00a551"
-   transform="matrix(1.4285714,0,0,1.4285714,-1468.5197,-511.55009)"
-   d="m 1391.6,563.40002 c 0,6.18559 -5.0144,11.2 -11.2,11.2 -6.1856,0 -11.2,-5.01441 -11.2,-11.2 0,-6.18558 5.0144,-11.2 11.2,-11.2 6.1856,0 11.2,5.01442 11.2,11.2 z"
-   r="11.2"
-   cy="563.40002"
-   cx="1380.4"
+   style="fill:#00a551;stroke-width:1.42857"
+   r="15.999999"
+   cy="47.477955"
+   cx="898.90027"
    class="st10"
-   sodipodi:ry="11.2"
-   sodipodi:rx="11.2"
-   sodipodi:cy="563.40002"
-   sodipodi:cx="1380.4"
    id="_272067176-7" /><text
-   sodipodi:linespacing="125%"
-   style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#ffffff;font-family:STSong;-inkscape-font-specification:STSong"
-   y="303.07269"
-   x="531.28247"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:0%;font-family:STSong;-inkscape-font-specification:STSong;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="57.24358"
+   x="926.70245"
    class="st4 st5 st6"
    id="text209-1">智能存样柜</text>
 
-</svg>
+<text
+   y="62.680912"
+   x="1548.4403"
+   style="font-size:19.8952px;line-height:0%;font-family:MicrosoftYaHei;fill:#ffffff;stroke-width:0.999991"
+   class="st4 st5 st6"
+   id="text209_15">小瓶</text><rect
+   style="fill:#0000ff;stroke-width:1.06111;fill-opacity:1"
+   height="19.1"
+   width="19.1"
+   class="st10"
+   y="45.99313"
+   x="1595.714"
+   id="_272064080" /><text
+   id="text209_16"
+   class="st4 st5 st6"
+   x="1665.7415"
+   y="62.680859"
+   style="font-size:19.8954px;line-height:0%;font-family:MicrosoftYaHei;fill:#ffffff">中瓶</text><rect
+   id="_272063864"
+   x="1713.0269"
+   y="47.11475"
+   class="st36"
+   width="19.1"
+   height="19.1"
+   style="fill:#800000" /><text
+   class="st4 st5 st6"
+   id="text391"
+   x="1781.5546"
+   y="62.680744"
+   style="font-size:19.8954px;line-height:0%;font-family:MicrosoftYaHei;fill:#ffffff">大瓶</text><rect
+   id="_272063864-4"
+   x="1830.2689"
+   y="47.11475"
+   class="st3"
+   width="19.1"
+   height="19.1"
+   style="fill:#2b1100" /></svg>

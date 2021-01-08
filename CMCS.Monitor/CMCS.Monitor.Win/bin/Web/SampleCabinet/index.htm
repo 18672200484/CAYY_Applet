@@ -24,6 +24,7 @@
         function LoadSamInfo(datas) {
             tempboxdatas = datas;
             reloadBox();
+             //$('#sambox').html(datas);
         }
 
         // 改变颜色
@@ -42,19 +43,144 @@
             //            var g = 0 ;
             var temp = "";
 
-            for (var i = 0; i < 12; i++) {
-                temp += "<div class='guad-parent'>";
-                for (var j = 0; j < 20; j++) {
-                    temp += "<div class='guad_wc' onclick='showBoxDetail(" + i + ",this)'>A0101</div>";
+             temp += "<div class='guad-parent2'>";
+            //左边
+            for (var i = 20; i >0; i--) {
+               
+                if (i % 2 == 1) {
+                     temp += "<div class='guad-parent1'>";
+                    for (var j = 49; j > 0; j--) {
+                        var bolt = tempboxdatas.find(a => a.Name == ("2-" + i + "-" + j));
+                        if (bolt != null) {
+                            if (bolt.Code != ""&&bolt.Code != null) {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                }
+                            } else {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp'></div>";
+                                }else if (bolt.Type == '空位') {
+                                    temp += "<div class='guad_kw'></div>";
+                                }
+                            }
+                        } else {
+                            temp += "<div class='guad_my'></div>";
+                        }
+                    }
+                }
+                else
+                {
+                     temp += "<div class='guad-parent'>";
+                    for (var j = 50; j > 0; j--) {
+                        var bolt = tempboxdatas.find(a => a.Name == ("2-" + i + "-" + j));
+                        if (bolt != null) {
+                           if (bolt.Code != ""&&bolt.Code != null) {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                }
+                            } else {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp'></div>";
+                                }else if (bolt.Type == '空位') {
+                                    temp += "<div class='guad_kw'></div>";
+                                }
+                            }
+                        } else {
+                            temp += "<div class='guad_my'></div>";
+                        }
+                    }
                 }
                 temp += "</div>";
             }
+
+             temp += "</div><div class='guad-parent2'>";
+            //右边
+            for (var i = 1; i <=20; i++) {
+               
+                if (i % 2 == 1) {
+                     temp += "<div class='guad-parent1'>";
+                    for (var j = 49; j > 0; j--) {
+                        var bolt = tempboxdatas.find(a => a.Name == ("1-" + i + "-" + j));
+                        if (bolt != null) {
+                            if (bolt.Code != ""&&bolt.Code != null) {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                }
+                            } else {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp'></div>";
+                                }else if (bolt.Type == '空位') {
+                                    temp += "<div class='guad_kw'></div>";
+                                }
+                            }
+                        } else {
+                            temp += "<div class='guad_my'></div>";
+                        }
+                    }
+                }
+                else
+                {
+                     temp += "<div class='guad-parent'>";
+                    for (var j = 50; j > 0; j--) {
+                        var bolt = tempboxdatas.find(a => a.Name == ("1-" + i + "-" + j));
+                        if (bolt != null) {
+                            if (bolt.Code != ""&&bolt.Code != null) {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp_yp' onclick='showBoxDetail(" + bolt.Code + ",this)'></div>";
+                                } 
+                            } else {
+                                if (bolt.Type == '小瓶') {
+                                    temp += "<div class='guad_xp'></div>";
+                                } else if (bolt.Type == '中瓶') {
+                                    temp += "<div class='guad_zp'></div>";
+                                } else if (bolt.Type == '大瓶') {
+                                    temp += "<div class='guad_dp'></div>";
+                                }else if (bolt.Type == '空位') {
+                                    temp += "<div class='guad_kw'></div>";
+                                }
+                            }
+                        } else {
+                            temp += "<div class='guad_my'></div>";
+                        }
+                    }
+                }
+                temp += "</div>";
+            }
+            temp += "</div>";
 
             $('#sambox').html(temp);
         }
 
         function showBoxDetail(number, $this) {
-            layer.tips('已存：2', $($this), {
+            layer.tips('样品编码：'+number, $($this), {
                 tips: [3, '#00a551'],
                 time: 1000
             });
@@ -246,41 +372,86 @@
         }
 
         .guad-parent {
-            float: left;
-            width: 270px;
-            height: 190px;
+            clear:both;
+            /*width: 270px;*/
+            /*height: 15px;*/
             /*border: red 1px solid;*/
-            background-color: #d0d2d3;
-            margin: 0px 1px 1px 0px;
+            /*background-color: #d0d2d3;
+            margin: 0px 1px 1px 0px;*/
+            margin-left:1px;
+        }
+         .guad-parent1 {
+            clear:both;
+            margin-left:30px;
         }
 
-        .guad_yc, .guad_wc, .guad_cq {
-            width: 30px;
-            height: 30px;
+          .guad-parent2 {
+            margin-left:400px;
+            margin-top:50px;
+        }
+
+
+        .guad_xp, .guad_zp, .guad_dp,.guad_wx,.guad_my,.guad_xp_yp,.guad_zp_yp,.guad_dp_yp,.guad_kw {
+            width: 12px;
+            height: 12px;
             border-radius: 30px;
             float: left;
-            margin: 5px 18px 2px 18px;
+            margin: 1px 3px 1px 3px;
             cursor: pointer;
             font-size: 6px;
             line-height: 30px;
+            
         }
 
-        .guad_wc {
-            background-color: #a6a8ab;
+        .guad_xp {
+            background-color: White;
+            border: 1px solid blue;
         }
 
-        .guad_yc {
-            background-color: #00a551;
+        .guad_zp {
+            background-color: White;
+            border: 1px solid brown;
         }
 
-        .guad_cq {
-            background-color: #ec1c24;
+        .guad_dp {
+            background-color: White;
+            border: 1px solid black;
+        }
+
+         .guad_kw {
+            background-color: White;
+            border: 1px solid red;
+        }
+
+        .guad_wx {
+            background-color: White;
+            border: 1px solid red;
+        }
+
+        .guad_my {
+            background-color: White;
+            border: 1px solid White;
+        }
+
+        .guad_xp_yp {
+            background-color: black;
+            border: 1px solid blue;
+        }
+
+        .guad_zp_yp {
+            background-color: black;
+            border: 1px solid brown;
+        }
+
+        .guad_dp_yp {
+            background-color: black;
+            border: 1px solid black;
         }
     </style>
 </head>
 <body onload="initpage()" style="background-color: #231F20;" onselectstart="return false;">
     <div class="div-root" id="divCanvas">
-        <div id="sambox" style="width: 1090px;height: 583px;background-color:#404041;position: absolute;top: 318px;left: 87px;">
+        <div id="sambox" style="width: 1840px;height: 800px;background-color:White;position: absolute;top: 95px;left: 38px;">
         </div>
         <embed id="svgCanvas1" src="Resources/AutoCupboardPneumaticTransfer.svg" type="image/svg+xml" />
     </div>

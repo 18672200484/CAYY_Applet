@@ -39,6 +39,7 @@ namespace CMCS.Monitor.Win.Frms
             InitializeComponent();
         }
 
+       
         /// <summary>
         /// 窗体初始化
         /// </summary>
