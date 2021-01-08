@@ -165,7 +165,6 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <returns></returns>
 		public static bool CarSpot2Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
 		{
-			//CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
 			if (trainPass == null) return false;
 
 			if (trainPass.Direction == "进厂")
@@ -178,28 +177,20 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 					output(string.Format("#2轨道插入定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.TrainNumber), eOutputType.Normal);
 					return true;
 				}
-
-				//if (transport.DispatchTime1.Year < 2000)
+				//CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and SuttleQty=0 and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+				//if (transport == null)
 				//{
-				//	transport.DispatchTime1 = carDate;
-				//	transport.TrackNumber = "#2";
-				//	transport.CarModel = carmodel;
-				//	transport.OrderNumber = ordernumber;
-				//	return Dbers.SelfOracleDber.Update(transport) > 0;
-				//}
-				//else if (transport.DispatchTime2.Year < 2000)
-				//{
-				//	transport.DispatchTime2 = carDate;
-				//	transport.TrackNumber = "#2";
-				//	transport.OrderNumber = ordernumber;
-				//	return Dbers.SelfOracleDber.Update(transport) > 0;
-				//}
-				//else
-				//{
-				//	transport.DispatchTime2 = carDate;
-				//	transport.TrackNumber = "#2";
-				//	transport.OrderNumber = ordernumber;
-				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//	transport = new CmcsTransport();
+				//	transport.InFactoryBatchId = "-1";
+				//	transport.TransportNo = trainPass.TrainNumber;
+				//	transport.TrainType = trainPass.CarModel;
+				//	transport.TrackCode = "#2";
+				//	transport.TicketQty = (decimal)CommonDAO.GetInstance().GetTrainRateLoadByTrainType(trainPass.CarModel);
+				//	transport.InfactoryTime = trainPass.PassTime;
+				//	transport.OrderNumber = trainPass.OrderNum;
+				//	transport.DataFlag = 0;
+				//	transport.DataFrom = "车号识别";
+				//	Dbers.GetInstance().SelfDber.Insert(transport);
 				//}
 			}
 			else if (trainPass.Direction == "出厂")
@@ -227,7 +218,6 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <returns></returns>
 		public static bool CarSpot3Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
 		{
-			//CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
 			if (trainPass == null) return false;
 
 			if (trainPass.Direction == "进厂")
@@ -239,28 +229,20 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 					output(string.Format("#4轨道插入定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.TrainNumber), eOutputType.Normal);
 					return true;
 				}
-
-				//if (transport.DispatchTime1.Year < 2000)
+				//CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and SuttleQty=0 and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+				//if (transport == null)
 				//{
-				//	transport.DispatchTime1 = carDate;
-				//	transport.TrackNumber = "#4";
-				//	transport.CarModel = carmodel;
-				//	transport.OrderNumber = ordernumber;
-				//	return Dbers.SelfOracleDber.Update(transport) > 0;
-				//}
-				//else if (transport.DispatchTime2.Year < 2000)
-				//{
-				//	transport.DispatchTime2 = carDate;
-				//	transport.TrackNumber = "#4";
-				//	transport.OrderNumber = ordernumber;
-				//	return Dbers.SelfOracleDber.Update(transport) > 0;
-				//}
-				//else
-				//{
-				//	transport.DispatchTime2 = carDate;
-				//	transport.TrackNumber = "#4";
-				//	transport.OrderNumber = ordernumber;
-				//	return Dbers.SelfOracleDber.Update(transport) > 0;
+				//	transport = new CmcsTransport();
+				//	transport.InFactoryBatchId = "-1";
+				//	transport.TransportNo = trainPass.TrainNumber;
+				//	transport.TrainType = trainPass.CarModel;
+				//	transport.TrackCode = "#4";
+				//	transport.TicketQty = (decimal)CommonDAO.GetInstance().GetTrainRateLoadByTrainType(trainPass.CarModel);
+				//	transport.InfactoryTime = trainPass.PassTime;
+				//	transport.OrderNumber = trainPass.OrderNum;
+				//	transport.DataFlag = 0;
+				//	transport.DataFrom = "车号识别";
+				//	Dbers.GetInstance().SelfDber.Insert(transport);
 				//}
 			}
 			else if (trainPass.Direction == "出厂")

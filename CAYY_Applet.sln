@@ -155,6 +155,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCS.CarTransport.TrainSamp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPCClientCore", "CMCS.Hardware\OPCClientCore\OPCClientCore.csproj", "{97C30535-2803-48BE-9DF8-83AD2864872E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCS.InterfaceData.Win", "CMCS.DumblyConcealer\CMCS.InterfaceData.Win\CMCS.InterfaceData.Win.csproj", "{287A6B8C-A233-4228-94E9-2EC1C05CAE01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -583,6 +585,16 @@ Global
 		{97C30535-2803-48BE-9DF8-83AD2864872E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{97C30535-2803-48BE-9DF8-83AD2864872E}.Release|x86.ActiveCfg = Release|Any CPU
 		{97C30535-2803-48BE-9DF8-83AD2864872E}.Release|x86.Build.0 = Release|Any CPU
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Debug|x86.ActiveCfg = Debug|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Debug|x86.Build.0 = Debug|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|Any CPU.ActiveCfg = Release|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|Mixed Platforms.Build.0 = Release|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|x86.ActiveCfg = Release|x86
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -639,6 +651,7 @@ Global
 		{90B74ADF-891A-47E2-922C-450BE2271164} = {DB074836-4DAF-49E3-B992-E5B59A5F5F61}
 		{2DC8C0FF-E92E-4F13-A8C7-B20A9D5CA84F} = {CBB2196C-9DFA-4DA3-A3B0-9F24F443C683}
 		{97C30535-2803-48BE-9DF8-83AD2864872E} = {DB074836-4DAF-49E3-B992-E5B59A5F5F61}
+		{287A6B8C-A233-4228-94E9-2EC1C05CAE01} = {5C7839EA-351A-4849-8F55-94F75418719F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF2FA42F-9F0C-48EF-9321-F0C0D535374F}

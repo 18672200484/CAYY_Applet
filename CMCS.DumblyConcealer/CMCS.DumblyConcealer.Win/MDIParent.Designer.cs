@@ -51,6 +51,7 @@
 			this.tsslblVersion = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.tsmiOpenFrmPneumaticTransfer = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -79,7 +80,8 @@
             this.tsmiOpenFrmAutoMaker,
             this.tsmiOpenTrainSampler,
             this.tsmiOpenAutoMt,
-            this.tsmiOpenFrmAutoCupboard_NCGM});
+            this.tsmiOpenFrmAutoCupboard_NCGM,
+            this.tsmiOpenFrmPneumaticTransfer});
 			this.tsmiTasks.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
 			this.tsmiTasks.Name = "tsmiTasks";
 			this.tsmiTasks.Size = new System.Drawing.Size(59, 21);
@@ -215,6 +217,13 @@
 			this.timer1.Interval = 2000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// tsmiOpenFrmPneumaticTransfer
+			// 
+			this.tsmiOpenFrmPneumaticTransfer.Name = "tsmiOpenFrmPneumaticTransfer";
+			this.tsmiOpenFrmPneumaticTransfer.Size = new System.Drawing.Size(213, 22);
+			this.tsmiOpenFrmPneumaticTransfer.Text = "11.气动传输接口";
+			this.tsmiOpenFrmPneumaticTransfer.Click += new System.EventHandler(this.tsmiOpenFrmPneumaticTransfer_Click);
+			// 
 			// MDIParent
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -263,6 +272,7 @@
 		private System.Windows.Forms.ToolStripMenuItem tsmiOpenTrainSampler;
 		private System.Windows.Forms.ToolStripMenuItem tsmiOpenAutoMt;
 		private System.Windows.Forms.ToolStripMenuItem tsmiOpenFrmAutoCupboard_NCGM;
+		private System.Windows.Forms.ToolStripMenuItem tsmiOpenFrmPneumaticTransfer;
 	}
 }
 

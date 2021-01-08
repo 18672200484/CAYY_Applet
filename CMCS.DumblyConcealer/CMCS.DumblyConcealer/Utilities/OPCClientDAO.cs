@@ -99,6 +99,11 @@ namespace CMCS.DumblyConcealer.Utilities
 					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_2, item.ItemName.Replace("汽车机械采样机.#2采样机.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
 					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
 				}
+				else
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QD, item.ItemName.Replace("气动传输.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
 			}
 		}
 
