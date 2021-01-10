@@ -50,11 +50,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\BasisPlatform.dll</HintPath>
     </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CMCS.Resources\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=10.5.0.3, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\CMCS.Resources\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -77,29 +79,11 @@
     <Compile Include="Core\TaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DumblyTasks\FrmAssayDevice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmAssayDevice.designer.cs">
-      <DependentUpon>FrmAssayDevice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmPneumaticTransfer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmPneumaticTransfer.designer.cs">
-      <DependentUpon>FrmPneumaticTransfer.cs</DependentUpon>
-    </Compile>
     <Compile Include="DumblyTasks\FrmAutoCupboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DumblyTasks\FrmAutoCupboard.designer.cs">
       <DependentUpon>FrmAutoCupboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmAutoMt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmAutoMt.designer.cs">
-      <DependentUpon>FrmAutoMt.cs</DependentUpon>
     </Compile>
     <Compile Include="DumblyTasks\FrmAutoMaker.cs">
       <SubType>Form</SubType>
@@ -107,17 +91,17 @@
     <Compile Include="DumblyTasks\FrmAutoMaker.designer.cs">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
     </Compile>
+    <Compile Include="DumblyTasks\FrmAutoMt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAutoMt.designer.cs">
+      <DependentUpon>FrmAutoMt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DumblyTasks\FrmBeltSampler.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DumblyTasks\FrmBeltSampler.designer.cs">
       <DependentUpon>FrmBeltSampler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmTrainSampler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmTrainSampler.designer.cs">
-      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
     </Compile>
     <Compile Include="DumblyTasks\FrmCarSampler.cs">
       <SubType>Form</SubType>
@@ -125,70 +109,44 @@
     <Compile Include="DumblyTasks\FrmCarSampler.designer.cs">
       <DependentUpon>FrmCarSampler.cs</DependentUpon>
     </Compile>
-    <Compile Include="DumblyTasks\FrmDataHandler.cs">
+    <Compile Include="DumblyTasks\FrmTrainSampler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DumblyTasks\FrmDataHandler.Designer.cs">
-      <DependentUpon>FrmDataHandler.cs</DependentUpon>
+    <Compile Include="DumblyTasks\FrmTrainSampler.designer.cs">
+      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
     </Compile>
-    <Compile Include="DumblyTasks\FrmTrainDiscriminator.cs">
+    <Compile Include="FrmMainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DumblyTasks\FrmTrainDiscriminator.Designer.cs">
-      <DependentUpon>FrmTrainDiscriminator.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmWeightBridger.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DumblyTasks\FrmWeightBridger.Designer.cs">
-      <DependentUpon>FrmWeightBridger.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDIParent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIParent.Designer.cs">
-      <DependentUpon>MDIParent.cs</DependentUpon>
+    <Compile Include="FrmMainFrame.Designer.cs">
+      <DependentUpon>FrmMainFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\SuperTabControlManager.cs" />
     <EmbeddedResource Include="Core\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmAssayDevice.resx">
-      <DependentUpon>FrmAssayDevice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmPneumaticTransfer.resx">
-      <DependentUpon>FrmPneumaticTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmAutoCupboard.resx">
       <DependentUpon>FrmAutoCupboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmAutoMt.resx">
-      <DependentUpon>FrmAutoMt.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmAutoMaker.resx">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmAutoMt.resx">
+      <DependentUpon>FrmAutoMt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmBeltSampler.resx">
       <DependentUpon>FrmBeltSampler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmTrainSampler.resx">
-      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DumblyTasks\FrmCarSampler.resx">
       <DependentUpon>FrmCarSampler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmDataHandler.resx">
-      <DependentUpon>FrmDataHandler.cs</DependentUpon>
+    <EmbeddedResource Include="DumblyTasks\FrmTrainSampler.resx">
+      <DependentUpon>FrmTrainSampler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmTrainDiscriminator.resx">
-      <DependentUpon>FrmTrainDiscriminator.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DumblyTasks\FrmWeightBridger.resx">
-      <DependentUpon>FrmWeightBridger.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent.resx">
-      <DependentUpon>MDIParent.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMainFrame.resx">
+      <DependentUpon>FrmMainFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -217,7 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\BasisPlatform.dll" />

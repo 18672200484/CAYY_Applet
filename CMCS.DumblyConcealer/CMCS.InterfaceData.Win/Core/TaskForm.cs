@@ -5,9 +5,9 @@ using System.Text;
 //
 using System.Windows.Forms;
 
-namespace CMCS.DumblyConcealer.Win.Core
+namespace CMCS.InterfaceData.Win.Core
 {
-    public class TaskForm : Form
+    public class TaskForm : DevComponents.DotNetBar.Metro.MetroForm
     { 
         private void InitializeComponent()
         {

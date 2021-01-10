@@ -9,7 +9,7 @@ using BasisPlatform;
 using CMCS.Common;
 using CMCS.Common.Utilities;
 
-namespace CMCS.DumblyConcealer.Win
+namespace CMCS.InterfaceData.Win
 {
     static class Program
     {
@@ -31,7 +31,7 @@ namespace CMCS.DumblyConcealer.Win
             using (Mutex mutex = new Mutex(true, Application.ProductName, out notRun))
             {
                 if (notRun)
-                    Application.Run(new MDIParent());
+                    Application.Run(new FrmMainFrame());
                 else
                     MessageBox.Show("程序正在运行", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
