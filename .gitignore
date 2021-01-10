@@ -611,3 +611,6 @@ Logs/
 /CMCS.DumblyConcealer/CMCS.DumblyConcealer.Win/bin/OPCClientCore.dll
 /CMCS.Hardware/LED.EQ2013/bin/LED.EQ2013.dll
 /CMCS.Test/CMCS.DataTester/bin/OPCClientCore.dll
+/CMCS.CarTransport/CMCS.CarTransport.JxSampler/bin/IOC.JMDM20DIOV2.dll
+/CMCS.CarTransport/CMCS.CarTransport.Out/bin/CMCS.Forms.UserControls.dll
+/CMCS.CarTransport/CMCS.CarTransport.Queue/bin/LED.YB14.dll
