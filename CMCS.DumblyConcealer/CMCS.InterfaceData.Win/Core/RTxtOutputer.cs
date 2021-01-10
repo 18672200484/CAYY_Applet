@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using CMCS.DumblyConcealer.Enums;
 
-namespace CMCS.DumblyConcealer.Win.Core
+namespace CMCS.InterfaceData.Win.Core
 {
     /// <summary>
     /// 文本框输出信息类

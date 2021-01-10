@@ -1,150 +1,101 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using CMCS.Common;
-using CMCS.Common.DAO;
+﻿using CMCS.Common.DAO;
 using CMCS.Common.Utilities;
-using CMCS.DumblyConcealer.Enums;
-using CMCS.DumblyConcealer.Tasks.TrainJxSampler;
-using CMCS.DumblyConcealer.Win.Core;
+using CMCS.DapperDber.Dbs.SqlServerDb;
+using CMCS.DumblyConcealer.Tasks.AutoCupboard.Entities;
+using CMCS.DumblyConcealer.Tasks.AutoMaker.Entities;
+using CMCS.DumblyConcealer.Tasks.TrainJxSampler.Entities;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
-namespace CMCS.DumblyConcealer.Win.DumblyTasks
+namespace CMCS.InterfaceData.Win.DumblyTasks
 {
-	public partial class FrmTrainSampler : TaskForm
-	{
-		RTxtOutputer rTxtOutputer;
-		RTxtOutputer rTxtOutResultputer;
-		TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+    public partial class FrmTrainSampler : DevComponents.DotNetBar.Metro.MetroForm
+    {
+        /// <summary>
+        /// 窗体唯一标识符
+        /// </summary>
+        public static string UniqueKey = "FrmTrainSampler";
 
-		public FrmTrainSampler()
-		{
-			InitializeComponent();
-		}
+        TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+        SqlServerDapperDber equDber = null;
 
-		private void FrmCarSampler_CSKY_Load(object sender, EventArgs e)
-		{
-			this.Text = "火车机械采样机接口业务";
+        /// <summary>
+        /// 最后一次心跳值
+        /// </summary>
+        bool lastHeartbeat;
 
-			this.rTxtOutputer = new RTxtOutputer(rtxtOutput);
+        public FrmTrainSampler()
+        {
+            InitializeComponent();
+        }
 
-			ExecuteAllTask();
+        private void FrmTrainSampler_Load(object sender, EventArgs e)
+        {
+            this.Text = "全自动制样机接口业务";
+            equDber = new SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#1火车机械采样机接口连接字符串"));
+            Bind_EquTbHCQSCYJBarrel();
+            Bind_EquTbHCQSCYJCmd();
+            Bind_EquTbHCQSCYJPlan();
+            Bind_EquTbHCQSCYJPlanDetail();
+            Bind_EquTbHCQSCYJUnloadResult();
+            Bind_EquTbHCQSCYJError();
+            Bind_EquTbHCQSCYJSignal();
+        }
 
-		}
+        private void Bind_EquTbHCQSCYJBarrel()
+        {
+            List<EquHCQSCYJBarrel> list = equDber.Entities<EquHCQSCYJBarrel>();
+            SGC_EquTbHCQSCYJBarrel.PrimaryGrid.DataSource = list;
+        }
 
-		/// <summary>
-		/// 执行所有任务
-		/// </summary>
-		void ExecuteAllTask()
-		{
-			#region #1火车机械采样机
+        private void Bind_EquTbHCQSCYJCmd()
+        {
+            List<EquHCQSCYJSampleCmd> list = equDber.TopEntities<EquHCQSCYJSampleCmd>(100, " order by CreateDate desc");
+            SGC_EquTbHCQSCYJCmd.PrimaryGrid.DataSource = list;
+        }
+        
 
-			EquTrainJXSamplerDAO carJXSamplerDAO1 = new EquTrainJXSamplerDAO(GlobalVars.MachineCode_HCJXCYJ_1, new DapperDber.Dbs.SqlServerDb.SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#1火车机械采样机接口连接字符串")));
+        private void Bind_EquTbHCQSCYJPlan()
+        {
+            List<EquHCQSCYJPlan> list = equDber.TopEntities<EquHCQSCYJPlan>(100, " order by CreateDate desc");
+            SGC_EquTbHCQSCYJPlan.PrimaryGrid.DataSource = list;
+        }
 
-			taskSimpleScheduler.StartNewTask("#1火车机械采样机-快速同步", () =>
-			{
-				carJXSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncSampleCmd(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncSamplePlanDetail(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncUnloadResult(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncQCJXCYJError(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
+        private void Bind_EquTbHCQSCYJPlanDetail()
+        {
+            List<EquHCQSCYJPlanDetail> list = equDber.TopEntities<EquHCQSCYJPlanDetail>(100, " order by CreateDate desc");
+            SGC_EquTbHCQSCYJPlanDetail.PrimaryGrid.DataSource = list;
+        }
 
-			}, 2000, OutputError);
+        private void Bind_EquTbHCQSCYJUnloadResult()
+        {
+            List<EquHCQSCYJUnloadResult> list = equDber.TopEntities<EquHCQSCYJUnloadResult>(100, " order by CreateDate desc");
+            SGC_EquTbHCQSCYJUnloadResult.PrimaryGrid.DataSource = list;
+        }
 
-			//this.taskSimpleScheduler.StartNewTask("#1汽车机械采样机-上位机心跳", () =>
-			//{
-			//    carJXSamplerDAO1.SyncHeartbeatSignal();
-			//}, 30000, OutputError);
+        private void Bind_EquTbHCQSCYJError()
+        {
+            List<EquHCQSCYJError> list = equDber.TopEntities<EquHCQSCYJError>(100, " order by CreateDate desc");
+            SGC_EquTbHCQSCYJError.PrimaryGrid.DataSource = list;
+        }
 
-			#endregion
+        private void Bind_EquTbHCQSCYJSignal()
+        {
+            List<EquHCQSCYJSignal> list = equDber.TopEntities<EquHCQSCYJSignal>(100, " order by CreateDate desc");
+            SGC_EquTbHCQSCYJSignal.PrimaryGrid.DataSource = list;
+        }
 
-			#region #2火车机械采样机
+        /// <summary>
+        /// 窗体关闭后
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmAutoCupboard_NCGM_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // 注意：必须取消任务
+            //this.taskSimpleScheduler.Cancal();
+        }
 
-			EquTrainJXSamplerDAO carJXSamplerDAO2 = new EquTrainJXSamplerDAO(GlobalVars.MachineCode_HCJXCYJ_2, new DapperDber.Dbs.SqlServerDb.SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#2火车机械采样机接口连接字符串")));
-
-			taskSimpleScheduler.StartNewTask("#2火车机械采样机-快速同步", () =>
-			{
-				carJXSamplerDAO2.SyncBarrel(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncSampleCmd(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncSamplePlan(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncSamplePlanDetail(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncUnloadResult(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncQCJXCYJError(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
-
-			}, 2000, OutputError);
-
-			//this.taskSimpleScheduler.StartNewTask("#2汽车机械采样机-上位机心跳", () =>
-			//{
-			//    carJXSamplerDAO2.SyncHeartbeatSignal();
-			//}, 30000, OutputError);
-
-			#endregion
-
-			#region #3火车机械采样机
-
-			EquTrainJXSamplerDAO carJXSamplerDAO3 = new EquTrainJXSamplerDAO(GlobalVars.MachineCode_HCJXCYJ_3, new DapperDber.Dbs.SqlServerDb.SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#3火车机械采样机接口连接字符串")));
-
-			taskSimpleScheduler.StartNewTask("#3火车机械采样机-快速同步", () =>
-			{
-				carJXSamplerDAO3.SyncBarrel(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncSampleCmd(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncSamplePlan(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncSamplePlanDetail(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncUnloadResult(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncQCJXCYJError(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncSignal(this.rTxtOutputer.Output);
-
-			}, 2000, OutputError);
-
-			//this.taskSimpleScheduler.StartNewTask("#3汽车机械采样机-上位机心跳", () =>
-			//{
-			//    carJXSamplerDAO1.SyncHeartbeatSignal();
-			//}, 30000, OutputError);
-
-			#endregion
-		}
-
-		/// <summary>
-		/// 输出异常信息
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="ex"></param>
-		void OutputError(string text, Exception ex)
-		{
-			this.rTxtOutputer.Output(text + Environment.NewLine + ex.Message, eOutputType.Error);
-
-			Log4Neter.Error(text, ex);
-		}
-
-		/// <summary>
-		/// 输出异常信息（结果）
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="ex"></param>
-		void OutputResultError(string text, Exception ex)
-		{
-			this.rTxtOutResultputer.Output(text + Environment.NewLine + ex.Message, eOutputType.Error);
-
-			Log4Neter.Error(text, ex);
-		}
-
-		/// <summary>
-		/// 窗体关闭后
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void FrmCarSampler_CSKY_FormClosed(object sender, FormClosedEventArgs e)
-		{
-			// 注意：必须取消任务
-			this.taskSimpleScheduler.Cancal();
-		}
-	}
+    }
 }

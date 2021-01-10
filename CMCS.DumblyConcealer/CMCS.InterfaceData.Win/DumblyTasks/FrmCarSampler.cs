@@ -1,133 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using CMCS.Common;
-using CMCS.Common.DAO;
+﻿using CMCS.Common.DAO;
 using CMCS.Common.Utilities;
-using CMCS.DumblyConcealer.Enums;
-using CMCS.DumblyConcealer.Tasks.CarJXSampler;
-using CMCS.DumblyConcealer.Win.Core;
+using CMCS.DapperDber.Dbs.SqlServerDb;
+using CMCS.DumblyConcealer.Tasks.AutoCupboard.Entities;
+using CMCS.DumblyConcealer.Tasks.AutoMaker.Entities;
+using CMCS.DumblyConcealer.Tasks.CarJXSampler.Entities;
+using CMCS.DumblyConcealer.Tasks.TrainJxSampler.Entities;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
-namespace CMCS.DumblyConcealer.Win.DumblyTasks
+namespace CMCS.InterfaceData.Win.DumblyTasks
 {
-	public partial class FrmCarSampler : TaskForm
-	{
-		RTxtOutputer rTxtOutputer;
-		RTxtOutputer rTxtOutResultputer;
-		TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+    public partial class FrmCarSampler : DevComponents.DotNetBar.Metro.MetroForm
+    {
+        /// <summary>
+        /// 窗体唯一标识符
+        /// </summary>
+        public static string UniqueKey = "FrmCarSampler";
 
-		public FrmCarSampler()
-		{
-			InitializeComponent();
-		}
+        TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+        SqlServerDapperDber equDber = null;
 
-		private void FrmCarSampler_CSKY_Load(object sender, EventArgs e)
-		{
-			this.Text = "汽车机械采样机接口业务";
+        /// <summary>
+        /// 最后一次心跳值
+        /// </summary>
+        bool lastHeartbeat;
 
-			this.rTxtOutputer = new RTxtOutputer(rtxtOutput);
+        public FrmCarSampler()
+        {
+            InitializeComponent();
+        }
 
-			ExecuteAllTask();
+        private void FrmCarSampler_Load(object sender, EventArgs e)
+        {
+            this.Text = "全自动制样机接口业务";
+            equDber = new SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("汽车机械采样机接口连接字符串"));
+            Bind_SAMPLE_INTERFACE_DATA();
+        }
 
-		}
+        private void Bind_SAMPLE_INTERFACE_DATA()
+        {
+            List<Interface_Data> list = equDber.Entities<Interface_Data>();
+            SGC_SAMPLE_INTERFACE_DATA.PrimaryGrid.DataSource = list;
+        }
 
-		/// <summary>
-		/// 执行所有任务
-		/// </summary>
-		void ExecuteAllTask()
-		{
-			#region #1汽车机械采样机
+        /// <summary>
+        /// 窗体关闭后
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmAutoCupboard_NCGM_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // 注意：必须取消任务
+            //this.taskSimpleScheduler.Cancal();
+        }
 
-			EquCarJXSamplerDAO carJXSamplerDAO1 = new EquCarJXSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_1);
-
-			taskSimpleScheduler.StartNewTask("#1汽车机械采样机-快速同步", () =>
-			{
-				carJXSamplerDAO1.SyncSampleCmd(this.rTxtOutputer.Output);
-				//carJXSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output);
-				//carJXSamplerDAO1.SyncUnloadResult(this.rTxtOutputer.Output);
-				//carJXSamplerDAO1.SyncQCJXCYJError(this.rTxtOutputer.Output);
-				//carJXSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
-
-			}, 2000, OutputError);
-
-			this.taskSimpleScheduler.StartNewTask("#1汽车机械采样机-上位机心跳", () =>
-			{
-				//carJXSamplerDAO1.SyncHeartbeatSignal();
-			}, 30000, OutputError);
-
-			#endregion
-
-			#region #2汽车机械采样机
-
-			EquCarJXSamplerDAO carJXSamplerDAO2 = new EquCarJXSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_2);
-
-			taskSimpleScheduler.StartNewTask("#2汽车机械采样机-快速同步", () =>
-			{
-				carJXSamplerDAO2.SyncSampleCmd(this.rTxtOutputer.Output);
-			}, 2000, OutputError);
-
-			#endregion
-
-			#region OPC
-
-			taskSimpleScheduler.StartNewTask("同步汽车机械采样机OPC", () =>
-			{
-				EquCarJXSamplerOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
-			}, 0, OutputError);
-
-			taskSimpleScheduler.StartNewTask("#1汽车机械采样机执行命令", () =>
-			{
-				EquCarJXSamplerOPC.GetInstance().RunCmd1(this.rTxtOutputer.Output);
-			}, 500, OutputError);
-
-			taskSimpleScheduler.StartNewTask("#2汽车机械采样机执行命令", () =>
-			{
-				EquCarJXSamplerOPC.GetInstance().RunCmd2(this.rTxtOutputer.Output);
-			}, 500, OutputError);
-
-			#endregion
-
-		}
-
-		/// <summary>
-		/// 输出异常信息
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="ex"></param>
-		void OutputError(string text, Exception ex)
-		{
-			this.rTxtOutputer.Output(text + Environment.NewLine + ex.Message, eOutputType.Error);
-
-			Log4Neter.Error(text, ex);
-		}
-
-		/// <summary>
-		/// 输出异常信息（结果）
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="ex"></param>
-		void OutputResultError(string text, Exception ex)
-		{
-			this.rTxtOutResultputer.Output(text + Environment.NewLine + ex.Message, eOutputType.Error);
-
-			Log4Neter.Error(text, ex);
-		}
-
-		/// <summary>
-		/// 窗体关闭后
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void FrmCarSampler_CSKY_FormClosed(object sender, FormClosedEventArgs e)
-		{
-			// 注意：必须取消任务
-			this.taskSimpleScheduler.Cancal();
-		}
-	}
+    }
 }

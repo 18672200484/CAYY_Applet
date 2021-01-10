@@ -1,109 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using CMCS.Common;
-using CMCS.Common.DAO;
+﻿using CMCS.Common.DAO;
 using CMCS.Common.Utilities;
-using CMCS.DumblyConcealer.Enums;
-using CMCS.DumblyConcealer.Tasks.BeltSampler;
-using CMCS.DumblyConcealer.Tasks.CarJXSampler;
-using CMCS.DumblyConcealer.Win.Core;
+using CMCS.DapperDber.Dbs.SqlServerDb;
+using CMCS.DumblyConcealer.Tasks.AutoCupboard.Entities;
+using CMCS.DumblyConcealer.Tasks.AutoMaker.Entities;
+using CMCS.DumblyConcealer.Tasks.BeltSampler.Entities;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
-namespace CMCS.DumblyConcealer.Win.DumblyTasks
+namespace CMCS.InterfaceData.Win.DumblyTasks
 {
-	public partial class FrmBeltSampler : TaskForm
-	{
-		RTxtOutputer rTxtOutputer;
-		RTxtOutputer rTxtOutResultputer;
-		TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+    public partial class FrmBeltSampler : DevComponents.DotNetBar.Metro.MetroForm
+    {
+        /// <summary>
+        /// 窗体唯一标识符
+        /// </summary>
+        public static string UniqueKey = "FrmBeltSampler";
 
-		public FrmBeltSampler()
-		{
-			InitializeComponent();
-		}
+        TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+        SqlServerDapperDber equDber = null;
 
-		private void FrmCarSampler_CSKY_Load(object sender, EventArgs e)
-		{
-			this.Text = "皮带采样机接口业务";
+        /// <summary>
+        /// 最后一次心跳值
+        /// </summary>
+        bool lastHeartbeat;
 
-			this.rTxtOutputer = new RTxtOutputer(rtxtOutput);
+        public FrmBeltSampler()
+        {
+            InitializeComponent();
+        }
 
-			ExecuteAllTask();
-		}
+        private void FrmBeltSampler_Load(object sender, EventArgs e)
+        {
+            this.Text = "皮带采样机接口业务";
+            equDber = new SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("皮带采样机接口连接字符串"));
+            Bind_KY_CYJ_P_STATE();
+            Bind_KY_CYJ_P_OUTRUN();
+            Bind_KY_CYJ_P_TurnOver();
+            Bind_KY_CYJ_P_BARREL();
+           
+        }
 
-		/// <summary>
-		/// 执行所有任务
-		/// </summary>
-		void ExecuteAllTask()
-		{
-			#region #1皮带采样机
+        private void Bind_KY_CYJ_P_STATE()
+        {
+            List<KY_CYJ_P_STATE> list = equDber.Entities<KY_CYJ_P_STATE>();
+            SGC_KY_CYJ_P_STATE.PrimaryGrid.DataSource = list;
+        }
 
-			EquBeltSamplerDAO beltSamplerDAO1 = new EquBeltSamplerDAO(GlobalVars.MachineCode_PDCYJ_1);
+        private void Bind_KY_CYJ_P_OUTRUN()
+        {
+            List<KY_CYJ_P_OUTRUN> list = equDber.TopEntities<KY_CYJ_P_OUTRUN>(100, " order by Send_Time desc");
+            SGC_KY_CYJ_P_OUTRUN.PrimaryGrid.DataSource = list;
+        }
+        
 
-			taskSimpleScheduler.StartNewTask("#1皮带采样机-快速同步", () =>
-			{
-				beltSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
-				beltSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
-				beltSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output);
-				beltSamplerDAO1.SyncTurn(this.rTxtOutputer.Output);
-			}, 2000, OutputError);
+        private void Bind_KY_CYJ_P_TurnOver()
+        {
+            List<KY_CYJ_P_TurnOver> list = equDber.TopEntities<KY_CYJ_P_TurnOver>(100, " order by Send_Time desc");
+            SGC_KY_CYJ_P_TurnOver.PrimaryGrid.DataSource = list;
+        }
 
-			#endregion
+        private void Bind_KY_CYJ_P_BARREL()
+        {
+            List<KY_CYJ_P_BARREL> list = equDber.Entities<KY_CYJ_P_BARREL>();
+            SGC_KY_CYJ_P_BARREL.PrimaryGrid.DataSource = list;
+        }
 
-			#region #2皮带采样机
+   
+        /// <summary>
+        /// 窗体关闭后
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmAutoCupboard_NCGM_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // 注意：必须取消任务
+            //this.taskSimpleScheduler.Cancal();
+        }
 
-			EquBeltSamplerDAO beltSamplerDAO2 = new EquBeltSamplerDAO(GlobalVars.MachineCode_PDCYJ_2);
-
-			taskSimpleScheduler.StartNewTask("#2皮带采样机-快速同步", () =>
-			{
-				beltSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
-				beltSamplerDAO2.SyncSamplePlan(this.rTxtOutputer.Output);
-				beltSamplerDAO2.SyncBarrel(this.rTxtOutputer.Output);
-			}, 2000, OutputError);
-
-			#endregion
-
-		}
-
-		/// <summary>
-		/// 输出异常信息
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="ex"></param>
-		void OutputError(string text, Exception ex)
-		{
-			this.rTxtOutputer.Output(text + Environment.NewLine + ex.Message, eOutputType.Error);
-
-			Log4Neter.Error(text, ex);
-		}
-
-		/// <summary>
-		/// 输出异常信息（结果）
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="ex"></param>
-		void OutputResultError(string text, Exception ex)
-		{
-			this.rTxtOutResultputer.Output(text + Environment.NewLine + ex.Message, eOutputType.Error);
-
-			Log4Neter.Error(text, ex);
-		}
-
-		/// <summary>
-		/// 窗体关闭后
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void FrmCarSampler_CSKY_FormClosed(object sender, FormClosedEventArgs e)
-		{
-			// 注意：必须取消任务
-			this.taskSimpleScheduler.Cancal();
-		}
-	}
+    }
 }
