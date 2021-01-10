@@ -101,6 +101,7 @@
     <Compile Include="CefGlue\CefV8Handlers\CarSamplerCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\CarMonitorCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\CefTesterCefV8Handler.cs" />
+    <Compile Include="Core\Hardwarer.cs" />
     <Compile Include="Core\PreviewCarBmp.cs" />
     <Compile Include="Core\SelfVars.cs" />
     <Compile Include="Frms\FrmAssayManage.cs">
@@ -352,6 +353,10 @@
     <ProjectReference Include="..\..\CMCS.Hardware\HikVisionSDK.Core\HikVisionSDK.Core.csproj">
       <Project>{3c06e562-08c1-44f5-a735-c0a14cc94a7f}</Project>
       <Name>HikVisionSDK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Hardware\IOC.JMDM20DIOV2\IOC.JMDM20DIOV2.csproj">
+      <Project>{a41da131-e0c5-46df-b550-1a5a36c51b64}</Project>
+      <Name>IOC.JMDM20DIOV2</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Hardware\SmileWei.EmbeddedApp\SmileWei.EmbeddedApp.csproj">
       <Project>{90b74adf-891a-47e2-922c-450be2271164}</Project>

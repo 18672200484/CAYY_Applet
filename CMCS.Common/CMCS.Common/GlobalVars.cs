@@ -217,7 +217,7 @@ namespace CMCS.Common
 		/// <summary>
 		/// 接口类型 - 徐州赛摩汽车机械采样机
 		/// </summary>
-		public static string InterfaceType_NCGM_QCJXCYJ = "徐州赛摩汽车机械采样机";
+		public static string InterfaceType_NCGM_QCJXCYJ = "益阳通力汽车机械采样机";
 
 		#endregion
 

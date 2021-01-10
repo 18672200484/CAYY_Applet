@@ -15,6 +15,7 @@ using DevComponents.DotNetBar.Metro;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -28,6 +29,175 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 		public static SuperTabControlManager superTabControlManager;
 
+		#region Vars
+
+		bool inductorCoil1 = false;
+		/// <summary>
+		/// #1汽车机械采样机状态 true=有信号  false=无信号
+		/// </summary>
+		public bool InductorCoil1
+		{
+			get
+			{
+				return inductorCoil1;
+			}
+			set
+			{
+				inductorCoil1 = value;
+
+				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, "#1汽车机械采样机急停按钮", value ? "1" : "0");
+			}
+		}
+
+		/// <summary>
+		/// 命令是否已发送
+		/// </summary>
+		public bool InductorCoil1IsSend = false;
+
+		int inductorCoil1Port;
+		/// <summary>
+		/// #1汽车机械采样机端口
+		/// </summary>
+		public int InductorCoil1Port
+		{
+			get { return inductorCoil1Port; }
+			set { inductorCoil1Port = value; }
+		}
+
+		bool inductorCoil2 = false;
+		/// <summary>
+		/// #2汽车机械采样机状态 true=有信号  false=无信号
+		/// </summary>
+		public bool InductorCoil2
+		{
+			get
+			{
+				return inductorCoil2;
+			}
+			set
+			{
+				inductorCoil2 = value;
+
+				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, "#2汽车机械采样机急停按钮", value ? "1" : "0");
+			}
+		}
+
+		/// <summary>
+		/// 命令是否已发送
+		/// </summary>
+		public bool InductorCoil2IsSend = false;
+
+		int inductorCoil2Port;
+		/// <summary>
+		///#2汽车机械采样机端口
+		/// </summary>
+		public int InductorCoil2Port
+		{
+			get { return inductorCoil2Port; }
+			set { inductorCoil2Port = value; }
+		}
+
+		bool inductorCoil3 = false;
+		/// <summary>
+		/// #1火车机械采样机状态 true=有信号  false=无信号
+		/// </summary>
+		public bool InductorCoil3
+		{
+			get
+			{
+				return inductorCoil3;
+			}
+			set
+			{
+				inductorCoil3 = value;
+
+				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, "#1火车机械采样机急停按钮", value ? "1" : "0");
+			}
+		}
+
+		int inductorCoil3Port;
+		/// <summary>
+		/// #1火车机械采样机端口
+		/// </summary>
+		public int InductorCoil3Port
+		{
+			get { return inductorCoil3Port; }
+			set { inductorCoil3Port = value; }
+		}
+
+		/// <summary>
+		/// 命令是否已发送
+		/// </summary>
+		public bool InductorCoil3IsSend = false;
+
+		bool inductorCoil4 = false;
+		/// <summary>
+		/// #2火车机械采样机状态 true=有信号  false=无信号
+		/// </summary>
+		public bool InductorCoil4
+		{
+			get
+			{
+				return inductorCoil4;
+			}
+			set
+			{
+				inductorCoil4 = value;
+
+				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, "#2火车机械采样机急停按钮", value ? "1" : "0");
+			}
+		}
+
+		int inductorCoil4Port;
+		/// <summary>
+		/// #2火车机械采样机端口
+		/// </summary>
+		public int InductorCoil4Port
+		{
+			get { return inductorCoil4Port; }
+			set { inductorCoil4Port = value; }
+		}
+
+		/// <summary>
+		/// 命令是否已发送
+		/// </summary>
+		public bool InductorCoil4IsSend = false;
+
+		bool inductorCoil5 = false;
+		/// <summary>
+		/// #3火车机械采样机状态 true=有信号  false=无信号
+		/// </summary>
+		public bool InductorCoil5
+		{
+			get
+			{
+				return inductorCoil5;
+			}
+			set
+			{
+				inductorCoil5 = value;
+
+				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, "#3火车机械采样机急停按钮", value ? "1" : "0");
+			}
+		}
+
+		/// <summary>
+		/// 命令是否已发送
+		/// </summary>
+		public bool InductorCoil5IsSend = false;
+
+		int inductorCoil5Port;
+		/// <summary>
+		/// #3火车机械采样机端口
+		/// </summary>
+		public int InductorCoil5Port
+		{
+			get { return inductorCoil5Port; }
+			set { inductorCoil5Port = value; }
+		}
+
+		#endregion
+
 		public FrmMainFrame()
 		{
 			InitializeComponent();
@@ -39,6 +209,116 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			FrmMainFrame.superTabControlManager = new SuperTabControlManager(this.superTabControl1);
 		}
+
+		#region IO控制器
+
+		void Iocer_StatusChange(bool status)
+		{
+			// 接收IO控制器状态 
+			InvokeEx(() =>
+			{
+				//slightIOC.LightColor = (status ? Color.Green : Color.Red);
+
+				commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.IO控制器_连接状态.ToString(), status ? "1" : "0");
+			});
+		}
+
+		/// <summary>
+		/// IO控制器接收数据时触发
+		/// </summary>
+		/// <param name="receiveValue"></param>
+		void Iocer_Received(int[] receiveValue)
+		{
+			// 接收状态  
+			InvokeEx(() =>
+			{
+				this.InductorCoil1 = (receiveValue[this.InductorCoil1Port - 1] == 0);
+				this.InductorCoil2 = (receiveValue[this.InductorCoil2Port - 1] == 0);
+				this.InductorCoil3 = (receiveValue[this.InductorCoil3Port - 1] == 0);
+				this.InductorCoil4 = (receiveValue[this.InductorCoil4Port - 1] == 0);
+				this.InductorCoil5 = (receiveValue[this.InductorCoil5Port - 1] == 0);
+
+				if (this.InductorCoil1 && !InductorCoil1IsSend)
+				{
+					if (commonDAO.SendAppRemoteControlCmd(GlobalVars.MachineCode_QCJXCYJ_1, "急停", "1"))
+					{
+						commonDAO.SaveOperationLog(GlobalVars.MachineCode_QCJXCYJ_1 + "急停按钮按下", GlobalVars.LoginUser.Name);
+						InductorCoil1IsSend = true;
+					}
+				}
+				else if (!this.InductorCoil1)
+					InductorCoil1IsSend = false;
+
+				if (this.InductorCoil2 && !InductorCoil2IsSend)
+				{
+					if (commonDAO.SendAppRemoteControlCmd(GlobalVars.MachineCode_QCJXCYJ_2, "急停", "1"))
+					{
+						commonDAO.SaveOperationLog(GlobalVars.MachineCode_QCJXCYJ_2 + "急停按钮按下", GlobalVars.LoginUser.Name);
+						InductorCoil2IsSend = true;
+					}
+				}
+				else if (!this.InductorCoil2)
+					InductorCoil2IsSend = false;
+
+				if (this.InductorCoil3 && !InductorCoil3IsSend)
+				{
+					if (SendSamplingCMD(GlobalVars.MachineCode_HCJXCYJ_1))
+					{
+						commonDAO.SaveOperationLog(GlobalVars.MachineCode_HCJXCYJ_1 + "急停按钮按下", GlobalVars.LoginUser.Name);
+						InductorCoil3IsSend = true;
+					}
+				}
+				else if (!this.InductorCoil3)
+					InductorCoil3IsSend = false;
+
+				if (this.InductorCoil4 && !InductorCoil4IsSend)
+				{
+					if (SendSamplingCMD(GlobalVars.MachineCode_HCJXCYJ_2))
+					{
+						commonDAO.SaveOperationLog(GlobalVars.MachineCode_HCJXCYJ_2 + "急停按钮按下", GlobalVars.LoginUser.Name);
+						InductorCoil4IsSend = true;
+					}
+				}
+				else if (!this.InductorCoil4)
+					InductorCoil4IsSend = false;
+
+				if (this.InductorCoil5 && !InductorCoil5IsSend)
+				{
+					if (SendSamplingCMD(GlobalVars.MachineCode_HCJXCYJ_3))
+					{
+						commonDAO.SaveOperationLog(GlobalVars.MachineCode_HCJXCYJ_3 + "急停按钮按下", GlobalVars.LoginUser.Name);
+						InductorCoil5IsSend = true;
+					}
+				}
+				else if (!this.InductorCoil5)
+					InductorCoil5IsSend = false;
+
+			});
+		}
+
+		/// <summary>
+		/// 发送停止采样命令
+		/// </summary>
+		/// <returns></returns>
+		bool SendSamplingCMD(string machineCode)
+		{
+			InfBeltSampleCmd samplecmd = new InfBeltSampleCmd
+			{
+				DataFlag = 0,
+				InterfaceType = GlobalVars.InterfaceType_HCJXCYJ,
+				MachineCode = machineCode,
+				ResultCode = eEquInfCmdResultCode.默认.ToString(),
+				SampleCode = "",
+				CmdCode = eEquInfSamplerCmd.系统暂停.ToString()
+			};
+			if (Dbers.GetInstance().SelfDber.Insert<InfBeltSampleCmd>(samplecmd) > 0)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		#endregion
 
 		private void Form1_Shown(object sender, EventArgs e)
 		{
@@ -52,6 +332,16 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			//CommonDAO.GetInstance().ResetAllSysMessageStatus();
 
+			this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("#1汽车机械采样机急停端口");
+			this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("#2汽车机械采样机急停端口");
+			this.InductorCoil3Port = commonDAO.GetAppletConfigInt32("#1火车机械采样机急停端口");
+			this.InductorCoil4Port = commonDAO.GetAppletConfigInt32("#2火车机械采样机急停端口");
+			this.InductorCoil5Port = commonDAO.GetAppletConfigInt32("#3火车机械采样机急停端口");
+			// IO控制器
+			Hardwarer.Iocer.OnReceived += new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.ReceivedEventHandler(Iocer_Received);
+			Hardwarer.Iocer.OnStatusChange += new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.StatusChangeHandler(Iocer_StatusChange);
+			bool success = Hardwarer.Iocer.OpenCom(1, 9600);
+			commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.IO控制器_连接状态.ToString(), success ? "1" : "0");
 			// 打开集中管控首页
 			btnOpenHomePage_Click(null, null);
 
@@ -65,6 +355,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 				if (MessageBoxEx.Show("确认退出系统？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					Common.DAO.CommonDAO.GetInstance().SaveLoginLog(GlobalVars.LoginUser.UserName, Common.Enums.Sys.eUserLogInattempts.LockedOut);
+					Hardwarer.Iocer.CloseCom();
 					CefRuntime.Shutdown();
 					Application.Exit();
 				}
@@ -337,7 +628,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
 			}));
 		}
-		
+
 		/// <summary>
 		/// 打开智能存样柜与气动传输监控
 		/// </summary>
@@ -780,6 +1071,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Invoke(action);
 		}
 
-		
+
 	}
 }
