@@ -116,43 +116,43 @@ namespace CMCS.DumblyConcealer.Win
 		{
 			switch (taskFormIndex)
 			{
-				//case 0:
-				//	//综合事件处理程序
-				//	tsmiOpenFrmDataHandler_Click(null, null);
-				//	break;
-				//case 1:
-				//	//同步轨道衡数据接口
-				//	tsmiOpenFrmWeightBridger_Click(null, null);
-				//	break;
-				//case 2:
-				//	//皮带采样机数据同步程序
-				//	tsmiOpenFrmBeltSampler_Click(null, null);
-				//	break;
-				//case 3:
-				//	//车号识别报文TCP/IP同步业务
-				//	tsmiOpenFrmTrainWeight_Click(null, null);
-				//	break;
-				//case 4:
-				//	//化验设备数据同步程序
-				//	tsmiOpenFrmAssayDevice_Click(null, null);
-				//	break;
-				//case 5:
-				//	//06.汽车机械采样机接口
-				//	tsmiOpenFrmCarSampler_Click(null, null);
-				//	break;
-				//case 6:
-				//	//07.全自动制样机接口
-				//	tsmiOpenFrmAutoMaker_Click(null, null);
-				//	break;
-				//case 7:
-				//	tsmiOpenTrainSampler_Click(null, null);
-				//	break;
-				//case 8:
-				//	tsmiOpenFrmAutoCupboard_NCGM_Click(null, null);
-				//	break;
-				//case 9:
-				//	tsmiOpenAutoMt_Click(null, null);
-				//	break;
+				case 0:
+					//综合事件处理程序
+					tsmiOpenFrmDataHandler_Click(null, null);
+					break;
+				case 1:
+					//同步轨道衡数据接口
+					tsmiOpenFrmWeightBridger_Click(null, null);
+					break;
+				case 2:
+					//皮带采样机数据同步程序
+					tsmiOpenFrmBeltSampler_Click(null, null);
+					break;
+				case 3:
+					//车号识别报文TCP/IP同步业务
+					tsmiOpenFrmTrainWeight_Click(null, null);
+					break;
+				case 4:
+					//化验设备数据同步程序
+					tsmiOpenFrmAssayDevice_Click(null, null);
+					break;
+				case 5:
+					//06.汽车机械采样机接口
+					tsmiOpenFrmCarSampler_Click(null, null);
+					break;
+				case 6:
+					//07.全自动制样机接口
+					tsmiOpenFrmAutoMaker_Click(null, null);
+					break;
+				case 7:
+					tsmiOpenTrainSampler_Click(null, null);
+					break;
+				case 8:
+					tsmiOpenFrmAutoCupboard_NCGM_Click(null, null);
+					break;
+				case 9:
+					tsmiOpenAutoMt_Click(null, null);
+					break;
 			}
 
 			if (taskFormIndex == 9)

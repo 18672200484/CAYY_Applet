@@ -56,7 +56,8 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 			lock (LockObject)
 			{
 				int res = 0;
-				IList<CmcsTrainCarriagePass> cardata = Dbers.GetInstance().SelfDber.Entities<CmcsTrainCarriagePass>(" where MachineCode='" + carSpotsNum + "' and DataFlag=0 and PassTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by PassTime asc,OrderNum asc");
+				//IList<CmcsTrainCross> cardata = Dbers.GetInstance().SelfDber.Entities<CmcsTrainCross>(" where MachineCode='" + carSpotsNum + "' and DataFlag=0 and PassTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by PassTime asc,OrderNum asc");
+				IList<CmcsTrainRecognition> cardata = Dbers.GetInstance().SelfDber.Entities<CmcsTrainRecognition>(" where MachineCode='" + carSpotsNum + "' and DataFlag=0 and CrossTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by CrossTime asc,OrderNum asc");
 				bool flag = false;
 				foreach (var item in cardata)
 				{
@@ -99,13 +100,13 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="infactoryordernumber">顺序号</param>
 		/// <param name="carmodel">车型</param>
 		/// <returns></returns>
-		public static bool CarSpot1Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
+		public static bool CarSpot1Data(Action<string, eOutputType> output, CmcsTrainRecognition trainPass)
 		{
 			int res = 0;
 			if (trainPass.Direction == "进厂")
 			{
-				CmcsTrainWeightRecord transportOver = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>(" where TrainNumber='" + trainPass.TrainNumber + "' and IsTurnover='已翻' and ArriveTime>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
-				CmcsTrainWeightRecord transport = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>(" where TrainNumber='" + trainPass.TrainNumber + "' and IsTurnover='未翻' and ArriveTime>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
+				CmcsTrainWeightRecord transportOver = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>(" where TrainNumber='" + trainPass.CarNumber + "' and IsTurnover='已翻' and ArriveTime>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
+				CmcsTrainWeightRecord transport = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>(" where TrainNumber='" + trainPass.CarNumber + "' and IsTurnover='未翻' and ArriveTime>=to_date('" + DateTime.Now.Date.AddDays(-2) + "','yyyy/mm/dd HH24:MI:SS')");
 				if (transport == null)
 				{
 					// 此判断是过滤车辆出厂后立马进厂合并不同轨道车辆的情况，时间相差几分钟
@@ -114,40 +115,40 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 
 					res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainWeightRecord()
 					{
-						PKID = trainPass.PKID,
-						TrainNumber = trainPass.TrainNumber,
-						ArriveTime = trainPass.PassTime,
+						PKID = trainPass.Id,
+						TrainNumber = trainPass.CarNumber,
+						ArriveTime = trainPass.CrossTime,
 						TrainType = trainPass.CarModel,
 						IsTurnover = "未翻",
 						MachineCode = trainPass.MachineCode,
 						DataFlag = 0,
 						TicketWeight = (decimal)CommonDAO.GetInstance().GetTrainRateLoadByTrainType(trainPass.CarModel),
 						OrderNumber = trainPass.OrderNum,
-						GrossTime = trainPass.PassTime,
-						SkinTime = trainPass.PassTime,
-						LeaveTime = trainPass.PassTime,
-						UnloadTime = trainPass.PassTime,
+						GrossTime = trainPass.CrossTime,
+						SkinTime = trainPass.CrossTime,
+						LeaveTime = trainPass.CrossTime,
+						UnloadTime = trainPass.CrossTime,
 					});
 					return true;
 				}
 			}
 			else if (trainPass.Direction == "出厂")
 			{
-				CmcsTrainWeightRecord trainRecord = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>("where TrainNumber=:TrainNumber order by ArriveTime desc", new { TrainNumber = trainPass.TrainNumber });
+				CmcsTrainWeightRecord trainRecord = Dbers.GetInstance().SelfDber.Entity<CmcsTrainWeightRecord>("where TrainNumber=:TrainNumber order by ArriveTime desc", new { TrainNumber = trainPass.CarNumber });
 				if (trainRecord != null)
 				{
-					trainRecord.LeaveTime = trainPass.PassTime;
+					trainRecord.LeaveTime = trainPass.CrossTime;
 					Dbers.GetInstance().SelfDber.Update(trainRecord);
 
 					CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where PKID=:PKID order by InfactoryTime desc", new { PKID = trainPass.Id });
 					if (transport != null)
 					{
-						transport.OutfactoryTime = trainPass.PassTime;
+						transport.OutfactoryTime = trainPass.CrossTime;
 						Dbers.GetInstance().SelfDber.Update(transport);
 					}
 				}
 				//移除定位信息
-				RemoveTransportPosition(trainPass.TrainNumber);
+				RemoveTransportPosition(trainPass.CarNumber);
 				return true;
 			}
 			output(string.Format("向{0}翻车衡发送数据{1}条", trainPass.MachineCode, res), eOutputType.Normal);
@@ -163,43 +164,43 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="infactoryordernumber">顺序号</param>
 		/// <param name="carmodel">车型</param>
 		/// <returns></returns>
-		public static bool CarSpot2Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
+		public static bool CarSpot2Data(Action<string, eOutputType> output, CmcsTrainRecognition trainPass)
 		{
 			if (trainPass == null) return false;
 
 			if (trainPass.Direction == "进厂")
 			{
-				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_1, eSignalDataName.当前车号.ToString(), trainPass.TrainNumber);
+				CmcsTrainCarriagePass transport = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber='" + trainPass.CarNumber + "' and PassTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by PassTime desc");
+				if (transport == null)
+				{
+					transport = new CmcsTrainCarriagePass();
+					transport.TrainNumber = trainPass.CarNumber;
+					transport.CarModel = trainPass.CarModel;
+					transport.MachineCode = trainPass.MachineCode;
+					transport.PassTime = trainPass.CrossTime;
+					transport.Direction = trainPass.Direction;
+					transport.OrderNum = trainPass.OrderNum;
+					transport.DataFlag = 0;
+					Dbers.GetInstance().SelfDber.Insert(transport);
+				}
+
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_1, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);
 
 				// 插入定位信息
-				if (InsertTransportPosition("#2", trainPass.Id))
+				if (InsertTransportPosition("#2", trainPass.CarNumber))
 				{
-					output(string.Format("#2轨道插入定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.TrainNumber), eOutputType.Normal);
+					output(string.Format("#2轨道插入定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.CarNumber), eOutputType.Normal);
 					return true;
 				}
-				//CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and SuttleQty=0 and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
-				//if (transport == null)
-				//{
-				//	transport = new CmcsTransport();
-				//	transport.InFactoryBatchId = "-1";
-				//	transport.TransportNo = trainPass.TrainNumber;
-				//	transport.TrainType = trainPass.CarModel;
-				//	transport.TrackCode = "#2";
-				//	transport.TicketQty = (decimal)CommonDAO.GetInstance().GetTrainRateLoadByTrainType(trainPass.CarModel);
-				//	transport.InfactoryTime = trainPass.PassTime;
-				//	transport.OrderNumber = trainPass.OrderNum;
-				//	transport.DataFlag = 0;
-				//	transport.DataFrom = "车号识别";
-				//	Dbers.GetInstance().SelfDber.Insert(transport);
-				//}
+
 			}
 			else if (trainPass.Direction == "出厂")
 			{
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), string.Empty);
 				// 移除定位信息
-				if (RemoveTransportPosition(trainPass.TrainNumber))
+				if (RemoveTransportPosition(trainPass.CarNumber))
 				{
-					output(string.Format("#2轨道移除定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.TrainNumber), eOutputType.Normal);
+					output(string.Format("#2轨道移除定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.CarNumber), eOutputType.Normal);
 					return true;
 				}
 			}
@@ -216,41 +217,40 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="infactoryordernumber">顺序号</param>
 		/// <param name="carmodel">车型</param>
 		/// <returns></returns>
-		public static bool CarSpot3Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
+		public static bool CarSpot3Data(Action<string, eOutputType> output, CmcsTrainRecognition trainPass)
 		{
 			if (trainPass == null) return false;
 
 			if (trainPass.Direction == "进厂")
 			{
-				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), trainPass.TrainNumber);
-				// 插入定位信息
-				if (InsertTransportPosition("#4", trainPass.Id))
+				CmcsTrainCarriagePass transport = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and PassTime>=:PassTime order by PassTime desc", new { TrainNumber = trainPass.CarNumber, PassTime = DateTime.Now.AddDays(-1) });
+				if (transport == null)
 				{
-					output(string.Format("#4轨道插入定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.TrainNumber), eOutputType.Normal);
+					transport = new CmcsTrainCarriagePass();
+					transport.TrainNumber = trainPass.CarNumber;
+					transport.CarModel = trainPass.CarModel;
+					transport.MachineCode = trainPass.MachineCode;
+					transport.PassTime = trainPass.CrossTime;
+					transport.Direction = trainPass.Direction;
+					transport.OrderNum = trainPass.OrderNum;
+					transport.DataFlag = 0;
+					Dbers.GetInstance().SelfDber.Insert(transport);
+				}
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);
+				// 插入定位信息
+				if (InsertTransportPosition("#4", trainPass.CarNumber))
+				{
+					output(string.Format("#4轨道插入定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.CarNumber), eOutputType.Normal);
 					return true;
 				}
-				//CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and SuttleQty=0 and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
-				//if (transport == null)
-				//{
-				//	transport = new CmcsTransport();
-				//	transport.InFactoryBatchId = "-1";
-				//	transport.TransportNo = trainPass.TrainNumber;
-				//	transport.TrainType = trainPass.CarModel;
-				//	transport.TrackCode = "#4";
-				//	transport.TicketQty = (decimal)CommonDAO.GetInstance().GetTrainRateLoadByTrainType(trainPass.CarModel);
-				//	transport.InfactoryTime = trainPass.PassTime;
-				//	transport.OrderNumber = trainPass.OrderNum;
-				//	transport.DataFlag = 0;
-				//	transport.DataFrom = "车号识别";
-				//	Dbers.GetInstance().SelfDber.Insert(transport);
-				//}
+
 			}
 			else if (trainPass.Direction == "出厂")
 			{
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), string.Empty);
-				if (RemoveTransportPosition(trainPass.TrainNumber))
+				if (RemoveTransportPosition(trainPass.CarNumber))
 				{
-					output(string.Format("#4轨道移除定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.TrainNumber), eOutputType.Normal);
+					output(string.Format("#4轨道移除定位信息;{0}车号识别 车号:{1}", trainPass.MachineCode, trainPass.CarNumber), eOutputType.Normal);
 					return true;
 				}
 			}
@@ -266,29 +266,29 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="direction">方向</param>
 		/// <param name="carmodel">车型</param>
 		/// <returns></returns>
-		public static bool CarSpot4Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
+		public static bool CarSpot4Data(Action<string, eOutputType> output, CmcsTrainRecognition trainPass)
 		{
-			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.CarNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
 			if (transport == null) return false;
 
 			if (trainPass.Direction == "进厂" && transport.InfactoryTime > DateTime.MinValue)
 			{
-				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), trainPass.TrainNumber);
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);
 
 				//插入车辆信息至翻车衡交互数据库
 				if (InsertCarToTurnCarWeighter("#1", transport))
 					output(string.Format("向{0}插入一条翻车衡数据", GlobalVars.MachineCode_TrunOver_1), eOutputType.Normal);
 				//更改翻车状态
-				if (TurnTransportPosition(trainPass.TrainNumber))
-					output(string.Format("{0}插入一条定位数据", trainPass.TrainMachineCode), eOutputType.Normal);
+				if (TurnTransportPosition(trainPass.CarNumber))
+					output(string.Format("{0}更改为已翻车", trainPass.CarNumber), eOutputType.Normal);
 				return true;
 			}
 			else if (trainPass.Direction == "出厂")
 			{
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), string.Empty);
 				//更改翻车状态
-				if (UnTurnTransportPosition(trainPass.TrainNumber))
-					output(string.Format("{0}移除一条定位数据", trainPass.TrainMachineCode), eOutputType.Normal);
+				if (UnTurnTransportPosition(trainPass.CarNumber))
+					output(string.Format("{0}更改为未翻车", trainPass.CarNumber), eOutputType.Normal);
 				return true;
 			}
 			return false;
@@ -302,30 +302,30 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="direction">方向</param>
 		/// <param name="carmodel">车型</param>
 		/// <returns></returns>
-		public static bool CarSpot5Data(Action<string, eOutputType> output, CmcsTrainCarriagePass trainPass)
+		public static bool CarSpot5Data(Action<string, eOutputType> output, CmcsTrainRecognition trainPass)
 		{
-			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.TrainNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
+			CmcsTransport transport = Dbers.GetInstance().SelfDber.Entity<CmcsTransport>("where TransportNo='" + trainPass.CarNumber + "' and InfactoryTime>=to_date('" + DateTime.Now.Date.AddDays(-1) + "','yyyy/mm/dd HH24:MI:SS') order by InfactoryTime desc");
 			if (transport == null) return false;
 
 			if (trainPass.Direction == "进厂" && transport.InfactoryTime > DateTime.MinValue)
 			{
-				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), trainPass.TrainNumber);
+				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);
 
 				//插入车辆信息至翻车衡交互数据库
 				if (InsertCarToTurnCarWeighter("#2", transport))
 					output(string.Format("向{0}插入一条数据", GlobalVars.MachineCode_TrunOver_2), eOutputType.Normal);
 
 				//更改翻车状态
-				if (TurnTransportPosition(trainPass.TrainNumber))
-					output(string.Format("{0}插入一条定位数据", trainPass.TrainMachineCode), eOutputType.Normal);
+				if (TurnTransportPosition(trainPass.CarNumber))
+					output(string.Format("{0}更改为已翻车", trainPass.CarNumber), eOutputType.Normal);
 				return true;
 			}
 			else if (trainPass.Direction == "出厂")
 			{
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), string.Empty);
 				//更改翻车状态
-				if (UnTurnTransportPosition(trainPass.TrainNumber))
-					output(string.Format("{0}移除一条定位数据", trainPass.TrainMachineCode), eOutputType.Normal);
+				if (UnTurnTransportPosition(trainPass.CarNumber))
+					output(string.Format("{0}更改为未翻车", trainPass.CarNumber), eOutputType.Normal);
 				return true;
 			}
 			return false;
@@ -372,16 +372,18 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="trackNumber"></param>
 		/// <param name="transportid"></param>
 		/// <returns></returns>
-		public static bool InsertTransportPosition(string trackNumber, string transportId)
+		public static bool InsertTransportPosition(string trackNumber, string carNumber)
 		{
-			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + transportId + "'");
+			CmcsTrainCarriagePass transport = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and PassTime>=:PassTime order by CreationTime desc", new { TrainNumber = carNumber, PassTime = DateTime.Now.AddDays(-1) });
+			if (transport == null) return false;
+			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + transport.Id + "'");
 			if (entity != null) Dbers.GetInstance().SelfDber.Delete<CmcsTransportPosition>(entity.Id);
 
 			return Dbers.GetInstance().SelfDber.Insert(new CmcsTransportPosition()
 			{
 				OrderNumber = GetTransportPositionMaxOrder(),
 				TrackNumber = trackNumber,
-				TransportId = transportId,
+				TransportId = transport.Id,
 				IsDisCharged = 0
 			}) > 0;
 		}
@@ -392,12 +394,10 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="transportId"></param>
 		public static bool RemoveTransportPosition(string trainNumber)
 		{
-			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and (TrainMachineCode='2' or TrainMachineCode='3') and Direction='进厂' order by PassTime desc", new { TrainNumber = trainNumber });
+			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and PassTime>=:PassTime order by PassTime desc", new { TrainNumber = trainNumber, PassTime = DateTime.Now.AddDays(-1) });
 			if (oldtrain == null) return false;
 			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + oldtrain.Id + "' order by CreationTime desc");
 			if (entity == null) return false;
-			oldtrain.MachineCode = "0";
-			Dbers.GetInstance().SelfDber.Update(oldtrain);
 			return Dbers.GetInstance().SelfDber.Delete<CmcsTransportPosition>(entity.Id) > 0;
 		}
 
@@ -408,10 +408,8 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="transportId"></param>
 		public static bool TurnTransportPosition(string trainNumber)
 		{
-			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and (TrainMachineCode='2' or TrainMachineCode='3') and Direction='进厂' order by PassTime desc", new { TrainNumber = trainNumber });
+			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and PassTime>=:PassTime order by PassTime desc", new { TrainNumber = trainNumber, PassTime = DateTime.Now.AddDays(-1) });
 			if (oldtrain == null) return false;
-			//oldtrain.MachineCode = oldtrain.TrainMachineCode == "2" ? "1" : "3";
-			//Dbers.GetInstance().SelfDber.Update(oldtrain);
 			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + oldtrain.Id + "' and IsDisCharged=0 order by CreationTime desc");
 			if (entity == null) return false;
 			entity.TrackNumber = entity.TrackNumber == "#4" ? "#5" : "#1";
@@ -426,7 +424,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		/// <param name="transportId"></param>
 		public static bool UnTurnTransportPosition(string trainNumber)
 		{
-			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and (TrainMachineCode='2' or TrainMachineCode='3') and Direction='进厂' order by PassTime desc", new { TrainNumber = trainNumber });
+			CmcsTrainCarriagePass oldtrain = Dbers.GetInstance().SelfDber.Entity<CmcsTrainCarriagePass>("where TrainNumber=:TrainNumber and PassTime>=:PassTime order by PassTime desc", new { TrainNumber = trainNumber, PassTime = DateTime.Now.AddDays(-1) });
 			if (oldtrain == null) return false;
 			CmcsTransportPosition entity = Dbers.GetInstance().SelfDber.Entity<CmcsTransportPosition>("where TransportId='" + oldtrain.Id + "' and IsDisCharged=1 order by CreationTime desc");
 			if (entity == null) return false;

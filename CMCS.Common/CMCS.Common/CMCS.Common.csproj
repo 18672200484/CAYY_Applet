@@ -97,6 +97,7 @@
     <Compile Include="Entities\SampleCabinet\CmcstbSampleInput.cs" />
     <Compile Include="Entities\SampleCabinet\CmcstbSampleInputHistory.cs" />
     <Compile Include="Entities\Sys\CmcsOperationLog.cs" />
+    <Compile Include="Entities\TrainInFactory\CmcsTrainRecognition.cs" />
     <Compile Include="Enums\eEquInfBeltSamplerUnloadStatus.cs" />
     <Compile Include="Enums\eEquInfMtSystemStatus.cs" />
     <Compile Include="Enums\eEquInfBeltSamplerSystemStatus.cs" />

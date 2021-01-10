@@ -7,15 +7,15 @@ using CMCS.Common.Entities.Sys;
 namespace CMCS.Common.Entities.TrainInFactory
 {
 	/// <summary>
-	/// 批次绑定选择表
+	/// 火车车号识别记录表
 	/// </summary>
-	[CMCS.DapperDber.Attrs.DapperBind("CmcstbTrainCarriagePass")]
-	public class CmcsTrainCarriagePass : EntityBase
+	[CMCS.DapperDber.Attrs.DapperBind("CmcsTbTrainRecognition")]
+	public class CmcsTrainRecognition : EntityBase
 	{
 		/// <summary>
-		/// 唯一标识
+		/// 创建时间
 		/// </summary>
-		public string PKID { get; set; }
+		public DateTime CreateDate { get; set; }
 
 		/// <summary>
 		/// 设备编号
@@ -25,12 +25,12 @@ namespace CMCS.Common.Entities.TrainInFactory
 		/// <summary>
 		/// 车号
 		/// </summary>
-		public string TrainNumber { get; set; }
+		public string CarNumber { get; set; }
 
 		/// <summary>
 		/// 通过时间
 		/// </summary>
-		public DateTime PassTime { get; set; }
+		public DateTime CrossTime { get; set; }
 
 		/// <summary>
 		/// 方向
@@ -51,6 +51,11 @@ namespace CMCS.Common.Entities.TrainInFactory
 		/// 速度
 		/// </summary>
 		public decimal Speed { get; set; }
+
+		/// <summary>
+		/// 状态 0 正在通过检测器 1 已经通过检测器
+		/// </summary>
+		public int Status { get; set; }
 
 		/// <summary>
 		/// 标识符

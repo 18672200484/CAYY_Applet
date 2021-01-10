@@ -94,37 +94,40 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 					if (string.IsNullOrEmpty(carnumber.Trim())) continue;
 
 					string uniqKey = date + time + "_" + carnumber;
+
+					////同步到车号识别表
+					//if (Dbers.GetInstance().SelfDber.Count<CmcsTrainCarriagePass>(" where TrainNumber='" + carnumber + "'  and  PKID='" + uniqKey + "'") == 0)
+					//{
+					//	res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainCarriagePass()
+					//	{
+					//		PKID = uniqKey,
+					//		TrainNumber = carnumber,
+					//		PassTime = carDate,
+					//		CarModel = carmodel,
+					//		Direction = direction,
+					//		MachineCode = flag,
+					//		DataFlag = 0,
+					//		OrderNum = hasJCar ? i : i + 1
+					//	});
+					//}
+
 					//同步到车号识别表
-					if (Dbers.GetInstance().SelfDber.Count<CmcsTrainCarriagePass>(" where TrainNumber='" + carnumber + "'  and  PKID='" + uniqKey + "'") == 0)
+					if (Dbers.GetInstance().SelfDber.Count<CmcsTrainRecognition>(" where CarNumber='" + carnumber + "'  and  Id='" + uniqKey + "'") == 0)
 					{
-						res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainCarriagePass()
+						res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainRecognition()
 						{
-							PKID = uniqKey,
-							TrainNumber = carnumber,
-							PassTime = carDate,
+							Id = uniqKey,
+							CreateDate = DateTime.Now,
+							CarNumber = carnumber,
+							CrossTime = carDate,
 							CarModel = carmodel,
 							Direction = direction,
-							TrainMachineCode = flag,
 							MachineCode = flag,
+							Status = 1,
 							DataFlag = 0,
 							OrderNum = hasJCar ? i : i + 1
 						});
 					}
-
-					////同步到轨道衡表
-					//if (Dbers.GetInstance().SelfDber.Count<CmcsTrainWeightRecord>(" where TrainNumber='" + carnumber + "'  and  PKID='" + uniqKey + "'") == 0)
-					//{
-					//	res += Dbers.GetInstance().SelfDber.Insert(new CmcsTrainWeightRecord()
-					//	{
-					//		PKID = uniqKey,
-					//		TrainNumber = carnumber,
-					//		ArriveTime = carDate,
-					//		TrainType = carmodel,
-					//		IsTurnover = "未翻",
-					//		MachineCode = flag,
-					//		DataFlag = 0,
-					//		OrderNumber = hasJCar ? i : i + 1
-					//	});
 				}
 			}
 			output(string.Format("{0}车号识别同步车号识别数据{1}条", flag, res), eOutputType.Normal);
