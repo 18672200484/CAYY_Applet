@@ -110,6 +110,7 @@
     <Compile Include="Tasks\BeltBalancer\Entities\CmcsBeltBalancerHistoryValue.cs" />
     <Compile Include="Tasks\BeltBalancer\Entities\CmcsBeltBalancerValue.cs" />
     <Compile Include="Tasks\BeltBalancer\EquBeltBalancerDAO.cs" />
+    <Compile Include="Tasks\BeltSampler\EquBeltSamplerOPC.cs" />
     <Compile Include="Tasks\CarJxSampler\Entities\Interface_Data.cs" />
     <Compile Include="Tasks\CarJxSampler\EquCarJXSamplerOPC.cs" />
     <Compile Include="Tasks\PneumaticTransfer\Entities\EquQDBill.cs" />

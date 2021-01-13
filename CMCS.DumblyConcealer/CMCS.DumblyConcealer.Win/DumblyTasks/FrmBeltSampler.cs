@@ -69,6 +69,12 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 
 			#endregion
 
+
+			taskSimpleScheduler.StartNewTask("同步皮带采样机OPC", () =>
+			{
+				EquBeltSamplerOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
+			}, 0, OutputError);
+
 		}
 
 		/// <summary>

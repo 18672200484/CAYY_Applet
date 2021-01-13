@@ -59,7 +59,7 @@ namespace CMCS.DumblyConcealer.Utilities
 				}
 				return false;
 			}
-			catch (Exception ex) { output(string.Format("OPC服务" + ServerName + "初始化异常", ex.Message), eOutputType.Error); }
+			catch (Exception ex) { output(string.Format("OPC服务" + ServerName + "初始化异常:{0}", ex.Message), eOutputType.Error); }
 
 			return false;
 		}
@@ -99,9 +99,29 @@ namespace CMCS.DumblyConcealer.Utilities
 					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_2, item.ItemName.Replace("汽车机械采样机.#2采样机.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
 					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
 				}
-				else
+				else if (item.ItemName.Contains("气动传输"))
 				{
 					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QD, item.ItemName.Replace("气动传输.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
+				else if (item.ItemName.Contains("皮带采样机") && item.ItemName.Contains(GlobalVars.MachineCode_PDCYJ_1))
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_PDCYJ_1, item.ItemName.Replace("皮带采样机.", "").Replace("2PA", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
+				else if (item.ItemName.Contains("皮带采样机") && item.ItemName.Contains(GlobalVars.MachineCode_PDCYJ_2))
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_PDCYJ_2, item.ItemName.Replace("皮带采样机.", "").Replace("2PB", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
+				else if (item.ItemName.Contains("皮带采样机") && item.ItemName.Contains(GlobalVars.MachineCode_PDFZJ_1))
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_PDCYJ_1, item.ItemName.Replace("皮带采样机.", "").Replace(GlobalVars.MachineCode_PDFZJ_1 + ".", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
+				else if (item.ItemName.Contains("皮带采样机") && item.ItemName.Contains(GlobalVars.MachineCode_PDFZJ_2))
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_PDCYJ_2, item.ItemName.Replace("皮带采样机.", "").Replace(GlobalVars.MachineCode_PDFZJ_2 + ".", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
 					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
 				}
 			}
