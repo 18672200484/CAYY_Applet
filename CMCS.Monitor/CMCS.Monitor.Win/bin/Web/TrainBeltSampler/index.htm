@@ -65,18 +65,15 @@
                 changeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
             }
             //svg_visible
-            else if (data.Type == 4) {
+             else if (data.Type == 4) {
                 if (data.Value == 1) {
                     if (data.Obj == true) {
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "1]").hide();
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "2]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").show();
                     } else {
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "2]").hide();
-                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "1]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").hide();
                     }
                 } else {
-                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "1]").hide();
-                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "2]").hide();
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").hide();
                 }
             }
             //svg_dyncolor
