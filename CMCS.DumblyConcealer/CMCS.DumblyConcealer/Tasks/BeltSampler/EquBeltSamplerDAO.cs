@@ -81,7 +81,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 
 				eEquInfBeltSamplerUnloadStatus systemXL = eEquInfBeltSamplerUnloadStatus.默认;
 				Enum.TryParse<eEquInfBeltSamplerSystemStatus>(state.XL_State, out system);
-				res += commonDAO.SetSignalDataValue(KYToMachineCode(state.CYJ_Machine), KYToMachineCode(state.CYJ_Machine) + eSignalDataName.卸料机状态.ToString(), systemXL.ToString()) ? 1 : 0;
+				res += commonDAO.SetSignalDataValue(KYToMachineCode(state.CYJ_Machine), eSignalDataName.卸料机状态.ToString(), systemXL.ToString()) ? 1 : 0;
 			}
 
 			//foreach (EquSignalData item in DcDbers.GetInstance().BeltSampler_Dber.Entities<EquSignalData>())
@@ -186,6 +186,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 						turn.IsDone = 0;
 						turn.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
 						DcDbers.GetInstance().BeltSampler_Dber.Insert(turn);
+						commonDAO.SetSignalDataValue(this.MachineCode, turn.TurnCode == "#1" ? "#1翻车机车数" : "#2翻车机车数", turn.Car_Count.ToString());
 					}
 				}
 				else
@@ -253,6 +254,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 				entity.DataFlag = 0;
 				entity.Send_Time = DateTime.Now;
 				res += DcDbers.GetInstance().BeltSampler_Dber.Update(entity);
+				commonDAO.SetSignalDataValue(this.MachineCode, entity.TurnCode == "#1" ? "#1翻车机已翻车数" : "#2翻车机已翻车数", entity.Ready_Count.ToString());
 			}
 			output(string.Format("同步翻车信息{0}条", res), eOutputType.Normal);
 		}

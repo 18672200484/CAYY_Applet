@@ -181,6 +181,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 					transport.Direction = trainPass.Direction;
 					transport.OrderNum = trainPass.OrderNum;
 					transport.DataFlag = 0;
+					transport.PKID = trainPass.Id;
 					Dbers.GetInstance().SelfDber.Insert(transport);
 				}
 
@@ -234,6 +235,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 					transport.Direction = trainPass.Direction;
 					transport.OrderNum = trainPass.OrderNum;
 					transport.DataFlag = 0;
+					transport.PKID = trainPass.Id;
 					Dbers.GetInstance().SelfDber.Insert(transport);
 				}
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);

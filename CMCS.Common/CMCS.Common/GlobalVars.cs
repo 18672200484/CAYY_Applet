@@ -49,6 +49,16 @@ namespace CMCS.Common
 		public static string MachineCode_PDCYJ_2 = "2PB皮带采样机";
 
 		/// <summary>
+		/// 设备编码 - 封装机 #1
+		/// </summary>
+		public static string MachineCode_PDFZJ_1 = "2PA封装机";
+
+		/// <summary>
+		/// 设备编码 - 封装机 #2
+		/// </summary>
+		public static string MachineCode_PDFZJ_2 = "2PB封装机";
+
+		/// <summary>
 		/// 接口类型 - 徐州赛摩皮带采样机
 		/// </summary>
 		public static string InterfaceType_PDCYJ = "长沙开元皮带采样机";

@@ -81,7 +81,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 				{
 					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
-					cmd.Add("汽车机械采样机.#1采样机." + "急停/复位", appRemoteControlCmd.CmdCode);
+					cmd.Add("汽车机械采样机.#1采样机." + "急停/复位", appRemoteControlCmd.CmdCode == "1" ? true : false);
 					if (opcServere.WriteOPCItemValue(cmd))
 					{
 						// 更新执行结果
@@ -105,7 +105,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 				{
 					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
-					cmd.Add("汽车机械采样机.#2采样机." + "急停/复位", appRemoteControlCmd.CmdCode);
+					cmd.Add("汽车机械采样机.#2采样机." + "急停/复位", appRemoteControlCmd.CmdCode == "1" ? true : false);
 					if (opcServere.WriteOPCItemValue(cmd))
 					{
 						// 更新执行结果
