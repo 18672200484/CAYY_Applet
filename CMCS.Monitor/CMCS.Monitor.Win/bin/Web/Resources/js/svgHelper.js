@@ -29,9 +29,40 @@ function changeColor($elements, color) {
 
         if ($this[0].tagName.toLowerCase() == "path") {
             $this.css({ "fill": color });
+
         }
         else
         {
+            $this.css({ "fill": color });
+            $this.css({ "stroke": color });
+        }
+    });
+}
+
+
+// 改变颜色
+// $elements:SVG.jQuery对象
+// color:颜色
+function svgChangeColor2($elements, color) {
+    if ($elements.children().length == 0) {
+        changeColor2($elements, color);
+    } else {
+        changeColor2($elements.find("*:not(g)"), color);
+    }
+}
+
+// 改变颜色
+// $element:SVG.jQuery对象
+// color:颜色
+function changeColor2($elements, color) {
+    $elements.each(function () {
+        var $this = $(this);
+
+        if ($this[0].tagName.toLowerCase() == "path") {
+            //$this.css({ "fill": color });
+            $this.css({ "stroke": color });
+        }
+        else {
             $this.css({ "fill": color });
             $this.css({ "stroke": color });
         }

@@ -88,7 +88,7 @@ namespace CMCS.Monitor.Win.Frms
             GetBoxDatas(commonDAO, GlobalVars.MachineCode_CYG1, ref datas);
 
 
-            //GetQdDatas(commonDAO, GlobalVars.MachineCode_QD, ref datas);
+            GetQdDatas(commonDAO, GlobalVars.MachineCode_QD, ref datas);
 
             // 发送到页面
             cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("requestData(" + Newtonsoft.Json.JsonConvert.SerializeObject(datas) + ");", "", 0);
@@ -212,7 +212,7 @@ namespace CMCS.Monitor.Win.Frms
 
         private static void GetQdDatas(CommonDAO commonDAO, string machineCode, ref List<HtmlDataItem> datas)
         {
-            //string value = "";
+            string value = "";
             //value = commonDAO.GetSignalDataValue(machineCode, "系统");
             //if ("|就绪待机|自动|正常|".Contains("|" + value + "|"))
             //    datas.Add(new HtmlDataItem("气动传输_系统", "#00c000", eHtmlDataItemType.svg_color));
@@ -227,72 +227,91 @@ namespace CMCS.Monitor.Win.Frms
 
             //string keys = "";
 
-            //value = commonDAO.GetSignalDataValue(machineCode, "动力风机");
-            //if (value == "144")
-            //{
+            value = commonDAO.GetSignalDataValue(machineCode, "风机.风机运行");
+            if (value == "1")
+            {
+                value = commonDAO.GetSignalDataValue(machineCode, "风机.吹气位置");
+                if (value == "1")
+                {
 
-            //    datas.Add(new HtmlDataItem("风机", "00c000", eHtmlDataItemType.svg_color));
+                    //datas.Add(new HtmlDataItem("风机", "00c000", eHtmlDataItemType.svg_color));
 
-            //    datas.Add(new HtmlDataItem("气动传输_风机", "风机正转", eHtmlDataItemType.svg_scroll3));
-            //}
-            //else if(value == "160")
-            //{
-            //    datas.Add(new HtmlDataItem("气动传输_风机", "风机反转", eHtmlDataItemType.svg_scroll3));
-            //}
+                    datas.Add(new HtmlDataItem("气动传输_风机", "风机正转", eHtmlDataItemType.svg_scroll3));
+                }
 
-            //value = commonDAO.GetSignalDataValue(machineCode, "四向转换器1");
-            //if (value == "16"|| value == "17")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器1", "1", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "32" || value == "33")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器1", "2", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "64" || value == "65")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器1", "3", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "128" || value == "129")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器1", "4", eHtmlDataItemType.svg_scroll));
-            //}
+                value = commonDAO.GetSignalDataValue(machineCode, "风机.吸气位置");
+                if (value == "1")
+                {
+                    datas.Add(new HtmlDataItem("气动传输_风机", "风机反转", eHtmlDataItemType.svg_scroll3));
+                }
+            }
+            else
+            {
+                datas.Add(new HtmlDataItem("气动传输_风机", "风机停止", eHtmlDataItemType.svg_scroll3));
+            }
 
-            //value = commonDAO.GetSignalDataValue(machineCode, "四向转换器2");
-            //if (value == "16" || value == "17")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器2", "1", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "32" || value == "33")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器2", "2", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "64" || value == "65")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器2", "3", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "128" || value == "129")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器2", "4", eHtmlDataItemType.svg_scroll));
-            //}
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器1.管道1定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器1", "1", eHtmlDataItemType.svg_scroll));
+            }
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器1.管道2定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器1", "2", eHtmlDataItemType.svg_scroll));
+            }
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器1.管道3定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器1", "3", eHtmlDataItemType.svg_scroll));
+            }
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器1.管道4定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器1", "4", eHtmlDataItemType.svg_scroll));
+            }
 
-            //value = commonDAO.GetSignalDataValue(machineCode, "四向转换器3");
-            //if (value == "16" || value == "17")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器3", "1", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "32" || value == "33")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器3", "2", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "64" || value == "65")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器3", "3", eHtmlDataItemType.svg_scroll));
-            //}
-            //else if (value == "128" || value == "129")
-            //{
-            //    datas.Add(new HtmlDataItem("四向转换器3", "4", eHtmlDataItemType.svg_scroll));
-            //}
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器2.管道1定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器2", "1", eHtmlDataItemType.svg_scroll));
+            }
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器2.管道2定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器2", "2", eHtmlDataItemType.svg_scroll));
+            }
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器2.管道3定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器2", "3", eHtmlDataItemType.svg_scroll));
+            }
+            value = commonDAO.GetSignalDataValue(machineCode, "换向器2.管道4定位");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("转换器2", "4", eHtmlDataItemType.svg_scroll));
+            }
+
+            datas.Add(new HtmlDataItem("转换器1_1a", commonDAO.GetSignalDataValue(machineCode, "换向器1.管道1检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器1_2a", commonDAO.GetSignalDataValue(machineCode, "换向器1.管道2检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器1_3a", commonDAO.GetSignalDataValue(machineCode, "换向器1.管道3检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器1_4a", commonDAO.GetSignalDataValue(machineCode, "换向器1.管道4检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器2_1a", commonDAO.GetSignalDataValue(machineCode, "换向器2.管道1检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器2_2a", commonDAO.GetSignalDataValue(machineCode, "换向器2.管道2检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器2_3a", commonDAO.GetSignalDataValue(machineCode, "换向器2.管道3检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器2_4a", commonDAO.GetSignalDataValue(machineCode, "换向器2.管道4检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("人工站", commonDAO.GetSignalDataValue(machineCode, "人工发送站.物料检测") == "1" ? "#00ff00" : "#EC1C24", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("大瓶发送站", commonDAO.GetSignalDataValue(machineCode, "大瓶发送站.物料检测") == "1" ? "#00ff00" : "#EC1C24", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("小瓶发送站", commonDAO.GetSignalDataValue(machineCode, "小瓶发送站.物料检测") == "1" ? "#00ff00" : "#EC1C24", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("化验室发送站", commonDAO.GetSignalDataValue(machineCode, "化验室发送站.物料检测") == "1" ? "#00ff00" : "#EC1C24", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("弃样站", commonDAO.GetSignalDataValue(machineCode, "弃样接收站.样品到位检测") == "1" ? "#00ff00" : "#EC1C24", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("化验室接收站", commonDAO.GetSignalDataValue(machineCode, "化验室接收站.样品检测") == "1" ? "#00ff00" : "#EC1C24", eHtmlDataItemType.svg_color));
+
+
+            datas.Add(new HtmlDataItem("转换器1_4a", commonDAO.GetSignalDataValue(machineCode, "小瓶发送站.管道检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器1_3a", commonDAO.GetSignalDataValue(machineCode, "大瓶发送站.管道检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("转换器2_1a", commonDAO.GetSignalDataValue(machineCode, "化验室发送站.管道检测") == "1" ? "#00ff00" : "#D0D2D3", eHtmlDataItemType.svg_color));
         }
 
 

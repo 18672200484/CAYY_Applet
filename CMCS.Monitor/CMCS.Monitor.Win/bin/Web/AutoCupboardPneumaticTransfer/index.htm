@@ -110,7 +110,7 @@
                 }
                 // svg_color
                 else if (data.Type == 3) {
-                    svgChangeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                    svgChangeColor2(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
                 }
                 // svg_blinkcolor
                 else if (data.Type == 7) {
@@ -126,14 +126,22 @@
                         //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-15,1252.744,-556.003");
                         getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1]").show();
                         getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_4]").hide();
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a1]"), "#ee4036");
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
-                    } if (data.Value == 2) {
+                        
+                    }
+                    else if (data.Value == 2) {
                         //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,200.04816,157.75323");
                         getCanvas1().find("*[inkscape\\:label=" + data.Key + "_2]").show();
                         getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_3],*[inkscape\\:label=" + data.Key + "_4]").hide();
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a2]"), "#ee4036");
-                        changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "a1],*[inkscape\\:label=" + data.Key + "a3],*[inkscape\\:label=" + data.Key + "a4]"), "#ffffff");
+                    }
+                    else if (data.Value == 3) {
+                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,200.04816,157.75323");
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_3]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_4]").hide();
+                    }
+                    else if (data.Value == 4) {
+                        //changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,200.04816,157.75323");
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_4]").show();
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "_1],*[inkscape\\:label=" + data.Key + "_2],*[inkscape\\:label=" + data.Key + "_3]").hide();
                     }
                 }
                 // svg_scroll

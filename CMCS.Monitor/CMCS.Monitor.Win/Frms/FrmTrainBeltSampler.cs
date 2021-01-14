@@ -124,53 +124,59 @@ namespace CMCS.Monitor.Win.Frms
 
             datas.Clear();
             machineCode = GlobalVars.MachineCode_PDCYJ_1;
-            //equInfSamplerSystemStatus = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
-            //datas.Add(new HtmlDataItem("#1皮采_采样编码", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "采样编码")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#1皮采_矿发量", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "矿发量")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#1皮采_开始时间", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "截取开始时间")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#1皮采_来煤车数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "来煤车数")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#1皮采_采样次数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "次采次数")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#1皮采_系统", ConvertMachineStatusToColor(equInfSamplerSystemStatus), eHtmlDataItemType.svg_color));
 
-            //// 集样罐   
-            //List<InfEquInfSampleBarrel> barrels1 = MonitorDAO.GetInstance().GetEquInfSampleBarrels(machineCode);
-            //datas.Add(new HtmlDataItem("#1皮采_集样罐", Newtonsoft.Json.JsonConvert.SerializeObject(barrels1.Select(a => new { SampleCode = a.SampleCode, BarrelNumber = a.BarrelNumber, IsCurrent = a.IsCurrent, BarrelStatus = a.BarrelStatus, SampleCount = a.SampleCount })), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("#1翻车机1", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "url(#g2089)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机1", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#g2117)", eHtmlDataItemType.svg_color));
 
-          
+            datas.Add(new HtmlDataItem("2PA", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g413)", eHtmlDataItemType.svg_color));
+            value = commonDAO.GetSignalDataValue(machineCode, "#2翻车机");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("2PA1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g424)", eHtmlDataItemType.svg_color));
+            }
+
             datas.Add(new HtmlDataItem("初级给料皮带正转a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("初级给料皮带反转a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带反转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("初级给料皮带清扫a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带清扫") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("破碎机a", commonDAO.GetSignalDataValue(machineCode, "破碎机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("破碎机a", commonDAO.GetSignalDataValue(machineCode, "初级破碎机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("破碎清扫电机a", commonDAO.GetSignalDataValue(machineCode, "破碎清扫电机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("次级给料皮带a", commonDAO.GetSignalDataValue(machineCode, "次级给料皮带") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("次级给料皮带清扫a", commonDAO.GetSignalDataValue(machineCode, "次级给料皮带清扫") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("煤流信号a", commonDAO.GetSignalDataValue(machineCode, "煤流信号") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("缩分器a", commonDAO.GetSignalDataValue(machineCode, "缩分器") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("斗提机a", commonDAO.GetSignalDataValue(machineCode, "斗提机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("返料输送机a", commonDAO.GetSignalDataValue(machineCode, "返料输送机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("斗提机a", commonDAO.GetSignalDataValue(machineCode, "弃料提升斗") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("返料输送机a", commonDAO.GetSignalDataValue(machineCode, "返料皮带") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("初级给料皮带正转方向a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("初级给料皮带反转方向a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带反转"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("次级给料皮带方向a", commonDAO.GetSignalDataValue(machineCode, "次级给料皮带"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("斗提机方向a", commonDAO.GetSignalDataValue(machineCode, "弃料提升斗"), tempBool,eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("返料运输机方向a", commonDAO.GetSignalDataValue(machineCode, "返料皮带"), tempBool,eHtmlDataItemType.svg_visible));
 
             datas.Add(new HtmlDataItem("封装机运行状态a", commonDAO.GetSignalDataValue(machineCode, "封装机运行状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("封装机准备状态a", commonDAO.GetSignalDataValue(machineCode, "封装机准备状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("封装机准备状态a", commonDAO.GetSignalDataValue(machineCode, "封装机准备好") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("封装机连接状态a", commonDAO.GetSignalDataValue(machineCode, "封装机连接状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("封装机报警状态a", commonDAO.GetSignalDataValue(machineCode, "封装机报警状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("封装机报警状态a", commonDAO.GetSignalDataValue(machineCode, "封装机报警") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("采样机PLC连接状态a", commonDAO.GetSignalDataValue(machineCode, "采样机PLC连接状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("采样机无报警状态a", commonDAO.GetSignalDataValue(machineCode, "采样机无报警状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("远程自动状态a", commonDAO.GetSignalDataValue(machineCode, "远程自动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("远程手动状态a", commonDAO.GetSignalDataValue(machineCode, "远程手动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("就地自动状态a", commonDAO.GetSignalDataValue(machineCode, "就地自动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("就地手动状态a", commonDAO.GetSignalDataValue(machineCode, "就地手动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("采样机PLC连接状态a", commonDAO.GetSignalDataValue(machineCode, "PLC连接状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("采样机无报警状态a", commonDAO.GetSignalDataValue(machineCode, "采样机报警") == "1" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("采样机报警a", commonDAO.GetSignalDataValue(machineCode, "采样机报警") == "1" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("远程自动状态a", commonDAO.GetSignalDataValue(machineCode, "远程自动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("远程手动状态a", commonDAO.GetSignalDataValue(machineCode, "远程手动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("就地自动状态a", commonDAO.GetSignalDataValue(machineCode, "就地自动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("就地手动状态a", commonDAO.GetSignalDataValue(machineCode, "就地手动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 
             datas.Add(new HtmlDataItem("下次采样时间a", commonDAO.GetSignalDataValue(machineCode, "下次采样时间"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("皮带称a", commonDAO.GetSignalDataValue(machineCode, "皮带称"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("当前样重a", commonDAO.GetSignalDataValue(machineCode, "当前样重"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("采样次数a", commonDAO.GetSignalDataValue(machineCode, "采样次数"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("当前采样码a", commonDAO.GetSignalDataValue(machineCode, "当前采样码"), eHtmlDataItemType.svg_text));
-           
-            datas.Add(new HtmlDataItem("采样机编码a", commonDAO.GetSignalDataValue(machineCode, "采样机编码"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("翻车机编码a", commonDAO.GetSignalDataValue(machineCode, "翻车机编码"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("翻车机车数a", commonDAO.GetSignalDataValue(machineCode, "翻车机车数"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("已翻车数a", commonDAO.GetSignalDataValue(machineCode, "已翻车数"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("皮带称a", commonDAO.GetSignalDataValue(machineCode, "皮带秤"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("当前样重a", commonDAO.GetSignalDataValue(machineCode, "封装机装样重量"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("采样次数a", commonDAO.GetSignalDataValue(machineCode, "封装机装样次数"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("当前采样码a", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
+
+            datas.Add(new HtmlDataItem("采样机编码a", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("翻车机编码a", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("翻车机车数a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机车数"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("已翻车数a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机已翻车数"), eHtmlDataItemType.svg_text));
 
             // 添加更多...
 
@@ -183,52 +189,60 @@ namespace CMCS.Monitor.Win.Frms
 
             datas.Clear();
             machineCode = GlobalVars.MachineCode_PDCYJ_2;
-            //equInfSamplerSystemStatus = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
-            //datas.Add(new HtmlDataItem("#2皮采_采样编码", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "采样编码")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#2皮采_矿发量", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "矿发量")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#2皮采_开始时间", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "截取开始时间")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#2皮采_来煤车数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "来煤车数")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#2皮采_采样次数", ConvertSignalValue(!SysStatus(equInfSamplerSystemStatus) ? "" : commonDAO.GetSignalDataValue(machineCode, "次采次数")), eHtmlDataItemType.svg_text));
-            //datas.Add(new HtmlDataItem("#2皮采_系统", ConvertMachineStatusToColor(equInfSamplerSystemStatus), eHtmlDataItemType.svg_color));
 
-            //// 集样罐   
-            //List<InfEquInfSampleBarrel> barrels2 = MonitorDAO.GetInstance().GetEquInfSampleBarrels(machineCode);
-            //datas.Add(new HtmlDataItem("#2皮采_集样罐", Newtonsoft.Json.JsonConvert.SerializeObject(barrels2.Select(a => new { SampleCode = a.SampleCode, BarrelNumber = a.BarrelNumber, IsCurrent = a.IsCurrent, BarrelStatus = a.BarrelStatus, SampleCount = a.SampleCount })), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("#1翻车机2", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "url(#g2100)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机2", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#g2128)", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("2PB", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g424)", eHtmlDataItemType.svg_color));
+            value = commonDAO.GetSignalDataValue(machineCode, "#1翻车机");
+            if (value == "1")
+            {
+                datas.Add(new HtmlDataItem("2PB1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g424)", eHtmlDataItemType.svg_color));
+            }
+
 
             datas.Add(new HtmlDataItem("初级给料皮带正转b", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("初级给料皮带反转b", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带反转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("初级给料皮带清扫b", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带清扫") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("破碎机b", commonDAO.GetSignalDataValue(machineCode, "破碎机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("破碎机b", commonDAO.GetSignalDataValue(machineCode, "初级破碎机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("破碎清扫电机b", commonDAO.GetSignalDataValue(machineCode, "破碎清扫电机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("次级给料皮带b", commonDAO.GetSignalDataValue(machineCode, "次级给料皮带") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("次级给料皮带清扫b", commonDAO.GetSignalDataValue(machineCode, "次级给料皮带清扫") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("煤流信号b", commonDAO.GetSignalDataValue(machineCode, "煤流信号") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("缩分器b", commonDAO.GetSignalDataValue(machineCode, "缩分器") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("斗提机b", commonDAO.GetSignalDataValue(machineCode, "斗提机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("返料输送机b", commonDAO.GetSignalDataValue(machineCode, "返料输送机") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("斗提机b", commonDAO.GetSignalDataValue(machineCode, "弃料提升斗") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("返料输送机b", commonDAO.GetSignalDataValue(machineCode, "返料皮带") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("初级给料皮带正转方向b", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("初级给料皮带反转方向b", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带反转"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("次级给料皮带方向b", commonDAO.GetSignalDataValue(machineCode, "次级给料皮带"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("斗提机方向b", commonDAO.GetSignalDataValue(machineCode, "弃料提升斗"), tempBool, eHtmlDataItemType.svg_visible));
+            datas.Add(new HtmlDataItem("返料运输机方向b", commonDAO.GetSignalDataValue(machineCode, "返料皮带"),tempBool, eHtmlDataItemType.svg_visible));
 
             datas.Add(new HtmlDataItem("封装机运行状态b", commonDAO.GetSignalDataValue(machineCode, "封装机运行状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("封装机准备状态b", commonDAO.GetSignalDataValue(machineCode, "封装机准备状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("封装机准备状态b", commonDAO.GetSignalDataValue(machineCode, "封装机准备好") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("封装机连接状态b", commonDAO.GetSignalDataValue(machineCode, "封装机连接状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("封装机报警状态b", commonDAO.GetSignalDataValue(machineCode, "封装机报警状态") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("封装机报警状态b", commonDAO.GetSignalDataValue(machineCode, "封装机报警") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("采样机PLC连接状态b", commonDAO.GetSignalDataValue(machineCode, "采样机PLC连接状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("采样机无报警状态b", commonDAO.GetSignalDataValue(machineCode, "采样机无报警状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("远程自动状态b", commonDAO.GetSignalDataValue(machineCode, "远程自动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("远程手动状态b", commonDAO.GetSignalDataValue(machineCode, "远程手动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("就地自动状态b", commonDAO.GetSignalDataValue(machineCode, "就地自动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("就地手动状态b", commonDAO.GetSignalDataValue(machineCode, "就地手动状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("采样机PLC连接状态b", commonDAO.GetSignalDataValue(machineCode, "PLC连接状态") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("采样机无报警状态b", commonDAO.GetSignalDataValue(machineCode, "采样机报警") == "1" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("采样机报警b", commonDAO.GetSignalDataValue(machineCode, "采样机报警") == "1" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("远程自动状态b", commonDAO.GetSignalDataValue(machineCode, "远程自动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("远程手动状态b", commonDAO.GetSignalDataValue(machineCode, "远程手动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("就地自动状态b", commonDAO.GetSignalDataValue(machineCode, "就地自动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("就地手动状态b", commonDAO.GetSignalDataValue(machineCode, "就地手动") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 
             datas.Add(new HtmlDataItem("下次采样时间b", commonDAO.GetSignalDataValue(machineCode, "下次采样时间"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("皮带称b", commonDAO.GetSignalDataValue(machineCode, "皮带称"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("当前样重b", commonDAO.GetSignalDataValue(machineCode, "当前样重"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("采样次数b", commonDAO.GetSignalDataValue(machineCode, "采样次数"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("当前采样码b", commonDAO.GetSignalDataValue(machineCode, "当前采样码"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("皮带称b", commonDAO.GetSignalDataValue(machineCode, "皮带秤"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("当前样重b", commonDAO.GetSignalDataValue(machineCode, "封装机装样重量"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("采样次数b", commonDAO.GetSignalDataValue(machineCode, "封装机装样次数"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("当前采样码b", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
 
-            datas.Add(new HtmlDataItem("采样机编码b", commonDAO.GetSignalDataValue(machineCode, "采样机编码"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("翻车机编码b", commonDAO.GetSignalDataValue(machineCode, "翻车机编码"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("翻车机车数b", commonDAO.GetSignalDataValue(machineCode, "翻车机车数"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("已翻车数b", commonDAO.GetSignalDataValue(machineCode, "已翻车数"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("采样机编码b", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("翻车机编码b", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("翻车机车数b", commonDAO.GetSignalDataValue(machineCode, "#2翻车机车数"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("已翻车数b", commonDAO.GetSignalDataValue(machineCode, "#2翻车机已翻车数"), eHtmlDataItemType.svg_text));
 
 
             // 添加更多...
