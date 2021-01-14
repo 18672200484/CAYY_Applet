@@ -13,24 +13,24 @@ using OPCAutomation;
 namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 {
 	/// <summary>
-	/// 皮带采样机OPC接口
+	/// 制样机OPC接口
 	/// </summary>
-	public class EquBeltSamplerOPC
+	public class EquAutoMakerOPC
 	{
-		private static EquBeltSamplerOPC instance;
+		private static EquAutoMakerOPC instance;
 
-		public static EquBeltSamplerOPC GetInstance()
+		public static EquAutoMakerOPC GetInstance()
 		{
 			if (instance == null)
 			{
-				instance = new EquBeltSamplerOPC();
+				instance = new EquAutoMakerOPC();
 			}
 			return instance;
 		}
 		/// <summary>
 		/// EquCarJXSamplerDAO
 		/// </summary>
-		public EquBeltSamplerOPC()
+		public EquAutoMakerOPC()
 		{
 		}
 
@@ -42,7 +42,6 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 		"次级给料皮带","次级给料皮带清扫","破碎清扫电机","弃料提升斗", "输煤皮带","缩分器","远程自动","远程手动","就地自动","就地手动",
 		"缩分间隔","封装机连接状态","封装机运行状态","#1翻车机","#2翻车机","主皮带","采样机报警","返料运输机","返料皮带","禁止1号翻车机翻车","禁止2号翻车机翻车",
 		"皮带秤","下次采样时间","系统故障"};
-		string[] tags2 = new string[] { "封装机报警", "封装机连接状态", "封装机运行状态", "封装机准备好", "封装机装样次数", "封装机装样重量" };
 		#endregion
 
 		/// <summary>
@@ -55,13 +54,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			List<string> lists = new List<string>();
 			for (int i = 0; i < tags.Length; i++)
 			{
-				lists.Add("皮带采样机.2PA皮带采样机." + tags[i]);
-				lists.Add("皮带采样机.2PB皮带采样机." + tags[i]);
-			}
-			for (int i = 0; i < tags2.Length; i++)
-			{
-				lists.Add("皮带采样机.2PA封装机." + tags2[i]);
-				lists.Add("皮带采样机.2PB封装机." + tags2[i]);
+				lists.Add("全自动制样机.制样机." + tags[i]);
 			}
 
 			opcServere = new OPCClientDAO(lists, "Kepware.KEPServerEX.V6", "127.0.0.1");

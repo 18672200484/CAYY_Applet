@@ -137,25 +137,32 @@ namespace CMCS.DumblyConcealer.Win
 					tsmiOpenFrmAssayDevice_Click(null, null);
 					break;
 				case 5:
-					//06.汽车机械采样机接口
+					//汽车机械采样机接口
 					tsmiOpenFrmCarSampler_Click(null, null);
 					break;
 				case 6:
-					//07.全自动制样机接口
+					//全自动制样机接口
 					tsmiOpenFrmAutoMaker_Click(null, null);
 					break;
 				case 7:
+					//火车机械采样机接口
 					tsmiOpenTrainSampler_Click(null, null);
 					break;
 				case 8:
+					//存样柜接口
 					tsmiOpenFrmAutoCupboard_NCGM_Click(null, null);
 					break;
 				case 9:
+					//在线全水测试仪接口
 					tsmiOpenAutoMt_Click(null, null);
+					break;
+				case 10:
+					//气动传输接口
+					tsmiOpenFrmPneumaticTransfer_Click(null, null);
 					break;
 			}
 
-			if (taskFormIndex == 9)
+			if (taskFormIndex == 11)
 			{
 				TileHorizontalToolStripMenuItem_Click(null, null);
 				timer1.Stop();

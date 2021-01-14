@@ -41,7 +41,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 			public StateObject stateobject;
 			public Socket socket;
 			public Action<string, eOutputType> Output;
-			public String interfacetype_chsb = GlobalVars.MachineCode_HCRCCHSB;
+			public String interfacetype_chsb = GlobalVars.MachineCode_HCRCCHSB1;
 		}
 		private ManualResetEvent allDone = new ManualResetEvent(false);
 

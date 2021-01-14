@@ -245,6 +245,14 @@ namespace CMCS.DumblyConcealer.Tasks.CarSynchronous
 			count = commonDAO.SelfDber.Count<CmcsRCAssay>("where trunc(CreationTime)=trunc(sysdate) and AssayPle is null");
 			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HomePage_1, eSignalDataName.待化验数.ToString(), count.ToString());
 
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_PDCYJ_1, "PLC连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("2PA皮带采样机PLCIP")) ? "1" : "0");
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_PDCYJ_2, "PLC连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("2PB皮带采样机PLCIP")) ? "1" : "0");
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HCRCCHSB1, "连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("#1车号识别IP")) ? "1" : "0");
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HCRCCHSB2, "连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("#2车号识别IP")) ? "1" : "0");
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HCRCCHSB3, "连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("#3车号识别IP")) ? "1" : "0");
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HCRCCHSB4, "连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("#4车号识别IP")) ? "1" : "0");
+			commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HCRCCHSB5, "连接状态", commonDAO.TestPing(commonDAO.GetCommonAppletConfigString("#5车号识别IP")) ? "1" : "0");
+
 		}
 
 	}

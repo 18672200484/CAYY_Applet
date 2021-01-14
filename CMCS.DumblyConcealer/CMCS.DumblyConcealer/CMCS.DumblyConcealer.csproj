@@ -88,6 +88,7 @@
     <Compile Include="Tasks\AutoCupboard\Enums\eOperateCode.cs" />
     <Compile Include="Tasks\AutoCupboard\Enums\eYPLX.cs" />
     <Compile Include="Tasks\AutoCupboard\EquAutoCupboardDAO.cs" />
+    <Compile Include="Tasks\AutoMaker\EquAutoMakerOPC.cs" />
     <Compile Include="Tasks\AutoMt\Entities\TB_YQ_ERRORCODE.cs" />
     <Compile Include="Tasks\AutoMt\Entities\YQ_Status.cs" />
     <Compile Include="Tasks\AutoMt\Entities\Tb_TestResult.cs" />
