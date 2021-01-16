@@ -19,8 +19,6 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 	{
 		private static TrainDiscriminatorDBW instance;
 
-		private static String MachineCode_CHSB = GlobalVars.MachineCode_HCRCCHSB;
-
 		public static TrainDiscriminatorDBW GetInstance()
 		{
 			if (instance == null)

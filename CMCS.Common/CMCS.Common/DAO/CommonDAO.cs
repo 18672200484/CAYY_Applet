@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -1529,6 +1530,23 @@ namespace CMCS.Common.DAO
 			CmcsTrainType entity = SelfDber.Entity<CmcsTrainType>("where TypeName=:TypeName and IsStop=0 and IsDeleted=0", new { TypeName = trainType });
 			if (entity != null) return entity.RatedLoad;
 			return 0;
+		}
+		#endregion
+
+		#region 辅助方法
+		/// <summary>
+		/// 检测IP是否Ping通
+		/// </summary>
+		/// <param name="ip"></param>
+		/// <returns></returns>
+		public bool TestPing(string ip)
+		{
+			Ping pingSender = new Ping();
+			PingReply reply = pingSender.Send(ip);
+			if (reply.Status == IPStatus.Success)
+				return true;
+			else
+				return false;
 		}
 		#endregion
 	}

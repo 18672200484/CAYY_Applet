@@ -169,7 +169,27 @@ namespace CMCS.Common
 		/// <summary>
 		/// 设备编码 - #1火车入厂车号识别
 		/// </summary>
-		public static string MachineCode_HCRCCHSB = "#1车号识别";
+		public static string MachineCode_HCRCCHSB1 = "#1车号识别";
+
+		/// <summary>
+		/// 设备编码 - #2火车入厂车号识别
+		/// </summary>
+		public static string MachineCode_HCRCCHSB2 = "#2车号识别";
+
+		/// <summary>
+		/// 设备编码 - #3火车入厂车号识别
+		/// </summary>
+		public static string MachineCode_HCRCCHSB3 = "#3车号识别";
+
+		/// <summary>
+		/// 设备编码 - #4火车入厂车号识别
+		/// </summary>
+		public static string MachineCode_HCRCCHSB4 = "#4车号识别";
+
+		/// <summary>
+		/// 设备编码 - #5火车入厂车号识别
+		/// </summary>
+		public static string MachineCode_HCRCCHSB5 = "#5车号识别";
 
 		#endregion
 
