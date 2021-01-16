@@ -126,15 +126,15 @@ namespace CMCS.Monitor.Win.Frms
             machineCode = GlobalVars.MachineCode_PDCYJ_1;
 
             datas.Add(new HtmlDataItem("#1翻车机1", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "url(#g2089)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "url(#SVGID_83_)", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#2翻车机1", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#g2117)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#SVGID_85_)", eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("2PA", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g413)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("2PA", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_17_)", eHtmlDataItemType.svg_color));
             value = commonDAO.GetSignalDataValue(machineCode, "#2翻车机");
             if (value == "1")
             {
-                datas.Add(new HtmlDataItem("2PA1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g424)", eHtmlDataItemType.svg_color));
+                datas.Add(new HtmlDataItem("2PA1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_17_-5)", eHtmlDataItemType.svg_color));
             }
 
             datas.Add(new HtmlDataItem("初级给料皮带正转a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
@@ -191,15 +191,15 @@ namespace CMCS.Monitor.Win.Frms
             machineCode = GlobalVars.MachineCode_PDCYJ_2;
 
             datas.Add(new HtmlDataItem("#1翻车机2", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "url(#g2100)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1" ? "#FF0000" : "url(#SVGID_84_)", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#2翻车机2", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "#808080", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#g2128)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#SVGID_86_)", eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("2PB", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g424)", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("2PB", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_18_)", eHtmlDataItemType.svg_color));
             value = commonDAO.GetSignalDataValue(machineCode, "#1翻车机");
             if (value == "1")
             {
-                datas.Add(new HtmlDataItem("2PB1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#g424)", eHtmlDataItemType.svg_color));
+                datas.Add(new HtmlDataItem("2PB1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_17_-4-2)", eHtmlDataItemType.svg_color));
             }
 
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2043
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CMCS.Applets", "CMCS.Applets", "{2E4BFD12-2BFE-450C-842A-4709D746C3AF}"
 	ProjectSection(SolutionItems) = preProject
@@ -156,6 +156,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPCClientCore", "CMCS.Hardware\OPCClientCore\OPCClientCore.csproj", "{97C30535-2803-48BE-9DF8-83AD2864872E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCS.InterfaceData.Win", "CMCS.DumblyConcealer\CMCS.InterfaceData.Win\CMCS.InterfaceData.Win.csproj", "{287A6B8C-A233-4228-94E9-2EC1C05CAE01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RW.HFReader", "CMCS.Hardware\RW.HFReader\RW.HFReader.csproj", "{0320DF14-A959-42C5-894A-E1494920FCED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WB.XiangPing.Balance", "CMCS.Hardware\WB.XiangPing.Balance\WB.XiangPing.Balance.csproj", "{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -595,6 +599,30 @@ Global
 		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|Mixed Platforms.Build.0 = Release|x86
 		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|x86.ActiveCfg = Release|x86
 		{287A6B8C-A233-4228-94E9-2EC1C05CAE01}.Release|x86.Build.0 = Release|x86
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Debug|x86.Build.0 = Debug|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Release|x86.ActiveCfg = Release|Any CPU
+		{0320DF14-A959-42C5-894A-E1494920FCED}.Release|x86.Build.0 = Release|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Debug|x86.Build.0 = Debug|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -652,6 +680,8 @@ Global
 		{2DC8C0FF-E92E-4F13-A8C7-B20A9D5CA84F} = {CBB2196C-9DFA-4DA3-A3B0-9F24F443C683}
 		{97C30535-2803-48BE-9DF8-83AD2864872E} = {DB074836-4DAF-49E3-B992-E5B59A5F5F61}
 		{287A6B8C-A233-4228-94E9-2EC1C05CAE01} = {5C7839EA-351A-4849-8F55-94F75418719F}
+		{0320DF14-A959-42C5-894A-E1494920FCED} = {DB074836-4DAF-49E3-B992-E5B59A5F5F61}
+		{5F07A8E5-5DE4-4168-BE3D-225CB6ABD257} = {DB074836-4DAF-49E3-B992-E5B59A5F5F61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF2FA42F-9F0C-48EF-9321-F0C0D535374F}
