@@ -1665,7 +1665,7 @@
 <g
    transform="matrix(0.65739577,0,0,1,12.847659,0)"
    id="g413"
-   inkscape:label="2PA">
+   >
 	<linearGradient
    y2="115.9492"
    x2="529"
@@ -1687,6 +1687,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
+    inkscape:label="2PA"
    style="fill:url(#SVGID_17_)"
    id="rect422"
    height="8"
@@ -1697,8 +1698,7 @@
 </g>
 <g
    transform="matrix(0.70162239,0,0,1,558.71208,0)"
-   id="g424"
-   inkscape:label="2PB">
+   id="g424">
 	<linearGradient
    y2="145.9492"
    x2="1314.5"
@@ -1720,6 +1720,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
+    inkscape:label="2PB"
    style="fill:url(#SVGID_18_)"
    id="rect433"
    height="8"
@@ -6496,7 +6497,7 @@
    class="st7"
    inkscape:label="#1翻车机2" />
 <g
-   inkscape:label="#1翻车机1a"
+   
    id="g2089">
 	<linearGradient
    y2="110.5112"
@@ -6519,6 +6520,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
+   inkscape:label="#1翻车机1a"
    id="rect2098"
    height="26"
    width="8"
@@ -6528,7 +6530,7 @@
 </g>
 <g
    id="g2100"
-   inkscape:label="#1翻车机2a">
+   >
 	<linearGradient
    y2="124.0112"
    x2="765.2789"
@@ -6550,6 +6552,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
+    inkscape:label="#1翻车机2a"
    id="rect2109"
    height="53"
    width="8"
@@ -6573,7 +6576,7 @@
    inkscape:label="#2翻车机2" />
 <g
    id="g2117"
-   inkscape:label="#2翻车机1a">
+   >
 	<linearGradient
    y2="110.5112"
    x2="1020.1722"
@@ -6595,6 +6598,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
+    inkscape:label="#2翻车机1a"
    id="rect2126"
    height="26"
    width="8"
@@ -6604,7 +6608,7 @@
 </g>
 <g
    id="g2128"
-   inkscape:label="#2翻车机2a">
+   >
 	<linearGradient
    y2="124.0112"
    x2="1096.2556"
@@ -6626,6 +6630,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
+    inkscape:label="#2翻车机2a"
    id="rect2137"
    height="53"
    width="8"
@@ -6819,7 +6824,6 @@
      inkscape:connector-curvature="0"
      id="_156386808_1_-6-7"
      style="fill:#00ff00" /></g><g
-   inkscape:label="2PA1"
    id="g413-5"
    transform="matrix(0.34308184,0,0,1,670.85447,0)"><linearGradient
      id="linearGradient1439"
@@ -6837,6 +6841,7 @@
        offset="1"
        style="stop-color:#505050"
        id="stop1437" /></linearGradient><rect
+         inkscape:label="2PA1"
      x="37.5"
      y="115.9"
      class="st30"
@@ -6846,7 +6851,7 @@
      style="fill:url(#SVGID_17_-5)" /></g><g
    transform="matrix(0.33762476,0,0,1,744.94335,29.999992)"
    id="g413-9"
-   inkscape:label="2PB1"><linearGradient
+   ><linearGradient
      y2="115.9492"
      x2="529"
      y1="123.9492"
@@ -6862,6 +6867,7 @@
        id="stop1437-8"
        style="stop-color:#505050"
        offset="1" /></linearGradient><rect
+     inkscape:label="2PB1"
      style="fill:url(#SVGID_17_-4-2)"
      id="rect422-8"
      height="8"
