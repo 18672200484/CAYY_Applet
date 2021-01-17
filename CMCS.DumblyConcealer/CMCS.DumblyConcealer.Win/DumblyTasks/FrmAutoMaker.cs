@@ -12,6 +12,7 @@ using CMCS.Common.DAO;
 using CMCS.Common.Utilities;
 using CMCS.DumblyConcealer.Enums;
 using CMCS.DumblyConcealer.Tasks.AutoMaker;
+using CMCS.DumblyConcealer.Tasks.BeltSampler;
 using CMCS.DumblyConcealer.Win.Core;
 
 namespace CMCS.DumblyConcealer.Win.DumblyTasks
@@ -53,6 +54,11 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				autoMakerDAO1.SyncMakeDetail(this.rTxtOutputer.Output);
 
 			}, 2000, OutputError);
+
+			taskSimpleScheduler.StartNewTask("#1全自动制样机-OPC同步", () =>
+			{
+				EquAutoMakerOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
+			}, 0, OutputError);
 			#endregion
 		}
 

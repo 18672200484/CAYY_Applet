@@ -273,6 +273,22 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 
 			if (trainPass.Direction == "进厂" && transport.InfactoryTime > DateTime.MinValue)
 			{
+				if (trainPass.OrderNum == 2)//处理牵车太靠近 两节车都识别到车号 后面一节车顶掉前一节车
+				{
+					try
+					{
+						CmcsTrainRecognition lastentity = Dbers.GetInstance().SelfDber.Entity<CmcsTrainRecognition>("where CrossTime=:CrossTime and OrderNum=1 and DataFlag=1 order by CrossTime", new { CrossTime = trainPass.CrossTime });
+						if (lastentity != null)
+						{
+							CarInfoMutual mutual = DcDbers.GetInstance().TurnCarWeighterMutualDber.Entity<CarInfoMutual>("where CarNumber=:CarNumber and CreateDate>=:CreateDate", new { CarNumber = lastentity.CarNumber, CreateDate = DateTime.Now.AddDays(-1) });
+							if (mutual == null || mutual.SuttleWeight == 0) return false;
+						}
+					}
+					catch (Exception ex)
+					{
+						output("处理连续车号:" + ex.Message, eOutputType.Error);
+					}
+				}
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);
 
 				//插入车辆信息至翻车衡交互数据库
@@ -309,6 +325,22 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 
 			if (trainPass.Direction == "进厂" && transport.InfactoryTime > DateTime.MinValue)
 			{
+				if (trainPass.OrderNum == 2)//处理牵车太靠近 两节车都识别到车号 后面一节车顶掉前一节车
+				{
+					try
+					{
+						CmcsTrainRecognition lastentity = Dbers.GetInstance().SelfDber.Entity<CmcsTrainRecognition>("where CrossTime=:CrossTime and OrderNum=1 and DataFlag=1 order by CrossTime", new { CrossTime = trainPass.CrossTime });
+						if (lastentity != null)
+						{
+							CarInfoMutual mutual = DcDbers.GetInstance().TurnCarWeighterMutualDber.Entity<CarInfoMutual>("where CarNumber=:CarNumber and CreateDate>=:CreateDate", new { CarNumber = lastentity.CarNumber, CreateDate = DateTime.Now.AddDays(-1) });
+							if (mutual == null || mutual.SuttleWeight == 0) return false;
+						}
+					}
+					catch (Exception ex)
+					{
+						output("处理连续车号:" + ex.Message, eOutputType.Error);
+					}
+				}
 				CommonDAO.GetInstance().SetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.当前车号.ToString(), trainPass.CarNumber);
 
 				//插入车辆信息至翻车衡交互数据库
