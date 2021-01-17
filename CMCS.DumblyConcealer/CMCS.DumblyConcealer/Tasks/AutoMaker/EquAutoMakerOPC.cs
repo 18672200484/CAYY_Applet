@@ -38,10 +38,14 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 
 		#region OPC变量
 		static OPCClientDAO opcServere = null;
-		string[] tags = new string[] { "采样头", "初级给料皮带正转", "初级给料皮带反转", "初级给料皮带清扫", "初级破碎机",
-		"次级给料皮带","次级给料皮带清扫","破碎清扫电机","弃料提升斗", "输煤皮带","缩分器","远程自动","远程手动","就地自动","就地手动",
-		"缩分间隔","封装机连接状态","封装机运行状态","#1翻车机","#2翻车机","主皮带","采样机报警","返料运输机","返料皮带","禁止1号翻车机翻车","禁止2号翻车机翻车",
-		"皮带秤","下次采样时间","系统故障"};
+		string[] tags = new string[] { "左侧干燥机转速", "右侧干燥机转速", "左侧烘干倒计时", "右侧烘干倒计时", "左侧干燥箱温度","右侧干燥箱温度",
+		"粉碎电机电流","主气路正压值","弃料收集仓负压值","粉碎单元正压值","粉碎单元真空上料机负压值","粉碎总计时","3mm制样倒计时",
+		"6mm制样倒计时","在线测水连接状态"};
+		string[] tags_weight = new string[] { "弃料称实时重量", "6mm瓶装机称重量", "3mm瓶装机实时重量", "3mm分析样称实时重量", "3mm干燥样称实时重量",
+		"原煤称实时重量","原煤称实时重量",};
+		string[] tags_code = new string[] {"3mm瓶装机煤样编码","6mm煤样编码","3mm煤样编码","3mm一级提升机料斗煤样编码","3mm弃料一级皮带煤样编码","3mm弃料二级皮带煤样编码",
+		"干燥煤样编码","干燥箱1煤样编码","干燥箱2煤样编码","原煤煤样编码","3mm二级提升机料斗煤样编码","粉碎煤样编码","3mm弃料桶煤样编码",
+		"3mm煤样弃料旋转给料机煤样编码","弃料单元煤样编码","6mm瓶装机煤样编码", };
 		#endregion
 
 		/// <summary>
@@ -54,7 +58,15 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			List<string> lists = new List<string>();
 			for (int i = 0; i < tags.Length; i++)
 			{
-				lists.Add("全自动制样机.制样机." + tags[i]);
+				lists.Add("全自动制样机.#1全自动制样机." + tags[i]);
+			}
+			for (int i = 0; i < tags_weight.Length; i++)
+			{
+				lists.Add("全自动制样机.#1全自动制样机." + tags_weight[i]);
+			}
+			for (int i = 0; i < tags_code.Length; i++)
+			{
+				lists.Add("全自动制样机.#1全自动制样机." + tags_code[i]);
 			}
 
 			opcServere = new OPCClientDAO(lists, "Kepware.KEPServerEX.V6", "127.0.0.1");
