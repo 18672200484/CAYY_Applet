@@ -170,6 +170,17 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("右侧干燥箱温度", commonDAO.GetSignalDataValue(machineCode, "右侧干燥箱温度")+" ℃", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("粉碎机电流", commonDAO.GetSignalDataValue(machineCode, "粉碎电机电流")+" A", eHtmlDataItemType.svg_text));
 
+
+			datas.Add(new HtmlDataItem("煤样编码", commonDAO.GetSignalDataValue(machineCode, "原煤煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("6mm瓶装机煤样编码", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm弃料一级皮带煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("干燥箱1煤样编码", commonDAO.GetSignalDataValue(machineCode, "干燥箱1煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("干燥箱2煤样编码", commonDAO.GetSignalDataValue(machineCode, "干燥箱2煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm瓶装机煤样编码", commonDAO.GetSignalDataValue(machineCode, "原煤煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机煤样编码"), eHtmlDataItemType.svg_text));
+
+			datas.Add(new HtmlDataItem("煤样编码", commonDAO.GetSignalDataValue(machineCode, "原煤煤样编码"), eHtmlDataItemType.svg_text));
 			#endregion
 
 			// 发送到页面
