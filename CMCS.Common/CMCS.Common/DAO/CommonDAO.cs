@@ -1287,6 +1287,36 @@ namespace CMCS.Common.DAO
 		}
 
 		/// <summary>
+		/// 根据制样码生成制样明细样品码
+		/// </summary>
+		/// <returns></returns>
+		public string CreateNewMakeBarrelCodeByMakeCode(string makeCode, string makeType)
+		{
+			string res = string.Empty;
+
+			switch (makeType)
+			{
+				case "0.2mm分析样":
+					res = "021";
+					break;
+				case "0.2mm备查样":
+					res = "022";
+					break;
+				case "3mm备查样":
+					res = "031";
+					break;
+				case "6mm全水样":
+					res = "061";
+					break;
+				default:
+					break;
+			}
+			res = string.Format("{0}{1}", makeCode, res);
+
+			return res;
+		}
+
+		/// <summary>
 		/// 生成化验码，分段200-299
 		/// </summary>
 		/// <returns></returns>
