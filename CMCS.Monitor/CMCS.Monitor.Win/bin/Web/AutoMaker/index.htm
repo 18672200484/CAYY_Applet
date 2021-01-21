@@ -48,6 +48,14 @@
 				// svg_color
 				else if (data.Type == 3) {
 					svgChangeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                }
+				//svg_visible
+                else if (data.Type == 4) {
+                    if (data.Value == 1) {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").show();
+                    } else {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").hide();
+					}
 				}
 				else if (data.Type = 9999) {
 					keys = data.Value;

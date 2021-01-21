@@ -113,44 +113,37 @@ namespace CMCS.Monitor.Win.Frms
 			//datas.Add(new HtmlDataItem("Keys", keys, eHtmlDataItemType.svg_scroll));
 
 			///信号接入
+			datas.Add(new HtmlDataItem("故障提示", commonDAO.GetSignalDataValue(machineCode, "设备状态") == "发生故障" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
+
 			datas.Add(new HtmlDataItem("湿煤破碎电机", commonDAO.GetSignalDataValue(machineCode, "湿煤破碎机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("链式缩分器", commonDAO.GetSignalDataValue(machineCode, "链式缩分驱动器运行信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("对辊破碎", commonDAO.GetSignalDataValue(machineCode, "对辊破碎机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("3mm一级圆盘缩分器", commonDAO.GetSignalDataValue(machineCode, "3mm一级缩分器驱动器运行信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
-			//datas.Add(new HtmlDataItem("弃料真空上料机", commonDAO.GetSignalDataValue(machineCode, "弃料真空上料机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("弃料真空上料机", commonDAO.GetSignalDataValue(machineCode, "弃料风机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("筛分破碎", commonDAO.GetSignalDataValue(machineCode, "3mm筛分破碎机正转") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("3mm二级圆盘缩分器", commonDAO.GetSignalDataValue(machineCode, "3mm二级缩分器驱动器运行信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("粉碎机", commonDAO.GetSignalDataValue(machineCode, "0_2mm制粉机变频器运行信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("真空上料机", commonDAO.GetSignalDataValue(machineCode, "粉碎单元真空上料机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 
 			//datas.Add(new HtmlDataItem("煤样编码", commonDAO.GetSignalDataValue(machineCode, "煤样编码"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("原煤制样重量", commonDAO.GetSignalDataValue(machineCode, "原煤制样重量")+" Kg", eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("在线测水状态", commonDAO.GetSignalDataValue(machineCode, "在线测水状态"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("原煤制样重量", commonDAO.GetSignalDataValue(machineCode, "原煤重量") +" Kg", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("在线测水状态", commonDAO.GetSignalDataValue(machineCode, "在线测水连接状态")=="1"?"不在线":"在线", eHtmlDataItemType.svg_text));
 
 			datas.Add(new HtmlDataItem("左侧干燥机转速", commonDAO.GetSignalDataValue(machineCode, "左侧干燥机转速")+ " r/min", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("右侧干燥机转速", commonDAO.GetSignalDataValue(machineCode, "右侧干燥机转速")+ " r/min", eHtmlDataItemType.svg_text));
 
-			//datas.Add(new HtmlDataItem("全水样有瓶", commonDAO.GetSignalDataValue(machineCode, "全水样有瓶"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("存查样有瓶", commonDAO.GetSignalDataValue(machineCode, "存查样有瓶"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("分析样有瓶", commonDAO.GetSignalDataValue(machineCode, "分析样有瓶"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("存查样有瓶", commonDAO.GetSignalDataValue(machineCode, "存查样有瓶"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("全水样有瓶", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机灌装口有瓶信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("存查样有瓶", commonDAO.GetSignalDataValue(machineCode, "mm瓶装机灌装口有瓶信号3") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("分析样有瓶", commonDAO.GetSignalDataValue(machineCode, "mm瓶装机灌装口有瓶信号1") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("存查样有瓶2", commonDAO.GetSignalDataValue(machineCode, "mm瓶装机灌装口有瓶信号2") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 
-			//datas.Add(new HtmlDataItem("全水样重", commonDAO.GetSignalDataValue(machineCode, "全水样重")+" g", eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("3mm煤样重", commonDAO.GetSignalDataValue(machineCode, "3mm煤样重")+" g", eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("干燥煤样重", commonDAO.GetSignalDataValue(machineCode, "干燥煤样重")+ " g", eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("存查样重", commonDAO.GetSignalDataValue(machineCode, "存查样重")+" g", eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("分析样重", commonDAO.GetSignalDataValue(machineCode, "分析样重")+" g", eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("存查样重", commonDAO.GetSignalDataValue(machineCode, "存查样重")+" g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("全水样重", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机称净重")+" g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm煤样重", commonDAO.GetSignalDataValue(machineCode, "3mm分析样净重")+" g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("干燥煤样重", commonDAO.GetSignalDataValue(machineCode, "3mm干燥后留样净重")+ " g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("存查样重", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机称净重_3存查样")+" g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("分析样重", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机称净重_0_2分析样")+" g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("存查样重2", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机称净重_0_2存查样")+" g", eHtmlDataItemType.svg_text));
 
-			//datas.Add(new HtmlDataItem("6mm制样", commonDAO.GetSignalDataValue(machineCode, "6mm制样"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("3mm制样", commonDAO.GetSignalDataValue(machineCode, "3mm制样"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("3mm缩分", commonDAO.GetSignalDataValue(machineCode, "3mm缩分"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("干燥布料", commonDAO.GetSignalDataValue(machineCode, "干燥布料"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("干燥出料", commonDAO.GetSignalDataValue(machineCode, "干燥出料"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("粉碎制样", commonDAO.GetSignalDataValue(machineCode, "粉碎制样"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("6mm瓶装机", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("3mm瓶装机", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("弃料流程", commonDAO.GetSignalDataValue(machineCode, "弃料流程"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("6mm制样倒计时", commonDAO.GetSignalDataValue(machineCode, "6mm制样倒计时")+" 秒", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("3mm制样倒计时", commonDAO.GetSignalDataValue(machineCode, "3mm制样倒计时")+" 秒", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("左侧烘干倒计时", commonDAO.GetSignalDataValue(machineCode, "左侧烘干倒计时")+" 秒", eHtmlDataItemType.svg_text));
@@ -162,9 +155,9 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("粉碎单元正压", commonDAO.GetSignalDataValue(machineCode, "粉碎单元正压值")+" kpa", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("原煤样称（实时）", commonDAO.GetSignalDataValue(machineCode, "原煤称实时重量")+" Kg", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("3mm分析样称（实时）", commonDAO.GetSignalDataValue(machineCode, "3mm分析样称实时重量")+"g", eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("3mm干燥样称（实时）", commonDAO.GetSignalDataValue(machineCode, "3mm干燥样称实时重量"+" g"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("6mm瓶装机称（实时）", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机称（实时）"), eHtmlDataItemType.svg_text));
-			//datas.Add(new HtmlDataItem("3mm瓶装机称（实时）", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机称（实时）"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm干燥样称（实时）", commonDAO.GetSignalDataValue(machineCode, "3mm干燥样称实时重量") + " g", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("6mm瓶装机称（实时）", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机秤重量"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm瓶装机称（实时）", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机称实时重量"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("弃料样称（实时）", commonDAO.GetSignalDataValue(machineCode, "弃料称实时重量")+" Kg", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("左侧干燥箱温度", commonDAO.GetSignalDataValue(machineCode, "左侧干燥箱温度")+" ℃", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("右侧干燥箱温度", commonDAO.GetSignalDataValue(machineCode, "右侧干燥箱温度")+" ℃", eHtmlDataItemType.svg_text));
@@ -178,9 +171,499 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("3mm煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm煤样编码"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("干燥箱2煤样编码", commonDAO.GetSignalDataValue(machineCode, "干燥箱2煤样编码"), eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("3mm瓶装机煤样编码", commonDAO.GetSignalDataValue(machineCode, "原煤煤样编码"), eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm瓶装机煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("粉碎煤样编码", commonDAO.GetSignalDataValue(machineCode, "粉碎煤样编码"), eHtmlDataItemType.svg_text));
 
-			datas.Add(new HtmlDataItem("煤样编码", commonDAO.GetSignalDataValue(machineCode, "原煤煤样编码"), eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("3mm弃料一级皮带有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("3mm弃料一级皮带煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("3mm弃料二级皮带有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm弃料二级皮带有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("左侧干燥机有煤标志", commonDAO.GetSignalDataValue(machineCode, "左侧干燥机有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("干燥箱1煤样编码", commonDAO.GetSignalDataValue(machineCode, "左侧干燥机有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("右侧干燥机有煤标志", commonDAO.GetSignalDataValue(machineCode, "右侧干燥机有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("干燥箱2煤样编码", commonDAO.GetSignalDataValue(machineCode, "右侧干燥机有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("3mm一级提升机料斗有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm一级提升机料斗有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("3mm二级提升机料斗有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm二级提升机料斗有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("粉碎煤样编码", commonDAO.GetSignalDataValue(machineCode, "0_2mm制粉机变频器运行信号"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("3mm煤样编码", commonDAO.GetSignalDataValue(machineCode, "干燥机入料皮带有煤标志"), eHtmlDataItemType.svg_visible));
+			//制样流程判断
+
+			//6mm制样流程：
+			//S_在线测水缩分准备步
+			//S_在线测水缩分步
+			//S_在线测水设备煤样传送步
+			//S_6mm瓶装机进瓶步
+			//S_原煤上料皮带上升步
+			//S_原煤上料皮带前进出料步
+			//S_6mm煤样制备步
+			//S_链式缩分单元小清洗步
+			//S_原煤上料皮带后退步
+			//S_原煤上料皮带下降步
+			//S_机采伸缩皮带伸出步
+			//S_机采伸缩皮带缩回步
+			//ST_6mm制样无流程标记
+			string lc_6mm制样流程 = "";
+			if(commonDAO.GetSignalDataValue(machineCode, "S_在线测水缩分准备步") == "1")
+			{
+				lc_6mm制样流程 = "在线测水缩分准备步";
+			}
+			else if(commonDAO.GetSignalDataValue(machineCode, "S_在线测水缩分步") == "1")
+			{
+				lc_6mm制样流程 = "在线测水缩分步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_在线测水设备煤样传送步") == "1")
+			{
+				lc_6mm制样流程 = "在线测水设备煤样传送步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机进瓶步") == "1")
+			{
+				lc_6mm制样流程 = "6mm瓶装机进瓶步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_原煤上料皮带上升步") == "1")
+			{
+				lc_6mm制样流程 = "原煤上料皮带上升步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_原煤上料皮带前进出料步") == "1")
+			{
+				lc_6mm制样流程 = "原煤上料皮带前进出料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm煤样制备步") == "1")
+			{
+				lc_6mm制样流程 = "6mm煤样制备步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_链式缩分单元小清洗步") == "1")
+			{
+				lc_6mm制样流程 = "链式缩分单元小清洗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_原煤上料皮带后退步") == "1")
+			{
+				lc_6mm制样流程 = "原煤上料皮带后退步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_原煤上料皮带下降步") == "1")
+			{
+				lc_6mm制样流程 = "原煤上料皮带下降步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_机采伸缩皮带伸出步") == "1")
+			{
+				lc_6mm制样流程 = "机采伸缩皮带伸出步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_机采伸缩皮带缩回步") == "1")
+			{
+				lc_6mm制样流程 = "机采伸缩皮带缩回步";
+			}
+			else
+			{
+				lc_6mm制样流程 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("6mm制样", lc_6mm制样流程, eHtmlDataItemType.svg_text));
+
+			//3mm制样流程：
+			//S_3mm煤样制备步
+			//S_3mm制样称重步
+			//ST_3mm制样无流程标记
+			string lc_3mm制样流程 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_3mm煤样制备步") == "1")
+			{
+				lc_3mm制样流程 = "3mm煤样制备步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm制样称重步") == "1")
+			{
+				lc_3mm制样流程 = "3mm制样称重步";
+			}
+			else
+			{
+				lc_3mm制样流程 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("3mm制样", lc_3mm制样流程, eHtmlDataItemType.svg_text));
+
+
+			//3mm缩分：
+			//S_3mm缩分称重步
+			//S_3mm样接斗步
+			//S_3mm样电机推出步
+			//S_一级提升机上升步
+			//S_一级提升机下降步
+			//S_3mm样电机缩回步
+			//S_3mm样卸斗步
+			//S_3mm煤样缩分步
+			//S_圆盘缩分1单元小清洗步
+			//S_3mm缩分弃料称重步
+			//ST_3mm缩分无流程标记
+
+			string lc_3mm缩分 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_3mm缩分称重步") == "1")
+			{
+				lc_3mm缩分 = "3mm缩分称重步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm样接斗步") == "1")
+			{
+				lc_3mm缩分 = "3mm样接斗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm样电机推出步") == "1")
+			{
+				lc_3mm缩分 = "3mm样电机推出步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_一级提升机上升步") == "1")
+			{
+				lc_3mm缩分 = "一级提升机上升步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_一级提升机下降步") == "1")
+			{
+				lc_3mm缩分 = "一级提升机下降步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm样电机缩回步") == "1")
+			{
+				lc_3mm缩分 = "3mm样电机缩回步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm样卸斗步") == "1")
+			{
+				lc_3mm缩分 = "3mm样卸斗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm煤样缩分步") == "1")
+			{
+				lc_3mm缩分 = "3mm煤样缩分步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_圆盘缩分1单元小清洗步") == "1")
+			{
+				lc_3mm缩分 = "圆盘缩分1单元小清洗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm缩分弃料称重步") == "1")
+			{
+				lc_3mm缩分 = "3mm缩分弃料称重步";
+			}
+			else
+			{
+				lc_3mm缩分 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("3mm缩分", lc_3mm缩分, eHtmlDataItemType.svg_text));
+
+			//干燥布料：
+			//S_干燥机入料准备步
+			//S_干燥布料步
+			//S_烘干数据读取步
+			//S_干燥单元小清洗步
+			//ST_干燥布料无流程标记
+			string lc_干燥布料 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_干燥机入料准备步") == "1")
+			{
+				lc_干燥布料 = "干燥机入料准备步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥布料步") == "1")
+			{
+				lc_干燥布料 = "干燥布料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_烘干数据读取步") == "1")
+			{
+				lc_干燥布料 = "烘干数据读取步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥单元小清洗步") == "1")
+			{
+				lc_干燥布料 = "干燥单元小清洗步";
+			}
+			else
+			{
+				lc_干燥布料 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("干燥布料", lc_干燥布料, eHtmlDataItemType.svg_text));
+
+
+			//干燥出料：
+			//S_干燥出料预备步
+			//S_干燥气缸闸板出料步
+			//S_干燥筛网出料步
+			//S_干燥筛网摆动步
+			//S_干燥毛重记录步
+			//S_干燥称重步
+			//S_干燥筛网回原位步
+			//ST_干燥出料无流程标记
+			string lc_干燥出料 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_干燥出料预备步") == "1")
+			{
+				lc_干燥布料 = "干燥出料预备步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥气缸闸板出料步") == "1")
+			{
+				lc_干燥布料 = "干燥气缸闸板出料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥筛网出料步") == "1")
+			{
+				lc_干燥布料 = "干燥筛网出料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥筛网摆动步") == "1")
+			{
+				lc_干燥布料 = "干燥筛网摆动步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥毛重记录步") == "1")
+			{
+				lc_干燥布料 = "干燥毛重记录步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥称重步") == "1")
+			{
+				lc_干燥布料 = "干燥称重步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_干燥筛网回原位步") == "1")
+			{
+				lc_干燥布料 = "干燥筛网回原位步";
+			}
+			else
+			{
+				lc_干燥布料 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("干燥出料", lc_干燥布料, eHtmlDataItemType.svg_text));
+
+
+			//粉碎制样：
+			//S_粉碎称重步
+			//S_3mm干燥样卸斗步
+			//S_3mm干燥样接斗步
+			//S_3mm二级提升机直线行走电机后退步
+			//S_圆盘缩分2准备步
+			//S_3mm二级提升机上升步
+			//S_3mm二级提升机倒料步
+			//S_3mm二级提升机下降步
+			//S_3mm二级提升机直线行走电机前进步
+			//S_3mm干燥制粉样输送步
+			//S_3mm存查样传送步
+			//S_粉碎弃料推出步
+			//S_粉碎小清洗步
+			//S_粉碎制样步
+			//S_粉碎大清洗步
+			//S_粉碎出料步
+			//S_粉碎弃料缩回步
+			//S_粉碎正式样进料步
+			//ST_粉碎制样无流程标记
+			string lc_粉碎制样 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎称重步") == "1")
+			{
+				lc_粉碎制样 = "粉碎称重步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm干燥样卸斗步") == "1")
+			{
+				lc_粉碎制样 = "3mm干燥样卸斗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm干燥样接斗步") == "1")
+			{
+				lc_粉碎制样 = "3mm干燥样接斗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm二级提升机直线行走电机后退步") == "1")
+			{
+				lc_粉碎制样 = "3mm二级提升机直线行走电机后退步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_圆盘缩分2准备步") == "1")
+			{
+				lc_粉碎制样 = "圆盘缩分2准备步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm二级提升机上升步") == "1")
+			{
+				lc_粉碎制样 = "3mm二级提升机上升步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm二级提升机倒料步") == "1")
+			{
+				lc_粉碎制样 = "3mm二级提升机倒料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm二级提升机下降步") == "1")
+			{
+				lc_粉碎制样 = "3mm二级提升机下降步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm二级提升机直线行走电机前进步") == "1")
+			{
+				lc_粉碎制样 = "3mm二级提升机直线行走电机前进步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm干燥制粉样输送步") == "1")
+			{
+				lc_粉碎制样 = "3mm干燥制粉样输送步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm存查样传送步") == "1")
+			{
+				lc_粉碎制样 = "3mm存查样传送步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎弃料推出步") == "1")
+			{
+				lc_粉碎制样 = "粉碎弃料推出步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎小清洗步") == "1")
+			{
+				lc_粉碎制样 = "粉碎小清洗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎制样步") == "1")
+			{
+				lc_粉碎制样 = "粉碎制样步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎大清洗步") == "1")
+			{
+				lc_粉碎制样 = "粉碎大清洗步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎出料步") == "1")
+			{
+				lc_粉碎制样 = "粉碎出料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎弃料缩回步") == "1")
+			{
+				lc_粉碎制样 = "粉碎弃料缩回步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_粉碎正式样进料步") == "1")
+			{
+				lc_粉碎制样 = "粉碎正式样进料步";
+			}
+			else
+			{
+				lc_粉碎制样 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("粉碎制样", lc_粉碎制样, eHtmlDataItemType.svg_text));
+
+
+			//6mm瓶装机流程：
+			//S_6mm瓶装机落瓶步
+			//S_6mm瓶装机落瓶推瓶步
+			//S_6mm瓶装机落瓶推瓶后退步
+			//S_6mm瓶装机抱瓶翻转步
+			//S_6mm瓶装机去翻转位步
+			//S_6mm瓶装机去写卡步
+			//S_6mm瓶装机写卡步
+			//S_6mm瓶装机去暂存皮带步_空瓶_
+			//S_6mm瓶装机去下料口步
+			//S_6mm瓶装机回推瓶步_从下料口_
+			//S_6mm瓶装机回推瓶步_从暂存皮带_空瓶
+			//瓶装机进瓶无流程标记（没信号）
+
+			string lc_6mm瓶装机流程 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机落瓶步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机落瓶步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机落瓶推瓶步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机落瓶推瓶步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机落瓶推瓶后退步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机落瓶推瓶后退步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机抱瓶翻转步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机抱瓶翻转步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机去翻转位步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机去翻转位步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机去写卡步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机去写卡步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机写卡步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机写卡步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机去暂存皮带步_空瓶_") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机去暂存皮带步_空瓶_";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机去下料口步") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机去下料口步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机回推瓶步_从下料口_") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机回推瓶步_从下料口_";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm瓶装机回推瓶步_从暂存皮带_空瓶") == "1")
+			{
+				lc_6mm瓶装机流程 = "6mm瓶装机回推瓶步_从暂存皮带_空瓶";
+			}
+			else
+			{
+				lc_6mm瓶装机流程 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("6mm瓶装机", lc_6mm瓶装机流程, eHtmlDataItemType.svg_text));
+
+			//3mm瓶装机流程：
+			//S_3mm瓶装机落瓶步
+			//S_3mm瓶装机落瓶推瓶步
+			//S_3mm瓶装机落瓶推瓶后退步
+			//S_3mm瓶装机抱瓶翻转步
+			//S_3mm瓶装机去翻转位步
+			//S_3mm瓶装机去写卡步
+			//S_3mm瓶装机写卡步
+			//S_3mm瓶装机去暂存皮带步_空瓶_
+			//S_3mm瓶装机去下料口步
+			//S_3mm瓶装机回推瓶步_从下料口_
+			//S_3mm瓶装机回推瓶步_从暂存皮带_空瓶
+			//瓶装机进瓶无流程标记（没信号）
+
+			string lc_3mm瓶装机流程 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机落瓶步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机落瓶步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机落瓶推瓶步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机落瓶推瓶步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机落瓶推瓶后退步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机落瓶推瓶后退步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机抱瓶翻转步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机抱瓶翻转步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机去翻转位步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机去翻转位步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机去写卡步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机去写卡步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机写卡步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机写卡步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机去暂存皮带步_空瓶_") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机去暂存皮带步_空瓶_";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机去下料口步") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机去下料口步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机回推瓶步_从下料口_") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机回推瓶步_从下料口_";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_3mm瓶装机回推瓶步_从暂存皮带_空瓶") == "1")
+			{
+				lc_3mm瓶装机流程 = "3mm瓶装机回推瓶步_从暂存皮带_空瓶";
+			}
+			else
+			{
+				lc_3mm瓶装机流程 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("3mm瓶装机", lc_3mm瓶装机流程, eHtmlDataItemType.svg_text));
+
+
+			//弃料流程：
+			//S_在线测水弃料步
+			//S_6mm弃料收集步
+			//S_弃料双向皮带排空步
+
+			string lc_弃料流程 = "";
+			if (commonDAO.GetSignalDataValue(machineCode, "S_在线测水弃料步") == "1")
+			{
+				lc_弃料流程 = "在线测水弃料步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_6mm弃料收集步") == "1")
+			{
+				lc_弃料流程 = "6mm弃料收集步";
+			}
+			else if (commonDAO.GetSignalDataValue(machineCode, "S_弃料双向皮带排空步") == "1")
+			{
+				lc_弃料流程 = "弃料双向皮带排空步";
+			}
+			else
+			{
+				lc_弃料流程 = "无流程动作运行";
+			}
+			datas.Add(new HtmlDataItem("弃料流程", lc_弃料流程, eHtmlDataItemType.svg_text));
 			#endregion
 
 			// 发送到页面
