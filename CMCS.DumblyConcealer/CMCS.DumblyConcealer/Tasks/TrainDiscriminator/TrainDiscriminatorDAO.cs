@@ -373,7 +373,7 @@ namespace CMCS.DumblyConcealer.Tasks.TrainDiscriminator
 		{
 			if (transport != null && !string.IsNullOrEmpty(transport.InFactoryBatchId))
 			{
-				CmcsRCSampling sampling = Dbers.GetInstance().SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId and SamplingType!='抽查采样' order by SamplingDate desc", new { InFactoryBatchId = transport.InFactoryBatchId });
+				CmcsRCSampling sampling = Dbers.GetInstance().SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId and SamplingType not like '%抽查%' order by SamplingDate desc", new { InFactoryBatchId = transport.InFactoryBatchId });
 				if (sampling != null)
 				{
 					if (DcDbers.GetInstance().TurnCarWeighterMutualDber.Entity<CarInfoMutual>(" where  TurnCarNumber='" + trunNumber + "' and  CarNumber='" + transport.TransportNo + "' and DataFlag=0 ") == null)

@@ -211,6 +211,7 @@ namespace CMCS.Common.DAO
 			return Dbers.GetInstance().SelfDber.Entities<InfBeltSamplePlan>("where MachineCode=:MachineCode and SyncFlag=0", new { MachineCode = machineCode });
 		}
 
+
 		/// <summary>
 		/// 获取待同步到第三方接口的采样计划明细
 		/// </summary>
@@ -240,5 +241,8 @@ namespace CMCS.Common.DAO
 		{
 			return Dbers.GetInstance().SelfDber.Entities<InfBeltSampleUnloadCmd>("where InterfaceType=:InterfaceType and SyncFlag=0", new { InterfaceType = interfaceType });
 		}
+
+		
+
 	}
 }

@@ -284,6 +284,101 @@ namespace CMCS.Monitor.Win.Frms
 			{
 				commonDAO.SaveOperationLog(message.Arguments.GetString(0), GlobalVars.LoginUser.Name);
 			}
+			else if (message.Name == "TrainBeltSamplerCmd")
+			{
+				string cmdtype = message.Arguments.GetString(0);
+				string log = "";
+				InfBeltSampleCmd_KY cmd = new InfBeltSampleCmd_KY();
+				cmd.DataFlag = 0;
+				if(cmdtype== "LeadCar1") 
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_1;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.解锁牵车机).ToString();
+					log = "给2PA皮带采样机发送允许牵车命令";
+				}
+				else if (cmdtype == "LeadCar2")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_2;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.解锁牵车机).ToString();
+					log = "给2PB皮带采样机发送允许牵车命令";
+				}
+				else if (cmdtype == "MovingBelt1")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_1;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.解锁皮带).ToString();
+					log = "给2PA皮带采样机发送允许起皮带命令";
+				}
+				else if (cmdtype == "MovingBelt2")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_2;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.解锁皮带).ToString();
+					log = "给2PB皮带采样机发送允许起皮带命令";
+				}
+				else if (cmdtype == "StopSampler1")
+				{
+
+					//cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_1;
+					//cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.停止采样).ToString();
+					//log = "给2PA皮带采样机发送停止采样命令";
+
+					//改为远程出桶用
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_1;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.远程出桶).ToString();
+					log = "给2PA皮带采样机发送远程出桶命令";
+				}
+				else if (cmdtype == "StopSampler2")
+				{
+					//cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_2;
+					//cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.停止采样).ToString();
+					//log = "给2PB皮带采样机发送停止采样命令";
+
+					//改为远程出桶用
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_2;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.远程出桶).ToString();
+					log = "给2PB皮带采样机发送远程出桶命令";
+				}
+				else if (cmdtype == "AlarmReset1")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_1;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.报警复位).ToString();
+					log = "给2PA皮带采样机发送报警复位命令";
+				}
+				else if (cmdtype == "AlarmReset2")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_2;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.报警复位).ToString();
+					log = "给2PB皮带采样机发送报警复位命令";
+				}
+				else if (cmdtype == "FZJAlarmReset1")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_1;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.封装机报警复位).ToString();
+					log = "给2PA皮带采样机发送封装机报警复位命令";
+				}
+				else if (cmdtype == "FZJAlarmReset2")
+				{
+					cmd.MachineCode = GlobalVars.MachineCode_PDCYJ_2;
+					cmd.CmdCode = ((int)eEquInfSamplerCmd_KY.封装机报警复位).ToString();
+					log = "给2PB皮带采样机发送封装机报警复位命令";
+				}
+
+				cmd.ResultCode = eEquInfCmdResultCode.默认.ToString();
+				cmd.OperatorName = GlobalVars.LoginUser.Name;
+				cmd.SendDateTime = DateTime.Now;
+				cmd.SyncFlag = 0;
+				if (Dbers.GetInstance().SelfDber.Insert<InfBeltSampleCmd_KY>(cmd) > 0)
+				{
+					commonDAO.SaveOperationLog(log, GlobalVars.LoginUser.Name);
+				}
+				
+			}
+			else if (message.Name == "TrainBeltSamplerPlan")
+			{
+				string gd = message.Arguments.GetString(0) == "SendSampler1" ? "#2" : "#4";
+
+				//视频预览
+				SelfVars.MainFrameForm.OpenSendSampleCode(gd);
+			}
 			return true;
 		}
 

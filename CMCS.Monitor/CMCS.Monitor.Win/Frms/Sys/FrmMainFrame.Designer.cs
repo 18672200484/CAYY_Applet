@@ -70,6 +70,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer_EquipmentStatus = new System.Windows.Forms.Timer(this.components);
             this.timer_MsgTime = new System.Windows.Forms.Timer(this.components);
+            this.btnOpenTrainBeltSampler_warning = new DevComponents.DotNetBar.ButtonItem();
             this.panelEx1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttons.SuspendLayout();
@@ -413,7 +414,8 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.btnTrainSampler.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnOpenTrainSampler,
             this.btnOpenTrainBeltSampler,
-            this.btnOpenBeltSampler});
+            this.btnOpenBeltSampler,
+            this.btnOpenTrainBeltSampler_warning});
             this.btnTrainSampler.TabIndex = 11;
             this.btnTrainSampler.Text = "火车采样机";
             // 
@@ -518,6 +520,13 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.timer_MsgTime.Interval = 1000;
             this.timer_MsgTime.Tick += new System.EventHandler(this.timer_MsgTime_Tick);
             // 
+            // btnOpenTrainBeltSampler_warning
+            // 
+            this.btnOpenTrainBeltSampler_warning.GlobalItem = false;
+            this.btnOpenTrainBeltSampler_warning.Name = "btnOpenTrainBeltSampler_warning";
+            this.btnOpenTrainBeltSampler_warning.Text = "皮带采样机报警";
+            this.btnOpenTrainBeltSampler_warning.Click += new System.EventHandler(this.btnOpenTrainBeltSampler_warning_Click);
+            // 
             // FrmMainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -587,6 +596,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
         private DevComponents.DotNetBar.ButtonX button10;
         private DevComponents.DotNetBar.ButtonItem btnOpenSampleCabinet;
         private DevComponents.DotNetBar.ButtonItem btnOpenSampleCabinetManager;
+        private DevComponents.DotNetBar.ButtonItem btnOpenTrainBeltSampler_warning;
     }
 }
 

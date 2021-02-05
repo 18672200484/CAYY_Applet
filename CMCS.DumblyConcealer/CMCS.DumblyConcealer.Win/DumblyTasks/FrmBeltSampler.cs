@@ -49,9 +49,12 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			taskSimpleScheduler.StartNewTask("#1皮带采样机-快速同步", () =>
 			{
 				beltSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
-				beltSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
+				//beltSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
 				beltSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output);
-				beltSamplerDAO1.SyncTurn(this.rTxtOutputer.Output);
+				//beltSamplerDAO1.SyncTurn(this.rTxtOutputer.Output);
+				beltSamplerDAO1.SyncSampleCmd(this.rTxtOutputer.Output);
+				beltSamplerDAO1.SyncSamplePlan_KY(this.rTxtOutputer.Output);
+				
 			}, 2000, OutputError);
 
 			#endregion
@@ -63,7 +66,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			taskSimpleScheduler.StartNewTask("#2皮带采样机-快速同步", () =>
 			{
 				beltSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
-				beltSamplerDAO2.SyncSamplePlan(this.rTxtOutputer.Output);
+				//beltSamplerDAO2.SyncSamplePlan(this.rTxtOutputer.Output);
 				beltSamplerDAO2.SyncBarrel(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
 

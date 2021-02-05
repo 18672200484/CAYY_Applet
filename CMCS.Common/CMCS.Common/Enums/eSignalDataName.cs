@@ -89,6 +89,7 @@ namespace CMCS.Common.Enums
 
 		#region 皮带采样机
 		卸料机状态,
+		翻车机车数,
 		#endregion
 	}
 }

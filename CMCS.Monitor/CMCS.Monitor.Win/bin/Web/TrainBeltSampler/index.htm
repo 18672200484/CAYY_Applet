@@ -187,7 +187,66 @@
         function changeBeltColor($elements, color) {
             $elements.find("*:not(g)").css({ "stroke": color });
         }
-     
+
+        // 皮采1解锁牵车
+		function LeadCar1() {
+			TrainBeltSamplerV8Cef.LeadCar1();
+		}
+
+		// 皮采1解锁皮带
+		function MovingBelt1() {
+			TrainBeltSamplerV8Cef.MovingBelt1();
+		}
+
+		//  皮采2解锁牵车
+		function LeadCar2() {
+			TrainBeltSamplerV8Cef.LeadCar2();
+		}
+
+		// 皮采2解锁皮带
+		function MovingBelt2() {
+			TrainBeltSamplerV8Cef.MovingBelt2();
+		}
+
+        // 皮采1停止采样
+		function StopSampler1() {
+			TrainBeltSamplerV8Cef.StopSampler1();
+        }
+
+        // 皮采2停止采样
+		function StopSampler2() {
+			TrainBeltSamplerV8Cef.StopSampler2();
+        }
+
+         // 皮采1发送计划
+		function SendSampler1() {
+			TrainBeltSamplerV8Cef.SendSampler1();
+        }
+
+        // 皮采2发送计划
+		function SendSampler2() {
+			TrainBeltSamplerV8Cef.SendSampler2();
+        }
+
+         // 皮采1报警复位
+		function AlarmReset1() {
+			TrainBeltSamplerV8Cef.AlarmReset1();
+        }
+
+         // 皮采2报警复位
+		function AlarmReset2() {
+			TrainBeltSamplerV8Cef.AlarmReset2();
+        }
+
+        // 皮采1封装机报警复位
+		function FZJAlarmReset1() {
+			TrainBeltSamplerV8Cef.FZJAlarmReset1();
+        }
+
+        // 皮采2封装机报警复位
+		function FZJAlarmReset2() {
+			TrainBeltSamplerV8Cef.FZJAlarmReset2();
+        }
     </script>
     <style type="text/css">
         html, body
@@ -254,7 +313,7 @@
         .button1
         {
             position: absolute;
-            width: 100px;
+            width: 120px;
             height: 30px;
             font-family: 微软雅黑;
             font-size: 14px;
@@ -327,6 +386,33 @@
 <body onselectstart="return false;">
     <div class="div-root">
         <div class="table-b" id="divCanvas">
+            <!--#1采样机-->
+            <input type="button" id="btnStop" value="允许#1牵车" class="button1" style="top: 640px;
+         left: 775px;" onclick="LeadCar1()" />
+            <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 680px;
+         left: 775px;" onclick="MovingBelt1()" />
+            <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 780px;
+         left: 775px;" onclick="StopSampler1()" />
+            <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 740px;
+         left: 775px;" onclick="SendSampler1()" />
+            <input type="button" id="btnStop" value="报警复位" class="button1" style="top: 820px;
+         left: 775px;" onclick="AlarmReset1()" />
+            <input type="button" id="btnStop" value="封装机报警复位" class="button1" style="top: 860px;
+         left: 775px;" onclick="FZJAlarmReset1()" />
+            <!--#2采样机-->
+            <input type="button" id="btnStop" value="允许#2牵车" class="button1" style="top: 640px;
+         left: 1700px;" onclick="LeadCar2()" />
+            <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 680px;
+         left: 1700px;" onclick="MovingBelt2()" />
+            <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 780px;
+         left: 1700px;" onclick="StopSampler2()" />
+            <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 740px;
+         left: 1700px;" onclick="SendSampler2()" />
+            <input type="button" id="btnStop" value="报警复位" class="button1" style="top: 820px;
+         left: 1700px;" onclick="AlarmReset2()" />
+            <input type="button" id="btnStop" value="封装机报警复位" class="button1" style="top: 860px;
+         left: 1700px;" onclick="FZJAlarmReset2()" />
+
             <embed id="svgCanvas1" src="Resources/TrainBeltSampler.svg" type="image/svg+xml" />
         </div>
         <!--采样机一 集样罐-->

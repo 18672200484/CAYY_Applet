@@ -595,6 +595,24 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		}
 
 		/// <summary>
+		/// 打开发送采样计划
+		/// </summary>
+		/// <param name="param"></param>
+		/// <param name="videoName"></param>
+		public void OpenSendSampleCode(string name)
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				if (!string.IsNullOrEmpty(name))
+				{
+					FrmSampleCode_Select frm = new FrmSampleCode_Select(name);
+					frm.ShowDialog();
+				}
+				
+			}));
+		}
+
+		/// <summary>
 		/// 打开操作日志界面
 		/// </summary>
 		public void OpenOperationLogs()
@@ -660,6 +678,25 @@ namespace CMCS.Monitor.Win.Frms.Sys
 				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
 				{
 					FrmSampleCabinetManager frm = new FrmSampleCabinetManager();
+					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			}));
+		}
+
+		/// <summary>
+		/// 打开皮带采样机报警
+		/// </summary>
+		public void OpenTrainBeltSampler_warning()
+		{
+			this.Invoke((Action)(() =>
+			{
+				string uniqueKey = FrmTrainSampler_Warning.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmTrainSampler_Warning frm = new FrmTrainSampler_Warning();
 					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
 				}
 				else
@@ -881,6 +918,19 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			OpenSampleCabinetManager();
 		}
+
+		/// <summary>
+		/// 打开皮带采样机报警
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenTrainBeltSampler_warning_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainBeltSampler_warning();
+		}
 		#endregion
 
 		#region 设备状态监控
@@ -1071,6 +1121,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Invoke(action);
 		}
 
-
+		
 	}
 }

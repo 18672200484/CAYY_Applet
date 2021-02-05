@@ -63,7 +63,8 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 		"S_在线测水弃料步","S_6mm弃料收集步","S_弃料双向皮带排空步"
 				};
 
-		string[] tags_other = new string[] { "3mm弃样暂存数", "3mm弃料一级皮带有煤标志", "3mm弃料二级皮带有煤标志", "左侧干燥机有煤标志", "右侧干燥机有煤标志", "3mm一级提升机料斗有煤标志", "3mm二级提升机料斗有煤标志" , "干燥机入料皮带有煤标志" };
+		string[] tags_other = new string[] { "3mm弃样暂存数", "3mm弃料一级皮带有煤标志", "3mm弃料二级皮带有煤标志", "左侧干燥机有煤标志", "右侧干燥机有煤标志", "3mm一级提升机料斗有煤标志", "3mm二级提升机料斗有煤标志" , "干燥机入料皮带有煤标志",
+			"轴流风机1速度","轴流风机2速度"};
 		#endregion
 
 		/// <summary>

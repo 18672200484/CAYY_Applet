@@ -72,9 +72,9 @@
    inkscape:window-maximized="1"
    inkscape:window-y="-8"
    inkscape:window-x="-8"
-   inkscape:cy="191.46824"
-   inkscape:cx="727.85361"
-   inkscape:zoom="1.6376963"
+   inkscape:cy="399.1362"
+   inkscape:cx="1198.8109"
+   inkscape:zoom="2.3160523"
    showgrid="false"
    id="namedview2143"
    inkscape:window-height="1017"
@@ -1664,8 +1664,7 @@
 </g>
 <g
    transform="matrix(0.65739577,0,0,1,12.847659,0)"
-   id="g413"
-   >
+   id="g413">
 	<linearGradient
    y2="115.9492"
    x2="529"
@@ -1687,7 +1686,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
-    inkscape:label="2PA"
+   inkscape:label="2PA"
    style="fill:url(#SVGID_17_)"
    id="rect422"
    height="8"
@@ -1720,7 +1719,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
-    inkscape:label="2PB"
+   inkscape:label="2PB"
    style="fill:url(#SVGID_18_)"
    id="rect433"
    height="8"
@@ -6497,7 +6496,6 @@
    class="st7"
    inkscape:label="#1翻车机2" />
 <g
-   
    id="g2089">
 	<linearGradient
    y2="110.5112"
@@ -6529,8 +6527,7 @@
    x="681.2" />
 </g>
 <g
-   id="g2100"
-   >
+   id="g2100">
 	<linearGradient
    y2="124.0112"
    x2="765.2789"
@@ -6552,7 +6549,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
-    inkscape:label="#1翻车机2a"
+   inkscape:label="#1翻车机2a"
    id="rect2109"
    height="53"
    width="8"
@@ -6575,8 +6572,7 @@
    class="st65"
    inkscape:label="#2翻车机2" />
 <g
-   id="g2117"
-   >
+   id="g2117">
 	<linearGradient
    y2="110.5112"
    x2="1020.1722"
@@ -6598,7 +6594,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
-    inkscape:label="#2翻车机1a"
+   inkscape:label="#2翻车机1a"
    id="rect2126"
    height="26"
    width="8"
@@ -6607,8 +6603,7 @@
    x="1012.2" />
 </g>
 <g
-   id="g2128"
-   >
+   id="g2128">
 	<linearGradient
    y2="124.0112"
    x2="1096.2556"
@@ -6630,7 +6625,7 @@
    offset="1" />
 	</linearGradient>
 	<rect
-    inkscape:label="#2翻车机2a"
+   inkscape:label="#2翻车机2a"
    id="rect2137"
    height="53"
    width="8"
@@ -6841,7 +6836,7 @@
        offset="1"
        style="stop-color:#505050"
        id="stop1437" /></linearGradient><rect
-         inkscape:label="2PA1"
+     inkscape:label="2PA1"
      x="37.5"
      y="115.9"
      class="st30"
@@ -6850,8 +6845,7 @@
      id="rect422-1"
      style="fill:url(#SVGID_17_-5)" /></g><g
    transform="matrix(0.33762476,0,0,1,744.94335,29.999992)"
-   id="g413-9"
-   ><linearGradient
+   id="g413-9"><linearGradient
      y2="115.9492"
      x2="529"
      y1="123.9492"
@@ -6874,4 +6868,148 @@
      width="983"
      class="st30"
      y="115.9"
-     x="37.5" /></g></svg>
+     x="37.5" /></g><text
+   class="st36 st2 st3"
+   id="text471-2"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   x="776.83496"
+   y="581.86267">允许一号翻车机翻车</text><circle
+   class="st38"
+   cx="760.935"
+   cy="577.03003"
+   r="7"
+   id="circle781-0"
+   inkscape:label="允许一号翻车机翻车"
+   style="fill:#c8c8c8" /><text
+   y="603.23419"
+   x="776.67474"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   id="text471-2-3"
+   class="st36 st2 st3">采样机故障</text><circle
+   style="fill:#c8c8c8"
+   inkscape:label="采样机故障a"
+   id="circle781-0-3"
+   r="7"
+   cy="598.40155"
+   cx="760.77478"
+   class="st38" /><text
+   y="623.3844"
+   x="776.06415"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   id="text471-2-4"
+   class="st36 st2 st3">工位切换</text><circle
+   style="fill:#c8c8c8"
+   inkscape:label="工位切换a"
+   id="circle781-0-5"
+   r="7"
+   cy="618.55176"
+   cx="760.16418"
+   class="st38" /><text
+   y="578.80957"
+   x="1704.5825"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   id="text471-2-6"
+   class="st36 st2 st3">允许二号翻车机翻车</text><circle
+   style="fill:#c8c8c8"
+   inkscape:label="允许二号翻车机翻车"
+   id="circle781-0-0"
+   r="7"
+   cy="573.97693"
+   cx="1688.6825"
+   class="st38" /><text
+   class="st36 st2 st3"
+   id="text471-2-3-1"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   x="1704.4222"
+   y="600.18109">采样机故障</text><circle
+   class="st38"
+   cx="1688.5223"
+   cy="595.34845"
+   r="7"
+   id="circle781-0-3-9"
+   inkscape:label="采样机故障b"
+   style="fill:#c8c8c8" /><text
+   class="st36 st2 st3"
+   id="text471-2-4-9"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   x="1703.8116"
+   y="620.3313">工位切换</text><circle
+   class="st38"
+   cx="1687.9117"
+   cy="615.49866"
+   r="7"
+   id="circle781-0-5-6"
+   inkscape:label="工位切换b"
+   style="fill:#c8c8c8" /><text
+   y="468.78522"
+   x="78.071793"
+   class="st36 st2 st3"
+   id="text479-7"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff">初级给料皮带零速</text><text
+   y="492.11884"
+   x="78.071793"
+   class="st36 st2 st3"
+   id="text481-6"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff">次级给料皮带零速</text><text
+   y="515.45239"
+   x="78.071793"
+   class="st36 st2 st3"
+   id="text483-8"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff">斗提机零速</text><circle
+   style="fill:#c8c8c8"
+   class="st38"
+   cx="62.171787"
+   cy="463.91983"
+   r="7"
+   id="circle827-1"
+   inkscape:label="初级给料皮带零速a" /><circle
+   style="fill:#c8c8c8"
+   class="st38"
+   cx="62.171787"
+   cy="487.31982"
+   r="7"
+   id="circle829-8"
+   inkscape:label="次级给料皮带零速a" /><circle
+   style="fill:#c8c8c8"
+   class="st38"
+   cx="62.171787"
+   cy="510.61984"
+   r="7"
+   id="circle831-1"
+   inkscape:label="斗提机零速a" /><text
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   id="text479-7-7"
+   class="st36 st2 st3"
+   x="1006.4855"
+   y="469.84631">初级给料皮带零速</text><text
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   id="text481-6-9"
+   class="st36 st2 st3"
+   x="1006.4855"
+   y="493.17993">次级给料皮带零速</text><text
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   id="text483-8-8"
+   class="st36 st2 st3"
+   x="1006.4855"
+   y="516.51349">斗提机零速</text><circle
+   inkscape:label="初级给料皮带零速b"
+   id="circle827-1-4"
+   r="7"
+   cy="464.9809"
+   cx="990.58557"
+   class="st38"
+   style="fill:#c8c8c8" /><circle
+   inkscape:label="次级给料皮带零速b"
+   id="circle829-8-1"
+   r="7"
+   cy="488.38092"
+   cx="990.58557"
+   class="st38"
+   style="fill:#c8c8c8" /><circle
+   inkscape:label="斗提机零速b"
+   id="circle831-1-2"
+   r="7"
+   cy="511.68091"
+   cx="990.58557"
+   class="st38"
+   style="fill:#c8c8c8" /></svg>

@@ -82,8 +82,8 @@ namespace CMCS.Monitor.Win.Frms
 
             //#region 智能存样柜 #
 
-            //datas.Clear();
-            //machineCode = GlobalVars.MachineCode_CYG1;
+            datas.Clear();
+            machineCode = GlobalVars.MachineCode_CYG1;
             //datas.Add(new HtmlDataItem("总仓位", commonDAO.GetSignalDataValue(machineCode, "全柜全部"), eHtmlDataItemType.svg_text));
             //datas.Add(new HtmlDataItem("未存仓位", commonDAO.GetSignalDataValue(machineCode, "全柜无样"), eHtmlDataItemType.svg_text));
             //try
@@ -111,9 +111,36 @@ namespace CMCS.Monitor.Win.Frms
             //    datas.Add(new HtmlDataItem(strWaySignal[i], commonDAO.GetSignalDataValue(machineCode, strWaySignal[i]) == "1" ? red : gray, eHtmlDataItemType.svg_blinkcolor));
             //}
 
+            datas.Add(new HtmlDataItem("仓位信息", commonDAO.GetSignalDataValue(machineCode, "已存仓位") + "/" + commonDAO.GetSignalDataValue(machineCode, "共有仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("大瓶用量", commonDAO.GetSignalDataValue(machineCode, "大瓶已存仓位") + "/" + commonDAO.GetSignalDataValue(machineCode, "大瓶仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("中瓶用量", commonDAO.GetSignalDataValue(machineCode, "中瓶已存仓位") + "/" + commonDAO.GetSignalDataValue(machineCode, "中瓶仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem("小瓶用量", commonDAO.GetSignalDataValue(machineCode, "小瓶已存仓位") + "/" + commonDAO.GetSignalDataValue(machineCode, "小瓶仓位"), eHtmlDataItemType.svg_text));
+
+            //datas.Add(new HtmlDataItem("人工存瓶信号", commonDAO.GetSignalDataValue(machineCode, "人工存瓶信号"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("人工取瓶信号", commonDAO.GetSignalDataValue(machineCode, "人工取瓶信号"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("气送存瓶信号", commonDAO.GetSignalDataValue(machineCode, "气送存瓶信号"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("气送取瓶信号", commonDAO.GetSignalDataValue(machineCode, "气送取瓶信号"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("气送系统信号", commonDAO.GetSignalDataValue(machineCode, "气送系统信号"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("设备执行流程", commonDAO.GetSignalDataValue(machineCode, "设备执行流程"), eHtmlDataItemType.svg_text));
+
+            //datas.Add(new HtmlDataItem("行走伺服位置", commonDAO.GetSignalDataValue(machineCode, "行走伺服位置"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("升降伺服位置", commonDAO.GetSignalDataValue(machineCode, "升降伺服位置"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("滑动模组位置", commonDAO.GetSignalDataValue(machineCode, "滑动模组位置"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("旋转伺服位置", commonDAO.GetSignalDataValue(machineCode, "旋转伺服位置"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("电爪状态", commonDAO.GetSignalDataValue(machineCode, "电爪状态"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("气送闸板", commonDAO.GetSignalDataValue(machineCode, "气送闸板"), eHtmlDataItemType.svg_text));
+
+            //datas.Add(new HtmlDataItem("命令编码", commonDAO.GetSignalDataValue(machineCode, "命令编码"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("瓶号", commonDAO.GetSignalDataValue(machineCode, "瓶号"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("左右", commonDAO.GetSignalDataValue(machineCode, "左右"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("列", commonDAO.GetSignalDataValue(machineCode, "列"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("层", commonDAO.GetSignalDataValue(machineCode, "层"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("水平坐标", commonDAO.GetSignalDataValue(machineCode, "水平坐标"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("升降坐标", commonDAO.GetSignalDataValue(machineCode, "升降坐标"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("时间", commonDAO.GetSignalDataValue(machineCode, "时间"), eHtmlDataItemType.svg_text));
+
             //// 发送到页面
-            //cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("requestData(" + Newtonsoft.Json.JsonConvert.SerializeObject(datas) + ");", "", 0);
-            ////
+            cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("requestData(" + Newtonsoft.Json.JsonConvert.SerializeObject(datas) + ");", "", 0);
 
             List<InfCYGSam> lists = Dbers.GetInstance().SelfDber.Entities<InfCYGSam>().ToList();
             List<Tempsam> tempsams = new List<Tempsam>();
@@ -126,48 +153,6 @@ namespace CMCS.Monitor.Win.Frms
 
                 tempsams.Add(tempsam);
             }
-
-
-            //拼Html
-            //string html = "";
-            //List<InfCYGSam> list = Dbers.GetInstance().SelfDber.Entities<InfCYGSam>().ToList();
-
-            //html += "<div><div>";
-            //var list1 = list.Where(a => a.AreaNumber == 2).OrderByDescending(a=>a.ColumnIndex);
-            //foreach(var item in list1.GroupBy(a => a.ColumnIndex))
-            //{
-            //    var item1 = item.OrderByDescending(a=>a.CellIndex).ToList();
-            //    foreach (var it in item1)
-            //    {
-            //        if (!string.IsNullOrEmpty(it.Code))
-            //        {
-            //            html += "<div class=\'guad_wc\' onclick=\'showBoxDetail(" + it.Code + ",this)\'>A0101</div>";
-            //        }
-            //        else
-            //        {
-            //            html += "<div class=\'guad_wc\'>A0101</div>";
-            //        }
-            //    }
-            //}
-            //html += "</div><div class=\'guad_yg\'>";
-            //var list2 = list.Where(a => a.AreaNumber == 1).OrderBy(a => a.ColumnIndex);
-            //foreach (var item in list2.GroupBy(a => a.ColumnIndex))
-            //{
-            //    var item1 = item.OrderByDescending(a => a.CellIndex).ToList();
-            //    foreach (var it in item1)
-            //    {
-            //        if (!string.IsNullOrEmpty(it.Code))
-            //        {
-            //            html += "<div class=\'guad_wc\' onclick=\'showBoxDetail(" + it.Code + ",this)\'>A0101</div>";
-            //        }
-            //        else
-            //        {
-            //            html += "<div class=\'guad_wc\'>A0101</div>";
-            //        }
-            //    }
-            //}
-            //html += "</div></div>";
-
 
             cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadSamInfo(" +Newtonsoft.Json.JsonConvert.SerializeObject(tempsams) + ");", "", 0);
 

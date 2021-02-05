@@ -84,5 +84,9 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler.Entities
 		/// </summary>
 		public string TurnCode { get; set; }
 
+		/// <summary>
+		/// 车数
+		/// </summary>
+		public int Car_Count { get; set; }
 	}
 }

@@ -1236,6 +1236,28 @@ namespace CMCS.Common.DAO
 			}
 			return 0;
 		}
+
+		/// <summary>
+		/// 根据采样码获取轨道衡车数
+		/// </summary>
+		/// <param name="sampleCode"></param>
+		/// <returns></returns>
+		public int GetGDHCarCountBySampleCode(string gd,string sampleCode)
+		{
+			string sql = string.Format(@"select count(*)
+                    from cmcstbtraincarriagepass t5 
+                    left join fultbtransport t1 on t1.pkid=t5.id
+                    left join fultbinfactorybatch t2 on t1.infactorybatchid=t2.id
+                    left join cmcstbrcsampling t3 on t2.id=t3.infactorybatchid
+                    inner join cmcstbtransportposition t6 on t5.id=t6.transportid 
+                    where t6.tracknumber='{0}' and t3.samplecode='{1}'",gd, sampleCode);
+			DataTable dt = SelfDber.ExecuteDataTable(sql);
+			if (dt != null&&dt.Rows.Count>0)
+			{
+				return Convert.ToInt32(dt.Rows[0][0].ToString());
+			}
+			return 0;
+		}
 		#endregion
 
 		#region 采制化三级编码
@@ -1368,7 +1390,7 @@ namespace CMCS.Common.DAO
 				{
 					SamplingId = rCSampling.Id,
 					MakeType = "机器制样",
-					MakeDate = rCSampling.CreationTime,
+					//MakeDate = rCSampling.CreationTime,
 					MakeCode = CreateNewMakeCode(rCSampling.CreationTime),
 					MakePle = "自动",
 					Discriminator = "Rc",

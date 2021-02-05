@@ -165,15 +165,30 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 				KY_CYJ_P_OUTRUN samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=@CY_Code and CYJ_Machine=@CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
 				if (samplecmdEqu == null)
 				{
-					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(new KY_CYJ_P_OUTRUN
-					{
-						CYJ_Machine = MachineCodeToKY(this.MachineCode),
-						CY_Code = entity.SampleCode,
-						Send_Time = DateTime.Now,
-						CY_Flag = 0,
-						Stop_Flag = 0,
-						TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2"
-					}) > 0;
+					//	isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(new KY_CYJ_P_OUTRUN
+					//	{
+					//		CYJ_Machine = MachineCodeToKY(this.MachineCode),
+					//		CY_Code = entity.SampleCode,
+					//		Send_Time = DateTime.Now,
+					//		CY_Flag = 0,
+					//		Stop_Flag = 0,
+					//		TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2",
+					//		Car_Count= commonDAO.GetGDHCarCountBySampleCode(this.MachineCode.Contains("A") ? "#1" : "#2", entity.SampleCode)
+
+					//}) > 0;
+
+
+					KY_CYJ_P_OUTRUN outrun = new KY_CYJ_P_OUTRUN();
+					outrun.CYJ_Machine = MachineCodeToKY(this.MachineCode);
+					outrun.CY_Code = entity.SampleCode;
+					outrun.Send_Time = DateTime.Now;
+					outrun.CY_Flag = 0;
+					outrun.Stop_Flag = 0;
+					outrun.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
+					outrun.Car_Count = commonDAO.GetGDHCarCountBySampleCode(this.MachineCode.Contains("A") ? "#1" : "#2", entity.SampleCode);
+					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(outrun) > 0;
+					commonDAO.SetSignalDataValue(this.MachineCode, "轨道车数", outrun.Car_Count.ToString());
+
 					KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code", new { CY_Code = entity.SampleCode });
 					if (turn == null)
 					{
@@ -196,7 +211,10 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 					samplecmdEqu.Send_Time = DateTime.Now;
 					samplecmdEqu.CY_Flag = 0;
 					samplecmdEqu.Stop_Flag = 0;
+					samplecmdEqu.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
+					samplecmdEqu.Car_Count = commonDAO.GetGDHCarCountBySampleCode(this.MachineCode.Contains("A") ? "#1" : "#2", entity.SampleCode);
 					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Update(samplecmdEqu) > 0;
+					commonDAO.SetSignalDataValue(this.MachineCode, "轨道车数", samplecmdEqu.Car_Count.ToString());
 				}
 
 				if (isSuccess)
@@ -209,34 +227,128 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			}
 			output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
 
-
-			//res = 0;
-			//// 第三方 > 集中管控
-			//foreach (EquHCQSCYJPlan entity in this.EquDber.Entities<EquHCQSCYJPlan>("where DataFlag=2 and datediff(dd,CreateDate,getdate())=0"))
+			//// 集中管控 > 第三方 
+			//foreach (InfBeltSamplePlan entity in BeltSamplerDAO.GetInstance().GetWaitForSyncBeltSamplePlan(this.MachineCode))
 			//{
-			//	InfBeltSamplePlan samplecmdInf = Dbers.GetInstance().SelfDber.Get<InfBeltSamplePlan>(entity.Id);
-			//	if (samplecmdInf == null) continue;
-
-			//	//samplecmdInf.Point1 = entity.Point1;
-			//	//samplecmdInf.Point2 = entity.Point2;
-			//	//samplecmdInf.Point3 = entity.Point3;
-			//	//samplecmdInf.Point4 = entity.Point4;
-			//	//samplecmdInf.Point5 = entity.Point5;
-			//	//samplecmdInf.Point6 = entity.Point6;
-			//	samplecmdInf.StartTime = entity.StartTime;
-			//	samplecmdInf.EndTime = entity.EndTime;
-			//	samplecmdInf.SampleUser = entity.SampleUser;
-
-			//	if (Dbers.GetInstance().SelfDber.Update(samplecmdInf) > 0)
+			//	bool isSuccess = false;
+			//	// 需调整：命令中的水分等信息视接口而定
+			//	KY_CYJ_P_OUTRUN samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_OUTRUN>("where CY_Code=@CY_Code and CYJ_Machine=@CYJ_Machine", new { CYJ_Machine = MachineCodeToKY(this.MachineCode), CY_Code = entity.SampleCode });
+			//	if (samplecmdEqu == null)
 			//	{
-			//		// 我方已读
-			//		entity.DataFlag = 3;
-			//		this.EquDber.Update(entity);
+			//	//	isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(new KY_CYJ_P_OUTRUN
+			//	//	{
+			//	//		CYJ_Machine = MachineCodeToKY(this.MachineCode),
+			//	//		CY_Code = entity.SampleCode,
+			//	//		Send_Time = DateTime.Now,
+			//	//		CY_Flag = 0,
+			//	//		Stop_Flag = 0,
+			//	//		TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2",
+			//	//		Car_Count= commonDAO.GetGDHCarCountBySampleCode(this.MachineCode.Contains("A") ? "#1" : "#2", entity.SampleCode)
+
+			//	//}) > 0;
+
+
+			//		KY_CYJ_P_OUTRUN outrun = new KY_CYJ_P_OUTRUN(); 
+			//		outrun.CYJ_Machine = MachineCodeToKY(this.MachineCode);
+			//		outrun.CY_Code = entity.SampleCode;
+			//		outrun.Send_Time = DateTime.Now;
+			//		outrun.CY_Flag = 0;
+			//		outrun.Stop_Flag = 0;
+			//		outrun.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
+			//		outrun.Car_Count = commonDAO.GetGDHCarCountBySampleCode(this.MachineCode.Contains("A") ? "#1" : "#2", entity.SampleCode);
+			//		isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(outrun)>0;
+			//		commonDAO.SetSignalDataValue(this.MachineCode,"轨道车数", outrun.Car_Count.ToString());
+
+			//		KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code", new { CY_Code = entity.SampleCode });
+			//		if (turn == null)
+			//		{
+			//			turn = new KY_CYJ_P_TurnOver();
+			//			turn.Send_Time = DateTime.Now;
+			//			turn.CY_Code = entity.SampleCode;
+			//			turn.DataFlag = 0;
+			//			turn.Car_Count = commonDAO.GetCarCountBySampleCode(entity.SampleCode);
+			//			turn.Ready_Count = commonDAO.GetRealyCarCountBySampleCode(entity.SampleCode);
+			//			turn.IsDone = 0;
+			//			turn.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
+			//			DcDbers.GetInstance().BeltSampler_Dber.Insert(turn);
+			//			commonDAO.SetSignalDataValue(this.MachineCode, turn.TurnCode == "#1" ? "#1翻车机车数" : "#2翻车机车数", turn.Car_Count.ToString());
+			//		}
+			//	}
+			//	else
+			//	{
+			//		samplecmdEqu.CYJ_Machine = MachineCodeToKY(this.MachineCode);
+			//		samplecmdEqu.CY_Code = entity.SampleCode;
+			//		samplecmdEqu.Send_Time = DateTime.Now;
+			//		samplecmdEqu.CY_Flag = 0;
+			//		samplecmdEqu.Stop_Flag = 0;
+			//		samplecmdEqu.TurnCode = this.MachineCode.Contains("A") ? "#1" : "#2";
+			//		samplecmdEqu.Car_Count = commonDAO.GetGDHCarCountBySampleCode(this.MachineCode.Contains("A") ? "#1" : "#2", entity.SampleCode);
+			//		isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Update(samplecmdEqu) > 0;
+			//		commonDAO.SetSignalDataValue(this.MachineCode, "轨道车数", samplecmdEqu.Car_Count.ToString());
+			//	}
+
+			//	if (isSuccess)
+			//	{
+			//		entity.SyncFlag = 1;
+			//		Dbers.GetInstance().SelfDber.Update(entity);
 
 			//		res++;
 			//	}
 			//}
-			//output(string.Format("同步采样计划 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+			//output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
+
+
+		}
+
+		/// <summary>
+		/// 同步采样计划_KY
+		/// </summary>
+		/// <param name="output"></param>
+		/// <param name="MachineCode">设备编码</param>
+		public void SyncSamplePlan_KY(Action<string, eOutputType> output)
+		{
+			int res = 0;
+
+			// 集中管控 > 第三方 
+			foreach (InfBeltSamplePlan_KY entity in Dbers.GetInstance().SelfDber.Entities<InfBeltSamplePlan_KY>("where SyncFlag=0"))
+			{
+				bool isSuccess = false;
+
+				KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code and TurnCode=@TurnCode", new { CY_Code = entity.SampleCode, TurnCode=entity.MachineCode });
+				if (turn == null)
+				{
+					turn = new KY_CYJ_P_TurnOver();
+					turn.Send_Time = DateTime.Now;
+					turn.CY_Code = entity.SampleCode;
+					turn.DataFlag = 0;
+					turn.Car_Count = entity.CarCount;
+					turn.Ready_Count = 0;
+					turn.IsDone = 0;
+					turn.TurnCode = entity.MachineCode;
+					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(turn)>0;
+				}
+				else
+				{
+					turn.Send_Time = DateTime.Now;
+					turn.CY_Code = entity.SampleCode;
+					turn.DataFlag = 0;
+					turn.Car_Count = entity.CarCount;
+					turn.Ready_Count = 0;
+					turn.IsDone = 0;
+					turn.TurnCode = entity.MachineCode;
+					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Update(turn) > 0;
+				}
+			
+
+				if (isSuccess)
+				{
+					entity.SyncFlag = 1;
+					Dbers.GetInstance().SelfDber.Update(entity);
+
+					res++;
+				}
+			}
+			output(string.Format("同步采样计划 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
 		}
 
 		/// <summary>
@@ -469,5 +581,58 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 		//	}
 		//	output(string.Format("同步卸样结果 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
 		//}
+
+		/// <summary>
+		/// 同步采样机其他命令
+		/// </summary>
+		/// <param name="output"></param>
+		/// <param name="MachineCode">设备编码</param>
+		public void SyncSampleCmd(Action<string, eOutputType> output)
+		{
+			int res = 0;
+
+			// 集中管控 > 第三方 
+			foreach (InfBeltSampleCmd_KY entity in commonDAO.SelfDber.Entities<InfBeltSampleCmd_KY>(" Where SyncFlag='0'"))
+			{
+				bool isSuccess = false;
+
+				KY_CYJ_P_CMD samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_CMD>("where CMDId=@CMDId", new {  CMDId = entity.Id });
+				if (samplecmdEqu == null)
+				{
+					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(new KY_CYJ_P_CMD
+					{
+						CMDId= entity.Id,
+						MachineCode = MachineCodeToKY(entity.MachineCode),
+						CmdCode = int.Parse(entity.CmdCode),
+						ResultCode=0,
+						OperatorName=entity.OperatorName,
+						SendDateTime = entity.SendDateTime,
+						DataFlag = 0,
+					}) > 0;
+					
+				}
+				else
+				{
+					samplecmdEqu.MachineCode = MachineCodeToKY(entity.MachineCode);
+					samplecmdEqu.CmdCode = int.Parse(entity.CmdCode);
+					samplecmdEqu.ResultCode = 0;
+					samplecmdEqu.OperatorName = entity.OperatorName;
+					samplecmdEqu.SendDateTime = entity.SendDateTime;
+					samplecmdEqu.DataFlag = 0;
+					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Update(samplecmdEqu) > 0;
+				}
+
+				if (isSuccess)
+				{
+					entity.SyncFlag = 1;
+					Dbers.GetInstance().SelfDber.Update(entity);
+
+					res++;
+				}
+			}
+			output(string.Format("同步其他采样命令 {0} 条（集中管控 > 第三方）", res), eOutputType.Normal);
+
+
+		}
 	}
 }

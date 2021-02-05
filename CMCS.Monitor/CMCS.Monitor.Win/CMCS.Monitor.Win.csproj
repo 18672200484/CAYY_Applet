@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CefGlue\CefMenuHandler.cs" />
+    <Compile Include="CefGlue\CefV8Handlers\TrainBeltSamplerCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\TrainSamplerCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\HomePageCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\TruckWeighterCefV8Handler.cs" />
@@ -176,6 +177,12 @@
     <Compile Include="Frms\FrmSampleCabinetManager.Designer.cs">
       <DependentUpon>FrmSampleCabinetManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmSampleCode_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmSampleCode_Select.Designer.cs">
+      <DependentUpon>FrmSampleCode_Select.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\FrmSampleTake_Select.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +200,12 @@
     </Compile>
     <Compile Include="Frms\FrmTrainSampler.Designer.cs">
       <DependentUpon>FrmTrainSampler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmTrainSampler_Warning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmTrainSampler_Warning.Designer.cs">
+      <DependentUpon>FrmTrainSampler_Warning.cs</DependentUpon>
     </Compile>
     <Compile Include="Frms\FrmTruckWeighter.cs">
       <SubType>Form</SubType>
@@ -281,6 +294,9 @@
     <EmbeddedResource Include="Frms\FrmSampleCabinetManager.resx">
       <DependentUpon>FrmSampleCabinetManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmSampleCode_Select.resx">
+      <DependentUpon>FrmSampleCode_Select.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmSampleTake_Select.resx">
       <DependentUpon>FrmSampleTake_Select.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTrainSampler.resx">
       <DependentUpon>FrmTrainSampler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmTrainSampler_Warning.resx">
+      <DependentUpon>FrmTrainSampler_Warning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTruckWeighter.resx">
       <DependentUpon>FrmTruckWeighter.cs</DependentUpon>

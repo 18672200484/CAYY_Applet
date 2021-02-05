@@ -129,8 +129,8 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("原煤制样重量", commonDAO.GetSignalDataValue(machineCode, "原煤重量") +" Kg", eHtmlDataItemType.svg_text));
 			datas.Add(new HtmlDataItem("在线测水状态", commonDAO.GetSignalDataValue(machineCode, "在线测水连接状态")=="1"?"不在线":"在线", eHtmlDataItemType.svg_text));
 
-			datas.Add(new HtmlDataItem("左侧干燥机转速", commonDAO.GetSignalDataValue(machineCode, "左侧干燥机转速")+ " r/min", eHtmlDataItemType.svg_text));
-			datas.Add(new HtmlDataItem("右侧干燥机转速", commonDAO.GetSignalDataValue(machineCode, "右侧干燥机转速")+ " r/min", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("左侧干燥机转速", commonDAO.GetSignalDataValue(machineCode, "轴流风机1速度") + " r/min", eHtmlDataItemType.svg_text));
+			datas.Add(new HtmlDataItem("右侧干燥机转速", commonDAO.GetSignalDataValue(machineCode, "轴流风机2速度") + " r/min", eHtmlDataItemType.svg_text));
 
 			datas.Add(new HtmlDataItem("全水样有瓶", commonDAO.GetSignalDataValue(machineCode, "6mm瓶装机灌装口有瓶信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("存查样有瓶", commonDAO.GetSignalDataValue(machineCode, "mm瓶装机灌装口有瓶信号3") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));

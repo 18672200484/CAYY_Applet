@@ -103,6 +103,7 @@
     <Compile Include="Tasks\AutoMaker\EquAutoMakerDAO.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquSignalData.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquUnloadResult.cs" />
+    <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_CMD.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_TurnOver.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_BARREL.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_STATE.cs" />

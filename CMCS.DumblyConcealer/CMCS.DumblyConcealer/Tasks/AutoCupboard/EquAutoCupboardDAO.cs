@@ -465,7 +465,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
         public int SyncSignalDatal(Action<string, eOutputType> output)
         {
             int res = 0;
-            foreach (Tb_Status entity in this.EquDber.Entities<Tb_Status>(" where Status=0"))
+            foreach (Tb_Status entity in this.EquDber.Entities<Tb_Status>())
             {
                 res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "机械手空闲标志位", entity.S1.ToString()) ? 1 : 0;
                 res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "人工取瓶准备好标志位", entity.S2.ToString()) ? 1 : 0;
