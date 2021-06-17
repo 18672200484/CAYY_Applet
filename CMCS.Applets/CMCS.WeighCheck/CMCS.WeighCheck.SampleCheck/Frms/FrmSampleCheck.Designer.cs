@@ -33,12 +33,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.slightAutoMaker = new CMCS.Forms.UserControls.UCtrlSignalLight();
+            this.slightWber = new CMCS.Forms.UserControls.UCtrlSignalLight();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.pnlExMain = new DevComponents.DotNetBar.PanelEx();
             this.lblAutoMakerName = new System.Windows.Forms.Label();
-            this.slightAutoMaker = new CMCS.Forms.UserControls.UCtrlSignalLight();
             this.lblWber = new System.Windows.Forms.Label();
-            this.slightWber = new CMCS.Forms.UserControls.UCtrlSignalLight();
             this.btnPrintMakeCode = new DevComponents.DotNetBar.ButtonX();
             this.btnReset = new DevComponents.DotNetBar.ButtonX();
             this.panSampleBarrels = new DevComponents.DotNetBar.PanelEx();
@@ -63,6 +63,8 @@
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.txtInputSampleCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.rtxtOutputInfo = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.slightRwer = new CMCS.Forms.UserControls.UCtrlSignalLight();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlExMain.SuspendLayout();
             this.panSampleBarrels.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +73,29 @@
             // 
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // slightAutoMaker
+            // 
+            this.slightAutoMaker.BackColor = System.Drawing.Color.Transparent;
+            this.slightAutoMaker.ForeColor = System.Drawing.Color.White;
+            this.slightAutoMaker.LightColor = System.Drawing.Color.Gray;
+            this.slightAutoMaker.Location = new System.Drawing.Point(371, 9);
+            this.slightAutoMaker.Name = "slightAutoMaker";
+            this.slightAutoMaker.Size = new System.Drawing.Size(20, 20);
+            this.slightAutoMaker.TabIndex = 221;
+            this.toolTip1.SetToolTip(this.slightAutoMaker, "<绿色> 就绪待机\r\n<红色> 正在运行\r\n<黄色> 发生故障");
+            this.slightAutoMaker.Visible = false;
+            // 
+            // slightWber
+            // 
+            this.slightWber.BackColor = System.Drawing.Color.Transparent;
+            this.slightWber.ForeColor = System.Drawing.Color.White;
+            this.slightWber.LightColor = System.Drawing.Color.Gray;
+            this.slightWber.Location = new System.Drawing.Point(546, 9);
+            this.slightWber.Name = "slightWber";
+            this.slightWber.Size = new System.Drawing.Size(20, 20);
+            this.slightWber.TabIndex = 219;
+            this.toolTip1.SetToolTip(this.slightWber, "<绿色> 已连接\r\n<红色> 未连接");
             // 
             // timer2
             // 
@@ -81,6 +106,8 @@
             // 
             this.pnlExMain.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlExMain.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnlExMain.Controls.Add(this.slightRwer);
+            this.pnlExMain.Controls.Add(this.label1);
             this.pnlExMain.Controls.Add(this.lblAutoMakerName);
             this.pnlExMain.Controls.Add(this.slightAutoMaker);
             this.pnlExMain.Controls.Add(this.lblWber);
@@ -116,44 +143,23 @@
             this.lblAutoMakerName.AutoSize = true;
             this.lblAutoMakerName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutoMakerName.ForeColor = System.Drawing.Color.White;
-            this.lblAutoMakerName.Location = new System.Drawing.Point(510, 9);
+            this.lblAutoMakerName.Location = new System.Drawing.Point(396, 9);
             this.lblAutoMakerName.Name = "lblAutoMakerName";
-            this.lblAutoMakerName.Size = new System.Drawing.Size(116, 20);
+            this.lblAutoMakerName.Size = new System.Drawing.Size(122, 20);
             this.lblAutoMakerName.TabIndex = 222;
             this.lblAutoMakerName.Text = "#1全自动制样机";
-            // 
-            // slightAutoMaker
-            // 
-            this.slightAutoMaker.BackColor = System.Drawing.Color.Transparent;
-            this.slightAutoMaker.ForeColor = System.Drawing.Color.White;
-            this.slightAutoMaker.LightColor = System.Drawing.Color.Gray;
-            this.slightAutoMaker.Location = new System.Drawing.Point(485, 9);
-            this.slightAutoMaker.Name = "slightAutoMaker";
-            this.slightAutoMaker.Size = new System.Drawing.Size(20, 20);
-            this.slightAutoMaker.TabIndex = 221;
-            this.toolTip1.SetToolTip(this.slightAutoMaker, "<绿色> 就绪待机\r\n<红色> 正在运行\r\n<黄色> 发生故障");
+            this.lblAutoMakerName.Visible = false;
             // 
             // lblWber
             // 
             this.lblWber.AutoSize = true;
             this.lblWber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWber.ForeColor = System.Drawing.Color.White;
-            this.lblWber.Location = new System.Drawing.Point(685, 9);
+            this.lblWber.Location = new System.Drawing.Point(571, 9);
             this.lblWber.Name = "lblWber";
-            this.lblWber.Size = new System.Drawing.Size(54, 20);
+            this.lblWber.Size = new System.Drawing.Size(57, 20);
             this.lblWber.TabIndex = 220;
             this.lblWber.Text = "电子秤";
-            // 
-            // slightWber
-            // 
-            this.slightWber.BackColor = System.Drawing.Color.Transparent;
-            this.slightWber.ForeColor = System.Drawing.Color.White;
-            this.slightWber.LightColor = System.Drawing.Color.Gray;
-            this.slightWber.Location = new System.Drawing.Point(660, 9);
-            this.slightWber.Name = "slightWber";
-            this.slightWber.Size = new System.Drawing.Size(20, 20);
-            this.slightWber.TabIndex = 219;
-            this.toolTip1.SetToolTip(this.slightWber, "<绿色> 已连接\r\n<红色> 未连接");
             // 
             // btnPrintMakeCode
             // 
@@ -382,7 +388,7 @@
             this.lblCurrentFlowFlag.ForeColor = System.Drawing.Color.White;
             this.lblCurrentFlowFlag.Location = new System.Drawing.Point(87, 9);
             this.lblCurrentFlowFlag.Name = "lblCurrentFlowFlag";
-            this.lblCurrentFlowFlag.Size = new System.Drawing.Size(84, 20);
+            this.lblCurrentFlowFlag.Size = new System.Drawing.Size(89, 20);
             this.lblCurrentFlowFlag.TabIndex = 214;
             this.lblCurrentFlowFlag.Text = "选择采样单";
             // 
@@ -393,7 +399,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 213;
             this.label2.Text = "当前流程：";
             // 
@@ -417,7 +423,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(33, 95);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 20);
+            this.label13.Size = new System.Drawing.Size(41, 20);
             this.label13.TabIndex = 211;
             this.label13.Text = "默认";
             // 
@@ -442,7 +448,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(206, 95);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 20);
+            this.label9.Size = new System.Drawing.Size(57, 20);
             this.label9.TabIndex = 209;
             this.label9.Text = "已验证";
             // 
@@ -466,7 +472,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(112, 95);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 20);
+            this.label8.Size = new System.Drawing.Size(57, 20);
             this.label8.TabIndex = 207;
             this.label8.Text = "待验证";
             // 
@@ -518,6 +524,29 @@
             this.rtxtOutputInfo.ReadOnly = true;
             this.rtxtOutputInfo.Size = new System.Drawing.Size(727, 166);
             this.rtxtOutputInfo.TabIndex = 202;
+            // 
+            // slightRwer
+            // 
+            this.slightRwer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.slightRwer.BackColor = System.Drawing.Color.Transparent;
+            this.slightRwer.ForeColor = System.Drawing.Color.White;
+            this.slightRwer.LightColor = System.Drawing.Color.Gray;
+            this.slightRwer.Location = new System.Drawing.Point(657, 8);
+            this.slightRwer.Name = "slightRwer";
+            this.slightRwer.Size = new System.Drawing.Size(20, 22);
+            this.slightRwer.TabIndex = 228;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(682, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.TabIndex = 229;
+            this.label1.Text = "读卡器";
             // 
             // FrmSampleCheck
             // 
@@ -578,6 +607,8 @@
         private Forms.UserControls.UCtrlSignalLight slightWber;
         private System.Windows.Forms.Label lblAutoMakerName;
         private Forms.UserControls.UCtrlSignalLight slightAutoMaker;
+        private Forms.UserControls.UCtrlSignalLight slightRwer;
+        private System.Windows.Forms.Label label1;
     }
 }
 

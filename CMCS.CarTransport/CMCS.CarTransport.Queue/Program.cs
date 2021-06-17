@@ -46,6 +46,11 @@ namespace CMCS.CarTransport.Queue
 
             try
             {
+                string sql = @"select t.makecode, count(b.id) as sampleCount from cmcstbmake t left join cmcstbrcsampling a on t.samplingid = a.id left join cmcstbrcsampingdetail b on a.id = b.samplingid where a.isdeleted=0 and b.isdeleted=0 and t.isdeleted=0 and a.samplingdate like '%" + "2021-05-10" + "%' group by t.makecode ";
+
+                //string sql = "select * from cmcstbrcsampling";
+                DataTable dataTable = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+
                 CMCS.Common.DAO.CommonDAO.GetInstance().SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.系统.ToString(), "1");
 
                 bool notRun;

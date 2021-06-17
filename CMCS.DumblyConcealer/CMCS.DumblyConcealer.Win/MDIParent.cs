@@ -76,9 +76,9 @@ namespace CMCS.DumblyConcealer.Win
 					surplus--;
 				}
 
-				//this.InvokeEx(() => { timer1.Enabled = true; });
+                this.InvokeEx(() => { timer1.Enabled = true; });
 
-			});
+            });
 		}
 
 		private void MDIParent1_FormClosing(object sender, FormClosingEventArgs e)
@@ -160,9 +160,13 @@ namespace CMCS.DumblyConcealer.Win
 					//气动传输接口
 					tsmiOpenFrmPneumaticTransfer_Click(null, null);
 					break;
+				case 11:
+					//合样归批接口
+					tsmiOpenFrmBatchMachine_Click(null, null);
+					break;
 			}
 
-			if (taskFormIndex == 11)
+			if (taskFormIndex == 12)
 			{
 				TileHorizontalToolStripMenuItem_Click(null, null);
 				timer1.Stop();
@@ -328,6 +332,21 @@ namespace CMCS.DumblyConcealer.Win
 		private void tsmiOpenFrmPneumaticTransfer_Click(object sender, EventArgs e)
 		{
 			TaskForm taskForm = new FrmPneumaticTransfer();
+			if (HaveOpened(taskForm, this))
+			{
+				taskForm.MdiParent = this;
+				taskForm.Show();
+			}
+		}
+
+		/// <summary>
+		/// 12.合样归批
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void tsmiOpenFrmBatchMachine_Click(object sender, EventArgs e)
+		{
+			TaskForm taskForm = new FrmBatchMachine();
 			if (HaveOpened(taskForm, this))
 			{
 				taskForm.MdiParent = this;

@@ -38,9 +38,13 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.slightWber = new CMCS.Forms.UserControls.UCtrlSignalLight();
             this.pnlExMain = new DevComponents.DotNetBar.PanelEx();
+            this.slightRwer = new CMCS.Forms.UserControls.UCtrlSignalLight();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelEx4 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.btnWrite = new DevComponents.DotNetBar.ButtonX();
+            this.btnAddDetaul = new DevComponents.DotNetBar.ButtonX();
             this.label10 = new System.Windows.Forms.Label();
             this.txtMineName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,6 +66,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtInputSampleCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSelRLSampleInfo = new DevComponents.DotNetBar.ButtonX();
             this.pnlExMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -77,7 +82,7 @@
             this.slightWber.BackColor = System.Drawing.Color.Transparent;
             this.slightWber.ForeColor = System.Drawing.Color.White;
             this.slightWber.LightColor = System.Drawing.Color.Gray;
-            this.slightWber.Location = new System.Drawing.Point(660, 9);
+            this.slightWber.Location = new System.Drawing.Point(550, 9);
             this.slightWber.Name = "slightWber";
             this.slightWber.Size = new System.Drawing.Size(20, 20);
             this.slightWber.TabIndex = 211;
@@ -87,6 +92,8 @@
             // 
             this.pnlExMain.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlExMain.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pnlExMain.Controls.Add(this.slightRwer);
+            this.pnlExMain.Controls.Add(this.label3);
             this.pnlExMain.Controls.Add(this.tableLayoutPanel1);
             this.pnlExMain.Controls.Add(this.lblWber);
             this.pnlExMain.Controls.Add(this.slightWber);
@@ -98,13 +105,36 @@
             this.pnlExMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlExMain.Location = new System.Drawing.Point(0, 0);
             this.pnlExMain.Name = "pnlExMain";
-            this.pnlExMain.Size = new System.Drawing.Size(752, 455);
+            this.pnlExMain.Size = new System.Drawing.Size(762, 530);
             this.pnlExMain.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlExMain.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
             this.pnlExMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.pnlExMain.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlExMain.Style.GradientAngle = 90;
             this.pnlExMain.TabIndex = 0;
+            // 
+            // slightRwer
+            // 
+            this.slightRwer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.slightRwer.BackColor = System.Drawing.Color.Transparent;
+            this.slightRwer.ForeColor = System.Drawing.Color.White;
+            this.slightRwer.LightColor = System.Drawing.Color.Gray;
+            this.slightRwer.Location = new System.Drawing.Point(667, 9);
+            this.slightRwer.Name = "slightRwer";
+            this.slightRwer.Size = new System.Drawing.Size(20, 24);
+            this.slightRwer.TabIndex = 230;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(692, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.TabIndex = 231;
+            this.label3.Text = "读卡器";
             // 
             // tableLayoutPanel1
             // 
@@ -117,12 +147,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panelEx2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.superGridControl1, 2, 1);
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 80);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(727, 264);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(727, 324);
             this.tableLayoutPanel1.TabIndex = 215;
             // 
             // panelEx4
@@ -149,6 +179,9 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.btnSelRLSampleInfo);
+            this.panelEx1.Controls.Add(this.btnWrite);
+            this.panelEx1.Controls.Add(this.btnAddDetaul);
             this.panelEx1.Controls.Add(this.label10);
             this.panelEx1.Controls.Add(this.txtMineName);
             this.panelEx1.Controls.Add(this.label9);
@@ -166,7 +199,7 @@
             this.panelEx1.Location = new System.Drawing.Point(0, 30);
             this.panelEx1.Margin = new System.Windows.Forms.Padding(0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(270, 234);
+            this.panelEx1.Size = new System.Drawing.Size(270, 294);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -175,6 +208,32 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 213;
             // 
+            // btnWrite
+            // 
+            this.btnWrite.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnWrite.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnWrite.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnWrite.Location = new System.Drawing.Point(170, 193);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(86, 23);
+            this.btnWrite.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnWrite.TabIndex = 212;
+            this.btnWrite.Text = "写 卡";
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
+            // btnAddDetaul
+            // 
+            this.btnAddDetaul.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddDetaul.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddDetaul.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnAddDetaul.Location = new System.Drawing.Point(26, 251);
+            this.btnAddDetaul.Name = "btnAddDetaul";
+            this.btnAddDetaul.Size = new System.Drawing.Size(138, 23);
+            this.btnAddDetaul.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAddDetaul.TabIndex = 211;
+            this.btnAddDetaul.Text = "增加样桶";
+            this.btnAddDetaul.Click += new System.EventHandler(this.btnAddDetaul_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -182,7 +241,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(40, 153);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 20);
+            this.label10.Size = new System.Drawing.Size(41, 20);
             this.label10.TabIndex = 59;
             this.label10.Text = "矿点";
             // 
@@ -209,7 +268,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(10, 54);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 20);
+            this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 57;
             this.label9.Text = "采样方式";
             // 
@@ -218,9 +277,9 @@
             this.btnSaveSampleBarrel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveSampleBarrel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSaveSampleBarrel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnSaveSampleBarrel.Location = new System.Drawing.Point(125, 193);
+            this.btnSaveSampleBarrel.Location = new System.Drawing.Point(170, 251);
             this.btnSaveSampleBarrel.Name = "btnSaveSampleBarrel";
-            this.btnSaveSampleBarrel.Size = new System.Drawing.Size(61, 23);
+            this.btnSaveSampleBarrel.Size = new System.Drawing.Size(86, 23);
             this.btnSaveSampleBarrel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSaveSampleBarrel.TabIndex = 209;
             this.btnSaveSampleBarrel.Text = "保 存";
@@ -231,9 +290,9 @@
             this.btnReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnReset.Location = new System.Drawing.Point(195, 193);
+            this.btnReset.Location = new System.Drawing.Point(170, 222);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(61, 23);
+            this.btnReset.Size = new System.Drawing.Size(86, 23);
             this.btnReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReset.TabIndex = 210;
             this.btnReset.Text = "重 置";
@@ -244,11 +303,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(10, 120);
+            this.label8.Location = new System.Drawing.Point(25, 120);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 20);
+            this.label8.Size = new System.Drawing.Size(57, 20);
             this.label8.TabIndex = 56;
-            this.label8.Text = "供货单位";
+            this.label8.Text = "托运人";
             // 
             // label7
             // 
@@ -257,7 +316,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(25, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.Size = new System.Drawing.Size(57, 20);
             this.label7.TabIndex = 52;
             this.label7.Text = "采样码";
             // 
@@ -268,7 +327,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(10, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 50;
             this.label6.Text = "批次编码";
             // 
@@ -279,10 +338,10 @@
             this.btnSelSampleInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnSelSampleInfo.Location = new System.Drawing.Point(26, 193);
             this.btnSelSampleInfo.Name = "btnSelSampleInfo";
-            this.btnSelSampleInfo.Size = new System.Drawing.Size(88, 23);
+            this.btnSelSampleInfo.Size = new System.Drawing.Size(138, 23);
             this.btnSelSampleInfo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSelSampleInfo.TabIndex = 53;
-            this.btnSelSampleInfo.Text = "选择采样单";
+            this.btnSelSampleInfo.Text = "选择入厂采样单";
             this.btnSelSampleInfo.Click += new System.EventHandler(this.btnSelSampleInfo_Click);
             // 
             // txtBatch
@@ -400,7 +459,7 @@
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.NoRowsText = "";
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(453, 234);
+            this.superGridControl1.Size = new System.Drawing.Size(453, 294);
             this.superGridControl1.TabIndex = 208;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl1_BeginEdit);
@@ -411,9 +470,9 @@
             this.lblWber.AutoSize = true;
             this.lblWber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWber.ForeColor = System.Drawing.Color.White;
-            this.lblWber.Location = new System.Drawing.Point(685, 9);
+            this.lblWber.Location = new System.Drawing.Point(575, 9);
             this.lblWber.Name = "lblWber";
-            this.lblWber.Size = new System.Drawing.Size(54, 20);
+            this.lblWber.Size = new System.Drawing.Size(57, 20);
             this.lblWber.TabIndex = 212;
             this.lblWber.Text = "电子秤";
             // 
@@ -426,10 +485,10 @@
             this.rtxtOutputInfo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rtxtOutputInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.rtxtOutputInfo.ForeColor = System.Drawing.Color.White;
-            this.rtxtOutputInfo.Location = new System.Drawing.Point(12, 350);
+            this.rtxtOutputInfo.Location = new System.Drawing.Point(12, 369);
             this.rtxtOutputInfo.Name = "rtxtOutputInfo";
             this.rtxtOutputInfo.ReadOnly = true;
-            this.rtxtOutputInfo.Size = new System.Drawing.Size(727, 68);
+            this.rtxtOutputInfo.Size = new System.Drawing.Size(727, 129);
             this.rtxtOutputInfo.TabIndex = 57;
             // 
             // lblCurrentFlowFlag
@@ -439,7 +498,7 @@
             this.lblCurrentFlowFlag.ForeColor = System.Drawing.Color.White;
             this.lblCurrentFlowFlag.Location = new System.Drawing.Point(87, 9);
             this.lblCurrentFlowFlag.Name = "lblCurrentFlowFlag";
-            this.lblCurrentFlowFlag.Size = new System.Drawing.Size(84, 20);
+            this.lblCurrentFlowFlag.Size = new System.Drawing.Size(89, 20);
             this.lblCurrentFlowFlag.TabIndex = 50;
             this.lblCurrentFlowFlag.Text = "选择采样单";
             // 
@@ -450,7 +509,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 49;
             this.label2.Text = "当前流程：";
             // 
@@ -464,11 +523,12 @@
             this.txtInputSampleCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtInputSampleCode.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInputSampleCode.ForeColor = System.Drawing.Color.White;
-            this.txtInputSampleCode.Location = new System.Drawing.Point(12, 35);
+            this.txtInputSampleCode.Location = new System.Drawing.Point(330, 491);
             this.txtInputSampleCode.Name = "txtInputSampleCode";
-            this.txtInputSampleCode.Size = new System.Drawing.Size(727, 39);
+            this.txtInputSampleCode.Size = new System.Drawing.Size(181, 39);
             this.txtInputSampleCode.TabIndex = 48;
             this.txtInputSampleCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInputSampleCode.Visible = false;
             this.txtInputSampleCode.WatermarkText = "扫描采样桶编码. . .";
             this.txtInputSampleCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInputSampleCode_KeyUp);
             // 
@@ -477,18 +537,31 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 426);
+            this.label1.Location = new System.Drawing.Point(8, 501);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 20);
+            this.label1.Size = new System.Drawing.Size(316, 20);
             this.label1.TabIndex = 47;
             this.label1.Text = "操作说明 : 选择采样单 >> 扫描样桶 >> 保存";
+            // 
+            // btnSelRLSampleInfo
+            // 
+            this.btnSelRLSampleInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSelRLSampleInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSelRLSampleInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnSelRLSampleInfo.Location = new System.Drawing.Point(26, 222);
+            this.btnSelRLSampleInfo.Name = "btnSelRLSampleInfo";
+            this.btnSelRLSampleInfo.Size = new System.Drawing.Size(138, 23);
+            this.btnSelRLSampleInfo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSelRLSampleInfo.TabIndex = 213;
+            this.btnSelRLSampleInfo.Text = "选择入炉采样单";
+            this.btnSelRLSampleInfo.Click += new System.EventHandler(this.btnSelRLSampleInfo_Click);
             // 
             // FrmSampleWeigth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(752, 455);
+            this.ClientSize = new System.Drawing.Size(762, 530);
             this.Controls.Add(this.pnlExMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -524,7 +597,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtBatch;
         private System.Windows.Forms.Label lblCurrentFlowFlag;
         private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtInputSampleCode;
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
         private DevComponents.DotNetBar.ButtonX btnSaveSampleBarrel;
@@ -541,6 +613,12 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtMineName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
+        private Forms.UserControls.UCtrlSignalLight slightRwer;
+        private System.Windows.Forms.Label label3;
+        private DevComponents.DotNetBar.ButtonX btnWrite;
+        private DevComponents.DotNetBar.ButtonX btnAddDetaul;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtInputSampleCode;
+        private DevComponents.DotNetBar.ButtonX btnSelRLSampleInfo;
     }
 }
 

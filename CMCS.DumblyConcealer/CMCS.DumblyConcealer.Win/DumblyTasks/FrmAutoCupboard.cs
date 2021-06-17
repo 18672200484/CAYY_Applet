@@ -44,23 +44,27 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
                 EquAutoCupboardDAO autoCupboard_DAO = new EquAutoCupboardDAO(GlobalVars.MachineCode_CYG1, new SqlServerDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("智能存样柜接口连接字符串")));
                 //if (CommonDAO.GetInstance().TestPing(autoCupboard_DAO.EquDber.Connection.DataSource))
                 //{
-                    //#1存样柜
-                    autoCupboard_DAO.SyncCYGToBSInfo(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncCYGHistoryToBSInfo(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncClearCmdToCS(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncTakeCmdToCS(this.rTxtOutputer.Output);
-                    
-                    autoCupboard_DAO.SyncCYGError(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncCYGInfo(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncCYGCmd(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncCYGResult(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncSignalDatal(this.rTxtOutputer.Output);
-                    autoCupboard_DAO.SyncCYGRecord(this.rTxtOutputer.Output);
+                //#1存样柜
+                autoCupboard_DAO.SyncCYGToBSInfo(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncCYGHistoryToBSInfo(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncClearCmdToCS(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncTakeCmdToCS(this.rTxtOutputer.Output);
+
+                autoCupboard_DAO.SyncCYGError(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncCYGInfo(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncCYGCmd(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncCYGResult(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncSignalDatal(this.rTxtOutputer.Output);
+                autoCupboard_DAO.SyncCYGRecord(this.rTxtOutputer.Output);
                 //}
                 //else
                 //    rTxtOutputer.Output(autoCupboard_DAO.MachineCode + "网络不通", eOutputType.Warn);
             }, 5000, OutputError);
 
+            taskSimpleScheduler.StartNewTask("#1全自动存样柜-OPC同步", () =>
+            {
+                EquAutoCupboardOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
+            }, 0, OutputError);
         }
 
         /// <summary>

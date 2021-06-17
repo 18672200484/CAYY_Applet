@@ -7,6 +7,7 @@ using CMCS.Common.DAO;
 using CMCS.Common.Entities;
 using CMCS.Common.Entities.CarTransport;
 using CMCS.Common.Entities.Fuel;
+using CMCS.Common.Entities.Inf;
 using CMCS.Common.Enums;
 using CMCS.Common.Utilities;
 using CMCS.Common.Views;
@@ -102,7 +103,7 @@ namespace CMCS.CarTransport.DAO
 		public CmcsInFactoryBatch HasInFactoryBatch(CmcsBuyFuelTransport buyFuelTransport)
 		{
 			DateTime dt = buyFuelTransport.CreationTime.AddHours(-commonDAO.GetCommonAppletConfigInt32("汽车分批时间点"));
-			return SelfDber.Entity<CmcsInFactoryBatch>("where Batch like '%-'|| to_char(:CreationTime,'YYYYMMDD') ||'-%' and SupplierId=:SupplierId and MineId=:MineId and FuelKindId=:FuelKindId and BatchCreateType=1 and IsDeleted=0", new { CreationTime = dt, SupplierId = buyFuelTransport.SupplierId, MineId = buyFuelTransport.MineId, FuelKindId = buyFuelTransport.FuelKindId });
+			return SelfDber.Entity<CmcsInFactoryBatch>("where Batch like '%-'|| to_char(:CreationTime,'YYYYMMDD') ||'-%' and SupplierId=:SupplierId and BatchCreateType=1 and IsDeleted=0", new { CreationTime = dt, SupplierId = buyFuelTransport.SupplierId, FuelKindId = buyFuelTransport.FuelKindId });
 		}
 
 		/// <summary>
@@ -143,12 +144,14 @@ namespace CMCS.CarTransport.DAO
 					FuelKindId = buyFuelTransport.FuelKindId,
 					FuelKindName = buyFuelTransport.FuelKindName,
 					SupplierId = buyFuelTransport.SupplierId,
+					SupplierName= buyFuelTransport.SupplierName,
 					MineId = buyFuelTransport.MineId,
 					RunDate = buyFuelTransport.InFactoryTime,
 					SendSupplierId = buyFuelTransport.TransportCompanyId,
 					Remark = "由汽车煤智能化自动创建",
 					BatchCreateType = 1,
 					FuelType = "长协煤",
+					DispatchDate = DateTime.Now.Date,
 				};
 
 				// 创建新批次
@@ -328,6 +331,62 @@ namespace CMCS.CarTransport.DAO
 			}
 
 			return true;
+		}
+
+		/// <summary>
+		/// 判断样桶使用情况，是否发生采样计划
+		/// </summary>
+		/// <param name="cmcsRCSampling"></param>
+		/// <param name="MachineCode"></param>
+		/// <returns></returns>
+		public bool CheckSampleBarrel(CmcsRCSampling cmcsRCSampling, string MachineCode)
+		{
+			bool res = false;
+			List<InfEquInfSampleBarrel> barrelList = Dbers.GetInstance().SelfDber.Entities<InfEquInfSampleBarrel>("where MachineCode=:MachineCode"
+					, new { MachineCode = MachineCode });
+			InfEquInfSampleBarrel infEquInfSampleBarrel = barrelList.Where(a => a.IsCurrent == 1).FirstOrDefault();
+			if (infEquInfSampleBarrel.BarrelStatus == "空桶")
+			{
+				res= true;
+			}
+			else if(infEquInfSampleBarrel.BarrelStatus == "未满")
+			{
+				if(infEquInfSampleBarrel.SampleCode== cmcsRCSampling.SampleCode)
+				{
+					res= true;
+				}
+				else
+				{
+					if (barrelList.Where(a => a.BarrelStatus == "空桶").ToList().Count > 0)
+					{
+						res= true;
+					}
+					else
+					{
+						res= false;
+					}
+				}
+			}
+			else
+			{
+				if(barrelList.Where(a=>a.BarrelStatus== "空桶").ToList().Count > 0)
+				{
+					res= true;
+				}
+				else
+				{
+					res= false;
+				}
+			}
+
+			if (!res)
+			{
+				commonDAO.SaveEquInfHitch(MachineCode, DateTime.Now, MachineCode + "无空桶，不能采样！");
+			}
+
+			return res;
+
+
 		}
 	}
 }

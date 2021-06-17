@@ -26,14 +26,14 @@
 
         // 注册SVG元素脚本事件
         function initSvgElementEvent() {
-            canvas1.find("*[inkscape\\:label=#1皮带采样机_点击域],*[inkscape\\:label=#2皮带采样机_点击域]").bind("click", function () {
+            canvas1.find("*[inkscape\\:label=皮采点击域]").bind("click", function () {
                 // 打开皮带采样机监控界面
                 HomePageV8Cef.OpenTrainBeltSampler();
             });
 
-            canvas1.find("*[inkscape\\:label=#1火车机械采样机_点击域],*[inkscape\\:label=#2火车机械采样机_点击域]").bind("click", function () {
+            canvas1.find("*[inkscape\\:label=#1火采点击域],*[inkscape\\:label=#2火采点击域],*[inkscape\\:label=#3火采点击域]").bind("click", function (evt) {
                 // 打开火车机械采样机监控界面
-                HomePageV8Cef.OpenTrainMachinerySampler();
+                HomePageV8Cef.OpenTrainSampler(evt.target.getAttribute("inkscape:label"));
             });
 
             canvas1.find("*[inkscape\\:label=#1翻车机_点击域],*[inkscape\\:label=#2翻车机_点击域]").bind("click", function () {
@@ -46,30 +46,40 @@
                 HomePageV8Cef.OpenWeightBridgeLoadToday();
             });
 
-            canvas1.find("*[inkscape\\:label=#1全自动制样机_点击域]").bind("click", function () {
+            canvas1.find("*[inkscape\\:label=全自动制样机点击域]").bind("click", function () {
                 // 打开全自动制样机监控界面
                 HomePageV8Cef.OpenAutoMaker();
             });
 
-            canvas1.find("*[inkscape\\:label=#1重车衡_点击域],*[inkscape\\:label=#2重车衡_点击域],*[inkscape\\:label=#1轻车衡_点击域],*[inkscape\\:label=#2轻车衡_点击域]").bind("click", function () {
-                // 打开汽车入厂重车衡监控
-                HomePageV8Cef.OpenTruckWeighter();
+            canvas1.find("*[inkscape\\:label=#1地磅点击域],*[inkscape\\:label=空车磅点击域],*[inkscape\\:label=#3地磅点击域]").bind("click", function (evt) {
+                // 打开汽车入厂重车衡监控    
+                HomePageV8Cef.OpenTruckWeighter(evt.target.getAttribute("inkscape:label"));
             });
 
-            canvas1.find("*[inkscape\\:label=#1汽车机械采样机_点击域],*[inkscape\\:label=#2汽车机械采样机_点击域]").bind("click", function () {
+            canvas1.find("*[inkscape\\:label=#1汽采点击域],*[inkscape\\:label=#2汽采点击域]").bind("click", function (evt) {
                 // 打开汽车机械采样机监控
-                HomePageV8Cef.OpenTruckMachinerySampler();
+                HomePageV8Cef.OpenCarSampler1(evt.target.getAttribute("inkscape:label"));
             });
 
-            canvas1.find("*[inkscape\\:label=#1智能存样柜_点击域]").bind("click", function () {
-                // 打开智能存样柜与气动传输监控
+            canvas1.find("*[inkscape\\:label=气动传输点击域]").bind("click", function () {
+                // 打开气动传输监控
                 HomePageV8Cef.OpenAutoCupboard();
             });
 
-            canvas1.find("*[inkscape\\:label=化验室_点击域]").bind("click", function () {
-                alert(window.appName);
+            canvas1.find("*[inkscape\\:label=智能存样柜点击域]").bind("click", function () {
+                // 打开智能存样柜
+                HomePageV8Cef.OpenSampleCabinet();
+            });
+
+            canvas1.find("*[inkscape\\:label=化验设备点击域]").bind("click", function () {
+                //alert(window.appName);
                 // 打开化验室监控
                 HomePageV8Cef.OpenLaboratory();
+            });
+
+            canvas1.find("*[inkscape\\:label=合样归批点击域]").bind("click", function () {
+                // 打开合样归批
+                HomePageV8Cef.OpenBatchMachine();
             });
         }
 
@@ -97,15 +107,49 @@
             else if (data.Type == 3) {
 				svgChangeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
             }
+            // svg_color1
+            else if (data.Type == 31) {
+                svgChangeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+            }
+            //svg_visible
+                else if (data.Type == 4) {
+                    if (data.Value == 1) {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").show();
+                    } else {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").hide();
+					}
+				}
         }
 
         // 加载异常信息
         function LoadHitchs(datas) {
 
-            for (var nums = 1; nums <= 8; nums++) {
+            for (var nums = 1; nums <= 3; nums++) {
                 getCanvas1().find("*[inkscape\\:label=machineCode" + nums + "]").html(datas[nums - 1].machineCode);
                 getCanvas1().find("*[inkscape\\:label=abnormalTime" + nums + "]").html(datas[nums - 1].abnormalTime);
                 getCanvas1().find("*[inkscape\\:label=abnormalInfo" + nums + "]").html(datas[nums - 1].abnormalInfo);
+            }
+        }
+
+        // 加载火车信息
+        function LoadHCInfo(datas) {
+            for (var nums = 1; nums <= 7; nums++) {
+                getCanvas1().find("*[inkscape\\:label=火车车号" + nums + "]").html(datas[nums - 1].transportno);
+                getCanvas1().find("*[inkscape\\:label=火车毛重" + nums + "]").html(datas[nums - 1].grossqty);
+                getCanvas1().find("*[inkscape\\:label=火车皮重" + nums + "]").html(datas[nums - 1].skinqty);
+                getCanvas1().find("*[inkscape\\:label=火车净重" + nums + "]").html(datas[nums - 1].suttleqty);
+                getCanvas1().find("*[inkscape\\:label=火车盈亏" + nums + "]").html(datas[nums - 1].marginqty);
+            }
+        }
+
+         // 加载火车信息
+        function LoadQCInfo(datas) {
+            for (var nums = 1; nums <= 7; nums++) {
+                getCanvas1().find("*[inkscape\\:label=汽车车号" + nums + "]").html(datas[nums - 1].transportno);
+                getCanvas1().find("*[inkscape\\:label=汽车毛重" + nums + "]").html(datas[nums - 1].grossqty);
+                getCanvas1().find("*[inkscape\\:label=汽车皮重" + nums + "]").html(datas[nums - 1].skinqty);
+                getCanvas1().find("*[inkscape\\:label=汽车净重" + nums + "]").html(datas[nums - 1].suttleqty);
+                getCanvas1().find("*[inkscape\\:label=汽车磅秤" + nums + "]").html(datas[nums - 1].marginqty);
             }
         }
 

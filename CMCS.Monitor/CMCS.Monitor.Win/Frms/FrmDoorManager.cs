@@ -21,6 +21,7 @@ using DevComponents.DotNetBar.SuperGrid;
 using DevComponents.DotNetBar;
 using CMCS.Common.Entities.BaseInfo;
 using HikVisionSDK.Core;
+using CMCS.Common.Utilities;
 
 namespace CMCS.Monitor.Win.Frms
 {
@@ -68,14 +69,14 @@ namespace CMCS.Monitor.Win.Frms
 		{
 			GridButtonXEditControl btn = sender as GridButtonXEditControl;
 			if (btn == null) return;
-			CmcsCamare camera = btn.EditorCell.GridRow.DataItem as CmcsCamare;
+			CmcsCamareTemp camera = btn.EditorCell.GridRow.DataItem as CmcsCamareTemp;
 			if (camera == null) return;
 			if (IsLogin) iPCer1.LoginOut();
 			if (iPCer1.Login(camera.Ip, camera.Port, camera.UserName, camera.Password) && iPCer1.OpenDoor())
 			{
 				IsLogin = true;
 				MessageBoxEx.Show("开门成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				commonDAO.SaveOperationLog(camera.Name+"开门", GlobalVars.LoginUser.Name);
+				commonDAO.SaveOperationLog(camera.Name + "开门", GlobalVars.LoginUser.Name);
 			}
 		}
 
@@ -89,7 +90,20 @@ namespace CMCS.Monitor.Win.Frms
 			string sqlWhere = "where Type='门禁' and IP is not null ";
 			if (!string.IsNullOrEmpty(txtSearch.Text))
 				sqlWhere += " and Name like '%" + txtSearch.Text + "%'";
-			superGridControl1.PrimaryGrid.DataSource = CommonDAO.GetInstance().SelfDber.Entities<CmcsCamare>(sqlWhere + " order by Sort");
+			List< CmcsCamare > listCmcsCamare = CommonDAO.GetInstance().SelfDber.Entities<CmcsCamare>(sqlWhere + " order by Sort");
+			List<CmcsCamareTemp> list = new List<CmcsCamareTemp>();
+			foreach(var item in listCmcsCamare)
+			{
+				CmcsCamareTemp entity = new CmcsCamareTemp();
+				entity.Ip = item.Ip;
+				entity.Port = item.Port;
+				entity.UserName = item.UserName;
+				entity.Password = item.Password;
+				entity.Name = item.Name;
+				entity.Status=CommonUtil.PingReplyTest(entity.Ip)?"关闭":"打开";
+				list.Add(entity);
+			}
+			superGridControl1.PrimaryGrid.DataSource = list;
 		}
 
 		#region DataGridView
@@ -127,5 +141,14 @@ namespace CMCS.Monitor.Win.Frms
 		{
 			IPCer.CleanupSDK();
 		}
+	}
+
+	public class CmcsCamareTemp : CmcsCamare
+	{
+		private String _Status;
+		/// <summary>
+		/// 门禁状态
+		/// </summary>
+		public virtual String Status { get { return _Status; } set { _Status = value; } }
 	}
 }

@@ -112,6 +112,10 @@
                 else if (data.Type == 3) {
                     svgChangeColor2(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
                 }
+                // svg_color1
+                else if (data.Type == 31) {
+                    svgChangeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                }
                 // svg_blinkcolor
                 else if (data.Type == 7) {
                     svgChangeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);

@@ -5,7 +5,7 @@
   <!--发卡器串口-->
   <RwerCom>10</RwerCom>
   <!--授权码 注意：必须四个汉字-->
-  <PrefixCode>华电中宁</PrefixCode>
+  <PrefixCode>湖南益阳</PrefixCode>
   <!--起始编号-->
   <StartNumber>2</StartNumber>
   <!--编号递增-->
@@ -13,7 +13,7 @@
   <!--授权模式  1=单机模式  2=联网模式-->
   <EmpowerMode>2</EmpowerMode>
   <!--联网模式需设置，Oracle数据库连接字符串-->
-  <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.36.0.37)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=cmcs_base_7;Password=1234;</SelfConnStr>
+  <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.70.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_cayy_eq;Password=Bossien_@1234.;</SelfConnStr>
   <!--联网模式需设置，查询SQL语句 主键：Id,标签号：TagId，入库时间：InStorageDate-->
   <SelectSQL>select Id,TagId,CreationTime as InStorageDate from CMCSTBEPCCARD t order by TagId asc</SelectSQL>
   <!--联网模式需设置，入库判断SQL语句 标签号：TagId-->

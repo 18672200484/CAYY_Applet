@@ -45,7 +45,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 		{
 			int res = 0;
 			// .测硫仪 型号：5E-8SAII
-			foreach (CLY_WS_S500 entity in Dbers.GetInstance().SelfDber.Entities<CLY_WS_S500>("where Date_ex>= :TestTime and ID is not null", new { TestTime = DateTime.Now.AddDays(-days).Date }))
+			foreach (CLY_WS_S500 entity in Dbers.GetInstance().SelfDber.Entities<CLY_WS_S500>("where Date_ex>= :TestTime and ID is not null and Name is not null", new { TestTime = DateTime.Now.AddDays(-days).Date }))
 			{
 				CmcsSulfurAssay item = Dbers.GetInstance().SelfDber.Entity<CmcsSulfurAssay>("where PKID=:PKID", new { PKID = entity.PKID });
 				if (item == null)
@@ -342,7 +342,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.ContainerNumber = entity.CZPWZ;
 					item.ContainerWeight = entity.CZPCZ;
 					item.SampleWeight = entity.SYZL;
-					item.Mar = entity.SF;
+					item.Mar = Math.Round(entity.SF,1);
 					item.IsEffective = 0;
 					item.PKID = pkid;
 					item.WaterType = entity.CSLB;
@@ -359,7 +359,7 @@ namespace CMCS.DumblyConcealer.Tasks.AssayDevice
 					item.ContainerNumber = entity.CZPWZ;
 					item.ContainerWeight = entity.CZPCZ;
 					item.SampleWeight = entity.SYZL;
-					item.Mar = entity.SF;
+					item.Mar = Math.Round(entity.SF, 1);
 					item.WaterType = entity.CSLB;
 					item.AssayTime = entity.JSSJ;
 					item.AssayUser = entity.HYY;

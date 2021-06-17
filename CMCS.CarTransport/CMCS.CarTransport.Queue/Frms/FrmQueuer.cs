@@ -297,6 +297,7 @@ namespace CMCS.CarTransport.Queue.Frms
 
             LoadFuelkind(cmbFuelName_BuyFuel, cmbFuelName_SaleFuel);
             //LoadSampleType(cmbSamplingType_BuyFuel);
+            LoadHeavyWeight(cmbHeavyWeight);
 
             cmbCoalProduct.Items.Add("#1");
             cmbCoalProduct.Items.Add("#2");
@@ -320,7 +321,7 @@ namespace CMCS.CarTransport.Queue.Frms
         private void FrmQueuer_FormClosing(object sender, FormClosingEventArgs e)
         {
             // 卸载设备
-            UnloadHardware();
+            //UnloadHardware();
         }
 
         #region 设备相关
@@ -625,134 +626,134 @@ namespace CMCS.CarTransport.Queue.Frms
         {
             try
             {
-                bool success = false;
+                //bool success = false;
 
-                this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
-                this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
-                this.InductorCoil3Port = commonDAO.GetAppletConfigInt32("IO控制器_地感3端口");
-                this.InductorCoil4Port = commonDAO.GetAppletConfigInt32("IO控制器_地感4端口");
+                //this.InductorCoil1Port = commonDAO.GetAppletConfigInt32("IO控制器_地感1端口");
+                //this.InductorCoil2Port = commonDAO.GetAppletConfigInt32("IO控制器_地感2端口");
+                //this.InductorCoil3Port = commonDAO.GetAppletConfigInt32("IO控制器_地感3端口");
+                //this.InductorCoil4Port = commonDAO.GetAppletConfigInt32("IO控制器_地感4端口");
 
-                // IO控制器
-                Hardwarer.Iocer.OnReceived += new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.ReceivedEventHandler(Iocer_Received);
-                Hardwarer.Iocer.OnStatusChange += new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.StatusChangeHandler(Iocer_StatusChange);
-                success = Hardwarer.Iocer.OpenCom(commonDAO.GetAppletConfigInt32("IO控制器_串口"), commonDAO.GetAppletConfigInt32("IO控制器_波特率"), commonDAO.GetAppletConfigInt32("IO控制器_数据位"), (StopBits)commonDAO.GetAppletConfigInt32("IO控制器_停止位"), (Parity)commonDAO.GetAppletConfigInt32("IO控制器_校验位"));
-                if (!success) MessageBoxEx.Show("IO控制器连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.iocControler = new IocControler(Hardwarer.Iocer);
+                //// IO控制器
+                //Hardwarer.Iocer.OnReceived += new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.ReceivedEventHandler(Iocer_Received);
+                //Hardwarer.Iocer.OnStatusChange += new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.StatusChangeHandler(Iocer_StatusChange);
+                //success = Hardwarer.Iocer.OpenCom(commonDAO.GetAppletConfigInt32("IO控制器_串口"), commonDAO.GetAppletConfigInt32("IO控制器_波特率"), commonDAO.GetAppletConfigInt32("IO控制器_数据位"), (StopBits)commonDAO.GetAppletConfigInt32("IO控制器_停止位"), (Parity)commonDAO.GetAppletConfigInt32("IO控制器_校验位"));
+                //if (!success) MessageBoxEx.Show("IO控制器连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //this.iocControler = new IocControler(Hardwarer.Iocer);
 
-                // 读卡器1
-                Hardwarer.Rwer1.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
-                Hardwarer.Rwer1.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer1_OnStatusChange);
-                Hardwarer.Rwer1.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer1_OnScanError);
-                success = Hardwarer.Rwer1.OpenCom(commonDAO.GetAppletConfigInt32("读卡器1_串口"));
-                if (!success) MessageBoxEx.Show("读卡器1连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //// 读卡器1
+                //Hardwarer.Rwer1.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
+                //Hardwarer.Rwer1.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer1_OnStatusChange);
+                //Hardwarer.Rwer1.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer1_OnScanError);
+                //success = Hardwarer.Rwer1.OpenCom(commonDAO.GetAppletConfigInt32("读卡器1_串口"));
+                //if (!success) MessageBoxEx.Show("读卡器1连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                // 读卡器2
-                Hardwarer.Rwer2.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
-                Hardwarer.Rwer2.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer2_OnStatusChange);
-                Hardwarer.Rwer2.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer2_OnScanError);
-                success = Hardwarer.Rwer2.OpenCom(commonDAO.GetAppletConfigInt32("读卡器2_串口"));
-                if (!success) MessageBoxEx.Show("读卡器2连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //// 读卡器2
+                //Hardwarer.Rwer2.StartWith = commonDAO.GetAppletConfigString("读卡器_标签过滤");
+                //Hardwarer.Rwer2.OnStatusChange += new RW.LZR12.Lzr12Rwer.StatusChangeHandler(Rwer2_OnStatusChange);
+                //Hardwarer.Rwer2.OnScanError += new RW.LZR12.Lzr12Rwer.ScanErrorEventHandler(Rwer2_OnScanError);
+                //success = Hardwarer.Rwer2.OpenCom(commonDAO.GetAppletConfigInt32("读卡器2_串口"));
+                //if (!success) MessageBoxEx.Show("读卡器2连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                #region LED控制卡1
+                //#region LED控制卡1
 
-                string led1SocketIP = commonDAO.GetAppletConfigString("LED显示屏1_IP地址");
-                if (!string.IsNullOrEmpty(led1SocketIP))
-                {
-                    if (CommonUtil.PingReplyTest(led1SocketIP))
-                    {
-                        int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED1nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 32, 1, 1, "", 0, led1SocketIP, 5005, "");
-                        if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-                        {
-                            nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED1nScreenNo, this.LED1DYArea_ID, 0, 10, 1, "", 0, 0, 0, 96, 32, 255, 0, 255, 7, 6, 1);
-                            if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-                            {
-                                nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED1nScreenNo, this.LED1DYArea_ID, this.LED1TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
-                                if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-                                {
-                                    // 初始化成功
-                                    this.LED1ConnectStatus = true;
-                                    UpdateLed1Show("  等待车辆");
-                                }
-                                else
-                                {
-                                    this.LED1ConnectStatus = false;
-                                    Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
-                                    MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                            }
-                            else
-                            {
-                                this.LED1ConnectStatus = false;
-                                Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
-                                MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-                        else
-                        {
-                            this.LED1ConnectStatus = false;
-                            Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreen", nResult)));
-                            MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        this.LED1ConnectStatus = false;
-                        Log4Neter.Error("初始化LED1控制卡，网络连接失败", new Exception("网络异常"));
-                        MessageBoxEx.Show("LED1控制卡网络连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.LED屏1_连接状态.ToString(), this.LED1ConnectStatus ? "1" : "0");
+                //string led1SocketIP = commonDAO.GetAppletConfigString("LED显示屏1_IP地址");
+                //if (!string.IsNullOrEmpty(led1SocketIP))
+                //{
+                //    if (CommonUtil.PingReplyTest(led1SocketIP))
+                //    {
+                //        int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED1nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 32, 1, 1, "", 0, led1SocketIP, 5005, "");
+                //        if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+                //        {
+                //            nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED1nScreenNo, this.LED1DYArea_ID, 0, 10, 1, "", 0, 0, 0, 96, 32, 255, 0, 255, 7, 6, 1);
+                //            if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+                //            {
+                //                nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED1nScreenNo, this.LED1DYArea_ID, this.LED1TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
+                //                if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+                //                {
+                //                    // 初始化成功
+                //                    this.LED1ConnectStatus = true;
+                //                    UpdateLed1Show("  等待车辆");
+                //                }
+                //                else
+                //                {
+                //                    this.LED1ConnectStatus = false;
+                //                    Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
+                //                    MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                }
+                //            }
+                //            else
+                //            {
+                //                this.LED1ConnectStatus = false;
+                //                Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
+                //                MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //            }
+                //        }
+                //        else
+                //        {
+                //            this.LED1ConnectStatus = false;
+                //            Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreen", nResult)));
+                //            MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        }
+                //    }
+                //    else
+                //    {
+                //        this.LED1ConnectStatus = false;
+                //        Log4Neter.Error("初始化LED1控制卡，网络连接失败", new Exception("网络异常"));
+                //        MessageBoxEx.Show("LED1控制卡网络连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    }
+                //}
+                //commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.LED屏1_连接状态.ToString(), this.LED1ConnectStatus ? "1" : "0");
 
-                #endregion
+                //#endregion
 
-                #region LED控制卡2
+                //#region LED控制卡2
 
-                string led2SocketIP = commonDAO.GetAppletConfigString("LED显示屏2_IP地址");
-                if (!string.IsNullOrEmpty(led2SocketIP))
-                {
-                    if (CommonUtil.PingReplyTest(led1SocketIP))
-                    {
-                        int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED2nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 32, 1, 1, "", 0, led2SocketIP, 5005, "");
-                        if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-                        {
-                            nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED2nScreenNo, this.LED2DYArea_ID, 0, 10, 1, "", 0, 0, 0, 96, 32, 255, 0, 255, 7, 6, 1);
-                            if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-                            {
-                                nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED2nScreenNo, this.LED2DYArea_ID, this.LED2TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
-                                if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-                                {
-                                    // 初始化成功
-                                    this.LED2ConnectStatus = true;
-                                    UpdateLed2Show("  等待车辆");
-                                }
-                                else
-                                {
-                                    this.LED1ConnectStatus = false;
-                                    Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
-                                    MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                            }
-                            else
-                            {
-                                this.LED1ConnectStatus = false;
-                                Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
-                                MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-                        else
-                        {
-                            this.LED2ConnectStatus = false;
-                            Log4Neter.Error("初始化LED2控制卡，网络连接失败", new Exception("网络异常"));
-                            MessageBoxEx.Show("LED2控制卡网络连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
-                commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.LED屏2_连接状态.ToString(), this.LED2ConnectStatus ? "1" : "0");
+                //string led2SocketIP = commonDAO.GetAppletConfigString("LED显示屏2_IP地址");
+                //if (!string.IsNullOrEmpty(led2SocketIP))
+                //{
+                //    if (CommonUtil.PingReplyTest(led1SocketIP))
+                //    {
+                //        int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED2nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 32, 1, 1, "", 0, led2SocketIP, 5005, "");
+                //        if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+                //        {
+                //            nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED2nScreenNo, this.LED2DYArea_ID, 0, 10, 1, "", 0, 0, 0, 96, 32, 255, 0, 255, 7, 6, 1);
+                //            if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+                //            {
+                //                nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED2nScreenNo, this.LED2DYArea_ID, this.LED2TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
+                //                if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+                //                {
+                //                    // 初始化成功
+                //                    this.LED2ConnectStatus = true;
+                //                    UpdateLed2Show("  等待车辆");
+                //                }
+                //                else
+                //                {
+                //                    this.LED1ConnectStatus = false;
+                //                    Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
+                //                    MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                }
+                //            }
+                //            else
+                //            {
+                //                this.LED1ConnectStatus = false;
+                //                Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
+                //                MessageBoxEx.Show("LED1控制卡连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //            }
+                //        }
+                //        else
+                //        {
+                //            this.LED2ConnectStatus = false;
+                //            Log4Neter.Error("初始化LED2控制卡，网络连接失败", new Exception("网络异常"));
+                //            MessageBoxEx.Show("LED2控制卡网络连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        }
+                //    }
+                //}
+                //commonDAO.SetSignalDataValue(CommonAppConfig.GetInstance().AppIdentifier, eSignalDataName.LED屏2_连接状态.ToString(), this.LED2ConnectStatus ? "1" : "0");
 
-                #endregion
+                //#endregion
 
-                //语音设置
-                voiceSpeaker.SetVoice(commonDAO.GetAppletConfigInt32("语速"), commonDAO.GetAppletConfigInt32("音量"), commonDAO.GetAppletConfigString("语音包"));
+                ////语音设置
+                //voiceSpeaker.SetVoice(commonDAO.GetAppletConfigInt32("语速"), commonDAO.GetAppletConfigInt32("音量"), commonDAO.GetAppletConfigString("语音包"));
 
                 timer1.Enabled = true;
             }
@@ -935,18 +936,24 @@ namespace CMCS.CarTransport.Queue.Frms
                                 CmcsUnFinishTransport unFinishTransport = carTransportDAO.GetUnFinishTransportByAutotruckId(this.CurrentAutotruck.Id, this.CurrentAutotruck.CarType);
                                 if (unFinishTransport != null)
                                 {
-                                    FrmTransport_Confirm frm = new FrmTransport_Confirm(unFinishTransport.TransportId, unFinishTransport.CarType);
-                                    if (frm.ShowDialog() == DialogResult.Yes)
-                                    {
-                                        timer2_Tick(null, null);
-                                    }
-                                    else
-                                    {
-                                        this.CurrentAutotruck = null;
-                                        this.CurrentFlowFlag = eFlowFlag.等待车辆;
-                                        timer1.Interval = 10000;
-                                        hasUnFinish = true;
-                                    }
+                                    //FrmTransport_Confirm frm = new FrmTransport_Confirm(unFinishTransport.TransportId, unFinishTransport.CarType);
+                                    //if (frm.ShowDialog() == DialogResult.Yes)
+                                    //{
+                                    //    timer2_Tick(null, null);
+                                    //}
+                                    //else
+                                    //{
+                                    //    this.CurrentAutotruck = null;
+                                    //    this.CurrentFlowFlag = eFlowFlag.等待车辆;
+                                    //    timer1.Interval = 10000;
+                                    //    hasUnFinish = true;
+                                    //}
+
+                                    MessageBoxEx.Show("存在未完结的运输记录，不能排队", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.CurrentAutotruck = null;
+                                    this.CurrentFlowFlag = eFlowFlag.等待车辆;
+                                    //timer1.Interval = 10000;
+                                    hasUnFinish = true;
                                 }
 
                                 if (!hasUnFinish)
@@ -1053,6 +1060,23 @@ namespace CMCS.CarTransport.Queue.Frms
                 item.DisplayMember = "Name";
                 item.ValueMember = "Id";
                 item.DataSource = Dbers.GetInstance().SelfDber.Entities<CmcsFuelKind>("where IsStop=0 and ParentId is not null");
+            }
+        }
+
+        /// <summary>
+        /// 加载重车磅
+        /// </summary>
+        void LoadHeavyWeight(ComboBoxEx comboBoxEx)
+        {
+            string sql = string.Format(@"select replace(b.appidentifier, '汽车智能化-') name from cmcstbappletconfig b where b.configname='磅类型' and b.configvalue like '%重%'");
+            DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                comboBoxEx.DisplayMember = "NAME";
+                comboBoxEx.ValueMember = "NAME";
+                comboBoxEx.DataSource = dt;
+
+                comboBoxEx.Text = dt.Rows[0]["NAME"].ToString();
             }
         }
 
@@ -1331,36 +1355,47 @@ namespace CMCS.CarTransport.Queue.Frms
                 MessageBoxEx.Show("标签卡不能为空", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (this.SelectedFuelKind_BuyFuel == null)
-            {
-                MessageBoxEx.Show("请选择煤种", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (this.SelectedMine_BuyFuel == null)
-            {
-                MessageBoxEx.Show("请选择矿点", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //if (this.SelectedFuelKind_BuyFuel == null)
+            //{
+            //    MessageBoxEx.Show("请选择煤种", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
+            //if (this.SelectedMine_BuyFuel == null)
+            //{
+            //    MessageBoxEx.Show("请选择矿点", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
             if (this.SelectedSupplier_BuyFuel == null)
             {
                 MessageBoxEx.Show("请选择供煤单位", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (this.SelectedTransportCompany_BuyFuel == null)
+            //if (this.SelectedTransportCompany_BuyFuel == null)
+            //{
+            //    MessageBoxEx.Show("请选择运输单位", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
+            //if (txtTicketWeight_BuyFuel.Value <= 0)
+            //{
+            //    MessageBoxEx.Show("请输入有效的矿发量", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
+            if (string.IsNullOrEmpty(txtShipNumber.Text))
             {
-                MessageBoxEx.Show("请选择运输单位", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBoxEx.Show("请输入船号", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (txtTicketWeight_BuyFuel.Value <= 0)
+            if (cmbHeavyWeight.SelectedValue==null||string.IsNullOrEmpty(cmbHeavyWeight.SelectedValue.ToString()))
             {
-                MessageBoxEx.Show("请输入有效的矿发量", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBoxEx.Show("请选择重车衡", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+           
 
             try
             {
                 // 生成入厂煤排队记录，同时生成批次信息以及采制化三级编码
-                if (queuerDAO.JoinQueueBuyFuelTransport(this.CurrentAutotruck, this.SelectedSupplier_BuyFuel, this.SelectedMine_BuyFuel, this.SelectedTransportCompany_BuyFuel, this.SelectedFuelKind_BuyFuel, (decimal)txtTicketWeight_BuyFuel.Value, DateTime.Now, txtRemark_BuyFuel.Text, CommonAppConfig.GetInstance().AppIdentifier))
+                if (queuerDAO.JoinQueueBuyFuelTransport(this.CurrentAutotruck, this.SelectedSupplier_BuyFuel, this.SelectedMine_BuyFuel, this.SelectedTransportCompany_BuyFuel, this.SelectedFuelKind_BuyFuel, 0, DateTime.Now, txtRemark_BuyFuel.Text, CommonAppConfig.GetInstance().AppIdentifier, cmbHeavyWeight.SelectedValue.ToString(),txtShipNumber.Text))
                 {
                     btnSaveTransport_BuyFuel.Enabled = false;
 
@@ -1410,9 +1445,9 @@ namespace CMCS.CarTransport.Queue.Frms
             this.SelectedMine_BuyFuel = null;
             this.SelectedSupplier_BuyFuel = null;
             this.SelectedTransportCompany_BuyFuel = null;
-
+            txtShipNumber.ResetText();
             txtTagId_BuyFuel.ResetText();
-            txtTicketWeight_BuyFuel.Value = 0;
+            //txtTicketWeight_BuyFuel.Value = 0;
             txtRemark_BuyFuel.ResetText();
 
             btnSaveTransport_BuyFuel.Enabled = true;
@@ -1540,7 +1575,7 @@ namespace CMCS.CarTransport.Queue.Frms
                 this.SelectedMine_BuyFuel = commonDAO.SelfDber.Get<CmcsMine>(entity.MineId);
                 this.SelectedSupplier_BuyFuel = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
                 this.SelectedTransportCompany_BuyFuel = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
-
+                txtShipNumber.Text = entity.ShipName;
             }
         }
 

@@ -95,6 +95,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CefGlue\CefMenuHandler.cs" />
+    <Compile Include="CefGlue\CefV8Handlers\AutoMakerCefV8Handler.cs" />
+    <Compile Include="CefGlue\CefV8Handlers\BatchMachineCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\TrainBeltSamplerCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\TrainSamplerCefV8Handler.cs" />
     <Compile Include="CefGlue\CefV8Handlers\HomePageCefV8Handler.cs" />
@@ -122,6 +124,30 @@
     </Compile>
     <Compile Include="Frms\FrmAutoMaker.designer.cs">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmAutoMaker_Warning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmAutoMaker_Warning.Designer.cs">
+      <DependentUpon>FrmAutoMaker_Warning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmBatchMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmBatchMachine.designer.cs">
+      <DependentUpon>FrmBatchMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmBatchMachineBarrel_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmBatchMachineBarrel_Select.Designer.cs">
+      <DependentUpon>FrmBatchMachineBarrel_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmBatchMachine_Warning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmBatchMachine_Warning.Designer.cs">
+      <DependentUpon>FrmBatchMachine_Warning.cs</DependentUpon>
     </Compile>
     <Compile Include="Frms\FrmCarDumper.cs">
       <SubType>Form</SubType>
@@ -213,6 +239,12 @@
     <Compile Include="Frms\FrmTruckWeighter.Designer.cs">
       <DependentUpon>FrmTruckWeighter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmWarningInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmWarningInfo.Designer.cs">
+      <DependentUpon>FrmWarningInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frms\Sys\FrmMainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +299,18 @@
     <EmbeddedResource Include="Frms\FrmAutoMaker.resx">
       <DependentUpon>FrmAutoMaker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmAutoMaker_Warning.resx">
+      <DependentUpon>FrmAutoMaker_Warning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmBatchMachine.resx">
+      <DependentUpon>FrmBatchMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmBatchMachineBarrel_Select.resx">
+      <DependentUpon>FrmBatchMachineBarrel_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmBatchMachine_Warning.resx">
+      <DependentUpon>FrmBatchMachine_Warning.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmCarDumper.resx">
       <DependentUpon>FrmCarDumper.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTruckWeighter.resx">
       <DependentUpon>FrmTruckWeighter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmWarningInfo.resx">
+      <DependentUpon>FrmWarningInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\Sys\FrmMainFrame.resx">
       <DependentUpon>FrmMainFrame.cs</DependentUpon>
@@ -357,6 +404,10 @@
       <Project>{5dc42914-a421-4fa5-bd5a-234f2abae139}</Project>
       <Name>CMCS.CarTransport.BeltSampler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.CarTransport\CMCS.CarTransport\CMCS.CarTransport.csproj">
+      <Project>{5ed15a98-0895-48d3-851c-088a217d41e7}</Project>
+      <Name>CMCS.CarTransport</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
       <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
       <Name>CMCS.Common</Name>
@@ -368,6 +419,10 @@
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Forms.UserControls\CMCS.Forms.UserControls.csproj">
       <Project>{543ED9EB-DADE-4694-BA6C-7ECEAA5D135C}</Project>
       <Name>CMCS.Forms.UserControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.DumblyConcealer\CMCS.InterfaceData.Win\CMCS.InterfaceData.Win.csproj">
+      <Project>{287a6b8c-a233-4228-94e9-2ec1c05cae01}</Project>
+      <Name>CMCS.InterfaceData.Win</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Hardware\HikVisionSDK.Core\HikVisionSDK.Core.csproj">
       <Project>{3c06e562-08c1-44f5-a735-c0a14cc94a7f}</Project>
@@ -400,6 +455,9 @@
     <Content Include="bin\Web\AutoMaker\Resources\images\g3886.png" />
     <Content Include="bin\Web\AutoMaker\Resources\js\register.js" />
     <Content Include="bin\Web\AutoMaker\Resources\AutoMaker.svg" />
+    <Content Include="bin\Web\BatchMachine\index.htm" />
+    <Content Include="bin\Web\BatchMachine\Resources\BatchMachine.svg" />
+    <Content Include="bin\Web\BatchMachine\Resources\js\register.js" />
     <Content Include="bin\Web\CarSampler\index.htm" />
     <Content Include="bin\Web\CarSampler\Resources\CarSampler.svg" />
     <Content Include="bin\Web\CarSampler\Resources\images\Autotruck.png" />

@@ -19,15 +19,15 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler.Entities
         private int _DataFlag;
 
 
-        private string samplingId;
-        /// <summary>
-        /// 采样单Id
-        /// </summary>
-        public string SamplingId
-        {
-            get { return samplingId; }
-            set { samplingId = value; }
-        }
+        //private string samplingId;
+        ///// <summary>
+        ///// 采样单Id
+        ///// </summary>
+        //public string SamplingId
+        //{
+        //    get { return samplingId; }
+        //    set { samplingId = value; }
+        //}
 
         /// <summary>
         /// 采样码

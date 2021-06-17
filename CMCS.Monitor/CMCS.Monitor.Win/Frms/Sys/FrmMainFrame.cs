@@ -354,8 +354,8 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			{
 				if (MessageBoxEx.Show("确认退出系统？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					Common.DAO.CommonDAO.GetInstance().SaveLoginLog(GlobalVars.LoginUser.UserName, Common.Enums.Sys.eUserLogInattempts.LockedOut);
-					Hardwarer.Iocer.CloseCom();
+					//Common.DAO.CommonDAO.GetInstance().SaveLoginLog(GlobalVars.LoginUser.UserName, Common.Enums.Sys.eUserLogInattempts.LockedOut);
+					//Hardwarer.Iocer.CloseCom();
 					CefRuntime.Shutdown();
 					Application.Exit();
 				}
@@ -542,18 +542,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		/// </summary>
 		public void OpenTrainBeltSampler()
 		{
-			//this.InvokeEx(() =>
-			//{
-			string uniqueKey = FrmTrainBeltSampler.UniqueKey;
-
-			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			this.InvokeEx(() =>
 			{
-				FrmTrainBeltSampler frmTrainBeltSampler = new FrmTrainBeltSampler();
-				FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
-			}
-			else
-				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-			//});
+				string uniqueKey = FrmTrainBeltSampler.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmTrainBeltSampler frmTrainBeltSampler = new FrmTrainBeltSampler();
+					FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
 		}
 
 		/// <summary>
@@ -561,18 +561,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		/// </summary>
 		public void OpenAutoMaker()
 		{
-			//this.InvokeEx(() =>
-			//{
-			string uniqueKey = FrmAutoMaker.UniqueKey;
-
-			if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			this.InvokeEx(() =>
 			{
-				FrmAutoMaker frmTrainBeltSampler = new FrmAutoMaker();
-				FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
-			}
-			else
-				FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-			//});
+				string uniqueKey = FrmAutoMaker.UniqueKey;
+
+				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+				{
+					FrmAutoMaker frmTrainBeltSampler = new FrmAutoMaker();
+					FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
+				}
+				else
+					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
 		}
 
 		/// <summary>
@@ -608,7 +608,49 @@ namespace CMCS.Monitor.Win.Frms.Sys
 					FrmSampleCode_Select frm = new FrmSampleCode_Select(name);
 					frm.ShowDialog();
 				}
-				
+
+			}));
+		}
+
+		/// <summary>
+		/// 打开制样机报警信息
+		/// </summary>
+		/// <param name="param"></param>
+		/// <param name="videoName"></param>
+		public void OpenAutoMakerErrorInfo()
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				FrmAutoMaker_Warning frm = new FrmAutoMaker_Warning();
+				frm.ShowDialog();
+			}));
+		}
+
+		/// <summary>
+		/// 打开合样归批报警信息
+		/// </summary>
+		/// <param name="param"></param>
+		/// <param name="videoName"></param>
+		public void OpenBatchMachineErrorInfo()
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				FrmBatchMachine_Warning frm = new FrmBatchMachine_Warning();
+				frm.ShowDialog();
+			}));
+		}
+
+		/// <summary>
+		/// 打开历史故障
+		/// </summary>
+		/// <param name="param"></param>
+		/// <param name="videoName"></param>
+		public void OpenFaultRecordInfo(string machinecode)
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				FrmWarningInfo frm = new FrmWarningInfo(machinecode);
+				frm.ShowDialog();
 			}));
 		}
 
@@ -629,7 +671,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		}
 
 		/// <summary>
-		/// 打开智能存样柜与气动传输监控
+		/// 打开气动传输监控
 		/// </summary>
 		public void OpenAutoCupboard()
 		{
@@ -648,7 +690,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		}
 
 		/// <summary>
-		/// 打开智能存样柜与气动传输监控
+		/// 打开智能存样柜
 		/// </summary>
 		public void OpenSampleCabinet()
 		{
@@ -677,8 +719,8 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
 				{
-					FrmSampleCabinetManager frm = new FrmSampleCabinetManager();
-					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+					SelfVars.FrmSampleCabinetManagerForm = new FrmSampleCabinetManager();
+					FrmMainFrame.superTabControlManager.CreateTab(SelfVars.FrmSampleCabinetManagerForm.Text, uniqueKey, SelfVars.FrmSampleCabinetManagerForm, false);
 				}
 				else
 					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
@@ -690,17 +732,105 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		/// </summary>
 		public void OpenTrainBeltSampler_warning()
 		{
-			this.Invoke((Action)(() =>
+			//this.Invoke((Action)(() =>
+			//{
+			//	string uniqueKey = FrmTrainSampler_Warning.UniqueKey;
+
+			//	if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+			//	{
+			//		FrmTrainSampler_Warning frm = new FrmTrainSampler_Warning();
+			//		FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+			//	}
+			//	else
+			//		FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			//}));
+
+			this.BeginInvoke((Action)(() =>
 			{
-				string uniqueKey = FrmTrainSampler_Warning.UniqueKey;
+				FrmTrainSampler_Warning frm = new FrmTrainSampler_Warning();
+				frm.ShowDialog();
+			}));
+		}
+
+		/// <summary>
+		/// 打开合样归批机
+		/// </summary>
+		public void OpenBatchMachine()
+		{
+			this.InvokeEx(() =>
+			{
+				string uniqueKey = FrmBatchMachine.UniqueKey;
 
 				if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
 				{
-					FrmTrainSampler_Warning frm = new FrmTrainSampler_Warning();
-					FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+					FrmBatchMachine frmBatchMachine = new FrmBatchMachine();
+					FrmMainFrame.superTabControlManager.CreateTab(frmBatchMachine.Text, uniqueKey, frmBatchMachine, false);
 				}
 				else
 					FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+			});
+		}
+
+		/// <summary>
+		/// 打开合样归批机倒料
+		/// </summary>
+		public void BatchMachineSendDLCMD()
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				FrmBatchMachineBarrel_Select frm = new FrmBatchMachineBarrel_Select("");
+				if (frm.ShowDialog() == DialogResult.OK)
+				{
+					BatchMachineBarrel_Select content = frm.Output;
+
+					//CmcsRCSampling rcSampling = CommonDAO.GetInstance().SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode", new { SampleCode = content.SampleID });
+					//if (rcSampling == null)
+					//{
+					//	MessageBox.Show("未找到采样记录", "提示");
+					//	return;
+					//}
+
+					InfBatchMachineCmd rcSampling = CommonDAO.GetInstance().SelfDber.Entity<InfBatchMachineCmd>("where ResultCode=:ResultCode", new { ResultCode = eEquInfCmdResultCode.默认.ToString() });
+					if (rcSampling != null)
+					{
+						MessageBox.Show("存在未完成的倒料命令，不能发送新的命令！", "提示");
+						return;
+					}
+					double weight = commonDAO.GetSignalDataValueDouble(GlobalVars.MachineCode_QZDZYJ_1, "原煤称实时重量");
+					if (weight > 0)
+					{
+						MessageBox.Show("制样料斗有料，不允许发送指令！", "提示");
+						return;
+					}
+					List<InfBatchMachineBarrel> infBatchMachineBarrel = CommonDAO.GetInstance().SelfDber.Entities<InfBatchMachineBarrel>("where SampleID=:SampleID and barrelstatus=1 and datastatus=1", new { SampleID = content.SampleID });
+					List<InfBeltSamplerUnloadResult> infBeltSamplerUnloadResult = CommonDAO.GetInstance().SelfDber.Entities<InfBeltSamplerUnloadResult>("where SampleCode=:SampleCode", new { SampleCode = content.SampleID });
+					if (infBatchMachineBarrel.Count != infBeltSamplerUnloadResult.Count)
+					{
+						MessageBox.Show("合样归批里面样桶数不完整，不能倒料！", "提示");
+						return;
+					}
+					//if (!commonDAO.VerifyComplete(content.SampleID))
+					//{
+					//	MessageBox.Show("当前批次采样未完成，不能倒料！", "提示");
+					//	return;
+					//}
+
+					string currentMessage = string.Empty;
+					InfBatchMachineCmd batchMachineCmd = new InfBatchMachineCmd();
+					batchMachineCmd.InterfaceType = GlobalVars.MachineCode_HYGPJ_1;
+					batchMachineCmd.MachineCode = GlobalVars.MachineCode_HYGPJ_1;
+					batchMachineCmd.CmdCode = eEquInfBatchMachineCmd.倒料.ToString();
+					batchMachineCmd.SampleCode = content.SampleID;// rcSampling.SampleCode;
+					batchMachineCmd.ResultCode = eEquInfCmdResultCode.默认.ToString();
+					batchMachineCmd.SyncFlag = 0;
+
+					if (Dbers.GetInstance().SelfDber.Insert<InfBatchMachineCmd>(batchMachineCmd) > 0)
+					{
+						commonDAO.SaveOperationLog("给合样归批机发送倒料命令，采样码：" + content.SampleID, GlobalVars.LoginUser.Name);
+						MessageBox.Show("命令发送成功", "提示");
+					}
+
+				}
 			}));
 		}
 		#endregion
@@ -765,6 +895,34 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenTruckWeighter();
+			SelfVars.TruckWeighterForm.CurrentMachineCode = GlobalVars.MachineCode_QC_Weighter_1;
+		}
+		/// <summary>
+		/// 打开空车衡
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenTruckWeighter2_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTruckWeighter();
+			SelfVars.TruckWeighterForm.CurrentMachineCode = GlobalVars.MachineCode_QC_Weighter_2;
+		}
+
+		/// <summary>
+		/// 打开#3汽车衡
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenTruckWeighter3_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTruckWeighter();
+			SelfVars.TruckWeighterForm.CurrentMachineCode = GlobalVars.MachineCode_QC_Weighter_3;
 		}
 
 		/// <summary>
@@ -778,6 +936,33 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenTrainSampler();
+			SelfVars.TrainSamplerForm.CurrentMachineCode = GlobalVars.MachineCode_HCJXCYJ_1;
+		}
+		private void btnOpenTrainSampler1_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainSampler();
+			SelfVars.TrainSamplerForm.CurrentMachineCode = GlobalVars.MachineCode_HCJXCYJ_1;
+		}
+
+		private void btnOpenTrainSampler2_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainSampler();
+			SelfVars.TrainSamplerForm.CurrentMachineCode = GlobalVars.MachineCode_HCJXCYJ_2;
+		}
+
+		private void btnOpenTrainSampler3_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainSampler();
+			SelfVars.TrainSamplerForm.CurrentMachineCode = GlobalVars.MachineCode_HCJXCYJ_3;
 		}
 
 		/// <summary>
@@ -792,6 +977,8 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			OpenCarSampler();
 		}
+
+
 		/// <summary>
 		/// 打开门禁管理
 		/// </summary>
@@ -811,10 +998,21 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		/// <param name="e"></param>
 		private void btnOpenCarSampler_Click(object sender, EventArgs e)
 		{
-			ButtonX button = (ButtonX)sender;
+			ButtonItem button = (ButtonItem)sender;
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenCarSampler1();
+			SelfVars.CarSamplerForm.CurrentMachineCode = GlobalVars.MachineCode_QCJXCYJ_1;
+
+		}
+
+		private void btnOpenCarSampler2_Click(object sender, EventArgs e)
+		{
+			ButtonItem button = (ButtonItem)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenCarSampler1();
+			SelfVars.CarSamplerForm.CurrentMachineCode = GlobalVars.MachineCode_QCJXCYJ_2;
 		}
 
 		/// <summary>
@@ -854,6 +1052,14 @@ namespace CMCS.Monitor.Win.Frms.Sys
 
 			OpenTrainBeltSampler();
 		}
+		private void btnOpenTrainBeltSampler1_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenTrainBeltSampler();
+		}
+
 
 		/// <summary>
 		/// 全自动制样机
@@ -930,6 +1136,19 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			SetColorTable(button != null ? button.Name : "");
 
 			OpenTrainBeltSampler_warning();
+		}
+
+		/// <summary>
+		/// 打开合样归批机
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenBatchMachine_Click(object sender, EventArgs e)
+		{
+			ButtonX button = (ButtonX)sender;
+			SetColorTable(button != null ? button.Name : "");
+
+			OpenBatchMachine();
 		}
 		#endregion
 
@@ -1076,7 +1295,8 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			CmcsSysMessage entity = CommonDAO.GetInstance().GetTodayTopSysMessage();
 			if (entity != null)
 			{
-				CommonDAO.GetInstance().ChangeSysMessageStatus(entity.Id, eSysMessageStatus.处理中);
+				//CommonDAO.GetInstance().ChangeSysMessageStatus(entity.Id, eSysMessageStatus.处理中);
+				CommonDAO.GetInstance().ChangeSysMessageStatus(entity.Id, eSysMessageStatus.已处理);
 
 				FrmSysMsg frmSysMsg = new FrmSysMsg(entity);
 				frmSysMsg.OnMsgHandler += new FrmSysMsg.MsgHandler(frmSysMsg_OnMsgHandler);
@@ -1121,6 +1341,9 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Invoke(action);
 		}
 
-		
-	}
+        private void btnMinimizeBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+    }
 }

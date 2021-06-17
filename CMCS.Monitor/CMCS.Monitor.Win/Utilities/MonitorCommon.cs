@@ -104,7 +104,7 @@ namespace CMCS.Monitor.Win.Utilities
 		{
 			if ("|就绪待机|".Contains("|" + systemStatus + "|"))
 				return ColorTranslator.ToHtml(EquipmentStatusColors.BeReady);
-			else if ("|正在运行|正在卸样|".Contains("|" + systemStatus + "|"))
+			else if ("|正在运行|正在卸样|正在采样|".Contains("|" + systemStatus + "|"))
 				return ColorTranslator.ToHtml(EquipmentStatusColors.Working);
 			else if ("|发生故障|".Contains("|" + systemStatus + "|"))
 				return ColorTranslator.ToHtml(EquipmentStatusColors.Breakdown);
@@ -131,5 +131,26 @@ namespace CMCS.Monitor.Win.Utilities
 		{
 			return (string.IsNullOrEmpty(status) ? "停止" : status) == "运行" ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(EquipmentStatusColors.Forbidden);
 		}
+
+		/// <summary>
+		/// 转换布尔类型状态为颜色值
+		/// </summary>
+		/// <param name="status">状态</param>
+		/// <returns></returns>
+		public string ConvertRunToColor(bool status)
+		{
+			return status ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(EquipmentStatusColors.Normal);
+		}
+
+		/// <summary>
+		/// 淡化显示效果
+		/// </summary>
+		/// <param name="status">是否淡化</param>
+		/// <returns></returns>
+		public string Desalt(bool status)
+		{
+			return !status ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(Color.Gray);
+		}
+
 	}
 }

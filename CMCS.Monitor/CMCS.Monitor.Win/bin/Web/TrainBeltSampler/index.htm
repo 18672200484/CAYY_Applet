@@ -7,7 +7,7 @@
     <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
     <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
     <script type="text/javascript">
-
+ var canvas1;
         window.onload = function () {
             //getCanvas1().find("*[inkscape\\:label=#1故障信息],*[inkscape\\:label=#2故障信息],*[inkscape\\:label=采样记录]").css("cursor", "pointer");
 
@@ -24,7 +24,20 @@
             //    // 打开采样记录
             //    ShowSamplePlan();
             //});
+             canvas1 = getCanvas1();
+            // 注册SVG元素脚本事件
+            initSvgElementEvent();;
         };
+
+        // 注册SVG元素脚本事件
+        function initSvgElementEvent() {
+            canvas1.find("*[inkscape\\:label=报警信息点击域]").bind("click", function (evt) {
+                // 选中采样机
+                TrainBeltSamplerV8Cef.AlarmInfo(evt.target.getAttribute("inkscape:label"));
+            });
+
+            canvas1.find("*[inkscape\\:label=报警信息点击域]").css("cursor", "pointer");
+        }
 
         // 获取SVG jquery对象
         function getSVGjQuery(id) {
@@ -247,6 +260,26 @@
 		function FZJAlarmReset2() {
 			TrainBeltSamplerV8Cef.FZJAlarmReset2();
         }
+
+        // 皮采1停止
+		function StopS1() {
+			TrainBeltSamplerV8Cef.StopS1();
+        }
+
+         // 皮采2停止
+		function StopS2() {
+			TrainBeltSamplerV8Cef.StopS2();
+        }
+
+         // 皮采1历史故障
+		function FaultRecord1() {
+			TrainBeltSamplerV8Cef.FaultRecord1();
+        }
+
+        // 皮采2历史故障
+		function FaultRecord2() {
+			TrainBeltSamplerV8Cef.FaultRecord2();
+        }
     </script>
     <style type="text/css">
         html, body
@@ -391,6 +424,10 @@
          left: 775px;" onclick="LeadCar1()" />
             <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 680px;
          left: 775px;" onclick="MovingBelt1()" />
+            <input type="button" id="btnStop" value="停止采样" class="button1" style="top: 680px;
+         left: 615px;" onclick="StopS1()" />
+            <input type="button" id="btnStop" value="历史故障" class="button1" style="top: 640px;
+         left: 615px;" onclick="FaultRecord1()" />
             <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 780px;
          left: 775px;" onclick="StopSampler1()" />
             <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 740px;
@@ -404,6 +441,10 @@
          left: 1700px;" onclick="LeadCar2()" />
             <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 680px;
          left: 1700px;" onclick="MovingBelt2()" />
+            <input type="button" id="btnStop" value="停止采样" class="button1" style="top: 680px;
+         left: 1540px;" onclick="StopS2()" />
+            <input type="button" id="btnStop" value="历史故障" class="button1" style="top: 640px;
+         left: 1540px;" onclick="FaultRecord2()" />
             <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 780px;
          left: 1700px;" onclick="StopSampler2()" />
             <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 740px;

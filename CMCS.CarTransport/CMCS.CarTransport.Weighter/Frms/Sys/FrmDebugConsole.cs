@@ -9,6 +9,7 @@ using DevComponents.DotNetBar;
 using CMCS.CarTransport.Weighter.Core;
 using CMCS.CarTransport.Weighter.Enums;
 using CMCS.CarTransport.Weighter.Frms;
+using CMCS.Common.Utilities;
 
 namespace CMCS.CarTransport.Weighter.Frms.Sys
 {
@@ -41,12 +42,18 @@ namespace CMCS.CarTransport.Weighter.Frms.Sys
             cmbPassWay.SelectedIndex = 0;
         }
 
+        string lastMessage = string.Empty;
         public void Output(string message)
         {
             try
             {
                 rtxtOutput.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " - " + message + Environment.NewLine);
                 rtxtOutput.ScrollToCaret();
+
+                if (lastMessage != message)
+                    Log4Neter.Info(message);
+
+                lastMessage = message;
             }
             catch { }
         }

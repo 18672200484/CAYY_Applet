@@ -109,6 +109,37 @@ namespace CMCS.Monitor.Win.CefGlue
 					cefMsg12.Arguments.SetString(0, "FZJAlarmReset2");
 					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg12);
 					break;
+				case "StopS1":
+					CefProcessMessage cefMsg13 = CefProcessMessage.Create("TrainBeltSamplerCmd");
+					cefMsg13.Arguments.SetSize(0);
+					cefMsg13.Arguments.SetString(0, "StopS1");
+					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg13);
+					break;
+				case "StopS2":
+					CefProcessMessage cefMsg14 = CefProcessMessage.Create("TrainBeltSamplerCmd");
+					cefMsg14.Arguments.SetSize(0);
+					cefMsg14.Arguments.SetString(0, "StopS2");
+					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg14);
+					break;
+				case "FaultRecord1":
+					CefProcessMessage cefMsg15 = CefProcessMessage.Create("FaultRecord");
+					cefMsg15.Arguments.SetSize(0);
+					cefMsg15.Arguments.SetString(0, "2PA皮采");
+					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg15);
+					break;
+				case "FaultRecord2":
+					CefProcessMessage cefMsg16 = CefProcessMessage.Create("FaultRecord");
+					cefMsg16.Arguments.SetSize(0);
+					cefMsg16.Arguments.SetString(0, "2PB皮采");
+					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg16);
+					break;
+				//  打开采样机报警信息
+				case "AlarmInfo":
+					CefProcessMessage cefMsg = CefProcessMessage.Create("TrainBeltSampleAlarmInfo");
+					cefMsg.Arguments.SetSize(0);
+					cefMsg.Arguments.SetString(0, arguments[0].GetStringValue());
+					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg);
+					break;
 				default:
 					returnValue = null;
 					break;

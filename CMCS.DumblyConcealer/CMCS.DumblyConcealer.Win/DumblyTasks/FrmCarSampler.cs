@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CMCS.Common;
 using CMCS.Common.DAO;
 using CMCS.Common.Utilities;
+using CMCS.DapperDber.Dbs.AccessDb;
 using CMCS.DumblyConcealer.Enums;
 using CMCS.DumblyConcealer.Tasks.CarJXSampler;
 using CMCS.DumblyConcealer.Win.Core;
@@ -45,14 +46,16 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			#region #1汽车机械采样机
 
 			EquCarJXSamplerDAO carJXSamplerDAO1 = new EquCarJXSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_1);
+			//AccessDapperDber accessDapperDber1 = new AccessDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#1汽车机械采样机接口连接字符串"));
 
 			taskSimpleScheduler.StartNewTask("#1汽车机械采样机-快速同步", () =>
 			{
 				carJXSamplerDAO1.SyncSampleCmd(this.rTxtOutputer.Output);
-				//carJXSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output);
+				//carJXSamplerDAO1.SyncBarrel(this.rTxtOutputer.Output, accessDapperDber1);
+
 				//carJXSamplerDAO1.SyncUnloadResult(this.rTxtOutputer.Output);
 				//carJXSamplerDAO1.SyncQCJXCYJError(this.rTxtOutputer.Output);
-				//carJXSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
+				carJXSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
 
 			}, 2000, OutputError);
 
@@ -66,10 +69,13 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			#region #2汽车机械采样机
 
 			EquCarJXSamplerDAO carJXSamplerDAO2 = new EquCarJXSamplerDAO(GlobalVars.MachineCode_QCJXCYJ_2);
+			//AccessDapperDber accessDapperDber2 = new AccessDapperDber(CommonDAO.GetInstance().GetCommonAppletConfigString("#2汽车机械采样机接口连接字符串"));
 
 			taskSimpleScheduler.StartNewTask("#2汽车机械采样机-快速同步", () =>
 			{
 				carJXSamplerDAO2.SyncSampleCmd(this.rTxtOutputer.Output);
+				//carJXSamplerDAO2.SyncBarrel(this.rTxtOutputer.Output, accessDapperDber2);
+				carJXSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
 
 			#endregion

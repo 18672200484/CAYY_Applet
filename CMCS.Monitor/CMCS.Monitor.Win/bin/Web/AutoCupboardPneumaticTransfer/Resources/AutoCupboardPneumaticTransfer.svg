@@ -143,7 +143,7 @@
    showgrid="false"
    pagecolor="#ffffff"
    objecttolerance="10"
-   inkscape:zoom="1.4142136"
+   inkscape:zoom="2.8284272"
    inkscape:window-y="-8"
    inkscape:window-x="-8"
    inkscape:window-width="1920"
@@ -152,8 +152,8 @@
    inkscape:pageshadow="2"
    inkscape:pageopacity="0"
    inkscape:guide-bbox="true"
-   inkscape:cy="574.21166"
-   inkscape:cx="1300.3839"
+   inkscape:cy="332.87631"
+   inkscape:cx="1279.3184"
    inkscape:current-layer="svg2"
    id="namedview856"
    guidetolerance="10"
@@ -259,33 +259,47 @@
 <polygon
    points="467,200.4 467,211.1 435.4,211.1 435.4,200.4 "
    class="st15"
-   id="polygon473_1_" />
+   id="polygon473_1_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_2b" />
 <polygon
    points="500.4,245.2 511,245.2 511,628.4 500.4,628.4 "
    class="st15"
-   id="polygon475_12_" />
+   id="polygon475_12_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_2b" />
 <polygon
    points="829.5,188.1 840.2,188.1 840.2,628.4 829.5,628.4 "
    class="st15"
-   id="polygon475_11_" />
+   id="polygon475_11_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_4b" />
 <path
    d="M467,200.4c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V200.4L467,200.4z"
    class="st15"
    inkscape:connector-curvature="0"
-   id="path477_15_" />
+   id="path477_15_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_2b" />
 <path
    d="M796.2,146c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V146L796.2,146z"
    class="st15"
    inkscape:connector-curvature="0"
-   id="path477_12_" />
+   id="path477_12_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_4b" />
 <polygon
    points="797,146 797,156.8 435.2,156.8 435.2,146 "
    class="st15"
-   id="polygon806_15_" />
+   id="polygon806_15_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_4b" />
 <polygon
    points="791.2,227 791.2,237.7 435.4,237.7 435.4,227 "
    class="st15"
-   id="polygon806_13_" />
+   id="polygon806_13_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_1b" />
 <rect
    height="104.5"
    width="6.7"
@@ -410,16 +424,22 @@
 <polygon
    points="1228.6,200.4 1228.6,211.1 1059.4,211.1 1059.4,200.4 "
    class="st15"
-   id="polygon473_5_" />
+   id="polygon473_5_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_2b" />
 <polygon
    points="1262,245.2 1272.6,245.2 1272.6,628.4 1262,628.4 "
    class="st15"
-   id="polygon475_15_" />
+   id="polygon475_15_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_2b" />
 <path
    d="M1228.6,200.4c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V200.4L1228.6,200.4z"
    class="st15"
    inkscape:connector-curvature="0"
-   id="path477_17_" />
+   id="path477_17_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_2b" />
 <g
    id="g85"
    inkscape:label="转换器2_2a">
@@ -438,14 +458,20 @@
 <polygon
    id="polygon473_6_"
    class="st15"
-   points="1059.4,237.7 1059.4,227 1066.1,227 1066.1,237.7 " /><polygon
+   points="1059.4,237.7 1059.4,227 1066.1,227 1066.1,237.7 "
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_1b" /><polygon
    id="polygon475_16_"
    class="st15"
-   points="1110.1,628.4 1099.5,628.4 1099.5,271.8 1110.1,271.8 " /><path
+   points="1110.1,628.4 1099.5,628.4 1099.5,271.8 1110.1,271.8 "
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_1b" /><path
    id="path477_18_"
    inkscape:connector-curvature="0"
    class="st15"
-   d="m 1066.1,227 c 5.1,0 44,1 44,44.9 h -10.7 c 0,-35.8 -33.2,-34.1 -33.3,-34.1 z" /><g
+   d="m 1066.1,227 c 5.1,0 44,1 44,44.9 h -10.7 c 0,-35.8 -33.2,-34.1 -33.3,-34.1 z"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_1b" /><g
    id="g96"
    inkscape:label="转换器2_1a">
 		<path
@@ -463,20 +489,28 @@
 <polygon
    points="629.5,174 629.5,184.7 435.4,184.7 435.4,174 "
    class="st15"
-   id="polygon473_2_" />
+   id="polygon473_2_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_3b" />
 <polygon
    points="909.9,195.6 909.9,206.3 791.2,237.7 791.2,227 "
    class="st15"
-   id="polygon473_3_" />
+   id="polygon473_3_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_1b" />
 <polygon
    points="662.9,218.8 673.5,218.8 673.5,628.4 662.9,628.4 "
    class="st15"
-   id="polygon475_13_" />
+   id="polygon475_13_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_3b" />
 <path
    d="M629.5,174c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V174L629.5,174z"
    class="st15"
    inkscape:connector-curvature="0"
-   id="path477_16_" />
+   id="path477_16_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器1_3b" />
 <g
    id="g110"
    inkscape:label="转换器1_3a">
@@ -511,17 +545,23 @@
    transform="translate(49.8,1.8)"
    points="1692.8,188.1 1692.8,628.4 1682.2,628.4 1682.2,188.1 "
    class="st15"
-   id="polygon475_14_" />
+   id="polygon475_14_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_4b" />
 <path
    d="m 1698.8,145 c 5.1,0 44,1 44,44.9 H 1732 c 0,-35.8 -33.2,-34.1 -33.3,-34.1 V 145 Z"
    class="st15"
    inkscape:connector-curvature="0"
-   id="path477_14_" />
+   id="path477_14_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_4b" />
 <polygon
    transform="matrix(1.110795,0,0,1,-117.35402,0)"
    points="1649.6,156.8 1059.2,156.8 1059.2,146 1649.6,146 "
    class="st15"
-   id="polygon806_12_" />
+   id="polygon806_12_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_4b" />
 <g
    id="g129"
    inkscape:label="转换器2_4a">
@@ -540,17 +580,23 @@
 <polygon
    points="1508.1,174 1508.1,184.7 1059.4,184.7 1059.4,174 "
    class="st15"
-   id="polygon473_4_" />
+   id="polygon473_4_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_3b" />
 <polygon
    transform="matrix(1,0,0,0.8617048,0,30.258989)"
    points="1552.1,218.8 1552.1,616.5 1541.5,616.5 1541.5,218.8 "
    class="st15"
-   id="polygon475_10_" />
+   id="polygon475_10_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_3b" />
 <path
    d="M1508.1,174c5.1,0,44,1,44,44.9h-10.7  c0-35.8-33.2-34.1-33.3-34.1V174L1508.1,174z"
    class="st15"
    inkscape:connector-curvature="0"
-   id="path477_13_" />
+   id="path477_13_"
+   style="fill:#a6a8ab;fill-opacity:1"
+   inkscape:label="转换器2_3b" />
 <g
    id="g140"
    inkscape:label="转换器2_3a">

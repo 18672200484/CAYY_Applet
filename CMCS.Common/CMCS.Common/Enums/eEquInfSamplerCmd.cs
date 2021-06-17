@@ -15,5 +15,6 @@ namespace CMCS.Common.Enums
 		系统复位 = 2,
 		故障复位 = 3,
 		切换轨道 = 4,
+		首尾车 = 5,
 	}
 }

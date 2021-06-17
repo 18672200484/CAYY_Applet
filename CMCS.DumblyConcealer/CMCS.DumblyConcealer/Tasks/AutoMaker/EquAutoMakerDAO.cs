@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using CMCS.Common;
 using CMCS.Common.DAO;
 using CMCS.Common.Entities.Fuel;
@@ -89,13 +90,13 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 				res += commonDAO.SetSignalDataValue(this.MachineCode, eSignalDataName.设备状态.ToString(), systemStatus.ToString()) ? 1 : 0;
 			}
 			//制样设备状态
-			foreach (ZY_State_Tb entity in this.EquDber.Entities<ZY_State_Tb>())
-			{
-				res += commonDAO.SetSignalDataValue(this.MachineCode, entity.DeviceName, entity.DeviceStatus.ToString()) ? 1 : 0;
+			//foreach (ZY_State_Tb entity in this.EquDber.Entities<ZY_State_Tb>())
+			//{
+			//	res += commonDAO.SetSignalDataValue(this.MachineCode, entity.DeviceName, entity.DeviceStatus.ToString()) ? 1 : 0;
 
-				entity.DataStatus = 1;//我方已读
-				this.EquDber.Update(entity);
-			}
+			//	entity.DataStatus = 1;//我方已读
+			//	this.EquDber.Update(entity);
+			//}
 
 			output(string.Format("同步实时信号 {0} 条", res), eOutputType.Normal);
 
@@ -236,12 +237,39 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 			{
 				// 修改制样结束时间
 				rCMake.MakeType = eMakeType.机械制样.ToString();
-				if (rCMake.MakeDate < makeDetail.EndTime) rCMake.MakeDate = makeDetail.EndTime;
-				if (rCMake.MakeDate != rCMake.CreationTime && rCMake.MakeDate > makeDetail.StartTime)
+				//if (rCMake.MakeDate < makeDetail.EndTime) rCMake.MakeDate = makeDetail.EndTime;
+				//if (rCMake.MakeDate != rCMake.CreationTime && rCMake.MakeDate > makeDetail.StartTime)
+				//{
+				//	//rCMake.GetDate = makeDetail.StartTime;
+				//	rCMake.MakeDate = makeDetail.EndTime;
+
+				//	//取归批时间
+				//	string sql = string.Format(@"select a.backbatchdate from 
+				//								fultbinfactorybatch a 
+				//								left join cmcstbrcsampling b on a.id=b.infactorybatchid
+				//								left join cmcstbmake c on b.id=c.samplingid
+				//								where c.id='{0}'", rCMake.Id);
+				//	DataTable dt = commonDAO.SelfDber.ExecuteDataTable(sql);
+				//	if (dt != null && dt.Rows.Count>0)
+				//	{
+				//		rCMake.GetDate = Convert.ToDateTime(dt.Rows[0]["backbatchdate"]);
+				//	}
+				//}
+
+				rCMake.MakeDate = makeDetail.StartTime;
+
+				//取归批时间
+				string sql = string.Format(@"select a.backbatchdate from 
+												fultbinfactorybatch a 
+												left join cmcstbrcsampling b on a.id=b.infactorybatchid
+												left join cmcstbmake c on b.id=c.samplingid
+												where c.id='{0}'", rCMake.Id);
+				DataTable dt = commonDAO.SelfDber.ExecuteDataTable(sql);
+				if (dt != null && dt.Rows.Count > 0)
 				{
-					rCMake.GetDate = makeDetail.StartTime;
-					rCMake.MakeDate = makeDetail.EndTime;
+					rCMake.GetDate = Convert.ToDateTime(dt.Rows[0]["backbatchdate"]);
 				}
+
 				commonDAO.SelfDber.Update(rCMake);
 
 				CmcsRCMakeDetail rCMakeDetail = commonDAO.SelfDber.Entity<CmcsRCMakeDetail>("where MakeId=:MakeId and SampleType=:SampleType", new { MakeId = rCMake.Id, SampleType = MakeTypeChange(makeDetail.SampleType) });
@@ -251,6 +279,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 					rCMakeDetail.CreationTime = DateTime.Now;
 					rCMakeDetail.SampleWeight = makeDetail.SamepleWeight;
 					rCMakeDetail.SampleType = MakeTypeChange(makeDetail.SampleType);
+					rCMakeDetail.SampleCode = makeDetail.PackCode;
 					return commonDAO.SelfDber.Update(rCMakeDetail) > 0;
 				}
 				else
@@ -283,11 +312,14 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 				case "1":
 					makeType = "6mm全水样";
 					break;
-				case "3":
+				case "2":
 					makeType = "3mm备查样";
 					break;
-				case "4":
+				case "3":
 					makeType = "0.2mm分析样";
+					break;
+				case "4":
+					makeType = "0.2mm存查样";
 					break;
 				default:
 					break;

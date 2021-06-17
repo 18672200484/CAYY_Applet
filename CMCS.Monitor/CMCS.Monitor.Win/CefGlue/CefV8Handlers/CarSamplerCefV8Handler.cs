@@ -41,6 +41,33 @@ namespace CMCS.Monitor.Win.CefGlue
                     cefMsg1.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()) + "急停");
                     CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg1);
                     break;
+                // 复位
+                case "Reset":
+                    commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()), "急停", "0");
+
+                    CefProcessMessage cefMsg2 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg2.Arguments.SetSize(0);
+                    cefMsg2.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()) + "急停复位");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg2);
+                    break;
+                // 制样急停
+                case "ZYStop":
+                    commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()), "制样急停", "1");
+
+                    CefProcessMessage cefMsg3 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg3.Arguments.SetSize(0);
+                    cefMsg3.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()) + "制样急停");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg3);
+                    break;
+                // 制样复位
+                case "ZYReset":
+                    commonDAO.SendAppRemoteControlCmd(MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()), "制样急停", "0");
+
+                    CefProcessMessage cefMsg4 = CefProcessMessage.Create("SaveOperationLog");
+                    cefMsg4.Arguments.SetSize(0);
+                    cefMsg4.Arguments.SetString(0, "设置" + MonitorCommon.GetInstance().GetCarSamplerMachineCodeBySelected(arguments[0].GetStringValue()) + "制样急停复位");
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg4);
+                    break;
                 // 车辆信息
                 case "CarInfo":
                     if (paramSampler == "#1")

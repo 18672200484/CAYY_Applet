@@ -9,7 +9,25 @@
         CarSamplerV8Cef.Stop = function (paramSampler) {
         native function Stop(paramSampler);
         return Stop(paramSampler);
-      }; 
+        }; 
+
+        // 复位
+        CarSamplerV8Cef.Reset = function (paramSampler) {
+            native function Reset(paramSampler);
+            return Reset(paramSampler);
+        }; 
+
+        // 制样急停
+        CarSamplerV8Cef.ZYStop = function (paramSampler) {
+            native function ZYStop(paramSampler);
+            return ZYStop(paramSampler);
+        };
+
+        // 制样复位
+        CarSamplerV8Cef.ZYReset = function (paramSampler) {
+            native function ZYReset(paramSampler);
+            return ZYReset(paramSampler);
+        }; 
       
         // 车辆信息
       CarSamplerV8Cef.CarInfo = function(paramSampler) {

@@ -363,7 +363,9 @@ namespace CMCS.WeighCheck.MakeCheck.Frms.SampleWeigth
 				Rwer_OnStatusChange(ReadRwer.Status);
 
 				// 初始化-读卡器
-				success = ReadRwer.OpenComPort(commonDAO.GetAppletConfigInt32("读卡器串口"));
+				success = ReadRwer.OpenNetPort(commonDAO.GetAppletConfigString("读卡器网口"),6000);
+				//success = ReadRwer.OpenNetPort("192.168.70.30",6000);
+				
 
 				// 初始化-电子秤 
 				if (IsUseWeight)

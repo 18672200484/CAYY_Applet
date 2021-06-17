@@ -82,7 +82,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1900, 1000);
+            this.panel1.Size = new System.Drawing.Size(1550, 941);
             this.panel1.TabIndex = 2;
             // 
             // btnAlarmReset2
@@ -131,7 +131,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(794, 22);
+            this.label1.Location = new System.Drawing.Point(606, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 37);
             this.label1.TabIndex = 2;
@@ -140,9 +140,9 @@ namespace CMCS.CarTransport.BeltSampler.Frms
             // panel2
             // 
             this.panel2.Controls.Add(this.superGridControl1);
-            this.panel2.Location = new System.Drawing.Point(112, 100);
+            this.panel2.Location = new System.Drawing.Point(28, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1679, 685);
+            this.panel2.Size = new System.Drawing.Size(1484, 685);
             this.panel2.TabIndex = 0;
             // 
             // superGridControl1
@@ -201,7 +201,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
             this.superGridControl1.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl1.Size = new System.Drawing.Size(1679, 685);
+            this.superGridControl1.Size = new System.Drawing.Size(1484, 685);
             this.superGridControl1.TabIndex = 2;
             this.superGridControl1.Text = "superGridControl1";
             // 
@@ -209,13 +209,13 @@ namespace CMCS.CarTransport.BeltSampler.Frms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 1000);
+            this.ClientSize = new System.Drawing.Size(1550, 941);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonX2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTrainSampler_Warning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "皮带采样机报警";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTrainSampler_Warning_FormClosing);
             this.Load += new System.EventHandler(this.FrmTrainSampler_Warning_Load);

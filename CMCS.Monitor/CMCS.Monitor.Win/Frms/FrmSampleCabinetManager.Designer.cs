@@ -29,19 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn36 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.cmbSampleType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btnBatchClear = new DevComponents.DotNetBar.ButtonX();
+            this.txtMakeCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dtInputEnd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btnAll = new DevComponents.DotNetBar.ButtonX();
@@ -64,18 +68,24 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.ForeColor = System.Drawing.Color.White;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.White;
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.splitContainer1.Panel2.Controls.Add(this.rtxtOutput);
-            this.splitContainer1.Size = new System.Drawing.Size(1900, 1000);
+            this.splitContainer1.Panel2.ForeColor = System.Drawing.Color.White;
+            this.splitContainer1.Size = new System.Drawing.Size(1900, 920);
             this.splitContainer1.SplitterDistance = 1408;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -95,7 +105,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1408, 1000);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1408, 920);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // superGridControl1
@@ -111,65 +121,74 @@
             this.superGridControl1.Location = new System.Drawing.Point(3, 43);
             this.superGridControl1.Name = "superGridControl1";
             this.superGridControl1.PrimaryGrid.AutoGenerateColumns = false;
-            gridColumn28.DataPropertyName = "MACHINENAME";
-            gridColumn28.HeaderText = "存放样柜";
-            gridColumn28.Name = "MACHINENAME";
-            gridColumn28.Width = 200;
-            gridColumn29.DataPropertyName = "SAMPLECODE";
-            gridColumn29.HeaderText = "样品编号";
-            gridColumn29.Name = "SAMPLECODE";
-            gridColumn29.Width = 200;
-            gridColumn30.DataPropertyName = "SAMPLETYPE";
-            gridColumn30.HeaderText = "样品类型";
-            gridColumn30.Name = "SAMPLETYPE";
-            gridColumn31.DataPropertyName = "INPUTTIME";
-            gridColumn31.HeaderText = "存样时间";
-            gridColumn31.Name = "INPUTTIME";
-            gridColumn31.Width = 200;
-            gridColumn32.DataPropertyName = "INPUTPLE";
-            gridColumn32.HeaderText = "存样人";
-            gridColumn32.Name = "INPUTPLE";
-            gridColumn33.DataPropertyName = "BATCH";
-            gridColumn33.HeaderText = "批次";
-            gridColumn33.Name = "BATCH";
-            gridColumn33.Width = 150;
-            gridColumn34.DataPropertyName = "SUPPLIERNAME";
-            gridColumn34.HeaderText = "供煤单位";
-            gridColumn34.Name = "SUPPLIERNAME";
-            gridColumn34.Width = 250;
-            gridColumn35.DataPropertyName = "";
-            gridColumn35.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
-            gridColumn35.HeaderText = "";
-            gridColumn35.Name = "gcmlTake";
-            gridColumn35.NullString = "取 样";
-            gridColumn35.Width = 80;
-            gridColumn36.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
-            gridColumn36.HeaderText = " ";
-            gridColumn36.Name = "gcmlClear";
-            gridColumn36.NullString = "弃 样";
-            gridColumn36.Width = 80;
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn28);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn29);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn30);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn31);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn32);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn33);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn34);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn35);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn36);
+            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn1.HeaderText = "选择";
+            gridColumn1.Name = "clmIsCheck";
+            gridColumn1.Width = 60;
+            gridColumn2.DataPropertyName = "MACHINENAME";
+            gridColumn2.HeaderText = "存放样柜";
+            gridColumn2.Name = "MACHINENAME";
+            gridColumn2.Width = 160;
+            gridColumn3.DataPropertyName = "SAMPLECODE";
+            gridColumn3.HeaderText = "样品编号";
+            gridColumn3.Name = "SAMPLECODE";
+            gridColumn3.Width = 180;
+            gridColumn4.DataPropertyName = "SAMPLETYPE";
+            gridColumn4.HeaderText = "样品类型";
+            gridColumn4.Name = "SAMPLETYPE";
+            gridColumn5.DataPropertyName = "INPUTTIME";
+            gridColumn5.HeaderText = "存样时间";
+            gridColumn5.Name = "INPUTTIME";
+            gridColumn5.Width = 180;
+            gridColumn6.DataPropertyName = "INPUTPLE";
+            gridColumn6.HeaderText = "存样人";
+            gridColumn6.Name = "INPUTPLE";
+            gridColumn7.DataPropertyName = "BATCH";
+            gridColumn7.HeaderText = "批次";
+            gridColumn7.Name = "BATCH";
+            gridColumn7.Width = 150;
+            gridColumn8.DataPropertyName = "SUPPLIERNAME";
+            gridColumn8.HeaderText = "供煤单位";
+            gridColumn8.Name = "SUPPLIERNAME";
+            gridColumn8.Width = 250;
+            gridColumn9.DataPropertyName = "";
+            gridColumn9.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
+            gridColumn9.HeaderText = "";
+            gridColumn9.Name = "gcmlTake";
+            gridColumn9.NullString = "取 样";
+            gridColumn9.Width = 80;
+            gridColumn10.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
+            gridColumn10.HeaderText = " ";
+            gridColumn10.Name = "gcmlClear";
+            gridColumn10.NullString = "弃 样";
+            gridColumn10.Width = 80;
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn4);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn5);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn6);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn7);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn8);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn9);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn10);
             this.superGridControl1.PrimaryGrid.DefaultRowHeight = 25;
             this.superGridControl1.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.superGridControl1.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl1.Size = new System.Drawing.Size(1402, 954);
+            this.superGridControl1.Size = new System.Drawing.Size(1402, 874);
             this.superGridControl1.TabIndex = 1;
             this.superGridControl1.Text = "superGridControl1";
+            this.superGridControl1.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl1_BeginEdit);
             // 
             // panelEx1
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.cmbSampleType);
+            this.panelEx1.Controls.Add(this.btnBatchClear);
+            this.panelEx1.Controls.Add(this.txtMakeCode);
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Controls.Add(this.dtInputEnd);
             this.panelEx1.Controls.Add(this.btnAll);
@@ -188,6 +207,53 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 19;
             // 
+            // cmbSampleType
+            // 
+            this.cmbSampleType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSampleType.DisplayMember = "Text";
+            this.cmbSampleType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSampleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSampleType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbSampleType.ForeColor = System.Drawing.Color.Black;
+            this.cmbSampleType.FormattingEnabled = true;
+            this.cmbSampleType.ItemHeight = 21;
+            this.cmbSampleType.Location = new System.Drawing.Point(331, 4);
+            this.cmbSampleType.Name = "cmbSampleType";
+            this.cmbSampleType.Size = new System.Drawing.Size(157, 27);
+            this.cmbSampleType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmbSampleType.TabIndex = 269;
+            this.cmbSampleType.WatermarkText = "样品类型";
+            // 
+            // btnBatchClear
+            // 
+            this.btnBatchClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBatchClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBatchClear.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnBatchClear.Location = new System.Drawing.Point(40, 6);
+            this.btnBatchClear.Name = "btnBatchClear";
+            this.btnBatchClear.Size = new System.Drawing.Size(96, 23);
+            this.btnBatchClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBatchClear.TabIndex = 270;
+            this.btnBatchClear.Text = "批量弃样";
+            this.btnBatchClear.Click += new System.EventHandler(this.btnBatchClear_Click);
+            // 
+            // txtMakeCode
+            // 
+            this.txtMakeCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMakeCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            // 
+            // 
+            // 
+            this.txtMakeCode.Border.Class = "TextBoxBorder";
+            this.txtMakeCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMakeCode.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMakeCode.ForeColor = System.Drawing.Color.White;
+            this.txtMakeCode.Location = new System.Drawing.Point(876, 4);
+            this.txtMakeCode.Name = "txtMakeCode";
+            this.txtMakeCode.Size = new System.Drawing.Size(180, 27);
+            this.txtMakeCode.TabIndex = 269;
+            this.txtMakeCode.WatermarkText = "请输入制样码";
+            // 
             // labelX1
             // 
             this.labelX1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -197,8 +263,8 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(680, 5);
+            this.labelX1.ForeColor = System.Drawing.Color.White;
+            this.labelX1.Location = new System.Drawing.Point(494, 5);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(71, 23);
             this.labelX1.TabIndex = 268;
@@ -207,7 +273,7 @@
             // dtInputEnd
             // 
             this.dtInputEnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtInputEnd.BackColor = System.Drawing.Color.White;
+            this.dtInputEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             // 
             // 
             // 
@@ -217,10 +283,10 @@
             this.dtInputEnd.ButtonDropDown.Visible = true;
             this.dtInputEnd.CustomFormat = "yyyy-MM-dd";
             this.dtInputEnd.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.dtInputEnd.ForeColor = System.Drawing.Color.Black;
+            this.dtInputEnd.ForeColor = System.Drawing.Color.White;
             this.dtInputEnd.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtInputEnd.IsPopupCalendarOpen = false;
-            this.dtInputEnd.Location = new System.Drawing.Point(923, 4);
+            this.dtInputEnd.Location = new System.Drawing.Point(737, 4);
             // 
             // 
             // 
@@ -281,8 +347,8 @@
             // 
             this.lblto.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblto.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblto.ForeColor = System.Drawing.Color.Black;
-            this.lblto.Location = new System.Drawing.Point(896, 6);
+            this.lblto.ForeColor = System.Drawing.Color.White;
+            this.lblto.Location = new System.Drawing.Point(710, 6);
             this.lblto.Name = "lblto";
             this.lblto.Size = new System.Drawing.Size(21, 23);
             this.lblto.TabIndex = 266;
@@ -304,7 +370,7 @@
             // dtInputStart
             // 
             this.dtInputStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtInputStart.BackColor = System.Drawing.Color.White;
+            this.dtInputStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             // 
             // 
             // 
@@ -314,10 +380,10 @@
             this.dtInputStart.ButtonDropDown.Visible = true;
             this.dtInputStart.CustomFormat = "yyyy-MM-dd";
             this.dtInputStart.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.dtInputStart.ForeColor = System.Drawing.Color.Black;
+            this.dtInputStart.ForeColor = System.Drawing.Color.White;
             this.dtInputStart.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtInputStart.IsPopupCalendarOpen = false;
-            this.dtInputStart.Location = new System.Drawing.Point(757, 4);
+            this.dtInputStart.Location = new System.Drawing.Point(571, 4);
             // 
             // 
             // 
@@ -381,7 +447,7 @@
             this.rtxtOutput.ForeColor = System.Drawing.Color.White;
             this.rtxtOutput.Location = new System.Drawing.Point(0, 0);
             this.rtxtOutput.Name = "rtxtOutput";
-            this.rtxtOutput.Size = new System.Drawing.Size(488, 1000);
+            this.rtxtOutput.Size = new System.Drawing.Size(488, 920);
             this.rtxtOutput.TabIndex = 1;
             this.rtxtOutput.Text = "";
             // 
@@ -400,7 +466,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 1000);
+            this.ClientSize = new System.Drawing.Size(1900, 920);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -436,5 +502,8 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtInputStart;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMakeCode;
+        private DevComponents.DotNetBar.ButtonX btnBatchClear;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbSampleType;
     }
 }

@@ -90,8 +90,12 @@
     <Compile Include="Entities\BaseInfo\CmcsCamare.cs" />
     <Compile Include="Entities\CarTransport\CmcsAutoTruck.cs" />
     <Compile Include="Entities\CarTransport\CmcsTransportPosition.cs" />
+    <Compile Include="Entities\Fuel\CmcsRLSampleBarrel.cs" />
+    <Compile Include="Entities\Fuel\CmcsRLSampling.cs" />
+    <Compile Include="Entities\Inf\InfBatchMachineCmd.cs" />
     <Compile Include="Entities\Inf\InfBeltSampleCmd_KY.cs" />
     <Compile Include="Entities\Inf\InfBeltSamplePlan_KY.cs" />
+    <Compile Include="Entities\Inf\InfBatchMachineBarrel.cs" />
     <Compile Include="Entities\SampleCabinet\CmcsSampleClear.cs" />
     <Compile Include="Entities\SampleCabinet\CmcsSampleClearDetail.cs" />
     <Compile Include="Entities\SampleCabinet\CmcsSampleTake.cs" />
@@ -100,10 +104,14 @@
     <Compile Include="Entities\SampleCabinet\CmcstbSampleInputHistory.cs" />
     <Compile Include="Entities\Sys\CmcsOperationLog.cs" />
     <Compile Include="Entities\TrainInFactory\CmcsTrainRecognition.cs" />
+    <Compile Include="Entities\TrainInFactory\CmcsTrainRecognition_01.cs" />
+    <Compile Include="Enums\eEquInfBatchMachineCmd.cs" />
     <Compile Include="Enums\eEquInfBeltSamplerUnloadStatus.cs" />
     <Compile Include="Enums\eEquInfMtSystemStatus.cs" />
     <Compile Include="Enums\eEquInfBeltSamplerSystemStatus.cs" />
     <Compile Include="Enums\eEquInfSamplerCmd_KY.cs" />
+    <Compile Include="Utilities\PasswordHasher.cs" />
+    <Compile Include="Utilities\RSACryptoService.cs" />
     <Compile Include="Views\View_CarDumperInfo.cs" />
     <Compile Include="Views\View_RCSampling.cs" />
     <Compile Include="Entities\iEAA\CmcsUser.cs" />

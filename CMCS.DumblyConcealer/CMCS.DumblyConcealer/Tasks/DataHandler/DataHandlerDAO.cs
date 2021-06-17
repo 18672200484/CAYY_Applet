@@ -54,8 +54,12 @@ namespace CMCS.DumblyConcealer.Tasks.CarSynchronous
 			{
 				if (transport.TareTime == null) continue;
 
-				CmcsInFactoryBatch batch = commonDAO.SelfDber.Entity<CmcsInFactoryBatch>("where CreationTime like '%" + transport.InFactoryTime.ToString("yyyy-MM-dd") + "%' and SupplierId=:SupplierId and MineId=:MineId and FuelKindId=:FuelKindId and IsDeleted=0",
-					new { SupplierId = transport.SupplierId, MineId = transport.MineId, FuelKindId = transport.FuelKindId });
+				if (transport.TareTime.Year < 2000) continue;
+
+				string oldBatchId = transport.InFactoryBatchId;
+
+				// 生成批次以及采制化三级编码数据
+				CmcsInFactoryBatch batch = commonDAO.GCQCInFactoryBatchByBuyFuelTransport(transport);
 				if (batch == null) continue;
 
 				CmcsTransport truck = commonDAO.SelfDber.Entity<CmcsTransport>("where PKID=:PKID and IsDeleted=0", new { PKID = transport.Id });
@@ -106,28 +110,41 @@ namespace CMCS.DumblyConcealer.Tasks.CarSynchronous
 
 				if (succes)
 				{
-					//更新智能化运输记录
-					transport.IsSyncBatch = 1;
-					transport.InFactoryBatchId = batch.Id;
-					Dbers.GetInstance().SelfDber.Update<CmcsBuyFuelTransport>(transport);
+					succes = UpdateInFactoryBatch(batch); //更新新批次
+					if (succes)
+					{
+						if (oldBatchId != batch.Id)
+						{
+							CmcsInFactoryBatch oldInFactoryBatch = Dbers.GetInstance().SelfDber.Get<CmcsInFactoryBatch>(oldBatchId);
+							UpdateInFactoryBatch(oldInFactoryBatch); //更新旧批次
+						}
 
-					// 更新批次的量 
-					List<CmcsTransport> listTransport = commonDAO.SelfDber.Entities<CmcsTransport>("where InFactoryBatchId=:InFactoryBatchId and IsDeleted=0", new { InFactoryBatchId = batch.Id });
+						//更新智能化运输记录
+						transport.IsSyncBatch = 1;
+						transport.InFactoryBatchId = batch.Id;
+						Dbers.GetInstance().SelfDber.Update<CmcsBuyFuelTransport>(transport);
 
-					batch.SuttleQty = listTransport.Sum(a => a.SuttleQty);
-					batch.TicketQty = listTransport.Sum(a => a.TicketQty);
-					batch.CheckQty = listTransport.Sum(a => a.CheckQty);
-					batch.MarginQty = listTransport.Sum(a => a.MarginQty);
-					batch.TransportNumber = listTransport.Count;
-
-					Dbers.GetInstance().SelfDber.Update<CmcsInFactoryBatch>(batch);
-
-					res++;
+						res++;
+					}
 				}
 
 			}
 
 			output(string.Format("同步批次明细数据 {0} 条", res), eOutputType.Normal);
+		}
+
+		private bool UpdateInFactoryBatch(CmcsInFactoryBatch batch)
+		{
+			// 更新批次的量 
+			List<CmcsTransport> listTransport = commonDAO.SelfDber.Entities<CmcsTransport>("where InFactoryBatchId=:InFactoryBatchId and IsDeleted=0", new { InFactoryBatchId = batch.Id });
+
+			batch.SuttleQty = listTransport.Sum(a => a.SuttleQty);
+			batch.TicketQty = listTransport.Sum(a => a.TicketQty);
+			batch.CheckQty = listTransport.Sum(a => a.CheckQty);
+			batch.MarginQty = listTransport.Sum(a => a.MarginQty);
+			batch.TransportNumber = listTransport.Count;
+
+			return Dbers.GetInstance().SelfDber.Update<CmcsInFactoryBatch>(batch) > 0; ;
 		}
 
 		#region 同步门禁数据

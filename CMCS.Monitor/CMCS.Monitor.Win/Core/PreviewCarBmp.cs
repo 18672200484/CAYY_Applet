@@ -22,35 +22,35 @@ namespace CMCS.Monitor.Win.Core
         public PreviewCarBmp(CmcsAutotruck autoTruck)
         {
             CurrTruck = new TruckMeasure(autoTruck.CarriageWidth, autoTruck.CarriageLength);
-            CurrTruck.LeftObstacle1 = autoTruck.RightObstacle1;
-            CurrTruck.LeftObstacle2 = autoTruck.RightObstacle2;
-            CurrTruck.LeftObstacle3 = autoTruck.RightObstacle3;
-            CurrTruck.LeftObstacle4 = autoTruck.RightObstacle4;
-            CurrTruck.LeftObstacle5 = autoTruck.RightObstacle5;
-            CurrTruck.LeftObstacle6 = autoTruck.RightObstacle6;
-            CurrTruck.RightObstacle1 = autoTruck.RightObstacle1;
-            CurrTruck.RightObstacle2 = autoTruck.RightObstacle2;
-            CurrTruck.RightObstacle3 = autoTruck.RightObstacle3;
-            CurrTruck.RightObstacle4 = autoTruck.RightObstacle4;
-            CurrTruck.RightObstacle5 = autoTruck.RightObstacle5;
-            CurrTruck.RightObstacle6 = autoTruck.RightObstacle6;
+            CurrTruck.LeftObstacle1 = autoTruck.LeftObstacle1;
+            CurrTruck.LeftObstacle2 = autoTruck.LeftObstacle2;
+            CurrTruck.LeftObstacle3 = autoTruck.LeftObstacle3;
+            CurrTruck.LeftObstacle4 = autoTruck.LeftObstacle4;
+            CurrTruck.LeftObstacle5 = autoTruck.LeftObstacle5;
+            CurrTruck.LeftObstacle6 = autoTruck.LeftObstacle6;
+            CurrTruck.RightObstacle1 = autoTruck.LeftObstacle1;
+            CurrTruck.RightObstacle2 = autoTruck.LeftObstacle2;
+            CurrTruck.RightObstacle3 = autoTruck.LeftObstacle3;
+            CurrTruck.RightObstacle4 = autoTruck.LeftObstacle4;
+            CurrTruck.RightObstacle5 = autoTruck.LeftObstacle5;
+            CurrTruck.RightObstacle6 = autoTruck.LeftObstacle6;
         }
 
         public PreviewCarBmp(CmcsAutotruck autotruck, List<Point> Points)
         {
             CurrTruck = new TruckMeasure(autotruck.CarriageWidth, autotruck.CarriageLength);
-            CurrTruck.LeftObstacle1 = autotruck.RightObstacle1;
-            CurrTruck.LeftObstacle2 = autotruck.RightObstacle2;
-            CurrTruck.LeftObstacle3 = autotruck.RightObstacle3;
-            CurrTruck.LeftObstacle4 = autotruck.RightObstacle4;
-            CurrTruck.LeftObstacle5 = autotruck.RightObstacle5;
-            CurrTruck.LeftObstacle6 = autotruck.RightObstacle6;
-            CurrTruck.RightObstacle1 = autotruck.RightObstacle1;
-            CurrTruck.RightObstacle2 = autotruck.RightObstacle2;
-            CurrTruck.RightObstacle3 = autotruck.RightObstacle3;
-            CurrTruck.RightObstacle4 = autotruck.RightObstacle4;
-            CurrTruck.RightObstacle5 = autotruck.RightObstacle5;
-            CurrTruck.RightObstacle6 = autotruck.RightObstacle6;
+            CurrTruck.LeftObstacle1 = autotruck.LeftObstacle1;
+            CurrTruck.LeftObstacle2 = autotruck.LeftObstacle2;
+            CurrTruck.LeftObstacle3 = autotruck.LeftObstacle3;
+            CurrTruck.LeftObstacle4 = autotruck.LeftObstacle4;
+            CurrTruck.LeftObstacle5 = autotruck.LeftObstacle5;
+            CurrTruck.LeftObstacle6 = autotruck.LeftObstacle6;
+            CurrTruck.RightObstacle1 = autotruck.LeftObstacle1;
+            CurrTruck.RightObstacle2 = autotruck.LeftObstacle2;
+            CurrTruck.RightObstacle3 = autotruck.LeftObstacle3;
+            CurrTruck.RightObstacle4 = autotruck.LeftObstacle4;
+            CurrTruck.RightObstacle5 = autotruck.LeftObstacle5;
+            CurrTruck.RightObstacle6 = autotruck.LeftObstacle6;
 
             CurrPoints = Points;
         }
@@ -67,9 +67,8 @@ namespace CMCS.Monitor.Win.Core
             // 边距
             float padding = imageWidth * 0.02f;
             // 整体缩放比例  
-            //float zoomRate = Math.Min((imageWidth - CarriageHeadLength - padding * 2) / this.CurrTruck.CarriageLength, (imageHeight - padding * 2 - 40) / this.CurrTruck.CarriageWidth);
-            float zoomRateLength =(imageWidth - CarriageHeadLength - padding * 2) / this.CurrTruck.CarriageLength;
-            float zoomRateWidth = (imageHeight - padding * 2 - 40) / this.CurrTruck.CarriageWidth;
+            float zoomRateLength = (imageWidth - CarriageHeadLength - padding * 2) / this.CurrTruck.CarriageLength;
+            float zoomRateWidth = (imageHeight - padding * 2) / this.CurrTruck.CarriageWidth;
             // 车厢长
             float carriageLength = this.CurrTruck.CarriageLength * zoomRateLength;
             // 车总长
@@ -296,7 +295,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int RightFromTailObstacle2
         {
-            get { return RightFromTailObstacle1 + _RightObstacle2; }
+            get { return _RightObstacle2; }
         }
 
         /// <summary>
@@ -304,7 +303,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int RightFromTailObstacle3
         {
-            get { return RightFromTailObstacle2 + _RightObstacle3; }
+            get { return _RightObstacle3; }
         }
 
         /// <summary>
@@ -312,7 +311,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int RightFromTailObstacle4
         {
-            get { return RightFromTailObstacle3 + _RightObstacle4; }
+            get { return _RightObstacle4; }
         }
 
         /// <summary>
@@ -320,7 +319,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int RightFromTailObstacle5
         {
-            get { return RightFromTailObstacle4 + _RightObstacle5; }
+            get { return _RightObstacle5; }
         }
 
         /// <summary>
@@ -328,7 +327,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int RightFromTailObstacle6
         {
-            get { return RightFromTailObstacle5 + _RightObstacle6; }
+            get { return _RightObstacle6; }
         }
 
         /// <summary>
@@ -344,7 +343,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int LeftFromTailObstacle2
         {
-            get { return LeftFromTailObstacle1 + _LeftObstacle2; }
+            get { return _LeftObstacle2; }
         }
 
         /// <summary>
@@ -352,7 +351,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int LeftFromTailObstacle3
         {
-            get { return LeftFromTailObstacle2 + _LeftObstacle3; }
+            get { return _LeftObstacle3; }
         }
 
         /// <summary>
@@ -360,7 +359,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int LeftFromTailObstacle4
         {
-            get { return LeftFromTailObstacle3 + _LeftObstacle4; }
+            get { return _LeftObstacle4; }
         }
 
         /// <summary>
@@ -368,7 +367,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int LeftFromTailObstacle5
         {
-            get { return LeftFromTailObstacle4 + _LeftObstacle5; }
+            get { return _LeftObstacle5; }
         }
 
         /// <summary>
@@ -376,7 +375,7 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public int LeftFromTailObstacle6
         {
-            get { return LeftFromTailObstacle5 + _LeftObstacle6; }
+            get { return _LeftObstacle6; }
         }
     }
 }

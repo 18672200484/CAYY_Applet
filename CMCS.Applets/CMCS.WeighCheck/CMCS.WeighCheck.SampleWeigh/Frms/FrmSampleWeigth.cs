@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using CMCS.Common;
 using CMCS.Common.DAO;
@@ -242,6 +244,101 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
 
         #endregion
 
+        #region 读卡器
+        RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer ReadRwer = new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer();
+        /// <summary>
+        /// 读卡成功事件
+        /// </summary>
+        /// <param name="steady"></param>
+        void Rwer_OnReadSuccess(string rfid)
+        {
+            InvokeEx(() =>
+            {
+                txtInputSampleCode.Text = rfid.ToUpper();
+            });
+        }
+
+        /// <summary>
+        ///  读卡器状态变化
+        /// </summary>
+        /// <param name="status"></param>
+        void Rwer_OnStatusChange(bool status)
+        {
+            // 接收设备状态 
+            InvokeEx(() =>
+            {
+                if (status) ShowMessage("读卡器连接成功", eOutputType.Normal);
+                else ShowMessage("读卡器连接失败", eOutputType.Error);
+                slightRwer.LightColor = (status ? Color.Green : Color.Red);
+            });
+        }
+
+
+        /// <summary>
+        /// 读卡器接收数据时触发
+        /// </summary>
+        /// <param name="receiveValue"></param>
+        void Rwer_Received(List<string> receiveValue)
+        {
+            InvokeEx(() =>
+            {
+                if (receiveValue.Count == 1)
+                {
+                    if (receiveValue[0] == "操作成功")
+                    {
+                        ShowMessage("写卡成功", eOutputType.Normal);
+                    }
+                    else
+                    {
+                        if (receiveValue[0] == "命令正在执行，处于忙状态")
+                        {
+                            if (this.CurrentSampleInfo != null)
+                            {
+                                WriteRf(this.CurrentSampleInfo.SampleCode);
+                            }
+                        }
+                        else
+                        {
+                            ShowMessage(receiveValue[0], eOutputType.Error);
+                        }
+
+                    }
+                }
+                else
+                {
+                    ShowMessage("写卡失败", eOutputType.Error);
+                }
+            });
+
+        }
+
+        /// <summary>
+        /// 读卡
+        /// </summary>
+        /// <returns></returns>
+        private string ReadRf()
+        {
+            ReadRwer.Read();
+            Thread.Sleep(100);
+            ReadRwer.Read();
+            Thread.Sleep(500);
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// 写卡
+        /// </summary>
+        /// <returns></returns>
+        private string WriteRf(string code)
+        {
+            ReadRwer.Write(code);
+            Thread.Sleep(500);
+
+            return string.Empty;
+        }
+
+        #endregion
+
         #region 设备初始化与卸载
 
         /// <summary>
@@ -263,6 +360,14 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
                     success = wber.OpenCom(commonDAO.GetAppletConfigInt32("电子秤串口"), commonDAO.GetAppletConfigInt32("电子秤波特率"), commonDAO.GetAppletConfigInt32("电子秤数据位"), commonDAO.GetAppletConfigInt32("电子秤停止位"));
                 }
 
+                // IO控制器
+                ReadRwer.OnReceived += new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer.ReceivedEventHandler(Rwer_Received);
+                ReadRwer.OnStatusChange += new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer.StatusChangeHandler(Rwer_OnStatusChange);
+                success = ReadRwer.OpenCom(commonDAO.GetAppletConfigInt32("读卡器串口"), 115200, 8, (StopBits)1, (Parity)0);
+                //if (!success) MessageBoxEx.Show("IO控制器连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //this.iocControler = new IocControler(Hardwarer.Iocer);
+
+
                 timer1.Enabled = true;
             }
             catch (Exception ex)
@@ -282,6 +387,15 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
             try
             {
                 wber.CloseCom();
+            }
+            catch { }
+
+            try
+            {
+                //ReadRwe.OnReceived -= new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.ReceivedEventHandler(Iocer_Received);
+                ReadRwer.OnStatusChange -= new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer.StatusChangeHandler(Rwer_OnStatusChange);
+
+                ReadRwer.CloseCom();
             }
             catch { }
         }
@@ -375,7 +489,7 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
                 BarrellingTime = DateTime.Now,
                 SampleWeight = this.CurrentWeight
             });
-
+            
             ShowMessage("添加到列表，样桶编码：" + this.CurrentBarrelCode + (this.IsUseWeight ? ("，重量：" + this.CurrentWeight.ToString() + "KG") : ""), eOutputType.Normal);
             this.CurrentFlowFlag = eFlowFlag.完成登记;
         }
@@ -388,32 +502,67 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string barrelCode = txtInputSampleCode.Text.Trim();
-                if (String.IsNullOrWhiteSpace(barrelCode)) return;
+
+                //string barrelCode = txtInputSampleCode.Text.Trim();
+                //if (String.IsNullOrWhiteSpace(barrelCode)) return;
 
                 if (this.CurrentFlowFlag == eFlowFlag.等待扫码)
                 {
-                    if (!this.CurrentRCSampleBarrels.Any(a => a.BarrelCode == barrelCode))
+                    //    if (!this.CurrentRCSampleBarrels.Any(a => a.BarrelCode == barrelCode))
+                    //    {
+                    //        // 查找3天内未绑定采样单的样桶记录
+                    //        CmcsRCSampleBarrel rCSampleBarrel = commonDAO.SelfDber.Entity<CmcsRCSampleBarrel>("where BarrelCode=:BarrelCode and CreationTime>=:CreationTime and IsDeleted=0 order by CreationTime desc", new { BarrelCode = barrelCode, CreationTime = DateTime.Now.Date.AddDays(-3) });
+                    //        if (rCSampleBarrel != null)
+                    //        {
+                    //            if (!string.IsNullOrWhiteSpace(rCSampleBarrel.SamplingId))
+                    //            {
+                    //                ShowMessage("此样桶已登记", eOutputType.Error);
+                    //                txtInputSampleCode.ResetText();
+
+                    //                return;
+                    //            }
+                    //            else
+                    //            {
+                    //                this.MachineRCSampleBarrelId.Add(rCSampleBarrel.Id);
+                    //                this.CurrenSampleBarrel = rCSampleBarrel;
+                    //            }
+                    //        }
+
+                    //        this.CurrentBarrelCode = barrelCode;
+
+                    //        if (IsUseWeight)
+                    //        {
+                    //            this.CurrentFlowFlag = eFlowFlag.样桶称重;
+                    //            ShowMessage("扫码成功，开始称重", eOutputType.Normal);
+                    //        }
+                    //        else
+                    //        {
+                    //            this.CurrentFlowFlag = eFlowFlag.等待登记;
+                    //            ShowMessage("扫码成功，开始登记", eOutputType.Normal);
+
+                    //            WaitRegister();
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        ShowMessage("列表中已存在该采样桶", eOutputType.Error);
+                    //        txtInputSampleCode.ResetText();
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    if (string.IsNullOrWhiteSpace(this.CurrentBarrelCode))
+                    //    {
+                    //        ShowMessage("请先选择采样单", eOutputType.Error);
+                    //        txtInputSampleCode.ResetText();
+                    //    }
+                    //}
+
+                    if (!string.IsNullOrEmpty(this.CurrentSampleInfo.Id))
                     {
-                        // 查找3天内未绑定采样单的样桶记录
-                        CmcsRCSampleBarrel rCSampleBarrel = commonDAO.SelfDber.Entity<CmcsRCSampleBarrel>("where BarrelCode=:BarrelCode and CreationTime>=:CreationTime and IsDeleted=0 order by CreationTime desc", new { BarrelCode = barrelCode, CreationTime = DateTime.Now.Date.AddDays(-3) });
-                        if (rCSampleBarrel != null)
-                        {
-                            if (!string.IsNullOrWhiteSpace(rCSampleBarrel.SamplingId))
-                            {
-                                ShowMessage("此样桶已登记", eOutputType.Error);
-                                txtInputSampleCode.ResetText();
+                        List<CmcsRCSampleBarrel> rCSampleBarrel = commonDAO.SelfDber.Entities<CmcsRCSampleBarrel>("where SamplingId=:SamplingId and IsDeleted=0 order by CreationTime desc", new { SamplingId = this.CurrentSampleInfo.Id });
 
-                                return;
-                            }
-                            else
-                            {
-                                this.MachineRCSampleBarrelId.Add(rCSampleBarrel.Id);
-                                this.CurrenSampleBarrel = rCSampleBarrel;
-                            }
-                        }
-
-                        this.CurrentBarrelCode = barrelCode;
+                        this.CurrentBarrelCode = (rCSampleBarrel.Count + 1).ToString();
 
                         if (IsUseWeight)
                         {
@@ -423,24 +572,16 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
                         else
                         {
                             this.CurrentFlowFlag = eFlowFlag.等待登记;
-                            ShowMessage("扫码成功，开始登记", eOutputType.Normal);
+                            ShowMessage("开始登记", eOutputType.Normal);
 
                             WaitRegister();
                         }
                     }
                     else
                     {
-                        ShowMessage("列表中已存在该采样桶", eOutputType.Error);
-                        txtInputSampleCode.ResetText();
-                    }
-                }
-                else
-                {
-                    if (string.IsNullOrWhiteSpace(this.CurrentBarrelCode))
-                    {
                         ShowMessage("请先选择采样单", eOutputType.Error);
-                        txtInputSampleCode.ResetText();
                     }
+
                 }
             }
         }
@@ -460,12 +601,30 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
 
             foreach (CmcsRCSampleBarrel item in this.CurrentRCSampleBarrels)
             {
-                if (this.MachineRCSampleBarrelId.Contains(item.Id))
-                    // 在数据库已存在的样桶，只是没有关联采样单
-                    cZYHandlerDAO.UpdateRCSampleBarrelSampleWeight(item.Id, item.SampleWeight);
-                else
-                    // 人工登记桶
+                //if (this.MachineRCSampleBarrelId.Contains(item.Id))
+                //    // 在数据库已存在的样桶，只是没有关联采样单
+                //    cZYHandlerDAO.UpdateRCSampleBarrelSampleWeight(item.Id, item.SampleWeight);
+                //else
+                // 人工登记桶
+
+                if (this.CurrentSampleInfo.SelectType == "入厂")
+                {
                     cZYHandlerDAO.SaveRCSampleBarrel(item);
+                }
+                else
+                {
+                    CmcsRLSampleBarrel cmcsRLSampleBarrel = new CmcsRLSampleBarrel()
+                    {
+                        SamplingId = item.SamplingId,
+                        SampleType = item.SampleType,
+                        SamplerName = "",
+                        BarrelingNum = item.BarrelNumber,
+                        BarrelCode = item.BarrelCode,
+                        BarrellingTime = DateTime.Now,
+                        SampleWeight = item.SampleWeight
+                    };
+                    cZYHandlerDAO.SaveRLSampleBarrel(cmcsRLSampleBarrel);
+                }
             }
 
             MessageBoxEx.Show("样桶登记成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -597,5 +756,58 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms.SampleWeigth
         }
 
         #endregion
+
+        private void btnAddDetaul_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentFlowFlag == eFlowFlag.等待扫码)
+            {
+
+                if (this.CurrentSampleInfo != null)
+                {
+                    List<CmcsRCSampleBarrel> rCSampleBarrel = commonDAO.SelfDber.Entities<CmcsRCSampleBarrel>("where SamplingId=:SamplingId and IsDeleted=0 order by CreationTime desc", new { SamplingId = this.CurrentSampleInfo.Id });
+
+                    this.CurrentBarrelCode = (rCSampleBarrel.Count+ this.CurrentRCSampleBarrels.Count + 1).ToString();
+
+                    if (IsUseWeight)
+                    {
+                        this.CurrentFlowFlag = eFlowFlag.样桶称重;
+                        ShowMessage("开始称重", eOutputType.Normal);
+                    }
+                    else
+                    {
+                        this.CurrentFlowFlag = eFlowFlag.等待登记;
+                        ShowMessage("开始登记", eOutputType.Normal);
+
+                        WaitRegister();
+                    }
+                }
+                else
+                {
+                    ShowMessage("请先选择采样单", eOutputType.Error);
+                }
+
+            }
+        }
+
+        private void btnWrite_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentSampleInfo!=null)
+            {
+                WriteRf(this.CurrentSampleInfo.SampleCode);
+            }
+            else
+            {
+                ShowMessage("请先选择采样单", eOutputType.Error);
+            }
+        }
+
+        private void btnSelRLSampleInfo_Click(object sender, EventArgs e)
+        {
+            FrmRLSampleSelect frm = new FrmRLSampleSelect();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.CurrentSampleInfo = frm.Output;
+            }
+        }
     }
 }

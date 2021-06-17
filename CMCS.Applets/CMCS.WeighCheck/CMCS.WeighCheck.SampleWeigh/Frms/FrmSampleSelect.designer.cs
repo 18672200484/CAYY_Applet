@@ -135,7 +135,7 @@
             this.labelX1.ForeColor = System.Drawing.Color.White;
             this.labelX1.Location = new System.Drawing.Point(358, 8);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(70, 24);
+            this.labelX1.Size = new System.Drawing.Size(72, 24);
             this.labelX1.TabIndex = 174;
             this.labelX1.Text = "采样日期";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -316,7 +316,7 @@
             gridColumn2.Name = "";
             gridColumn2.Width = 150;
             gridColumn3.DataPropertyName = "SupplierName";
-            gridColumn3.HeaderText = "供应商名称";
+            gridColumn3.HeaderText = "托运人";
             gridColumn3.Name = "";
             gridColumn3.Width = 240;
             gridColumn4.DataPropertyName = "MineName";

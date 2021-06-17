@@ -9,6 +9,7 @@ using CMCS.DapperDber.Dbs.SqlServerDb;
 using CMCS.DumblyConcealer.Enums;
 using CMCS.Common.Entities.Inf;
 using CMCS.Common.Enums;
+using CMCS.Common.Entities.Fuel;
 
 namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 {
@@ -314,7 +315,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			{
 				bool isSuccess = false;
 
-				KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code and TurnCode=@TurnCode", new { CY_Code = entity.SampleCode, TurnCode=entity.MachineCode });
+				KY_CYJ_P_TurnOver turn = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_TurnOver>("where CY_Code=@CY_Code and TurnCode=@TurnCode", new { CY_Code = entity.SampleCode, TurnCode = entity.MachineCode });
 				if (turn == null)
 				{
 					turn = new KY_CYJ_P_TurnOver();
@@ -325,7 +326,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 					turn.Ready_Count = 0;
 					turn.IsDone = 0;
 					turn.TurnCode = entity.MachineCode;
-					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(turn)>0;
+					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(turn) > 0;
 				}
 				else
 				{
@@ -338,7 +339,7 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 					turn.TurnCode = entity.MachineCode;
 					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Update(turn) > 0;
 				}
-			
+
 
 				if (isSuccess)
 				{
@@ -596,20 +597,20 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 			{
 				bool isSuccess = false;
 
-				KY_CYJ_P_CMD samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_CMD>("where CMDId=@CMDId", new {  CMDId = entity.Id });
+				KY_CYJ_P_CMD samplecmdEqu = DcDbers.GetInstance().BeltSampler_Dber.Entity<KY_CYJ_P_CMD>("where CMDId=@CMDId", new { CMDId = entity.Id });
 				if (samplecmdEqu == null)
 				{
 					isSuccess = DcDbers.GetInstance().BeltSampler_Dber.Insert(new KY_CYJ_P_CMD
 					{
-						CMDId= entity.Id,
+						CMDId = entity.Id,
 						MachineCode = MachineCodeToKY(entity.MachineCode),
 						CmdCode = int.Parse(entity.CmdCode),
-						ResultCode=0,
-						OperatorName=entity.OperatorName,
+						ResultCode = 0,
+						OperatorName = entity.OperatorName,
 						SendDateTime = entity.SendDateTime,
 						DataFlag = 0,
 					}) > 0;
-					
+
 				}
 				else
 				{
@@ -634,5 +635,112 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler
 
 
 		}
+
+		/// <summary>
+		/// 同步故障信息到集中管控
+		/// </summary>
+		/// <param name="output"></param>
+		/// <returns></returns>
+		public void SyncError(Action<string, eOutputType> output)
+		{
+			int res = 0;
+
+			foreach (KY_CYJ_P_Alarm entity in DcDbers.GetInstance().BeltSampler_Dber.Entities<KY_CYJ_P_Alarm>("where DateDiff(dd,AlarmDateTime,getdate())<=7"))
+			{
+				InfEquInfHitch infEquInfHitch = Dbers.GetInstance().SelfDber.Entity<InfEquInfHitch>("where HitchTime=:HitchTime and HitchDescribe=:HitchDescribe", new { HitchTime = entity.AlarmDateTime, HitchDescribe = entity.VarComment });
+				if (infEquInfHitch == null)
+				{
+					if (commonDAO.SaveEquInfHitch(entity.VarName.Contains("A侧") ? GlobalVars.MachineCode_PDCYJ_1 : GlobalVars.MachineCode_PDCYJ_2, entity.AlarmDateTime, entity.VarComment))
+					{
+						//entity.DataFlag = 1;
+						//this.EquDber.Update(entity);
+
+						res++;
+					}
+				}
+			}
+
+			output(string.Format("同步故障信息记录 {0} 条", res), eOutputType.Normal);
+		}
+
+		/// <summary>
+		/// 同步历史卸样结果
+		/// </summary>
+		/// <param name="output"></param>
+		/// <param name="MachineCode"></param>
+		public void SyncUnloadResult(Action<string, eOutputType> output)
+		{
+			int res = 0;
+
+			res = 0;
+			// 第三方 > 集中管控
+			foreach (KY_CYJ_P_BARREL entity in DcDbers.GetInstance().BeltSampler_Dber.Entities<KY_CYJ_P_BARREL>("where DateDiff(dd,EditDate,getdate())<=7"))
+			{
+				// 查找采样命令
+				CmcsRCSampling sampling = commonDAO.SelfDber.Entity<CmcsRCSampling>("where SampleCode=:SampleCode", new { SampleCode = entity.Barrel_Name });
+				if (sampling != null)
+				{
+					CmcsRCSampleBarrel cmcsRCSampleBarrel = commonDAO.SelfDber.Entity<CmcsRCSampleBarrel>("where BarrelNumber='" + entity.Barrel_Name + "' and to_char(BarrellingTime,'yyyy-mm-dd hh24:mi:ss')= '" +entity.EditDate.ToString("yyyy-MM-dd HH:mm:ss") +"' and SamplerName = '"+ KYToMachineCode(entity.CYJ_Machine) + "'");
+					if (cmcsRCSampleBarrel == null)
+					{
+						// 生成采样桶记录
+						CmcsRCSampleBarrel rCSampleBarrel = new CmcsRCSampleBarrel()
+						{
+							SamplingId = sampling.Id,
+							BarrellingTime = entity.EditDate,
+							BarrelNumber = entity.Barrel_Name,
+							SamplerName = KYToMachineCode(entity.CYJ_Machine),
+							SampleType = eSamplingType.机械采样.ToString(),
+							//SampleCount = barrel.SampleCount,
+							SampleWeight = entity.Barrel_Weight,
+							BarrelCode = entity.Barrel_Code
+						};
+						commonDAO.SelfDber.Insert(rCSampleBarrel);
+					}
+					else
+					{
+						cmcsRCSampleBarrel.SampleWeight = entity.Barrel_Weight;
+						commonDAO.SelfDber.Update(cmcsRCSampleBarrel);
+					}
+				}
+
+
+				 InfBeltSamplerUnloadResult oldUnloadResult = commonDAO.SelfDber.Entity<InfBeltSamplerUnloadResult>("where samplecode='" + entity.Barrel_Name + "' and to_char(UnloadTime,'yyyy-mm-dd hh24:mi:ss')= '" + entity.EditDate.ToString("yyyy-MM-dd HH:mm:ss") + "'");
+				if (oldUnloadResult == null)
+				{
+
+					if (commonDAO.SelfDber.Insert(new InfBeltSamplerUnloadResult
+					{
+						MachineCode = KYToMachineCode(entity.CYJ_Machine),
+						SampleCode = entity.Barrel_Name,
+						BarrelCode = entity.Barrel_Code,
+						UnloadTime = entity.EditDate
+					}) > 0)
+					{
+						//entity.DataFlag = 1;
+						//this.EquDber.Update(entity);
+
+						res++;
+					}
+				}
+				else
+				{
+					oldUnloadResult.MachineCode = KYToMachineCode(entity.CYJ_Machine);
+					oldUnloadResult.SampleCode = entity.Barrel_Name;
+					oldUnloadResult.BarrelCode = entity.Barrel_Code;
+					oldUnloadResult.UnloadTime = entity.EditDate;
+
+					if (commonDAO.SelfDber.Update(oldUnloadResult) > 0)
+					{
+						//entity.DataFlag = 1;
+						//this.EquDber.Update(entity);
+
+						res++;
+					}
+				}
+			}
+			output(string.Format("同步卸样结果 {0} 条（第三方 > 集中管控）", res), eOutputType.Normal);
+		}
+
 	}
 }

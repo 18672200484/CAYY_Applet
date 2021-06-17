@@ -109,5 +109,16 @@ namespace CMCS.Common.Entities.Fuel
         /// 是否删除 0已删除 1 未删除
         /// </summary>
         public Int32 IsDeleted { get; set; }
+
+        private string _RlSamplingId;
+
+        /// <summary>
+        /// 入炉煤采样Id
+        /// </summary>
+        public string RlSamplingId
+        {
+            get { return _RlSamplingId; }
+            set { _RlSamplingId = value; }
+        }
     }
 }

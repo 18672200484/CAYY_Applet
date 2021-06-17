@@ -129,7 +129,7 @@ namespace OPCClientCore
 			int i = 0;
 			foreach (var item in dicItemValues)
 			{
-				ItemIdentifier itemIdentifier = this.items.Where(a => a.ItemName == item.Key).FirstOrDefault();
+				ItemIdentifier itemIdentifier = this.Subscription.Items.Where(a => a.ItemName == item.Key).FirstOrDefault();
 
 				if (itemIdentifier != null)
 				{
@@ -143,7 +143,7 @@ namespace OPCClientCore
 			if (itemValuesWrite.Where(a => a != null).Count() > 0)
 			{
 				itemValuesWrite = itemValuesWrite.Where(a => a != null).ToArray();
-				this.Subscription.Write(itemValuesWrite);
+				var aaa= this.Subscription.Write(itemValuesWrite);
 				return true;
 			}
 

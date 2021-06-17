@@ -38,13 +38,16 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.btnSubmit = new DevComponents.DotNetBar.ButtonX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.cmbHeavyWeight = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtShipNumber = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.btnSelectAutotruck_BuyFuel = new DevComponents.DotNetBar.ButtonX();
             this.cmbStepName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txt_SerialNumber = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cmbFuelName_BuyFuel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.btnAddDeduct = new DevComponents.DotNetBar.ButtonX();
-            this.txt_UnloadArea = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnSupplier = new DevComponents.DotNetBar.ButtonX();
             this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.txt_OutFactoryTime = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -161,13 +164,16 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.cmbHeavyWeight);
+            this.panelEx2.Controls.Add(this.txtShipNumber);
+            this.panelEx2.Controls.Add(this.labelX21);
+            this.panelEx2.Controls.Add(this.btnSelectAutotruck_BuyFuel);
             this.panelEx2.Controls.Add(this.cmbStepName);
             this.panelEx2.Controls.Add(this.labelX9);
             this.panelEx2.Controls.Add(this.txt_SerialNumber);
             this.panelEx2.Controls.Add(this.cmbFuelName_BuyFuel);
             this.panelEx2.Controls.Add(this.labelX19);
             this.panelEx2.Controls.Add(this.btnAddDeduct);
-            this.panelEx2.Controls.Add(this.txt_UnloadArea);
             this.panelEx2.Controls.Add(this.btnSupplier);
             this.panelEx2.Controls.Add(this.superGridControl1);
             this.panelEx2.Controls.Add(this.txt_OutFactoryTime);
@@ -223,6 +229,62 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 1;
             // 
+            // cmbHeavyWeight
+            // 
+            this.cmbHeavyWeight.DisplayMember = "Text";
+            this.cmbHeavyWeight.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbHeavyWeight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHeavyWeight.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbHeavyWeight.ForeColor = System.Drawing.Color.White;
+            this.cmbHeavyWeight.FormattingEnabled = true;
+            this.cmbHeavyWeight.ItemHeight = 21;
+            this.cmbHeavyWeight.Location = new System.Drawing.Point(410, 204);
+            this.cmbHeavyWeight.Name = "cmbHeavyWeight";
+            this.cmbHeavyWeight.Size = new System.Drawing.Size(180, 27);
+            this.cmbHeavyWeight.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmbHeavyWeight.TabIndex = 265;
+            // 
+            // txtShipNumber
+            // 
+            this.txtShipNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            // 
+            // 
+            // 
+            this.txtShipNumber.Border.Class = "TextBoxBorder";
+            this.txtShipNumber.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtShipNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtShipNumber.ForeColor = System.Drawing.Color.White;
+            this.txtShipNumber.Location = new System.Drawing.Point(410, 71);
+            this.txtShipNumber.Name = "txtShipNumber";
+            this.txtShipNumber.Size = new System.Drawing.Size(180, 27);
+            this.txtShipNumber.TabIndex = 264;
+            // 
+            // labelX21
+            // 
+            this.labelX21.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX21.Location = new System.Drawing.Point(364, 70);
+            this.labelX21.Name = "labelX21";
+            this.labelX21.Size = new System.Drawing.Size(40, 24);
+            this.labelX21.TabIndex = 263;
+            this.labelX21.Text = "船号";
+            // 
+            // btnSelectAutotruck_BuyFuel
+            // 
+            this.btnSelectAutotruck_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSelectAutotruck_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnSelectAutotruck_BuyFuel.Location = new System.Drawing.Point(565, 8);
+            this.btnSelectAutotruck_BuyFuel.Name = "btnSelectAutotruck_BuyFuel";
+            this.btnSelectAutotruck_BuyFuel.Size = new System.Drawing.Size(25, 25);
+            this.btnSelectAutotruck_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSelectAutotruck_BuyFuel.TabIndex = 262;
+            this.btnSelectAutotruck_BuyFuel.Text = "选";
+            this.btnSelectAutotruck_BuyFuel.Click += new System.EventHandler(this.btnSelectAutotruck_BuyFuel_Click);
+            // 
             // cmbStepName
             // 
             this.cmbStepName.DisplayMember = "Text";
@@ -249,7 +311,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX9.ForeColor = System.Drawing.Color.White;
             this.labelX9.Location = new System.Drawing.Point(339, 107);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(70, 24);
+            this.labelX9.Size = new System.Drawing.Size(72, 24);
             this.labelX9.TabIndex = 260;
             this.labelX9.Text = "流程节点";
             // 
@@ -295,7 +357,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX19.Location = new System.Drawing.Point(25, 507);
             this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(70, 24);
+            this.labelX19.Size = new System.Drawing.Size(72, 24);
             this.labelX19.TabIndex = 256;
             this.labelX19.Text = "扣吨明细";
             // 
@@ -310,22 +372,6 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.btnAddDeduct.TabIndex = 255;
             this.btnAddDeduct.Text = "新 增";
             this.btnAddDeduct.Click += new System.EventHandler(this.btnAddDeduct_Click);
-            // 
-            // txt_UnloadArea
-            // 
-            this.txt_UnloadArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            // 
-            // 
-            // 
-            this.txt_UnloadArea.Border.Class = "TextBoxBorder";
-            this.txt_UnloadArea.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_UnloadArea.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UnloadArea.ForeColor = System.Drawing.Color.White;
-            this.txt_UnloadArea.Location = new System.Drawing.Point(410, 204);
-            this.txt_UnloadArea.Name = "txt_UnloadArea";
-            this.txt_UnloadArea.ReadOnly = true;
-            this.txt_UnloadArea.Size = new System.Drawing.Size(180, 27);
-            this.txt_UnloadArea.TabIndex = 254;
             // 
             // btnSupplier
             // 
@@ -424,7 +470,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX18.Location = new System.Drawing.Point(334, 305);
             this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(70, 24);
+            this.labelX18.Size = new System.Drawing.Size(72, 24);
             this.labelX18.TabIndex = 250;
             this.labelX18.Text = "出厂时间";
             // 
@@ -454,7 +500,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX17.Location = new System.Drawing.Point(25, 305);
             this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(70, 24);
+            this.labelX17.Size = new System.Drawing.Size(72, 24);
             this.labelX17.TabIndex = 248;
             this.labelX17.Text = "皮重时间";
             // 
@@ -484,7 +530,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX16.Location = new System.Drawing.Point(334, 271);
             this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(70, 24);
+            this.labelX16.Size = new System.Drawing.Size(72, 24);
             this.labelX16.TabIndex = 246;
             this.labelX16.Text = "卸车时间";
             // 
@@ -514,7 +560,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX15.Location = new System.Drawing.Point(25, 271);
             this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(70, 24);
+            this.labelX15.Size = new System.Drawing.Size(72, 24);
             this.labelX15.TabIndex = 244;
             this.labelX15.Text = "毛重时间";
             // 
@@ -544,7 +590,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX14.Location = new System.Drawing.Point(334, 238);
             this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(70, 24);
+            this.labelX14.Size = new System.Drawing.Size(72, 24);
             this.labelX14.TabIndex = 242;
             this.labelX14.Text = "采样时间";
             // 
@@ -574,7 +620,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.Location = new System.Drawing.Point(25, 238);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(70, 24);
+            this.labelX12.Size = new System.Drawing.Size(72, 24);
             this.labelX12.TabIndex = 240;
             this.labelX12.Text = "入厂时间";
             // 
@@ -602,11 +648,11 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.Location = new System.Drawing.Point(334, 207);
+            this.labelX7.Location = new System.Drawing.Point(348, 205);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(70, 24);
+            this.labelX7.Size = new System.Drawing.Size(56, 24);
             this.labelX7.TabIndex = 238;
-            this.labelX7.Text = "卸煤区域";
+            this.labelX7.Text = "重车磅";
             // 
             // dbi_SuttleWeight
             // 
@@ -619,6 +665,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.dbi_SuttleWeight.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.dbi_SuttleWeight.ForeColor = System.Drawing.Color.White;
             this.dbi_SuttleWeight.Increment = 1D;
+            this.dbi_SuttleWeight.IsInputReadOnly = true;
             this.dbi_SuttleWeight.Location = new System.Drawing.Point(101, 205);
             this.dbi_SuttleWeight.MaxValue = 100000D;
             this.dbi_SuttleWeight.MinValue = 0D;
@@ -636,7 +683,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.Location = new System.Drawing.Point(31, 207);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(64, 24);
+            this.labelX10.Size = new System.Drawing.Size(65, 24);
             this.labelX10.TabIndex = 235;
             this.labelX10.Text = "净重(吨)";
             // 
@@ -651,7 +698,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.chb_IsFinish.ForeColor = System.Drawing.Color.White;
             this.chb_IsFinish.Location = new System.Drawing.Point(166, 447);
             this.chb_IsFinish.Name = "chb_IsFinish";
-            this.chb_IsFinish.Size = new System.Drawing.Size(59, 24);
+            this.chb_IsFinish.Size = new System.Drawing.Size(60, 24);
             this.chb_IsFinish.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chb_IsFinish.TabIndex = 234;
             this.chb_IsFinish.Text = "完结";
@@ -660,12 +707,13 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             // 
             this.BtnMine.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnMine.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.BtnMine.Location = new System.Drawing.Point(565, 74);
+            this.BtnMine.Location = new System.Drawing.Point(494, 460);
             this.BtnMine.Name = "BtnMine";
             this.BtnMine.Size = new System.Drawing.Size(25, 25);
             this.BtnMine.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BtnMine.TabIndex = 232;
             this.BtnMine.Text = "选";
+            this.BtnMine.Visible = false;
             this.BtnMine.Click += new System.EventHandler(this.BtnMine_Click);
             // 
             // btnTransportCompany
@@ -709,7 +757,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX23.Location = new System.Drawing.Point(340, 140);
             this.labelX23.Name = "labelX23";
-            this.labelX23.Size = new System.Drawing.Size(64, 24);
+            this.labelX23.Size = new System.Drawing.Size(65, 24);
             this.labelX23.TabIndex = 228;
             this.labelX23.Text = "毛重(吨)";
             // 
@@ -723,11 +771,12 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.txt_MineName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_MineName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MineName.ForeColor = System.Drawing.Color.White;
-            this.txt_MineName.Location = new System.Drawing.Point(410, 73);
+            this.txt_MineName.Location = new System.Drawing.Point(339, 459);
             this.txt_MineName.Name = "txt_MineName";
             this.txt_MineName.ReadOnly = true;
             this.txt_MineName.Size = new System.Drawing.Size(180, 27);
             this.txt_MineName.TabIndex = 227;
+            this.txt_MineName.Visible = false;
             // 
             // labelX4
             // 
@@ -737,11 +786,12 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(365, 74);
+            this.labelX4.Location = new System.Drawing.Point(294, 460);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(39, 24);
+            this.labelX4.Size = new System.Drawing.Size(40, 24);
             this.labelX4.TabIndex = 226;
             this.labelX4.Text = "矿点";
+            this.labelX4.Visible = false;
             // 
             // dbi_TicketWeight
             // 
@@ -810,7 +860,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX22.Location = new System.Drawing.Point(340, 173);
             this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(64, 24);
+            this.labelX22.Size = new System.Drawing.Size(65, 24);
             this.labelX22.TabIndex = 41;
             this.labelX22.Text = "扣吨(吨)";
             // 
@@ -824,7 +874,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX20.Location = new System.Drawing.Point(31, 174);
             this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(64, 24);
+            this.labelX20.Size = new System.Drawing.Size(65, 24);
             this.labelX20.TabIndex = 39;
             this.labelX20.Text = "皮重(吨)";
             // 
@@ -839,7 +889,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.chb_IsUse.ForeColor = System.Drawing.Color.White;
             this.chb_IsUse.Location = new System.Drawing.Point(101, 448);
             this.chb_IsUse.Name = "chb_IsUse";
-            this.chb_IsUse.Size = new System.Drawing.Size(59, 24);
+            this.chb_IsUse.Size = new System.Drawing.Size(60, 24);
             this.chb_IsUse.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chb_IsUse.TabIndex = 38;
             this.chb_IsUse.Text = "有效";
@@ -854,7 +904,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX13.Location = new System.Drawing.Point(16, 140);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(79, 24);
+            this.labelX13.Size = new System.Drawing.Size(82, 24);
             this.labelX13.TabIndex = 22;
             this.labelX13.Text = "矿发量(吨)";
             // 
@@ -868,7 +918,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(56, 107);
             this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(39, 24);
+            this.labelX11.Size = new System.Drawing.Size(40, 24);
             this.labelX11.TabIndex = 18;
             this.labelX11.Text = "煤种";
             // 
@@ -898,7 +948,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.Location = new System.Drawing.Point(56, 338);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(39, 24);
+            this.labelX8.Size = new System.Drawing.Size(40, 24);
             this.labelX8.TabIndex = 12;
             this.labelX8.Text = "备注";
             // 
@@ -928,7 +978,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.Location = new System.Drawing.Point(25, 74);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(70, 24);
+            this.labelX5.Size = new System.Drawing.Size(72, 24);
             this.labelX5.TabIndex = 10;
             this.labelX5.Text = "运输单位";
             // 
@@ -958,7 +1008,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(334, 42);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(70, 24);
+            this.labelX6.Size = new System.Drawing.Size(72, 24);
             this.labelX6.TabIndex = 8;
             this.labelX6.Text = "供煤单位";
             // 
@@ -972,7 +1022,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.Location = new System.Drawing.Point(25, 42);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(70, 24);
+            this.labelX3.Size = new System.Drawing.Size(72, 24);
             this.labelX3.TabIndex = 6;
             this.labelX3.Text = "批次编码";
             // 
@@ -1002,7 +1052,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.Location = new System.Drawing.Point(350, 9);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(54, 24);
+            this.labelX2.Size = new System.Drawing.Size(56, 24);
             this.labelX2.TabIndex = 2;
             this.labelX2.Text = "车牌号";
             // 
@@ -1016,7 +1066,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.Location = new System.Drawing.Point(41, 9);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(54, 24);
+            this.labelX1.Size = new System.Drawing.Size(56, 24);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "流水号";
             // 
@@ -1070,7 +1120,6 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
         private DevComponents.DotNetBar.ButtonX btnSubmit;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.Editors.DoubleInput dbi_TareWeight;
-        private DevComponents.Editors.DoubleInput dbi_DeductWeight;
         private DevComponents.Editors.DoubleInput dbi_TicketWeight;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_MineName;
         private DevComponents.DotNetBar.LabelX labelX4;
@@ -1097,12 +1146,16 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
         private DevComponents.DotNetBar.ButtonX btnSupplier;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_UnloadArea;
         private DevComponents.DotNetBar.ButtonX btnAddDeduct;
         private DevComponents.DotNetBar.LabelX labelX19;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbFuelName_BuyFuel;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_SerialNumber;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbStepName;
         private DevComponents.DotNetBar.LabelX labelX9;
+        private DevComponents.DotNetBar.ButtonX btnSelectAutotruck_BuyFuel;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtShipNumber;
+        private DevComponents.DotNetBar.LabelX labelX21;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbHeavyWeight;
+        private DevComponents.Editors.DoubleInput dbi_DeductWeight;
     }
 }

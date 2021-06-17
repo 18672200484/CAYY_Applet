@@ -427,25 +427,25 @@ namespace CMCS.DumblyConcealer.Tasks.TrainJxSampler
 						// 生成采样桶记录
 						CmcsRCSampleBarrel rCSampleBarrel = new CmcsRCSampleBarrel()
 						{
-							BarrelCode = entity.BarrelCode,
-							BarrellingTime = entity.UnloadTime,
-							BarrelNumber = entity.BarrelNumber,
-							InFactoryBatchId = qCJXCYJSampleCmd.InFactoryBatchId,
-							SamplerName = this.MachineCode,
-							SampleType = eSamplingType.机械采样.ToString(),
-							SamplingId = entity.SamplingId
+							//BarrelCode = entity.BarrelCode,
+							//BarrellingTime = entity.UnloadTime,
+							//BarrelNumber = entity.BarrelNumber,
+							//InFactoryBatchId = qCJXCYJSampleCmd.InFactoryBatchId,
+							//SamplerName = this.MachineCode,
+							//SampleType = eSamplingType.机械采样.ToString(),
+							//SamplingId = entity.SamplingId
 						};
 
 						if (commonDAO.SelfDber.Insert(rCSampleBarrel) > 0)
 						{
-							if (commonDAO.SelfDber.Insert(new InfQCJXCYJUnloadResult
-							{
-								MachineCode = this.MachineCode,
-								SampleCode = entity.SampleCode,
-								BarrelCode = entity.BarrelCode,
-								UnloadTime = entity.UnloadTime,
-								DataFlag = entity.DataFlag
-							}) > 0)
+							//if (commonDAO.SelfDber.Insert(new InfQCJXCYJUnloadResult
+							//{
+							//	MachineCode = this.MachineCode,
+							//	SampleCode = entity.SampleCode,
+							//	BarrelCode = entity.BarrelCode,
+							//	UnloadTime = entity.UnloadTime,
+							//	DataFlag = entity.DataFlag
+							//}) > 0)
 							{
 								entity.DataFlag = 1;
 								this.EquDber.Update(entity);

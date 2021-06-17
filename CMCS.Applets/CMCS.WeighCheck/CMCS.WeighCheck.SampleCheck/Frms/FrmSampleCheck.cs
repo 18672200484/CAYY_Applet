@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using CMCS.Common;
 using CMCS.Common.DAO;
@@ -119,6 +121,7 @@ namespace CMCS.WeighCheck.SampleCheck.Frms
 
 		string resMessage = string.Empty;
 
+		string samplecode= string.Empty;
 		#endregion
 
 		public void InitFrom()
@@ -231,6 +234,167 @@ namespace CMCS.WeighCheck.SampleCheck.Frms
 
 		#endregion
 
+		#region 读卡器
+		RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer ReadRwer = new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer();
+		/// <summary>
+		/// 读卡成功事件
+		/// </summary>
+		/// <param name="steady"></param>
+		void Rwer_OnReadSuccess(string rfid)
+		{
+			InvokeEx(() =>
+			{
+				txtInputSampleCode.Text = rfid.ToUpper();
+			});
+		}
+
+		/// <summary>
+		///  读卡器状态变化
+		/// </summary>
+		/// <param name="status"></param>
+		void Rwer_OnStatusChange(bool status)
+		{
+			// 接收设备状态 
+			InvokeEx(() =>
+			{
+				if (status) ShowMessage("读卡器连接成功", eOutputType.Normal);
+				else ShowMessage("读卡器连接失败", eOutputType.Error);
+				slightRwer.LightColor = (status ? Color.Green : Color.Red);
+			});
+		}
+
+
+		/// <summary>
+		/// 读卡器接收数据时触发
+		/// </summary>
+		/// <param name="receiveValue"></param>
+		void Rwer_Received(List<string> receiveValue)
+		{
+			InvokeEx(() =>
+			{
+				if (receiveValue.Count == 2)
+				{
+					if(receiveValue[0]== "操作成功")
+					{
+						ShowMessage("读卡成功，采样编码："+ receiveValue[1], eOutputType.Normal);
+					    samplecode = receiveValue[1];
+						txtInputSampleCode.Text= receiveValue[1];
+					}
+					else
+					{
+						if (receiveValue[0] == "命令正在执行，处于忙状态")
+						{
+							ReadRwer.Read();
+						}
+						else
+						{
+							ShowMessage(receiveValue[0], eOutputType.Error);
+						}
+					}
+				}
+				else
+				{
+					ShowMessage("读卡失败", eOutputType.Error);
+				}
+
+
+			});
+		}
+
+		/// <summary>
+		/// 读卡
+		/// </summary>
+		/// <returns></returns>
+		private string ReadRf()
+		{
+			ReadRwer.Read();
+			return string.Empty;
+		}
+
+		/// <summary>
+		/// 写卡
+		/// </summary>
+		/// <returns></returns>
+		//private string WriteRf(string rf)
+		//{
+			//byte SecNumber = 2;// Convert.ToByte(commonDAO.GetAppletConfigInt32("读卡器扇区"));
+			//byte BlockNumber = 0;// Convert.ToByte(commonDAO.GetAppletConfigInt32("读卡器块区"));
+
+			//if (ReadRwer.OpenRF())
+			//{
+			//	ShowMessage("射频打开成功", eOutputType.Normal);
+			//}
+			//else
+			//{
+			//	ShowMessage("射频打开失败", eOutputType.Error);
+			//	return string.Empty;
+			//}
+
+			//if (ReadRwer.ChangeToISO14443A())
+			//{
+			//	ShowMessage("切换到1443模式成功", eOutputType.Normal);
+			//}
+			//else
+			//{
+			//	ShowMessage("切换到1443模式失败", eOutputType.Error);
+			//	return string.Empty;
+			//}
+
+			//if (ReadRwer.Request14443A())
+			//{
+			//	ShowMessage("获取卡类型成功", eOutputType.Normal);
+			//}
+			//else
+			//{
+			//	ShowMessage("获取卡类型失败", eOutputType.Error);
+			//	return string.Empty;
+			//}
+
+			//if (ReadRwer.Anticoll14443A())
+			//{
+			//	ShowMessage("获取卡号成功", eOutputType.Normal);
+			//}
+			//else
+			//{
+			//	ShowMessage("获取卡号失败", eOutputType.Error);
+			//	return string.Empty;
+			//}
+
+			//if (ReadRwer.Select14443A())
+			//{
+			//	ShowMessage("获取卡容量成功", eOutputType.Normal);
+			//}
+			//else
+			//{
+			//	ShowMessage("获取卡容量失败", eOutputType.Error);
+			//	return string.Empty;
+			//}
+
+			//if (ReadRwer.AuthKey14443A(SecNumber, BlockNumber))
+			//{
+			//	ShowMessage("标签密钥验证成功", eOutputType.Normal);
+			//}
+			//else
+			//{
+			//	ShowMessage("标签密钥验证失败", eOutputType.Error);
+			//	return string.Empty;
+			//}
+			//if (ReadRwer.Write14443(rf, Convert.ToInt32(SecNumber), Convert.ToInt32(BlockNumber)))
+			//{
+			//	ShowMessage("编码：" + rf + "写卡成功", eOutputType.Normal);
+			//	string rf_new = ReadRwer.Byte16ToString(ReadRwer.RWRead14443A(SecNumber, BlockNumber));
+			//	if (rf == rf_new)
+			//	{
+			//		ShowMessage("编码：" + rf + "读卡验证成功", eOutputType.Normal);
+			//		return rf_new;
+			//	}
+			//}
+
+			//return string.Empty;
+		//}
+
+		#endregion
+
 		#region 设备初始化与卸载
 
 		/// <summary>
@@ -253,6 +417,13 @@ namespace CMCS.WeighCheck.SampleCheck.Frms
 					success = wber.OpenCom(commonDAO.GetAppletConfigInt32("电子秤串口"), commonDAO.GetAppletConfigInt32("电子秤波特率"), commonDAO.GetAppletConfigInt32("电子秤数据位"), commonDAO.GetAppletConfigInt32("电子秤停止位"));
 				}
 
+				// IO控制器
+				ReadRwer.OnReceived += new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer.ReceivedEventHandler(Rwer_Received);
+				ReadRwer.OnStatusChange += new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer.StatusChangeHandler(Rwer_OnStatusChange);
+				success = ReadRwer.OpenCom(commonDAO.GetAppletConfigInt32("读卡器串口"), 115200, 8, (StopBits)1, (Parity)0);
+				//if (!success) MessageBoxEx.Show("IO控制器连接失败！", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				//this.iocControler = new IocControler(Hardwarer.Iocer);
+
 				timer1.Enabled = true;
 			}
 			catch (Exception ex)
@@ -274,6 +445,15 @@ namespace CMCS.WeighCheck.SampleCheck.Frms
 				wber.CloseCom();
 			}
 			catch { }
+
+			try
+			{
+				//ReadRwe.OnReceived -= new IOC.JMDM20DIOV2.JMDM20DIOV2Iocer.ReceivedEventHandler(Iocer_Received);
+				ReadRwer.OnStatusChange -= new RW.RF30WRQ80URS01.RF30WRQ80URS01Rwer.StatusChangeHandler(Rwer_OnStatusChange);
+
+				ReadRwer.CloseCom();
+			}
+			catch { }
 		}
 		#endregion
 
@@ -288,7 +468,10 @@ namespace CMCS.WeighCheck.SampleCheck.Frms
 				switch (this.CurrentFlowFlag)
 				{
 					case eFlowFlag.等待扫码:
-
+						if (string.IsNullOrEmpty(txtInputSampleCode.Text))
+						{
+							ReadRf();
+						}
 						break;
 					case eFlowFlag.重量校验:
 						#region
@@ -445,7 +628,12 @@ namespace CMCS.WeighCheck.SampleCheck.Frms
 			{
 				if (this.CurrentFlowFlag != eFlowFlag.等待扫码) return;
 
-				string barrelCode = txtInputSampleCode.Text.Trim();
+				if (ReadRwer.Status&& string.IsNullOrEmpty(txtInputSampleCode.Text))
+				{
+					  ReadRf();
+				}
+
+				string barrelCode = txtInputSampleCode.Text;// = this.samplecode; ;
 				if (String.IsNullOrWhiteSpace(barrelCode)) return;
 
 				//  根据采样桶编码查找该采样单下所有采样桶记录

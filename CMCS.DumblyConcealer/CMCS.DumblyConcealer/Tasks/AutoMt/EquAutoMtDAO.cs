@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CMCS.Common;
 using CMCS.Common.DAO;
 using CMCS.Common.Entities.AssayDevices;
@@ -139,7 +140,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 					moisture.FacilityNumber = this.MachineCode;
 					moisture.SampleNumber = entity.SampleNo;
 					moisture.SampleWeight = entity.SampleWeight;
-					moisture.Mar = entity.Moisture;
+					moisture.Mar = entity.ReviseMoisture;
 					moisture.ContainerNumber = entity.PositionNo.ToString();
 					moisture.ContainerWeight = entity.TrayWeight;
 					moisture.DryWeight = entity.LeftWeight;
@@ -155,7 +156,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 					moisture.FacilityNumber = this.MachineCode;
 					moisture.SampleNumber = entity.SampleNo;
 					moisture.SampleWeight = entity.SampleWeight;
-					moisture.Mar = entity.Moisture;
+					moisture.Mar = entity.ReviseMoisture;
 					moisture.ContainerNumber = entity.PositionNo.ToString();
 					moisture.ContainerWeight = entity.TrayWeight;
 					moisture.DryWeight = entity.LeftWeight;
@@ -169,5 +170,18 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMt
 			}
 		}
 
+
+		/// <summary>
+		/// 同步在测个数
+		/// </summary>
+		/// <param name="output"></param>
+		/// <returns></returns>
+		public void SynCount(Action<string, eOutputType> output)
+		{
+
+			List<Tb_TestResult> list = this.EquDber.Entities<Tb_TestResult>("where SampleName is not null and Moisture=0 and  EndingTime is null");
+			commonDAO.SetSignalDataValue(this.MachineCode,"在测样品个数", list.Count.ToString());
+
+		}
 	}
 }

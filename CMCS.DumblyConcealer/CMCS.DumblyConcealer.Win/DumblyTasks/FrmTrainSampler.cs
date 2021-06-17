@@ -52,7 +52,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				carJXSamplerDAO1.SyncSampleCmd(this.rTxtOutputer.Output);
 				carJXSamplerDAO1.SyncSamplePlan(this.rTxtOutputer.Output);
 				carJXSamplerDAO1.SyncSamplePlanDetail(this.rTxtOutputer.Output);
-				carJXSamplerDAO1.SyncUnloadResult(this.rTxtOutputer.Output);
+				//carJXSamplerDAO1.SyncUnloadResult(this.rTxtOutputer.Output);
 				carJXSamplerDAO1.SyncQCJXCYJError(this.rTxtOutputer.Output);
 				carJXSamplerDAO1.SyncSignal(this.rTxtOutputer.Output);
 
@@ -75,7 +75,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				carJXSamplerDAO2.SyncSampleCmd(this.rTxtOutputer.Output);
 				carJXSamplerDAO2.SyncSamplePlan(this.rTxtOutputer.Output);
 				carJXSamplerDAO2.SyncSamplePlanDetail(this.rTxtOutputer.Output);
-				carJXSamplerDAO2.SyncUnloadResult(this.rTxtOutputer.Output);
+				//carJXSamplerDAO2.SyncUnloadResult(this.rTxtOutputer.Output);
 				carJXSamplerDAO2.SyncQCJXCYJError(this.rTxtOutputer.Output);
 				carJXSamplerDAO2.SyncSignal(this.rTxtOutputer.Output);
 
@@ -98,7 +98,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				carJXSamplerDAO3.SyncSampleCmd(this.rTxtOutputer.Output);
 				carJXSamplerDAO3.SyncSamplePlan(this.rTxtOutputer.Output);
 				carJXSamplerDAO3.SyncSamplePlanDetail(this.rTxtOutputer.Output);
-				carJXSamplerDAO3.SyncUnloadResult(this.rTxtOutputer.Output);
+				//carJXSamplerDAO3.SyncUnloadResult(this.rTxtOutputer.Output);
 				carJXSamplerDAO3.SyncQCJXCYJError(this.rTxtOutputer.Output);
 				carJXSamplerDAO3.SyncSignal(this.rTxtOutputer.Output);
 

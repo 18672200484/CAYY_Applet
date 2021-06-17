@@ -43,6 +43,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			InitParityComboBoxs(cmbIocerParity, cmbWberParity);
 			InitWeberType(cmbWeberType);
 			InitDirection(cmbDecrtion);
+			InitPoundType(cmbPoundType);
 
 			if (commonAppConfig.AppIdentifier.Contains("空车"))
 			{
@@ -51,6 +52,9 @@ namespace CMCS.CarTransport.Weighter.Frms
 				chk_Sampler.Visible = false;
 				chk_Sampler.Checked = false;
 			}
+
+			lblLGYS.Visible = false;
+			iptTiming.Visible = false;
 		}
 
 		private void FrmSetting_Load(object sender, EventArgs e)
@@ -117,6 +121,9 @@ namespace CMCS.CarTransport.Weighter.Frms
 			SelectedComboBoxItem(cmbDecrtion, commonDAO.GetAppletConfigString("上磅方向"));
 			chk_Sampler.Checked = (commonDAO.GetAppletConfigString("启动采样") == "1");
 			chk_Use.Checked = (commonDAO.GetAppletConfigString("启动过衡") == "1");
+			SelectedComboBoxItem(cmbPoundType, commonDAO.GetAppletConfigString("磅类型"));
+			iptTiming.Value= commonDAO.GetAppletConfigInt32("落杆延时");
+
 			// IO控制器
 			SelectedComboBoxItem(cmbIocerCom, commonDAO.GetAppletConfigInt32("IO控制器_串口").ToString());
 			SelectedComboBoxItem(cmbIocerBandrate, commonDAO.GetAppletConfigInt32("IO控制器_波特率").ToString());
@@ -177,6 +184,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			commonDAO.SetAppletConfig("上磅方向", (cmbDecrtion.SelectedItem as DataItem).Value);
 			commonDAO.SetAppletConfig("启动采样", Convert.ToInt16(chk_Sampler.Checked).ToString());
 			commonDAO.SetAppletConfig("启动过衡", Convert.ToInt16(chk_Use.Checked).ToString());
+			commonDAO.SetAppletConfig("磅类型", (cmbPoundType.SelectedItem as DataItem).Value);
+			commonDAO.SetAppletConfig("落杆延时", iptTiming.Text);
 			try
 			{
 #if DEBUG
@@ -483,6 +492,24 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 			cmb.Items.Add(new DataItem("双向磅", "双向磅"));
 			cmb.Items.Add(new DataItem("单向磅", "单向磅"));
+
+			cmb.SelectedIndex = 0;
+		}
+		
+		/// <summary>
+		/// 加载磅类型
+		/// </summary>
+		/// <param name="cmb"></param>
+		void InitPoundType(ComboBoxEx cmb)
+		{
+			cmb.Items.Clear();
+
+			cmb.DisplayMember = "Text";
+			cmb.ValueMember = "Value";
+
+			cmb.Items.Add(new DataItem("重车磅", "重车磅"));
+			cmb.Items.Add(new DataItem("空车磅", "空车磅"));
+			cmb.Items.Add(new DataItem("重空车磅", "重空车磅"));
 
 			cmb.SelectedIndex = 0;
 		}

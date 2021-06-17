@@ -99,6 +99,35 @@
         TrainBeltSamplerV8Cef.FZJAlarmReset2 = function () {
             native function FZJAlarmReset2();
             FZJAlarmReset2();
-        };  
+        }; 
 
+        // 皮采1停止
+        TrainBeltSamplerV8Cef.StopS1 = function () {
+            native function StopS1();
+            StopS1();
+        };
+
+        // 皮采2停止
+        TrainBeltSamplerV8Cef.StopS2 = function () {
+            native function StopS2();
+            StopS2();
+        }; 
+
+        // 皮采1历史故障
+        TrainBeltSamplerV8Cef.FaultRecord1 = function () {
+            native function FaultRecord1();
+            FaultRecord1();
+        };
+
+        // 皮采2历史故障
+        TrainBeltSamplerV8Cef.FaultRecord2 = function () {
+            native function FaultRecord2();
+            FaultRecord2();
+        };
+
+        // 查看报警信息
+        TrainBeltSamplerV8Cef.AlarmInfo = function (param) {
+            native function AlarmInfo(param);
+            AlarmInfo(param);
+        };
     })(); 

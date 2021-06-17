@@ -55,12 +55,48 @@ namespace CMCS.CarTransport.DAO
         }
 
         /// <summary>
+        /// 获取指定日期已完成的入厂煤运输记录
+        /// </summary>
+        /// <param name="dtStart"></param>
+        /// <param name="dtEnd"></param>
+        /// <param name="HeavyWeight"></param>
+        /// <returns></returns>
+        public List<View_BuyFuelTransport> GetFinishedBuyFuelTransport(DateTime dtStart, DateTime dtEnd, string HeavyWeight)
+        {
+            if (HeavyWeight.Contains("空"))
+            {
+                return SelfDber.Entities<View_BuyFuelTransport>("where SuttleWeight!=0 and IsUse=1 and InFactoryTime>=:dtStart and InFactoryTime<:dtEnd order by InFactoryTime desc", new { dtStart = dtStart, dtEnd = dtEnd });
+            }
+            else
+            {
+                return SelfDber.Entities<View_BuyFuelTransport>("where SuttleWeight!=0 and IsUse=1 and InFactoryTime>=:dtStart and InFactoryTime<:dtEnd and HeavyWeight=:HeavyWeight order by InFactoryTime desc", new { dtStart = dtStart, dtEnd = dtEnd, HeavyWeight = HeavyWeight });
+            }
+        }
+
+        /// <summary>
         /// 获取未完成的入厂煤运输记录
         /// </summary>
         /// <returns></returns>
         public List<View_BuyFuelTransport> GetUnFinishBuyFuelTransport()
         {
-            return SelfDber.Entities<View_BuyFuelTransport>("where SuttleWeight=0 and IsUse=1 order by InFactoryTime desc");
+                return SelfDber.Entities<View_BuyFuelTransport>("where SuttleWeight=0 and IsUse=1 order by InFactoryTime desc");
+        }
+
+
+        /// <summary>
+        /// 获取未完成的入厂煤运输记录
+        /// </summary>
+        /// <returns></returns>
+        public List<View_BuyFuelTransport> GetUnFinishBuyFuelTransport(string HeavyWeight)
+        {
+            if (HeavyWeight.Contains("空"))
+            {
+                return SelfDber.Entities<View_BuyFuelTransport>("where SuttleWeight=0 and IsUse=1 order by InFactoryTime desc");
+            }
+            else
+            {
+                return SelfDber.Entities<View_BuyFuelTransport>("where SuttleWeight=0 and IsUse=1 and HeavyWeight='" + HeavyWeight + "' order by InFactoryTime desc");
+            }
         }
 
         /// <summary>
@@ -76,14 +112,14 @@ namespace CMCS.CarTransport.DAO
             if (transport == null) return false;
 
             //根据当前流程节点名称判断
-            if (transport.StepName != eTruckInFactoryStep.重车.ToString())
+            if (transport.StepName != eTruckInFactoryStep.重车.ToString() && transport.StepName != eTruckInFactoryStep.采样.ToString())
             {
                 transport.StepName = eTruckInFactoryStep.重车.ToString();
                 transport.GrossWeight = weight;
                 transport.GrossPlace = place;
                 transport.GrossTime = dt;
             }
-            else if (transport.StepName == eTruckInFactoryStep.重车.ToString())
+            else if (transport.StepName == eTruckInFactoryStep.重车.ToString() || transport.StepName == eTruckInFactoryStep.采样.ToString())
             {
                 transport.StepName = eTruckInFactoryStep.轻车.ToString();
                 transport.TareWeight = weight;

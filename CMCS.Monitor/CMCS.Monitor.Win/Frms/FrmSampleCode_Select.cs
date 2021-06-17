@@ -123,13 +123,13 @@ namespace CMCS.Monitor.Win.Frms
 		/// <returns></returns>
 		bool SendSamplingPlan(View_CarDumperInfo plan)
         {
-            InfBeltSamplePlan_KY oldBeltSamplePlan = Dbers.GetInstance().SelfDber.Entity<InfBeltSamplePlan_KY>("where SampleCode=:SampleCode and MachineCode=:MachineCode", new { SampleCode = plan.SampleCode, MachineCode = this.sqlWhere == "#2" ? "#1" : "#2" }); ;
+            InfBeltSamplePlan_KY oldBeltSamplePlan = Dbers.GetInstance().SelfDber.Entity<InfBeltSamplePlan_KY>("where SampleCode=:SampleCode and MachineCode=:MachineCode", new { SampleCode = plan.SampleCode, MachineCode = this.sqlWhere == "#4" ? "#1" : "#2" }); ;
             if (oldBeltSamplePlan == null)
             {
                 oldBeltSamplePlan = new InfBeltSamplePlan_KY();
                 oldBeltSamplePlan.DataFlag = 0;
                 oldBeltSamplePlan.SampleCode = plan.SampleCode;
-                oldBeltSamplePlan.MachineCode = this.sqlWhere == "#2" ? "#1" : "#2";
+                oldBeltSamplePlan.MachineCode = this.sqlWhere == "#4" ? "#1" : "#2";
                 oldBeltSamplePlan.CarCount = plan.CarNum;
 
                 if (Dbers.GetInstance().SelfDber.Insert<InfBeltSamplePlan_KY>(oldBeltSamplePlan) > 0)
@@ -143,12 +143,12 @@ namespace CMCS.Monitor.Win.Frms
             else
             {
                 oldBeltSamplePlan.DataFlag = 0;
-                oldBeltSamplePlan.MachineCode = this.sqlWhere == "#2" ? "#1" : "#2";
+                oldBeltSamplePlan.MachineCode = this.sqlWhere == "#4" ? "#1" : "#2";
                 oldBeltSamplePlan.CarCount = plan.CarNum;
 
                 oldBeltSamplePlan.SyncFlag = 0;
 
-                if (Dbers.GetInstance().SelfDber.Insert<InfBeltSamplePlan_KY>(oldBeltSamplePlan) > 0)
+                if (Dbers.GetInstance().SelfDber.Update<InfBeltSamplePlan_KY>(oldBeltSamplePlan) > 0)
                 {
                     commonDAO.SetSignalDataValue(oldBeltSamplePlan.MachineCode == "#1" ? GlobalVars.MachineCode_TrunOver_1 : GlobalVars.MachineCode_TrunOver_2, eSignalDataName.采样编码.ToString(), oldBeltSamplePlan.SampleCode);
                     commonDAO.SetSignalDataValue(oldBeltSamplePlan.MachineCode == "#1" ? GlobalVars.MachineCode_TrunOver_1 : GlobalVars.MachineCode_TrunOver_2, eSignalDataName.翻车机车数.ToString(), oldBeltSamplePlan.CarCount.ToString());

@@ -181,6 +181,8 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 
 			// 重置程序远程控制命令
 			commonDAO.ResetAppRemoteControlCmd(CommonAppConfig.GetInstance().AppIdentifier);
+
+			this.cmbCYCount.Text = "2";
 		}
 
 		private void FrmCarSampler_Load(object sender, EventArgs e)
@@ -294,6 +296,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		{
 			if (CurrentRCSampling == null) { MessageBoxEx.Show("请先设置当前采样单"); return; }
 			if (this.CurrentSampleMachine.EquipmentName != GlobalVars.MachineCode_HCJXCYJ_3 && !this.CurrentSampleMachine.EquipmentName.Contains("皮带") && cmbTrainCode.SelectedItem == null) { MessageBoxEx.Show("请先选择轨道编号"); return; }
+			//if((int)cmbCyCount.Value == 0){ MessageBoxEx.Show("采样点数必须大于0", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 			if (!SendSamplingPlan()) { MessageBoxEx.Show("采样计划发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
 			MessageBoxEx.Show("采样计划发送成功");
@@ -381,6 +384,20 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 		}
 
 		/// <summary>
+		/// 首/尾车
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnHeadTailSection_Click(object sender, EventArgs e)
+		{
+			if (!SendSamplingCMD(eEquInfSamplerCmd.首尾车)) { MessageBoxEx.Show("首/尾车命令发送失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+
+			MessageBoxEx.Show("首/尾车命令发送成功，等待执行");
+			timer1.Enabled = true;
+			this.CurrentFlowFlag = eFlowFlag.等待执行;
+		}
+
+		/// <summary>
 		/// 设置当前采样单
 		/// </summary>
 		/// <param name="sender"></param>
@@ -419,7 +436,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.MachineCode = CurrentSampleMachine.EquipmentCode;
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
 				//oldBeltSamplePlan.TrainCode = "#2";
-				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString())
+				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString()|| oldBeltSamplePlan.SampleType == eSamplingType.皮带采样.ToString())
 				{
 					IList<CmcsTransport> transports = commonDAO.SelfDber.Entities<CmcsTransport>("where InFactoryBatchId=:InFactoryBatchId order by OrderNumber", new { InFactoryBatchId = CurrentRCSampling.BatchId });
 					foreach (CmcsTransport item in transports)
@@ -431,7 +448,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 						samplePlanDetail.OrderNumber = item.OrderNumber;
 						samplePlanDetail.SyncFlag = 0;
 						samplePlanDetail.CarModel = item.TrainType;
-						samplePlanDetail.CyCount = 2;
+						samplePlanDetail.CyCount = Convert.ToInt32(this.cmbCYCount.Text);//(int)dbi_CyCount.Value;
 						//samplePlanDetail.TrainCode = "#2";
 						Dbers.GetInstance().SelfDber.Insert<InfBeltSamplePlanDetail>(samplePlanDetail);
 					}
@@ -452,7 +469,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 				oldBeltSamplePlan.CarCount = this.CurrentRCSampling.TransportNumber;
 				oldBeltSamplePlan.TrainCode = ((ComboItem)cmbTrainCode.SelectedItem) != null ? ((ComboItem)cmbTrainCode.SelectedItem).Text : "";
 				oldBeltSamplePlan.SyncFlag = 0;
-				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString())
+				if (oldBeltSamplePlan.SampleType == eSamplingType.机械采样.ToString() || oldBeltSamplePlan.SampleType == eSamplingType.皮带采样.ToString())
 				{
 					IList<CmcsTransport> transports = commonDAO.SelfDber.Entities<CmcsTransport>("where InFactoryBatchId=:InFactoryBatchId order by OrderNumber", new { InFactoryBatchId = CurrentRCSampling.BatchId });
 					foreach (CmcsTransport item in transports)
@@ -467,7 +484,7 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 							samplePlanDetail.OrderNumber = item.OrderNumber;
 							samplePlanDetail.SyncFlag = 0;
 							samplePlanDetail.CarModel = item.TrainType;
-							samplePlanDetail.CyCount = 2;
+							samplePlanDetail.CyCount = Convert.ToInt32(this.cmbCYCount.Text);// (int)dbi_CyCount.Value;
 							//samplePlanDetail.TrainCode = "#2";
 							Dbers.GetInstance().SelfDber.Insert<InfBeltSamplePlanDetail>(samplePlanDetail);
 						}
@@ -677,5 +694,6 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 			superGridControl.PrimaryGrid.DataSource = list;
 		}
 
+	
 	}
 }

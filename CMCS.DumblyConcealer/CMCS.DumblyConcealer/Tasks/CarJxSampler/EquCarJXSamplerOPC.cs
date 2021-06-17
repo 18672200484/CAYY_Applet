@@ -41,8 +41,10 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 		string[] tags = new string[] { "运行状态", "当前采样点数", "当前桶号", "当前X坐标", "当前Y坐标", "当前Z坐标", "大车故障", "小车故障", "升降故障",
 			"动力头故障","匀料器故障","给料皮带故障","环锤故障","反击板故障","缩分故障","样料故障","弃料故障","桶故障","道闸故障","大车运行","小车运行","升降运行",
 		"动力头运行","匀料器运行","给料皮带运行","环锤运行","反击板运行","缩分运行","样料运行","弃料运行","样煤仓运行","道闸运行","前边界","后边界","左边界","右边界",
-		"上边界","下边界","道闸抬到位","道闸落到位","采样自动","采样急停","制样自动","制样急停","远程/就地","启动/停止","急停/复位","远程手动/自动"
+		"上边界","下边界","道闸抬到位","道闸落到位","采样自动","采样急停","制样自动","制样急停","远程/就地","启动/停止","急停/复位","远程手动/自动","传感器车尾","传感器侧面"
 			};
+
+
 		#endregion
 
 		/// <summary>
@@ -81,16 +83,29 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 				{
 					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
-					cmd.Add("汽车机械采样机.#1采样机." + "急停/复位", appRemoteControlCmd.CmdCode == "1" ? true : false);
+					cmd.Add("汽车机械采样机.#1采样机." + "急停/复位", appRemoteControlCmd.Param == "1" ? true : false);
 					if (opcServere.WriteOPCItemValue(cmd))
 					{
 						// 更新执行结果
 						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
-						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "急停", appRemoteControlCmd.AppIdentifier + "急停执行成功");
+						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "急停/复位", appRemoteControlCmd.AppIdentifier + appRemoteControlCmd.Param == "1"? "急停执行成功" : "复位执行成功");
+					}
+				}
+				else if(appRemoteControlCmd.CmdCode == "制样急停")
+				{
+					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
+					Dictionary<string, object> cmd = new Dictionary<string, object>();
+					cmd.Add("汽车机械采样机.#1采样机." + "启动/停止", appRemoteControlCmd.Param == "1" ? true : false);
+					if (opcServere.WriteOPCItemValue(cmd))
+					{
+						// 更新执行结果
+						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
+						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "制样急停", appRemoteControlCmd.AppIdentifier + appRemoteControlCmd.Param == "1" ? "急停执行成功" : "复位执行成功");
 					}
 				}
 			}
 		}
+
 
 		/// <summary>
 		/// 采样机2执行控制命令
@@ -105,12 +120,24 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler
 				{
 					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
 					Dictionary<string, object> cmd = new Dictionary<string, object>();
-					cmd.Add("汽车机械采样机.#2采样机." + "急停/复位", appRemoteControlCmd.CmdCode == "1" ? true : false);
+					cmd.Add("汽车机械采样机.#2采样机." + "急停/复位", appRemoteControlCmd.Param == "1" ? true : false);
 					if (opcServere.WriteOPCItemValue(cmd))
 					{
 						// 更新执行结果
 						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
-						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "急停", appRemoteControlCmd.AppIdentifier + "急停执行成功");
+						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "急停/复位", appRemoteControlCmd.AppIdentifier + appRemoteControlCmd.Param == "1" ? "急停执行成功" : "复位执行成功");
+					}
+				}
+				else if (appRemoteControlCmd.CmdCode == "制样急停")
+				{
+					output("接收远程命令：" + appRemoteControlCmd.CmdCode + "，参数：" + appRemoteControlCmd.Param, eOutputType.Normal);
+					Dictionary<string, object> cmd = new Dictionary<string, object>();
+					cmd.Add("汽车机械采样机.#2采样机." + "启动/停止", appRemoteControlCmd.Param == "1" ? true : false);
+					if (opcServere.WriteOPCItemValue(cmd))
+					{
+						// 更新执行结果
+						commonDAO.SetAppRemoteControlCmdResultCode(appRemoteControlCmd, eEquInfCmdResultCode.成功);
+						commonDAO.SaveSysMessage(appRemoteControlCmd.AppIdentifier + "制样急停", appRemoteControlCmd.AppIdentifier + appRemoteControlCmd.Param == "1" ? "急停执行成功" : "复位执行成功");
 					}
 				}
 			}

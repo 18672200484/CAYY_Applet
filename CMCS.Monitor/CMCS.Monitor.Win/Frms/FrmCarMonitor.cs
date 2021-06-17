@@ -207,6 +207,9 @@ namespace CMCS.Monitor.Win.Frms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // 界面不可见时，停止发送数据
+            if (!this.Visible) return;
+
             timer1.Stop();
             RequestData();
             timer1.Start();

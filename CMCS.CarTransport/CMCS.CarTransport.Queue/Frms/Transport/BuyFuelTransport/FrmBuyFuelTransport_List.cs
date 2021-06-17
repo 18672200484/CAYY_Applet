@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using CMCS.CarTransport.DAO;
 using CMCS.CarTransport.Queue.Enums;
 using CMCS.CarTransport.Queue.Frms.BaseInfo.Supplier;
+using CMCS.CarTransport.Queue.Frms.Print;
 using CMCS.CarTransport.Queue.Frms.Transport.TransportPicture;
+using CMCS.CarTransport.Queue.Print;
 using CMCS.Common;
 using CMCS.Common.Entities;
 using CMCS.Common.Entities.BaseInfo;
@@ -57,6 +59,8 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
 
         CarTransportDAO carTransportDAO = CarTransportDAO.GetInstance();
 
+        WagonPrinterCollect wagonPrinter = null;
+
         private CmcsSupplier selectedSupplier_BuyFuel;
         /// <summary>
         /// 选择的供煤单位
@@ -96,6 +100,8 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             cmbTimeType.SelectedIndex = 0;
             BindStepName();
 
+            this.wagonPrinter = new WagonPrinterCollect(printDocument1);
+
             btnSearch_Click(null, null);
         }
 
@@ -104,15 +110,30 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
             object param = new { InFactoryStartTime = this.dtInputStart.Value, InFactoryEndTime = this.dtInputEnd.Value, TareStartTime = this.dtInputStart.Value, TareEndTime = this.dtInputEnd.Value };
 
             string tempSqlWhere = this.SqlWhere;
-            List<CmcsBuyFuelTransport> list = Dbers.GetInstance().SelfDber.ExecutePager<CmcsBuyFuelTransport>(PageSize, CurrentIndex, tempSqlWhere + " order by SerialNumber desc", param);
+            //List<CmcsBuyFuelTransport> list = Dbers.GetInstance().SelfDber.ExecutePager<CmcsBuyFuelTransport>(PageSize, CurrentIndex, tempSqlWhere + " order by SerialNumber desc", param);
+
+            List<CmcsBuyFuelTransport> list = Dbers.GetInstance().SelfDber.Entities<CmcsBuyFuelTransport>(tempSqlWhere + " order by SerialNumber desc", param);
+            //CurrExportData = list;
+            if (list.Count > 0)
+            {
+                CmcsBuyFuelTransport total = new CmcsBuyFuelTransport();
+                total.SerialNumber = "合计";
+                total.CarNumber = list.Count.ToString();
+                total.GrossWeight = list.Sum(a => a.GrossWeight);
+                total.TareWeight = list.Sum(a => a.TareWeight);
+                total.SuttleWeight = list.Sum(a => a.SuttleWeight);
+                total.DeductWeight = list.Sum(a => a.DeductWeight);
+                total.TicketWeight = list.Sum(a => a.TicketWeight);
+                list.Add(total);
+            }
             superGridControl1.PrimaryGrid.DataSource = list;
 
             CurrExportData = Dbers.GetInstance().SelfDber.Entities<CmcsBuyFuelTransport>(tempSqlWhere + " order by CreationTime desc", param);
 
-            GetTotalCount(tempSqlWhere, param);
-            PagerControlStatue();
+            //GetTotalCount(tempSqlWhere, param);
+            //PagerControlStatue();
 
-            lblPagerInfo.Text = string.Format("共 {0} 条记录，每页 {1} 条，共 {2} 页，当前第 {3} 页", TotalCount, PageSize, PageCount, CurrentIndex + 1);
+            //lblPagerInfo.Text = string.Format("共 {0} 条记录，每页 {1} 条，共 {2} 页，当前第 {3} 页", TotalCount, PageSize, PageCount, CurrentIndex + 1);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -133,6 +154,8 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
 
                 if (!string.IsNullOrEmpty(dtInputEnd.Text)) this.SqlWhere += " and TareTime <:TareEndTime";
             }
+
+            if (!string.IsNullOrEmpty(txtShipName.Text)) this.SqlWhere += " and ShipName like '%" + txtShipName.Text + "%'";
 
             if (this.SelectedSupplier_BuyFuel != null) this.SqlWhere += " and SupplierId = '" + this.SelectedSupplier_BuyFuel.Id + "'";
 
@@ -336,6 +359,7 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
         private void superGridControl1_CellMouseDown(object sender, DevComponents.DotNetBar.SuperGrid.GridCellMouseEventArgs e)
         {
             CmcsBuyFuelTransport entity = Dbers.GetInstance().SelfDber.Get<CmcsBuyFuelTransport>(superGridControl1.PrimaryGrid.GetCell(e.GridCell.GridRow.Index, superGridControl1.PrimaryGrid.Columns["clmId"].ColumnIndex).Value.ToString());
+            if (entity == null || entity.SerialNumber == "合计") return;
             switch (superGridControl1.PrimaryGrid.Columns[e.GridCell.ColumnIndex].Name)
             {
 
@@ -412,10 +436,88 @@ namespace CMCS.CarTransport.Queue.Frms.Transport.BuyFuelTransport
                 //    //gridRow.Cells["clmPic"].Value = "";
                 //}
 
+                if (entity.SerialNumber == "合计")
+                {
+                    gridRow.Cells["clmShow"].Value = string.Empty;
+                    gridRow.Cells["clmEdit"].Value = string.Empty;
+                    gridRow.Cells["clmDelete"].Value = string.Empty;
+                    gridRow.Cells["clmPic"].Value = string.Empty;
+
+                    gridRow.Cells["InFactoryTime"].Visible = false;
+                    gridRow.Cells["clmIsUse"].Visible = false;
+                }
+
             }
         }
 
         #endregion
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            if (CurrExportData.Count == 0)
+            {
+                MessageBox.Show("请先查询数据");
+                return;
+            }
+            List<CmcsBuyFuelTransport> CurrPrinttData = new List<CmcsBuyFuelTransport>();
+            List<CmcsBuyFuelTransport> Data1 = new List<CmcsBuyFuelTransport>();
+           
+            Data1 = CurrExportData;
+            int totalPapge = (CurrExportData.Count / 29) + (CurrExportData.Count % 29 == 0 ? 0 : 1);
+
+            for (int i = 1;i <= totalPapge; i++)
+            {
+                List<CmcsBuyFuelTransport> Data2 = new List<CmcsBuyFuelTransport>();
+                if (i< totalPapge)
+                {
+                    for(int j = (i - 1) * 29; j < i * 29; j++)
+                    {
+                        CurrExportData[j].OrderNumber = j + 1;
+                        Data2.Add(CurrExportData[j]);
+                        CurrPrinttData.Add(CurrExportData[j]);
+                    }
+                    CmcsBuyFuelTransport item = new CmcsBuyFuelTransport();
+                    item.SupplierName = "小计";
+                    item.CarNumber = Data2.Count.ToString();
+                    item.GrossWeight = Data2.Sum(a=>a.GrossWeight);
+                    item.TareWeight = Data2.Sum(a => a.TareWeight);
+                    item.SuttleWeight = Data2.Sum(a => a.SuttleWeight);
+                    CurrPrinttData.Add(item);
+                }
+                else
+                {
+                    for (int j = (i - 1) * 29; j < CurrExportData.Count; j++)
+                    {
+                        CurrExportData[j].OrderNumber = j + 1;
+                        Data2.Add(CurrExportData[j]);
+                        CurrPrinttData.Add(CurrExportData[j]);
+                    }
+                    CmcsBuyFuelTransport item = new CmcsBuyFuelTransport();
+                    item.SupplierName = "小计";
+                    item.CarNumber = Data2.Count.ToString();
+                    item.GrossWeight = Data2.Sum(a => a.GrossWeight);
+                    item.TareWeight = Data2.Sum(a => a.TareWeight);
+                    item.SuttleWeight = Data2.Sum(a => a.SuttleWeight);
+                    CurrPrinttData.Add(item);
+                }
+            }
+            CmcsBuyFuelTransport item1 = new CmcsBuyFuelTransport();
+            item1.SupplierName = "合计";
+            item1.CarNumber = Data1.Count.ToString();
+            item1.GrossWeight = Data1.Sum(a => a.GrossWeight);
+            item1.TareWeight = Data1.Sum(a => a.TareWeight);
+            item1.SuttleWeight = Data1.Sum(a => a.SuttleWeight);
+            CurrPrinttData.Add(item1);
+
+            this.wagonPrinter.Print(CurrPrinttData, null, this.dtInputStart.Value, this.dtInputEnd.Value);
+            //FrmPrintWeb frm = new FrmPrintWeb(CurrPrinttData, null, this.dtInputStart.Value, this.dtInputEnd.Value);
+            //frm.ShowDialog();
+        }
+
+        private void superGridControl1_GetRowHeaderText(object sender, GridGetRowHeaderTextEventArgs e)
+        {
+            e.Text = (PageSize* CurrentIndex+ e.GridRow.RowIndex + 1).ToString();
+        }
     }
 }

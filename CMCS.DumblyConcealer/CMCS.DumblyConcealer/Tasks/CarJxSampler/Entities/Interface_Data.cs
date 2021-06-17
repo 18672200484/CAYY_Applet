@@ -114,7 +114,7 @@ namespace CMCS.DumblyConcealer.Tasks.CarJXSampler.Entities
 		/// <summary>
 		/// 采样时间
 		/// </summary>
-		public DateTime Sample_Time { get; set; }
+		public string Sample_Time { get; set; }
 
 		/// <summary>
 		/// 备注

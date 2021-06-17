@@ -59,6 +59,11 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			{
 				EquAutoMakerOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
 			}, 0, OutputError);
+
+			taskSimpleScheduler.StartNewTask("#1全自动制样机执行命令", () =>
+			{
+				EquAutoMakerOPC.GetInstance().RunCmd(this.rTxtOutputer.Output);
+			}, 500, OutputError);
 			#endregion
 		}
 

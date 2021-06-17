@@ -12,6 +12,7 @@ using CMCS.DapperDber.Dbs.SqlServerDb;
 using CMCS.Common.Entities.SampleCabinet;
 using System.Data;
 using CMCS.DapperDber.Util;
+using CMCS.Common.Entities.iEAA;
 
 namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
 {
@@ -522,6 +523,136 @@ namespace CMCS.DumblyConcealer.Tasks.AutoCupboard
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "中瓶已存仓位", middle.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "小瓶已存仓位", small.ToString()) ? 1 : 0;
             res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "存样率", ((decimal)ready * 100 / TotalCW).ToString("f2") + "%") ? 1 : 0;
+
+            int rc6mmqsy = 0, rc02mmfxy = 0, rc3mmbcy = 0, rc02mmccy = 0, rl6mmqsy = 0, rl02mmfxy = 0, rl3mmbcy = 0, rl02mmccy = 0;
+            List<CodeContent> codeContents = CommonDAO.GetInstance().GetCodeContentByKind("样品超期天数");
+            foreach(var item in codeContents)
+            {
+                if(item.Code== "入厂6mm全水样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '6mm全水样' and e.discriminator = 'Rc'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rc6mmqsy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+
+                }
+                else if(item.Code == "入厂0.2mm分析样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '0.2mm分析样' and e.discriminator = 'Rc'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rc02mmfxy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+                else if (item.Code == "入厂0.2mm存查样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '0.2mm存查样' and e.discriminator = 'Rc'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rc02mmccy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+                else if (item.Code == "入厂3mm备查样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '3mm备查样' and e.discriminator = 'Rc'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rc3mmbcy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+                else if (item.Code == "入炉6mm全水样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '6mm全水样' and e.discriminator = 'Rl'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rl6mmqsy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+                else if (item.Code == "入炉0.2mm分析样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '0.2mm分析样' and e.discriminator = 'Rl'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rl02mmfxy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+                else if (item.Code == "入炉0.2mm存查样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '0.2mm存查样' and e.discriminator = 'Rl'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rl02mmccy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+                else if (item.Code == "入炉3mm备查样")
+                {
+                    string sql = string.Format(@"select count(*)
+                                                from cmcstbsampleinput a
+                                                left join cmcstbmakedetail d on a.samplecode=d.samplecode
+                                                left join cmcstbmake e on d.makeid=e.id
+                                                where d.sampletype = '3mm备查样' and e.discriminator = 'Rl'
+                                                and a.INPUTTIME<sysdate-{0}", item.Value);
+                    DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        rl3mmbcy = Convert.ToInt32(dt.Rows[0][0]);
+                    }
+                }
+            }
+
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入厂6mm全水样超期", rc6mmqsy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入厂0.2mm分析样超期", rc02mmfxy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入厂0.2mm存查样超期", rc02mmccy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入厂3mm备查样超期", rc3mmbcy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入炉6mm全水样超期", rl6mmqsy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入炉0.2mm分析样超期", rl02mmfxy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入炉0.2mm存查样超期", rl02mmccy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "入炉3mm备查样超期", rl3mmbcy.ToString()) ? 1 : 0;
+            res += CommonDAO.GetInstance().SetSignalDataValue(MachineCode, "样品超期总数", (rc6mmqsy+ rc02mmfxy+ rc02mmccy+ rc3mmbcy+ rl6mmqsy+ rl02mmfxy+ rl02mmccy+ rl3mmbcy).ToString()) ? 1 : 0;
+
 
             output(string.Format("智能存样柜-同步实时信号 {0} 条", res), eOutputType.Normal);
 

@@ -23,29 +23,14 @@
 
 		// 注册SVG元素脚本事件
 		function initSvgElementEvent() {
-
-			canvas1.find("*[inkscape\\:label=汽车衡_1号衡点击域],*[inkscape\\:label=汽车衡_2号衡点击域],*[inkscape\\:label=汽车衡_3号衡点击域]").bind("click", function (evt) {
-				// 选中汽车衡
-				TruckWeighterV8Cef.ChangeSelected(evt.target.getAttribute("inkscape:label"));
-				changeSelected(evt.target.getAttribute("inkscape:label"));
-			});
-
-			canvas1.find("*[inkscape\\:label=汽车衡_1号衡点击域],*[inkscape\\:label=汽车衡_2号衡点击域],*[inkscape\\:label=汽车衡_3号衡点击域]").css("cursor", "pointer");
+            
 		}
-
-		var list = ["汽车衡_1号衡", "汽车衡_2号衡", "汽车衡_3号衡"];
-		var currentSelected = "汽车衡_1号衡点击域";
+        
+        var currentSelected = "汽车智能化-#1过衡端";
 
 		function changeSelected(selVal) {
 
-			for (var i = 0; i < list.length; i++) {
-				if (selVal.indexOf(list[i]) != -1) {
-					changeColor1(canvas1.find("*[inkscape\\:label=" + list[i] + "选中]"), "#00A551");
-					currentSelected = selVal;
-				}
-				else
-					changeColor1(canvas1.find("*[inkscape\\:label=" + list[i] + "选中]"), "#FDFDFD");
-			}
+            currentSelected = selVal;
 		}
 
 		// 请求数据 - 后台调用
@@ -60,37 +45,47 @@
 		// 处理数据
 		function dataHandler(data) {
 			// key_value
-			if (data.Type == 0)
-				$("#" + data.Key).html(data.Value);
-			// json_data
-			else if (data.Type == 1) {
+            if (data.Type == 0)
+                $("#" + data.Key).html(data.Value);
+            // json_data
+            else if (data.Type == 1) {
 
-			}
-			// svg_text
-			else if (data.Type == 2) {
-				canvas1.find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
-			}
-			// svg_color
-			else if (data.Type == 3) {
-				changeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
-			}
-			// svg_visible
-			else if (data.Type == 4) {
-				if (data.Value.toLowerCase() == "true")
-					canvas1.find("*[inkscape\\:label=" + data.Key + "]").show();
-				else
-					canvas1.find("*[inkscape\\:label=" + data.Key + "]").hide();
-			}
-			// svg_scare
-			else if (data.Type == 8999) {
-				if (data.Value.toLowerCase() == "1")
-					changeScale(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), true);
-				else
-					changeScale(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), false);
             }
-			else if (data.Type == 6789) {
-					$("#" + data.Key).val(data.Value);
-			}
+            // svg_text
+            else if (data.Type == 2) {
+                canvas1.find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+            }
+            // svg_color
+            else if (data.Type == 3) {
+                changeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+            }
+            // svg_visible
+            else if (data.Type == 4) {
+                if (data.Value.toLowerCase() == "true")
+                    canvas1.find("*[inkscape\\:label=" + data.Key + "]").show();
+                else
+                    canvas1.find("*[inkscape\\:label=" + data.Key + "]").hide();
+            }
+            // svg_scare
+            else if (data.Type == 8999) {
+                if (data.Value.toLowerCase() == "1")
+                    changeScale(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), true);
+                else
+                    changeScale(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), false);
+            }
+            else if (data.Type == 6789) {
+                $("#" + data.Key).val(data.Value);
+            }
+            else if (data.Type == 6790) {
+				 if (data.Value.toLowerCase() == "1")
+                    $("#" + data.Key).show();
+                else
+                    $("#" + data.Key).hide();
+            }
+			else if (data.Type == 6791) {
+                $("#" + data.Key).css("background", data.Value);
+				//$("#" + data.Key).css("border-color",data.Value);
+            }
 
 		}
 
@@ -98,8 +93,8 @@
 			// dataHandler({ Key: "卡车", Type: 8999, Value: "1" });
 		}
 		// 测试
-		function test1() {
-			changeColor1(canvas1.find("*[inkscape\\:label=汽车衡_1号衡选中]"), "Red");
+        function test1() {
+
 		}
 
 		// 道闸1升杆
@@ -123,13 +118,13 @@
 		}
 
 		// 切换过衡
-		function changeGH() {
-			TruckWeighterV8Cef.ChangeGH(currentSelected);
+		function changeGH(state) {
+            TruckWeighterV8Cef.ChangeGH(currentSelected, state);
         }
 
 		// 切换采样
-		function changeCY() {
-			TruckWeighterV8Cef.ChangeCY(currentSelected);
+        function changeCY(state) {
+            TruckWeighterV8Cef.ChangeCY(currentSelected, state);
 		}
 	</script>
 	<style type="text/css">
@@ -157,27 +152,31 @@
 		}
 
 			.button1:hover {
-				background-color: Red;
-				border-color: Red;
+				background-color: #FFE4B5;
+				/*border-color: Red;*/
 				color: White;
 			}
 	</style>
 </head>
 <body onload="initpage();" onselectstart="return false;">
-	<div class="div-root">
-		<input type="button" id="QGCY" value="启动采样" class="button1" style="top: 330px;
-            left: 900px;" onclick="changeCY()" />
-		<input type="button" id="QDGH" value="启动过衡" class="button1" style="top: 330px;
-            left: 750px;" onclick="changeGH()" />
-		<input type="button" id="btnGate1Up" value="升 杆" class="button1" style="top: 500px;
+    <div class="div-root">
+        <input type="button" id="QGCY" value="启动采样" class="button1" style="top: 320px;
+            left: 680px;" onclick="changeCY('1')" />
+        <input type="button" id="TZCY" value="停止采样" class="button1" style="top: 320px;
+            left: 800px;" onclick="changeCY('0')" />
+        <input type="button" id="QDGH" value="启动过衡" class="button1" style="top: 320px;
+            left: 950px;" onclick="changeGH('1')" />
+        <input type="button" id="TZGH" value="停止过衡" class="button1" style="top: 320px;
+            left: 1070px;" onclick="changeGH('0')" />
+        <input type="button" id="btnGate1Up" value="升 杆" class="button1" style="top: 500px;
             left: 335px;" onclick="gate1Up();" />
-		<input type="button" id="btnGate1Down" value="降 杆" class="button1" style="top: 550px;
+        <input type="button" id="btnGate1Down" value="降 杆" class="button1" style="top: 550px;
             left: 335px;" onclick="gate1Down();" />
-		<input type="button" id="btnGate2Up" value="升 杆" class="button1" style="top: 500px;
+        <input type="button" id="btnGate2Up" value="升 杆" class="button1" style="top: 500px;
             left: 1500px;" onclick="gate2Up();" />
-		<input type="button" id="btnGate2Down" value="降 杆" class="button1" style="top: 550px;
+        <input type="button" id="btnGate2Down" value="降 杆" class="button1" style="top: 550px;
             left: 1500px;" onclick="gate2Down();" />
-		<embed id="svgCanvas1" src="Resources/TruckWeighter.svg" type="image/svg+xml" />
-	</div>
+        <embed id="svgCanvas1" src="Resources/TruckWeighter.svg" type="image/svg+xml" />
+    </div>
 </body>
 </html>

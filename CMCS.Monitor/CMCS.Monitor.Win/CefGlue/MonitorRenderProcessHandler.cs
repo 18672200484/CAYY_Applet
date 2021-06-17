@@ -25,6 +25,10 @@ namespace Xilium.CefGlue.Demo
 			CefRuntime.RegisterExtension("TrainSampler.Register", System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Web\TrainSampler\Resources\js", "register.js")), new TrainSamplerCefV8Handler());
 			// 注册火车皮带采样机脚本
 			CefRuntime.RegisterExtension("TrainBeltSampler.Register", System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Web\TrainBeltSampler\Resources\js", "register.js")), new TrainBeltSamplerCefV8Handler());
+			// 注册制样机脚本
+			CefRuntime.RegisterExtension("AutoMaker.Register", System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Web\AutoMaker\Resources\js", "register.js")), new AutoMakerCefV8Handler());
+			// 注册合样归批脚本
+			CefRuntime.RegisterExtension("BatchMachine.Register", System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Web\BatchMachine\Resources\js", "register.js")), new BatchMachineCefV8Handler());
 
 			base.OnWebKitInitialized();
 		}

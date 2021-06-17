@@ -191,6 +191,10 @@
       <Project>{543ED9EB-DADE-4694-BA6C-7ECEAA5D135C}</Project>
       <Name>CMCS.Forms.UserControls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\CMCS.Hardware\RW.RF30WRQ80URS01\RW.RF30WRQ80URS01.csproj">
+      <Project>{d78f34da-ccba-40b3-aa39-39563a34f9f6}</Project>
+      <Name>RW.RF30WRQ80URS01</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\CMCS.Hardware\Wagon_Meter_TOLEDO_IND231\WB.TOLEDO.IND231.csproj">
       <Project>{40402C8B-6A76-4B69-9026-65D880668F60}</Project>
       <Name>WB.TOLEDO.IND231</Name>

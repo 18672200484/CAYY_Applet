@@ -94,7 +94,10 @@ namespace CMCS.Monitor.Win.Core
         /// </summary>
         public static string Url_SampleCabinet = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/SampleCabinet/index.htm");
 
-
+        /// <summary>
+        ///  样柜存取窗体引用
+        /// </summary>
+        public static FrmSampleCabinetManager FrmSampleCabinetManagerForm;
         #endregion
 
         #region 翻车机
@@ -136,6 +139,15 @@ namespace CMCS.Monitor.Win.Core
         /// 网页地址 - 设备监控
         /// </summary>
         public static string Url_CarMonitor = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/CarMonitor/index.htm");
+
+        #endregion
+
+        #region 合样归批机
+
+        /// <summary>
+        /// 网页地址 - 合样归批机 #1
+        /// </summary>
+        public static string Url_BatchMachine = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/BatchMachine/index.htm");
 
         #endregion
     }

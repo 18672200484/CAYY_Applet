@@ -18,14 +18,14 @@
 
         // 注册SVG元素脚本事件
         function initSvgElementEvent() {
-            canvas1.find("*[inkscape\\:label=1号机械采样机点击域],*[inkscape\\:label=2号机械采样机点击域]").bind("click", function (evt) {
-                // 选中采样机
-                CarSamplerV8Cef.ChangeSelected(evt.target.getAttribute("inkscape:label"));
+            //canvas1.find("*[inkscape\\:label=1号机械采样机点击域],*[inkscape\\:label=2号机械采样机点击域]").bind("click", function (evt) {
+            //    // 选中采样机
+            //    CarSamplerV8Cef.ChangeSelected(evt.target.getAttribute("inkscape:label"));
 
-                changeSelected(evt.target.getAttribute("inkscape:label"));
-            });
+            //    changeSelected(evt.target.getAttribute("inkscape:label"));
+            //});
 
-            canvas1.find("*[inkscape\\:label=1号机械采样机点击域],*[inkscape\\:label=2号机械采样机点击域]").css("cursor", "pointer");
+            //canvas1.find("*[inkscape\\:label=1号机械采样机点击域],*[inkscape\\:label=2号机械采样机点击域]").css("cursor", "pointer");
 
             var list = ["采样机摄像头"];
             for (var i = 0; i < list.length; i++) {
@@ -40,12 +40,27 @@
 
         // 急停
         function Stop() {
-			CarSamplerV8Cef.Stop(currentSelected);
-		}
+            CarSamplerV8Cef.Stop(currentSelected);
+        }
+
+        // 复位
+        function Reset() {
+            CarSamplerV8Cef.Reset(currentSelected);
+        }
+
+        // 制样急停
+        function ZYStop() {
+            CarSamplerV8Cef.ZYStop(currentSelected);
+        }
+
+        // 制样复位
+        function ZYReset() {
+            CarSamplerV8Cef.ZYReset(currentSelected);
+        }
 
 
         var list = ["1号机械采样机", "2号机械采样机"];
-         var currentSelected = "1号机械采样机点击域";
+        var currentSelected = "1号机械采样机点击域";
 
         function changeSelected(selVal) {
 
@@ -98,7 +113,7 @@
                     $("#" + data.Key).html(data.Value);
                 // json_data
                 else if (data.Type == 1) {
-                    if (data.Key == "采样机1_集样罐" || data.Key == "采样机2_集样罐") loadBarrels(data);
+                    //if (data.Key == "采样机1_集样罐" || data.Key == "采样机2_集样罐") loadBarrels(data);
                 }
                 // svg_text
                 else if (data.Type == 2) {
@@ -116,6 +131,13 @@
                     else {
                         $("#Car1").attr("src", "Resources/images/Autotruck.png");
                     }
+                }
+                // svg_visible
+                else if (data.Type == 6790) {
+                    if (data.Value.toLowerCase() == "true")
+                        canvas1.find("*[inkscape\\:label=" + data.Key + "]").show();
+                    else
+                        canvas1.find("*[inkscape\\:label=" + data.Key + "]").hide();
                 }
             } catch (e) {
                 //alert(e.Message);
@@ -163,8 +185,8 @@
 
             for (var i = 0; i < barrels.length; i++) {
                 var barrel = barrels[i],
-                $li = $("<li/>"),
-                imgSrc = "Resources/images/barrel-empty.png";
+                    $li = $("<li/>"),
+                    imgSrc = "Resources/images/barrel-empty.png";
 
                 if (barrel.BarrelStatus == "已满")
                     imgSrc = "Resources/images/barrel-full.png";
@@ -172,8 +194,9 @@
                     imgSrc = "Resources/images/barrel-notfull.png";
 
                 $li.append($("<img/>").attr("src", imgSrc));
-                $li.append($("<label class=\"labelSampleCount\">&nbsp;&nbsp;" + barrel.SampleCount + "</label>"))
-                //                $li.append($("<font class='fontColor'>" + (i + 1) + "号罐</font>"))
+                $li.append($("<label class=\"labelSampleCount\">&nbsp;&nbsp;" + barrel.BarrelNumber + "</label>"))
+                $li.append($("<div><label class=\"labelSampleCount\">&nbsp;&nbsp;" + barrel.SampleCount + "</label></div>"));
+                // $li.append($("<><font class='fontColor'>" + (i + 1) + "</font>"))
 
                 // 当前进料罐
                 if (barrel.IsCurrent == 1)
@@ -269,15 +292,14 @@
 
     </script>
     <style type="text/css">
-        html, body
-        {
+        html, body {
             margin: 0px;
             padding: 0px;
             font-family: 微软雅黑;
             background-color: rgb(43, 47, 51);
         }
-        .div-inbarrel-arrow
-        {
+
+        .div-inbarrel-arrow {
             position: absolute;
             top: -10px;
             left: 6px;
@@ -288,16 +310,16 @@
             border-left: solid 10px transparent;
             border-right: solid 10px transparent;
         }
-        .div-root
-        {
+
+        .div-root {
             position: relative;
             margin: 0px auto;
             width: 100%;
             overflow: hidden;
+            height: 920px;
         }
-        
-        .ul-svg-barrel
-        {
+
+        .ul-svg-barrel {
             padding: 0px;
             padding-top: 5px;
             margin: 0px;
@@ -307,41 +329,36 @@
             height: 40px;
             background-color: rgb(43, 47, 51);
         }
-        
-        .ul-svg-barrel > li
-        {
-            position: relative;
-            float: left;
-            width: 30px;
-            height: 35px;
-            margin-left: 42px;
-        }
-        
-        .ul-svg-barrel > li:first-child
-        {
-            margin-left: 0px;
-        }
-        
-        .ul-svg-barrel > li > img
-        {
-            width: 30px;
-            height: 35px;
-            border: none;
-        }
-        
-        .labelSampleCount
-        {
+
+            .ul-svg-barrel > li {
+                position: relative;
+                float: left;
+                width: 30px;
+                height: 35px;
+                margin-left: 42px;
+            }
+
+                .ul-svg-barrel > li:first-child {
+                    margin-left: 0px;
+                }
+
+                .ul-svg-barrel > li > img {
+                    width: 30px;
+                    height: 35px;
+                    border: none;
+                }
+
+        .labelSampleCount {
             color: White;
             font-size: 13px;
         }
-        
-        .fontColor
-        {
+
+        .fontColor {
             color: #EBEBF2;
             font-size: 10px;
         }
-        .button1
-        {
+
+        .button1 {
             position: absolute;
             width: 86px;
             height: 30px;
@@ -349,35 +366,32 @@
             font-size: 12px;
             cursor: pointer;
         }
-        .button1:hover
-        {
-            background-color: #00CED1;
-            border-color: #00CED1;
-            color: White;
-        }
-        
-        .table
-        {
+
+            .button1:hover {
+                background-color: #00CED1;
+                border-color: #00CED1;
+                color: White;
+            }
+
+        .table {
             border-collapse: collapse;
             border: 1px solid #5C6065;
             width: 100%;
         }
-        
-        .table td
-        {
-            border: 1px solid #5C6065;
-        }
-        
-        .trTitle
-        {
+
+            .table td {
+                border: 1px solid #5C6065;
+            }
+
+        .trTitle {
             background-color: #2C3E48;
             text-align: center;
             font-size: 20px;
             color: White;
             height: 40px;
         }
-        .trContent
-        {
+
+        .trContent {
             text-align: center;
             height: 30px;
         }
@@ -386,23 +400,19 @@
 <body onselectstart="return false;">
     <div class="div-root">
         <div class="div-root" id="divCanvas">
-            <!--#1采样机-->
-            <input type="button" id="btnStop" value="急 停" class="button1" style="top: 110px;
-         left: 1450px;" onclick="Stop()" />
-            <!-- <input type="button" id="btnCarInfo" value="查看故障信息" class="button1" style="top: 210px;
-        left: 775px;" onclick="ShowHitchs('#1')" />
-    <input type="button" id="btnErrorReset" value="故障复位" class="button1" style="top: 250px;
-        left: 650px;" onclick="ErrorReset('#1')" />
-    <input type="button" id="btnSampleHistory" value="采样历史记录" class="button1" style="top: 250px;
-        left: 775px;" onclick="SampleHistory('#1')" />-->
-            <!--<img id="Car1" src="Resources/images/Autotruck.png" style="position: absolute; width: 249px;
-        height: 130px; top: 710px; left: 330px;" />-->
-            <img id="Car1" src="Resources/images/Autotruck.png" style="position: absolute; width: 249px;
-                height: 130px; top: 700px; left: 330px;" />
+            #1采样机
+            <!--<input type="button" id="btnStop" value="采样急停" class="button1" style="top: 20px;
+            left: 1450px;" onclick="Stop()" />
+               <input type="button" id="btnReset" value="采样复位" class="button1" style="top: 20px;
+            left: 1550px;" onclick="Reset()" />
+               <input type="button" id="btnZYStop" value="制样急停" class="button1" style="top: 60px;
+            left: 1450px;" onclick="ZYStop()" />
+               <input type="button" id="btnZYReset" value="制样复位" class="button1" style="top: 60px;
+            left: 1550px;" onclick="ZYReset()" />-->
             <embed id="svgCanvas1" src="Resources/CarSampler.svg" type="image/svg+xml" />
         </div>
         <!--采样机一 集样罐-->
-        <ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 780px; left: 878px;">
+        <ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 800px; left: 722px;">
             <li>
                 <img src="Resources/images/barrel-empty.png" />
             </li>

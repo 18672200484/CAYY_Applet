@@ -66,11 +66,11 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker.Entities
 
         private String _SampleType;
         /// <summary>
-        /// 出样类型 =1：6mm全水分样1
-        /// =2：6mm全水分样2
-        /// =3：3mm分析样
-        /// =4：0.2mm一般试验分析
-        /// =5：0.2mm存查样
+        /// 出样类型 
+        /// =1：6mm全水分样
+        /// =2：3mm备查样
+        /// =3：0.2mm分析样
+        /// =4：0.2mm存查样
         /// </summary>
         public String SampleType
         {

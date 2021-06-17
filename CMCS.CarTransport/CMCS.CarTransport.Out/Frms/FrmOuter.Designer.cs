@@ -29,22 +29,6 @@ namespace CMCS.CarTransport.Out.Frms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -61,6 +45,22 @@ namespace CMCS.CarTransport.Out.Frms
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -430,7 +430,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.lblFlowFlag.ForeColor = System.Drawing.Color.White;
             this.lblFlowFlag.Location = new System.Drawing.Point(68, 7);
             this.lblFlowFlag.Name = "lblFlowFlag";
-            this.lblFlowFlag.Size = new System.Drawing.Size(70, 24);
+            this.lblFlowFlag.Size = new System.Drawing.Size(72, 24);
             this.lblFlowFlag.TabIndex = 2;
             this.lblFlowFlag.Text = "流程标识";
             // 
@@ -560,7 +560,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX1.ForeColor = System.Drawing.Color.White;
             this.labelX1.Location = new System.Drawing.Point(33, 3);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(70, 24);
+            this.labelX1.Size = new System.Drawing.Size(72, 24);
             this.labelX1.TabIndex = 1;
             this.labelX1.Text = "IO控制器";
             // 
@@ -569,7 +569,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.slightLED1.BackColor = System.Drawing.Color.Transparent;
             this.slightLED1.ForeColor = System.Drawing.Color.White;
             this.slightLED1.LightColor = System.Drawing.Color.Gray;
-            this.slightLED1.Location = new System.Drawing.Point(109, 3);
+            this.slightLED1.Location = new System.Drawing.Point(111, 3);
             this.slightLED1.Name = "slightLED1";
             this.slightLED1.Size = new System.Drawing.Size(24, 24);
             this.slightLED1.TabIndex = 2;
@@ -584,9 +584,9 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.White;
-            this.labelX2.Location = new System.Drawing.Point(139, 3);
+            this.labelX2.Location = new System.Drawing.Point(141, 3);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(88, 24);
+            this.labelX2.Size = new System.Drawing.Size(90, 24);
             this.labelX2.TabIndex = 3;
             this.labelX2.Text = "LED显示屏1";
             // 
@@ -595,7 +595,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.slightLED2.BackColor = System.Drawing.Color.Transparent;
             this.slightLED2.ForeColor = System.Drawing.Color.White;
             this.slightLED2.LightColor = System.Drawing.Color.Gray;
-            this.slightLED2.Location = new System.Drawing.Point(233, 3);
+            this.slightLED2.Location = new System.Drawing.Point(237, 3);
             this.slightLED2.Name = "slightLED2";
             this.slightLED2.Size = new System.Drawing.Size(24, 24);
             this.slightLED2.TabIndex = 8;
@@ -610,9 +610,9 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.White;
-            this.labelX7.Location = new System.Drawing.Point(263, 3);
+            this.labelX7.Location = new System.Drawing.Point(267, 3);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(88, 24);
+            this.labelX7.Size = new System.Drawing.Size(90, 24);
             this.labelX7.TabIndex = 9;
             this.labelX7.Text = "LED显示屏2";
             // 
@@ -621,7 +621,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.slightRwer1.BackColor = System.Drawing.Color.Transparent;
             this.slightRwer1.ForeColor = System.Drawing.Color.White;
             this.slightRwer1.LightColor = System.Drawing.Color.Gray;
-            this.slightRwer1.Location = new System.Drawing.Point(357, 3);
+            this.slightRwer1.Location = new System.Drawing.Point(363, 3);
             this.slightRwer1.Name = "slightRwer1";
             this.slightRwer1.Size = new System.Drawing.Size(24, 24);
             this.slightRwer1.TabIndex = 10;
@@ -636,9 +636,9 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.White;
-            this.labelX6.Location = new System.Drawing.Point(387, 3);
+            this.labelX6.Location = new System.Drawing.Point(393, 3);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(63, 24);
+            this.labelX6.Size = new System.Drawing.Size(64, 24);
             this.labelX6.TabIndex = 11;
             this.labelX6.Text = "读卡器1";
             // 
@@ -647,7 +647,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.slightRwer2.BackColor = System.Drawing.Color.Transparent;
             this.slightRwer2.ForeColor = System.Drawing.Color.White;
             this.slightRwer2.LightColor = System.Drawing.Color.Gray;
-            this.slightRwer2.Location = new System.Drawing.Point(456, 3);
+            this.slightRwer2.Location = new System.Drawing.Point(463, 3);
             this.slightRwer2.Name = "slightRwer2";
             this.slightRwer2.Size = new System.Drawing.Size(24, 24);
             this.slightRwer2.TabIndex = 6;
@@ -662,9 +662,9 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.White;
-            this.labelX4.Location = new System.Drawing.Point(486, 3);
+            this.labelX4.Location = new System.Drawing.Point(493, 3);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(63, 24);
+            this.labelX4.Size = new System.Drawing.Size(64, 24);
             this.labelX4.TabIndex = 7;
             this.labelX4.Text = "读卡器2";
             // 
@@ -757,8 +757,8 @@ namespace CMCS.CarTransport.Out.Frms
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControl1.ForeColor = System.Drawing.Color.White;
             this.superTabControl1.Location = new System.Drawing.Point(3, 303);
@@ -797,122 +797,6 @@ namespace CMCS.CarTransport.Out.Frms
             this.superGridControl1_BuyFuel.Location = new System.Drawing.Point(0, 0);
             this.superGridControl1_BuyFuel.Name = "superGridControl1_BuyFuel";
             this.superGridControl1_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
-            gridColumn1.DataPropertyName = "SerialNumber";
-            gridColumn1.HeaderText = "流水号";
-            gridColumn1.Name = "";
-            gridColumn1.Width = 120;
-            gridColumn2.DataPropertyName = "Batch";
-            gridColumn2.HeaderText = "批次编号";
-            gridColumn2.Name = "";
-            gridColumn2.Width = 120;
-            gridColumn3.DataPropertyName = "CarNumber";
-            gridColumn3.HeaderText = "车牌号";
-            gridColumn3.Name = "";
-            gridColumn4.DataPropertyName = "InFactoryTime";
-            gridColumn4.HeaderText = "入厂时间";
-            gridColumn4.Name = "";
-            gridColumn4.Width = 150;
-            gridColumn5.DataPropertyName = "SupplierName";
-            gridColumn5.HeaderText = "供煤单位";
-            gridColumn5.Name = "";
-            gridColumn5.Width = 150;
-            gridColumn6.DataPropertyName = "TransportCompanyName";
-            gridColumn6.HeaderText = "运输单位";
-            gridColumn6.Name = "";
-            gridColumn6.Width = 150;
-            gridColumn7.DataPropertyName = "MineName";
-            gridColumn7.HeaderText = "矿点";
-            gridColumn7.Name = "";
-            gridColumn8.DataPropertyName = "FuelKindName";
-            gridColumn8.HeaderText = "煤种";
-            gridColumn8.Name = "";
-            gridColumn9.DataPropertyName = "SamplingType";
-            gridColumn9.HeaderText = "采样方式";
-            gridColumn9.Name = "";
-            gridColumn9.Width = 80;
-            gridColumn10.DataPropertyName = "TicketWeight";
-            gridColumn10.HeaderText = "矿发量";
-            gridColumn10.Name = "";
-            gridColumn10.Width = 80;
-            gridColumn11.DataPropertyName = "GrossWeight";
-            gridColumn11.HeaderText = "毛重";
-            gridColumn11.Name = "";
-            gridColumn11.Width = 80;
-            gridColumn12.DataPropertyName = "TareWeight";
-            gridColumn12.HeaderText = "皮重";
-            gridColumn12.Name = "";
-            gridColumn12.Width = 80;
-            gridColumn13.DataPropertyName = "DeductWeight";
-            gridColumn13.HeaderText = "扣吨";
-            gridColumn13.Name = "";
-            gridColumn13.Width = 80;
-            gridColumn14.DataPropertyName = "SuttleWeight";
-            gridColumn14.HeaderText = "净重";
-            gridColumn14.Name = "";
-            gridColumn14.Width = 80;
-            gridColumn15.DataPropertyName = "IsUse";
-            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn15.HeaderText = "有效";
-            gridColumn15.Name = "";
-            gridColumn15.Width = 60;
-            gridColumn16.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-            gridColumn16.DataPropertyName = "Remark";
-            gridColumn16.HeaderText = "备注";
-            gridColumn16.Name = "";
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn5);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn6);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn7);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn8);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn9);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn10);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn11);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn12);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn13);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn14);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn15);
-            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn16);
-            this.superGridControl1_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
-            this.superGridControl1_BuyFuel.PrimaryGrid.MultiSelect = false;
-            this.superGridControl1_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl1_BuyFuel.Size = new System.Drawing.Size(988, 203);
-            this.superGridControl1_BuyFuel.TabIndex = 0;
-            this.superGridControl1_BuyFuel.Text = "superGridControl1";
-            this.superGridControl1_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
-            this.superGridControl1_BuyFuel.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl_GetRowHeaderText);
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "未 完 成";
-            // 
-            // superTabControlPanel2
-            // 
-            this.superTabControlPanel2.Controls.Add(this.superGridControl2_BuyFuel);
-            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(988, 237);
-            this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.superTabItem2;
-            // 
-            // superGridControl2_BuyFuel
-            // 
-            this.superGridControl2_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.superGridControl2_BuyFuel.DefaultVisualStyles.ColumnHeaderStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.superGridControl2_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superGridControl2_BuyFuel.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl2_BuyFuel.ForeColor = System.Drawing.Color.White;
-            this.superGridControl2_BuyFuel.Location = new System.Drawing.Point(0, 0);
-            this.superGridControl2_BuyFuel.Name = "superGridControl2_BuyFuel";
-            this.superGridControl2_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
             gridColumn17.DataPropertyName = "SerialNumber";
             gridColumn17.HeaderText = "流水号";
             gridColumn17.Name = "";
@@ -975,27 +859,143 @@ namespace CMCS.CarTransport.Out.Frms
             gridColumn32.DataPropertyName = "Remark";
             gridColumn32.HeaderText = "备注";
             gridColumn32.Name = "";
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn17);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn18);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn19);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn20);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn21);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn22);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn23);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn24);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn25);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn26);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn27);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn28);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn29);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn30);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn31);
-            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn32);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn17);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn18);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn19);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn20);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn21);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn22);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn23);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn24);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn25);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn26);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn27);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn28);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn29);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn30);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn31);
+            this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn32);
+            this.superGridControl1_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
+            this.superGridControl1_BuyFuel.PrimaryGrid.MultiSelect = false;
+            this.superGridControl1_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
+            this.superGridControl1_BuyFuel.Size = new System.Drawing.Size(988, 203);
+            this.superGridControl1_BuyFuel.TabIndex = 0;
+            this.superGridControl1_BuyFuel.Text = "superGridControl1";
+            this.superGridControl1_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
+            this.superGridControl1_BuyFuel.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl_GetRowHeaderText);
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "未 完 成";
+            // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Controls.Add(this.superGridControl2_BuyFuel);
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 34);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(988, 203);
+            this.superTabControlPanel2.TabIndex = 0;
+            this.superTabControlPanel2.TabItem = this.superTabItem2;
+            // 
+            // superGridControl2_BuyFuel
+            // 
+            this.superGridControl2_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.superGridControl2_BuyFuel.DefaultVisualStyles.ColumnHeaderStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.superGridControl2_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superGridControl2_BuyFuel.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl2_BuyFuel.ForeColor = System.Drawing.Color.White;
+            this.superGridControl2_BuyFuel.Location = new System.Drawing.Point(0, 0);
+            this.superGridControl2_BuyFuel.Name = "superGridControl2_BuyFuel";
+            this.superGridControl2_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
+            gridColumn1.DataPropertyName = "SerialNumber";
+            gridColumn1.HeaderText = "流水号";
+            gridColumn1.Name = "";
+            gridColumn1.Width = 120;
+            gridColumn2.DataPropertyName = "Batch";
+            gridColumn2.HeaderText = "批次编号";
+            gridColumn2.Name = "";
+            gridColumn2.Width = 120;
+            gridColumn3.DataPropertyName = "CarNumber";
+            gridColumn3.HeaderText = "车牌号";
+            gridColumn3.Name = "";
+            gridColumn4.DataPropertyName = "InFactoryTime";
+            gridColumn4.HeaderText = "入厂时间";
+            gridColumn4.Name = "";
+            gridColumn4.Width = 150;
+            gridColumn5.DataPropertyName = "SupplierName";
+            gridColumn5.HeaderText = "供煤单位";
+            gridColumn5.Name = "";
+            gridColumn5.Width = 150;
+            gridColumn6.DataPropertyName = "TransportCompanyName";
+            gridColumn6.HeaderText = "运输单位";
+            gridColumn6.Name = "";
+            gridColumn6.Width = 150;
+            gridColumn7.DataPropertyName = "MineName";
+            gridColumn7.HeaderText = "矿点";
+            gridColumn7.Name = "";
+            gridColumn8.DataPropertyName = "FuelKindName";
+            gridColumn8.HeaderText = "煤种";
+            gridColumn8.Name = "";
+            gridColumn9.DataPropertyName = "SamplingType";
+            gridColumn9.HeaderText = "采样方式";
+            gridColumn9.Name = "";
+            gridColumn9.Width = 80;
+            gridColumn10.DataPropertyName = "TicketWeight";
+            gridColumn10.HeaderText = "矿发量";
+            gridColumn10.Name = "";
+            gridColumn10.Width = 80;
+            gridColumn11.DataPropertyName = "GrossWeight";
+            gridColumn11.HeaderText = "毛重";
+            gridColumn11.Name = "";
+            gridColumn11.Width = 80;
+            gridColumn12.DataPropertyName = "TareWeight";
+            gridColumn12.HeaderText = "皮重";
+            gridColumn12.Name = "";
+            gridColumn12.Width = 80;
+            gridColumn13.DataPropertyName = "DeductWeight";
+            gridColumn13.HeaderText = "扣吨";
+            gridColumn13.Name = "";
+            gridColumn13.Width = 80;
+            gridColumn14.DataPropertyName = "SuttleWeight";
+            gridColumn14.HeaderText = "净重";
+            gridColumn14.Name = "";
+            gridColumn14.Width = 80;
+            gridColumn15.DataPropertyName = "IsUse";
+            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn15.HeaderText = "有效";
+            gridColumn15.Name = "";
+            gridColumn15.Width = 60;
+            gridColumn16.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+            gridColumn16.DataPropertyName = "Remark";
+            gridColumn16.HeaderText = "备注";
+            gridColumn16.Name = "";
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn1);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn2);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn3);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn4);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn5);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn6);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn7);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn8);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn9);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn10);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn11);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn12);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn13);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn14);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn15);
+            this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn16);
             this.superGridControl2_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
             this.superGridControl2_BuyFuel.PrimaryGrid.MultiSelect = false;
             this.superGridControl2_BuyFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.superGridControl2_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl2_BuyFuel.Size = new System.Drawing.Size(988, 237);
+            this.superGridControl2_BuyFuel.Size = new System.Drawing.Size(988, 203);
             this.superGridControl2_BuyFuel.TabIndex = 1;
             this.superGridControl2_BuyFuel.Text = "superGridControl2";
             this.superGridControl2_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
@@ -1157,7 +1157,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX33.ForeColor = System.Drawing.Color.White;
             this.labelX33.Location = new System.Drawing.Point(175, 219);
             this.labelX33.Name = "labelX33";
-            this.labelX33.Size = new System.Drawing.Size(41, 26);
+            this.labelX33.Size = new System.Drawing.Size(42, 26);
             this.labelX33.TabIndex = 28;
             this.labelX33.Text = "净重";
             // 
@@ -1172,7 +1172,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX24.ForeColor = System.Drawing.Color.White;
             this.labelX24.Location = new System.Drawing.Point(559, 179);
             this.labelX24.Name = "labelX24";
-            this.labelX24.Size = new System.Drawing.Size(41, 26);
+            this.labelX24.Size = new System.Drawing.Size(42, 26);
             this.labelX24.TabIndex = 25;
             this.labelX24.Text = "扣吨";
             // 
@@ -1187,7 +1187,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX25.ForeColor = System.Drawing.Color.White;
             this.labelX25.Location = new System.Drawing.Point(175, 179);
             this.labelX25.Name = "labelX25";
-            this.labelX25.Size = new System.Drawing.Size(41, 26);
+            this.labelX25.Size = new System.Drawing.Size(42, 26);
             this.labelX25.TabIndex = 24;
             this.labelX25.Text = "皮重";
             // 
@@ -1259,7 +1259,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX14.ForeColor = System.Drawing.Color.White;
             this.labelX14.Location = new System.Drawing.Point(559, 139);
             this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(41, 26);
+            this.labelX14.Size = new System.Drawing.Size(42, 26);
             this.labelX14.TabIndex = 18;
             this.labelX14.Text = "毛重";
             // 
@@ -1274,7 +1274,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX15.ForeColor = System.Drawing.Color.White;
             this.labelX15.Location = new System.Drawing.Point(158, 139);
             this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(58, 26);
+            this.labelX15.Size = new System.Drawing.Size(60, 26);
             this.labelX15.TabIndex = 16;
             this.labelX15.Text = "矿发量";
             // 
@@ -1289,7 +1289,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX12.ForeColor = System.Drawing.Color.White;
             this.labelX12.Location = new System.Drawing.Point(559, 99);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(41, 26);
+            this.labelX12.Size = new System.Drawing.Size(42, 26);
             this.labelX12.TabIndex = 14;
             this.labelX12.Text = "煤种";
             // 
@@ -1321,7 +1321,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX13.ForeColor = System.Drawing.Color.White;
             this.labelX13.Location = new System.Drawing.Point(175, 99);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(41, 26);
+            this.labelX13.Size = new System.Drawing.Size(42, 26);
             this.labelX13.TabIndex = 12;
             this.labelX13.Text = "矿点";
             // 
@@ -1353,7 +1353,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX10.ForeColor = System.Drawing.Color.White;
             this.labelX10.Location = new System.Drawing.Point(526, 59);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(74, 26);
+            this.labelX10.Size = new System.Drawing.Size(77, 26);
             this.labelX10.TabIndex = 10;
             this.labelX10.Text = "运输单位";
             // 
@@ -1385,7 +1385,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX11.ForeColor = System.Drawing.Color.White;
             this.labelX11.Location = new System.Drawing.Point(142, 59);
             this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(74, 26);
+            this.labelX11.Size = new System.Drawing.Size(77, 26);
             this.labelX11.TabIndex = 8;
             this.labelX11.Text = "供煤单位";
             // 
@@ -1417,7 +1417,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX8.ForeColor = System.Drawing.Color.White;
             this.labelX8.Location = new System.Drawing.Point(542, 19);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(58, 26);
+            this.labelX8.Size = new System.Drawing.Size(60, 26);
             this.labelX8.TabIndex = 6;
             this.labelX8.Text = "标签卡";
             // 
@@ -1449,7 +1449,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX9.ForeColor = System.Drawing.Color.White;
             this.labelX9.Location = new System.Drawing.Point(158, 19);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(58, 26);
+            this.labelX9.Size = new System.Drawing.Size(60, 26);
             this.labelX9.TabIndex = 4;
             this.labelX9.Text = "车牌号";
             // 
@@ -1805,7 +1805,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX16.ForeColor = System.Drawing.Color.White;
             this.labelX16.Location = new System.Drawing.Point(175, 191);
             this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(41, 26);
+            this.labelX16.Size = new System.Drawing.Size(42, 26);
             this.labelX16.TabIndex = 45;
             this.labelX16.Text = "净重";
             // 
@@ -1820,7 +1820,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX36.ForeColor = System.Drawing.Color.White;
             this.labelX36.Location = new System.Drawing.Point(542, 151);
             this.labelX36.Name = "labelX36";
-            this.labelX36.Size = new System.Drawing.Size(58, 26);
+            this.labelX36.Size = new System.Drawing.Size(60, 26);
             this.labelX36.TabIndex = 38;
             this.labelX36.Text = "重量二";
             // 
@@ -1835,7 +1835,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX37.ForeColor = System.Drawing.Color.White;
             this.labelX37.Location = new System.Drawing.Point(158, 151);
             this.labelX37.Name = "labelX37";
-            this.labelX37.Size = new System.Drawing.Size(58, 26);
+            this.labelX37.Size = new System.Drawing.Size(60, 26);
             this.labelX37.TabIndex = 37;
             this.labelX37.Text = "重量一";
             // 
@@ -1890,7 +1890,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX18.ForeColor = System.Drawing.Color.White;
             this.labelX18.Location = new System.Drawing.Point(142, 111);
             this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(74, 26);
+            this.labelX18.Size = new System.Drawing.Size(77, 26);
             this.labelX18.TabIndex = 12;
             this.labelX18.Text = "物资类型";
             // 
@@ -1905,7 +1905,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX19.ForeColor = System.Drawing.Color.White;
             this.labelX19.Location = new System.Drawing.Point(526, 71);
             this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(74, 26);
+            this.labelX19.Size = new System.Drawing.Size(77, 26);
             this.labelX19.TabIndex = 10;
             this.labelX19.Text = "收货单位";
             // 
@@ -1920,7 +1920,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX20.ForeColor = System.Drawing.Color.White;
             this.labelX20.Location = new System.Drawing.Point(142, 71);
             this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(74, 26);
+            this.labelX20.Size = new System.Drawing.Size(77, 26);
             this.labelX20.TabIndex = 8;
             this.labelX20.Text = "供货单位";
             // 
@@ -1952,7 +1952,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX21.ForeColor = System.Drawing.Color.White;
             this.labelX21.Location = new System.Drawing.Point(542, 31);
             this.labelX21.Name = "labelX21";
-            this.labelX21.Size = new System.Drawing.Size(58, 26);
+            this.labelX21.Size = new System.Drawing.Size(60, 26);
             this.labelX21.TabIndex = 6;
             this.labelX21.Text = "标签卡";
             // 
@@ -1984,7 +1984,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX22.ForeColor = System.Drawing.Color.White;
             this.labelX22.Location = new System.Drawing.Point(158, 31);
             this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(58, 26);
+            this.labelX22.Size = new System.Drawing.Size(60, 26);
             this.labelX22.TabIndex = 4;
             this.labelX22.Text = "车牌号";
             // 
@@ -2371,7 +2371,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX35.ForeColor = System.Drawing.Color.White;
             this.labelX35.Location = new System.Drawing.Point(560, 188);
             this.labelX35.Name = "labelX35";
-            this.labelX35.Size = new System.Drawing.Size(41, 26);
+            this.labelX35.Size = new System.Drawing.Size(42, 26);
             this.labelX35.TabIndex = 141;
             this.labelX35.Text = "备注";
             // 
@@ -2437,7 +2437,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX17.ForeColor = System.Drawing.Color.White;
             this.labelX17.Location = new System.Drawing.Point(175, 188);
             this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(41, 26);
+            this.labelX17.Size = new System.Drawing.Size(42, 26);
             this.labelX17.TabIndex = 136;
             this.labelX17.Text = "净重";
             // 
@@ -2452,7 +2452,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX31.ForeColor = System.Drawing.Color.White;
             this.labelX31.Location = new System.Drawing.Point(175, 148);
             this.labelX31.Name = "labelX31";
-            this.labelX31.Size = new System.Drawing.Size(41, 26);
+            this.labelX31.Size = new System.Drawing.Size(42, 26);
             this.labelX31.TabIndex = 135;
             this.labelX31.Text = "皮重";
             // 
@@ -2467,7 +2467,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX32.ForeColor = System.Drawing.Color.White;
             this.labelX32.Location = new System.Drawing.Point(559, 148);
             this.labelX32.Name = "labelX32";
-            this.labelX32.Size = new System.Drawing.Size(41, 26);
+            this.labelX32.Size = new System.Drawing.Size(42, 26);
             this.labelX32.TabIndex = 134;
             this.labelX32.Text = "毛重";
             // 
@@ -2511,7 +2511,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX27.ForeColor = System.Drawing.Color.White;
             this.labelX27.Location = new System.Drawing.Point(542, 28);
             this.labelX27.Name = "labelX27";
-            this.labelX27.Size = new System.Drawing.Size(58, 26);
+            this.labelX27.Size = new System.Drawing.Size(60, 26);
             this.labelX27.TabIndex = 133;
             this.labelX27.Text = "标签卡";
             // 
@@ -2543,7 +2543,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX29.ForeColor = System.Drawing.Color.White;
             this.labelX29.Location = new System.Drawing.Point(158, 28);
             this.labelX29.Name = "labelX29";
-            this.labelX29.Size = new System.Drawing.Size(58, 26);
+            this.labelX29.Size = new System.Drawing.Size(60, 26);
             this.labelX29.TabIndex = 132;
             this.labelX29.Text = "车牌号";
             // 
@@ -2575,7 +2575,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX23.ForeColor = System.Drawing.Color.White;
             this.labelX23.Location = new System.Drawing.Point(527, 69);
             this.labelX23.Name = "labelX23";
-            this.labelX23.Size = new System.Drawing.Size(74, 26);
+            this.labelX23.Size = new System.Drawing.Size(77, 26);
             this.labelX23.TabIndex = 128;
             this.labelX23.Text = "运输单号";
             // 
@@ -2607,7 +2607,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX26.ForeColor = System.Drawing.Color.White;
             this.labelX26.Location = new System.Drawing.Point(527, 108);
             this.labelX26.Name = "labelX26";
-            this.labelX26.Size = new System.Drawing.Size(74, 26);
+            this.labelX26.Size = new System.Drawing.Size(77, 26);
             this.labelX26.TabIndex = 126;
             this.labelX26.Text = "运输单位";
             // 
@@ -2639,7 +2639,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX28.ForeColor = System.Drawing.Color.White;
             this.labelX28.Location = new System.Drawing.Point(143, 108);
             this.labelX28.Name = "labelX28";
-            this.labelX28.Size = new System.Drawing.Size(74, 26);
+            this.labelX28.Size = new System.Drawing.Size(77, 26);
             this.labelX28.TabIndex = 124;
             this.labelX28.Text = "收货单位";
             // 
@@ -2671,7 +2671,7 @@ namespace CMCS.CarTransport.Out.Frms
             this.labelX30.ForeColor = System.Drawing.Color.White;
             this.labelX30.Location = new System.Drawing.Point(142, 68);
             this.labelX30.Name = "labelX30";
-            this.labelX30.Size = new System.Drawing.Size(74, 26);
+            this.labelX30.Size = new System.Drawing.Size(77, 26);
             this.labelX30.TabIndex = 123;
             this.labelX30.Text = "预报编号";
             // 

@@ -6,15 +6,15 @@
     
     (function() {
         // 打开皮带采样机监控界面
-      HomePageV8Cef.OpenTrainBeltSampler = function() {
-        native function OpenTrainBeltSampler();
-        OpenTrainBeltSampler();
+        HomePageV8Cef.OpenTrainBeltSampler = function() {
+          native function OpenTrainBeltSampler();
+          OpenTrainBeltSampler();
       }; 
         
       // 打开火车机械采样机监控界面
-      HomePageV8Cef.OpenTrainMachinerySampler = function() {
-        native function OpenTrainMachinerySampler();
-        OpenTrainMachinerySampler();
+        HomePageV8Cef.OpenTrainSampler = function (sampler) {
+            native function OpenTrainSampler(sampler);
+            OpenTrainSampler(sampler);
       };  
 
         // 打开全自动制样机监控界面
@@ -36,27 +36,38 @@
       };  
 
         // 打开汽车入厂重车衡监控
-      HomePageV8Cef.OpenTruckWeighter = function() {
-        native function OpenTruckWeighter();
-        OpenTruckWeighter();
+        HomePageV8Cef.OpenTruckWeighter = function (weighter) {
+            native function OpenTruckWeighter(weighter);
+            OpenTruckWeighter(weighter);
       };  
 
         // 打开汽车机械采样机监控
-      HomePageV8Cef.OpenTruckMachinerySampler = function() {
-        native function OpenTruckMachinerySampler();
-        OpenTruckMachinerySampler();
+        HomePageV8Cef.OpenCarSampler1 = function (sampler) {
+            native function OpenCarSampler1(sampler);
+            OpenCarSampler1(sampler);
       };   
 
-        // 打开智能存样柜与气动传输监控
+        // 打开气动传输监控
       HomePageV8Cef.OpenAutoCupboard = function() {
         native function OpenAutoCupboard();
         OpenAutoCupboard();
-      };  
+        };  
+
+        // 打开智能存样柜
+        HomePageV8Cef.OpenSampleCabinet = function () {
+            native function OpenSampleCabinet();
+            OpenSampleCabinet();
+        };  
 
         // 打开化验室监控
       HomePageV8Cef.OpenLaboratory = function() {
         native function OpenLaboratory();
         OpenLaboratory();
       };    
-      
+
+        // 打开合样归批
+        HomePageV8Cef.OpenBatchMachine = function () {
+            native function OpenBatchMachine();
+            OpenBatchMachine();
+        };    
     })(); 

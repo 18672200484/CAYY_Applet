@@ -58,6 +58,17 @@ namespace CMCS.WeighCheck.DAO
         }
 
         /// <summary>
+        /// 保存入炉样桶登记记录(人工样 采样第一次称重)
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public bool SaveRLSampleBarrel(CmcsRLSampleBarrel entity)
+        {
+            return Dbers.GetInstance().SelfDber.Insert<CmcsRLSampleBarrel>(entity) > 0 ? true : false;
+        }
+
+
+        /// <summary>
         /// 记录样桶校验记录(机器样 采样第一次称重)
         /// </summary>
         /// <param name="entity"></param>
@@ -87,11 +98,27 @@ namespace CMCS.WeighCheck.DAO
                                              t.samplingtype
                                         from cmcstbrcsampling t
                                         left join fultbinfactorybatch a on t.infactorybatchid = a.id
-                                        left join fultbsupplier b on a.supplierid = b.id
+                                        left join fultbtransportcompany b on a.SENDSUPPLIERID = b.id
                                         left join fultbmine c on a.mineid = c.id
                                         left join fultbfuelkind d on a.fuelkindid = d.id
                                         left join fultbstation e on a.stationid = e.id
-                                   where t.samplingdate >= to_date('" + dtStart + "','yyyy-MM-dd HH24:MI:SS') and t.samplingdate<to_date('" + dtEnd + "','yyyy-MM-dd HH24:MI:SS')";
+                                        left join cmcstbmake t1 on t.id=t1.samplingid 
+                                   where t.samplingdate >= to_date('" + dtStart + "','yyyy-MM-dd HH24:MI:SS') and t.samplingdate<to_date('" + dtEnd + "','yyyy-MM-dd HH24:MI:SS') and t.IsDeleted=0 and (t1.Isfinish=0 or t1.Isfinish is null)";
+
+            return Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+        }
+
+        /// <summary>
+        /// 获取入炉采样单信息
+        /// </summary>
+        /// <param name="dtStart">开始时间</param>
+        /// <param name="dtEnd">结束时间</param>
+        /// <returns></returns>
+        public DataTable GetRLSampleInfo(DateTime dtStart, DateTime dtEnd)
+        {
+            string sql = @" select t.id,t.samplecode,t.samplingtype,t.samplingdate,t.crew,t.shifts from cmcstbrlsampling t
+                            left join cmcstbmake t1 on t.id=t1.samplingid 
+                                   where t.samplingdate >= to_date('" + dtStart + "','yyyy-MM-dd HH24:MI:SS') and t.samplingdate<to_date('" + dtEnd + "','yyyy-MM-dd HH24:MI:SS') and t.IsDeleted=0 and (t1.Isfinish=0 or t1.Isfinish is null)";
 
             return Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
         }

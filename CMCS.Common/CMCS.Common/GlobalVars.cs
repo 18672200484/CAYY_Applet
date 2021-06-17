@@ -111,6 +111,16 @@ namespace CMCS.Common
 		public static string MachineCode_ZXQS_1 = "#1在线全水分析仪";
 
 		/// <summary>
+		/// 设备编码 - 合样归批机 #1
+		/// </summary>
+		public static string MachineCode_HYGPJ_1 = "#1合样归批机";
+
+		/// <summary>
+		/// 开元设备编码 - 合样归批机 #1 开元
+		/// </summary>
+		public static string MachineCode_HYGPJ_KY_1 = "HYGP1";
+
+		/// <summary>
 		/// 接口类型 - 全自动制样机
 		/// </summary>
 		public static string InterfaceType_QZDZYJ = "长沙开元全自动制样机";
@@ -264,7 +274,7 @@ namespace CMCS.Common
 		/// <summary>
 		/// 设备编码-汽车智能化-#2过衡端
 		/// </summary>
-		public static string MachineCode_QC_Weighter_2 = "汽车智能化-#2过衡端";
+		public static string MachineCode_QC_Weighter_2 = "汽车智能化-空车过衡端";
 		/// <summary>
 		/// 设备编码-汽车智能化-#3过衡端
 		/// </summary>

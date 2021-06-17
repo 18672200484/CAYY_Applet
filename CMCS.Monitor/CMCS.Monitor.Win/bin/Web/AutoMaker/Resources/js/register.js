@@ -10,6 +10,23 @@
       AutoMakerV8Cef.GetHitchs=function(paramSampler){
       native function GetHitchs(paramSampler);
       return GetHitchs(paramSampler);
-      };
+        };
 
+        // 打开报警信息
+        AutoMakerV8Cef.ErrorInfo = function (param) {
+            native function ErrorInfo(param);
+            ErrorInfo(param);
+        };
+
+        // 历史故障
+        AutoMakerV8Cef.FaultRecord = function (param) {
+            native function FaultRecord(param);
+            FaultRecord(param);
+        };
+
+        // 故障复位
+        AutoMakerV8Cef.FaultReset = function (param) {
+            native function FaultReset(param);
+            FaultReset(param);
+        };
     })(); 

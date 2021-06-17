@@ -372,7 +372,9 @@ namespace CMCS.WeighCheck.MakeWeight.Frms.SampleWeigth
 				Rwer_OnStatusChange(ReadRwer.Status);
 
 				// 初始化-读卡器
-				success = ReadRwer.OpenComPort(commonDAO.GetAppletConfigInt32("读卡器串口"));
+				//success = ReadRwer.OpenComPort(commonDAO.GetAppletConfigInt32("读卡器串口"));
+				success = ReadRwer.OpenNetPort(commonDAO.GetAppletConfigString("读卡器网口"), 6000);
+				//success = ReadRwer.OpenNetPort("192.168.70.30", 6000);
 
 				// 初始化-电子秤
 				if (IsUseWeight)
@@ -513,7 +515,7 @@ namespace CMCS.WeighCheck.MakeWeight.Frms.SampleWeigth
 				return;
 
 			// 生成随机样罐编码
-			string newBarrelCode = commonDAO.CreateNewMakeBarrelCodeByMakeCode(rCMakeDetail.TheRCMake.MakeCode, rCMakeDetail.SampleType);
+			string newBarrelCode = commonDAO.CreateNewMakeBarrelCodeByMakeCode(DateTime.Now.ToString("yyyyMMddHHmmss"), rCMakeDetail.SampleType);
 			// 称重校验
 			if (IsUseWeight)
 			{

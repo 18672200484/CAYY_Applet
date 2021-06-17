@@ -49,13 +49,17 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别1文件储存位置"), "1");
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别2文件储存位置"), "2");
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别3文件储存位置"), "3");
+			}, 5000, OutputError);
+
+			taskSimpleScheduler.StartNewTask("同步车号识别报文数据", () =>
+			{
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别4文件储存位置"), "4");
 				trainWeight_DBW.SyncDBWInfo(this.rTxtOutputer.Output, CommonDAO.GetInstance().GetAppletConfigString("车号识别5文件储存位置"), "5");
-			}, 10000, OutputError);
+			}, 2000, OutputError);
 
 			taskSimpleScheduler.StartNewTask("处理车号识别数据1", () =>
 			{
-				trainWeight_DAO.CarSpotsHandle(this.rTxtOutputer.Output, 1);
+				trainWeight_DAO.CarSpotsHandle1(this.rTxtOutputer.Output, 1);
 			}, 20000, OutputError);
 
 			taskSimpleScheduler.StartNewTask("处理车号识别数据2", () =>

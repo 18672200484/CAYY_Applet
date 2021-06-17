@@ -61,5 +61,9 @@ namespace CMCS.DumblyConcealer.Tasks.BeltSampler.Entities
 		/// </summary>
 		public DateTime End_Time { get; set; }
 
+		/// <summary>
+		/// 采样码
+		/// </summary>
+		public string Barrel_Name { get; set; }
 	}
 }

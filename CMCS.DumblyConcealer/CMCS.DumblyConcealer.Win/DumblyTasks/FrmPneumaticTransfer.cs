@@ -43,7 +43,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			this.taskSimpleScheduler.StartNewTask("同步上位机运行状态", () =>
 			{
 				EquPneumaticTransferOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
-			}, 5000, OutputError);
+			}, 0, OutputError);
 
 		}
 

@@ -36,14 +36,14 @@
       };
 
     // 切换过衡
-        TruckWeighterV8Cef.ChangeGH = function (paramSampler) {
-            native function ChangeGH(paramSampler);
-            ChangeGH(paramSampler);
+        TruckWeighterV8Cef.ChangeGH = function (paramSampler,state) {
+            native function ChangeGH(paramSampler, state);
+            ChangeGH(paramSampler, state);
         };  
 
         // 切换采样
-        TruckWeighterV8Cef.ChangeCY = function (paramSampler) {
-            native function ChangeCY(paramSampler);
-            ChangeCY(paramSampler);
+        TruckWeighterV8Cef.ChangeCY = function (paramSampler, state) {
+            native function ChangeCY(paramSampler, state);
+            ChangeCY(paramSampler, state);
         };  
     })(); 

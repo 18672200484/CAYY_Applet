@@ -88,6 +88,7 @@
     <Compile Include="Tasks\AutoCupboard\Enums\eOperateCode.cs" />
     <Compile Include="Tasks\AutoCupboard\Enums\eYPLX.cs" />
     <Compile Include="Tasks\AutoCupboard\EquAutoCupboardDAO.cs" />
+    <Compile Include="Tasks\AutoCupboard\EquAutoCupboardOPC.cs" />
     <Compile Include="Tasks\AutoMaker\EquAutoMakerOPC.cs" />
     <Compile Include="Tasks\AutoMt\Entities\TB_YQ_ERRORCODE.cs" />
     <Compile Include="Tasks\AutoMt\Entities\YQ_Status.cs" />
@@ -101,8 +102,15 @@
     <Compile Include="Tasks\AutoMaker\Entities\ZY_State_Tb.cs" />
     <Compile Include="Tasks\AutoMaker\Entities\ZY_Status_Tb.cs" />
     <Compile Include="Tasks\AutoMaker\EquAutoMakerDAO.cs" />
+    <Compile Include="Tasks\AutoMt\EquAutoMtUDP.cs" />
+    <Compile Include="Tasks\BatchMachine\Entities\CY_HYGP_Cmd_Tb.cs" />
+    <Compile Include="Tasks\BatchMachine\Entities\CY_HYGP_AL_Tb.cs" />
+    <Compile Include="Tasks\BatchMachine\Entities\CY_HYGP_Barrel_Tb.cs" />
+    <Compile Include="Tasks\BatchMachine\EquBatchMachineDAO.cs" />
+    <Compile Include="Tasks\BatchMachine\EquBatchMachineOPC.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquSignalData.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquUnloadResult.cs" />
+    <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_Alarm.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_CMD.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_TurnOver.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\KY_CYJ_P_BARREL.cs" />
@@ -169,6 +177,7 @@
     <Content Include="Tasks\AutoCupboard\开元存样柜.txt" />
     <Content Include="Tasks\AutoMt\全自动制样机接口.txt" />
     <Content Include="Tasks\AutoMaker\全自动制样机接口.txt" />
+    <Content Include="Tasks\BatchMachine\合样归批机接口.txt" />
     <Content Include="Tasks\BeltSampler\皮带采样机同步程序.txt" />
     <Content Include="Tasks\BeltBalancer\皮带秤称重数据同步程序.txt" />
     <Content Include="Tasks\PneumaticTransfer\气动传输.txt" />

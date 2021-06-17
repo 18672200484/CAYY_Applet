@@ -60,8 +60,10 @@ namespace CMCS.CarTransport.DAO
         /// <param name="remark">备注</param>
         /// <param name="place">地点</param>
         /// <param name="samplingType">采样方式</param> 
+        /// <param name="heavyweight">重车磅</param> 
+        /// <param name="samplingType">船号</param> 
         /// <returns></returns>
-        public bool JoinQueueBuyFuelTransport(CmcsAutotruck autotruck, CmcsSupplier supplier, CmcsMine mine, CmcsTransportCompany transportCompany, CmcsFuelKind fuelKind, decimal ticketWeight, DateTime inFactoryTime, string remark, string place)
+        public bool JoinQueueBuyFuelTransport(CmcsAutotruck autotruck, CmcsSupplier supplier, CmcsMine mine, CmcsTransportCompany transportCompany, CmcsFuelKind fuelKind, decimal ticketWeight, DateTime inFactoryTime, string remark, string place,string heavyweight,string shipnumber)
         {
             CmcsBuyFuelTransport transport = new CmcsBuyFuelTransport
             {
@@ -70,18 +72,21 @@ namespace CMCS.CarTransport.DAO
                 CarNumber = autotruck.CarNumber,
                 SupplierId = supplier.Id,
                 SupplierName = supplier.Name,
-                MineId = mine.Id,
-                MineName = mine.Name,
-                TransportCompanyId = transportCompany.Id,
-                TransportCompanyName = transportCompany.Name,
-                FuelKindId = fuelKind.Id,
-                FuelKindName = fuelKind.Name,
+                MineId = mine != null ? mine.Id:"",
+                MineName = mine != null ? mine.Name:"",
+                TransportCompanyId = transportCompany!=null?transportCompany.Id:"",
+                TransportCompanyName = transportCompany != null ? transportCompany.Name:"",
+                FuelKindId = fuelKind!=null?fuelKind.Id:"",
+                FuelKindName = fuelKind != null ? fuelKind.Name:"",
                 TicketWeight = ticketWeight,
                 InFactoryTime = inFactoryTime,
                 IsFinish = 0,
                 IsUse = 1,
                 StepName = eTruckInFactoryStep.入厂.ToString(),
-                Remark = remark
+                Remark = remark,
+                HeavyWeight=heavyweight,
+                ShipName = shipnumber,
+                Recorder= GlobalVars.LoginUser.Name
             };
 
             // 生成批次以及采制化三级编码数据 

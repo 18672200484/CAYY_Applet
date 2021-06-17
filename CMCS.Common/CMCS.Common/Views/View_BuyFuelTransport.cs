@@ -185,5 +185,17 @@ namespace CMCS.Common.Views
         /// </summary>
         public virtual DateTime SamplingTime { get { return _SamplingTime; } set { _SamplingTime = value; } }
 
+        private string _HeavyWeight;
+        /// <summary>
+        /// 重车磅
+        /// </summary>
+        public virtual string HeavyWeight { get { return _HeavyWeight; } set { _HeavyWeight = value; } }
+
+        private string _ShipName;
+        /// <summary>
+        /// 船号
+        /// </summary>
+        public virtual string ShipName { get { return _ShipName; } set { _ShipName = value; } }
+        
     }
 }

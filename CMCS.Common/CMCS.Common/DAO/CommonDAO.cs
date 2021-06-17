@@ -116,7 +116,7 @@ namespace CMCS.Common.DAO
 		#region Cmcs用户登录
 		public CmcsUser Login_Cmcs(string userAccount, string password)
 		{
-			return SelfDber.Entity<CmcsUser>("where UserName=:UserName and PassWord=:PassWord", new { UserName = userAccount, PassWord = password });
+			return SelfDber.Entity<CmcsUser>("where UserName=:UserName and PassWord=:PassWord", new { UserName = userAccount, PassWord =  password });
 		}
 
 		/// <summary>
@@ -573,6 +573,31 @@ namespace CMCS.Common.DAO
 		}
 
 		/// <summary>
+		/// 保存第三方设备接口 - 合样归批样桶表
+		/// </summary>
+		/// <param name="equInfSampleBarrel"></param>
+		/// <returns></returns>
+		public bool SaveInfBatchMachineBarrel(InfBatchMachineBarrel equInfBatchMachineBarrel)
+		{
+			InfBatchMachineBarrel oldInfBatchMachineBarrel = SelfDber.Entity<InfBatchMachineBarrel>("where MachineCode=:MachineCode and BarrelStation=:BarrelStation and BarrelCode=:BarrelCode"
+				, new { MachineCode = equInfBatchMachineBarrel.MachineCode, BarrelStation = equInfBatchMachineBarrel.BarrelStation, BarrelCode = equInfBatchMachineBarrel.BarrelCode});
+
+			if (oldInfBatchMachineBarrel == null)
+				return SelfDber.Insert(equInfBatchMachineBarrel) > 0;
+			else
+			{
+				oldInfBatchMachineBarrel.SampleID = equInfBatchMachineBarrel.SampleID;
+				oldInfBatchMachineBarrel.SampleWeight = equInfBatchMachineBarrel.SampleWeight;
+				oldInfBatchMachineBarrel.BarrelStatus = equInfBatchMachineBarrel.BarrelStatus;
+				oldInfBatchMachineBarrel.DataStatus = equInfBatchMachineBarrel.DataStatus;
+				oldInfBatchMachineBarrel.StrartTime = equInfBatchMachineBarrel.StrartTime;
+				oldInfBatchMachineBarrel.EndTime = equInfBatchMachineBarrel.EndTime;
+
+				return SelfDber.Update(oldInfBatchMachineBarrel) > 0;
+			}
+		}
+
+		/// <summary>
 		/// 根据设备编码获取集样罐信息
 		/// </summary>
 		/// <param name="machineCode"></param>
@@ -610,7 +635,7 @@ namespace CMCS.Common.DAO
 		/// <returns></returns>
 		public List<InfEquInfHitch> GetWarnEquInfHitch()
 		{
-			List<InfEquInfHitch> cmcsequinfhitch = SelfDber.Entities<InfEquInfHitch>(" where IsRead=0 and HitchTime like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%' order by HitchTime ");
+			List<InfEquInfHitch> cmcsequinfhitch = SelfDber.Entities<InfEquInfHitch>(" where IsRead=0 and to_char(HitchTime,'yyyy-MM-dd') like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%' order by HitchTime ");
 			if (cmcsequinfhitch.Count > 0)
 				return cmcsequinfhitch.GroupBy(a => a.MachineCode).First().ToList();
 			else
@@ -644,7 +669,7 @@ namespace CMCS.Common.DAO
 		/// <returns></returns>
 		public CmcsSysMessage GetTodayTopSysMessage()
 		{
-			return SelfDber.Entity<CmcsSysMessage>("where MsgStatus=:MsgStatus and MsgTime like '%' || :MsgTime || '%' order by MsgTime", new { MsgStatus = eSysMessageStatus.默认.ToString(), MsgTime = DateTime.Now.ToString("yyyy-MM-dd") });
+			return SelfDber.Entity<CmcsSysMessage>("where MsgStatus=:MsgStatus and to_char(MsgTime,'yyyy-MM-dd') like '%' || :MsgTime || '%' order by MsgTime", new { MsgStatus = eSysMessageStatus.默认.ToString(), MsgTime = DateTime.Now.ToString("yyyy-MM-dd") });
 		}
 
 		/// <summary>
@@ -690,6 +715,7 @@ namespace CMCS.Common.DAO
 					IsAutoClose = isAutoClose ? 1 : 0,
 					MsgCode = msgCode,
 					MsgButton = msgButton,
+					MsgStatus = eSysMessageStatus.默认.ToString(),
 				}) > 0;
 			}
 
@@ -1178,6 +1204,64 @@ namespace CMCS.Common.DAO
 		#endregion
 
 		#region 入厂煤批次
+		/// <summary>
+		/// 根据运输记录判断批次是否已生成，并返回。
+		/// 根据入厂时间（实际到厂时间）、供煤单位、煤种判断
+		/// </summary>
+		/// <param name="buyFuelTransport"></param>
+		/// <returns></returns>
+		public CmcsInFactoryBatch HasInFactoryBatch(CmcsBuyFuelTransport buyFuelTransport)
+		{
+			DateTime dt = buyFuelTransport.CreationTime.AddHours(-GetCommonAppletConfigInt32("汽车分批时间点"));
+			return SelfDber.Entity<CmcsInFactoryBatch>("where Batch like '%-'|| to_char(:CreationTime,'YYYYMMDD') ||'-%' and SupplierId=:SupplierId and BatchCreateType=1 and IsDeleted=0", new { CreationTime = dt, SupplierId = buyFuelTransport.SupplierId, FuelKindId = buyFuelTransport.FuelKindId });
+		}
+
+		/// <summary>
+		/// 根据运输记录生成批次并返回。
+		/// 根据入厂时间（实际到厂时间）、供煤单位、煤种生成，已存在则不创建
+		/// </summary>
+		/// <param name="buyFuelTransport"></param>
+		/// <returns></returns>
+		public CmcsInFactoryBatch GCQCInFactoryBatchByBuyFuelTransport(CmcsBuyFuelTransport buyFuelTransport)
+		{
+			bool isSuccess = true;
+
+			CmcsInFactoryBatch entity = HasInFactoryBatch(buyFuelTransport);
+			if (entity == null)
+			{
+				entity = new CmcsInFactoryBatch()
+				{
+					Batch = CreateNewBatchNumber("QC", buyFuelTransport.CreationTime),
+					TransportTypeName = "汽车",
+					FactArriveDate = buyFuelTransport.InFactoryTime,
+					FuelKindId = buyFuelTransport.FuelKindId,
+					FuelKindName = buyFuelTransport.FuelKindName,
+					SupplierId = buyFuelTransport.SupplierId,
+					SupplierName = buyFuelTransport.SupplierName,
+					MineId = buyFuelTransport.MineId,
+					RunDate = buyFuelTransport.InFactoryTime,
+					SendSupplierId = buyFuelTransport.TransportCompanyId,
+					Remark = "由汽车煤智能化自动创建",
+					BatchCreateType = 1,
+					FuelType = "长协煤",
+					DispatchDate = DateTime.Now.Date,
+				};
+
+				// 创建新批次
+				isSuccess = SelfDber.Insert(entity) > 0;
+			}
+
+			if (isSuccess)
+			{
+				// 生成采制化数据记录
+				CmcsRCSampling rCSampling = GCSamplingMakeAssay(entity, buyFuelTransport.SamplingType, "由汽车煤智能化自动创建");
+
+				buyFuelTransport.SamplingId = rCSampling.Id;
+				buyFuelTransport.InFactoryBatchId = entity.Id;
+			}
+
+			return entity;
+		}
 
 		/// <summary>
 		/// 生成制定日期的批次编码
@@ -1319,16 +1403,16 @@ namespace CMCS.Common.DAO
 			switch (makeType)
 			{
 				case "0.2mm分析样":
-					res = "021";
+					res = "21";
 					break;
 				case "0.2mm备查样":
-					res = "022";
+					res = "22";
 					break;
 				case "3mm备查样":
-					res = "031";
+					res = "32";
 					break;
 				case "6mm全水样":
-					res = "061";
+					res = "61";
 					break;
 				default:
 					break;
@@ -1366,7 +1450,7 @@ namespace CMCS.Common.DAO
 			bool isSuccess = false;
 
 			// 入厂煤采样
-			CmcsRCSampling rCSampling = SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId and SamplingType=:SamplingType and IsDeleted=0", new { InFactoryBatchId = inFactoryBatch.Id, SamplingType = samplingType });
+			CmcsRCSampling rCSampling = SelfDber.Entity<CmcsRCSampling>("where InFactoryBatchId=:InFactoryBatchId and IsDeleted=0", new { InFactoryBatchId = inFactoryBatch.Id});
 			if (rCSampling == null)
 			{
 				rCSampling = new CmcsRCSampling()
@@ -1582,6 +1666,35 @@ namespace CMCS.Common.DAO
 			CmcsTrainType entity = SelfDber.Entity<CmcsTrainType>("where TypeName=:TypeName and IsStop=0 and IsDeleted=0", new { TypeName = trainType });
 			if (entity != null) return entity.RatedLoad;
 			return 0;
+		}
+		#endregion
+
+		#region 皮带采样机
+		/// <summary>
+		/// 判断皮采当前编码是否完成
+		/// </summary>
+		/// <param name="fcj"></param>
+		/// <param name="code"></param>
+		/// <returns></returns>
+		public bool VerifyComplete(string code)
+		{
+			string sql = string.Format(@"select t6.*
+                    from cmcstbtraincarriagepass t5 
+                    left join fultbtransport t1 on t1.pkid=t5.id
+                    left join fultbinfactorybatch t2 on t1.infactorybatchid=t2.id
+                    left join cmcstbrcsampling t3 on t3.infactorybatchid=t2.id
+                    inner join cmcstbtransportposition t6 on t5.id=t6.transportid 
+                    where t6.tracknumber  in ('#2','#4') and t3.samplecode='{0}'", code);
+			DataTable dt = Dbers.GetInstance().SelfDber.ExecuteDataTable(sql);
+			if (dt.Rows.Count > 0)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+
 		}
 		#endregion
 

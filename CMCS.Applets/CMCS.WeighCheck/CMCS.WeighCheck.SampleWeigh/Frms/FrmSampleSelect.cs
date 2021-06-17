@@ -73,7 +73,8 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms
                         FactarriveDate = DateTime.Parse(drSample["FactarriveDate"].ToString()),
                         SampleCode = drSample["SampleCode"].ToString(),
                         SamplingDate = DateTime.Parse(drSample["SamplingDate"].ToString()),
-                        SamplingType = drSample["SamplingType"].ToString()
+                        SamplingType = drSample["SamplingType"].ToString(),
+                        SelectType="入厂"
                     });
                 }
             }
@@ -179,5 +180,13 @@ namespace CMCS.WeighCheck.SampleWeigh.Frms
         public string SampleCode { get; set; }
         public DateTime SamplingDate { get; set; }
         public string SamplingType { get; set; }
+
+        public string Crew { get; set; }
+
+        public string Shifts { get; set; }
+
+        public string SelectType { get; set; }
+
+
     }
 }

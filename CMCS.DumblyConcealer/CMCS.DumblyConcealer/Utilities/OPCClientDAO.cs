@@ -129,6 +129,16 @@ namespace CMCS.DumblyConcealer.Utilities
 					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_QZDZYJ_1, item.ItemName.Replace(GlobalVars.MachineCode_QZDZYJ_1 + ".", "").Replace("全自动制样机.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
 					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
 				}
+				else if (item.ItemName.Contains("合样归批机"))
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_HYGPJ_1, item.ItemName.Replace(GlobalVars.MachineCode_HYGPJ_1 + ".", "").Replace("合样归批机.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
+				else if (item.ItemName.Contains("全自动存样柜"))
+				{
+					commonDAO.SetSignalDataValue(GlobalVars.MachineCode_CYG1, item.ItemName.Replace("#1全自动存样柜" + ".", "").Replace("全自动存样柜.", ""), item.Value != null ? item.Value.ToString().Replace("False", "0").Replace("True", "1") : "");
+					OutPut(string.Format("写入实时信号{0}", item.ItemName), eOutputType.Normal);
+				}
 			}
 		}
 

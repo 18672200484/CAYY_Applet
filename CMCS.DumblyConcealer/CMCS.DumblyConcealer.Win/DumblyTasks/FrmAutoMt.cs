@@ -21,6 +21,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 		RTxtOutputer rTxtOutputer;
 
 		TaskSimpleScheduler taskSimpleScheduler = new TaskSimpleScheduler();
+		EquAutoMtUDP equAutoMtUDP;
 
 		public FrmAutoMt()
 		{
@@ -32,6 +33,7 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			this.Text = "在线全水接口业务";
 
 			this.rTxtOutputer = new RTxtOutputer(rtxtOutput);
+		    equAutoMtUDP = new EquAutoMtUDP(this.rTxtOutputer.Output);
 
 			ExecuteAllTask();
 		}
@@ -49,7 +51,31 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				autoMakerDAO1.SyncMtResult(this.rTxtOutputer.Output);
 				autoMakerDAO1.SyncError(this.rTxtOutputer.Output);
 				autoMakerDAO1.SyncSignal(this.rTxtOutputer.Output);
+				autoMakerDAO1.SynCount(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
+
+
+
+			//this.taskSimpleScheduler.StartNewTask("初始化存样柜UDP", () =>
+			//{
+			//	equAutoMtUDP.InitUDPInfo(this.rTxtOutputer.Output);
+			//}, 0, OutputError);
+
+
+			//this.taskSimpleScheduler.StartNewTask("同步数据", () =>
+			//{
+			//	equAutoMtUDP.SyncInfo(this.rTxtOutputer.Output);
+			//}, 2000, OutputError);
+
+			//this.taskSimpleScheduler.StartNewTask("接收数据", () =>
+			//{
+			//	equAutoMtUDP.ReceiveMessage(this.rTxtOutputer.Output);
+			//}, 200, OutputError); 
+
+			this.taskSimpleScheduler.StartNewTask("接收数据", () =>
+			{
+				equAutoMtUDP.ReceiveMessage(this.rTxtOutputer.Output);
+			}, 200, OutputError); 
 			#endregion
 		}
 

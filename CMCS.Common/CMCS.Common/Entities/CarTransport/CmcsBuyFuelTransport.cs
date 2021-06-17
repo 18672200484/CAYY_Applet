@@ -226,5 +226,29 @@ namespace CMCS.Common.Entities.CarTransport
         /// 是否同步到批次
         /// </summary>
         public int IsSyncBatch { get; set; }
+
+        private string _HeavyWeight;
+        /// <summary>
+        /// 指定重车磅
+        /// </summary>
+        public virtual string HeavyWeight { get { return _HeavyWeight; } set { _HeavyWeight = value; } }
+
+        private string _ShipName;
+        /// <summary>
+        /// 船号
+        /// </summary>
+        public virtual string ShipName { get { return _ShipName; } set { _ShipName = value; } }
+
+        private int _OrderNumber;
+        /// <summary>
+        /// 顺序
+        /// </summary>
+        public virtual int OrderNumber { get { return _OrderNumber; } set { _OrderNumber = value; } }
+
+        private string _Recorder;
+        /// <summary>
+        /// 水运煤登记人员
+        /// </summary>
+        public virtual string Recorder { get { return _Recorder; } set { _Recorder = value; } }
     }
 }

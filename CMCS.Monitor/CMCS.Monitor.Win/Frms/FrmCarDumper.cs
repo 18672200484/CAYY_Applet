@@ -65,6 +65,9 @@ namespace CMCS.CarTransport.BeltSampler.Frms
 
 		private void timer2_Tick(object sender, EventArgs e)
 		{
+			// 界面不可见时，停止发送数据
+			if (!this.Visible) return;
+
 			timer2.Stop();
 			// 2秒执行一次
 			timer2.Interval = 10000;

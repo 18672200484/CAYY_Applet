@@ -54,7 +54,8 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 				//beltSamplerDAO1.SyncTurn(this.rTxtOutputer.Output);
 				beltSamplerDAO1.SyncSampleCmd(this.rTxtOutputer.Output);
 				beltSamplerDAO1.SyncSamplePlan_KY(this.rTxtOutputer.Output);
-				
+				beltSamplerDAO1.SyncError(this.rTxtOutputer.Output);
+				beltSamplerDAO1.SyncUnloadResult(this.rTxtOutputer.Output);
 			}, 2000, OutputError);
 
 			#endregion
