@@ -753,6 +753,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
 		}
 
 		/// <summary>
+		/// 打开皮带采样机数据查询
+		/// </summary>
+		public void OpenTrainBeltSamplerDataSelect()
+		{
+			this.BeginInvoke((Action)(() =>
+			{
+				CMCS.InterfaceData.Win.DumblyTasks.FrmBeltSampler frm = new CMCS.InterfaceData.Win.DumblyTasks.FrmBeltSampler();
+				frm.ShowDialog();
+			}));
+		}
+
+		/// <summary>
 		/// 打开合样归批机
 		/// </summary>
 		public void OpenBatchMachine()

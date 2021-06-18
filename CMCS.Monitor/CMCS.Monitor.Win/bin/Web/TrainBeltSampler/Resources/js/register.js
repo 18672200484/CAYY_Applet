@@ -130,4 +130,11 @@
             native function AlarmInfo(param);
             AlarmInfo(param);
         };
+
+        // 皮采数据查询
+        TrainBeltSamplerV8Cef.DataSelect = function () {
+            native function DataSelect();
+            DataSelect();
+        };
+
     })(); 

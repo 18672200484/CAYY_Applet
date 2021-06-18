@@ -78,6 +78,11 @@ namespace CMCS.Monitor.Win.Html
 		/// 按钮颜色切换
 		/// </summary>
 		btn_color = 6791,
+ 		/// <summary>
+        /// svg高度
+        /// </summary>
+        svg_height = 6792,
 	}
+
 
 }

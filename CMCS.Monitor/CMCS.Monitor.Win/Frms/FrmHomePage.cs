@@ -1164,10 +1164,15 @@ namespace CMCS.Monitor.Win.Frms
 				{
 					SelfVars.MainFrameForm.OpenFaultRecordInfo(GlobalVars.MachineCode_PDCYJ_2);
 				}
+				
 			}
 			else if(message.Name == "TrainBeltSampleAlarmInfo")
 			{
 				SelfVars.MainFrameForm.OpenTrainBeltSampler_warning();
+			}
+			else if (message.Name == "TrainBeltSampleDataSelect")
+			{
+				SelfVars.MainFrameForm.OpenTrainBeltSamplerDataSelect();
 			}
 			return true;
 		}

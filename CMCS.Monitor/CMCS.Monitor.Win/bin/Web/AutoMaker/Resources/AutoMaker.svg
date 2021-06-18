@@ -604,7 +604,7 @@
    showgrid="false"
    pagecolor="#ffffff"
    objecttolerance="10"
-   inkscape:zoom="0.98920908"
+   inkscape:zoom="1.3989529"
    inkscape:window-y="-8"
    inkscape:window-x="-8"
    inkscape:window-width="1920"
@@ -613,8 +613,8 @@
    inkscape:pageshadow="2"
    inkscape:pageopacity="0"
    inkscape:guide-bbox="true"
-   inkscape:cy="432.5178"
-   inkscape:cx="763.96164"
+   inkscape:cy="530.18196"
+   inkscape:cx="988.00596"
    inkscape:current-layer="svg2"
    id="namedview856"
    guidetolerance="10"
@@ -6111,6 +6111,8 @@
 
 
 
+
+
 <text
    y="275.93439"
    x="354.46561"
@@ -6136,12 +6138,16 @@
 
 
 
+
+
 <text
    y="230.26776"
    x="757.1322"
    id="_417431352_10_"
    class="st174 st175 st178"
    style="font-size:20px;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">3mm一级圆盘缩分器</text>
+
+
 
 
 
@@ -6166,12 +6172,16 @@
 
 
 
+
+
 <text
    y="337.26776"
    x="610.46545"
    id="_417431352_11_"
    class="st174 st175 st178"
    style="font-size:20px;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">3mm弃料皮带</text>
+
+
 
 
 
@@ -6196,12 +6206,16 @@
 
 
 
+
+
 <text
    y="491.26788"
    x="1070.4656"
    id="_417431352_16_"
    class="st174 st175 st178"
    style="font-size:20px;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">筛分破碎</text>
+
+
 
 
 
@@ -6216,12 +6230,16 @@
 
 
 
+
+
 <text
    y="391.6011"
    x="610.46545"
    id="_417431352_12_"
    class="st174 st175 st178"
    style="font-size:20px;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">3mm弃料暂存</text>
+
+
 
 
 
@@ -6236,6 +6254,8 @@
 
 
 
+
+
 <text
    y="615.2677"
    x="712.88208"
@@ -6246,12 +6266,16 @@
 
 
 
+
+
 <text
    y="507.93454"
    x="1489.549"
    id="_417431352_20_"
    class="st174 st175 st178"
    style="font-size:20px;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">真空上料机</text>
+
+
 
 
 
@@ -6267,6 +6291,8 @@
 
 
 
+
+
 <text
    inkscape:label="弃料剩余"
    y="472.60104"
@@ -6278,6 +6304,8 @@
 
 
 
+
+
 <text
    y="426.93451"
    x="1165.4656"
@@ -6285,6 +6313,8 @@
    class="st97 st175 st179"
    style="font-size:17.99983978px;fill:#30f64c;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    inkscape:label="右侧干燥机转速">0  r/min</text>
+
+
 
 
 
@@ -6309,6 +6339,8 @@
 
 
 
+
+
 <text
    y="521.93451"
    x="432.13226"
@@ -6329,6 +6361,8 @@
 
 
 
+
+
 <text
    inkscape:label="6mm瓶装机煤样编码"
    y="662.49561"
@@ -6340,12 +6374,16 @@
 
 
 
+
+
 <text
    y="683.6012"
    x="114.13221"
    id="_417431352_24_"
    class="st180 st175 st179"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.99983978px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#fdfffd">全水样重：</text>
+
+
 
 
 
@@ -6361,12 +6399,16 @@
 
 
 
+
+
 <text
    y="669.6012"
    x="1283.1323"
    id="_417431352_30_"
    class="st180 st175 st179"
    style="font-size:17.99983978px;fill:#fdfffd;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">存查样重：</text>
+
+
 
 
 
@@ -6383,12 +6425,16 @@
 
 
 
+
+
 <text
    y="687.6012"
    x="1678.1322"
    id="_417431352_38_"
    class="st180 st175 st179"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.99983978px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#fdfffd">存查样重：</text>
+
+
 
 
 
@@ -6405,12 +6451,16 @@
 
 
 
+
+
 <text
    y="669.6012"
    x="933.13226"
    id="_417431352_32_"
    class="st180 st175 st179"
    style="font-size:17.99983978px;fill:#fdfffd;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">干燥煤样重：</text>
+
+
 
 
 
@@ -6426,6 +6476,8 @@
 
 
 
+
+
 <text
    y="663.60474"
    x="1500.1687"
@@ -6433,6 +6485,8 @@
    class="st97 st175 st179"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.99983978px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#30f64c"
    inkscape:label="3mm瓶装机煤样编码">20210112105551</text>
+
+
 
 
 
@@ -6447,6 +6501,8 @@
 
 
 
+
+
 <text
    y="131.60098"
    x="163.46548"
@@ -6457,12 +6513,16 @@
 
 
 
+
+
 <text
    y="162.93433"
    x="163.46548"
    id="_417431352_3_"
    class="st174 st175 st179"
    style="font-size:17.99983978px;fill:#ffffff;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">在线测水状态：</text>
+
+
 
 
 
@@ -6478,6 +6538,8 @@
 
 
 
+
+
 <text
    inkscape:label="原煤制样重量"
    y="131.60098"
@@ -6489,6 +6551,8 @@
 
 
 
+
+
 <text
    inkscape:label="在线测水状态"
    y="162.93433"
@@ -6496,6 +6560,8 @@
    id="_417431352_4_"
    class="st181 st175 st179"
    style="font-size:17.99983978px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Microsoft YaHei;-inkscape-font-specification:Microsoft YaHei">不在线</text>
+
+
 
 
 
@@ -6530,11 +6596,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2386"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 139.9073 751.618)">3mm制样：</text>
+
+
 
 
 
@@ -6548,11 +6618,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2390"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 139.9073 799.2844)">干燥布料：</text>
+
+
 
 
 
@@ -6566,11 +6640,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2394"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 139.9073 846.9504)">粉碎制样：</text>
+
+
 
 
 
@@ -6585,12 +6663,16 @@
 
 
 
+
+
 <text
    inkscape:label="3mm制样"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2398"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 234.2406 751.6173)">无流程动作运行</text>
+
+
 
 
 
@@ -6605,12 +6687,16 @@
 
 
 
+
+
 <text
    inkscape:label="干燥布料"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2402"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 234.2406 799.2844)">无流程动作运行</text>
+
+
 
 
 
@@ -6625,12 +6711,16 @@
 
 
 
+
+
 <text
    inkscape:label="粉碎制样"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2406"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 234.2406 846.9511)">3 无流程动作运行</text>
+
+
 
 
 
@@ -6644,11 +6734,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2410"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 454.2406 751.6177)">弃料流程：</text>
+
+
 
 
 
@@ -6662,11 +6756,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2414"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 454.2406 799.2844)">3mm制样倒计时：</text>
+
+
 
 
 
@@ -6680,11 +6778,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2418"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 454.2406 846.9508)">右侧烘干倒计时：</text>
+
+
 
 
 
@@ -6699,11 +6801,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2422"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 139.9071 870.7844)">6mm瓶装机：</text>
+
+
 
 
 
@@ -6718,12 +6824,16 @@
 
 
 
+
+
 <text
    inkscape:label="弃料流程"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2426"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 576.574 751.618)">无流程动作运行</text>
+
+
 
 
 
@@ -6738,12 +6848,16 @@
 
 
 
+
+
 <text
    inkscape:label="3mm制样倒计时"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2430"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 576.574 799.2844)">619  秒</text>
+
+
 
 
 
@@ -6758,6 +6872,8 @@
 
 
 
+
+
 <text
    inkscape:label="右侧烘干倒计时"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
@@ -6768,11 +6884,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2436"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 454.2406 870.7841)">粉碎制样总计时：</text>
+
+
 
 
 
@@ -6787,11 +6907,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2440"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 784.574 727.7843)">粉碎负压：</text>
+
+
 
 
 
@@ -6805,11 +6929,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2444"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 784.574 775.4504)">主气路正压：</text>
+
+
 
 
 
@@ -6823,6 +6951,8 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2448"
@@ -6832,11 +6962,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2450"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 784.574 846.9508)">3mm分析样称（实时）：</text>
+
+
 
 
 
@@ -6851,12 +6985,16 @@
 
 
 
+
+
 <text
    inkscape:label="弃料负压"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2454"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 948.9072 751.618)">0  kpa</text>
+
+
 
 
 
@@ -6871,12 +7009,16 @@
 
 
 
+
+
 <text
    inkscape:label="粉碎单元正压"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start"
    id="text2458"
    class="st97 st175 st184"
    transform="translate(948.9072,799.2844)">688.1  kpa</text>
+
+
 
 
 
@@ -6891,6 +7033,8 @@
 
 
 
+
+
 <text
    inkscape:label="3mm分析样称（实时）"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
@@ -6901,11 +7045,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2464"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 784.574 870.7841)">3mm干燥样称（实时）：</text>
+
+
 
 
 
@@ -6920,11 +7068,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2468"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 1127.9072 727.7843)">6mm瓶装机称（实时）：</text>
+
+
 
 
 
@@ -6938,11 +7090,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2472"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 1127.9072 775.4506)">弃料样称（实时）：</text>
+
+
 
 
 
@@ -6956,6 +7112,8 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2476"
@@ -6965,11 +7123,15 @@
 
 
 
+
+
 <text
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2478"
    class="st174 st175 st184"
    transform="matrix(1 0 0 1 1127.9072 846.9511)">粉碎机电流：</text>
+
+
 
 
 
@@ -6984,12 +7146,16 @@
 
 
 
+
+
 <text
    inkscape:label="3mm瓶装机称（实时）"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;fill:#fafafa;fill-opacity:1;"
    id="text2482"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 1295.2407 751.6176)">0  g</text>
+
+
 
 
 
@@ -7004,12 +7170,16 @@
 
 
 
+
+
 <text
    inkscape:label="左侧干燥箱温度"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2486"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 1295.2407 799.284)">13.3  ℃</text>
+
+
 
 
 
@@ -7024,12 +7194,16 @@
 
 
 
+
+
 <text
    inkscape:label="粉碎机电流"
    style="-inkscape-font-specification:Microsoft YaHei;font-family:Microsoft YaHei;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
    id="text2490"
    class="st97 st175 st184"
    transform="matrix(1 0 0 1 1295.2407 846.9501)">0  A</text>
+
+
 
 
 
@@ -7186,7 +7360,7 @@
 
 
 <text
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.9998px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#30f64c"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.99979973px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#30f64c"
    class="st97 st175 st179"
    id="_417431352_9_-7"
    x="574.1286"
@@ -7194,13 +7368,17 @@
    inkscape:label="3mm弃料一级皮带煤样编码">20210112105551</text>
 
 
+
+
 <text
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.9998px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#30f64c"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.99979973px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#30f64c"
    class="st97 st175 st179"
    id="_417431352_9_-76"
-   x="760.56573"
+   x="754.56573"
    y="325.83783"
    inkscape:label="干燥箱1煤样编码">20210112105551</text>
+
+
 
 
 <text
@@ -7212,6 +7390,8 @@
    inkscape:label="3mm煤样编码">20210112105551</text>
 
 
+
+
 <text
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.9998px;line-height:125%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#30f64c"
    class="st97 st175 st179"
@@ -7219,6 +7399,8 @@
    x="1141.5657"
    y="318.83783"
    inkscape:label="干燥箱2煤样编码">20210112105551</text>
+
+
 
 
 <text
@@ -7230,6 +7412,8 @@
    y="663.565">20210112105551</text>
 
 
+
+
 <text
    id="_417431352_48_-2"
    class="st97 st175 st179"
@@ -7237,6 +7421,8 @@
    x="444.31528"
    y="683.66693"
    inkscape:label="3mm煤样重">1254 g</text>
+
+
 
 
 <text
@@ -7248,6 +7434,8 @@
    inkscape:label="存查样重">980 g</text>
 
 
+
+
 <text
    inkscape:label="分析样重"
    y="686.63177"
@@ -7257,6 +7445,8 @@
    id="_417431352_43_-8-6">980 g</text>
 
 
+
+
 <text
    id="_417431352_43_-8-6-0"
    class="st97 st175 st179"
@@ -7264,6 +7454,8 @@
    x="1774.0808"
    y="689.63177"
    inkscape:label="存查样重2">980 g</text>
+
+
 
 
 <rect
@@ -7348,48 +7540,431 @@
    id="path2172-1-0"
    d="m 371.13924,556.42027 c -0.3,54.8 -0.3,54.8 -0.3,54.8 z"
    style="fill:#00ff00;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0;stroke-opacity:1" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:14.99700356;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:14.99700314, 14.99700314;stroke-dashoffset:0;stroke-opacity:1"
-   d="M 437.34003,605.38398 484.60001,605.13135 499.25818,587.1949 498.5,101.9 514.65272,85.226672 827.55076,85.984551 841.95621,100.8895 v 13.89444"
-   id="path2220"
-   inkscape:label="I_分析样中间给料皮带变频器运行信号"
-   inkscape:connector-curvature="0" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 736.44694,244.63989 1.01091,-36.89817 14.65817,-14.65817 54.08361,2.02182"
-   id="path2222"
-   inkscape:label="I_3mm一级缩分器驱动器运行信号" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 897.18141,193.589 107.15629,1.01091 19.2073,17.18545 -2.5273,9.09818"
-   id="path2224"
-   inkscape:label="I_3mm一级缩分器驱动器运行信号" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 594.91973,316.4144 v 74.30179"
-   id="path2226"
-   inkscape:label="Q_3mm弃料一级皮带" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 733.41421,450.86525 v 91.48723"
-   id="path2228"
-   inkscape:label="Q_3mm弃料二级皮带正转" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 965.9232,245.6508 -14.65818,1.51636 -13.64726,14.15272 -1.01091,28.8109"
-   id="path2230"
-   inkscape:label="Q_干燥机布料皮带正转" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 1082.1777,247.67261 14.6582,1.51637 14.1527,16.67999 -0.5055,26.28362"
-   id="path2234"
-   inkscape:label="Q_干燥机布料皮带反转" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0;stroke-opacity:1"
-   d="m 942.16685,437.21799 14.15272,12.1309 140.01083,-0.50545 14.6582,-16.68"
-   id="path2236"
-   inkscape:label="ST_干燥出料流程" /><path
    inkscape:label="Q_3mm筛分破碎机正转"
    id="path2172-1-3"
    d="m 1019.1316,551.87117 c -0.3,54.8 -0.3,54.8 -0.3,54.8 z"
    style="fill:#00ff00;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0;stroke-opacity:1" /><path
    style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
-   d="m 1424.8757,171.34901 -34.3709,3.03273 -14.6582,19.20726 1.5164,382.12347"
-   id="path2253"
-   inkscape:label="Q_3mm二级缩分出料皮带反转" /><path
-   style="fill:none;stroke:#5c5c5c;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0"
    d="m 1573.4793,582.78883 -0.5055,-21.22908 15.1637,-14.15273 143.549,0.50546 13.1418,15.16363 1.5164,24.26181"
    id="path2255"
-   inkscape:label="ST_粉碎流程" /></svg>
+   inkscape:label="ST_粉碎流程" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365"
+   width="8.5778446"
+   height="13.581587"
+   x="495.09979"
+   y="138.84583"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9"
+   width="8.5778446"
+   height="13.581587"
+   x="495.09979"
+   y="340.25812"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-6"
+   width="8.5778446"
+   height="13.581587"
+   x="495.09979"
+   y="539.61877"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0"
+   width="8.5778446"
+   height="13.581587"
+   x="495.09979"
+   y="237.70398"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-00"
+   width="8.5778446"
+   height="13.581587"
+   x="495.09979"
+   y="438.99438"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65"
+   width="16.159658"
+   height="7.9782281"
+   x="559.54541"
+   y="82.375359"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-8"
+   width="16.159658"
+   height="7.9782281"
+   x="655.63092"
+   y="82.375359"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9"
+   width="16.159658"
+   height="7.9782281"
+   x="762.85388"
+   y="82.375359"
+   inkscape:label="3mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06"
+   width="8.5778446"
+   height="13.581587"
+   x="591.33514"
+   y="319.5509"
+   inkscape:label="3mm弃料管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-4"
+   width="8.5778446"
+   height="13.581587"
+   x="591.33514"
+   y="349.21594"
+   inkscape:label="3mm弃料管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-4-1"
+   width="8.5778446"
+   height="13.581587"
+   x="591.33514"
+   y="375.66431"
+   inkscape:label="3mm弃料管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-2"
+   width="8.5778446"
+   height="13.581587"
+   x="729.8316"
+   y="451.97137"
+   inkscape:label="3mm弃料真空上料机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-4-7"
+   width="8.5778446"
+   height="13.581587"
+   x="729.8316"
+   y="491.63641"
+   inkscape:label="3mm弃料真空上料机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-4-1-1"
+   width="8.5778446"
+   height="13.581587"
+   x="729.8316"
+   y="528.08478"
+   inkscape:label="3mm弃料真空上料机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-1"
+   width="8.5778446"
+   height="13.581587"
+   x="1292.583"
+   y="134.7858"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-1"
+   width="8.5778446"
+   height="13.581587"
+   x="1292.583"
+   y="336.19809"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-6-7"
+   width="8.5778446"
+   height="13.581587"
+   x="1292.583"
+   y="535.55878"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4"
+   width="8.5778446"
+   height="13.581587"
+   x="1292.583"
+   y="233.64397"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-00-2"
+   width="8.5778446"
+   height="13.581587"
+   x="1292.583"
+   y="434.93436"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-4"
+   width="16.159658"
+   height="7.9782281"
+   x="1091.2915"
+   y="601.92181"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-8-3"
+   width="16.159658"
+   height="7.9782281"
+   x="1163.9769"
+   y="601.92181"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6"
+   width="16.159658"
+   height="7.9782281"
+   x="1243.2"
+   y="601.92181"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-4-9"
+   width="16.159658"
+   height="7.9782281"
+   x="1312.0308"
+   y="83.274902"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-8-3-8"
+   width="16.159658"
+   height="7.9782281"
+   x="1366.0144"
+   y="83.274902"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6-5"
+   width="16.159658"
+   height="7.9782281"
+   x="1426.7883"
+   y="83.274902"
+   inkscape:label="2mm制样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-8-2"
+   width="16.159658"
+   height="7.9782281"
+   x="749.62976"
+   y="189.54047"
+   inkscape:label="3mm一级圆盘缩分器管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-3"
+   width="16.159658"
+   height="7.9782281"
+   x="887.94739"
+   y="190.82565"
+   inkscape:label="3mm一级圆盘缩分器管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-3-8"
+   width="16.159658"
+   height="7.9782281"
+   x="957.28503"
+   y="190.46823"
+   inkscape:label="3mm一级圆盘缩分器管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-1"
+   width="8.5778446"
+   height="13.581587"
+   x="733.40564"
+   y="234.48727"
+   inkscape:label="3mm一级圆盘缩分器管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-06-1-4"
+   width="8.5778446"
+   height="13.581587"
+   x="1015.0449"
+   y="205.17964"
+   inkscape:label="3mm一级圆盘缩分器管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-3-8-5"
+   width="16.159658"
+   height="7.9782281"
+   x="950.13684"
+   y="243.00751"
+   inkscape:label="左风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40"
+   width="8.5778446"
+   height="13.581587"
+   x="932.84058"
+   y="270.2283"
+   inkscape:label="左风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-8"
+   width="8.5778446"
+   height="13.581587"
+   x="933.19794"
+   y="417.48129"
+   inkscape:label="左风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-3-8-5-8"
+   width="16.159658"
+   height="7.9782281"
+   x="962.64624"
+   y="442.79984"
+   inkscape:label="左风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-3-8-5-4"
+   width="16.159658"
+   height="7.9782281"
+   x="1077.3749"
+   y="242.65013"
+   inkscape:label="右风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6"
+   width="8.5778446"
+   height="13.581587"
+   x="1106.1846"
+   y="270.2283"
+   inkscape:label="右风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6-4"
+   width="8.5778446"
+   height="13.581587"
+   x="1106.3221"
+   y="420.01843"
+   inkscape:label="右风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-3-8-5-8-5"
+   width="16.159658"
+   height="7.9782281"
+   x="1054.1433"
+   y="443.87204"
+   inkscape:label="右风扇管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6-4-0"
+   width="8.5778446"
+   height="13.581587"
+   x="1014.6874"
+   y="462.87238"
+   inkscape:label="筛分破碎管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6-4-02"
+   width="8.5778446"
+   height="13.581587"
+   x="1014.6874"
+   y="492.18002"
+   inkscape:label="筛分破碎管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6-4-02-8"
+   width="8.5778446"
+   height="13.581587"
+   x="1014.6874"
+   y="521.13025"
+   inkscape:label="筛分破碎管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6-4-02-0"
+   width="8.5778446"
+   height="13.581587"
+   x="1014.6874"
+   y="554.72681"
+   inkscape:label="筛分破碎管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-40-6-4-02-3"
+   width="8.5778446"
+   height="13.581587"
+   x="1014.6874"
+   y="584.74927"
+   inkscape:label="筛分破碎管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-1-8"
+   width="8.5778446"
+   height="13.581587"
+   x="1372.0632"
+   y="333.57349"
+   inkscape:label="3mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-6-7-3"
+   width="8.5778446"
+   height="13.581587"
+   x="1372.0632"
+   y="532.93408"
+   inkscape:label="3mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3"
+   width="8.5778446"
+   height="13.581587"
+   x="1372.0632"
+   y="231.01933"
+   inkscape:label="3mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-00-2-4"
+   width="8.5778446"
+   height="13.581587"
+   x="1372.0632"
+   y="432.30972"
+   inkscape:label="3mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2"
+   width="8.5778446"
+   height="13.581587"
+   x="1527.3954"
+   y="185.68417"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-8"
+   width="8.5778446"
+   height="13.581587"
+   x="1527.2137"
+   y="217.86772"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-1"
+   width="8.5778446"
+   height="13.581587"
+   x="1527.3923"
+   y="257.71893"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-86"
+   width="8.5778446"
+   height="13.581587"
+   x="1527.571"
+   y="292.20905"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-0"
+   width="8.5778446"
+   height="13.581587"
+   x="1528.4646"
+   y="361.72531"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-0-7"
+   width="8.5778446"
+   height="13.581587"
+   x="1529.0007"
+   y="409.61829"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6-0"
+   width="16.159658"
+   height="7.9782281"
+   x="1551.6581"
+   y="442.97852"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6-8"
+   width="16.159658"
+   height="7.9782281"
+   x="1596.8706"
+   y="442.62112"
+   inkscape:label="粉碎机管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6-8-5"
+   width="16.159658"
+   height="7.9782281"
+   x="1604.5723"
+   y="542.9856"
+   inkscape:label="2mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6-8-3"
+   width="16.159658"
+   height="7.9782281"
+   x="1653.3485"
+   y="542.9856"
+   inkscape:label="2mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.85673392;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-65-9-6-8-6"
+   width="16.159658"
+   height="7.9782281"
+   x="1714.0031"
+   y="542.9856"
+   inkscape:label="2mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-0-7-4"
+   width="8.5778446"
+   height="13.581587"
+   x="1569.4431"
+   y="562.42395"
+   inkscape:label="2mm存查样管道" /><rect
+   style="opacity:1;fill:#13f344;fill-opacity:1;stroke:none;stroke-width:1.76499999;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1365-9-0-4-3-2-0-7-1"
+   width="8.5778446"
+   height="13.581587"
+   x="1741.2976"
+   y="564.95117"
+   inkscape:label="2mm存查样管道" /></svg>

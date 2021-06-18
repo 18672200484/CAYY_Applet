@@ -107,6 +107,7 @@
     <Compile Include="Tasks\BatchMachine\Entities\CY_HYGP_AL_Tb.cs" />
     <Compile Include="Tasks\BatchMachine\Entities\CY_HYGP_Barrel_Tb.cs" />
     <Compile Include="Tasks\BatchMachine\EquBatchMachineDAO.cs" />
+    <Compile Include="Tasks\BatchMachine\EquSYCarOPC.cs" />
     <Compile Include="Tasks\BatchMachine\EquBatchMachineOPC.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquSignalData.cs" />
     <Compile Include="Tasks\BeltSampler\Entities\EquUnloadResult.cs" />

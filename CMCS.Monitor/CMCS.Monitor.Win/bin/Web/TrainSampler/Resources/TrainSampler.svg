@@ -14,7 +14,7 @@
    y="0px"
    x="0px"
    sodipodi:docname="TrainSampler.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    id="svg2"
    version="1.1"><metadata
    id="metadata677"><rdf:RDF><cc:Work
@@ -302,7 +302,7 @@
    showgrid="false"
    pagecolor="#ffffff"
    objecttolerance="10"
-   inkscape:zoom="1.1596551"
+   inkscape:zoom="1.64"
    inkscape:window-y="-8"
    inkscape:window-x="-8"
    inkscape:window-width="1920"
@@ -310,8 +310,8 @@
    inkscape:window-height="1017"
    inkscape:pageshadow="2"
    inkscape:pageopacity="0"
-   inkscape:cy="649.33099"
-   inkscape:cx="647.68731"
+   inkscape:cy="712.49891"
+   inkscape:cx="300.69715"
    inkscape:current-layer="svg2"
    id="namedview844"
    guidetolerance="10"
@@ -324,7 +324,8 @@
    height="920"
    width="1910"
    y="-2"
-   id="rect326" />
+   id="rect326"
+   sodipodi:insensitive="true" />
 <rect
    style="fill:#d30000"
    height="161.5"
@@ -807,6 +808,7 @@
 
 
 
+
 <text
    y="206.59827"
    x="1341.7928"
@@ -839,12 +841,14 @@
 
 
 
+
 <text
    style="font-size:16.1427px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
    y="656.03589"
    x="390.65189"
    class="st14 st12 st15"
    id="_159347800-8_2_">火车</text>
+
 
 
 
@@ -863,10 +867,11 @@
 
 
 
+
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="translate(-479.49022,-83.478474)"
-   points="492.7,96.8 492.7,147.1 587.4,147.1 587.4,96.8 "
+   transform="translate(-479.49022,-50.307742)"
+   points="587.4,147.1 587.4,96.8 492.7,96.8 492.7,147.1 "
    class="st16"
    id="_196370240" />
 <rect
@@ -874,26 +879,26 @@
    height="50.299999"
    width="1.3"
    class="st17"
-   y="13.321526"
+   y="46.492256"
    x="107.9098"
    id="_196370168" />
 <path
    style="fill:#6d6e70;stroke-width:0.64946204"
    inkscape:connector-curvature="0"
    id="path118"
-   d="M 11.909771,12.021526 V 64.821527 H 404.01594 V 12.021526 Z M 403.50978,63.621527 H 12.458112 V 13.321526 H 403.50978 Z"
+   d="M 11.909771,45.192258 V 97.992259 H 404.01594 V 45.192258 Z M 403.50978,96.792259 H 12.458112 V 46.492258 H 403.50978 Z"
    class="st18" />
 <rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="13.321526"
+   y="46.492256"
    x="222.80975"
    id="_196370024" />
 <text
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="44.92292"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="78.093651"
    x="24.193365"
    class="st14 st12 st19"
    id="_196369904">采样编码</text>
@@ -901,10 +906,11 @@
 
 
 
+
 <text
    inkscape:label="采样码"
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="45.453125"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="78.623856"
    x="117.96925"
    class="st14 st12 st19"
    id="_196369784">170220001</text>
@@ -912,15 +918,16 @@
 
 
 
+
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="translate(-479.49022,-83.478474)"
-   points="792,96.8 792,147.1 703.6,147.1 703.6,96.8 "
+   transform="translate(-479.49022,-50.307742)"
+   points="703.6,147.1 703.6,96.8 792,96.8 792,147.1 "
    class="st16"
    id="_196369712" />
 <text
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="44.86042"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="78.031151"
    x="240.85834"
    class="st14 st12 st19"
    id="_196369592">矿发量</text>
@@ -928,10 +935,11 @@
 
 
 
+
 <text
    inkscape:label="矿发量"
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="46.672638"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="79.843369"
    x="323.46997"
    class="st14 st12 st19"
    id="_196369472">1250t</text>
@@ -939,12 +947,13 @@
 
 
 
+
 <rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="13.321526"
+   y="46.492256"
    x="312.50977"
    id="_196369400" />
 <rect
@@ -952,18 +961,18 @@
    height="50.299999"
    width="1.3"
    class="st17"
-   y="13.321526"
+   y="46.492256"
    x="402.20978"
    id="_196369328" />
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.0827723,0,0,1,-943.62984,-30.678473)"
-   points="883,147.1 883,96.8 971.4,96.8 971.4,147.1 "
+   transform="matrix(1.0827723,0,0,1,-943.62984,2.4922591)"
+   points="971.4,96.8 971.4,147.1 883,147.1 883,96.8 "
    class="st16"
    id="_196369256" />
 <text
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="97.67701"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="130.84775"
    x="20.349701"
    class="st14 st12 st19"
    id="_196369136">开始时间</text>
@@ -971,13 +980,15 @@
 
 
 
+
 <text
    inkscape:label="开始时间"
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="98.25312"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="131.42386"
    x="118.87024"
    class="st14 st12 st19"
    id="_196369016">15:36</text>
+
 
 
 
@@ -987,7 +998,7 @@
    height="53.043903"
    width="1.3"
    class="st17"
-   y="63.621529"
+   y="96.792259"
    x="222.80978"
    id="_196368944" />
 <rect
@@ -995,18 +1006,18 @@
    height="52.671394"
    width="1.3"
    class="st17"
-   y="63.621529"
+   y="96.792259"
    x="312.50977"
    id="_196368872" />
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="translate(-838.89024,-31.178472)"
-   points="1062.3,96.8 1150.7,96.8 1150.7,147.1 1062.3,147.1 "
+   transform="translate(-838.89024,1.9922601)"
+   points="1150.7,147.1 1062.3,147.1 1062.3,96.8 1150.7,96.8 "
    class="st16"
    id="_196368800" />
 <text
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="95.131615"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="128.30234"
    x="232.83438"
    class="st14 st12 st19"
    id="_196368680">来煤车数</text>
@@ -1014,10 +1025,11 @@
 
 
 
+
 <text
    inkscape:label="来煤车数"
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="95.721428"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="128.89217"
    x="323.28906"
    class="st14 st12 st19"
    id="_196368560">20</text>
@@ -1025,12 +1037,13 @@
 
 
 
+
 <rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="66.121529"
+   y="99.292259"
    x="108.17517"
    id="_196368488" />
 <rect
@@ -1038,18 +1051,18 @@
    height="50.299999"
    width="1.3"
    class="st17"
-   y="66.121529"
+   y="99.292259"
    x="402.20978"
    id="_196368416" />
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.0780385,0,0,1,-1326.6907,23.321527)"
-   points="1241.7,147.1 1241.7,96.8 1330.1,96.8 1330.1,147.1 "
+   transform="matrix(1.0780385,0,0,1,-1326.6907,56.492259)"
+   points="1330.1,96.8 1330.1,147.1 1241.7,147.1 1241.7,96.8 "
    class="st16"
    id="_196368344" />
 <text
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="151.57742"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="184.74815"
    x="19.284004"
    class="st14 st12 st19"
    id="_196368224">采样点数</text>
@@ -1057,10 +1070,11 @@
 
 
 
+
 <text
    inkscape:label="采样点数"
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="152.22144"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="185.39217"
    x="123.04573"
    class="st14 st12 st19"
    id="_196368104">3</text>
@@ -1069,21 +1083,25 @@
 
 
 
+
 <text
    inkscape:label="当前采样机"
-   y="60.70752"
+   y="70.70752"
    x="866.67145"
    id="text434"
    class="st14 st12 st20"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.1587px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.999991"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.15869904px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.999991"><tspan
      id="tspan964"
-     sodipodi:role="line">#1火车机械采样机</tspan></text>
+     sodipodi:role="line"
+     x="866.67145"
+     y="70.70752">#1火车机械采样机</tspan></text>
+
 <circle
    inkscape:label="当前设备状态"
    id="_196367816"
    class="st21"
    cx="843.95221"
-   cy="49.070744"
+   cy="59.070744"
    r="15.916666"
    style="fill:#00a551;stroke-width:1.06111109">
 	</circle>
@@ -2205,6 +2223,7 @@
 
 
 
+
 <rect
    style="fill:#404040"
    height="1.1"
@@ -3137,6 +3156,7 @@
 
 
 
+
 <circle
    inkscape:label="#1采样机状态"
    style="fill:#00a551"
@@ -3167,6 +3187,7 @@
 
 
 
+
 <circle
    inkscape:label="#2采样机状态"
    style="fill:#00a551"
@@ -3191,6 +3212,7 @@
      x="819.79413"
      id="tspan970"
      sodipodi:role="line">#3火车机械采样机</tspan></text>
+
 
 
 
@@ -3291,208 +3313,221 @@
    style="fill:#6d6e70;stroke-width:0.64946204"
    inkscape:connector-curvature="0"
    id="path118-8"
-   d="M 11.909771,64.821527 V 117.62153 H 404.01594 V 64.821527 Z M 403.50977,116.42153 H 12.458112 V 66.121527 H 403.50977 Z"
+   d="M 11.909771,97.992259 V 150.79226 H 404.01594 V 97.992259 Z M 403.50977,149.59226 H 12.458112 V 99.292259 H 403.50977 Z"
    class="st18" /><path
    style="fill:#6d6e70;stroke-width:0.64946204"
    inkscape:connector-curvature="0"
    id="path118-8-1"
-   d="m 11.909768,117.62153 v 52.8 H 404.01594 v -52.8 z m 391.599992,51.6 H 12.458109 v -50.3 H 403.50976 Z"
+   d="m 11.909768,150.79226 v 52.8 H 404.01594 v -52.8 z m 391.599992,51.6 H 12.458109 v -50.3 H 403.50976 Z"
    class="st18" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="118.88194"
+   y="152.05267"
    x="108.17846"
    id="_196368032-7" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="66.121529"
+   y="99.292259"
    x="12.458097"
    id="_196368488-9" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="13.321533"
+   y="46.492264"
    x="12.447581"
    id="_196368488-9-7" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="118.92153"
+   y="152.09227"
    x="12.45811"
    id="_196368488-9-3" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="118.88931"
+   y="152.06004"
    x="222.82091"
    id="_196368032-7-0" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="118.75718"
+   y="151.9279"
    x="312.48187"
    id="_196368032-7-0-7" /><polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.019366,0,0,1,-677.27929,22.089305)"
-   points="971.4,96.8 971.4,147.1 883,147.1 883,96.8 "
+   transform="matrix(1.019366,0,0,1,-677.27929,55.260037)"
+   points="883,147.1 883,96.8 971.4,96.8 971.4,147.1 "
    class="st16"
    id="_196369256-9" /><text
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="146.93277"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="180.1035"
    x="233.57614"
    class="st14 st12 st19"
    id="_196368680-3"><tspan
-     y="146.93277"
+     y="180.1035"
      x="233.57614"
      id="tspan699"
      sodipodi:role="line">设备状态</tspan></text>
+
 <text
    inkscape:label="设备状态"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="149.57419"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="182.74492"
    x="322.59674"
    class="st14 st12 st19"
    id="_196368560-9"><tspan
-     y="149.57419"
+     y="182.74492"
      x="322.59674"
      id="tspan840"
      sodipodi:role="line">就绪待机</tspan></text>
+
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.0780385,0,0,1,-1326.6908,74.121527)"
-   points="1330.1,96.8 1330.1,147.1 1241.7,147.1 1241.7,96.8 "
+   transform="matrix(1.0780385,0,0,1,-1326.6908,107.29226)"
+   points="1241.7,147.1 1241.7,96.8 1330.1,96.8 1330.1,147.1 "
    class="st16"
    id="_196368344-2" /><text
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="202.37741"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="235.54814"
    x="19.283943"
    class="st14 st12 st19"
    id="_196368224-4"><tspan
      id="tspan842"
-     sodipodi:role="line">大车坐标</tspan></text>
+     sodipodi:role="line"
+     x="19.283943"
+     y="235.54814">大车坐标</tspan></text>
+
 <text
    inkscape:label="大车坐标"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="204.24094"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="237.41167"
    x="122.16762"
    class="st14 st12 st19"
    id="_196368104-5"><tspan
-     y="204.24094"
+     y="237.41167"
      x="122.16762"
      id="tspan844"
      sodipodi:role="line">1000</tspan></text>
+
 <path
    style="fill:#6d6e70;stroke-width:0.64946204"
    inkscape:connector-curvature="0"
    id="path118-8-1-6"
-   d="m 11.909705,168.42153 v 52.8 H 404.01587 v -52.8 z m 391.599985,51.6 H 12.458046 v -50.3 H 403.50969 Z"
+   d="m 11.909705,201.59226 v 52.8 H 404.01587 v -52.8 z m 391.599985,51.6 H 12.458046 v -50.3 H 403.50969 Z"
    class="st18" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="169.68195"
+   y="202.85268"
    x="108.17839"
    id="_196368032-7-9" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="169.72153"
+   y="202.89226"
    x="12.458049"
    id="_196368488-9-3-5" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="169.68932"
+   y="202.86005"
    x="222.82085"
    id="_196368032-7-0-4" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="169.55717"
+   y="202.72791"
    x="312.48181"
    id="_196368032-7-0-7-3" /><polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.019366,0,0,1,-677.27936,72.889307)"
-   points="883,147.1 883,96.8 971.4,96.8 971.4,147.1 "
+   transform="matrix(1.019366,0,0,1,-677.27936,106.06004)"
+   points="971.4,96.8 971.4,147.1 883,147.1 883,96.8 "
    class="st16"
    id="_196369256-9-5" /><text
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="197.73276"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="230.90349"
    x="233.57608"
    class="st14 st12 st19"
    id="_196368680-3-6"><tspan
      id="tspan846"
-     sodipodi:role="line">小车坐标</tspan></text>
+     sodipodi:role="line"
+     x="233.57608"
+     y="230.90349">小车坐标</tspan></text>
+
 <text
    inkscape:label="小车坐标"
-   style="font-size:18.4174px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
-   y="201.23651"
+   style="font-size:18.41740036px;font-family:MicrosoftYaHeiLight;fill:#ffffff"
+   y="234.40724"
    x="327.66074"
    class="st14 st12 st19"
    id="_196368560-9-0">20</text>
+
 <polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.0780385,0,0,1,-1326.6908,126.42153)"
-   points="1330.1,96.8 1330.1,147.1 1241.7,147.1 1241.7,96.8 "
+   transform="matrix(1.0780385,0,0,1,-1326.6908,159.59226)"
+   points="1241.7,147.1 1241.7,96.8 1330.1,96.8 1330.1,147.1 "
    class="st16"
    id="_196368344-2-2" /><text
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="254.6774"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="287.84814"
    x="19.283943"
    class="st14 st12 st19"
    id="_196368224-4-7"><tspan
      id="tspan848"
-     sodipodi:role="line">升降坐标</tspan></text>
+     sodipodi:role="line"
+     x="19.283943"
+     y="287.84814">升降坐标</tspan></text>
+
 
 <path
    style="fill:#6d6e70;stroke-width:0.64946204"
    inkscape:connector-curvature="0"
    id="path118-8-1-6-0"
-   d="m 11.909706,220.72154 v 52.8 H 404.01587 v -52.8 z m 391.599984,51.6 H 12.458046 v -50.3 H 403.50969 Z"
+   d="m 11.909706,253.89227 v 52.8 H 404.01587 v -52.8 z m 391.599984,51.6 H 12.458046 v -50.3 H 403.50969 Z"
    class="st18" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="221.98195"
+   y="255.15268"
    x="108.17839"
    id="_196368032-7-9-1" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="222.02153"
+   y="255.19226"
    x="12.458046"
    id="_196368488-9-3-5-7" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="221.98932"
+   y="255.16005"
    x="222.82085"
    id="_196368032-7-0-4-3" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="221.85718"
+   y="255.02791"
    x="312.48181"
    id="_196368032-7-0-7-3-1" /><polygon
    style="fill:#26a9e0;fill-opacity:0.12940004"
-   transform="matrix(1.019366,0,0,1,-677.27936,123.18931)"
-   points="883,96.8 971.4,96.8 971.4,147.1 883,147.1 "
+   transform="matrix(1.019366,0,0,1,-677.27936,156.36004)"
+   points="971.4,147.1 883,147.1 883,96.8 971.4,96.8 "
    class="st16"
    id="_196369256-9-5-0" />
 
@@ -3503,21 +3538,21 @@
    height="50.299999"
    width="1.3"
    class="st17"
-   y="118.92153"
+   y="152.09227"
    x="402.20978"
    id="_196368416-1" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="170.44281"
+   y="203.61354"
    x="402.16373"
    id="_196368416-9" /><rect
    style="fill:#808184"
    height="50.299999"
    width="1.3"
    class="st17"
-   y="222.02155"
+   y="255.19228"
    x="402.20972"
    id="_196368416-7" /><rect
    style="fill:url(#rect776-4-6_1_-9);stroke-width:3.12087584"
@@ -3536,7 +3571,8 @@
    x="73.419182"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495"
-   class="st36 st2 st3">前</text><circle
+   class="st36 st2 st3">前</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="前边界"
    id="circle497"
@@ -3548,12 +3584,14 @@
    id="text495-0"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="23.914803"
-   y="341.34241">状态信息</text><text
+   y="341.34241">状态信息</text>
+<text
    class="st36 st2 st3"
    id="text495-1"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="74.601067"
-   y="408.50366">左</text><circle
+   y="408.50366">左</text>
+<circle
    class="st38"
    cx="53.184334"
    cy="403.71277"
@@ -3565,7 +3603,8 @@
    id="text495-6"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="74.736931"
-   y="436.14664">上</text><circle
+   y="436.14664">上</text>
+<circle
    class="st38"
    cx="53.320183"
    cy="431.35574"
@@ -3577,7 +3616,8 @@
    id="text495-9"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="133.91882"
-   y="378.80417">后</text><circle
+   y="378.80417">后</text>
+<circle
    class="st38"
    cx="112.50206"
    cy="374.01328"
@@ -3589,7 +3629,8 @@
    id="text495-3"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="135.01233"
-   y="408.25479">右</text><circle
+   y="408.25479">右</text>
+<circle
    class="st38"
    cx="113.59558"
    cy="403.4639"
@@ -3601,7 +3642,8 @@
    id="text495-4"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="134.2375"
-   y="436.12457">下</text><circle
+   y="436.12457">下</text>
+<circle
    class="st38"
    cx="112.82076"
    cy="431.33368"
@@ -3613,7 +3655,8 @@
    id="text495-2"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="217.2222"
-   y="380.39261">集样斗开</text><circle
+   y="380.39261">集样斗开</text>
+<circle
    class="st38"
    cx="195.80545"
    cy="375.60172"
@@ -3625,7 +3668,8 @@
    x="355.33109"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-9-9"
-   class="st36 st2 st3">集样斗关</text><circle
+   class="st36 st2 st3">集样斗关</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="关闭位置"
    id="circle497-10-4"
@@ -3637,7 +3681,8 @@
    x="71.071091"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-2-8"
-   class="st36 st2 st3">大车</text><circle
+   class="st36 st2 st3">大车</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="大车"
    id="circle497-60-5"
@@ -3649,12 +3694,14 @@
    id="text495-0-3-7"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="21.566696"
-   y="556.41949">电机运行状态</text><text
+   y="556.41949">电机运行状态</text>
+<text
    class="st36 st2 st3"
    id="text495-9-9-1"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="71.207947"
-   y="620.61334">小车</text><circle
+   y="620.61334">小车</text>
+<circle
    class="st38"
    cx="49.791183"
    cy="615.82245"
@@ -3666,7 +3713,8 @@
    id="text495-2-8-3"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="72.053322"
-   y="651.32513">升降</text><circle
+   y="651.32513">升降</text>
+<circle
    class="st38"
    cx="50.636574"
    cy="646.53424"
@@ -3678,7 +3726,8 @@
    x="72.19017"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-9-9-1-8"
-   class="st36 st2 st3">采样螺旋</text><circle
+   class="st36 st2 st3">采样螺旋</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="采样螺旋"
    id="circle497-10-4-2-4"
@@ -3690,7 +3739,8 @@
    id="text495-2-8-0"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="231.81573"
-   y="592.63727">集料斗</text><circle
+   y="592.63727">集料斗</text>
+<circle
    class="st38"
    cx="210.39897"
    cy="587.84637"
@@ -3702,7 +3752,8 @@
    x="231.95258"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-9-9-1-4"
-   class="st36 st2 st3">集样器</text><circle
+   class="st36 st2 st3">集样器</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="集样器"
    id="circle497-10-4-2-3"
@@ -3715,7 +3766,8 @@
    x="232.79794"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-2-8-3-2"
-   class="st36 st2 st3">2道禁止牵车</text><circle
+   class="st36 st2 st3">2道禁止牵车</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="2道允许牵车"
    id="circle497-60-5-9-6"
@@ -3728,7 +3780,8 @@
    id="text495-9-9-1-8-8"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="232.93481"
-   y="678.68781">4道禁止牵车</text><circle
+   y="678.68781">4道禁止牵车</text>
+<circle
    class="st38"
    cx="211.51804"
    cy="673.89691"
@@ -3741,7 +3794,8 @@
    x="217.23537"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-2-3"
-   class="st36 st2 st3">2道允许采样</text><circle
+   class="st36 st2 st3">2道允许采样</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="2道允许采样"
    id="circle497-60-1"
@@ -3754,7 +3808,8 @@
    id="text495-9-9-9"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="355.34427"
-   y="407.53433">4道允许采样</text><circle
+   y="407.53433">4道允许采样</text>
+<circle
    class="st38"
    cx="333.92752"
    cy="402.74344"
@@ -3767,7 +3822,8 @@
    x="218.09767"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-2-6"
-   class="st36 st2 st3">允许下降左</text><circle
+   class="st36 st2 st3">允许下降左</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="允许下降左"
    id="circle497-60-4"
@@ -3780,7 +3836,8 @@
    id="text495-9-9-3"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="356.20657"
-   y="435.40408">允许下降右</text><circle
+   y="435.40408">允许下降右</text>
+<circle
    class="st38"
    cx="334.78983"
    cy="430.61319"
@@ -3793,7 +3850,8 @@
    x="218.37303"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    id="text495-2-37"
-   class="st36 st2 st3">检车开关左</text><circle
+   class="st36 st2 st3">检车开关左</text>
+<circle
    style="fill:#c8c8c8"
    inkscape:label="检车开关左"
    id="circle497-60-98"
@@ -3806,7 +3864,8 @@
    id="text495-9-9-0"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:0%;font-family:'Microsoft YaHei';-inkscape-font-specification:'Microsoft YaHei';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    x="356.4819"
-   y="462.72311">检车开关右</text><circle
+   y="462.72311">检车开关右</text>
+<circle
    class="st38"
    cx="335.06516"
    cy="457.93222"
@@ -3817,30 +3876,33 @@
    id="_196368224-4-7-9"
    class="st14 st12 st19"
    x="232.96982"
-   y="253.02344"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="286.19418"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    inkscape:label="当前轨道l"><tspan
      sodipodi:role="line"
      id="tspan848-5"
      x="232.96982"
-     y="253.02344">当前轨道</tspan></text><text
+     y="286.19418">当前轨道</tspan></text>
+<text
    id="_196368104-5-7"
    class="st14 st12 st19"
    x="120.82977"
-   y="253.62146"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="286.79221"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
    inkscape:label="升降坐标"><tspan
      sodipodi:role="line"
      id="tspan844-5"
      x="120.82977"
-     y="253.62146">1000</tspan></text><text
+     y="286.79221">1000</tspan></text>
+<text
    inkscape:label="当前轨道"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4173px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   y="253.62146"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.41729927px;font-family:MicrosoftYaHeiLight;-inkscape-font-specification:'MicrosoftYaHeiLight, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
+   y="286.79221"
    x="326.0632"
    class="st14 st12 st19"
    id="_196368104-5-7-6"><tspan
-     y="253.62146"
+     y="286.79221"
      x="326.0632"
      id="tspan844-5-4"
-     sodipodi:role="line">1</tspan></text></svg>
+     sodipodi:role="line">1</tspan></text>
+</svg>

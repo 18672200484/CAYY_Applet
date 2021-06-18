@@ -113,6 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1910, 920);
             this.Controls.Add(this.panWebBrower);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1910, 920);
             this.Name = "FrmTrainBeltSampler";
@@ -134,6 +135,5 @@
         private DevComponents.DotNetBar.ButtonX btnRefresh;
         private DevComponents.DotNetBar.ButtonX btnRequestData;
         private System.Windows.Forms.Timer timer2;
-
     }
 }

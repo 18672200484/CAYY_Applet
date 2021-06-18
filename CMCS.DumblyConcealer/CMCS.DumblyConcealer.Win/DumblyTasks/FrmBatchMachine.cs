@@ -63,6 +63,16 @@ namespace CMCS.DumblyConcealer.Win.DumblyTasks
 			{
 				EquBatchMachineOPC.GetInstance().RunCmd(this.rTxtOutputer.Output);
 			}, 500, OutputError);
+
+			taskSimpleScheduler.StartNewTask("送样小车-OPC同步", () =>
+			{
+				EquSYCarOPC.GetInstance().SyncOPCTags(this.rTxtOutputer.Output);
+			}, 0, OutputError);
+
+			taskSimpleScheduler.StartNewTask("送样小车执行命令", () =>
+			{
+				EquSYCarOPC.GetInstance().RunCmd(this.rTxtOutputer.Output);
+			}, 500, OutputError);
 			#endregion
 		}
 

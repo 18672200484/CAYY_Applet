@@ -127,13 +127,22 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("链式缩分器", commonDAO.GetSignalDataValue(machineCode, "链式缩分器") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("对辊破碎", commonDAO.GetSignalDataValue(machineCode, "对辊破碎机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("3mm一级圆盘缩分器", commonDAO.GetSignalDataValue(machineCode, "3mm一级圆盘缩分器") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm一级圆盘缩分器管道", commonDAO.GetSignalDataValue(machineCode, "3mm一级圆盘缩分器"), eHtmlDataItemType.svg_dyncolor));
 			datas.Add(new HtmlDataItem("弃料真空上料机", commonDAO.GetSignalDataValue(machineCode, "弃料真空上料机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm弃料真空上料机管道", commonDAO.GetSignalDataValue(machineCode, "弃料真空上料机"), eHtmlDataItemType.svg_dyncolor));
+
 			datas.Add(new HtmlDataItem("筛分破碎", commonDAO.GetSignalDataValue(machineCode, "筛分破碎") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("筛分破碎管道", commonDAO.GetSignalDataValue(machineCode, "筛分破碎"), eHtmlDataItemType.svg_dyncolor));
 			datas.Add(new HtmlDataItem("3mm二级圆盘缩分器", commonDAO.GetSignalDataValue(machineCode, "3mm二级圆盘缩分器") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm存查样管道", commonDAO.GetSignalDataValue(machineCode, "3mm二级圆盘缩分器"), eHtmlDataItemType.svg_dyncolor));
 			datas.Add(new HtmlDataItem("粉碎机", commonDAO.GetSignalDataValue(machineCode, "粉碎机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("粉碎机管道", commonDAO.GetSignalDataValue(machineCode, "粉碎机"), eHtmlDataItemType.svg_dyncolor));
 			datas.Add(new HtmlDataItem("真空上料机", commonDAO.GetSignalDataValue(machineCode, "粉碎单元真空上料机") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("2mm存查样管道", commonDAO.GetSignalDataValue(machineCode, "粉碎单元真空上料机"), eHtmlDataItemType.svg_dyncolor));
 			datas.Add(new HtmlDataItem("左风扇", commonDAO.GetSignalDataValue(machineCode, "干燥设备左边风扇运行信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
 			datas.Add(new HtmlDataItem("右风扇", commonDAO.GetSignalDataValue(machineCode, "干燥设备右边风扇运行信号") == "1" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("左风扇管道", commonDAO.GetSignalDataValue(machineCode, "干燥设备左边风扇运行信号"), eHtmlDataItemType.svg_dyncolor));
+			datas.Add(new HtmlDataItem("右风扇管道", commonDAO.GetSignalDataValue(machineCode, "干燥设备右边风扇运行信号"), eHtmlDataItemType.svg_dyncolor));
 
 			datas.Add(new HtmlDataItem("I_原煤样输送皮带变频器运行信号", commonDAO.GetSignalDataValue(machineCode, "I_原煤样输送皮带变频器运行信号"), eHtmlDataItemType.svg_visible));
 			datas.Add(new HtmlDataItem("I_6mm缩分给料皮带变频器运行信号", commonDAO.GetSignalDataValue(machineCode, "I_6mm缩分给料皮带变频器运行信号"), eHtmlDataItemType.svg_visible));
@@ -220,6 +229,8 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("粉碎煤样编码", commonDAO.GetSignalDataValue(machineCode, "粉碎煤样编码"), eHtmlDataItemType.svg_text));
 
 			datas.Add(new HtmlDataItem("3mm弃料一级皮带有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("3mm弃料管道", commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带有煤标志"), eHtmlDataItemType.svg_dyncolor));
+
 			datas.Add(new HtmlDataItem("3mm弃料一级皮带煤样编码", commonDAO.GetSignalDataValue(machineCode, "3mm弃料一级皮带有煤标志"), eHtmlDataItemType.svg_visible));
 			datas.Add(new HtmlDataItem("3mm弃料二级皮带有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm弃料二级皮带有煤标志"), eHtmlDataItemType.svg_visible));
 			datas.Add(new HtmlDataItem("左侧干燥机有煤标志", commonDAO.GetSignalDataValue(machineCode, "左侧干燥机有煤标志"), eHtmlDataItemType.svg_visible));
@@ -228,6 +239,7 @@ namespace CMCS.Monitor.Win.Frms
 			datas.Add(new HtmlDataItem("干燥箱2煤样编码", commonDAO.GetSignalDataValue(machineCode, "右侧干燥机有煤标志"), eHtmlDataItemType.svg_visible));
 			datas.Add(new HtmlDataItem("3mm一级提升机料斗有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm一级提升机料斗有煤标志"), eHtmlDataItemType.svg_visible));
 			datas.Add(new HtmlDataItem("3mm二级提升机料斗有煤标志", commonDAO.GetSignalDataValue(machineCode, "3mm二级提升机料斗有煤标志"), eHtmlDataItemType.svg_visible));
+			datas.Add(new HtmlDataItem("2mm制样管道", commonDAO.GetSignalDataValue(machineCode, "3mm二级提升机料斗有煤标志"), eHtmlDataItemType.svg_dyncolor));
 			datas.Add(new HtmlDataItem("粉碎煤样编码", commonDAO.GetSignalDataValue(machineCode, "0_2mm制粉机变频器运行信号"), eHtmlDataItemType.svg_visible));
 			datas.Add(new HtmlDataItem("3mm煤样编码", commonDAO.GetSignalDataValue(machineCode, "干燥机入料皮带有煤标志"), eHtmlDataItemType.svg_visible));
 			//制样流程判断
@@ -320,6 +332,7 @@ namespace CMCS.Monitor.Win.Frms
 			}
 			datas.Add(new HtmlDataItem("3mm制样", lc_3mm制样流程, monitorCommon.ConvertRunToColor(lc_3mm制样流程 != "无流程动作运行"), eHtmlDataItemType.svg_textcolor));
 			datas.Add(new HtmlDataItem("3mm煤样编码", monitorCommon.Desalt(lc_3mm制样流程 == "无流程动作运行"), eHtmlDataItemType.svg_color));
+			datas.Add(new HtmlDataItem("3mm制样管道", lc_3mm制样流程 != "无流程动作运行" ? "1" : "0", eHtmlDataItemType.svg_dyncolor));
 			//3mm缩分：
 			//S_3mm缩分称重步
 			//S_3mm样接斗步

@@ -92,7 +92,7 @@
             //svg_dyncolor
             else if (data.Type == 6) {
                 if (data.Value == 1) {
-                    if (data.Obj == true) {
+                    if (data.Obj == true) {data
                         changeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "1]"), "#FF0000");
                         changeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "2]"), "#808080");
                     } else {
@@ -102,6 +102,15 @@
                 } else {
                     changeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "1]"), "#808080");
                     changeColor(getCanvas1().find("*[inkscape\\:label=" + data.Key + "2]"), "#808080");
+                }
+            }
+            else if (data.Type == 6792) {
+                if (data.Tag == "1") {
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").css({ "height": data.Value });//.attr("height", 100) ;
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").attr("transform", "rotate(180,475.378,852.352)");
+                } else {
+                     getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").css({ "height": data.Value });
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").attr("transform", "rotate(180,1404.3,852.800)");
                 }
             }
         }
@@ -280,6 +289,16 @@
 		function FaultRecord2() {
 			TrainBeltSamplerV8Cef.FaultRecord2();
         }
+
+         // 皮采1数据查询
+		function DataSelect1() {
+			TrainBeltSamplerV8Cef.DataSelect();
+        }
+
+        // 皮采2数据查询
+		function DataSelect2() {
+			TrainBeltSamplerV8Cef.DataSelect();
+        }
     </script>
     <style type="text/css">
         html, body
@@ -420,38 +439,42 @@
     <div class="div-root">
         <div class="table-b" id="divCanvas">
             <!--#1采样机-->
-            <input type="button" id="btnStop" value="允许#1牵车" class="button1" style="top: 640px;
-         left: 775px;" onclick="LeadCar1()" />
-            <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 680px;
-         left: 775px;" onclick="MovingBelt1()" />
-            <input type="button" id="btnStop" value="停止采样" class="button1" style="top: 680px;
+            <input type="button" id="btnStop" value="允许#1牵车" class="button1" style="top:35px;
+         left: 615px;" onclick="LeadCar1()" />
+            <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 75px;
+         left: 615px;" onclick="MovingBelt1()" />
+            <input type="button" id="btnStop" value="停止采样" class="button1" style="top: 115px;
          left: 615px;" onclick="StopS1()" />
+            <input type="button" id="btnStop" value="数据查询" class="button1" style="top: 600px;
+         left: 785px;" onclick="DataSelect1()" />
             <input type="button" id="btnStop" value="历史故障" class="button1" style="top: 640px;
-         left: 615px;" onclick="FaultRecord1()" />
-            <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 780px;
+         left: 785px;" onclick="FaultRecord1()" />
+            <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 75px;
          left: 775px;" onclick="StopSampler1()" />
-            <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 740px;
+            <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 35px;
          left: 775px;" onclick="SendSampler1()" />
-            <input type="button" id="btnStop" value="报警复位" class="button1" style="top: 820px;
+            <input type="button" id="btnStop" value="报警复位" class="button1" style="top: 115px;
          left: 775px;" onclick="AlarmReset1()" />
-            <input type="button" id="btnStop" value="封装机报警复位" class="button1" style="top: 860px;
+            <input type="button" id="btnStop" value="封装机报警复位" class="button1" style="top: 155px;
          left: 775px;" onclick="FZJAlarmReset1()" />
             <!--#2采样机-->
-            <input type="button" id="btnStop" value="允许#2牵车" class="button1" style="top: 640px;
-         left: 1700px;" onclick="LeadCar2()" />
-            <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 680px;
-         left: 1700px;" onclick="MovingBelt2()" />
-            <input type="button" id="btnStop" value="停止采样" class="button1" style="top: 680px;
+            <input type="button" id="btnStop" value="允许#2牵车" class="button1" style="top: 35px;
+         left: 1540px;" onclick="LeadCar2()" />
+            <input type="button" id="btnStop" value="允许起皮带" class="button1" style="top: 75px;
+         left: 1540px;" onclick="MovingBelt2()" />
+            <input type="button" id="btnStop" value="停止采样" class="button1" style="top: 115px;
          left: 1540px;" onclick="StopS2()" />
+            <input type="button" id="btnStop" value="数据查询" class="button1" style="top: 600px;
+         left: 1715px;" onclick="DataSelect2()" />
             <input type="button" id="btnStop" value="历史故障" class="button1" style="top: 640px;
-         left: 1540px;" onclick="FaultRecord2()" />
-            <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 780px;
+         left: 1715px;" onclick="FaultRecord2()" />
+            <input type="button" id="btnStop" value="远程出桶" class="button1" style="top: 75px;
          left: 1700px;" onclick="StopSampler2()" />
-            <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 740px;
+            <input type="button" id="btnStop" value="发送采样计划" class="button1" style="top: 35px;
          left: 1700px;" onclick="SendSampler2()" />
-            <input type="button" id="btnStop" value="报警复位" class="button1" style="top: 820px;
+            <input type="button" id="btnStop" value="报警复位" class="button1" style="top: 115px;
          left: 1700px;" onclick="AlarmReset2()" />
-            <input type="button" id="btnStop" value="封装机报警复位" class="button1" style="top: 860px;
+            <input type="button" id="btnStop" value="封装机报警复位" class="button1" style="top: 150px;
          left: 1700px;" onclick="FZJAlarmReset2()" />
 
             <embed id="svgCanvas1" src="Resources/TrainBeltSampler.svg" type="image/svg+xml" />

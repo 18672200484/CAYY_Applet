@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.panWebBrower = new System.Windows.Forms.Panel();
 			this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
@@ -326,15 +326,15 @@
 			this.SGC_MakeCodeInfo.Name = "SGC_MakeCodeInfo";
 			this.SGC_MakeCodeInfo.PrimaryGrid.AutoGenerateColumns = false;
 			this.SGC_MakeCodeInfo.PrimaryGrid.Caption.Text = "";
-			gridColumn1.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn1.DataPropertyName = "";
-			gridColumn1.HeaderText = "制样码";
-			gridColumn1.Name = "MAKECODE";
-			gridColumn2.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn2.HeaderText = "桶数";
-			gridColumn2.Name = "SAMPLECOUNT";
-			this.SGC_MakeCodeInfo.PrimaryGrid.Columns.Add(gridColumn1);
-			this.SGC_MakeCodeInfo.PrimaryGrid.Columns.Add(gridColumn2);
+			gridColumn5.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn5.DataPropertyName = "";
+			gridColumn5.HeaderText = "制样码";
+			gridColumn5.Name = "MAKECODE";
+			gridColumn6.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn6.HeaderText = "桶数";
+			gridColumn6.Name = "SAMPLECOUNT";
+			this.SGC_MakeCodeInfo.PrimaryGrid.Columns.Add(gridColumn5);
+			this.SGC_MakeCodeInfo.PrimaryGrid.Columns.Add(gridColumn6);
 			this.SGC_MakeCodeInfo.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
 			this.SGC_MakeCodeInfo.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
 			this.SGC_MakeCodeInfo.Size = new System.Drawing.Size(285, 158);

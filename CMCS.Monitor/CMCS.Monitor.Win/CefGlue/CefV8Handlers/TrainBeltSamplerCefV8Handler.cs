@@ -140,6 +140,12 @@ namespace CMCS.Monitor.Win.CefGlue
 					cefMsg.Arguments.SetString(0, arguments[0].GetStringValue());
 					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg);
 					break;
+				case "DataSelect":
+					CefProcessMessage cefMsg17 = CefProcessMessage.Create("TrainBeltSampleDataSelect");
+					cefMsg17.Arguments.SetSize(0);
+					cefMsg17.Arguments.SetString(0, "DataSelect");
+					CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, cefMsg17);
+					break;
 				default:
 					returnValue = null;
 					break;

@@ -15,6 +15,11 @@
 			initSvgElementEvent();
 		};
 
+		var sleep = function (time) {
+			var startTime = new Date().getTime() + parseInt(time, 10);
+			while (new Date().getTime() < startTime) { }
+		};
+
 		// 注册SVG元素脚本事件
 		function initSvgElementEvent() {
 			canvas1.find("*[inkscape\\:label=报警信息点击域]").bind("click", function (evt) {
@@ -94,12 +99,26 @@
 					getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
 					svgChangeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Tag);
 				}
+				//svg_dyncolor
+				else if (data.Type == 6) {
+					if (data.Value == "1") {
+						setTimeout(dyncolor(data.Key), 200);
+					}
+					else { getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").hide(); }
+				}
 				else if (data.Type = 9999) {
 					keys = data.Value;
 				}
 			} catch (e) {
 				//alert(e.Message);
 			}
+		}
+
+		function dyncolor(key) {
+			if (getCanvas1().find("*[inkscape\\:label=" + key + "]").first().css("display") == "none")
+				getCanvas1().find("*[inkscape\\:label=" + key + "]").show();
+			else
+				getCanvas1().find("*[inkscape\\:label=" + key + "]").hide();
 		}
 
 		// 测试 改变数据

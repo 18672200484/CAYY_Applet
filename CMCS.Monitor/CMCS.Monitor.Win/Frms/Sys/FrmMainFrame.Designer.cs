@@ -552,6 +552,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.btnOpenTrainBeltSampler_warning.GlobalItem = false;
 			this.btnOpenTrainBeltSampler_warning.Name = "btnOpenTrainBeltSampler_warning";
 			this.btnOpenTrainBeltSampler_warning.Text = "皮带采样机报警";
+			this.btnOpenTrainBeltSampler_warning.Visible = false;
 			this.btnOpenTrainBeltSampler_warning.Click += new System.EventHandler(this.btnOpenTrainBeltSampler_warning_Click);
 			// 
 			// superTabControl1
@@ -642,7 +643,6 @@ namespace CMCS.Monitor.Win.Frms.Sys
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Controls.Add(this.metroStatusBar1);
 			this.DoubleBuffered = true;
-			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(1910, 920);

@@ -35,7 +35,7 @@ namespace CMCS.Monitor.Win.Frms
 
         Dictionary<string, string> SampleCodes = new Dictionary<string, string>();
         bool tempBool = true;
-
+        CommonDAO commonDAO = CommonDAO.GetInstance();
         public FrmTrainBeltSampler()
         {
             InitializeComponent();
@@ -57,7 +57,8 @@ namespace CMCS.Monitor.Win.Frms
             cefWebBrowser.WebClient = new HomePageCefWebClient(cefWebBrowser);
             cefWebBrowser.LoadEnd += new EventHandler<LoadEndEventArgs>(cefWebBrowser_LoadEnd);
             panWebBrower.Controls.Add(cefWebBrowser);
-        }
+
+		}
 
         void cefWebBrowser_LoadEnd(object sender, LoadEndEventArgs e)
         {
@@ -115,7 +116,7 @@ namespace CMCS.Monitor.Win.Frms
         /// </summary>
         void RequestData()
         {
-            CommonDAO commonDAO = CommonDAO.GetInstance();
+            
 
             string value = string.Empty, machineCode = string.Empty, equInfSamplerSystemStatus = string.Empty;
             List<HtmlDataItem> datas = new List<HtmlDataItem>();
@@ -131,11 +132,11 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("#2翻车机1a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#SVGID_85_)", eHtmlDataItemType.svg_color));
 
             datas.Add(new HtmlDataItem("2PA", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_17_)", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "#2翻车机");
-            if (value == "1")
-            {
-                datas.Add(new HtmlDataItem("2PA1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_17_-5)", eHtmlDataItemType.svg_color));
-            }
+            //value = commonDAO.GetSignalDataValue(machineCode, "#2翻车机");
+            //if (value == "1")
+            //{
+                datas.Add(new HtmlDataItem("2PA1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" && commonDAO.GetSignalDataValue(machineCode, "#2翻车机") =="1"? "Red" : "url(#SVGID_17_-5)", eHtmlDataItemType.svg_color));
+            //}
 
             datas.Add(new HtmlDataItem("初级给料皮带正转a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("初级给料皮带反转a", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带反转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
@@ -210,20 +211,24 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("当前样重a", commonDAO.GetSignalDataValue(machineCode, "封装机装样重量"), eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("采样次数a", commonDAO.GetSignalDataValue(machineCode, "封装机装样次数"), eHtmlDataItemType.svg_text));
 
+            datas.Add(new HtmlDataItem("进料桶煤量a", (commonDAO.GetSignalDataValueDouble(machineCode, "封装机装样次数")/25*70).ToString() ,"1", eHtmlDataItemType.svg_height));
+
             if (commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1")
             {
                 datas.Add(new HtmlDataItem("当前采样码a", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码"), eHtmlDataItemType.svg_text));
                 datas.Add(new HtmlDataItem("采样机编码a", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码"), eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem("已翻车数a", GetYFCS("1", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码")).ToString(), eHtmlDataItemType.svg_text));
             }
             if (commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1")
             {
                 datas.Add(new HtmlDataItem("当前采样码a", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, "采样编码"), eHtmlDataItemType.svg_text));
                 datas.Add(new HtmlDataItem("采样机编码a", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, "采样编码"), eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem("已翻车数a", GetYFCS("2", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码")).ToString(), eHtmlDataItemType.svg_text));
             }
 
             datas.Add(new HtmlDataItem("翻车机编码a", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码"), eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("翻车机车数a", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "翻车机车数"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("已翻车数a", commonDAO.GetSignalDataValue(machineCode, "已翻车车数"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("已翻车数a", commonDAO.GetSignalDataValue(machineCode, "已翻车车数"), eHtmlDataItemType.svg_text));
 
             datas.Add(new HtmlDataItem("允许一号翻车机翻车", commonDAO.GetSignalDataValue(machineCode, "禁止1号翻车机翻车") == "0" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("采样机故障a", commonDAO.GetSignalDataValue(machineCode, "采样机报警") == "1" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
@@ -246,11 +251,11 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("#2翻车机2a", commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1" ? "#FF0000" : "url(#SVGID_86_)", eHtmlDataItemType.svg_color));
 
             datas.Add(new HtmlDataItem("2PB", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_18_)", eHtmlDataItemType.svg_color));
-            value = commonDAO.GetSignalDataValue(machineCode, "#1翻车机");
-            if (value == "1")
-            {
-                datas.Add(new HtmlDataItem("2PB1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" ? "Red" : "url(#SVGID_17_-4-2)", eHtmlDataItemType.svg_color));
-            }
+            //value = commonDAO.GetSignalDataValue(machineCode, "#1翻车机");
+            //if (value == "1")
+            //{
+                datas.Add(new HtmlDataItem("2PB1", commonDAO.GetSignalDataValue(machineCode, "主皮带") == "1" && commonDAO.GetSignalDataValue(machineCode, "#1翻车机") =="1"? "Red" : "url(#SVGID_17_-4-2)", eHtmlDataItemType.svg_color));
+            //}
 
 
             datas.Add(new HtmlDataItem("初级给料皮带正转b", commonDAO.GetSignalDataValue(machineCode, "初级给料皮带正转") == "1" ? "#00ff00" : "#c8c8c8", eHtmlDataItemType.svg_color));
@@ -326,20 +331,24 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("当前样重b", commonDAO.GetSignalDataValue(machineCode, "封装机装样重量"), eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("采样次数b", commonDAO.GetSignalDataValue(machineCode, "封装机装样次数"), eHtmlDataItemType.svg_text));
 
+            datas.Add(new HtmlDataItem("进料桶煤量b", (commonDAO.GetSignalDataValueDouble(machineCode, "封装机装样次数") / 25 * 70).ToString(), "2", eHtmlDataItemType.svg_height));
+
             if (commonDAO.GetSignalDataValue(machineCode, "#1翻车机") == "1")
             {
                 datas.Add(new HtmlDataItem("当前采样码b", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码"), eHtmlDataItemType.svg_text));
                 datas.Add(new HtmlDataItem("采样机编码b", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码"), eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem("已翻车数b", GetYFCS("1", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码")).ToString(), eHtmlDataItemType.svg_text));
             }
             if (commonDAO.GetSignalDataValue(machineCode, "#2翻车机") == "1")
             {
                 datas.Add(new HtmlDataItem("当前采样码b", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, "采样编码"), eHtmlDataItemType.svg_text));
                 datas.Add(new HtmlDataItem("采样机编码b", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, "采样编码"), eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem("已翻车数b", GetYFCS("2", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, "采样编码")).ToString(), eHtmlDataItemType.svg_text));
             }
 
             datas.Add(new HtmlDataItem("翻车机编码b", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, "采样编码"), eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("翻车机车数b", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, "翻车机车数"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("已翻车数b", commonDAO.GetSignalDataValue(machineCode, "已翻车车数"), eHtmlDataItemType.svg_text));
+            //datas.Add(new HtmlDataItem("已翻车数b", commonDAO.GetSignalDataValue(machineCode, "已翻车车数"), eHtmlDataItemType.svg_text));
 
             datas.Add(new HtmlDataItem("允许二号翻车机翻车", commonDAO.GetSignalDataValue(machineCode, "禁止2号翻车机翻车") == "0" ? "#00ff00" : "#ff0000", eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("采样机故障b", commonDAO.GetSignalDataValue(machineCode, "采样机报警") == "1" ? "#ff0000" : "#00ff00", eHtmlDataItemType.svg_color));
@@ -352,6 +361,31 @@ namespace CMCS.Monitor.Win.Frms
             tempBool = tempBool ? false : true;
 
             #endregion
+        }
+
+        /// <summary>
+        /// 获取已翻车数
+        /// </summary>
+        /// <param name="fcj"></param>
+        /// <param name="cym"></param>
+        /// <returns></returns>
+        public int GetYFCS(string fcj,string cym)
+        {
+            int re = 0;
+            string sql = string.Format(@"select count(*) ct
+                    from cmcstbtraincarriagepass t5 
+                    left join fultbtransport t1 on t1.pkid=t5.id
+                    left join fultbinfactorybatch t2 on t1.infactorybatchid=t2.id
+                    inner join cmcstbtransportposition t6 on t5.id=t6.transportid 
+                    left join cmcstbrcsampling t7 on t7.infactorybatchid=t2.id
+                    where t6.tracknumber='{0}' and t7.samplecode='{1}'",
+                    fcj=="1"?"#5":"#1", cym);
+            DataTable dt = commonDAO.SelfDber.ExecuteDataTable(sql);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                re = Convert.ToInt32(dt.Rows[0][0]);
+            }
+            return re;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
